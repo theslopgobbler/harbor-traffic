@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Harbor Traffic</title>
+<meta name="description" content="Grays Harbor roads, bridges and weather at a glance: Hoh Rain Forest to South Bend, the coast to Olympia.">
+<meta name="theme-color" content="#132318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Alegreya+Sans+SC:wght@500;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<link href="styles.css?v=2" rel="stylesheet">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="kicker">Aberdeen · Hoquiam · Coast · Olympia</span>
+    <h1>Harbor Traffic</h1>
+  </div>
+  <div class="now">
+    <div id="clock" class="clock">--:--</div>
+    <div id="updated" class="updated">Loading…</div>
+  </div>
+</header>
+
+<main class="layout">
+  <div id="map" class="map" role="application" aria-label="Map of Grays Harbor roads and weather"></div>
+
+  <div class="map-tools">
+    <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎ <span>Me</span></button>
+    <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤ <span>Heading</span></button>
+    <button id="btnReset" class="tool" type="button" aria-label="Show whole region">⤢ <span>All</span></button>
+  </div>
+
+  <aside class="panel" id="panel">
+    <button class="sheet-handle" id="sheetHandle" type="button" aria-label="Expand or collapse details"></button>
+
+    <label class="route-pick">
+      <span class="label">Your route</span>
+      <select id="route"><option value="">Whole region</option></select>
+    </label>
+
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="alerts" aria-selected="true">Alerts <b id="nAlerts"></b></button>
+      <button role="tab" data-tab="roads" aria-selected="false">Roads <b id="nRoads"></b></button>
+      <button role="tab" data-tab="bridges" aria-selected="false">Bridges</button>
+      <button role="tab" data-tab="weather" aria-selected="false">Weather</button>
+    </nav>
+
+    <section class="tab" id="tab-alerts"><h2>Weather alerts</h2><ul id="alertList" class="list"></ul></section>
+    <section class="tab" id="tab-roads"><h2>Closures &amp; incidents</h2><ul id="roadList" class="list"></ul></section>
+    <section class="tab" id="tab-bridges"><h2>Drawbridges</h2><ul id="bridgeList" class="list"></ul>
+      <p class="fine">Openings happen on request from boats; there is no published schedule. WSDOT bridge maintenance: 360-533-9360.</p></section>
+    <section class="tab" id="tab-weather"><h2>Right now</h2><ul id="wxList" class="list wx"></ul></section>
+  </aside>
+</main>
+
+<div class="legend" aria-hidden="true">
+  <span><i class="ic ic-closure">✕</i>Closure</span>
+  <span><i class="ic ic-collision">!</i>Collision</span>
+  <span><i class="ic ic-work">⚒</i>Work</span>
+  <span><i class="ic ic-bridge">⌂</i>Bridge</span>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
+<script src="config.js?v=2"></script>
+<script src="app.js?v=2"></script>
+</body>
+</html>
