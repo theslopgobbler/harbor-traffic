@@ -11,7 +11,11 @@ if (-not $code) {
     $keyFile = Join-Path $root 'wsdot-key.txt'
     if (Test-Path $keyFile) { $code = (Get-Content $keyFile -Raw).Trim() }
 }
-if (-not $code) { throw 'No WSDOT access code: set WSDOT_ACCESS_CODE or create wsdot-key.txt' }
+if (-not $code) {
+    # on GitHub, a missing secret shouldn't fail (and email) every 10 minutes
+    if ($env:GITHUB_ACTIONS) { '::warning::WSDOT_ACCESS_CODE secret is not set; skipping.'; exit 0 }
+    throw 'No WSDOT access code: set WSDOT_ACCESS_CODE or create wsdot-key.txt'
+}
 
 # region box with a little margin: [west, south, east, north]
 $W = -124.55; $S = 46.50; $E = -122.70; $N = 48.00
