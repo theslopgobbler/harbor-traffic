@@ -49,11 +49,15 @@ if ($newTree.sha -eq $baseTree) { 'No changes.' } else {
 
 # GitHub Pages from main, with the custom domain
 try { $pages = GH Get '/pages' } catch { $pages = $null }
-if (-not $pages) {
-    GH Post '/pages' @{ source = @{ branch = 'main'; path = '/' } } | Out-Null
-    'Turned on GitHub Pages.'
-}
-if (-not $pages -or $pages.cname -ne $domain) {
-    GH Put '/pages' @{ cname = $domain; source = @{ branch = 'main'; path = '/' } } | Out-Null
-    "Pages domain set to $domain."
+try {
+    if (-not $pages) {
+        GH Post '/pages' @{ source = @{ branch = 'main'; path = '/' } } | Out-Null
+        'Turned on GitHub Pages.'
+    }
+    if (-not $pages -or $pages.cname -ne $domain) {
+        GH Put '/pages' @{ cname = $domain; source = @{ branch = 'main'; path = '/' } } | Out-Null
+        "Pages domain set to $domain."
+    }
+} catch {
+    "Couldn't change the Pages settings with this token. In the repo: Settings > Pages > Deploy from a branch > main, / (root); custom domain $domain."
 }
