@@ -18,24 +18,36 @@ if (-not $code) {
 }
 
 # region box with a little margin: [west, south, east, north]
-$W = -124.55; $S = 46.50; $E = -122.70; $N = 48.00
+$boxW = -124.55; $boxS = 46.60; $boxE = -122.78; $boxN = 48.00
 
 $url = "https://wsdot.wa.gov/Traffic/api/HighwayAlerts/HighwayAlertsREST.svc/GetAlertsAsJson?AccessCode=$code"
 $raw = Invoke-RestMethod -Uri $url -TimeoutSec 60
 
 function To-Iso($s) {
+    # Windows PowerShell turns the date strings into DateTime by itself; pwsh leaves them as text
+    if ($s -is [datetime]) { return ([DateTimeOffset]$s.ToUniversalTime()).ToString('o') }
     if ($s -and "$s" -match '(-?\d{10,})') { return [DateTimeOffset]::FromUnixTimeMilliseconds([int64]$Matches[1]).ToString('o') }
     return $null
 }
 function In-Box($loc) {
-    return $loc -and $loc.Latitude -ne 0 -and $loc.Longitude -ge $W -and $loc.Longitude -le $E -and $loc.Latitude -ge $S -and $loc.Latitude -le $N
+    return $loc -and $loc.Latitude -ne 0 -and $loc.Longitude -ge $boxW -and $loc.Longitude -le $boxE -and $loc.Latitude -ge $boxS -and $loc.Latitude -le $boxN
 }
 function Kind($a) {
     $txt = "$($a.EventCategory) $($a.HeadlineDescription)"
     if ($txt -match '(?i)collision|crash|disabled vehicle|incident') { return 'collision' }
-    if ($txt -match '(?i)\bclos(ed|ure)\b|blocked') { return 'closure' }
+    # a lane or shoulder closure is road work; the road itself being shut is a closure
+    if ($txt -match '(?i)\b(lane|shoulder|ramp)s?\b[^.]{0,60}\bclos'){ return 'work' }
+    if ($txt -match '(?i)\b(is|are|will be) closed\b|fully? clos|around-the-clock closures|road closed|blocked|detour') { return 'closure' }
     if ($txt -match '(?i)construction|maintenance|road work|paving|lane') { return 'work' }
     return 'other'
+}
+function Plain($html) {
+    $t = "$html" -replace '<[^>]+>', '' -replace '&nbsp;', ' ' -replace '&amp;', '&' -replace '\s*\r?\n\s*', ' '
+    return $t.Trim()
+}
+function First-Link($html) {
+    if ("$html" -match 'href="([^"]+)"') { return $Matches[1] }
+    return $null
 }
 function Road-Label($name) {
     $n = ("$name" -replace '\D', '').TrimStart('0')
@@ -55,8 +67,9 @@ foreach ($a in $raw) {
         kind        = Kind $a
         category    = $a.EventCategory
         priority    = $a.Priority
-        headline    = $a.HeadlineDescription
-        description = $a.ExtendedDescription
+        headline    = Plain $a.HeadlineDescription
+        description = Plain $a.ExtendedDescription
+        link        = First-Link "$($a.HeadlineDescription) $($a.ExtendedDescription)"
         road        = $s.RoadName
         roadLabel   = Road-Label $s.RoadName
         direction   = $s.Direction
