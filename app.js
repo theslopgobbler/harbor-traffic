@@ -275,7 +275,8 @@
       el.className = 'mk';
       el.innerHTML = `<i class="ic ic-${r.kind}">${kindIcon[r.kind] || 'i'}</i>`;
       roadMarkers.push(new maplibregl.Marker({ element: el }).setLngLat([r.lon, r.lat])
-        .setPopup(popup(`<h3>${esc(r.headline)}</h3><div class="m">${esc(r.category)} · updated ${esc(fmtWhen(r.updated))}</div>`)).addTo(map));
+        .setPopup(popup(`<h3>${esc(r.roadLabel)}: ${esc(r.category)}</h3><p>${esc(r.headline)}</p>
+          <div class="m">Since ${esc(fmtWhen(r.start))}${r.link && /^https:/.test(r.link) ? ` · <a href="${esc(r.link)}" target="_blank" rel="noopener">WSDOT details</a>` : ''}</div>`)).addTo(map));
     }
     $('#nRoads').textContent = list.filter((r) => r.kind === 'closure' || r.kind === 'collision').length || '';
     const stale = state.roadsUpdated ? ` · WSDOT data ${fmtWhen(state.roadsUpdated)}` : ' · WSDOT feed not connected yet';
