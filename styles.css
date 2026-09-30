@@ -87,6 +87,15 @@ body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.over
 .ship-mk svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .ship-mk.small { opacity: .7; }
 
+.rail-chip { display: flex; flex-direction: column; align-items: center; padding: 3px 7px; background: rgba(2,8,7,.88); border: 1px dashed #c28bff;
+  font: 10px/1.3 var(--mono); letter-spacing: .1em; color: #c28bff; white-space: nowrap; pointer-events: none; }
+.rail-chip b { font-weight: 400; }
+.rail-chip span { color: var(--dim); font-size: 9px; }
+.rail-chip.likely { border-style: solid; box-shadow: 0 0 8px rgba(194,139,255,.45); animation: workpulse 2.4s ease-in-out infinite; }
+.rail-chip:empty { display: none; }
+#railNote:empty { display: none; }
+#railNote { margin-bottom: 8px; }
+
 /* labels on the water */
 .bay-lbl { display: flex; flex-direction: column; align-items: center; font: 10px/1.3 var(--mono); letter-spacing: .15em; pointer-events: none; text-shadow: 0 0 4px #000; }
 .bay-lbl b { font-weight: 400; color: #0bb3cc; }

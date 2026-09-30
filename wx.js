@@ -691,6 +691,29 @@
       shipMarkers.push(mk);
     }
     renderShipList();
+    renderRail();
+    window.htDeclutter?.();
+  }
+
+  // ---- rail activity: the port's rail-served terminals load and unload big ships, so a big ship at berth
+  // in Grays Harbor usually means trains through Aberdeen/Hoquiam. It's an educated guess, not a train feed.
+  const IN_HARBOR = [-124.09, 46.91, -123.76, 47.0];
+  const railChip = document.createElement('div');
+  railChip.className = 'rail-chip';
+  new maplibregl.Marker({ element: railChip, anchor: 'top' }).setLngLat([-123.84, 46.962]).addTo(map);
+  function renderRail() {
+    const [w, s, e, n] = IN_HARBOR;
+    const big = shipList.filter((x) => x.lon > w && x.lon < e && x.lat > s && x.lat < n &&
+      ((x.lengthM || 0) >= 100 || (x.type >= 70 && x.type <= 89)));
+    const atBerth = big.filter(stopped), moving = big.filter((x) => !stopped(x));
+    const level = atBerth.length ? 2 : moving.length ? 1 : 0;
+    const names = (list) => list.map((x) => (x.name || 'a large vessel').toUpperCase()).join(', ');
+    railChip.innerHTML = level ? `<b>⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'}</b><span>${escS(level === 2 ? names(atBerth) + ' AT BERTH' : names(moving) + ' UNDER WAY')}</span>` : '';
+    railChip.classList.toggle('likely', level === 2);
+    const box = $('#railNote');
+    if (box) box.innerHTML = level ? `<li class="${level === 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'} · ABERDEEN / HOQUIAM</div>
+      <div class="m">${escS(level === 2 ? `${names(atBerth)} at berth in the harbor. Ships at the port are loaded and unloaded by train, so expect trains at crossings.` : `${names(moving)} moving in the harbor; trains often follow a ship's arrival.`)}</div></li>` : '';
+    window.htRailLevel = level;
     window.htDeclutter?.();
   }
   function renderShipList() {
