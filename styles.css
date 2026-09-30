@@ -238,6 +238,24 @@ details summary { cursor: pointer; }
 .cam button, .cam-show { font: 12px/1 var(--mono); letter-spacing: .06em; padding: 5px 8px; border: 1px solid var(--line-2); background: #020807; color: var(--cyan); cursor: pointer; }
 .cam-show { margin-top: 6px; }
 
+/* TV: region countdown bar and bottom ticker */
+.cycle-bar { display: none; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--cyan); box-shadow: var(--glow-c);
+  transform-origin: left; transition: transform .2s linear; }
+.ticker { display: none; }
+body.tv .ticker { display: flex; align-items: center; height: 44px; flex: none; background: #020605; border-top: 1px solid var(--line-2);
+  box-shadow: 0 -1px 12px rgba(0,229,255,.12); font: 18px/1 var(--mono); letter-spacing: .06em; overflow: hidden; }
+.ticker-lbl { flex: none; padding: 0 14px; height: 100%; display: flex; align-items: center; background: #d11a2a; color: #fff; font: 600 14px/1 var(--disp); letter-spacing: .2em; }
+.ticker-win { flex: 1; overflow: hidden; height: 100%; display: flex; align-items: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); }
+.ticker-track { display: flex; white-space: nowrap; animation: ticker 60s linear infinite; }
+.ticker-track .tk { display: flex; align-items: center; flex: none; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ti { color: var(--text); padding: 0 6px; }
+.ti b { font-weight: 400; margin-right: 4px; }
+.ti.x b { color: var(--red); text-shadow: var(--glow-r); } .ti.a b { color: var(--orange); } .ti.w b { color: var(--amber); }
+.ti.r b { color: #c28bff; } .ti.c b { color: var(--cyan); } .ti.ok b { color: var(--green); }
+.ticker .sep { color: var(--line-2); font-style: normal; padding: 0 14px; }
+
 /* TV: fixed, glanceable, nothing to press */
 body.tv { font-size: 18px; --panel-w: 460px; }
 body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 40px; } body.tv .inst-big { font-size: 22px; }

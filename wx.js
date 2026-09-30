@@ -11,6 +11,8 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
   };
   const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // lines for the TV ticker (app.js builds the ticker from these)
+  const tick = (key, text) => { window.htTicker = window.htTicker || {}; window.htTicker[key] = text; window.htTickerRefresh?.(); };
   const HOME = { lat: 46.9754, lon: -123.8157 }; // Aberdeen: where the sky icon is computed for
   const COLOR = { rain: '#00e5ff', snow: '#e8f6ff', hail: '#c9a6ff', storm: '#ff2bd6', fog: '#8fa8a8', wind: '#39ff88' };
 
@@ -121,6 +123,7 @@
     const tt = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M/i, '');
     const hm = (ms) => `${Math.floor(ms / 36e5)}:${String(Math.floor(ms % 36e5 / 6e4)).padStart(2, '0')}`;
     $('#insSun').innerHTML = `<span class="up">↑${tt(rise)}</span> <span class="dn">↓${tt(set)}</span>`;
+    tick('sun', `sunrise ${t(rise)}, sunset ${t(set)}`);
     const nextRise = now < rise ? rise : sunTimes(new Date(+now + 864e5), HOME.lat, HOME.lon).rise;
     $('#insSunLeft').textContent = now > rise && now < set ? `${hm(set - now)} LEFT` : '';
     $('#insSunSub').textContent = now > rise && now < set ? `DAYLIGHT ${hm(set - rise)}` : `DARK · SUNRISE IN ${hm(nextRise - now)}`;
@@ -510,6 +513,9 @@
         <path d="M80 0 V40" stroke="#ff2a3d" stroke-width="1.4" vector-effect="non-scaling-stroke" style="filter:drop-shadow(0 0 3px #ff2a3d)"/>
         <circle cx="80" cy="${Y(cur.v).toFixed(1)}" r="2.2" fill="#ff2a3d"/>`;
       $('#tideNow').textContent = `${cur.v.toFixed(1)} FT ${rising ? '▲' : '▼'}`;
+      const nx = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).find((p) => p.t > now);
+      tick('tide', `${cur.v.toFixed(1)} ft and ${rising ? 'rising' : 'falling'} at Aberdeen` +
+        (nx ? `, ${nx.type === 'H' ? 'high' : 'low'} ${nx.v.toFixed(1)} ft at ${nx.t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}` : ''));
       const next = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).find((p) => p.t > now);
       const tm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).replace(' ', '').toUpperCase();
       $('#tideNext').innerHTML = next ? `<span>-6H</span><span>${next.type === 'H' ? 'HIGH' : 'LOW'} ${tm(next.t)} ${next.v.toFixed(1)}FT</span><span>+6H</span>` : '';
@@ -548,6 +554,7 @@
       $('#windDial').innerHTML = dialSvg(kt < 1 ? null : deg, kt);
       $('#windDir').textContent = kt < 1 ? 'CALM' : `${d.dr} ${String(Math.round(deg)).padStart(3, '0')}°`;
       $('#windSpd').textContent = kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`;
+      tick('wind', kt < 1 ? 'calm at Westport' : `from the ${d.dr} at ${kt} kt (${Math.round(kt * 1.151)} mph)${gust > kt + 2 ? `, gusts ${gust} kt` : ''} at Westport`);
       $('#windGauge').title = `Wind at Westport: from the ${d.dr} at ${kt} knots (${Math.round(kt * 1.151)} mph)${gust ? `, gusts ${gust} kt` : ''}. Observed ${d.t}.`;
     } catch (e) {
       console.warn('wind', e);
@@ -598,6 +605,8 @@
     $('#seaWater').textContent = water != null ? `WATER ${Math.round(water)}°` : '';
     const alerts = m?.alerts || [];
     $('#sea').classList.toggle('alert', alerts.length > 0 || lvl >= 2);
+    tick('sea', [bar?.conditions ? `Grays Harbor bar ${bar.conditions}` : '', b?.waveFt != null ? `waves ${b.waveFt} ft @ ${b.periodS}s` : '',
+      water != null ? `water ${Math.round(water)}°` : '', ...alerts.map((a) => a.event)].filter(Boolean).join(' · '));
     $('#sea').title = [bar?.text, b ? `Buoy 46211: ${b.waveFt} ft, ${b.periodS} s, from ${compass(b.dirDeg)}` : ''].filter(Boolean).join('\n');
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const when = (iso) => iso ? new Date(iso).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
@@ -714,6 +723,7 @@
     if (box) box.innerHTML = level ? `<li class="${level === 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'} · ABERDEEN / HOQUIAM</div>
       <div class="m">${escS(level === 2 ? `${names(atBerth)} at berth in the harbor. Ships at the port are loaded and unloaded by train, so expect trains at crossings.` : `${names(moving)} moving in the harbor; trains often follow a ship's arrival.`)}</div></li>` : '';
     window.htRailLevel = level;
+    tick('rail', level ? `activity ${level === 2 ? 'likely' : 'possible'} in Aberdeen/Hoquiam: ${level === 2 ? names(atBerth) + ' at berth' : names(moving) + ' under way'}` : '');
     window.htDeclutter?.();
   }
   function renderShipList() {
