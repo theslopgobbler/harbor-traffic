@@ -22,7 +22,24 @@ h1 span { color: var(--green); }
 .live { color: var(--green); margin-left: 6px; }
 .live i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 4px; box-shadow: 0 0 6px var(--green); animation: blink 1.6s steps(2) infinite; }
 @keyframes blink { 50% { opacity: .15; } }
-.now { margin-left: auto; text-align: right; }
+.now { text-align: right; }
+.clockrow { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.sky { display: inline-block; width: 44px; height: 38px; }
+.sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
+
+/* tide gauge */
+.tide { margin-left: auto; width: 200px; font-size: 10px; letter-spacing: .12em; color: var(--dim); border: 1px solid var(--line); padding: 3px 6px 2px; background: rgba(0,229,255,.03); }
+.tide-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; white-space: nowrap; }
+.tide-head b { color: var(--cyan); font-weight: 400; font-size: 12px; text-shadow: var(--glow-c); }
+.tide svg { display: block; width: 100%; height: 34px; margin: 1px 0; }
+.tide-foot { display: flex; justify-content: space-between; font-size: 9px; }
+.tide-foot span:nth-child(2) { color: var(--text); }
+
+/* radar / weather-effect toggles: the ✕ turns them off */
+.tool.toggle .off { display: none; margin-left: 6px; color: var(--red); font-weight: 400; }
+.tool.toggle.on .off { display: inline; }
+.tool .stamp { color: var(--dim); font-size: 10px; }
+canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 .clock { font: 600 24px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
 .updated { font-size: 11px; color: var(--dim); margin-top: 4px; letter-spacing: .08em; }
 
@@ -116,6 +133,8 @@ details summary { cursor: pointer; }
 .wx-mk.alerted { border-color: var(--amber); box-shadow: 0 0 8px rgba(255,196,0,.5); }
 .wx-mk.alerted .n::after { content: " ⚠"; color: var(--amber); }
 .rw-mk { border-style: dashed; font-size: 11px; }
+.town-dot { width: 5px; height: 5px; background: var(--cyan); box-shadow: 0 0 4px var(--cyan); }
+.inc-mk.group { width: 34px; height: 32px; }
 
 .x-mk { width: 40px; height: 40px; cursor: pointer; filter: drop-shadow(0 0 6px var(--red)); animation: pulse 1.8s ease-in-out infinite; }
 .x-mk svg { display: block; width: 100%; height: 100%; overflow: visible; }
@@ -176,6 +195,11 @@ body.tv .list .m { font-size: 14px; }
   h1 { font-size: 17px; }
   .sub { display: none; }
   .clock { font-size: 18px; }
+  .sky { width: 32px; height: 28px; }
+  .tide { width: 140px; padding: 2px 5px; }
+  .tide svg { height: 22px; }
+  .tide-foot span:first-child, .tide-foot span:last-child { display: none; }
+  .tide-foot { justify-content: center; }
   .regions { order: 3; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .regions button { flex: none; font-size: 12px; padding: 6px 9px; }
   .layout { display: block; }

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=5" rel="stylesheet">
+<link href="styles.css?v=6" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -19,8 +19,13 @@
     <div class="sub">GRAYS HARBOR · COAST · I-5 <span class="live"><i></i>LIVE</span></div>
   </div>
   <nav class="regions" id="regions" aria-label="Map region"></nav>
+  <div class="tide" id="tide" title="Tide at Westport (NOAA predictions)">
+    <div class="tide-head"><span>TIDE LEVEL</span><b id="tideNow">--</b></div>
+    <svg id="tideChart" viewBox="0 0 160 40" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="tide-foot" id="tideNext"></div>
+  </div>
   <div class="now">
-    <div id="clock" class="clock">--:--</div>
+    <div class="clockrow"><span id="sky" class="sky"></span><div id="clock" class="clock">--:--</div></div>
     <div id="updated" class="updated">SYNC…</div>
   </div>
 </header>
@@ -36,6 +41,8 @@
     <div class="map-tools">
       <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎<span> ME</span></button>
       <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤<span> HDG</span></button>
+      <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar">◫<span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
+      <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects">❅<span> WX FX</span><b class="off">✕</b></button>
     </div>
     <div class="legend" aria-hidden="true">
       <span><b class="x">✕</b>CLOSED</span>
@@ -76,7 +83,8 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=5"></script>
-<script src="app.js?v=5"></script>
+<script src="config.js?v=6"></script>
+<script src="app.js?v=6"></script>
+<script src="wx.js?v=6"></script>
 </body>
 </html>

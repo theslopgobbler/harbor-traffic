@@ -13,32 +13,34 @@ window.HT = {
     { id: 'olympia', name: 'Olympia · I-5', bounds: [-123.20, 46.74, -122.78, 47.12] }
   ],
 
+  // a = which side of the town its weather label sits on (keeps close towns apart); minor = hidden in the zoomed-out view
   towns: [
     { id: 'hoh',        name: 'Hoh Rain Forest', lat: 47.8606, lon: -123.9349 },
     { id: 'kalaloch',   name: 'Kalaloch',        lat: 47.6082, lon: -124.3735 },
-    { id: 'queets',     name: 'Queets',          lat: 47.5371, lon: -124.3257 },
+    { id: 'queets',     name: 'Queets',          lat: 47.5371, lon: -124.3257, a: 'top-left', minor: true },
     { id: 'quinault',   name: 'Amanda Park',     lat: 47.4589, lon: -123.8993 },
-    { id: 'humptulips', name: 'Humptulips',      lat: 47.2312, lon: -123.9585 },
-    { id: 'moclips',    name: 'Moclips',         lat: 47.2393, lon: -124.2141 },
-    { id: 'oshores',    name: 'Ocean Shores',    lat: 46.9737, lon: -124.1563 },
-    { id: 'hoquiam',    name: 'Hoquiam',         lat: 46.9809, lon: -123.8893 },
-    { id: 'aberdeen',   name: 'Aberdeen',        lat: 46.9754, lon: -123.8157 },
-    { id: 'montesano',  name: 'Montesano',       lat: 46.9812, lon: -123.6027 },
-    { id: 'elma',       name: 'Elma',            lat: 47.0040, lon: -123.4088 },
-    { id: 'mccleary',   name: 'McCleary',        lat: 47.0532, lon: -123.2654 },
+    { id: 'humptulips', name: 'Humptulips',      lat: 47.2312, lon: -123.9585, a: 'left' },
+    { id: 'moclips',    name: 'Moclips',         lat: 47.2393, lon: -124.2141, a: 'right' },
+    { id: 'oshores',    name: 'Ocean Shores',    lat: 46.9737, lon: -124.1563, a: 'right' },
+    { id: 'hoquiam',    name: 'Hoquiam',         lat: 46.9809, lon: -123.8893, a: 'bottom-right' },
+    { id: 'aberdeen',   name: 'Aberdeen',        lat: 46.9754, lon: -123.8157, a: 'top-left' },
+    { id: 'montesano',  name: 'Montesano',       lat: 46.9812, lon: -123.6027, a: 'top' },
+    { id: 'elma',       name: 'Elma',            lat: 47.0040, lon: -123.4088, a: 'bottom' },
+    { id: 'mccleary',   name: 'McCleary',        lat: 47.0532, lon: -123.2654, a: 'bottom', minor: true },
     { id: 'olympia',    name: 'Olympia',         lat: 47.0379, lon: -122.9007 },
-    { id: 'oakville',   name: 'Oakville',        lat: 46.8393, lon: -123.2321 },
-    { id: 'rochester',  name: 'Rochester',       lat: 46.8218, lon: -123.0962 },
-    { id: 'grandmound', name: 'Grand Mound',     lat: 46.7887, lon: -123.0096 },
+    { id: 'oakville',   name: 'Oakville',        lat: 46.8393, lon: -123.2321, a: 'right' },
+    { id: 'rochester',  name: 'Rochester',       lat: 46.8218, lon: -123.0962, a: 'bottom-left', minor: true },
+    { id: 'grandmound', name: 'Grand Mound',     lat: 46.7887, lon: -123.0096, a: 'top-left' },
     { id: 'westport',   name: 'Westport',        lat: 46.8901, lon: -124.1040 },
-    { id: 'tokeland',   name: 'Tokeland',        lat: 46.7071, lon: -123.9824 },
-    { id: 'raymond',    name: 'Raymond',         lat: 46.6865, lon: -123.7329 },
-    { id: 'southbend',  name: 'South Bend',      lat: 46.6631, lon: -123.8046 }
+    { id: 'tokeland',   name: 'Tokeland',        lat: 46.7071, lon: -123.9824, a: 'right', minor: true },
+    { id: 'raymond',    name: 'Raymond',         lat: 46.6865, lon: -123.7329, a: 'bottom-left' },
+    { id: 'southbend',  name: 'South Bend',      lat: 46.6631, lon: -123.8046, a: 'top-right' }
   ],
 
   // Routes people pick to see alerts along the way. roads = [ref, OpenMapTiles network]
   corridors: [
-    { id: 'olympia',  name: 'Aberdeen ↔ Olympia',  towns: ['aberdeen','montesano','elma','mccleary','olympia'],
+    { id: 'olympia',  name: 'Aberdeen ↔ Olympia',  // a = which side of the town its weather label sits on (keeps close towns apart); minor = hidden in the zoomed-out view
+  towns: ['aberdeen','montesano','elma','mccleary','olympia'],
       roads: [['12','us-highway'],['8','us-state'],['101','us-highway']] },
     { id: 'i5',       name: 'Elma ↔ Oakville ↔ I-5', towns: ['elma','oakville','rochester','grandmound'],
       roads: [['12','us-highway'],['5','us-interstate']] },
