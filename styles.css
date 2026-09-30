@@ -15,8 +15,9 @@ a { color: var(--cyan); }
 
 /* header: a strip of dashboard instruments */
 .top { display: flex; align-items: stretch; padding: 8px 12px; background: #020605; border-bottom: 1px solid var(--line-2); box-shadow: 0 1px 12px rgba(0,229,255,.12); }
-.instruments { display: flex; gap: 8px; width: 100%; justify-content: center; align-items: stretch; }
-.inst { position: relative; flex: none; height: 70px; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 8px 3px;
+/* equal-width instruments across the whole strip; extras drop off as the screen narrows */
+.instruments { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 8px; width: 100%; }
+.inst { position: relative; min-width: 0; height: 70px; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 8px 3px;
   background: linear-gradient(#030d0c, #020706); border: 1px solid var(--line-2); box-shadow: inset 0 0 12px rgba(0,229,255,.06);
   font: 10px/1.25 var(--mono); letter-spacing: .12em; color: var(--dim); text-align: left; }
 /* bezel screws, like panel-mounted gauges */
@@ -35,12 +36,19 @@ a { color: var(--cyan); }
 .gauge-txt b { color: var(--amber); font-weight: 400; font-size: 12px; text-shadow: 0 0 5px rgba(255,196,0,.5); }
 .gauge-txt i { color: var(--text); font-style: normal; font-size: 12px; }
 
-.inst-tide { width: 200px; }
+.inst-wind .inst-body { justify-content: center; }
+.inst-big { font: 600 17px/1.1 var(--disp); color: var(--text); letter-spacing: .06em; padding: 0 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.inst-big .x { color: var(--red); text-shadow: var(--glow-r); } .inst-big .a { color: var(--orange); } .inst-big .ok { color: var(--green); }
+.inst-big .up { color: var(--amber); } .inst-big .dn { color: #ff9f43; }
+.inst-sub { font-size: 10px; color: var(--dim); padding: 0 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: .06em; }
+@media (max-width: 1400px) { .inst-sun { display: none !important; } }
+@media (max-width: 1180px) { .inst-wxa { display: none !important; } }
+@media (max-width: 980px) { .inst-roads { display: none !important; } }
 .inst-tide svg { display: block; width: 100%; height: 30px; }
 .tide-foot { display: flex; justify-content: space-between; font-size: 9px; }
 .tide-foot span:nth-child(2) { color: var(--text); }
 
-.inst-sea { width: 210px; cursor: pointer; }
+.inst-sea { cursor: pointer; }
 .inst-sea:hover { border-color: var(--cyan); }
 .inst-sea.alert { border-color: var(--orange); box-shadow: inset 0 0 12px rgba(255,122,26,.2), 0 0 8px rgba(255,122,26,.35); }
 .inst-sea svg { display: block; width: 100%; height: 26px; }
@@ -77,7 +85,7 @@ body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.over
 /* labels on the water */
 .bay-lbl { display: flex; flex-direction: column; align-items: center; font: 10px/1.3 var(--mono); letter-spacing: .15em; pointer-events: none; text-shadow: 0 0 4px #000; }
 .bay-lbl b { font-weight: 400; color: #0bb3cc; }
-.bay-lbl .eb { color: var(--amber); } .bay-lbl .fl { color: var(--cyan); }
+.bay-lbl .eb, .bay-lbl .fl { color: #50e6be; }
 .bar-lbl { font: 10px/1 var(--mono); letter-spacing: .12em; padding: 2px 5px; border: 1px dashed; background: rgba(2,8,7,.8); pointer-events: none; white-space: nowrap; }
 .bar-lbl:empty { display: none; }
 body.fx-off .bay-lbl, body.fx-off .bar-lbl, body.overview-mode .bay-lbl { display: none; }
@@ -218,7 +226,8 @@ details summary { cursor: pointer; }
 
 /* TV: fixed, glanceable, nothing to press */
 body.tv { font-size: 18px; --panel-w: 460px; }
-body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 40px; } body.tv .inst-tide, body.tv .inst-sea { width: 260px; }
+body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 40px; } body.tv .inst-big { font-size: 22px; }
+body.tv .inst-extra { display: flex !important; } /* the TV always gets the full strip */
 body.tv .clock { font-size: 40px; }
 body.tv .map-tools, body.tv .tabs, body.tv .route-pick { display: none; }
 body.tv .tab { display: block; }
@@ -231,16 +240,16 @@ body.tv .list .m { font-size: 14px; }
 /* phone: map fills the screen, details in a bottom sheet */
 @media (max-width: 760px) {
   .top { padding: 6px 8px; }
-  .instruments { overflow-x: auto; scrollbar-width: none; justify-content: flex-start; gap: 5px; }
-  .inst { height: 58px; padding: 3px 6px; }
-  .inst-wind svg { width: 36px; height: 36px; }
-  .inst-tide { width: 128px; }
+  /* phones: a 2×2 block of the four core instruments */
+  .instruments { grid-auto-flow: row; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .inst-extra { display: none !important; }
+  .inst { height: 56px; padding: 3px 6px; }
+  .inst-wind svg { width: 34px; height: 34px; }
   .inst-lbl em { display: none; }
   .inst-lbl { gap: 4px; }
   .inst-tide svg { height: 22px; }
   .tide-foot span:first-child, .tide-foot span:last-child { display: none; }
   .tide-foot { justify-content: center; }
-  .inst-sea { width: 128px; }
   .sea-row span:last-child { display: none; }
   .inst-clock .clock { font-size: 18px; }
   .sky { width: 28px; height: 26px; }

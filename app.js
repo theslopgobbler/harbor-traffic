@@ -180,7 +180,8 @@
 
   // ---------------- regions ----------------
   const regionById = Object.fromEntries(C.regions.map((r) => [r.id, r]));
-  let region = regionById[qs.get('region')] ? qs.get('region') : (store.get('ht.region') || 'all');
+  // the TV starts on the full view unless its URL names a region; phones and PCs remember the last pick
+  let region = regionById[qs.get('region')] ? qs.get('region') : TV ? 'all' : (store.get('ht.region') || 'all');
   if (!regionById[region]) region = 'all';
   const regionBar = $('#regions');
   regionBar.innerHTML = C.regions.map((r) => `<button type="button" data-r="${r.id}">${esc(r.name)}</button>`).join('');
@@ -598,6 +599,11 @@
     const alertedTowns = new Set(list.flatMap((a) => townsForZones(a.affectedZones || []).map((t) => t.id)));
     for (const [id, { el }] of Object.entries(wxMarkers)) el.classList.toggle('alerted', alertedTowns.has(id));
     $('#nAlerts').textContent = list.length || '';
+    // WX ALERTS instrument: the whole area
+    const allZones = new Set(Object.values(state.zonesByTown).flat());
+    const areaAlerts = state.nws.filter((a) => (a.affectedZones || []).some((z) => allZones.has(z)));
+    $('#insWx').innerHTML = areaAlerts.length ? `<span class="a">⚠${areaAlerts.length}</span>` : '<span class="ok">NONE</span>';
+    $('#insWxSub').textContent = [...new Set(areaAlerts.map((a) => a.event.toUpperCase()))].join(' · ');
     $('#alertList').innerHTML = list.length ? list.map((a) => {
       const towns = townsForZones(a.affectedZones || []).map((t) => t.name);
       return `<li class="sev-${esc(a.severity)}"><div class="t">${esc(a.event.toUpperCase())}</div>
@@ -695,6 +701,13 @@
     renderOverview();
 
     $('#nRoads').textContent = list.filter((r) => r.kind === 'closure' || r.kind === 'collision').length || '';
+    // ROADS instrument: the whole area, whatever route is picked
+    const allC = state.roads.filter((r) => r.kind === 'closure'), allA = state.roads.filter((r) => r.kind !== 'closure');
+    const topR = allC[0] || state.roads.find((r) => r.kind === 'collision') || allA[0];
+    $('#insRoads').innerHTML = !state.roads.length ? '<span class="ok">ALL CLEAR</span>'
+      : `${allC.length ? `<span class="x">✕${allC.length}</span> ` : ''}<span class="a">△${allA.length}</span>`;
+    $('#insRoadsSub').textContent = topR ? `${topR.roadLabel}${topR.milepost ? ' MP ' + topR.milepost : ''}: ${topR.headline}` : '';
+    $('#insRoadsSync').textContent = state.roadsUpdated ? fmtTime(new Date(state.roadsUpdated)).toUpperCase() : '';
     const stale = state.roadsUpdated ? `WSDOT SYNC ${fmtWhen(state.roadsUpdated)}` : 'WSDOT FEED OFFLINE';
     $('#roadList').innerHTML = (list.length ? list.map((r, i) => `<li class="clickable k-${r.kind}" data-i="${i}">
         <div class="t"><span class="tag ${r.kind}">${kindLabel[r.kind]}</span>${esc(r.headline)}</div>
