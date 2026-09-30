@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202609301936" rel="stylesheet">
+<link href="styles.css?v=202609301937" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -66,12 +66,13 @@
     </div>
     <!-- my location and heading: tucked on the right edge, well below the zoom buttons -->
     <div class="nav-tools">
-      <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎</button>
-      <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤</button>
+      <button id="btnLocate" class="tool" type="button" aria-label="Show my location"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor"/><circle cx="10" cy="10" r="2.2" fill="currentColor"/><path d="M10 1.5 V4 M10 16 V18.5 M1.5 10 H4 M16 10 H18.5" stroke="currentColor"/></svg></button>
+      <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L16 17 L10 13.5 L4 17 Z" fill="none" stroke="currentColor" stroke-linejoin="round"/></svg></button>
     </div>
     <div class="map-tools">
-      <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar">◫<span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
-      <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects">❅<span> WX FX</span><b class="off">✕</b></button>
+      <!-- all button icons are line drawings, so they're the same size and color on every phone -->
+      <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15" fill="none" stroke="currentColor"/><path d="M10 2.5 V17.5" stroke="currentColor"/></svg><span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
+      <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 V18 M3.1 6 L16.9 14 M3.1 14 L16.9 6 M8 3.5 L10 5.5 L12 3.5 M8 16.5 L10 14.5 L12 16.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg><span> WX FX</span><b class="off">✕</b></button>
       <!-- line-drawn icons (emoji would render as color pictures on phones) -->
       <button id="btnVessels" class="tool toggle" type="button" aria-pressed="false" aria-label="Show ships"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12 H18 L15.5 16 H4.5 Z M6 12 V8 H13 V12 M9 8 V5 H11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span> SHIPS</span><b class="off">✕</b></button>
       <button id="btnAir" class="tool toggle" type="button" aria-pressed="false" aria-label="Show aircraft"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L11 8 L17.5 11 V12.5 L11 11 L10.6 15.5 L12.8 17 V18 L10 17.4 L7.2 18 V17 L9.4 15.5 L9 11 L2.5 12.5 V11 L9 8 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span> AIR</span><b class="off">✕</b></button>
@@ -127,11 +128,11 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202609301936"></script>
-<script src="app.js?v=202609301936"></script>
-<script src="air.js?v=202609301936"></script>
-<script src="wx.js?v=202609301936"></script>
-<script src="seis.js?v=202609301936"></script>
-<script src="bus.js?v=202609301936"></script>
+<script src="config.js?v=202609301937"></script>
+<script src="app.js?v=202609301937"></script>
+<script src="air.js?v=202609301937"></script>
+<script src="wx.js?v=202609301937"></script>
+<script src="seis.js?v=202609301937"></script>
+<script src="bus.js?v=202609301937"></script>
 </body>
 </html>
