@@ -33,7 +33,8 @@ try { $head = (GH Get '/git/ref/heads/main').object.sha } catch {
 }
 $baseTree = (GH Get "/git/commits/$head").tree.sha
 $remote = (GH Get "/git/trees/$($baseTree)?recursive=1").tree | ForEach-Object { $_.path }
-if ($remote -contains 'data/wsdot-alerts.json') { $files = $files | Where-Object { $_ -notmatch '^data/' } }
+# the collector owns data/: only seed files GitHub doesn't have yet, and never local test history
+$files = $files | Where-Object { $_ -notmatch '^data/history/' -and -not ($_ -match '^data/' -and $remote -contains $_) }
 
 $tree = foreach ($f in $files) {
     $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Join-Path $root $f)))

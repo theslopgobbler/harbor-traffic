@@ -83,6 +83,13 @@ h2 { font: 400 18px/1.2 var(--display); margin: 6px 0 8px; }
 .ic-bridge { background: var(--water); border-radius: 5px; }
 .ic-bridge.shut { background: var(--danger); }
 .mk { cursor: pointer; }
+.ic-cam { background: var(--ink-2); font-size: 11px; }
+.cam-mk .ic { width: 24px; height: 24px; font-size: 12px; }
+.rw-mk { background: rgba(233,238,221,.95); font-size: 12px; padding: 1px 6px 1px 3px; }
+.legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 1px solid #fff; }
+.cam img { display: block; width: 100%; min-height: 120px; background: var(--surface-2); border-radius: 6px; margin: 6px 0 4px; }
+.cam button, .cam-show { font: 700 12px/1 var(--body); padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); cursor: pointer; }
+.cam-show { margin-top: 6px; }
 .mk .ic { width: 28px; height: 28px; font-size: 15px; }
 
 .wx-mk { background: rgba(245,247,238,.94); border: 1px solid var(--line); border-radius: 14px; padding: 2px 8px 2px 4px;

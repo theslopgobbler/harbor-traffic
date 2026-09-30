@@ -91,14 +91,85 @@ $histDir = Join-Path $dataDir 'history'
 New-Item -ItemType Directory -Force $histDir | Out-Null
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
-$out = [ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Highway Alerts'; alerts = @($alerts) }
-[IO.File]::WriteAllText((Join-Path $dataDir 'wsdot-alerts.json'), ($out | ConvertTo-Json -Depth 6), $utf8)
-
-# compact history line: when, and what was active where
-$line = [ordered]@{
-    t = $now.ToString('o')
-    a = @($alerts | ForEach-Object { [ordered]@{ id = $_.id; k = $_.kind; r = $_.roadLabel; mp = $_.milepost; p = $_.priority } })
-} | ConvertTo-Json -Depth 4 -Compress
-[IO.File]::AppendAllText((Join-Path $histDir ($now.ToString('yyyy-MM') + '.jsonl')), $line + "`n", $utf8)
-
+function Save($name, $obj) {
+    [IO.File]::WriteAllText((Join-Path $dataDir $name), ($obj | ConvertTo-Json -Depth 6), $utf8)
+}
+Save 'wsdot-alerts.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Highway Alerts'; alerts = @($alerts) })
 "$($alerts.Count) alerts in region ($(@($raw).Count) statewide)"
+
+# ---------- the other WSDOT feeds; one failing never stops the rest ----------
+$base = 'https://wsdot.wa.gov/Traffic/api'
+function Wsdot($path) { $x = Invoke-RestMethod -Uri "$base/$($path)?AccessCode=$code" -TimeoutSec 60; foreach ($i in $x) { $i } }
+# the box is a rectangle; these corners are outside the area we cover (Chehalis/Centralia, Hood Canal)
+function In-Area($lat, $lon) {
+    if (-not (In-Box ([pscustomobject]@{ Latitude = $lat; Longitude = $lon }))) { return $false }
+    if ($lon -gt -123.05 -and $lat -lt 46.76) { return $false }
+    if ($lon -gt -123.30 -and $lat -gt 47.25) { return $false }
+    return $true
+}
+
+# cameras: just the list; the page loads an image only when someone clicks it
+$flowSummary = $null
+try {
+    $cams = @(Wsdot 'HighwayCameras/HighwayCamerasREST.svc/GetCamerasAsJson' | Where-Object {
+        $_.IsActive -and $_.CameraOwner -notmatch 'Aviation' -and $_.Title -notmatch 'Airport' -and
+        (In-Area $_.CameraLocation.Latitude $_.CameraLocation.Longitude)
+    } | Sort-Object CameraID | ForEach-Object { [ordered]@{
+        id = $_.CameraID; title = $_.Title; img = $_.ImageURL
+        road = Road-Label $_.CameraLocation.RoadName; mp = $_.CameraLocation.MilePost
+        lat = $_.CameraLocation.Latitude; lon = $_.CameraLocation.Longitude
+    } })
+    # rewrite only when the list changes, so the repo doesn't get a new copy every 10 minutes
+    $json = ([ordered]@{ source = 'WSDOT Highway Cameras'; cameras = $cams } | ConvertTo-Json -Depth 6)
+    $f = Join-Path $dataDir 'cameras.json'
+    if (-not (Test-Path $f) -or [IO.File]::ReadAllText($f) -ne $json) { [IO.File]::WriteAllText($f, $json, $utf8) }
+    "$($cams.Count) cameras"
+} catch { "cameras failed: $($_.Exception.Message)" }
+
+# roadside weather stations (actual readings on the highway, e.g. Cosmopolis Hill)
+try {
+    $st = @(Wsdot 'WeatherInformation/WeatherInformationREST.svc/GetCurrentWeatherInformationAsJson' |
+        Where-Object { In-Area $_.Latitude $_.Longitude } | ForEach-Object { [ordered]@{
+            id = $_.StationID; name = ($_.StationName -replace ' at mp [\d.]+$', ''); lat = $_.Latitude; lon = $_.Longitude
+            temp = $_.TemperatureInFahrenheit; wind = $_.WindSpeedInMPH; gust = $_.WindGustSpeedInMPH; dir = $_.WindDirectionCardinal
+            vis = $_.Visibility; precip = $_.PrecipitationInInches; humidity = $_.RelativeHumidity; time = To-Iso $_.ReadingTime
+        } })
+    Save 'road-weather.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Weather Stations'; stations = $st })
+    "$($st.Count) road weather stations"
+} catch { "road weather failed: $($_.Exception.Message)" }
+
+# live traffic sensors (only I-5 has them here). value: 0 no data, 1 wide open, 2 moderate, 3 heavy, 4 stop and go
+try {
+    $fl = @(Wsdot 'TrafficFlow/TrafficFlowREST.svc/GetTrafficFlowsAsJson' |
+        Where-Object { In-Area $_.FlowStationLocation.Latitude $_.FlowStationLocation.Longitude } | ForEach-Object {
+            $l = $_.FlowStationLocation
+            , @([math]::Round($l.Latitude, 5), [math]::Round($l.Longitude, 5), [int]$_.FlowReadingValue, $l.MilePost, "$($l.Direction)", (Road-Label $l.RoadName))
+        })
+    Save 'flow.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Traffic Flow'; fields = 'lat,lon,level,milepost,direction,road'; stations = $fl })
+    $flowSummary = [ordered]@{}
+    foreach ($g in ($fl | Group-Object { "$($_[5]) $($_[4])" })) {
+        $flowSummary[$g.Name] = @(1..4 | ForEach-Object { $lv = $_; @($g.Group | Where-Object { $_[2] -eq $lv }).Count })
+    }
+    "$($fl.Count) flow sensors"
+} catch { "flow failed: $($_.Exception.Message)" }
+
+# travel times touching the area (Olympia/Lacey/Tacoma)
+$ttSummary = $null
+try {
+    $tt = @(Wsdot 'TravelTimes/TravelTimesREST.svc/GetTravelTimesAsJson' |
+        Where-Object { (In-Area $_.StartPoint.Latitude $_.StartPoint.Longitude) -or (In-Area $_.EndPoint.Latitude $_.EndPoint.Longitude) } |
+        ForEach-Object { [ordered]@{ id = $_.TravelTimeID; name = $_.Name; now = $_.CurrentTime; avg = $_.AverageTime; miles = $_.Distance; time = To-Iso $_.TimeUpdated } })
+    Save 'travel-times.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Travel Times'; routes = $tt })
+    $ttSummary = [ordered]@{}; foreach ($x in $tt) { $ttSummary["$($x.id)"] = $x.now }
+    "$($tt.Count) travel times"
+} catch { "travel times failed: $($_.Exception.Message)" }
+
+# compact history line for the "worst times" report:
+# a = active alerts, f = I-5 sensors per level [open, moderate, heavy, stop-and-go] by direction, tt = travel minutes by route id
+$line = [ordered]@{
+    t  = $now.ToString('o')
+    a  = @($alerts | ForEach-Object { [ordered]@{ id = $_.id; k = $_.kind; r = $_.roadLabel; mp = $_.milepost; p = $_.priority } })
+    f  = $flowSummary
+    tt = $ttSummary
+} | ConvertTo-Json -Depth 5 -Compress
+[IO.File]::AppendAllText((Join-Path $histDir ($now.ToString('yyyy-MM') + '.jsonl')), $line + "`n", $utf8)

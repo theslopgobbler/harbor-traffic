@@ -46,11 +46,11 @@ window.HT = {
   // noOpen = weekday windows when marine openings are not allowed. Coordinates approximate.
   bridges: [
     { id: 'chehalis', name: 'Chehalis River Bridge', route: 'US 101', town: 'Aberdeen',
-      lat: 46.9690, lon: -123.8120,
+      lat: 46.9690, lon: -123.8120, cam: 10228,
       noOpen: [['07:15','08:15'],['16:15','17:15']],
       note: 'Weekday openings not allowed 7:15–8:15 a.m. and 4:15–5:15 p.m. Any time on weekends and federal holidays.' },
     { id: 'simpson', name: 'Simpson Ave Bridge', route: 'US 101', town: 'Hoquiam',
-      lat: 46.9765, lon: -123.8905, noOpen: [],
+      lat: 46.9765, lon: -123.8905, noOpen: [], cam: 10230,
       note: 'No time restrictions; boats call at least an hour ahead.' },
     { id: 'riverside', name: 'Riverside Bridge', route: 'US 101', town: 'Hoquiam',
       lat: 46.9818, lon: -123.8878, noOpen: [],
@@ -59,7 +59,7 @@ window.HT = {
       lat: 46.9770, lon: -123.8045, noOpen: [],
       note: 'Wishkah River. No time restrictions.' },
     { id: 'wishkah', name: 'Wishkah St Bridge', route: 'US 12', town: 'Aberdeen',
-      lat: 46.9763, lon: -123.8050, noOpen: [],
+      lat: 46.9763, lon: -123.8050, noOpen: [], cam: 10229,
       note: 'Wishkah River. No time restrictions.' }
   ]
 };
