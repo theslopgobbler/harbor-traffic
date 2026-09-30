@@ -3,14 +3,15 @@ window.HT = {
   // [west, south, east, north]: Hoh Rain Forest to South Bend, coast to I-5 at Olympia/Grand Mound
   bounds: [-124.45, 46.60, -122.80, 47.92],
 
-  // Views for the region buttons. bounds = [west, south, east, north]; null = everything
+  // Views for the region buttons. bounds = [west, south, east, north]; null = everything.
+  // chip = where the region's summary sits in the zoomed-out overview, a = which side of that point
   regions: [
     { id: 'all',     name: 'Full',          bounds: null },
-    { id: 'north',   name: 'North Coast',   bounds: [-124.45, 47.18, -123.72, 47.92] },
-    { id: 'harbor',  name: 'Harbor',        bounds: [-124.22, 46.86, -123.68, 47.08] },
-    { id: 'willapa', name: 'Willapa',       bounds: [-124.10, 46.60, -123.62, 46.93] },
-    { id: 'east',    name: 'East County',   bounds: [-123.72, 46.77, -123.10, 47.13] },
-    { id: 'olympia', name: 'Olympia · I-5', bounds: [-123.20, 46.74, -122.78, 47.12] }
+    { id: 'north',   name: 'North Coast',   bounds: [-124.45, 47.18, -123.72, 47.92], chip: [-124.02, 47.55] },
+    { id: 'harbor',  name: 'Harbor',        bounds: [-124.22, 46.86, -123.68, 47.08], chip: [-124.12, 47.02], a: 'right' },
+    { id: 'willapa', name: 'Willapa',       bounds: [-124.10, 46.60, -123.62, 46.93], chip: [-123.86, 46.72] },
+    { id: 'east',    name: 'East County',   bounds: [-123.72, 46.77, -123.10, 47.13], chip: [-123.42, 46.86], a: 'top' },
+    { id: 'olympia', name: 'Olympia · I-5', bounds: [-123.20, 46.74, -122.78, 47.12], chip: [-122.95, 47.10], a: 'bottom' }
   ],
 
   // a = which side of the town its weather label sits on (keeps close towns apart); minor = hidden in the zoomed-out view

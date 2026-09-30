@@ -204,6 +204,56 @@ try {
     "$($tt.Count) travel times"
 } catch { "travel times failed: $($_.Exception.Message)" }
 
+# ---------- marine: Grays Harbor wave buoy, NWS bar forecast, marine alerts (no key needed) ----------
+try {
+    $marine = [ordered]@{ updated = $now.ToString('o') }
+    $nwsHeaders = @{ 'User-Agent' = 'harbor-traffic (traffic.harborevents.org)'; Accept = 'application/ld+json' }
+    # NDBC 46211 (Grays Harbor, CDIP 036): newest line with a wave height. MM = missing.
+    try {
+        $lines = (Invoke-WebRequest -UseBasicParsing 'https://www.ndbc.noaa.gov/data/realtime2/46211.txt' -TimeoutSec 30).Content -split "`n" | Where-Object { $_ -and $_ -notmatch '^#' }
+        foreach ($ln in $lines) {
+            $f = $ln -split '\s+'
+            if ($f[8] -eq 'MM') { continue }
+            $num = { param($v) if ($v -eq 'MM') { $null } else { [double]$v } }
+            $wt = & $num $f[14]
+            $marine.buoy = [ordered]@{
+                station = '46211'; name = 'Grays Harbor buoy'
+                time    = ([DateTimeOffset]::new([int]$f[0], [int]$f[1], [int]$f[2], [int]$f[3], [int]$f[4], 0, [TimeSpan]::Zero)).ToString('o')
+                waveFt  = [math]::Round((& $num $f[8]) * 3.28084, 1)
+                periodS = & $num $f[9]
+                dirDeg  = & $num $f[11]
+                waterF  = if ($wt -ne $null) { [math]::Round($wt * 9 / 5 + 32, 1) } else { $null }
+            }
+            break
+        }
+    } catch { "buoy failed: $($_.Exception.Message)" }
+    # NWS Coastal Waters Forecast (Seattle office): the Grays Harbor Bar section
+    try {
+        $list = Invoke-RestMethod 'https://api.weather.gov/products/types/CWF/locations/SEW' -Headers $nwsHeaders -TimeoutSec 30
+        $prod = Invoke-RestMethod "https://api.weather.gov/products/$($list.'@graph'[0].id)" -Headers $nwsHeaders -TimeoutSec 30
+        $txt = $prod.productText -replace "`r", ''
+        if ($txt -match '(?s)Grays Harbor Bar-\n[^\n]*\n\n(.*?)\n\$\$') {
+            $body = ($Matches[1] -replace '\s*\n\s*', ' ').Trim()
+            $marine.bar = [ordered]@{
+                issued = $prod.issuanceTime
+                text   = $body
+                conditions = if ($body -match '(?i)Bar conditions ([^.]+)\.') { $Matches[1].Trim() } else { $null }
+                seas   = if ($body -match '(?i)Combined seas ([^.]+)\.') { $Matches[1].Trim() } else { $null }
+                ebb    = if ($body -match '(?i)((?:The )?(?:morning|afternoon|evening|night)? ?ebb[^.]*(?:very strong|strong)[^.]*)\.') { $Matches[1].Trim() } else { $null }
+            }
+        }
+    } catch { "bar forecast failed: $($_.Exception.Message)" }
+    # marine alerts touching our stretch of coast
+    try {
+        $ma = Invoke-RestMethod 'https://api.weather.gov/alerts/active?area=PZ' -Headers @{ 'User-Agent' = $nwsHeaders.'User-Agent'; Accept = 'application/geo+json' } -TimeoutSec 30
+        $marine.alerts = @($ma.features | Where-Object { $_.properties.areaDesc -match 'Grays Harbor|Point Grenville|Cape Shoalwater|Destruction Island|Willapa' } | ForEach-Object {
+            [ordered]@{ event = $_.properties.event; area = $_.properties.areaDesc; ends = $_.properties.ends; headline = $_.properties.headline }
+        })
+    } catch { "marine alerts failed: $($_.Exception.Message)" }
+    Save 'marine.json' $marine
+    "marine: waves $($marine.buoy.waveFt) ft, bar $($marine.bar.conditions)"
+} catch { "marine failed: $($_.Exception.Message)" }
+
 # compact history line for the "worst times" report:
 # a = active alerts, f = I-5 sensors per level [open, moderate, heavy, stop-and-go] by direction, tt = travel minutes by route id
 $line = [ordered]@{

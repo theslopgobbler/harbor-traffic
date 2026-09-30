@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=6" rel="stylesheet">
+<link href="styles.css?v=7" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -19,7 +19,11 @@
     <div class="sub">GRAYS HARBOR · COAST · I-5 <span class="live"><i></i>LIVE</span></div>
   </div>
   <nav class="regions" id="regions" aria-label="Map region"></nav>
-  <div class="tide" id="tide" title="Tide at Westport (NOAA predictions)">
+  <div class="gauge" id="windGauge" title="Wind at Westport (NOAA station 9441102)">
+    <svg id="windDial" viewBox="0 0 60 60" aria-hidden="true"></svg>
+    <div class="gauge-txt"><span>WIND</span><b id="windDir">---</b><i id="windSpd">-- KT</i></div>
+  </div>
+  <div class="tide" id="tide" title="Tide at Aberdeen (NOAA predictions)">
     <div class="tide-head"><span>TIDE LEVEL</span><b id="tideNow">--</b></div>
     <svg id="tideChart" viewBox="0 0 160 40" preserveAspectRatio="none" aria-hidden="true"></svg>
     <div class="tide-foot" id="tideNext"></div>
@@ -44,6 +48,11 @@
       <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar">◫<span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
       <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects">❅<span> WX FX</span><b class="off">✕</b></button>
     </div>
+    <button class="sea" id="sea" type="button" aria-label="Sea and bar conditions: open details">
+      <div class="sea-head"><span>SEA STATE</span><b id="seaBar">BAR --</b></div>
+      <svg id="seaWave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="sea-row"><span id="seaWaves">WAVES --</span><span id="seaWater">WATER --</span></div>
+    </button>
     <div class="legend" aria-hidden="true">
       <span><b class="x">✕</b>CLOSED</span>
       <span><b class="tri">△</b>ALERT</span>
@@ -65,12 +74,13 @@
 
     <nav class="tabs" role="tablist">
       <button role="tab" data-tab="roads" aria-selected="true">ROADS <b id="nRoads"></b></button>
-      <button role="tab" data-tab="alerts" aria-selected="false">WX ALERT <b id="nAlerts"></b></button>
+      <button role="tab" data-tab="alerts" aria-selected="false">ALERTS <b id="nAlerts"></b></button>
       <button role="tab" data-tab="bridges" aria-selected="false">BRIDGES</button>
-      <button role="tab" data-tab="weather" aria-selected="false">WEATHER</button>
+      <button role="tab" data-tab="weather" aria-selected="false">WX</button>
+      <button role="tab" data-tab="sea" aria-selected="false">SEA</button>
     </nav>
 
-    <section class="tab" id="tab-roads"><h2>CLOSURES / INCIDENTS</h2><ul id="roadList" class="list"></ul>
+    <section class="tab" id="tab-roads"><div id="overview" class="overview"></div><h2>CLOSURES / INCIDENTS</h2><ul id="roadList" class="list"></ul>
       <h2>TRAVEL TIMES</h2><ul id="travelList" class="list"></ul></section>
     <section class="tab" id="tab-alerts"><h2>WEATHER ALERTS</h2><ul id="alertList" class="list"></ul></section>
     <section class="tab" id="tab-bridges"><h2>DRAWBRIDGES</h2><ul id="bridgeList" class="list"></ul>
@@ -78,13 +88,14 @@
     <section class="tab" id="tab-weather"><h2>TOWNS</h2><ul id="wxList" class="list wx"></ul>
       <h2>ROADSIDE SENSORS</h2><ul id="roadWxList" class="list wx"></ul>
       <p class="fine">Readings from WSDOT weather stations on the highway itself.</p></section>
+    <section class="tab" id="tab-sea"><h2>GRAYS HARBOR BAR</h2><div id="seaDetail"></div></section>
   </aside>
 </main>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=6"></script>
-<script src="app.js?v=6"></script>
-<script src="wx.js?v=6"></script>
+<script src="config.js?v=7"></script>
+<script src="app.js?v=7"></script>
+<script src="wx.js?v=7"></script>
 </body>
 </html>

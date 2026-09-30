@@ -35,7 +35,8 @@
 
   // ---------------- map ----------------
   const [W, S, E, N] = C.bounds;
-  const pad = 0.35;
+  const pad = 1.0;
+  const OVERVIEW_Z = 8.4; // below this zoom: region summaries instead of town-by-town detail
   const dem = new mlcontour.DemSource({
     url: 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png',
     encoding: 'terrarium', maxzoom: 12, worker: true
@@ -67,6 +68,10 @@
         elevationKey: 'ele', levelKey: 'level', contourLayer: 'contours'
       })] },
       outside: { type: 'geojson', data: outside },
+      regionboxes: { type: 'geojson', data: { type: 'FeatureCollection', features: C.regions.filter((r) => r.bounds).map((r) => {
+        const [w, s, e, n] = r.bounds;
+        return { type: 'Feature', properties: { name: r.name }, geometry: { type: 'Polygon', coordinates: [[[w, s], [e, s], [e, n], [w, n], [w, s]]] } };
+      }) } },
       flow: { type: 'geojson', data: empty },
       incidents: { type: 'geojson', data: empty }
     },
@@ -122,6 +127,9 @@
         paint: { 'line-color': ['get', 'color'], 'line-width': zwIf(['==', ['get', 'kind'], 'closure'], [4, 9], [3, 7]) } },
       { id: 'outside', type: 'fill', source: 'outside', paint: { 'fill-color': '#000000', 'fill-opacity': 0.6 } },
       { id: 'outside-edge', type: 'line', source: 'outside', paint: { 'line-color': K.cyan, 'line-opacity': 0.35, 'line-width': 1, 'line-dasharray': [4, 4] } },
+      // the region boxes, only in the zoomed-out overview
+      { id: 'region-box', type: 'line', source: 'regionboxes', maxzoom: OVERVIEW_Z,
+        paint: { 'line-color': K.cyan, 'line-opacity': 0.5, 'line-width': 1, 'line-dasharray': [2, 3] } },
       { id: 'water-name', type: 'symbol', source: 'omt', 'source-layer': 'water_name', minzoom: 8,
         layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': 11, 'text-letter-spacing': 0.25 },
         paint: { 'text-color': '#0bb3cc', 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
@@ -143,7 +151,7 @@
 
   const map = new maplibregl.Map({
     container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 30 },
-    maxBounds: [W - pad, S - pad, E + pad, N + pad], minZoom: 7, maxZoom: 16,
+    maxBounds: [W - pad, S - pad, E + pad, N + pad], minZoom: 5.5, maxZoom: 16,
     dragRotate: false, pitchWithRotate: false, touchPitch: false, attributionControl: { compact: true },
     interactive: !TV
   });
@@ -267,8 +275,8 @@
     announceWeather();
   }
   // wx.js (radar, sky icon, weather effects) listens for this
-  const announceWeather = () => window.dispatchEvent(new CustomEvent('ht:weather', {
-    detail: { wx: state.wx, zonesByTown: state.zonesByTown, nws: state.nws, towns: C.towns } }));
+  const announceWeather = () => (renderOverview(), window.dispatchEvent(new CustomEvent('ht:weather', {
+    detail: { wx: state.wx, zonesByTown: state.zonesByTown, nws: state.nws, towns: C.towns } })));
   async function loadAlerts() {
     const j = await nws('https://api.weather.gov/alerts/active?area=WA');
     state.nws = j.features.map((f) => f.properties);
@@ -420,6 +428,10 @@
     rwMarkers.forEach((m) => (m.getElement().style.display = z >= 10 ? '' : 'none'));
     bridgeChip.style.display = z >= 11 ? 'none' : '';
     for (const { el } of Object.values(bridgeMarkers)) el.style.display = z >= 11 ? '' : 'none';
+    const ov = z < OVERVIEW_Z;
+    document.body.classList.toggle('overview-mode', ov);
+    regionChips.forEach(({ el }) => (el.style.display = ov ? '' : 'none'));
+    if (ov !== lastOverview) { lastOverview = ov; renderOverview(); }
     for (const { el, dot, minor } of Object.values(wxMarkers)) {
       const hide = minor && z < 8.6;
       el.style.display = hide ? 'none' : '';
@@ -428,6 +440,56 @@
     groupAlerts();
   }
   map.on('zoomend', showByZoom);
+
+  // ---------------- overview (zoomed out): one summary per region ----------------
+  const CODE_RANK = { TSTM: 9, ICE: 8, SNOW: 7, RAIN: 5, SHWR: 4, FOG: 3, WIND: 3, HAZE: 2, CLDY: 1, PCLD: 1, SUN: 0, CLR: 0, '---': -1 };
+  const inBox = (lat, lon, [w, s, e, n]) => lon >= w && lon <= e && lat >= s && lat <= n;
+  let lastOverview = null;
+  const regionChips = C.regions.filter((r) => r.bounds).map((r) => {
+    const el = document.createElement('div');
+    el.className = 'wx-mk rg-chip';
+    el.addEventListener('click', () => { store.set('ht.region', r.id); showRegion(r.id); });
+    const [w, s, e, n] = r.bounds;
+    return { r, el, m: new maplibregl.Marker({ element: el, anchor: r.a || 'center' }).setLngLat(r.chip || [(w + e) / 2, (s + n) / 2]).addTo(map) };
+  });
+  function regionSummary(r) {
+    const towns = C.towns.filter((t) => inBox(t.lat, t.lon, r.bounds) && state.wx[t.id]);
+    const temps = towns.map((t) => state.wx[t.id].temp);
+    const codes = towns.map((t) => wxCode(state.wx[t.id].f, state.wx[t.id].day));
+    const worst = codes.sort((a, b) => (CODE_RANK[b] ?? 0) - (CODE_RANK[a] ?? 0))[0] || '---';
+    const roads = state.roads.filter((x) => x.lat && inBox(x.lat, x.lon, r.bounds));
+    const zones = new Set(C.towns.filter((t) => inBox(t.lat, t.lon, r.bounds)).flatMap((t) => state.zonesByTown[t.id] || []));
+    const wxAlerts = state.nws.filter((a) => (a.affectedZones || []).some((z) => zones.has(z)));
+    return { temps, worst, closures: roads.filter((x) => x.kind === 'closure'), alerts: roads.filter((x) => x.kind !== 'closure'), wxAlerts };
+  }
+  const tempRange = (t) => !t.length ? '--°' : Math.min(...t) === Math.max(...t) ? `${t[0]}°` : `${Math.min(...t)}–${Math.max(...t)}°`;
+  const counts = (s) => (s.closures.length ? `<span class="x">✕${s.closures.length}</span> ` : '') +
+    (s.alerts.length ? `<span class="a">△${s.alerts.length}</span> ` : '') +
+    (s.wxAlerts.length ? `<span class="a">⚠${s.wxAlerts.length}</span>` : '') ||
+    '<span class="ok">ROADS CLEAR</span>';
+  function renderOverview() {
+    for (const { r, el } of regionChips) {
+      const s = regionSummary(r);
+      el.classList.toggle('bad', s.closures.length > 0);
+      el.innerHTML = `<span class="nm">${esc(r.name.toUpperCase())}</span><span class="t">${tempRange(s.temps)}</span><span class="c">${s.worst}</span><span class="k">${counts(s).replace('ROADS CLEAR', 'CLEAR')}</span>`;
+    }
+    const box = $('#overview');
+    if (!box) return;
+    if (!lastOverview) { box.innerHTML = ''; return; }
+    box.innerHTML = `<h2>REGION OVERVIEW</h2><ul class="list">${regionChips.map(({ r }) => {
+      const s = regionSummary(r);
+      const top = s.closures[0] || s.alerts.find((a) => a.kind === 'collision') || s.alerts[0];
+      return `<li class="clickable ${s.closures.length ? 'k-closure' : s.alerts.length ? 'k-work' : ''}" data-r="${r.id}">
+        <span><span class="rg">${esc(r.name.toUpperCase())}</span> · ${tempRange(s.temps)} ${s.worst}</span><span class="cnt">${counts(s)}</span>
+        ${s.wxAlerts.length ? `<span class="m">⚠ ${esc([...new Set(s.wxAlerts.map((a) => a.event.toUpperCase()))].join(' · '))}</span>` : ''}
+        ${top ? `<span class="m">${esc(kindLabel[top.kind])}: ${esc(top.headline.slice(0, 110))}${top.headline.length > 110 ? '…' : ''}</span>` : ''}</li>`;
+    }).join('')}</ul>`;
+  }
+  $('#overview').addEventListener('click', (e) => {
+    const li = e.target.closest('li[data-r]'); if (!li) return;
+    store.set('ht.region', li.dataset.r);
+    showRegion(li.dataset.r);
+  });
 
   // zoomed out, alerts that would sit on top of each other merge into one triangle with a count
   const groupMarkers = [];
@@ -563,6 +625,7 @@
       roadMarkers.push({ el, m, kind: r.kind });
     }
     showByZoom();
+    renderOverview();
 
     $('#nRoads').textContent = list.filter((r) => r.kind === 'closure' || r.kind === 'collision').length || '';
     const stale = state.roadsUpdated ? `WSDOT SYNC ${fmtWhen(state.roadsUpdated)}` : 'WSDOT FEED OFFLINE';

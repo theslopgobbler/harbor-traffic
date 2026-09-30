@@ -175,6 +175,34 @@
     return (zoneGeo[url] = g);
   }
 
+  // forecast precipitation rate (mm per hour) right now at a town, from the NWS grid data.
+  // The grid file is large, so each one is kept for 30 minutes.
+  async function precipRate(townId, snow) {
+    try {
+      const pts = store.get('ht.points') || {};
+      const hourly = pts[townId]?.hourly;
+      if (!hourly) return null;
+      const url = hourly.replace('/forecast/hourly', '');
+      const key = 'ht.grid.' + url.split('/').slice(-2).join('.');
+      let g = null;
+      try { g = JSON.parse(sessionStorage.getItem(key)); } catch {}
+      if (!g || Date.now() - g.at > 30 * 60 * 1000) {
+        const j = await (await fetch(url, { headers: { Accept: 'application/geo+json' } })).json();
+        const pick = (p) => (j.properties?.[p]?.values || []);
+        g = { at: Date.now(), qpf: pick('quantitativePrecipitation'), snow: pick('snowfallAmount') };
+        try { sessionStorage.setItem(key, JSON.stringify(g)); } catch {}
+      }
+      const now = Date.now();
+      for (const v of snow ? g.snow : g.qpf) {
+        const [start, dur] = v.validTime.split('/');
+        const h = (+(dur.match(/(\d+)D/)?.[1] || 0)) * 24 + (+(dur.match(/(\d+)H/)?.[1] || 0)) || 1;
+        const t0 = Date.parse(start);
+        if (now >= t0 && now < t0 + h * 36e5) return (v.value || 0) / h;
+      }
+    } catch (e) { console.warn('precip rate', e); }
+    return null;
+  }
+
   const words = ['', 'LIGHT', 'MOD', 'HEAVY'];
   const kindWord = { rain: 'RAIN', snow: 'SNOW', hail: 'HAIL', storm: 'T-STORM', fog: 'FOG' };
   function zoneLabel(c) {
@@ -191,9 +219,10 @@
       const url = (zonesByTown[t.id] || [])[0], w = wx[t.id];
       if (!url || !w) continue;
       const c = classify(w.f, w.windMph);
-      c.windMph = w.windMph; c.windDir = w.windDir;
+      c.windMph = w.windMph; c.windDir = w.windDir; c.pop = w.rain; c.town = t.id;
       const z = byZone[url];
       if (!z) { byZone[url] = c; continue; }
+      if (w.rain != null) z.pop = Math.max(z.pop ?? 0, w.rain);
       if (RANK[c.kind] > RANK[z.kind] || (c.kind === z.kind && c.level > z.level)) Object.assign(z, { kind: c.kind, level: c.level });
       if (c.wind > z.wind || (c.windMph || 0) > (z.windMph || 0)) Object.assign(z, { wind: Math.max(c.wind, z.wind), windMph: c.windMph, windDir: c.windDir });
       z.cloud = Math.max(z.cloud, c.cloud);
@@ -202,6 +231,7 @@
     for (const [url, c] of Object.entries(byZone)) {
       fromAlerts(url, nws, c);
       if (c.kind === 'none' && !c.wind) continue;
+      if (['rain', 'storm', 'snow', 'hail'].includes(c.kind) && !previewing) c.rate = await precipRate(c.town, c.kind === 'snow');
       try {
         const g = await zoneGeometry(url);
         if (!g) continue;
@@ -228,6 +258,7 @@
     if (home) { skyCond = classify(home.f, home.windMph); skySvg(); }
   }
   let pendingZones = null;
+  let previewing = false; // htWx.preview() in use: skip the real precipitation rates
   function addZoneLayers() {
     if (map.getSource('wxzones')) return;
     map.addSource('wxzones', { type: 'geojson', data: pendingZones ? pendingZones[0] : empty });
@@ -279,25 +310,38 @@
   }
 
   // particles per 10,000 square pixels, by level
-  const DENSITY = { rain: [0, 4, 9, 16], storm: [0, 9, 13, 18], snow: [0, 5, 10, 16], hail: [0, 6, 9, 12], fog: [0, 0.15, 0.25, 0.35], wind: [0, 1, 2, 3.5] };
+  // particles per 10,000 square pixels at the heaviest rate; lighter precipitation scales this down
+  const DENSITY = { rain: 16, storm: 18, snow: 16, hail: 12, fog: 0.35, wind: 3.5 };
   const MAX = 2600;
   const rnd = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  // 0..1: how hard it's coming down. Uses the forecast precipitation rate when we have it
+  // (NWS: heavy rain is 7.6 mm/h and up), otherwise the forecast wording and chance of rain.
+  function share(c) {
+    if (c.kind === 'fog') return [0, 0.45, 0.7, 1][c.level];
+    if (c.rate != null) {
+      const heavy = c.kind === 'snow' ? 25 : 7.6;
+      return clamp(0.06 + c.rate / heavy, 0.06, 1);
+    }
+    const base = [0, 0.25, 0.55, 1][c.level];
+    return base * (c.pop != null ? clamp(c.pop / 100, 0.35, 1) : 1);
+  }
   function resetParticles() {
     if (dirty) reproject();
     let budget = MAX;
     for (const z of zones) {
       const b = z.box, area = Math.max(0, b.x1 - b.x0) * Math.max(0, b.y1 - b.y0);
       const c = z.cond;
-      const n = (k, lv) => Math.min(budget, Math.round(area / 1e4 * DENSITY[k][lv]));
+      const n = (k, f) => Math.min(budget, Math.round(area / 1e4 * DENSITY[k] * f));
       z.fall = []; z.gusts = []; z.fogs = [];
       if (c.kind !== 'none') {
         const k = c.kind === 'fog' ? 'fog' : c.kind;
-        const count = n(k, c.level); budget -= count;
+        const count = n(k, share(c)); budget -= count;
         const arr = c.kind === 'fog' ? z.fogs : z.fall;
         for (let i = 0; i < count; i++) arr.push(spawn(z, c.kind === 'fog' ? 'fog' : c.kind === 'storm' ? 'rain' : c.kind, true));
       }
       if (c.wind) {
-        const count = n('wind', c.wind); budget -= count;
+        const count = n('wind', c.wind / 3); budget -= count;
         for (let i = 0; i < count; i++) z.gusts.push(spawn(z, 'wind', true));
       }
       z.flash = 0; z.bolt = null; z.nextBolt = performance.now() + rnd(1500, 6000);
@@ -308,10 +352,11 @@
     const x = rnd(b.x0, b.x1), y = anywhere ? rnd(b.y0, b.y1) : b.y0 - 10;
     switch (kind) {
       case 'rain': { const s = rnd(7, 12) + z.cond.level * 2; return { kind, x, y, vx: w.x * windy * 4, vy: s, len: rnd(8, 14) + z.cond.level * 3 }; }
-      case 'snow': return { kind, x, y, vx: w.x * windy * 1.5, vy: rnd(0.6, 1.4), r: rnd(0.8, 2), ph: rnd(0, 6.28) };
+      case 'snow': return { kind, x, y, vx: w.x * windy * 2.5, vy: rnd(0.6, 1.4), r: rnd(0.8, 2), ph: rnd(0, 6.28) };
       case 'hail': return { kind, x, y, vx: w.x * windy * 2, vy: rnd(9, 14), r: rnd(1.2, 2.2) };
       case 'fog': return { kind, x, y, vx: 0.15 + w.x * 0.3, vy: 0, r: rnd(30, 70), a: rnd(0.04, 0.09) };
-      case 'wind': { const sp = 3 + z.cond.wind * 1.5; return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: w.x * sp, vy: w.y * sp, len: rnd(18, 40), life: 0, max: rnd(40, 90) }; }
+      // mostly sideways (east/west), like the rain's slant, with only a hint of the north/south part
+      case 'wind': { const sp = 3 + z.cond.wind * 1.5; return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: (Math.abs(w.x) < 0.2 ? Math.sign(w.x || 1) * 0.6 : w.x) * sp, vy: w.y * sp * 0.15, len: rnd(18, 40), life: 0, max: rnd(40, 90) }; }
     }
   }
   function boltPath(z) {
@@ -451,6 +496,97 @@
   loadTide();
   setInterval(loadTide, 10 * 60 * 1000);
 
+  // ================= wind gauge (NOAA Westport station, observed; aviation style in knots) =================
+  function dialSvg(deg, kt) {
+    const ticks = Array.from({ length: 36 }, (_, i) => {
+      const a = i * 10 * Math.PI / 180, long = i % 3 === 0, r1 = long ? 21 : 23.5;
+      return `<line x1="${(30 + Math.sin(a) * r1).toFixed(1)}" y1="${(30 - Math.cos(a) * r1).toFixed(1)}" x2="${(30 + Math.sin(a) * 26).toFixed(1)}" y2="${(30 - Math.cos(a) * 26).toFixed(1)}"
+        stroke="${long ? '#c4ffe9' : '#1d6358'}" stroke-width="${long ? 1.2 : 0.8}"/>`;
+    }).join('');
+    const card = [['N', 30, 14], ['E', 46.5, 32.2], ['S', 30, 49.5], ['W', 13.5, 32.2]]
+      .map(([t, x, y]) => `<text x="${x}" y="${y}" text-anchor="middle" font-size="6.5" fill="${t === 'N' ? '#ffc400' : '#5f9c8b'}" font-family="Share Tech Mono, monospace">${t}</text>`).join('');
+    // the needle points to where the wind comes FROM, like a vane; the tail shows where it's going
+    const needle = deg == null ? '' : `<g transform="rotate(${deg} 30 30)" style="filter:drop-shadow(0 0 2px #ffc400)">
+      <polygon points="30,7 33,20 30,17.5 27,20" fill="#ffc400"/><line x1="30" y1="18" x2="30" y2="46" stroke="#ffc400" stroke-width="1.4"/>
+      <path d="M26.5 44 L30 47 L33.5 44 M26.5 40.5 L30 43.5 L33.5 40.5" fill="none" stroke="#00e5ff" stroke-width="1.1"/></g>`;
+    return `<circle cx="30" cy="30" r="28.5" fill="#020807" stroke="#1d6358" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#12403a" stroke-width=".6"/>${ticks}${card}${needle}
+      <circle cx="30" cy="30" r="2.4" fill="#020807" stroke="#ffc400" stroke-width="1"/>`;
+  }
+  async function loadWind() {
+    try {
+      const j = await (await fetch('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=wind&date=latest&station=9441102&units=english&time_zone=lst_ldt&format=json&application=harbor_traffic')).json();
+      const d = j.data?.[0];
+      if (!d) throw new Error('no wind');
+      const kt = Math.round(+d.s), gust = Math.round(+d.g), deg = +d.d;
+      $('#windDial').innerHTML = dialSvg(kt < 1 ? null : deg, kt);
+      $('#windDir').textContent = kt < 1 ? 'CALM' : `${d.dr} ${String(Math.round(deg)).padStart(3, '0')}°`;
+      $('#windSpd').textContent = kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`;
+      $('#windGauge').title = `Wind at Westport: from the ${d.dr} at ${kt} knots (${Math.round(kt * 1.151)} mph)${gust ? `, gusts ${gust} kt` : ''}. Observed ${d.t}.`;
+    } catch (e) {
+      console.warn('wind', e);
+      $('#windDial').innerHTML = dialSvg(null, 0);
+    }
+  }
+  loadWind();
+  setInterval(loadWind, 6 * 60 * 1000);
+
+  // ================= sea state (Grays Harbor buoy + NWS bar forecast, saved by the collector) =================
+  const compass = (deg) => DIRS[Math.round(((deg % 360) + 360) % 360 / 22.5) % 16];
+  // light / moderate / rough / severe, from the first thing the bar forecast says
+  const barLevel = (s = '') => /severe|very rough|closed|restrict/i.test(s.split(/becoming|,/)[0]) ? 3
+    : /rough/i.test(s.split(/becoming|,/)[0]) ? 2 : /moderate/i.test(s.split(/becoming|,/)[0]) ? 1 : 0;
+  const barColor = ['#39ff88', '#ffc400', '#ff7a1a', '#ff2a3d'];
+  let waveAmp = 4, wavePeriod = 10, waveColor = '#00e5ff';
+  function drawWave(t) {
+    // two waves moving at a speed tied to the swell period
+    const ph = (t / 1000) * (2 * Math.PI / Math.max(4, wavePeriod)) * 2;
+    let d1 = '', d2 = '';
+    for (let x = 0; x <= 120; x += 3) {
+      const y1 = 12 + Math.sin(x / 9 - ph) * waveAmp;
+      const y2 = 14 + Math.sin(x / 6 - ph * 1.4 + 1) * waveAmp * 0.45;
+      d1 += `${x ? 'L' : 'M'}${x} ${y1.toFixed(1)}`; d2 += `${x ? 'L' : 'M'}${x} ${y2.toFixed(1)}`;
+    }
+    $('#seaWave').innerHTML = `<path d="${d1}" fill="none" stroke="${waveColor}" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+      <path d="${d2}" fill="none" stroke="${waveColor}" stroke-opacity=".45" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+  }
+  let waveLast = 0;
+  (function waveLoop(t) { requestAnimationFrame(waveLoop); if (t - waveLast > 60 && !document.hidden) { waveLast = t; drawWave(REDUCED ? 0 : t); } })(0);
+
+  async function loadSea() {
+    let m = null, waterWestport = null;
+    try { m = await (await fetch(`data/marine.json?t=${Date.now()}`, { cache: 'no-store' })).json(); } catch {}
+    try {
+      const j = await (await fetch('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=water_temperature&date=latest&station=9441102&units=english&time_zone=lst_ldt&format=json&application=harbor_traffic')).json();
+      waterWestport = j.data?.[0] ? +j.data[0].v : null;
+    } catch {}
+    const b = m?.buoy, bar = m?.bar, lvl = barLevel(bar?.conditions);
+    waveColor = bar ? barColor[lvl] : '#00e5ff';
+    if (b?.waveFt != null) { waveAmp = clamp(b.waveFt / 2.2, 1.2, 10); wavePeriod = b.periodS || 10; }
+    const water = waterWestport ?? b?.waterF;
+    $('#seaBar').textContent = bar?.conditions ? `BAR ${bar.conditions.toUpperCase().replace(', BECOMING', ' →')}` : 'BAR --';
+    $('#seaBar').style.color = waveColor;
+    $('#seaWaves').textContent = b?.waveFt != null ? `WAVES ${b.waveFt}FT @${b.periodS}S ${compass(b.dirDeg)}` : 'WAVES --';
+    $('#seaWater').textContent = water != null ? `WATER ${Math.round(water)}°` : '';
+    const alerts = m?.alerts || [];
+    $('#sea').classList.toggle('alert', alerts.length > 0 || lvl >= 2);
+    const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const when = (iso) => iso ? new Date(iso).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
+    $('#seaDetail').innerHTML = `
+      <ul class="list">
+        ${alerts.map((a) => `<li class="k-closure"><div class="t">${esc(a.event.toUpperCase())}</div><div class="m">${esc(a.area)}${a.ends ? ' · UNTIL ' + esc(when(a.ends)) : ''}</div></li>`).join('')}
+        <li style="border-left-color:${waveColor}"><div class="t">BAR: ${esc((bar?.conditions || 'no forecast').toUpperCase())}</div>
+          <div class="m">${esc(bar?.text || '')}</div><div class="m">NWS COASTAL FORECAST · ${esc(when(bar?.issued))}</div></li>
+        <li><div class="t">WAVES ${b?.waveFt ?? '--'} FT · ${b?.periodS ?? '--'} S · FROM ${b?.dirDeg != null ? compass(b.dirDeg) + ' ' + b.dirDeg + '°' : '--'}</div>
+          <div class="m">GRAYS HARBOR BUOY 46211 · ${esc(when(b?.time))}</div></li>
+        <li><div class="t">WATER ${water != null ? Math.round(water) + '°F' : '--'}</div><div class="m">${waterWestport != null ? 'WESTPORT (NOAA 9441102)' : 'GRAYS HARBOR BUOY'}</div></li>
+      </ul>
+      <p class="fine">Check with the Coast Guard (Station Grays Harbor) for bar restrictions before crossing. This is a summary, not a navigation aid.</p>`;
+  }
+  $('#sea').addEventListener('click', () => document.querySelector('.tabs button[data-tab="sea"]')?.click());
+  loadSea();
+  setInterval(loadSea, 10 * 60 * 1000);
+
   // ================= wiring =================
   const ready = () => { addRadar(); addZoneLayers(); setRadar(radarOn); setFx(fxOn); };
   if (map.isStyleLoaded()) ready(); else map.once('load', ready);
@@ -468,7 +604,8 @@
     debug: () => zones.map((z) => ({ zone: z.url.split('/').pop(), kind: z.cond.kind, level: z.cond.level, box: z.box, fall: z.fall?.length, gusts: z.gusts?.length })),
     preview(forecast, windMph = 10, windDir = 'SW') {
       if (!lastWx) return 'weather not loaded yet';
-      const wx = Object.fromEntries(Object.entries(lastWx.wx).map(([k, v]) => [k, { ...v, f: forecast, windMph, windDir }]));
+      const wx = Object.fromEntries(Object.entries(lastWx.wx).map(([k, v]) => [k, { ...v, f: forecast, windMph, windDir, rain: 100 }]));
+      previewing = true;
       updateZones({ ...lastWx, wx });
       return 'previewing; reload the page to go back to live weather';
     }
