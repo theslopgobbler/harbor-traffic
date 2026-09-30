@@ -344,6 +344,7 @@
   async function loadFlow() {
     try {
       const j = await getJson('data/flow.json');
+      state.flowUpdated = j.updated;
       // join neighbouring sensors (by milepost, per direction) into colored road segments
       const groups = {};
       for (const [lat, lon, level, mp, dir, road] of j.stations || []) (groups[`${road}|${dir}`] ||= []).push({ lat, lon, level, mp, dir });
@@ -356,7 +357,7 @@
           if (Math.abs(a.mp - b.mp) > 1.6) continue;
           const level = Math.max(a.level, b.level);
           if (!level) continue;
-          features.push({ type: 'Feature', properties: { level, color: flowColor[level] },
+          features.push({ type: 'Feature', properties: { level, color: flowColor[level], dir: a.dir, mp: `${Math.min(a.mp, b.mp)}–${Math.max(a.mp, b.mp)}` },
             geometry: { type: 'LineString', coordinates: [[a.lon, a.lat], [b.lon, b.lat]] } });
         }
       }
@@ -440,6 +441,34 @@
   }
 
   const midpoint = (path) => path[Math.floor(path.length / 2)];
+  const alertHtml = (r) => `<h3>${esc(kindLabel[r.kind])} · ${esc(r.roadLabel)}${r.milepost ? ' MP ' + esc(r.milepost) : ''}${r.direction && r.direction !== 'B' ? ' ' + esc(r.direction) + 'B' : ''}</h3>
+    <p>${esc(r.headline.replace(/\s*More info\.?$/i, ''))}</p>${r.description ? `<p class="m">${esc(r.description)}</p>` : ''}
+    <div class="m">${esc(r.category || '')}${r.start ? ` · SINCE ${esc(fmtWhen(r.start))}` : ''}${r.end ? ` · UNTIL ${esc(fmtWhen(r.end))}` : ''}${r.link && /^https:/.test(r.link) ? ` · <a href="${esc(r.link)}" target="_blank" rel="noopener">WSDOT DETAILS</a>` : ''}</div>`;
+
+  // the stretches themselves are clickable (the wide glow layer makes an easy target, even on a phone)
+  const flowText = ['NO DATA', 'WIDE OPEN', 'MODERATE', 'HEAVY', 'STOP AND GO'];
+  const linePopup = new maplibregl.Popup({ offset: 6, maxWidth: '320px' });
+  map.on('click', (e) => {
+    if (!map.getLayer('inc-glow')) return;
+    const box = [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]];
+    const inc = map.queryRenderedFeatures(box, { layers: ['inc-glow', 'inc'] });
+    // closures first when stretches overlap
+    const hit = inc.sort((a, b) => (b.properties.kind === 'closure') - (a.properties.kind === 'closure'))[0];
+    if (hit) {
+      const r = state.roads.find((x) => x.id === hit.properties.id);
+      if (r) return linePopup.setLngLat(e.lngLat).setHTML(alertHtml(r)).addTo(map);
+    }
+    const fl = map.queryRenderedFeatures(box, { layers: ['flow-glow', 'flow'] })[0];
+    if (fl) {
+      const p = fl.properties;
+      linePopup.setLngLat(e.lngLat).setHTML(`<h3>I-5 ${esc(p.dir)} · MP ${esc(p.mp)}</h3>
+        <p style="color:${esc(p.color)}">${flowText[p.level]}</p><div class="m">LIVE WSDOT SENSOR · UPDATED ${esc(fmtWhen(state.flowUpdated))}</div>`).addTo(map);
+    }
+  });
+  for (const id of ['inc-glow', 'flow-glow', 'flow']) {
+    map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
+    map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
+  }
   const X_SVG = `<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="4,10 10,4 20,14 30,4 36,10 26,20 36,30 30,36 20,26 10,36 4,30 14,20"
     fill="${K.red}" stroke="#ffb3ba" stroke-width="1" stroke-linejoin="miter"/></svg>`;
 
@@ -465,7 +494,7 @@
 
     // stretches on the map
     const features = state.roads.filter((r) => Array.isArray(r.path) && r.path.length > 1).map((r) => ({
-      type: 'Feature', properties: { kind: r.kind, color: kindColor[r.kind] || K.dim },
+      type: 'Feature', properties: { id: r.id, kind: r.kind, color: kindColor[r.kind] || K.dim },
       geometry: { type: 'LineString', coordinates: r.path } }));
     // closures draw on top
     features.sort((a, b) => (a.properties.kind === 'closure') - (b.properties.kind === 'closure'));
@@ -478,9 +507,7 @@
       if (r.kind === 'closure') { el.className = 'x-mk'; el.innerHTML = X_SVG; }
       else { el.className = `inc-mk ${r.kind}`; el.textContent = r.kind === 'collision' ? '!' : ''; }
       const at = Array.isArray(r.path) && r.path.length > 1 ? midpoint(r.path) : [r.lon, r.lat];
-      const m = new maplibregl.Marker({ element: el }).setLngLat(at)
-        .setPopup(popup(`<h3>${esc(kindLabel[r.kind])} · ${esc(r.roadLabel)}${r.milepost ? ' MP ' + esc(r.milepost) : ''}</h3><p>${esc(r.headline)}</p>
-          <div class="m">SINCE ${esc(fmtWhen(r.start))}${r.link && /^https:/.test(r.link) ? ` · <a href="${esc(r.link)}" target="_blank" rel="noopener">WSDOT DETAILS</a>` : ''}</div>`)).addTo(map);
+      const m = new maplibregl.Marker({ element: el }).setLngLat(at).setPopup(popup(alertHtml(r))).addTo(map);
       roadMarkers.push({ el, m, kind: r.kind });
     }
     showByZoom();
