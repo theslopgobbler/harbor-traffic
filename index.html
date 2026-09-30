@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202609301854" rel="stylesheet">
+<link href="styles.css?v=202609301855" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -64,9 +64,12 @@
       <div class="region-name" id="regionName"></div>
       <div class="cycle-bar" id="cycleBar"></div>
     </div>
+    <!-- my location and heading: tucked on the right edge, well below the zoom buttons -->
+    <div class="nav-tools">
+      <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎</button>
+      <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤</button>
+    </div>
     <div class="map-tools">
-      <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎<span> ME</span></button>
-      <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤<span> HDG</span></button>
       <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar">◫<span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
       <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects">❅<span> WX FX</span><b class="off">✕</b></button>
       <button id="btnVessels" class="tool toggle" type="button" aria-pressed="false" aria-label="Show ships">⛴<span> SHIPS</span><b class="off">✕</b></button>
@@ -117,9 +120,9 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202609301854"></script>
-<script src="app.js?v=202609301854"></script>
-<script src="air.js?v=202609301854"></script>
-<script src="wx.js?v=202609301854"></script>
+<script src="config.js?v=202609301855"></script>
+<script src="app.js?v=202609301855"></script>
+<script src="air.js?v=202609301855"></script>
+<script src="wx.js?v=202609301855"></script>
 </body>
 </html>
