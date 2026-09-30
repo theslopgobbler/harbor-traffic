@@ -3,6 +3,9 @@ window.HT = {
   // [west, south, east, north]: Hoh Rain Forest to South Bend, coast to I-5 at Olympia/Grand Mound
   bounds: [-124.45, 46.60, -122.80, 47.92],
 
+  // live aircraft relay (Cloudflare Worker, code in scripts/relay-worker.js); leave empty to use the collector's copy
+  airRelay: 'https://harbor-traffic-relay.sms-relay-protocol.workers.dev/aircraft',
+
   // Views for the region buttons. bounds = [west, south, east, north]; null = everything.
   // chip = where the region's summary sits in the zoomed-out overview, a = which side of that point
   regions: [

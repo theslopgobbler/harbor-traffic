@@ -82,7 +82,7 @@
   const altTxt = (alt) => alt < 100 ? 'GND' : alt >= 1000 ? (alt / 1000).toFixed(1) + 'K' : String(alt);
 
   // ---- markers ----
-  let planes = [], updated = null;
+  let planes = [], updated = null, live = false, liveSource = '';
   const markers = new Map(); // hex -> marker
   function render() {
     const seen = new Set();
@@ -127,8 +127,8 @@
         ${a._sit.state === 'INBOUND' ? ' · TO ' + esc(a._sit.field.id) : a._sit.state === 'OUTBOUND' ? ' · FROM ' + esc(a._sit.field.id) : ''}</div></li>`).join('')
       : '<li class="empty">NO LOW AIRCRAFT IN THE AREA</li>';
     const age = updated ? Math.round((Date.now() - Date.parse(updated)) / 60000) : null;
-    note.textContent = C.airRelay ? 'Live ADS-B positions (adsb.lol), refreshed every 15 seconds.'
-      : `ADS-B positions (adsb.lol) from the last collector run${age != null ? `, ${age} min ago` : ''}. Live positions need the small relay set up.`;
+    note.textContent = live ? `Live ADS-B positions (${liveSource}), refreshed every 15 seconds.`
+      : `ADS-B positions (adsb.lol) from the last collector run${age != null ? `, ${age} min ago` : ''}.${C.airRelay ? ' The live relay isn\'t answering right now.' : ''}`;
     $('#nAir').textContent = flagged.length || '';
     window.htTicker = window.htTicker || {};
     window.htTicker.air = flagged.map((a) => `${EMERG[a.squawk] ? 'SQUAWK ' + a.squawk : kindOf(a)} ${a.flight || a.reg || ''} ${altTxt(a.alt)} ft near ${a._sit.field.id}`).join(' · ');
@@ -142,14 +142,20 @@
 
   async function load() {
     try {
-      let j;
+      let j = null;
+      live = false;
       if (C.airRelay) {
-        const r = await (await fetch(`${C.airRelay}?t=${Date.now()}`, { cache: 'no-store' })).json();
-        j = { updated: new Date().toISOString(), aircraft: (r.ac || []).map((a) => ({ hex: a.hex, flight: (a.flight || '').trim(), reg: a.r, type: a.t, cat: a.category,
-          alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1) })) };
-      } else {
-        j = await (await fetch(`data/aircraft.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+        try {
+          const r = await (await fetch(`${C.airRelay}?t=${Date.now()}`, { cache: 'no-store' })).json();
+          if (Array.isArray(r.ac) && r.ac.length) {
+            live = true; liveSource = r.source || 'adsb.lol';
+            j = { updated: new Date().toISOString(), aircraft: r.ac.map((a) => ({ hex: a.hex, flight: (a.flight || '').trim(), reg: a.r, type: a.t, cat: a.category,
+              alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1) })) };
+          }
+        } catch (e) { console.warn('air relay', e); }
       }
+      // relay missing, down, or empty: fall back to the collector's copy
+      if (!j) j = await (await fetch(`data/aircraft.json?t=${Date.now()}`, { cache: 'no-store' })).json();
       updated = j.updated;
       planes = (j.aircraft || []).filter((a) => a.lat && a.lon && a.lat > 46.5 && a.lat < 48 && a.lon > -124.6 && a.lon < -122.7 && (a.alt || 0) <= 15000);
       for (const a of planes) a._sit = situation(a);
