@@ -22,6 +22,7 @@ jobs:
         shell: pwsh
         env:
           WSDOT_ACCESS_CODE: ${{ secrets.WSDOT_ACCESS_CODE }}
+          AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
         run: ./scripts/collect.ps1
       - name: Commit
         run: |
