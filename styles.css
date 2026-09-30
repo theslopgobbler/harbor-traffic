@@ -101,7 +101,7 @@ body.no-aircraft .air-mk { display: none !important; }
 /* buses */
 /* the marker box is bigger than the drawing so buses are easy to tap */
 .bus-mk { width: 34px; height: 36px; cursor: pointer; display: grid; place-items: center; }
-.bus-mk .ic { width: 30px; height: 30px; filter: drop-shadow(0 0 3px rgba(191,244,255,.45)); }
+.bus-mk .ic { width: 14px; height: 30px; filter: drop-shadow(0 0 3px rgba(191,244,255,.45)); }
 .bus-mk .ic svg { display: block; width: 100%; height: 100%; }
 .bus-mk b { position: absolute; left: 100%; top: 0; transform: translate(-6px, -2px); padding: 0 3px; font: 700 10px/12px var(--mono); background: rgba(2,8,7,.88); border: 1px solid; letter-spacing: .04em; }
 .bus-mk.stopped { opacity: .7; }
@@ -146,7 +146,7 @@ body.fx-off .bay-lbl, body.fx-off .bar-lbl, body.overview-mode .bay-lbl { displa
 .tool .stamp { color: var(--dim); font-size: 10px; }
 /* line-drawn button icons ("btn-ic", not "ti": that name belongs to the ticker) */
 .tool svg.btn-ic { width: 24px; height: 24px; vertical-align: -6px; color: inherit; }
-.tool svg.btn-ic * { stroke-width: 1.1; } /* thin, like the radar and effects symbols */
+.tool svg.btn-ic { image-rendering: pixelated; } /* pixel-art logos from pixel.js */
 canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 
 /* layout */

@@ -702,11 +702,10 @@
     const rects = [...cells].map((c) => { const [x, y] = c.split(','); return `<rect x="${x}" y="${y}" width="1" height="1"/>`; }).join('');
     return `<svg viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><g fill="${X_RED}">${rects}</g></svg>`;
   })();
-  // pixel-art orange warning triangle (pixel.js): with a pixel "!" for incidents, empty for road work,
-  // and a count in the middle for grouped alerts
-  const triSvg = (mark) => mark === '!' ? window.htPix('alert', K.orange)
-    : window.htPix('alertEmpty', K.orange, mark ? `<text x="5.5" y="8.6" text-anchor="middle" fill="${K.orange}"
-      font-family="Share Tech Mono, monospace" font-size="${mark.length > 1 ? 3.6 : 4.6}" font-weight="700">${mark}</text>` : '');
+  // hollow orange warning triangle for every other alert
+  const triSvg = (mark) => `<svg viewBox="0 0 28 26" aria-hidden="true"><polygon points="14,2 26,24 2,24" fill="rgba(0,0,0,.55)"
+    stroke="${K.orange}" stroke-width="2.6" stroke-linejoin="miter"/>${mark ? `<text x="14" y="21" text-anchor="middle" fill="${K.orange}"
+    font-family="Share Tech Mono, monospace" font-size="${mark.length > 1 ? 11 : 13}" font-weight="700">${mark}</text>` : ''}</svg>`;
 
   // closure and road-work stretches breathe in step with the markers (about 15 frames a second is plenty)
   let pulseLast = 0;
