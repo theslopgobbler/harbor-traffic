@@ -16,7 +16,7 @@
     if (!iso) return '';
     const d = new Date(iso);
     const sameDay = d.toDateString() === new Date().toDateString();
-    return sameDay ? fmtTime(d) : d.toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
+    return sameDay ? fmtTime(d) : d.toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
   };
   const miles = (a, b) => {
     const R = 3958.8, r = Math.PI / 180;
@@ -25,8 +25,13 @@
     return 2 * R * Math.asin(Math.sqrt(h));
   };
   const roadNum = (s) => String(s || '').replace(/\D/g, '').replace(/^0+/, '');
+  const getJson = async (path) => (await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' })).json();
 
   const state = { route: TV ? '' : store.get('ht.route') || '', wx: {}, zonesByTown: {}, nws: [], roads: [], roadsUpdated: null, me: null, heading: null };
+
+  // ---------------- colors (kept in sync with styles.css) ----------------
+  const K = { bg: '#030807', cyan: '#00e5ff', green: '#39ff88', amber: '#ffc400', orange: '#ff7a1a', red: '#ff2a3d', dim: '#5f9c8b', magenta: '#ff2bd6' };
+  const kindColor = { closure: K.red, collision: K.orange, work: K.amber, other: K.dim };
 
   // ---------------- map ----------------
   const [W, S, E, N] = C.bounds;
@@ -37,11 +42,17 @@
   });
   dem.setupMaplibre(maplibregl);
 
-  const font = (w) => [w === 'b' ? 'Noto Sans Bold' : w === 'i' ? 'Noto Sans Italic' : 'Noto Sans Regular'];
+  const font = (w) => [w === 'b' ? 'Noto Sans Bold' : 'Noto Sans Regular'];
+  const up = (f) => ['upcase', ['get', f]];
   const outside = { type: 'Feature', geometry: { type: 'Polygon', coordinates: [
     [[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]],
     [[W, S], [W, N], [E, N], [E, S], [W, S]]
   ] } };
+  const empty = { type: 'FeatureCollection', features: [] };
+  const zw = (a, b) => ['interpolate', ['linear'], ['zoom'], 7, a, 14, b];
+  // zoom curve whose ends depend on a condition (MapLibre wants the zoom curve outermost)
+  const zwIf = (cond, [a1, b1], [a2, b2]) => ['interpolate', ['linear'], ['zoom'], 7, ['case', cond, a1, a2], 14, ['case', cond, b1, b2]];
+  const mainRoads = ['in', ['get', 'class'], ['literal', ['motorway', 'trunk', 'primary']]];
 
   const style = {
     version: 8,
@@ -52,68 +63,86 @@
         attribution: 'Elevation: Mapzen/AWS Terrain Tiles' },
       contours: { type: 'vector', maxzoom: 15, tiles: [dem.contourProtocolUrl({
         multiplier: 3.28084,
-        thresholds: { 9: [500, 2500], 10: [250, 1000], 11: [200, 1000], 12: [100, 500], 13: [50, 250] },
+        thresholds: { 8: [500, 2500], 9: [400, 2000], 10: [250, 1000], 11: [200, 1000], 12: [100, 500], 13: [50, 250] },
         elevationKey: 'ele', levelKey: 'level', contourLayer: 'contours'
       })] },
-      outside: { type: 'geojson', data: outside }
+      outside: { type: 'geojson', data: outside },
+      flow: { type: 'geojson', data: empty },
+      incidents: { type: 'geojson', data: empty }
     },
     layers: [
-      { id: 'bg', type: 'background', paint: { 'background-color': '#e9eedd' } },
+      { id: 'bg', type: 'background', paint: { 'background-color': K.bg } },
       { id: 'wood', type: 'fill', source: 'omt', 'source-layer': 'landcover', filter: ['in', ['get', 'class'], ['literal', ['wood', 'forest']]],
-        paint: { 'fill-color': '#cbdab0' } },
-      { id: 'grass', type: 'fill', source: 'omt', 'source-layer': 'landcover', filter: ['in', ['get', 'class'], ['literal', ['grass', 'farmland', 'wetland']]],
-        paint: { 'fill-color': '#dce6c6', 'fill-opacity': 0.8 } },
-      { id: 'park', type: 'fill', source: 'omt', 'source-layer': 'park', paint: { 'fill-color': '#bfd49c', 'fill-opacity': 0.45 } },
+        paint: { 'fill-color': '#04130e' } },
       { id: 'town', type: 'fill', source: 'omt', 'source-layer': 'landuse', minzoom: 9,
         filter: ['in', ['get', 'class'], ['literal', ['residential', 'commercial', 'industrial', 'retail']]],
-        paint: { 'fill-color': '#dcdcc8', 'fill-opacity': 0.7 } },
+        paint: { 'fill-color': '#0a1b1f' } },
       { id: 'hillshade', type: 'hillshade', source: 'dem', paint: {
-        'hillshade-shadow-color': '#2a3d2e', 'hillshade-highlight-color': '#ffffff',
-        'hillshade-accent-color': '#586b5a', 'hillshade-exaggeration': 0.5 } },
+        'hillshade-shadow-color': '#000000', 'hillshade-highlight-color': '#0d3a30',
+        'hillshade-accent-color': '#000000', 'hillshade-exaggeration': 0.35 } },
+      // wireframe terrain
       { id: 'contours', type: 'line', source: 'contours', 'source-layer': 'contours', paint: {
-        'line-color': 'rgba(70,90,60,0.35)', 'line-width': ['match', ['get', 'level'], 1, 1, 0.5] } },
-      { id: 'water', type: 'fill', source: 'omt', 'source-layer': 'water', paint: { 'fill-color': '#9ec4d3' } },
-      { id: 'river', type: 'line', source: 'omt', 'source-layer': 'waterway', minzoom: 8,
-        paint: { 'line-color': '#9ec4d3', 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 0.6, 14, 2.5] } },
-      { id: 'road-minor', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 10,
+        'line-color': ['match', ['get', 'level'], 1, '#27c48d', '#15694f'],
+        'line-opacity': ['match', ['get', 'level'], 1, 0.55, 0.45],
+        'line-width': ['match', ['get', 'level'], 1, 0.9, 0.5] } },
+      { id: 'contour-label', type: 'symbol', source: 'contours', 'source-layer': 'contours', minzoom: 11, filter: ['>', ['get', 'level'], 0],
+        layout: { 'symbol-placement': 'line', 'text-field': ['concat', ['number-format', ['get', 'ele'], {}], ''], 'text-font': font('r'), 'text-size': 9 },
+        paint: { 'text-color': '#27c48d', 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
+      { id: 'water', type: 'fill', source: 'omt', 'source-layer': 'water', paint: { 'fill-color': '#021a24' } },
+      { id: 'coast', type: 'line', source: 'omt', 'source-layer': 'water', paint: { 'line-color': K.cyan, 'line-opacity': 0.75, 'line-width': zw(0.6, 1.6) } },
+      { id: 'coast-glow', type: 'line', source: 'omt', 'source-layer': 'water', paint: { 'line-color': K.cyan, 'line-opacity': 0.18, 'line-width': zw(3, 8), 'line-blur': 4 } },
+      { id: 'river', type: 'line', source: 'omt', 'source-layer': 'waterway', minzoom: 9,
+        paint: { 'line-color': '#0a8aa0', 'line-opacity': 0.6, 'line-width': zw(0.4, 1.6) } },
+      { id: 'road-minor', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 11,
         filter: ['in', ['get', 'class'], ['literal', ['minor', 'service', 'tertiary']]],
-        paint: { 'line-color': '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 10, 0.5, 15, 5] } },
-      { id: 'road-sec', type: 'line', source: 'omt', 'source-layer': 'transportation',
+        paint: { 'line-color': '#1d4046', 'line-width': zw(0.4, 2.5) } },
+      { id: 'road-sec', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 8,
         filter: ['in', ['get', 'class'], ['literal', ['secondary']]],
-        paint: { 'line-color': '#f7f1e3', 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1, 15, 7] } },
-      { id: 'road-main-case', type: 'line', source: 'omt', 'source-layer': 'transportation',
-        filter: ['in', ['get', 'class'], ['literal', ['motorway', 'trunk', 'primary']]],
+        paint: { 'line-color': '#3a6f78', 'line-width': zw(0.6, 3) } },
+      { id: 'road-main-glow', type: 'line', source: 'omt', 'source-layer': 'transportation', filter: mainRoads,
         layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': '#8a5a2b', 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2.5, 15, 12] } },
-      { id: 'road-main', type: 'line', source: 'omt', 'source-layer': 'transportation',
-        filter: ['in', ['get', 'class'], ['literal', ['motorway', 'trunk', 'primary']]],
+        paint: { 'line-color': '#7fe9ff', 'line-opacity': 0.22, 'line-width': zw(5, 16), 'line-blur': 5 } },
+      { id: 'road-main', type: 'line', source: 'omt', 'source-layer': 'transportation', filter: mainRoads,
         layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': '#f0c27b', 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1.4, 15, 9] } },
+        paint: { 'line-color': '#bff4ff', 'line-width': zw(1.1, 4) } },
       { id: 'route-hl', type: 'line', source: 'omt', 'source-layer': 'transportation_name',
         filter: ['==', ['get', 'ref'], '__none__'], layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': '#1f58a6', 'line-opacity': 0.75, 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 5, 14, 14] } },
-      { id: 'outside', type: 'fill', source: 'outside', paint: { 'fill-color': '#132318', 'fill-opacity': 0.28 } },
+        paint: { 'line-color': K.magenta, 'line-opacity': 0.55, 'line-width': zw(7, 18), 'line-blur': 3 } },
+      // live I-5 speeds: segments between sensors, each direction offset to its own side
+      { id: 'flow-glow', type: 'line', source: 'flow', filter: ['>=', ['get', 'level'], 2],
+        layout: { 'line-cap': 'round' },
+        paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.5, 'line-width': zw(8, 18), 'line-blur': 5, 'line-offset': zw(2, 6) } },
+      { id: 'flow', type: 'line', source: 'flow', layout: { 'line-cap': 'round' },
+        paint: { 'line-color': ['get', 'color'], 'line-opacity': ['case', ['>=', ['get', 'level'], 2], 1, 0.55],
+          'line-width': zwIf(['>=', ['get', 'level'], 2], [3, 7], [1.2, 3]), 'line-offset': zw(2, 6) } },
+      // WSDOT alert stretches along the road
+      { id: 'inc-glow', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.55, 'line-width': zw(10, 24), 'line-blur': 6 } },
+      { id: 'inc', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': ['get', 'color'], 'line-width': zwIf(['==', ['get', 'kind'], 'closure'], [4, 9], [3, 7]) } },
+      { id: 'outside', type: 'fill', source: 'outside', paint: { 'fill-color': '#000000', 'fill-opacity': 0.6 } },
+      { id: 'outside-edge', type: 'line', source: 'outside', paint: { 'line-color': K.cyan, 'line-opacity': 0.35, 'line-width': 1, 'line-dasharray': [4, 4] } },
       { id: 'water-name', type: 'symbol', source: 'omt', 'source-layer': 'water_name', minzoom: 8,
-        layout: { 'text-field': ['get', 'name'], 'text-font': font('i'), 'text-size': 12, 'symbol-placement': 'point' },
-        paint: { 'text-color': '#2d6a8a', 'text-halo-color': 'rgba(255,255,255,.7)', 'text-halo-width': 1 } },
+        layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': 11, 'text-letter-spacing': 0.25 },
+        paint: { 'text-color': '#0bb3cc', 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
       { id: 'peaks', type: 'symbol', source: 'omt', 'source-layer': 'mountain_peak', minzoom: 9,
-        layout: { 'text-field': ['concat', '▲ ', ['get', 'name'], '\n', ['to-string', ['get', 'ele_ft']], ' ft'],
-          'text-font': font('r'), 'text-size': 11, 'text-anchor': 'top' },
-        paint: { 'text-color': '#34493a', 'text-halo-color': 'rgba(255,255,255,.75)', 'text-halo-width': 1 } },
+        layout: { 'text-field': ['concat', '△ ', up('name'), '\n', ['to-string', ['get', 'ele_ft']], ' FT'],
+          'text-font': font('r'), 'text-size': 10, 'text-anchor': 'top', 'text-letter-spacing': 0.1 },
+        paint: { 'text-color': '#27c48d', 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
       { id: 'shields', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 8,
         filter: ['in', ['get', 'network'], ['literal', ['us-interstate', 'us-highway', 'us-state']]],
-        layout: { 'symbol-placement': 'line', 'symbol-spacing': 300, 'text-field': ['get', 'ref'], 'text-font': font('b'),
-          'text-size': 11, 'text-rotation-alignment': 'viewport' },
-        paint: { 'text-color': '#15261a', 'text-halo-color': '#ffffff', 'text-halo-width': 2.5 } },
+        layout: { 'symbol-placement': 'line', 'symbol-spacing': 320, 'text-field': ['get', 'ref'], 'text-font': font('b'),
+          'text-size': 11, 'text-rotation-alignment': 'viewport', 'text-letter-spacing': 0.1 },
+        paint: { 'text-color': '#000000', 'text-halo-color': '#bff4ff', 'text-halo-width': 3 } },
       { id: 'villages', type: 'symbol', source: 'omt', 'source-layer': 'place', minzoom: 10,
         filter: ['in', ['get', 'class'], ['literal', ['village', 'hamlet', 'suburb', 'neighbourhood']]],
-        layout: { 'text-field': ['get', 'name'], 'text-font': font('r'), 'text-size': 11 },
-        paint: { 'text-color': '#586b5a', 'text-halo-color': 'rgba(255,255,255,.8)', 'text-halo-width': 1 } }
+        layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': 10, 'text-letter-spacing': 0.15 },
+        paint: { 'text-color': '#5f9c8b', 'text-halo-color': K.bg, 'text-halo-width': 1.5 } }
     ]
   };
 
   const map = new maplibregl.Map({
-    container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 20 },
+    container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 30 },
     maxBounds: [W - pad, S - pad, E + pad, N + pad], minZoom: 7, maxZoom: 16,
     dragRotate: false, pitchWithRotate: false, touchPitch: false, attributionControl: { compact: true },
     interactive: !TV
@@ -126,30 +155,75 @@
   const phone = () => matchMedia('(max-width: 760px)').matches;
   // on phones the bottom sheet covers the lower part of the map
   const fitPad = (p) => phone() ? { top: p, left: p, right: p, bottom: Math.round(innerHeight * 0.42) + p } : p;
-  const fitAll = () => map.fitBounds(C.bounds, { padding: fitPad(20), duration: TV ? 0 : 600 });
-  map.once('load', () => phone() && fitAll());
-  window.addEventListener('resize', () => TV && fitAll());
+  const popup = (html) => new maplibregl.Popup({ offset: 16, maxWidth: '320px' }).setHTML(html);
 
-  const popup = (html) => new maplibregl.Popup({ offset: 16, maxWidth: '280px' }).setHTML(html);
+  // coordinate readout, for the look of it
+  const readout = () => {
+    const c = map.getCenter();
+    $('#readout').textContent = `N ${c.lat.toFixed(4)}  W ${Math.abs(c.lng).toFixed(4)}  Z${map.getZoom().toFixed(1)}`;
+  };
+  map.on('move', readout);
+
+  // data that arrives before the style is ready waits here
+  const setSource = (id, data) => {
+    const s = map.getSource(id);
+    if (s) s.setData(data); else map.once('load', () => map.getSource(id).setData(data));
+  };
+
+  // ---------------- regions ----------------
+  const regionById = Object.fromEntries(C.regions.map((r) => [r.id, r]));
+  let region = regionById[qs.get('region')] ? qs.get('region') : (store.get('ht.region') || 'all');
+  if (!regionById[region]) region = 'all';
+  const regionBar = $('#regions');
+  regionBar.innerHTML = C.regions.map((r) => `<button type="button" data-r="${r.id}">${esc(r.name)}</button>`).join('');
+  function showRegion(id, animate = true) {
+    region = id;
+    const r = regionById[id];
+    regionBar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.r === id));
+    $('#regionName').textContent = `▸ ${r.name.toUpperCase()}`;
+    map.fitBounds(r.bounds || C.bounds, { padding: fitPad(30), duration: animate && !TV ? 700 : 0 });
+  }
+  regionBar.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-r]'); if (!b) return;
+    stopCycle();
+    store.set('ht.region', b.dataset.r);
+    showRegion(b.dataset.r);
+  });
+  // TV: ?tv&cycle=30 steps through the regions every 30 seconds
+  let cycleTimer = null;
+  const stopCycle = () => { clearInterval(cycleTimer); cycleTimer = null; };
+  map.once('load', () => {
+    showRegion(region, false);
+    const secs = +qs.get('cycle');
+    if (TV && qs.has('cycle')) {
+      const ids = C.regions.map((r) => r.id);
+      cycleTimer = setInterval(() => showRegion(ids[(ids.indexOf(region) + 1) % ids.length]), Math.max(10, secs || 30) * 1000);
+    }
+  });
+  window.addEventListener('resize', () => TV && showRegion(region, false));
 
   // ---------------- weather ----------------
-  const wxEmoji = (f = '', day = true) => {
+  // short readout codes instead of pictures, like an old nav unit
+  const wxCode = (f = '', day = true) => {
     f = f.toLowerCase();
-    if (/thunder/.test(f)) return '⛈';
-    if (/snow|flurr|sleet|ice/.test(f)) return '🌨';
-    if (/rain|shower|drizzle/.test(f)) return '🌧';
-    if (/fog|haze|smoke/.test(f)) return '🌫';
-    if (/wind/.test(f)) return '💨';
-    if (/partly|mostly sunny|mostly clear/.test(f)) return day ? '⛅' : '☁';
-    if (/cloud|overcast/.test(f)) return '☁';
-    if (/sunny|clear/.test(f)) return day ? '☀' : '🌙';
-    return '·';
+    if (/thunder/.test(f)) return 'TSTM';
+    if (/snow|flurr/.test(f)) return 'SNOW';
+    if (/sleet|ice|freezing/.test(f)) return 'ICE';
+    if (/shower/.test(f)) return 'SHWR';
+    if (/rain|drizzle/.test(f)) return 'RAIN';
+    if (/fog/.test(f)) return 'FOG';
+    if (/haze|smoke/.test(f)) return 'HAZE';
+    if (/wind|breezy/.test(f)) return 'WIND';
+    if (/partly|mostly sunny|mostly clear/.test(f)) return 'PCLD';
+    if (/cloud|overcast/.test(f)) return 'CLDY';
+    if (/sunny|clear/.test(f)) return day ? 'SUN' : 'CLR';
+    return '---';
   };
   const wxMarkers = {};
   for (const t of C.towns) {
     const el = document.createElement('div');
     el.className = 'wx-mk';
-    el.innerHTML = `<span class="e">·</span><span class="v">--°</span><span class="n">${esc(t.name)}</span>`;
+    el.innerHTML = `<span class="n">${esc(t.name)}</span><span class="v">--°</span><span class="e">---</span>`;
     wxMarkers[t.id] = { el, m: new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat([t.lon, t.lat]).addTo(map) };
   }
 
@@ -177,7 +251,7 @@
       state.wx[t.id] = { temp: now.temperature, f: now.shortForecast, day: now.isDaytime, wind: `${now.windDirection} ${now.windSpeed}`,
         rain: now.probabilityOfPrecipitation?.value ?? null };
       const mk = wxMarkers[t.id].el;
-      mk.querySelector('.e').textContent = wxEmoji(now.shortForecast, now.isDaytime);
+      mk.querySelector('.e').textContent = wxCode(now.shortForecast, now.isDaytime);
       mk.querySelector('.v').textContent = `${now.temperature}°`;
       mk.title = `${t.name}: ${now.shortForecast}, wind ${now.windDirection} ${now.windSpeed}`;
     });
@@ -190,20 +264,18 @@
     renderAlerts();
   }
 
-  // ---------------- WSDOT (written by the collector every ~10 min) ----------------
+  // ---------------- WSDOT alerts (written by the collector) ----------------
   const roadMarkers = [];
   async function loadRoads() {
     try {
-      const r = await fetch('data/wsdot-alerts.json?t=' + Date.now(), { cache: 'no-store' });
-      const j = await r.json();
+      const j = await getJson('data/wsdot-alerts.json');
       state.roads = j.alerts || [];
       state.roadsUpdated = j.updated;
     } catch (e) { console.warn('road data', e); }
     renderRoads();
     renderBridges();
   }
-  const kindIcon = { closure: '✕', collision: '!', work: '⚒', other: 'i' };
-  const getJson = async (path) => (await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' })).json();
+  const kindLabel = { closure: 'CLOSED', collision: 'INCIDENT', work: 'WORK', other: 'INFO' };
 
   // ---------------- cameras: nothing downloads until someone clicks ----------------
   const CAM_MIN_MS = 2 * 60 * 1000; // at most one fresh image per camera every 2 minutes
@@ -217,17 +289,17 @@
   }
   function camHtml(cam) {
     return `<div class="cam" data-cam="${cam.id}"><img alt="${esc(cam.title)}" src="${esc(camImg(cam))}">
-      <div class="m">${esc(cam.title)} · <span class="age">loaded ${fmtTime(new Date(camLast[cam.id]))}</span>
-      <button type="button" class="cam-refresh">Refresh</button></div></div>`;
+      <div class="m"><span class="age">IMG ${fmtTime(new Date(camLast[cam.id]))}</span>
+      <button type="button" class="cam-refresh">REFRESH</button></div></div>`;
   }
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.cam-refresh');
     if (!btn) return;
     const box = btn.closest('.cam'), cam = camById[box.dataset.cam];
     const wait = CAM_MIN_MS - (Date.now() - camLast[cam.id]);
-    if (wait > 0) { btn.textContent = `Refresh in ${Math.ceil(wait / 1000)}s`; setTimeout(() => (btn.textContent = 'Refresh'), 2500); return; }
+    if (wait > 0) { btn.textContent = `WAIT ${Math.ceil(wait / 1000)}S`; setTimeout(() => (btn.textContent = 'REFRESH'), 2500); return; }
     box.querySelector('img').src = camImg(cam);
-    box.querySelector('.age').textContent = 'loaded ' + fmtTime(new Date(camLast[cam.id]));
+    box.querySelector('.age').textContent = 'IMG ' + fmtTime(new Date(camLast[cam.id]));
   });
   const camMarkers = [];
   async function loadCameras() {
@@ -236,19 +308,16 @@
       for (const cam of j.cameras || []) {
         camById[cam.id] = cam;
         const el = document.createElement('div');
-        el.className = 'mk cam-mk';
+        el.className = 'cam-mk';
         el.title = cam.title;
-        el.innerHTML = '<i class="ic ic-cam">📷</i>';
-        const p = new maplibregl.Popup({ offset: 14, maxWidth: '340px' });
-        p.on('open', () => p.setHTML(`<h3>${esc(cam.title)}</h3>${camHtml(cam)}`));
+        const p = new maplibregl.Popup({ offset: 12, maxWidth: '340px' });
+        p.on('open', () => p.setHTML(`<h3>CAM ${esc(cam.title)}</h3>${camHtml(cam)}`));
         camMarkers.push({ el, m: new maplibregl.Marker({ element: el }).setLngLat([cam.lon, cam.lat]).setPopup(p).addTo(map) });
       }
-      showCams();
+      showByZoom();
       renderBridges();
     } catch (e) { console.warn('cameras', e); }
   }
-  const showCams = () => { const on = map.getZoom() >= 10; camMarkers.forEach(({ el }) => (el.style.display = on ? '' : 'none')); };
-  map.on('zoomend', showCams);
 
   // ---------------- roadside weather stations ----------------
   const rwMarkers = [];
@@ -261,34 +330,37 @@
         if (s.temp == null) continue;
         const el = document.createElement('div');
         el.className = 'wx-mk rw-mk';
-        el.innerHTML = `<span class="e">🌡</span><span class="v">${Math.round(s.temp)}°</span>`;
+        el.innerHTML = `<span class="e">RD</span><span class="v">${Math.round(s.temp)}°</span>`;
         el.title = `${s.name}: ${Math.round(s.temp)}°F, wind ${s.dir || ''} ${s.wind ?? '?'} mph (roadside sensor)`;
-        rwMarkers.push(new maplibregl.Marker({ element: el, anchor: 'left', offset: [8, 0] }).setLngLat([s.lon, s.lat]).addTo(map));
+        rwMarkers.push(new maplibregl.Marker({ element: el, anchor: 'left', offset: [10, 0] }).setLngLat([s.lon, s.lat]).addTo(map));
       }
-      showRw();
+      showByZoom();
       renderWeather();
     } catch (e) { console.warn('road weather', e); }
   }
-  const showRw = () => { const on = map.getZoom() >= 10; rwMarkers.forEach((m) => (m.getElement().style.display = on ? '' : 'none')); };
-  map.on('zoomend', showRw);
 
   // ---------------- I-5 live traffic sensors + travel times ----------------
-  const flowColor = ['#9aa39a', '#4f8a2b', '#e0b020', '#d4611c', '#b8322a'];
-  let flowData = { type: 'FeatureCollection', features: [] };
-  map.on('load', () => {
-    map.addSource('flow', { type: 'geojson', data: flowData });
-    map.addLayer({ id: 'flow', type: 'circle', source: 'flow', filter: ['>', ['get', 'level'], 0],
-      layout: { 'circle-sort-key': ['get', 'level'] },
-      paint: { 'circle-color': ['to-color', ['at', ['get', 'level'], ['literal', flowColor]]],
-        'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 4, 12, 7, 15, 10],
-        'circle-stroke-color': '#fff', 'circle-stroke-width': 1 } }, 'outside');
-  });
+  const flowColor = [K.dim, K.green, K.amber, K.orange, K.red];
   async function loadFlow() {
     try {
       const j = await getJson('data/flow.json');
-      flowData = { type: 'FeatureCollection', features: (j.stations || []).map(([lat, lon, level, mp, dir, road]) => ({
-        type: 'Feature', geometry: { type: 'Point', coordinates: [lon, lat] }, properties: { level, mp, dir, road } })) };
-      map.getSource('flow')?.setData(flowData);
+      // join neighbouring sensors (by milepost, per direction) into colored road segments
+      const groups = {};
+      for (const [lat, lon, level, mp, dir, road] of j.stations || []) (groups[`${road}|${dir}`] ||= []).push({ lat, lon, level, mp, dir });
+      const features = [];
+      for (const list of Object.values(groups)) {
+        const dec = /^S|^W/.test(list[0].dir); // draw each direction the way traffic moves, so the offset lands on its side
+        list.sort((a, b) => dec ? b.mp - a.mp : a.mp - b.mp);
+        for (let i = 1; i < list.length; i++) {
+          const a = list[i - 1], b = list[i];
+          if (Math.abs(a.mp - b.mp) > 1.6) continue;
+          const level = Math.max(a.level, b.level);
+          if (!level) continue;
+          features.push({ type: 'Feature', properties: { level, color: flowColor[level] },
+            geometry: { type: 'LineString', coordinates: [[a.lon, a.lat], [b.lon, b.lat]] } });
+        }
+      }
+      setSource('flow', { type: 'FeatureCollection', features });
     } catch (e) { console.warn('flow', e); }
     try { state.travel = (await getJson('data/travel-times.json')).routes || []; } catch { state.travel = []; }
     renderTravel();
@@ -297,32 +369,25 @@
     const t = state.travel || [];
     $('#travelList').innerHTML = t.length ? t.map((r) => {
       const slow = r.avg && r.now > r.avg * 1.25;
-      return `<li><div class="t">${esc(r.name.replace(/^\w+\s/, ''))} <span class="pill ${slow ? 'bad' : 'ok'}">${r.now} min</span></div>
-        <div class="m">usually ${r.avg} min · ${r.miles} mi</div></li>`;
-    }).join('') : '<li class="empty">No travel times right now.</li>';
+      return `<li class="${slow ? 'k-closure' : ''}"><div class="t">${esc(r.name.replace(/^\w+\s/, '').toUpperCase())} <span class="pill ${slow ? 'bad' : 'ok'}">${r.now} MIN</span></div>
+        <div class="m">NORMAL ${r.avg} MIN · ${r.miles} MI</div></li>`;
+    }).join('') : '<li class="empty">NO TRAVEL TIMES</li>';
   }
 
   // ---------------- bridges ----------------
   const bridgeMarkers = {};
   for (const b of C.bridges) {
     const el = document.createElement('div');
-    el.className = 'mk';
-    el.innerHTML = '<i class="ic ic-bridge">⌂</i>';
+    el.className = 'br-mk';
+    el.textContent = '▲';
     bridgeMarkers[b.id] = { el, m: new maplibregl.Marker({ element: el }).setLngLat([b.lon, b.lat]).setPopup(popup('')).addTo(map) };
   }
   // zoomed out, the five bridges would bury Aberdeen/Hoquiam, so they share one chip
   const bridgeChip = document.createElement('div');
-  bridgeChip.className = 'wx-mk mk';
-  bridgeChip.innerHTML = '<i class="ic ic-bridge" style="width:20px;height:20px;font-size:12px">⌂</i><span class="v">Bridges</span>';
+  bridgeChip.className = 'wx-mk br-chip mk';
+  bridgeChip.innerHTML = '<span class="v">▲ BRIDGES</span>';
   bridgeChip.addEventListener('click', () => map.flyTo({ center: [-123.85, 46.975], zoom: 12.5 }));
   new maplibregl.Marker({ element: bridgeChip }).setLngLat([-123.86, 46.935]).addTo(map);
-  const showBridges = () => {
-    const close = map.getZoom() >= 11;
-    bridgeChip.style.display = close ? 'none' : '';
-    for (const { el } of Object.values(bridgeMarkers)) el.style.display = close ? '' : 'none';
-  };
-  map.on('zoomend', showBridges);
-  showBridges();
   const hhmm = (d) => d.toTimeString().slice(0, 5);
   const isWeekday = (d) => d.getDay() > 0 && d.getDay() < 6;
   function bridgeStatus(b) {
@@ -334,6 +399,17 @@
       new RegExp(b.name.replace(/ bridge/i, ''), 'i').test(`${r.headline} ${r.description || ''}`));
     return { blocked, issues };
   }
+
+  // markers that only make sense up close
+  function showByZoom() {
+    const z = map.getZoom();
+    camMarkers.forEach(({ el }) => (el.style.display = z >= 10 ? '' : 'none'));
+    rwMarkers.forEach((m) => (m.getElement().style.display = z >= 10 ? '' : 'none'));
+    bridgeChip.style.display = z >= 11 ? 'none' : '';
+    for (const { el } of Object.values(bridgeMarkers)) el.style.display = z >= 11 ? '' : 'none';
+    roadMarkers.forEach(({ el, kind }) => (el.style.display = kind === 'closure' || z >= 9.5 ? '' : 'none'));
+  }
+  map.on('zoomend', showByZoom);
 
   // ---------------- rendering ----------------
   const corridor = () => C.corridors.find((c) => c.id === state.route);
@@ -357,64 +433,83 @@
     $('#nAlerts').textContent = list.length || '';
     $('#alertList').innerHTML = list.length ? list.map((a) => {
       const towns = townsForZones(a.affectedZones || []).map((t) => t.name);
-      return `<li class="sev-${esc(a.severity)}"><div class="t">${esc(a.event)}</div>
-        <div class="m">${towns.length ? esc(towns.join(', ')) + ' · ' : ''}until ${esc(fmtWhen(a.ends || a.expires))}</div>
-        ${TV ? '' : `<details><summary class="m">Details</summary><p class="m">${esc(a.description).replace(/\n\n/g, '<br><br>')}</p></details>`}</li>`;
-    }).join('') : `<li class="empty">No weather alerts ${corridor() ? 'along this route' : 'in the region'}.</li>`;
+      return `<li class="sev-${esc(a.severity)}"><div class="t">${esc(a.event.toUpperCase())}</div>
+        <div class="m">${towns.length ? esc(towns.join(', ')) + ' · ' : ''}UNTIL ${esc(fmtWhen(a.ends || a.expires))}</div>
+        ${TV ? '' : `<details><summary class="m">DETAILS</summary><p class="m">${esc(a.description).replace(/\n\n/g, '<br><br>')}</p></details>`}</li>`;
+    }).join('') : `<li class="empty">NO WEATHER ALERTS ${corridor() ? 'ON ROUTE' : 'IN REGION'}</li>`;
   }
 
+  const midpoint = (path) => path[Math.floor(path.length / 2)];
   function renderRoads() {
-    roadMarkers.splice(0).forEach((m) => m.remove());
+    roadMarkers.splice(0).forEach(({ m }) => m.remove());
     let list = state.roads.filter(onRoute);
     if (state.me) list = list.map((r) => ({ ...r, dist: r.lat ? miles(state.me, r) : null })).sort((a, b) => (a.dist ?? 1e9) - (b.dist ?? 1e9));
+    else list = list.slice().sort((a, b) => ['closure', 'collision', 'work', 'other'].indexOf(a.kind) - ['closure', 'collision', 'work', 'other'].indexOf(b.kind));
+
+    // stretches on the map
+    const features = state.roads.filter((r) => Array.isArray(r.path) && r.path.length > 1).map((r) => ({
+      type: 'Feature', properties: { kind: r.kind, color: kindColor[r.kind] || K.dim },
+      geometry: { type: 'LineString', coordinates: r.path } }));
+    // closures draw on top
+    features.sort((a, b) => (a.properties.kind === 'closure') - (b.properties.kind === 'closure'));
+    setSource('incidents', { type: 'FeatureCollection', features });
+
     for (const r of state.roads) {
       if (!r.lat) continue;
       const el = document.createElement('div');
-      el.className = 'mk';
-      el.innerHTML = `<i class="ic ic-${r.kind}">${kindIcon[r.kind] || 'i'}</i>`;
-      roadMarkers.push(new maplibregl.Marker({ element: el }).setLngLat([r.lon, r.lat])
-        .setPopup(popup(`<h3>${esc(r.roadLabel)}: ${esc(r.category)}</h3><p>${esc(r.headline)}</p>
-          <div class="m">Since ${esc(fmtWhen(r.start))}${r.link && /^https:/.test(r.link) ? ` · <a href="${esc(r.link)}" target="_blank" rel="noopener">WSDOT details</a>` : ''}</div>`)).addTo(map));
+      if (r.kind === 'closure') el.className = 'x-mk';
+      else { el.className = `inc-mk ${r.kind}`; el.textContent = r.kind === 'collision' ? '!' : ''; }
+      const at = Array.isArray(r.path) && r.path.length > 1 ? midpoint(r.path) : [r.lon, r.lat];
+      const m = new maplibregl.Marker({ element: el }).setLngLat(at)
+        .setPopup(popup(`<h3>${esc(kindLabel[r.kind])} · ${esc(r.roadLabel)}${r.milepost ? ' MP ' + esc(r.milepost) : ''}</h3><p>${esc(r.headline)}</p>
+          <div class="m">SINCE ${esc(fmtWhen(r.start))}${r.link && /^https:/.test(r.link) ? ` · <a href="${esc(r.link)}" target="_blank" rel="noopener">WSDOT DETAILS</a>` : ''}</div>`)).addTo(map);
+      roadMarkers.push({ el, m, kind: r.kind });
     }
+    showByZoom();
+
     $('#nRoads').textContent = list.filter((r) => r.kind === 'closure' || r.kind === 'collision').length || '';
-    const stale = state.roadsUpdated ? ` · WSDOT data ${fmtWhen(state.roadsUpdated)}` : ' · WSDOT feed not connected yet';
-    $('#roadList').innerHTML = (list.length ? list.map((r, i) => `<li class="clickable" data-i="${i}">
-        <div class="t"><i class="ic ic-${r.kind}">${kindIcon[r.kind] || 'i'}</i> ${esc(r.headline)}</div>
-        <div class="m">${esc(r.roadLabel || r.road)}${r.dist != null ? ` · ${r.dist.toFixed(1)} mi away` : ''} · ${esc(r.category)}</div></li>`).join('')
-      : `<li class="empty">No closures or incidents ${corridor() ? 'on this route' : 'reported'}.</li>`) +
-      `<li class="empty m" style="border:0;background:none;padding:2px 0">${stale.slice(3)}</li>`;
+    const stale = state.roadsUpdated ? `WSDOT SYNC ${fmtWhen(state.roadsUpdated)}` : 'WSDOT FEED OFFLINE';
+    $('#roadList').innerHTML = (list.length ? list.map((r, i) => `<li class="clickable k-${r.kind}" data-i="${i}">
+        <div class="t"><span class="tag ${r.kind}">${kindLabel[r.kind]}</span>${esc(r.headline)}</div>
+        <div class="m">${esc(r.roadLabel || r.road)}${r.milepost ? ' MP ' + esc(r.milepost) : ''}${r.dist != null ? ` · ${r.dist.toFixed(1)} MI AWAY` : ''}</div></li>`).join('')
+      : `<li class="empty">NO CLOSURES OR INCIDENTS ${corridor() ? 'ON ROUTE' : ''}</li>`) +
+      `<li class="empty m" style="border:0;padding:2px 0">${stale}</li>`;
     $('#roadList').onclick = (e) => {
       const li = e.target.closest('li[data-i]'); if (!li) return;
-      const r = list[+li.dataset.i]; if (r.lat) map.flyTo({ center: [r.lon, r.lat], zoom: 13 });
+      const r = list[+li.dataset.i];
+      if (Array.isArray(r.path) && r.path.length > 1) {
+        const b = new maplibregl.LngLatBounds(); r.path.forEach((p) => b.extend(p));
+        map.fitBounds(b, { padding: fitPad(80), maxZoom: 14 });
+      } else if (r.lat) map.flyTo({ center: [r.lon, r.lat], zoom: 13 });
     };
   }
 
   function renderBridges() {
     $('#bridgeList').innerHTML = C.bridges.map((b) => {
       const { blocked, issues } = bridgeStatus(b);
-      const pill = issues.length ? '<span class="pill bad">WSDOT alert</span>'
-        : blocked ? `<span class="pill ok">Stays down till ${fmtTime(new Date(`${new Date().toDateString()} ${blocked}`))}</span>`
-        : '<span class="pill">May open on request</span>';
-      const html = `<h3>${esc(b.name)}</h3><div class="m">${esc(b.route)} · ${esc(b.town)}</div><p class="m">${esc(b.note)}</p>` +
-        issues.map((r) => `<p><b>${esc(r.headline)}</b></p>`).join('');
+      const pill = issues.length ? '<span class="pill bad">WSDOT ALERT</span>'
+        : blocked ? `<span class="pill ok">DOWN TILL ${fmtTime(new Date(`${new Date().toDateString()} ${blocked}`)).toUpperCase()}</span>`
+        : '<span class="pill">OPENS ON REQUEST</span>';
+      const html = `<h3>▲ ${esc(b.name)}</h3><div class="m">${esc(b.route)} · ${esc(b.town)}</div><p class="m">${esc(b.note)}</p>` +
+        issues.map((r) => `<p>${esc(r.headline)}</p>`).join('');
       bridgeMarkers[b.id].m.getPopup().setHTML(html);
-      bridgeMarkers[b.id].el.querySelector('.ic').classList.toggle('shut', !!issues.length);
+      bridgeMarkers[b.id].el.classList.toggle('shut', !!issues.length);
       b._issue = !!issues.length;
       const cam = camById[b.cam];
-      return `<li class="clickable" data-b="${b.id}"><div class="t">${esc(b.name)} ${pill}</div>
-        <div class="m">${esc(b.route)} · ${esc(b.town)}</div>${issues.map((r) => `<div class="m"><b>${esc(r.headline)}</b></div>`).join('')}
-        ${cam && !TV ? `<button type="button" class="cam-show" data-cam="${cam.id}">📷 Show camera</button><div class="cam-slot"></div>` : ''}</li>`;
+      return `<li class="clickable ${issues.length ? 'k-closure' : ''}" data-b="${b.id}"><div class="t">${esc(b.name.toUpperCase())} ${pill}</div>
+        <div class="m">${esc(b.route)} · ${esc(b.town.toUpperCase())}</div>${issues.map((r) => `<div class="m">${esc(r.headline)}</div>`).join('')}
+        ${cam && !TV ? `<button type="button" class="cam-show" data-cam="${cam.id}">◉ SHOW CAMERA</button><div class="cam-slot"></div>` : ''}</li>`;
     }).join('');
     const bad = C.bridges.filter((b) => b._issue).length;
-    bridgeChip.querySelector('.ic').classList.toggle('shut', bad > 0);
-    bridgeChip.querySelector('.v').textContent = bad ? `${bad} bridge alert${bad > 1 ? 's' : ''}` : state.roadsUpdated ? 'Bridges OK' : 'Bridges';
+    bridgeChip.classList.toggle('shut', bad > 0);
+    bridgeChip.querySelector('.v').textContent = bad ? `▲ ${bad} BRIDGE ALERT${bad > 1 ? 'S' : ''}` : state.roadsUpdated ? '▲ BRIDGES OK' : '▲ BRIDGES';
   }
   $('#bridgeList').addEventListener('click', (e) => {
     const show = e.target.closest('.cam-show');
     if (show) {
       const slot = show.nextElementSibling;
-      if (slot.innerHTML) { slot.innerHTML = ''; show.textContent = '📷 Show camera'; }
-      else { slot.innerHTML = camHtml(camById[show.dataset.cam]); show.textContent = '📷 Hide camera'; }
+      if (slot.innerHTML) { slot.innerHTML = ''; show.textContent = '◉ SHOW CAMERA'; }
+      else { slot.innerHTML = camHtml(camById[show.dataset.cam]); show.textContent = '◉ HIDE CAMERA'; }
       return;
     }
     if (e.target.closest('.cam')) return;
@@ -428,20 +523,20 @@
     const towns = c ? c.towns.map((id) => townById[id]) : C.towns;
     $('#wxList').innerHTML = towns.map((t) => {
       const w = state.wx[t.id];
-      if (!w) return `<li><span>${esc(t.name)}</span><span class="m">…</span></li>`;
-      return `<li><span><b>${esc(t.name)}</b><br><span class="m">${esc(w.f)} · wind ${esc(w.wind)}${w.rain != null ? ` · ${w.rain}% rain` : ''}</span></span>
-        <span class="temp">${wxEmoji(w.f, w.day)} ${w.temp}°</span></li>`;
+      if (!w) return `<li><span>${esc(t.name.toUpperCase())}</span><span class="m">…</span></li>`;
+      return `<li><span>${esc(t.name.toUpperCase())}<br><span class="m">${esc(w.f)} · WIND ${esc(w.wind)}${w.rain != null ? ` · ${w.rain}% PRECIP` : ''}</span></span>
+        <span class="temp">${w.temp}°</span></li>`;
     }).join('');
     const rw = state.roadWx || [];
-    $('#roadWxList').innerHTML = rw.length ? rw.map((s) => `<li><span><b>${esc(s.name)}</b><br><span class="m">wind ${esc(s.dir || '')} ${s.wind ?? '?'} mph${s.gust ? `, gusts ${s.gust}` : ''}${s.precip ? ` · ${s.precip}" rain` : ''}</span></span>
-      <span class="temp">${s.temp != null ? Math.round(s.temp) + '°' : '–'}</span></li>`).join('') : '<li class="empty">No roadside readings.</li>';
+    $('#roadWxList').innerHTML = rw.length ? rw.map((s) => `<li><span>${esc(s.name.toUpperCase())}<br><span class="m">WIND ${esc(s.dir || '')} ${s.wind ?? '?'} MPH${s.gust ? ` G${s.gust}` : ''}${s.precip ? ` · ${s.precip}" PRECIP` : ''}</span></span>
+      <span class="temp">${s.temp != null ? Math.round(s.temp) + '°' : '–'}</span></li>`).join('') : '<li class="empty">NO ROADSIDE READINGS</li>';
   }
 
-  // ---------------- route picker ----------------
+  // ---------------- route filter ----------------
   const sel = $('#route');
-  for (const c of C.corridors) sel.insertAdjacentHTML('beforeend', `<option value="${c.id}">${esc(c.name)}</option>`);
+  for (const c of C.corridors) sel.insertAdjacentHTML('beforeend', `<option value="${c.id}">${esc(c.name.toUpperCase())}</option>`);
   sel.value = state.route;
-  function applyRoute() {
+  function applyRoute(fit) {
     const c = corridor();
     if (map.getLayer('route-hl')) {
       let filter = ['==', ['get', 'ref'], '__none__'];
@@ -456,39 +551,37 @@
       }
       map.setFilter('route-hl', filter);
     }
-    if (c) {
-      const pts = c.towns.map((id) => townById[id]);
+    if (c && fit) {
       const b = new maplibregl.LngLatBounds();
-      pts.forEach((t) => b.extend([t.lon, t.lat]));
+      c.towns.forEach((id) => b.extend([townById[id].lon, townById[id].lat]));
       map.fitBounds(b, { padding: fitPad(60), maxZoom: 11 });
     }
     renderAlerts(); renderRoads(); renderWeather();
   }
-  sel.addEventListener('change', () => { state.route = sel.value; store.set('ht.route', state.route); applyRoute(); });
-  map.on('load', applyRoute);
+  sel.addEventListener('change', () => { state.route = sel.value; store.set('ht.route', state.route); applyRoute(true); });
+  map.on('load', () => applyRoute(false));
 
   // ---------------- tabs & sheet ----------------
+  const panel = $('#panel');
   document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button').forEach((x) => x.setAttribute('aria-selected', x === b));
     document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('on', t.id === 'tab-' + b.dataset.tab));
     panel.classList.remove('min');
   }));
-  const panel = $('#panel');
-  $('#tab-alerts').classList.add('on');
+  $('#tab-roads').classList.add('on');
   $('#sheetHandle').addEventListener('click', () => {
     if (panel.classList.contains('min')) panel.classList.remove('min');
     else if (panel.classList.contains('max')) { panel.classList.remove('max'); panel.classList.add('min'); }
     else panel.classList.add('max');
   });
-  $('#btnReset').addEventListener('click', fitAll);
 
   // ---------------- my location & facing direction ----------------
   let meMarker = null, watching = false;
   const meEl = document.createElement('div');
   meEl.className = 'me';
   meEl.innerHTML = `<svg class="cone" viewBox="0 0 64 64" style="display:none"><defs><radialGradient id="cg" cx="50%" cy="100%" r="100%">
-    <stop offset="0" stop-color="#1f58a6" stop-opacity=".55"/><stop offset="1" stop-color="#1f58a6" stop-opacity="0"/></radialGradient></defs>
-    <path d="M32 32 L14 2 A36 36 0 0 1 50 2 Z" fill="url(#cg)"/></svg><div class="dot"></div>`;
+    <stop offset="0" stop-color="#00e5ff" stop-opacity=".6"/><stop offset="1" stop-color="#00e5ff" stop-opacity="0"/></radialGradient></defs>
+    <path d="M32 32 L14 2 A36 36 0 0 1 50 2 Z" fill="url(#cg)" stroke="#00e5ff" stroke-opacity=".5" stroke-width=".6"/></svg><div class="dot"></div>`;
   const cone = meEl.querySelector('.cone');
   function setHeading(h) {
     if (h == null || isNaN(h)) return;
@@ -532,11 +625,11 @@
   });
 
   // ---------------- clock & refresh ----------------
-  const tick = () => { $('#clock').textContent = fmtTime(new Date()); };
-  tick(); setInterval(tick, 15000);
+  const tick = () => { $('#clock').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }); };
+  tick(); setInterval(tick, 10000);
   async function refresh() {
     await Promise.allSettled([loadWeather(), loadAlerts(), loadRoads(), loadRoadWeather(), loadFlow()]);
-    $('#updated').textContent = 'Updated ' + fmtTime(new Date());
+    $('#updated').textContent = 'SYNC ' + fmtTime(new Date()).toUpperCase();
   }
   loadCameras(); // the list only; images wait for a click
   refresh();
