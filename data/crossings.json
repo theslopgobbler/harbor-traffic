@@ -1,1 +1,3044 @@
-{"source":"OpenStreetMap contributors (ODbL)","updated":"2026-09-30T02:51:07.1696298Z","crossings":[]}
+{
+  "source": "OpenStreetMap contributors (ODbL)",
+  "updated": "2026-09-30T03:11:26.2662166+00:00",
+  "crossings": [
+    {
+      "id": 48073442,
+      "lat": 47.011591,
+      "lon": -123.386705,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48151384,
+      "lat": 47.06817,
+      "lon": -123.271892,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48183722,
+      "lat": 47.04112,
+      "lon": -123.331568,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48212778,
+      "lat": 47.002686,
+      "lon": -123.485372,
+      "road": "Monte Elma Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48212922,
+      "lat": 46.975216,
+      "lon": -123.893715,
+      "road": "5th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48216624,
+      "lat": 46.96975,
+      "lon": -123.852157,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48216690,
+      "lat": 46.969691,
+      "lon": -123.845971,
+      "road": "Maple Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48216704,
+      "lat": 46.96961,
+      "lon": -123.843003,
+      "road": "West 1st Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48234087,
+      "lat": 46.963806,
+      "lon": -123.6463,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48239416,
+      "lat": 47.070109,
+      "lon": -123.269729,
+      "road": "North Summit Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48253193,
+      "lat": 46.970114,
+      "lon": -123.853487,
+      "road": "Henderson Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48261181,
+      "lat": 47.040354,
+      "lon": -123.333943,
+      "road": "Odonnall Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48261252,
+      "lat": 47.006357,
+      "lon": -123.466092,
+      "road": "Oneil Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48262407,
+      "lat": 46.836602,
+      "lon": -123.210487,
+      "road": "Blockhouse Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48268151,
+      "lat": 46.974549,
+      "lon": -123.879694,
+      "road": "I Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48268374,
+      "lat": 46.960968,
+      "lon": -123.700082,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48275316,
+      "lat": 47.006972,
+      "lon": -123.430643,
+      "road": "Calder Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48287263,
+      "lat": 47.030185,
+      "lon": -123.34667,
+      "road": "Hicklin Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48289014,
+      "lat": 47.0034,
+      "lon": -123.482862,
+      "road": "Hewitt Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48297262,
+      "lat": 46.977232,
+      "lon": -123.602103,
+      "road": "South 1st Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48309150,
+      "lat": 47.00731,
+      "lon": -123.412774,
+      "road": "North 10th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48313787,
+      "lat": 46.978472,
+      "lon": -123.902014,
+      "road": "Maple Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48319177,
+      "lat": 47.068407,
+      "lon": -123.271202,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48319294,
+      "lat": 47.00484,
+      "lon": -123.476271,
+      "road": "Moore Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48319330,
+      "lat": 47.006528,
+      "lon": -123.456048,
+      "road": "Newman Creek Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48319405,
+      "lat": 47.007291,
+      "lon": -123.414084,
+      "road": "North 11th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48319637,
+      "lat": 46.981475,
+      "lon": -123.35998,
+      "road": "North Blockhouse Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48319786,
+      "lat": 46.972451,
+      "lon": -123.620997,
+      "road": "County Farm Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320458,
+      "lat": 46.980578,
+      "lon": -123.78112,
+      "road": "East Sargent Boulevard",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320546,
+      "lat": 46.977152,
+      "lon": -123.805693,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320554,
+      "lat": 46.977126,
+      "lon": -123.806188,
+      "road": "South Chehalis Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320604,
+      "lat": 46.976174,
+      "lon": -123.808581,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320648,
+      "lat": 46.973088,
+      "lon": -123.813017,
+      "road": "River Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320853,
+      "lat": 46.966468,
+      "lon": -123.831185,
+      "road": "South Division Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320903,
+      "lat": 46.970616,
+      "lon": -123.845969,
+      "road": "Maple Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320942,
+      "lat": 46.971442,
+      "lon": -123.852169,
+      "road": "Myrtle Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48320954,
+      "lat": 46.971468,
+      "lon": -123.856077,
+      "road": "Port Industrial Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48321592,
+      "lat": 46.973579,
+      "lon": -123.889171,
+      "road": "8th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48321807,
+      "lat": 46.970166,
+      "lon": -123.818989,
+      "road": "South M Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48321830,
+      "lat": 47.008621,
+      "lon": -123.396873,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48321848,
+      "lat": 47.009053,
+      "lon": -123.393424,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48321996,
+      "lat": 47.027984,
+      "lon": -123.351576,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322144,
+      "lat": 47.037922,
+      "lon": -123.336648,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322372,
+      "lat": 47.055816,
+      "lon": -123.295954,
+      "road": "Church Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322485,
+      "lat": 46.978511,
+      "lon": -123.902217,
+      "road": "South Adams Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322789,
+      "lat": 46.977516,
+      "lon": -123.600843,
+      "road": "South Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322800,
+      "lat": 46.97838,
+      "lon": -123.597056,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322836,
+      "lat": 46.980711,
+      "lon": -123.579844,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322846,
+      "lat": 46.98372,
+      "lon": -123.565912,
+      "road": "Old Beacon Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322860,
+      "lat": 46.984995,
+      "lon": -123.559805,
+      "road": "Monte Brady Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322882,
+      "lat": 46.986252,
+      "lon": -123.553981,
+      "road": "Glenn Road North",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322906,
+      "lat": 46.990831,
+      "lon": -123.532905,
+      "road": "Fairbairn Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322919,
+      "lat": 46.991962,
+      "lon": -123.527594,
+      "road": "Winkleman Road South",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48322936,
+      "lat": 46.995423,
+      "lon": -123.511792,
+      "road": "Monte Brady Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323068,
+      "lat": 46.974563,
+      "lon": -123.347251,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323168,
+      "lat": 46.95944,
+      "lon": -123.329293,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323170,
+      "lat": 46.958078,
+      "lon": -123.328454,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323252,
+      "lat": 46.947976,
+      "lon": -123.321628,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323337,
+      "lat": 46.939265,
+      "lon": -123.31206,
+      "road": "Porter Creek Road West",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323635,
+      "lat": 46.91345,
+      "lon": -123.299624,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323678,
+      "lat": 46.909156,
+      "lon": -123.295572,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323704,
+      "lat": 46.904771,
+      "lon": -123.292781,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323720,
+      "lat": 46.902625,
+      "lon": -123.29141,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48323810,
+      "lat": 46.882184,
+      "lon": -123.27429,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48324121,
+      "lat": 46.841338,
+      "lon": -123.228947,
+      "road": "North Murray Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48324743,
+      "lat": 46.97299,
+      "lon": -123.881676,
+      "road": "K Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48324934,
+      "lat": 46.970356,
+      "lon": -123.819206,
+      "road": "South M Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48327152,
+      "lat": 47.007239,
+      "lon": -123.416648,
+      "road": "North 13th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48332752,
+      "lat": 46.966191,
+      "lon": -123.827333,
+      "road": "South Monroe Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48333905,
+      "lat": 46.969556,
+      "lon": -123.856083,
+      "road": "Ingram Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48347330,
+      "lat": 46.978078,
+      "lon": -123.598403,
+      "road": "South Sylvia Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48347420,
+      "lat": 46.968072,
+      "lon": -123.634167,
+      "road": "Heikkinen Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48352199,
+      "lat": 46.976758,
+      "lon": -123.80763,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48370539,
+      "lat": 47.007451,
+      "lon": -123.408722,
+      "road": "North 6th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48371652,
+      "lat": 46.967118,
+      "lon": -123.824677,
+      "road": "South Washington Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48374358,
+      "lat": 46.832058,
+      "lon": -123.183399,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48379859,
+      "lat": 46.89892,
+      "lon": -123.288829,
+      "road": "Elma Gate Road West",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48384228,
+      "lat": 47.079442,
+      "lon": -123.253577,
+      "road": "Elma Hicklin Road East",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48391680,
+      "lat": 47.044028,
+      "lon": -123.319154,
+      "road": "Elma Hicklin Road West",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48401290,
+      "lat": 46.97187,
+      "lon": -123.342447,
+      "road": "Dunlap Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48404543,
+      "lat": 46.876982,
+      "lon": -123.270322,
+      "road": "Shelton Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48410125,
+      "lat": 47.010406,
+      "lon": -123.389335,
+      "road": "Stamper Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48417622,
+      "lat": 46.839539,
+      "lon": -123.221966,
+      "road": "Merry Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48436906,
+      "lat": 46.844196,
+      "lon": -123.240092,
+      "road": "North Scheaffer Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48438299,
+      "lat": 46.971594,
+      "lon": -123.871246,
+      "road": "23rd Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48443435,
+      "lat": 47.007546,
+      "lon": -123.407432,
+      "road": "North 5th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48443646,
+      "lat": 47.00715,
+      "lon": -123.421554,
+      "road": "North 17th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48454838,
+      "lat": 46.84244,
+      "lon": -123.234,
+      "road": "North Newton Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48454842,
+      "lat": 46.842631,
+      "lon": -123.233991,
+      "road": "North Newton Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48455968,
+      "lat": 46.968942,
+      "lon": -123.849832,
+      "road": "Port Industrial Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48459965,
+      "lat": 46.972603,
+      "lon": -123.881202,
+      "road": "K Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48463242,
+      "lat": 47.00774,
+      "lon": -123.404689,
+      "road": "North 3rd Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48463437,
+      "lat": 47.016196,
+      "lon": -123.376414,
+      "road": "Cloquallum Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48473294,
+      "lat": 46.962167,
+      "lon": -123.680825,
+      "road": "Central Park Drive",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48475298,
+      "lat": 46.991156,
+      "lon": -123.377765,
+      "road": "North Blockhouse Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48475458,
+      "lat": 46.970522,
+      "lon": -123.865453,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48475462,
+      "lat": 46.971506,
+      "lon": -123.865448,
+      "road": "Ontario Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48486490,
+      "lat": 46.969643,
+      "lon": -123.842767,
+      "road": "West 1st Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48779415,
+      "lat": 46.633069,
+      "lon": -122.931654,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48799975,
+      "lat": 46.633094,
+      "lon": -123.087659,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48808532,
+      "lat": 46.760698,
+      "lon": -123.001193,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48809586,
+      "lat": 46.626326,
+      "lon": -123.100446,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 48812860,
+      "lat": 46.757403,
+      "lon": -122.876929,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49802847,
+      "lat": 46.728012,
+      "lon": -122.948861,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49807225,
+      "lat": 46.754523,
+      "lon": -122.851187,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49807232,
+      "lat": 46.754371,
+      "lon": -122.852248,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49815521,
+      "lat": 46.741884,
+      "lon": -122.982385,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49836444,
+      "lat": 46.63494,
+      "lon": -123.011481,
+      "road": "Highway 603",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49844294,
+      "lat": 46.721678,
+      "lon": -122.951323,
+      "road": "Railroad Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49866410,
+      "lat": 46.725082,
+      "lon": -122.965263,
+      "road": "M Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49885994,
+      "lat": 46.762372,
+      "lon": -123.002114,
+      "road": "Hoss Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49888077,
+      "lat": 46.601202,
+      "lon": -123.127409,
+      "road": "SR 6",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49900646,
+      "lat": 46.751117,
+      "lon": -122.992987,
+      "road": "Foron Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49906893,
+      "lat": 46.630796,
+      "lon": -123.096831,
+      "road": "Spooner Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49936218,
+      "lat": 47.107002,
+      "lon": -123.15913,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49954452,
+      "lat": 46.63412,
+      "lon": -122.931652,
+      "road": "Sturdevant Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49958748,
+      "lat": 47.099832,
+      "lon": -123.216838,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49973696,
+      "lat": 47.123608,
+      "lon": -123.114408,
+      "road": "West State Highway 108",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49977922,
+      "lat": 46.661341,
+      "lon": -122.971451,
+      "road": "West Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49977924,
+      "lat": 46.662506,
+      "lon": -122.971602,
+      "road": "Northwest Center Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49977927,
+      "lat": 46.663242,
+      "lon": -122.971683,
+      "road": "Northwest Prindle Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49977966,
+      "lat": 46.701095,
+      "lon": -122.960029,
+      "road": "East Floral Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49977973,
+      "lat": 46.706087,
+      "lon": -122.957911,
+      "road": "West Summa Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49978363,
+      "lat": 46.625513,
+      "lon": -122.962728,
+      "road": "Rogers Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49978436,
+      "lat": 46.753308,
+      "lon": -122.936429,
+      "road": "Big Hanaford Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49978526,
+      "lat": 46.648772,
+      "lon": -122.956216,
+      "road": "Southwest Parkland Drive",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49978982,
+      "lat": 46.727402,
+      "lon": -122.950327,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49979367,
+      "lat": 46.758136,
+      "lon": -122.857684,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986362,
+      "lat": 47.172174,
+      "lon": -123.074229,
+      "road": "Southeast Cole Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986409,
+      "lat": 47.132981,
+      "lon": -123.091368,
+      "road": "Southeast Simmons Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986421,
+      "lat": 47.12729,
+      "lon": -123.092261,
+      "road": "Southeast Whitener Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986428,
+      "lat": 47.126713,
+      "lon": -123.093597,
+      "road": "Southeast Old Olympic Highway",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986441,
+      "lat": 47.125507,
+      "lon": -123.103816,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986485,
+      "lat": 47.108109,
+      "lon": -123.155544,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986515,
+      "lat": 47.104062,
+      "lon": -123.180527,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986556,
+      "lat": 47.092044,
+      "lon": -123.228541,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49986619,
+      "lat": 46.666502,
+      "lon": -122.972131,
+      "road": "Northwest West Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49987888,
+      "lat": 46.661152,
+      "lon": -122.974128,
+      "road": "West Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49987891,
+      "lat": 46.663123,
+      "lon": -122.973827,
+      "road": "Northwest Prindle Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49987900,
+      "lat": 46.666509,
+      "lon": -122.973398,
+      "road": "Northwest West Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49987938,
+      "lat": 46.704165,
+      "lon": -122.96725,
+      "road": "South Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49987944,
+      "lat": 46.710893,
+      "lon": -122.966164,
+      "road": "Alder Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49987948,
+      "lat": 46.713153,
+      "lon": -122.965804,
+      "road": "West Cherry Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49988041,
+      "lat": 46.71738,
+      "lon": -122.965127,
+      "road": "Centralia College Boulevard",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998103,
+      "lat": 46.735246,
+      "lon": -122.977651,
+      "road": "West Reynolds Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998107,
+      "lat": 46.735457,
+      "lon": -122.981865,
+      "road": "Johnson Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998109,
+      "lat": 46.735664,
+      "lon": -122.985992,
+      "road": "Van Wormer Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998113,
+      "lat": 46.735808,
+      "lon": -122.988555,
+      "road": "Taylor Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998115,
+      "lat": 46.735907,
+      "lon": -122.98981,
+      "road": "Harrison Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998121,
+      "lat": 46.736582,
+      "lon": -122.998467,
+      "road": "Sandra Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 49998124,
+      "lat": 46.736692,
+      "lon": -122.99987,
+      "road": "Northpark Drive",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50033712,
+      "lat": 46.637533,
+      "lon": -122.941906,
+      "road": "Bishop Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50033716,
+      "lat": 46.636781,
+      "lon": -122.93623,
+      "road": "Habein Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50034038,
+      "lat": 46.653264,
+      "lon": -122.960869,
+      "road": "Southwest 9th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50034041,
+      "lat": 46.65505,
+      "lon": -122.963342,
+      "road": "Southwest 6th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50034045,
+      "lat": 46.656842,
+      "lon": -122.965797,
+      "road": "Southwest 3rd Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50034063,
+      "lat": 46.658428,
+      "lon": -122.969495,
+      "road": "Southwest Chehalis Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50042837,
+      "lat": 46.634051,
+      "lon": -123.092521,
+      "road": "Clinton Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50042923,
+      "lat": 46.627025,
+      "lon": -123.071071,
+      "road": "SR 6",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50042945,
+      "lat": 46.624476,
+      "lon": -123.06214,
+      "road": "Twin Oaks Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50043013,
+      "lat": 46.628328,
+      "lon": -123.028913,
+      "road": "Twin Oaks Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50043048,
+      "lat": 46.644148,
+      "lon": -122.993247,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50043050,
+      "lat": 46.644526,
+      "lon": -122.9925,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50043052,
+      "lat": 46.647949,
+      "lon": -122.985688,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50043063,
+      "lat": 46.650793,
+      "lon": -122.979986,
+      "road": "Shorey Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 50043075,
+      "lat": 46.652822,
+      "lon": -122.976525,
+      "road": "Southwest Hillburger Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51338964,
+      "lat": 46.81372,
+      "lon": -123.061655,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51343148,
+      "lat": 47.04763,
+      "lon": -122.899452,
+      "road": "Thurston Avenue Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51345266,
+      "lat": 46.785166,
+      "lon": -122.89738,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51348751,
+      "lat": 46.891863,
+      "lon": -122.968951,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51367002,
+      "lat": 46.904429,
+      "lon": -122.850642,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51368443,
+      "lat": 46.869377,
+      "lon": -122.974322,
+      "road": "Case Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51377162,
+      "lat": 47.041932,
+      "lon": -122.895243,
+      "road": "8th Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51379271,
+      "lat": 46.896408,
+      "lon": -122.950449,
+      "road": "Reeder Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51379272,
+      "lat": 46.896489,
+      "lon": -122.950451,
+      "road": "Reeder Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51379362,
+      "lat": 46.792083,
+      "lon": -123.023792,
+      "road": "Cross Way Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51389326,
+      "lat": 46.902509,
+      "lon": -122.857954,
+      "road": "Old Highway 99 Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51393040,
+      "lat": 46.785081,
+      "lon": -123.011398,
+      "road": "Old Highway 99 Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51394345,
+      "lat": 46.844029,
+      "lon": -123.155277,
+      "road": "Hunter Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51395125,
+      "lat": 46.899321,
+      "lon": -122.908578,
+      "road": "Tilley Road South",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51396040,
+      "lat": 46.896328,
+      "lon": -122.944444,
+      "road": "Shelly Street Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51396217,
+      "lat": 46.910231,
+      "lon": -122.812628,
+      "road": "Marshall Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51405771,
+      "lat": 46.83729,
+      "lon": -123.125834,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51415560,
+      "lat": 47.026947,
+      "lon": -122.939406,
+      "road": "R W Johnson Boulevard Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51426797,
+      "lat": 46.799763,
+      "lon": -122.868917,
+      "road": "East 6th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51426923,
+      "lat": 46.966731,
+      "lon": -122.834775,
+      "road": "Rich Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51427017,
+      "lat": 47.037747,
+      "lon": -122.913808,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51427551,
+      "lat": 47.008939,
+      "lon": -122.952827,
+      "road": "Sapp Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51427571,
+      "lat": 47.021843,
+      "lon": -122.948316,
+      "road": "29th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51428730,
+      "lat": 47.045242,
+      "lon": -122.896736,
+      "road": "Jefferson Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51446938,
+      "lat": 47.036726,
+      "lon": -122.912643,
+      "road": "Deschutes Parkway Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51446943,
+      "lat": 47.036426,
+      "lon": -122.91245,
+      "road": "Deschutes Parkway Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51449203,
+      "lat": 46.766328,
+      "lon": -123.003517,
+      "road": "222nd Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51449892,
+      "lat": 47.046865,
+      "lon": -122.898223,
+      "road": "Adams Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458012,
+      "lat": 47.003423,
+      "lon": -122.955462,
+      "road": "49th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458569,
+      "lat": 46.780042,
+      "lon": -123.008542,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458573,
+      "lat": 46.77545,
+      "lon": -123.006845,
+      "road": "216th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458575,
+      "lat": 46.768162,
+      "lon": -123.004206,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458609,
+      "lat": 46.832338,
+      "lon": -123.121316,
+      "road": "Laymon Street Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458695,
+      "lat": 46.795377,
+      "lon": -123.02946,
+      "road": "Tea Street Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51458781,
+      "lat": 46.843655,
+      "lon": -123.139258,
+      "road": "Moon Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51473955,
+      "lat": 46.967253,
+      "lon": -122.838487,
+      "road": "83rd Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51474445,
+      "lat": 46.970627,
+      "lon": -122.841096,
+      "road": "80th Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51476747,
+      "lat": 46.880189,
+      "lon": -122.865435,
+      "road": "143rd Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51480669,
+      "lat": 46.883707,
+      "lon": -122.972835,
+      "road": "140th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51484199,
+      "lat": 46.91077,
+      "lon": -122.822272,
+      "road": "Rock View Lane Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51488906,
+      "lat": 46.979688,
+      "lon": -122.848107,
+      "road": "74th Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51493120,
+      "lat": 46.778282,
+      "lon": -122.908344,
+      "road": "Connor Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51530557,
+      "lat": 47.0395,
+      "lon": -122.892754,
+      "road": "Union Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51530562,
+      "lat": 47.039505,
+      "lon": -122.892658,
+      "road": "Union Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51533034,
+      "lat": 46.898902,
+      "lon": -122.924443,
+      "road": "Champion Drive Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51536540,
+      "lat": 46.843241,
+      "lon": -123.13318,
+      "road": "Gate Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51537126,
+      "lat": 46.895355,
+      "lon": -122.966313,
+      "road": "Case Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51548986,
+      "lat": 46.966748,
+      "lon": -122.834822,
+      "road": "Rich Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51549134,
+      "lat": 46.945325,
+      "lon": -122.852528,
+      "road": "Rich Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 51549847,
+      "lat": 46.909967,
+      "lon": -122.829217,
+      "road": "Bronson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 490993371,
+      "lat": 46.959904,
+      "lon": -123.69781,
+      "road": "Mallard Lane",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 491017025,
+      "lat": 46.994556,
+      "lon": -123.38394,
+      "road": "Twidwell Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 491421239,
+      "lat": 46.971421,
+      "lon": -123.624566,
+      "road": "Devonshire Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 491515997,
+      "lat": 46.825239,
+      "lon": -123.095358,
+      "road": "Littlerock Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 636143793,
+      "lat": 46.757995,
+      "lon": -122.850653,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 636143826,
+      "lat": 46.754831,
+      "lon": -122.863287,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 638978580,
+      "lat": 46.896402,
+      "lon": -122.963883,
+      "road": "Maytown Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374358,
+      "lat": 47.042036,
+      "lon": -122.90251,
+      "road": "Columbia Street Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374444,
+      "lat": 47.045813,
+      "lon": -122.896824,
+      "road": "Jefferson Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374445,
+      "lat": 47.046096,
+      "lon": -122.896948,
+      "road": "State Avenue Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374450,
+      "lat": 47.04786,
+      "lon": -122.899605,
+      "road": "Franklin Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374452,
+      "lat": 47.048462,
+      "lon": -122.899816,
+      "road": "A Avenue Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374455,
+      "lat": 47.049297,
+      "lon": -122.899927,
+      "road": "B AvenueNortheast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 652374460,
+      "lat": 47.050809,
+      "lon": -122.90081,
+      "road": "Market Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 659962606,
+      "lat": 46.910722,
+      "lon": -122.82224,
+      "road": "Rock View Lane Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 659962615,
+      "lat": 46.90992,
+      "lon": -122.829186,
+      "road": "Bronson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 659963334,
+      "lat": 46.896279,
+      "lon": -122.944445,
+      "road": "Shelly Street Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1205588734,
+      "lat": 46.971201,
+      "lon": -123.85898,
+      "road": "Henderson Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1205588928,
+      "lat": 46.961697,
+      "lon": -123.844586,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1776156875,
+      "lat": 46.716023,
+      "lon": -122.95331,
+      "road": "East Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1776157029,
+      "lat": 46.727583,
+      "lon": -122.950872,
+      "road": "B Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1825630957,
+      "lat": 46.751356,
+      "lon": -122.928698,
+      "road": "Big Hanaford Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1825631007,
+      "lat": 46.754237,
+      "lon": -122.847019,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 1952748938,
+      "lat": 47.045663,
+      "lon": -122.896797,
+      "road": "Jefferson Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2158525020,
+      "lat": 46.967698,
+      "lon": -123.836111,
+      "road": "West Wishkah Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2180692829,
+      "lat": 46.641449,
+      "lon": -122.998565,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467880278,
+      "lat": 46.735476,
+      "lon": -122.975034,
+      "road": "West Reynolds Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467908776,
+      "lat": 46.737261,
+      "lon": -123.0071,
+      "road": "Gallagher Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467917138,
+      "lat": 46.755609,
+      "lon": -122.998149,
+      "road": "Kuper Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467917142,
+      "lat": 46.751057,
+      "lon": -122.992987,
+      "road": "Foron Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467917144,
+      "lat": 46.741852,
+      "lon": -122.982422,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467919056,
+      "lat": 46.760011,
+      "lon": -123.001265,
+      "road": "Robert Thompson Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467919064,
+      "lat": 46.759144,
+      "lon": -123.000648,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467920570,
+      "lat": 46.760017,
+      "lon": -122.99975,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467927686,
+      "lat": 46.771216,
+      "lon": -123.005312,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467934429,
+      "lat": 46.814037,
+      "lon": -123.061637,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467947323,
+      "lat": 46.843612,
+      "lon": -123.139257,
+      "road": "Moon Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467965976,
+      "lat": 46.926967,
+      "lon": -123.304696,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467971147,
+      "lat": 46.985156,
+      "lon": -123.366684,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467972049,
+      "lat": 46.978644,
+      "lon": -123.354761,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467977372,
+      "lat": 47.007831,
+      "lon": -123.403361,
+      "road": "North 2nd Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467977378,
+      "lat": 47.00785,
+      "lon": -123.403364,
+      "road": "North 2nd Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467979955,
+      "lat": 47.009093,
+      "lon": -123.393438,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2467979956,
+      "lat": 47.009129,
+      "lon": -123.393443,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470441211,
+      "lat": 46.652892,
+      "lon": -122.976528,
+      "road": "Southwest Hillburger Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450354,
+      "lat": 46.701095,
+      "lon": -122.959959,
+      "road": "East Floral Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450355,
+      "lat": 46.706086,
+      "lon": -122.957847,
+      "road": "East Summa Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450363,
+      "lat": 46.715083,
+      "lon": -122.953762,
+      "road": "East Locust Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450365,
+      "lat": 46.716009,
+      "lon": -122.953248,
+      "road": "East Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450367,
+      "lat": 46.718833,
+      "lon": -122.951995,
+      "road": "East Maple Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450368,
+      "lat": 46.718847,
+      "lon": -122.952067,
+      "road": "East Maple Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470450369,
+      "lat": 46.715098,
+      "lon": -122.953831,
+      "road": "East Locust Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470459405,
+      "lat": 46.666502,
+      "lon": -122.972082,
+      "road": "Northwest West Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470461123,
+      "lat": 46.663245,
+      "lon": -122.971633,
+      "road": "Northwest Prindle Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470461129,
+      "lat": 46.666503,
+      "lon": -122.97218,
+      "road": "Northwest West Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470464827,
+      "lat": 46.662522,
+      "lon": -122.97134,
+      "road": "Northwest Center Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470470660,
+      "lat": 46.66251,
+      "lon": -122.971533,
+      "road": "Northwest Center Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470470662,
+      "lat": 46.661346,
+      "lon": -122.971392,
+      "road": "West Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470472176,
+      "lat": 46.625529,
+      "lon": -122.962684,
+      "road": "Rogers Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2470478976,
+      "lat": 46.63412,
+      "lon": -122.931562,
+      "road": "Sturdevant Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825548,
+      "lat": 46.969641,
+      "lon": -123.845971,
+      "road": "Maple Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825554,
+      "lat": 46.969328,
+      "lon": -123.847421,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825556,
+      "lat": 46.968721,
+      "lon": -123.849314,
+      "road": "Port Industrial Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825561,
+      "lat": 46.968605,
+      "lon": -123.849674,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825570,
+      "lat": 46.969438,
+      "lon": -123.847469,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825581,
+      "lat": 46.968765,
+      "lon": -123.849418,
+      "road": "Port Industrial Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801825583,
+      "lat": 46.96865,
+      "lon": -123.850117,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801827303,
+      "lat": 46.968628,
+      "lon": -123.850102,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801827345,
+      "lat": 46.969224,
+      "lon": -123.85087,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801827363,
+      "lat": 46.966489,
+      "lon": -123.836618,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801827369,
+      "lat": 46.966435,
+      "lon": -123.836619,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2801827370,
+      "lat": 46.966383,
+      "lon": -123.83662,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976568673,
+      "lat": 46.72764,
+      "lon": -122.952245,
+      "road": "North Tower Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976568674,
+      "lat": 46.727629,
+      "lon": -122.953677,
+      "road": "North Pearl Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976568675,
+      "lat": 46.727625,
+      "lon": -122.95506,
+      "road": "E Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976568676,
+      "lat": 46.727612,
+      "lon": -122.956462,
+      "road": "F Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976568677,
+      "lat": 46.72761,
+      "lon": -122.957798,
+      "road": "G Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976570933,
+      "lat": 46.727643,
+      "lon": -122.950871,
+      "road": "B Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976587779,
+      "lat": 46.741923,
+      "lon": -122.982352,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976587847,
+      "lat": 46.741968,
+      "lon": -122.982322,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976596657,
+      "lat": 46.7153,
+      "lon": -122.965456,
+      "road": "West Pear Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 2976596712,
+      "lat": 46.718376,
+      "lon": -122.964963,
+      "road": "West Main Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3033723923,
+      "lat": 46.722565,
+      "lon": -122.964296,
+      "road": "West 1st Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3033723935,
+      "lat": 46.727578,
+      "lon": -122.961885,
+      "road": "J Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3033723936,
+      "lat": 46.727599,
+      "lon": -122.959162,
+      "road": "H Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3062473045,
+      "lat": 46.807238,
+      "lon": -123.050237,
+      "road": "Joselyn Road Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088152982,
+      "lat": 46.964592,
+      "lon": -123.847037,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088156537,
+      "lat": 46.970088,
+      "lon": -123.853421,
+      "road": "Henderson Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088156543,
+      "lat": 46.967871,
+      "lon": -123.859538,
+      "road": "John Stevens Way",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088156547,
+      "lat": 46.971488,
+      "lon": -123.860523,
+      "road": "28th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088162343,
+      "lat": 46.971611,
+      "lon": -123.865448,
+      "road": "Ontario Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088162354,
+      "lat": 46.971545,
+      "lon": -123.871239,
+      "road": "23rd Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088162358,
+      "lat": 46.971186,
+      "lon": -123.872458,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088165267,
+      "lat": 46.971215,
+      "lon": -123.872442,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088165270,
+      "lat": 46.971367,
+      "lon": -123.872375,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088165274,
+      "lat": 46.971492,
+      "lon": -123.871444,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088165285,
+      "lat": 46.971347,
+      "lon": -123.872386,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088171220,
+      "lat": 46.966413,
+      "lon": -123.830899,
+      "road": "West Heron Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088171238,
+      "lat": 46.96624,
+      "lon": -123.827381,
+      "road": "South Monroe Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088189887,
+      "lat": 46.977215,
+      "lon": -123.803178,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088189888,
+      "lat": 46.977251,
+      "lon": -123.801736,
+      "road": "South Fleet Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088197174,
+      "lat": 46.965978,
+      "lon": -123.639649,
+      "road": "Aldergrove Drive",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088218992,
+      "lat": 46.984978,
+      "lon": -123.559891,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088219048,
+      "lat": 46.98929,
+      "lon": -123.53997,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088219517,
+      "lat": 46.993757,
+      "lon": -123.519658,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088228712,
+      "lat": 47.050845,
+      "lon": -123.304519,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088229091,
+      "lat": 47.006696,
+      "lon": -123.445862,
+      "road": "Hurd Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088229094,
+      "lat": 47.00866,
+      "lon": -123.396872,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088229116,
+      "lat": 47.040383,
+      "lon": -123.334144,
+      "road": "Odonnall Avenue",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3088257990,
+      "lat": 47.084509,
+      "lon": -123.25112,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3232377727,
+      "lat": 46.975585,
+      "lon": -123.349144,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3232412026,
+      "lat": 47.008696,
+      "lon": -123.396872,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3232412046,
+      "lat": 47.008738,
+      "lon": -123.396872,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3232426320,
+      "lat": 46.96207,
+      "lon": -123.838332,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3243961069,
+      "lat": 46.652057,
+      "lon": -122.959277,
+      "road": "Southwest 11th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3248880492,
+      "lat": 46.998305,
+      "lon": -122.881001,
+      "road": "Henderson Boulevard Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3248880768,
+      "lat": 47.037876,
+      "lon": -122.907831,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3286844363,
+      "lat": 46.988689,
+      "lon": -122.855072,
+      "road": "Rixie Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3540325437,
+      "lat": 46.799743,
+      "lon": -122.86887,
+      "road": "East 6th Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 3685021449,
+      "lat": 46.938543,
+      "lon": -122.85387,
+      "road": "Drewry Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 4418558634,
+      "lat": 46.968615,
+      "lon": -123.849368,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 4517231972,
+      "lat": 46.97374,
+      "lon": -123.774284,
+      "road": "Hagara Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 4854544967,
+      "lat": 47.146103,
+      "lon": -123.081634,
+      "road": "Southeast Lynch Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5226962787,
+      "lat": 46.966302,
+      "lon": -123.836635,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5226962788,
+      "lat": 46.966323,
+      "lon": -123.836634,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5226962789,
+      "lat": 46.966246,
+      "lon": -123.836636,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5240554654,
+      "lat": 46.727519,
+      "lon": -122.956462,
+      "road": "F Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5280576087,
+      "lat": 47.043095,
+      "lon": -122.896405,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650368,
+      "lat": 46.753298,
+      "lon": -122.936378,
+      "road": "Big Hanaford Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650393,
+      "lat": 46.778281,
+      "lon": -122.908264,
+      "road": "Connor Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650398,
+      "lat": 46.785131,
+      "lon": -122.897335,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650471,
+      "lat": 46.880188,
+      "lon": -122.865383,
+      "road": "143rd Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650518,
+      "lat": 46.938546,
+      "lon": -122.853812,
+      "road": "Drewry Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650521,
+      "lat": 46.945322,
+      "lon": -122.852476,
+      "road": "Rich Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5294650561,
+      "lat": 46.966712,
+      "lon": -122.834731,
+      "road": "Rich Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5308757195,
+      "lat": 46.861258,
+      "lon": -122.861773,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5308757196,
+      "lat": 46.861247,
+      "lon": -122.861822,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5329873126,
+      "lat": 46.977173,
+      "lon": -123.804749,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5382019348,
+      "lat": 46.972617,
+      "lon": -123.774847,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5496708258,
+      "lat": 46.97443,
+      "lon": -123.879592,
+      "road": "I Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5496708259,
+      "lat": 46.974401,
+      "lon": -123.879547,
+      "road": "I Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5496708262,
+      "lat": 46.974397,
+      "lon": -123.87938,
+      "road": "I Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5577060197,
+      "lat": 46.967689,
+      "lon": -123.847112,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5789675704,
+      "lat": 47.043985,
+      "lon": -122.896532,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5789675711,
+      "lat": 47.042724,
+      "lon": -122.896281,
+      "road": "7th Avenue Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5791654661,
+      "lat": 47.044726,
+      "lon": -122.896648,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5797076948,
+      "lat": 47.04322,
+      "lon": -122.896426,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5797562112,
+      "lat": 47.042957,
+      "lon": -122.896391,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5816767079,
+      "lat": 47.05132,
+      "lon": -122.90146,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5816767080,
+      "lat": 47.051276,
+      "lon": -122.90155,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5826314931,
+      "lat": 47.044259,
+      "lon": -122.896572,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 5826314936,
+      "lat": 47.044129,
+      "lon": -122.896553,
+      "road": "Jefferson Street Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6072163218,
+      "lat": 46.71891,
+      "lon": -122.964885,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6072163225,
+      "lat": 46.722565,
+      "lon": -122.964353,
+      "road": "West 1st Street",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6072163240,
+      "lat": 46.72508,
+      "lon": -122.965294,
+      "road": "Euclid Way",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055603,
+      "lat": 46.967867,
+      "lon": -123.859453,
+      "road": "John Stevens Way",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055619,
+      "lat": 46.964635,
+      "lon": -123.847039,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055636,
+      "lat": 46.964549,
+      "lon": -123.847036,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055655,
+      "lat": 46.964505,
+      "lon": -123.847034,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055683,
+      "lat": 46.964461,
+      "lon": -123.847032,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055723,
+      "lat": 46.964227,
+      "lon": -123.847022,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132055727,
+      "lat": 46.964393,
+      "lon": -123.847029,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132079211,
+      "lat": 46.968038,
+      "lon": -123.859719,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132079212,
+      "lat": 46.968054,
+      "lon": -123.85967,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132079222,
+      "lat": 46.968188,
+      "lon": -123.859789,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132079223,
+      "lat": 46.968158,
+      "lon": -123.859824,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132079225,
+      "lat": 46.968789,
+      "lon": -123.860109,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6132079226,
+      "lat": 46.968788,
+      "lon": -123.86006,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6133782507,
+      "lat": 46.964278,
+      "lon": -123.847024,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6133782534,
+      "lat": 46.964344,
+      "lon": -123.847027,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6133782547,
+      "lat": 46.962269,
+      "lon": -123.837894,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 6133820817,
+      "lat": 46.626394,
+      "lon": -123.034338,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7073633459,
+      "lat": 47.037802,
+      "lon": -122.913864,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7079022081,
+      "lat": 46.886473,
+      "lon": -123.30793,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7097391105,
+      "lat": 47.047846,
+      "lon": -122.899605,
+      "road": "Franklin Street Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7097452513,
+      "lat": 46.988433,
+      "lon": -122.855062,
+      "road": "Rixie Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7100361085,
+      "lat": 46.898414,
+      "lon": -122.873931,
+      "road": "Powder Plant Road Southeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7310873992,
+      "lat": 46.943058,
+      "lon": -123.351142,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7320825749,
+      "lat": 47.024837,
+      "lon": -123.35803,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7321453431,
+      "lat": 46.963781,
+      "lon": -123.653342,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7327537177,
+      "lat": 47.006404,
+      "lon": -123.463228,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7334120094,
+      "lat": 47.005878,
+      "lon": -123.471043,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7334832145,
+      "lat": 46.896634,
+      "lon": -122.957234,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7334832146,
+      "lat": 46.896672,
+      "lon": -122.957229,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7334832147,
+      "lat": 46.896701,
+      "lon": -122.957226,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7353252616,
+      "lat": 46.647269,
+      "lon": -122.987042,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7354333430,
+      "lat": 46.618816,
+      "lon": -123.105519,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7693446538,
+      "lat": 47.011635,
+      "lon": -122.900977,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7716792444,
+      "lat": 46.994957,
+      "lon": -122.958815,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7724224782,
+      "lat": 46.895474,
+      "lon": -122.966117,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 7848272364,
+      "lat": 47.046028,
+      "lon": -123.314835,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8045386864,
+      "lat": 47.101297,
+      "lon": -123.19498,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8249683767,
+      "lat": 46.81956,
+      "lon": -122.862122,
+      "road": "184th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8249683768,
+      "lat": 46.81956,
+      "lon": -122.862066,
+      "road": "184th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8280454935,
+      "lat": 46.755257,
+      "lon": -122.863353,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8280454936,
+      "lat": 46.755228,
+      "lon": -122.863347,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8524530917,
+      "lat": 47.001086,
+      "lon": -122.955406,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 8527749720,
+      "lat": 47.045885,
+      "lon": -122.896851,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 9051938354,
+      "lat": 47.048416,
+      "lon": -122.900415,
+      "road": "A Avenue Northeast",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 9051958563,
+      "lat": 46.966056,
+      "lon": -123.836637,
+      "road": "East Terminal Road",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 9351040626,
+      "lat": 46.896208,
+      "lon": -122.964524,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 9412071335,
+      "lat": 46.82113,
+      "lon": -123.076724,
+      "road": "183rd Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 10674962633,
+      "lat": 46.988987,
+      "lon": -122.962323,
+      "road": "66th Avenue Southwest",
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11073228609,
+      "lat": 46.753697,
+      "lon": -122.999289,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11073228610,
+      "lat": 46.753684,
+      "lon": -123.001864,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11073228690,
+      "lat": 46.757395,
+      "lon": -122.999299,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11073228774,
+      "lat": 46.758784,
+      "lon": -122.996412,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11502886433,
+      "lat": 46.636844,
+      "lon": -122.934524,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11502886434,
+      "lat": 46.636794,
+      "lon": -122.93459,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11502886435,
+      "lat": 46.636737,
+      "lon": -122.934731,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11502886436,
+      "lat": 46.636733,
+      "lon": -122.934758,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11503064935,
+      "lat": 46.633768,
+      "lon": -122.93139,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11503064963,
+      "lat": 46.631228,
+      "lon": -122.93168,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11503064966,
+      "lat": 46.632033,
+      "lon": -122.931668,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 11503065435,
+      "lat": 46.636688,
+      "lon": -122.93812,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 13585239104,
+      "lat": 46.965627,
+      "lon": -123.852926,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 13585239105,
+      "lat": 46.965504,
+      "lon": -123.853012,
+      "road": null,
+      "kind": "level_crossing"
+    },
+    {
+      "id": 13585239106,
+      "lat": 46.965554,
+      "lon": -123.852977,
+      "road": null,
+      "kind": "level_crossing"
+    }
+  ]
+}
