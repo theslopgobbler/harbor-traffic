@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T06:59:02.7439595+00:00",
+  "updated": "2026-09-30T07:21:29.5199624+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -42,6 +42,37 @@
         [
           -124.24706,
           47.29942
+        ]
+      ]
+    },
+    {
+      "id": 712873,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Overnight southbound I-5 lane and ramp closures resume the week of Sept. 28 between Maytown Rd and Old Hwy 99 for a paving project.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 88.9,
+      "lat": 46.809909341,
+      "lon": -123.002876849,
+      "lat2": 46.903168672,
+      "lon2": -122.957832023,
+      "county": null,
+      "start": "2026-09-10T21:00:00.0000000+00:00",
+      "end": "2026-10-02T23:00:00.0000000+00:00",
+      "updated": "2026-09-24T19:06:16.7830000+00:00",
+      "path": [
+        [
+          -123.002876849,
+          46.809909341
+        ],
+        [
+          -122.957832023,
+          46.903168672
         ]
       ]
     },
@@ -221,37 +252,6 @@
         [
           -122.76401,
           47.06345
-        ]
-      ]
-    },
-    {
-      "id": 712873,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Overnight southbound I-5 lane and ramp closures resume the week of Sept. 28 between Maytown Rd and Old Hwy 99 for a paving project.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 88.9,
-      "lat": 46.809909341,
-      "lon": -123.002876849,
-      "lat2": 46.903168672,
-      "lon2": -122.957832023,
-      "county": null,
-      "start": "2026-09-10T21:00:00.0000000+00:00",
-      "end": "2026-10-02T23:00:00.0000000+00:00",
-      "updated": "2026-09-24T19:06:16.7830000+00:00",
-      "path": [
-        [
-          -123.002876849,
-          46.809909341
-        ],
-        [
-          -122.957832023,
-          46.903168672
         ]
       ]
     },
@@ -1174,6 +1174,61 @@
       ]
     },
     {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
       "id": 713038,
       "kind": "work",
       "category": "Maintenance",
@@ -1365,61 +1420,6 @@
         [
           -123.19829,
           46.63197
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
         ]
       ]
     },
@@ -1881,27 +1881,6 @@
       ]
     },
     {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -1921,27 +1900,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-06-16T21:13:03.4200000+00:00"
     },
     {
       "id": 692593,
@@ -2026,6 +1984,48 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-06-16T21:13:03.4200000+00:00"
     }
   ]
 }
