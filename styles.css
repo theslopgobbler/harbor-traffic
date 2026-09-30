@@ -141,8 +141,9 @@ body.fx-off .bay-lbl, body.fx-off .bar-lbl, body.overview-mode .bay-lbl { displa
 .tool.toggle .off { display: none; margin-left: 6px; color: var(--red); font-weight: 400; }
 .tool.toggle.on .off { display: inline; }
 .tool .stamp { color: var(--dim); font-size: 10px; }
-.tool svg.ti { width: 22px; height: 22px; vertical-align: -5px; }
-.tool svg.ti * { stroke-width: 1.9; }
+/* line-drawn button icons ("btn-ic", not "ti": that name belongs to the ticker) */
+.tool svg.btn-ic { width: 24px; height: 24px; vertical-align: -6px; color: inherit; }
+.tool svg.btn-ic * { stroke-width: 1.9; }
 canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 
 /* layout */
