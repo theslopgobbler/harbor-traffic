@@ -469,6 +469,20 @@
   }
   $('#btnFx').addEventListener('click', () => setFx(!fxOn));
 
+  // show/hide ships (on by default; remembered per device; ?vessels=0 hides them, e.g. on a TV)
+  let vesselsOn = qs.has('vessels') ? qs.get('vessels') !== '0' : store.get('ht.vessels') !== false;
+  function setVessels(on) {
+    vesselsOn = on;
+    store.set('ht.vessels', on);
+    const btn = $('#btnVessels');
+    btn.classList.toggle('on', on);
+    btn.setAttribute('aria-pressed', on);
+    document.body.classList.toggle('no-vessels', !on);
+    window.htDeclutter?.();
+  }
+  $('#btnVessels').addEventListener('click', () => setVessels(!vesselsOn));
+  setVessels(vesselsOn);
+
   // ================= tide (NOAA CO-OPS predictions, Aberdeen station 9441187) =================
   const TIDE_STATION = '9441187';
   // NOAA's "lst_ldt" dates are Pacific local time, whatever time zone the viewer is in
