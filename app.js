@@ -495,7 +495,7 @@
     ['.rg-chip', 0], ['.bar-lbl', 1], ['.wx-mk:not(.rw-mk):not(.br-chip):not(.rg-chip)', 2],
     ['.br-chip', 3], ['.rail-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
   ];
-  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .air-mk, .town-dot, .me, .map-tools .tool, .nav-tools .tool, .maplibregl-ctrl-group, .legend';
+  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .air-mk, .bus-mk, .town-dot, .me, .map-tools .tool, .nav-tools .tool, .maplibregl-ctrl-group, .legend';
   function declutter() {
     const wrapBox = map.getContainer().getBoundingClientRect();
     const shown = (el) => el.offsetParent !== null && getComputedStyle(el).display !== 'none';
@@ -960,6 +960,7 @@
     if (t.quake) add('a', '⚠ QUAKE', t.quake);
     if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
     if (t.air) add('a', '✈ AIR', t.air);
+    if (t.bus) add('a', '🚌 BUS', t.bus);
     if (t.rail) add('r', '⚠ RAIL', t.rail);
     if (t.sea) add('c', 'BAR', t.sea);
     for (const r of state.travel || []) if (r.avg && r.now > r.avg * 1.25) add('a', 'SLOW', `${r.name.replace(/^\w+\s/, '')} ${r.now} min (normal ${r.avg})`);
@@ -1011,7 +1012,10 @@
   // pick up new versions on their own: publish.ps1 writes the build stamp to version.txt and into the
   // ?v= of every script. When they differ, reload at a new address so no cached copy is reused.
   const BUILD = (document.querySelector('script[src*="app.js"]')?.src.match(/[?&]v=(\w+)/) || [])[1];
+  let lastCheck = 0;
   async function checkVersion() {
+    if (Date.now() - lastCheck < 60000) return; // at most once a minute
+    lastCheck = Date.now();
     try {
       const v = (await (await fetch(`version.txt?t=${Date.now()}`, { cache: 'no-store' })).text()).trim();
       if (BUILD && /^\w+$/.test(v) && v !== BUILD) {

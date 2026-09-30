@@ -147,7 +147,8 @@
       if (C.airRelay) {
         try {
           const r = await (await fetch(`${C.airRelay}?t=${Date.now()}`, { cache: 'no-store' })).json();
-          if (Array.isArray(r.ac) && r.ac.length) {
+          // the relay keeps serving its last good list when feeds refuse it; only call it live if it's under 3 minutes old
+          if (Array.isArray(r.ac) && r.ac.length && (!r.at || Date.now() - Date.parse(r.at) < 180000)) {
             live = true; liveSource = r.source || 'adsb.lol';
             j = { updated: new Date().toISOString(), aircraft: r.ac.map((a) => ({ hex: a.hex, flight: (a.flight || '').trim(), reg: a.r, type: a.t, cat: a.category,
               alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1) })) };
