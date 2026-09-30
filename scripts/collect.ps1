@@ -254,6 +254,63 @@ try {
     "marine: waves $($marine.buoy.waveFt) ft, bar $($marine.bar.conditions)"
 } catch { "marine failed: $($_.Exception.Message)" }
 
+# ---------- ships (AIS via aisstream.io): listen to the live stream for a bit, keep ships heard in the last 3 hours ----------
+$aisKey = $env:AISSTREAM_KEY
+if (-not $aisKey) { $kf = Join-Path $root 'aisstream-key.txt'; if (Test-Path $kf) { $aisKey = (Get-Content $kf -Raw).Trim() } }
+if ($aisKey) {
+    $shipFile = Join-Path $dataDir 'ships.json'
+    $ships = @{}
+    if (Test-Path $shipFile) {
+        try { foreach ($s in (Get-Content $shipFile -Raw | ConvertFrom-Json).ships) { $ships["$($s.mmsi)"] = $s } } catch {}
+    }
+    $ws = New-Object System.Net.WebSockets.ClientWebSocket
+    $heard = 0
+    try {
+        $cts = New-Object System.Threading.CancellationTokenSource
+        $cts.CancelAfter([TimeSpan]::FromSeconds(80))
+        $ws.ConnectAsync([Uri]'wss://stream.aisstream.io/v0/stream', $cts.Token).Wait()
+        # the ocean off the coast plus Grays Harbor and Willapa Bay: [[lat, lon], [lat, lon]]
+        $sub = @{ APIKey = $aisKey; BoundingBoxes = @(, @(@(46.35, -124.75), @(47.95, -123.7)));
+            FilterMessageTypes = @('PositionReport', 'StandardClassBPositionReport', 'ShipStaticData') } | ConvertTo-Json -Depth 6 -Compress
+        $bytes = [Text.Encoding]::UTF8.GetBytes($sub)
+        $ws.SendAsync([ArraySegment[byte]]::new($bytes), [System.Net.WebSockets.WebSocketMessageType]::Text, $true, $cts.Token).Wait()
+        $buf = New-Object byte[] 65536
+        $until = (Get-Date).AddSeconds(70)
+        while ((Get-Date) -lt $until -and $ws.State -eq 'Open') {
+            $ms = New-Object System.IO.MemoryStream
+            do {
+                $t = $ws.ReceiveAsync([ArraySegment[byte]]::new($buf), $cts.Token)
+                if (-not $t.Wait(15000)) { throw 'quiet' }
+                $ms.Write($buf, 0, $t.Result.Count)
+            } until ($t.Result.EndOfMessage)
+            $m = [Text.Encoding]::UTF8.GetString($ms.ToArray()) | ConvertFrom-Json
+            $meta = $m.MetaData; if (-not $meta) { continue }
+            $id = "$($meta.MMSI)"; $heard++
+            $s = $ships[$id]; if (-not $s) { $s = [pscustomobject]@{ mmsi = $meta.MMSI } ; $ships[$id] = $s }
+            $set = { param($k, $v) if ($null -ne $v -and "$v" -ne '') { $s | Add-Member -NotePropertyName $k -NotePropertyValue $v -Force } }
+            & $set 'name' ("$($meta.ShipName)".Trim())
+            if ($m.MessageType -eq 'ShipStaticData') {
+                $d = $m.Message.ShipStaticData
+                & $set 'type' $d.Type; & $set 'dest' ("$($d.Destination)".Trim()); & $set 'callsign' ("$($d.CallSign)".Trim())
+                if ($d.Dimension) { & $set 'lengthM' ([int]$d.Dimension.A + [int]$d.Dimension.B) }
+            } else {
+                $p = if ($m.MessageType -eq 'PositionReport') { $m.Message.PositionReport } else { $m.Message.StandardClassBPositionReport }
+                & $set 'lat' ([math]::Round([double]$meta.latitude, 5)); & $set 'lon' ([math]::Round([double]$meta.longitude, 5))
+                & $set 'sog' $p.Sog; & $set 'cog' $p.Cog
+                & $set 'heading' $(if ($p.TrueHeading -ne $null -and $p.TrueHeading -lt 360) { $p.TrueHeading } else { $null })
+                & $set 'status' $p.NavigationalStatus
+                & $set 'classB' ($m.MessageType -ne 'PositionReport')
+                & $set 'seen' $now.ToString('o')
+            }
+        }
+    } catch { if ("$_" -notmatch 'quiet') { "ships: $($_.Exception.Message.Split("`n")[0])" } }
+    finally { try { $ws.Dispose() } catch {} }
+    $cutoff = $now.AddHours(-3)
+    $keep = @($ships.Values | Where-Object { $_.lat -and $_.seen -and [DateTimeOffset]::Parse($_.seen) -gt $cutoff })
+    Save 'ships.json' ([ordered]@{ updated = $now.ToString('o'); source = 'AIS via aisstream.io'; ships = $keep })
+    "ships: $($keep.Count) on the map ($heard messages this run)"
+}
+
 # ---------- rail crossings from OpenStreetMap: once a week is plenty (they rarely change) ----------
 $crossFile = Join-Path $dataDir 'crossings.json'
 $crossOld = -not (Test-Path $crossFile) -or ((Get-Date) - (Get-Item $crossFile).LastWriteTime).TotalDays -gt 7 -or

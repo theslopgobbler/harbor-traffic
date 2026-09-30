@@ -610,11 +610,68 @@
           <div class="m">GRAYS HARBOR BUOY 46211 · ${esc(when(b?.time))}</div></li>
         <li><div class="t">WATER ${water != null ? Math.round(water) + '°F' : '--'}</div><div class="m">${waterWestport != null ? 'WESTPORT (NOAA 9441102)' : 'GRAYS HARBOR BUOY'}</div></li>
       </ul>
+      <h2>SHIPS</h2><ul class="list" id="shipList"></ul>
+      <p class="fine">Positions from ships' AIS transponders (aisstream.io), refreshed each collector run. Ships tied up only report every few minutes, so each stays on the map up to 3 hours after it was last heard.</p>
       <p class="fine">Check with the Coast Guard (Station Grays Harbor) for bar restrictions before crossing. This is a summary, not a navigation aid.</p>`;
+    renderShipList(); // the SEA tab was just rebuilt
   }
   $('#sea').addEventListener('click', () => document.querySelector('.tabs button[data-tab="sea"]')?.click());
   loadSea();
   setInterval(loadSea, 10 * 60 * 1000);
+
+  // ================= ships (AIS, saved by the collector) =================
+  const SHIP_KIND = (t) => t === 30 ? ['FISHING', '#39ff88'] : [31, 32, 52].includes(t) ? ['TUG', '#c28bff']
+    : t >= 60 && t <= 69 ? ['PASSENGER', '#ff2bd6'] : t >= 70 && t <= 79 ? ['CARGO', '#bff4ff'] : t >= 80 && t <= 89 ? ['TANKER', '#ffc400']
+    : t === 50 ? ['PILOT', '#00e5ff'] : t === 51 ? ['SEARCH & RESCUE', '#ff2a3d'] : t === 55 ? ['LAW ENFORCEMENT', '#00e5ff']
+    : t === 36 ? ['SAILING', '#5f9c8b'] : t === 37 ? ['PLEASURE', '#5f9c8b'] : ['VESSEL', '#8fa8a8'];
+  const shipMarkers = [];
+  let shipList = [];
+  const escS = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const stopped = (s) => s.status === 1 || s.status === 5 || (s.sog ?? 0) < 0.5; // at anchor, moored, or not moving
+  async function loadShips() {
+    try {
+      const j = await (await fetch(`data/ships.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      shipList = (j.ships || []).filter((s) => s.lat && s.lon);
+    } catch { shipList = []; }
+    shipMarkers.splice(0).forEach((m) => m.remove());
+    for (const s of shipList) {
+      const [kind, color] = SHIP_KIND(s.type);
+      const big = (s.lengthM || 0) >= 100 || (s.type >= 70 && s.type <= 89);
+      const small = s.classB || ((s.lengthM || 0) > 0 && s.lengthM < 30);
+      const px = big ? 20 : small ? 12 : 16;
+      const el = document.createElement('div');
+      el.className = 'ship-mk' + (small ? ' small' : '');
+      el.style.width = el.style.height = px + 'px';
+      const dir = s.heading ?? s.cog ?? 0;
+      el.innerHTML = stopped(s)
+        ? `<svg viewBox="0 0 16 16"><polygon points="8,2 14,8 8,14 2,8" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6"/></svg>`
+        : `<svg viewBox="0 0 16 16" style="transform:rotate(${dir}deg)"><polygon points="8,1 12.5,6 12.5,15 3.5,15 3.5,6" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6" stroke-linejoin="miter"/><line x1="8" y1="4" x2="8" y2="11" stroke="${color}" stroke-width="1"/></svg>`;
+      el.title = s.name || 'Vessel';
+      const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
+      const html = `<h3>${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
+        <p><span style="color:${color}">${kind}</span> · ${stopped(s) ? (s.status === 1 ? 'AT ANCHOR' : s.status === 5 ? 'MOORED' : 'STOPPED') : `${(s.sog ?? 0).toFixed(1)} KT · ${compass(dir)} ${Math.round(dir)}°`}</p>
+        <div class="m">${s.dest ? 'BOUND FOR ' + escS(s.dest.toUpperCase()) + ' · ' : ''}${s.lengthM ? s.lengthM + ' M · ' : ''}${ago != null ? `SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
+      shipMarkers.push(new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).setPopup(new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html)).addTo(map));
+    }
+    renderShipList();
+    window.htDeclutter?.();
+  }
+  function renderShipList() {
+    const box = $('#shipList');
+    if (!box) return;
+    const sorted = shipList.slice().sort((a, b) => ((b.lengthM || 0) - (a.lengthM || 0)));
+    box.innerHTML = sorted.length ? sorted.map((s) => {
+      const [kind, color] = SHIP_KIND(s.type);
+      return `<li class="clickable" data-lon="${s.lon}" data-lat="${s.lat}" style="border-left-color:${color}"><div class="t">${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())}</div>
+        <div class="m">${kind} · ${stopped(s) ? (s.status === 5 ? 'MOORED' : s.status === 1 ? 'AT ANCHOR' : 'STOPPED') : `${(s.sog ?? 0).toFixed(1)} KT`}${s.dest ? ' · ' + escS(s.dest.toUpperCase()) : ''}</div></li>`;
+    }).join('') : '<li class="empty">NO SHIPS HEARD IN THE LAST 3 HOURS</li>';
+  }
+  document.addEventListener('click', (e) => {
+    const li = e.target.closest('#shipList li[data-lon]'); if (!li) return;
+    map.flyTo({ center: [+li.dataset.lon, +li.dataset.lat], zoom: 13 });
+  });
+  loadShips();
+  setInterval(loadShips, 5 * 60 * 1000);
 
   // ================= the ocean and the bays, drawn on the water itself =================
   // Open ocean: swell crests rolling in from the buoy's wave direction (spacing and speed from the period,

@@ -464,7 +464,7 @@
     ['.rg-chip', 0], ['.bar-lbl', 1], ['.wx-mk:not(.rw-mk):not(.br-chip):not(.rg-chip)', 2],
     ['.br-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
   ];
-  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .town-dot, .me, .map-tools .tool, .maplibregl-ctrl-group, .legend';
+  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .town-dot, .me, .map-tools .tool, .maplibregl-ctrl-group, .legend';
   function declutter() {
     const wrapBox = map.getContainer().getBoundingClientRect();
     const shown = (el) => el.offsetParent !== null && getComputedStyle(el).display !== 'none';
