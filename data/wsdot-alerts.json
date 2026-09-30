@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T16:47:02.3094919+00:00",
+  "updated": "2026-09-30T17:00:16.8007281+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1923,6 +1923,27 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
+      "id": 717272,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 67.83 near Salmon Creek beginning at 9:58 am on September 30, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 67.83,
+      "lat": 46.798917845,
+      "lon": -123.746209039,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-09-30T16:58:00.0000000+00:00",
+      "end": "2026-09-30T22:00:00.0000000+00:00",
+      "updated": "2026-09-30T16:59:28.3430000+00:00"
+    },
+    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -1963,6 +1984,27 @@
       "start": "2026-09-09T18:39:00.0000000+00:00",
       "end": null,
       "updated": "2026-09-26T00:36:13.1630000+00:00"
+    },
+    {
+      "id": 717271,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 westbound at milepost 2.62 near Edgewood Rd beginning at 9:57 am on September 30, 2026 until about 11:30 am.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "W",
+      "milepost": 2.62,
+      "lat": 46.979202874,
+      "lon": -123.760566706,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-09-30T16:57:00.0000000+00:00",
+      "end": "2026-09-30T18:30:00.0000000+00:00",
+      "updated": "2026-09-30T16:59:02.6630000+00:00"
     },
     {
       "id": 693774,
