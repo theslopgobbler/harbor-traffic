@@ -1,7 +1,42 @@
 {
-  "updated": "2026-09-30T21:43:10.3762509+00:00",
+  "updated": "2026-09-30T21:58:49.4962140+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96731,
+      "lon": -123.77983,
+      "sog": 0,
+      "cog": 0,
+      "heading": 170,
+      "classB": true,
+      "seen": "2026-09-30T21:58:49.4962140+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.90622,
+      "lon": -124.10739,
+      "sog": 0.1,
+      "cog": 305.5,
+      "heading": 312,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-09-30T20:34:34.368926+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.70675,
+      "lon": -123.96223,
+      "sog": 1.1,
+      "cog": 122.9,
+      "heading": 315,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-09-30T21:58:49.4962140+00:00"
+    },
     {
       "mmsi": 567017000,
       "name": "SARITA NAREE",
@@ -15,15 +50,16 @@
       "seen": "2026-09-30T20:34:34.368926+00:00"
     },
     {
-      "mmsi": 367417230,
-      "name": "DREDGE PATRIOT",
-      "lat": 46.96732,
-      "lon": -123.77987,
-      "sog": 0,
-      "cog": 0,
-      "heading": 169,
-      "classB": true,
-      "seen": "2026-09-30T19:40:57.3318075+00:00"
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.92023,
+      "lon": -124.11567,
+      "sog": 0.1,
+      "cog": 177.4,
+      "heading": 273,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-09-30T21:58:49.4962140+00:00"
     },
     {
       "mmsi": 368368680,
@@ -35,18 +71,6 @@
       "heading": 114,
       "classB": true,
       "seen": "2026-09-30T21:01:14.3121406+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.90622,
-      "lon": -124.10739,
-      "sog": 0.1,
-      "cog": 305.5,
-      "heading": 312,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-09-30T20:34:34.368926+00:00"
     }
   ]
 }
