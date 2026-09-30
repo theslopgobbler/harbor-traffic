@@ -88,8 +88,8 @@ body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.over
 .ship-mk.small { opacity: .7; }
 .ship-mk.cargo { filter: drop-shadow(0 0 5px rgba(209,26,42,.7)); }
 .ship-mk.anchored { filter: drop-shadow(0 0 4px rgba(194,139,255,.7)); }
-/* a group of ships: the icon with its count tucked at the lower right */
-.ship-grp b { position: absolute; right: -8px; bottom: -6px; min-width: 16px; padding: 0 3px; font: 700 11px/15px var(--mono); text-align: center; background: #020807; border: 1px solid currentColor; }
+/* a group of ships: the count sits in the middle of the icon */
+.ship-grp b { position: absolute; left: 50%; top: 55%; transform: translate(-50%, -50%); min-width: 14px; padding: 0 2px; font: 700 11px/13px var(--mono); text-align: center; background: #020807; border: 1px solid currentColor; }
 .list li.k-port { border-left-color: #c28bff; background: rgba(194,139,255,.08); }
 .list li.k-port .t { color: #c28bff; }
 .pill.st-ENTERING { color: var(--orange); border-color: var(--orange); }
