@@ -637,10 +637,13 @@
 
   function renderAlerts() {
     const zones = routeZones();
-    const list = state.nws.filter((a) => (a.affectedZones || []).some((z) => zones.has(z)));
+    // tsunami alerts get their own banner from seis.js, so they're left out of this list
+    const list = state.nws.filter((a) => (a.affectedZones || []).some((z) => zones.has(z)) && !/tsunami/i.test(a.event || ''));
     const alertedTowns = new Set(list.flatMap((a) => townsForZones(a.affectedZones || []).map((t) => t.id)));
     for (const [id, { el }] of Object.entries(wxMarkers)) el.classList.toggle('alerted', alertedTowns.has(id));
-    $('#nAlerts').textContent = list.length || '';
+    // PERIL count: weather warnings plus tsunami alerts and strong nearby quakes (from seis.js)
+    window.htPerilRefresh = () => { $('#nAlerts').textContent = (list.length + (window.htPerilExtra || 0)) || ''; };
+    window.htPerilRefresh();
     // WX ALERTS instrument: the whole area
     const allZones = new Set(Object.values(state.zonesByTown).flat());
     const areaAlerts = state.nws.filter((a) => (a.affectedZones || []).some((z) => allZones.has(z)));
@@ -953,6 +956,8 @@
     for (const a of state.nws.filter((x) => (x.affectedZones || []).some((z) => allZones.has(z))))
       add('a', `⚠ ${a.event.toUpperCase()}`, `until ${fmtWhen(a.ends || a.expires)}`);
     const t = window.htTicker;
+    if (t.tsunami) add('x', '🌊 TSUNAMI', t.tsunami);
+    if (t.quake) add('a', '⚠ QUAKE', t.quake);
     if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
     if (t.air) add('a', '✈ AIR', t.air);
     if (t.rail) add('r', '⚠ RAIL', t.rail);
