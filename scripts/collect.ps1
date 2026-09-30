@@ -269,8 +269,8 @@ if ($aisKey) {
         $cts = New-Object System.Threading.CancellationTokenSource
         $cts.CancelAfter([TimeSpan]::FromSeconds(80))
         $ws.ConnectAsync([Uri]'wss://stream.aisstream.io/v0/stream', $cts.Token).Wait()
-        # the ocean off the coast plus Grays Harbor and Willapa Bay: [[lat, lon], [lat, lon]]
-        $sub = @{ APIKey = $aisKey; BoundingBoxes = @(, @(@(46.35, -124.75), @(47.95, -123.7)));
+        # a little offshore plus Grays Harbor and Willapa Bay (about 15 nm out from the entrances): [[lat, lon], [lat, lon]]
+        $sub = @{ APIKey = $aisKey; BoundingBoxes = @(, @(@(46.35, -124.5), @(47.2, -123.7)));
             FilterMessageTypes = @('PositionReport', 'StandardClassBPositionReport', 'ShipStaticData') } | ConvertTo-Json -Depth 6 -Compress
         $bytes = [Text.Encoding]::UTF8.GetBytes($sub)
         $ws.SendAsync([ArraySegment[byte]]::new($bytes), [System.Net.WebSockets.WebSocketMessageType]::Text, $true, $cts.Token).Wait()

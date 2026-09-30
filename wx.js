@@ -611,6 +611,7 @@
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const when = (iso) => iso ? new Date(iso).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
     $('#seaDetail').innerHTML = `
+      <ul class="list" id="shipAlerts"></ul>
       <ul class="list">
         ${alerts.map((a) => `<li class="k-closure"><div class="t">${esc(a.event.toUpperCase())}</div><div class="m">${esc(a.area)}${a.ends ? ' · UNTIL ' + esc(when(a.ends)) : ''}</div></li>`).join('')}
         <li style="border-left-color:${waveColor}"><div class="t">BAR: ${esc((bar?.conditions || 'no forecast').toUpperCase())}</div>
@@ -620,11 +621,11 @@
         <li><div class="t">WATER ${water != null ? Math.round(water) + '°F' : '--'}</div><div class="m">${waterWestport != null ? 'WESTPORT (NOAA 9441102)' : 'GRAYS HARBOR BUOY'}</div></li>
       </ul>
       <h2>SHIPS</h2><ul class="list" id="shipList"></ul>
-      <p class="fine">Positions from ships' AIS transponders (aisstream.io), refreshed each collector run. Ships tied up only report every few minutes, so each stays on the map up to 3 hours after it was last heard.</p>
+      <p class="fine">Positions from ships' AIS transponders (aisstream.io), refreshed each collector run; ships within 15 nautical miles of the harbor entrances. Entering/leaving is worked out from each ship's course. Ships tied up only report every few minutes, so each stays on the map up to 3 hours after it was last heard.</p>
       <p class="fine">Check with the Coast Guard (Station Grays Harbor) for bar restrictions before crossing. This is a summary, not a navigation aid.</p>`;
     renderShipList(); // the SEA tab was just rebuilt
   }
-  $('#sea').addEventListener('click', () => document.querySelector('.tabs button[data-tab="sea"]')?.click());
+  $('#sea').addEventListener('click', () => window.htOpenTab?.('sea'));
   loadSea();
   setInterval(loadSea, 10 * 60 * 1000);
 
@@ -633,75 +634,136 @@
     : t >= 60 && t <= 69 ? ['PASSENGER', '#ff2bd6'] : t >= 70 && t <= 79 ? ['CARGO', '#bff4ff'] : t >= 80 && t <= 89 ? ['TANKER', '#ffc400']
     : t === 50 ? ['PILOT', '#00e5ff'] : t === 51 ? ['SEARCH & RESCUE', '#ff2a3d'] : t === 55 ? ['LAW ENFORCEMENT', '#00e5ff']
     : t === 36 ? ['SAILING', '#5f9c8b'] : t === 37 ? ['PLEASURE', '#5f9c8b'] : ['VESSEL', '#8fa8a8'];
+  const isTug = (t) => [31, 32, 52].includes(t);
+  const isCargo = (t) => t >= 70 && t <= 79;
   const shipMarkers = [];
   let shipList = [];
-  const CLOSE_Z = 12.5; // from here in, ships are drawn as top-down outlines at roughly their real size
+  const escS = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const stopped = (s) => s.status === 1 || s.status === 5 || (s.sog ?? 0) < 0.5; // at anchor, moored, or not moving
 
-  // top-down ship outlines, bow up, drawn in a 20 x 100 box (length along the box)
+  // ---- where ships are and what they're doing, relative to the harbor ----
+  const GH_MOUTH = { lat: 46.915, lon: -124.11 }, WB_MOUTH = { lat: 46.69, lon: -124.07 };
+  const MAX_NM = 15; // farther out than this isn't useful here
+  const nmBetween = (a, b) => {
+    const r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
+    return 2 * 3440.07 * Math.asin(Math.sqrt(h));
+  };
+  const bearingTo = (a, b) => {
+    const r = Math.PI / 180, y = Math.sin((b.lon - a.lon) * r) * Math.cos(b.lat * r);
+    const x = Math.cos(a.lat * r) * Math.sin(b.lat * r) - Math.sin(a.lat * r) * Math.cos(b.lat * r) * Math.cos((b.lon - a.lon) * r);
+    return (Math.atan2(y, x) / r + 360) % 360;
+  };
+  const angleDiff = (a, b) => Math.abs(((a - b + 540) % 360) - 180);
+  const inBox = (s, [w, so, e, n]) => s.lon > w && s.lon < e && s.lat > so && s.lat < n;
+  const GH_BOX = [-124.13, 46.84, -123.76, 47.02], WB_BOX = [-124.08, 46.36, -123.72, 46.73];
+  const PORT_BOX = [-123.97, 46.94, -123.76, 47.0]; // Aberdeen/Hoquiam waterfront, where the terminals are
+  function situation(s) {
+    const mouth = nmBetween(s, WB_MOUTH) < nmBetween(s, GH_MOUTH) ? WB_MOUTH : GH_MOUTH;
+    const dist = nmBetween(s, mouth);
+    const inside = inBox(s, GH_BOX) || inBox(s, WB_BOX);
+    const cog = s.cog ?? s.heading;
+    let state;
+    if (stopped(s)) state = inBox(s, PORT_BOX) ? 'DOCKED' : s.status === 5 ? 'MOORED' : inside ? 'ANCHORED' : (s.status === 1 ? 'ANCHORED' : 'STOPPED');
+    else if (cog == null) state = 'UNDER WAY';
+    else if (inside) state = cog > 200 && cog < 340 ? 'LEAVING' : cog > 20 && cog < 160 ? 'ENTERING' : 'IN HARBOR';
+    else { const d = angleDiff(cog, bearingTo(s, mouth)); state = d < 40 ? 'ENTERING' : d > 140 ? 'LEAVING' : 'PASSING'; }
+    return { state, dist: inside ? 0 : dist, inside, bay: mouth === WB_MOUTH ? 'WILLAPA BAY' : 'GRAYS HARBOR' };
+  }
+  const shipColor = (s, sit) => isCargo(s.type) ? (sit.state === 'ENTERING' ? '#ff7a1a' : '#d11a2a') : SHIP_KIND(s.type)[1];
+
+  // ---- drawings ----
+  // a pixel-art anchor for ships that are docked, moored or anchored
+  const ANCHOR = ['....#....', '...#.#...', '....#....', '..#####..', '....#....', '#...#...#', '##..#..##', '.#######.', '...###...'];
+  const anchorSvg = (color) => `<svg viewBox="0 0 9 9" shape-rendering="crispEdges"><g fill="${color}">${ANCHOR.flatMap((row, y) =>
+    [...row].map((c, x) => (c === '#' ? `<rect x="${x}" y="${y}" width="1" height="1"/>` : ''))).join('')}</g></svg>`;
+  // top-down silhouettes, bow up, in a 20 x 100 box
   function shipOutline(type, color) {
-    const hull = `<path d="M10 0 C15 8 18 18 18 30 L18 94 Q18 100 12 100 L8 100 Q2 100 2 94 L2 30 C2 18 5 8 10 0 Z" fill="rgba(2,8,7,.75)" stroke="${color}" stroke-width="1.4" vector-effect="non-scaling-stroke"/>`;
-    const s = (d) => `<path d="${d}" fill="none" stroke="${color}" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
-    const box = (x, y, w, h, o = 0.25) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${color}" fill-opacity="${o}" stroke="${color}" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
-    if (type >= 70 && type <= 79) // cargo: hatch covers, bridge aft
-      return hull + [22, 34, 46, 58, 70].map((y) => box(5, y, 10, 9, 0.12)).join('') + box(4, 82, 12, 9, 0.35);
-    if (type >= 80 && type <= 89) // tanker: pipe run down the deck, manifold, bridge aft
-      return hull + s('M10 14 L10 80') + s('M5 48 L15 48') + `<circle cx="10" cy="48" r="2" fill="none" stroke="${color}" vector-effect="non-scaling-stroke"/>` + box(4, 82, 12, 9, 0.35);
-    if ([31, 32, 52].includes(type)) // tug: short and beamy, cabin forward, towing bitt aft
-      return `<path d="M10 20 C18 24 19 34 19 46 L19 86 Q19 96 10 96 Q1 96 1 86 L1 46 C1 34 2 24 10 20 Z" fill="rgba(2,8,7,.75)" stroke="${color}" stroke-width="1.4" vector-effect="non-scaling-stroke"/>` + box(5, 34, 10, 22, 0.3) + `<circle cx="10" cy="78" r="2.5" fill="none" stroke="${color}" vector-effect="non-scaling-stroke"/>`;
+    const line = `stroke="${color}" stroke-width="1.3" vector-effect="non-scaling-stroke"`;
+    const hull = `<path d="M10 0 C15 8 18 18 18 30 L18 94 Q18 100 12 100 L8 100 Q2 100 2 94 L2 30 C2 18 5 8 10 0 Z" fill="rgba(2,8,7,.8)" ${line}/>`;
+    const blk = (x, y, w, h, o) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${color}" fill-opacity="${o}" ${line}/>`;
+    if (isCargo(type)) {
+      // container ship: square-shouldered hull, rows of container stacks, deckhouse aft
+      const h = `<path d="M10 0 C16 6 19 16 19 26 L19 95 L16 100 L4 100 L1 95 L1 26 C1 16 4 6 10 0 Z" fill="rgba(2,8,7,.85)" ${line}/>`;
+      let stacks = '';
+      for (let y = 16; y < 76; y += 7) stacks += blk(3.5, y, 6, 5.5, y % 14 ? 0.55 : 0.3) + blk(10.5, y, 6, 5.5, y % 14 ? 0.3 : 0.55);
+      return h + stacks + blk(3, 80, 14, 11, 0.9) + `<path d="M0 83 L20 83" ${line}/>`;
+    }
+    if (type >= 80 && type <= 89) // tanker: pipe run, manifold, deckhouse aft
+      return hull + `<path d="M10 12 L10 78 M5 46 L15 46" fill="none" ${line}/><circle cx="10" cy="46" r="2.2" fill="none" ${line}/>` + blk(4, 82, 12, 10, 0.5);
+    if (isTug(type)) // tug: stubby, round bow, heavy fender, tall wheelhouse forward, towing hook aft
+      return `<path d="M10 22 C19 22 20 36 20 50 L20 88 Q20 98 10 98 Q0 98 0 88 L0 50 C0 36 1 22 10 22 Z" fill="rgba(2,8,7,.85)" stroke="${color}" stroke-width="3" vector-effect="non-scaling-stroke"/>` +
+        blk(4.5, 36, 11, 18, 0.7) + blk(6.5, 56, 7, 10, 0.35) + `<path d="M6 84 L14 84 M10 80 L10 88" fill="none" ${line}/>`;
     if (type === 30) // fishing: wheelhouse forward, outrigger booms
-      return hull + box(5, 24, 10, 16, 0.3) + s('M2 50 L-10 64 M18 50 L30 64') + s('M10 60 L10 90');
+      return hull + blk(5, 24, 10, 16, 0.5) + `<path d="M2 50 L-10 64 M18 50 L30 64 M10 60 L10 90" fill="none" ${line}/>`;
     if (type >= 60 && type <= 69) // passenger: stacked decks
-      return hull + box(4, 22, 12, 66, 0.12) + box(6, 30, 8, 50, 0.2);
-    return hull + box(5, 60, 10, 18, 0.25); // anything else: small cabin
+      return hull + blk(4, 22, 12, 66, 0.2) + blk(6, 30, 8, 50, 0.4);
+    return hull + blk(5, 60, 10, 18, 0.45);
   }
   // how many screen pixels a ship's length covers at the current zoom
   const metersToPx = (m, lat) => m / (156543.03 * Math.cos(lat * Math.PI / 180) / 2 ** map.getZoom());
+  // minimum on-screen length by type, so nothing gets lost when zoomed out; real size takes over up close
+  const minLen = (s) => isCargo(s.type) ? 58 : s.type >= 80 && s.type <= 89 ? 48 : s.type >= 60 && s.type <= 69 ? 40 : isTug(s.type) ? 26 : s.classB ? 18 : 22;
   function drawShip(el, s) {
-    const [, color] = SHIP_KIND(s.type);
-    const dir = s.heading ?? s.cog ?? 0;
-    const big = (s.lengthM || 0) >= 100 || (s.type >= 70 && s.type <= 89);
-    const small = s.classB || ((s.lengthM || 0) > 0 && s.lengthM < 30);
-    if (map.getZoom() >= CLOSE_Z) {
-      // real size when we know it, but never so small it can't be seen or tapped
-      const len = Math.max(26, Math.min(220, metersToPx(s.lengthM || (big ? 150 : small ? 15 : 40), s.lat)));
-      el.style.width = el.style.height = len + 'px';
-      el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${dir}deg)">${shipOutline(s.type, color)}</svg>`;
+    const sit = s._sit;
+    const color = shipColor(s, sit);
+    if (stopped(s)) {
+      const px = isCargo(s.type) || (s.lengthM || 0) >= 100 ? 30 : 22;
+      el.style.width = el.style.height = px + 'px';
+      el.innerHTML = anchorSvg('#c28bff');
+      el.classList.add('anchored');
       return;
     }
-    const px = big ? 20 : small ? 12 : 16;
-    el.style.width = el.style.height = px + 'px';
-    el.innerHTML = stopped(s)
-      ? `<svg viewBox="0 0 16 16"><polygon points="8,2 14,8 8,14 2,8" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6"/></svg>`
-      : `<svg viewBox="0 0 16 16" style="transform:rotate(${dir}deg)"><polygon points="8,1 12.5,6 12.5,15 3.5,15 3.5,6" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6" stroke-linejoin="miter"/><line x1="8" y1="4" x2="8" y2="11" stroke="${color}" stroke-width="1"/></svg>`;
+    el.classList.remove('anchored');
+    const len = Math.max(minLen(s), Math.min(260, s.lengthM ? metersToPx(s.lengthM, s.lat) : 0));
+    el.style.width = el.style.height = len + 'px';
+    el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${shipOutline(s.type, color)}</svg>`;
   }
   map.on('zoomend', () => shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)));
-  const escS = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const stopped = (s) => s.status === 1 || s.status === 5 || (s.sog ?? 0) < 0.5; // at anchor, moored, or not moving
+
   async function loadShips() {
     try {
       const j = await (await fetch(`data/ships.json?t=${Date.now()}`, { cache: 'no-store' })).json();
       shipList = (j.ships || []).filter((s) => s.lat && s.lon);
     } catch { shipList = []; }
+    for (const s of shipList) s._sit = situation(s);
+    shipList = shipList.filter((s) => s._sit.inside || s._sit.dist <= MAX_NM);
     shipMarkers.splice(0).forEach((m) => m.remove());
     for (const s of shipList) {
-      const [kind, color] = SHIP_KIND(s.type);
-      const small = s.classB || ((s.lengthM || 0) > 0 && s.lengthM < 30);
+      const [kind] = SHIP_KIND(s.type), sit = s._sit, color = shipColor(s, sit);
       const el = document.createElement('div');
-      el.className = 'ship-mk' + (small ? ' small' : '');
+      el.className = 'ship-mk' + (s.classB ? ' small' : '') + (isCargo(s.type) ? ' cargo' : '');
       drawShip(el, s);
       const dir = s.heading ?? s.cog ?? 0;
       el.title = s.name || 'Vessel';
       const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
       const html = `<h3>${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
-        <p><span style="color:${color}">${kind}</span> · ${stopped(s) ? (s.status === 1 ? 'AT ANCHOR' : s.status === 5 ? 'MOORED' : 'STOPPED') : `${(s.sog ?? 0).toFixed(1)} KT · ${compass(dir)} ${Math.round(dir)}°`}</p>
-        <div class="m">${s.dest ? 'BOUND FOR ' + escS(s.dest.toUpperCase()) + ' · ' : ''}${s.lengthM ? s.lengthM + ' M · ' : ''}${ago != null ? `SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
+        <p><span style="color:${color}">${kind}</span> · <b>${sit.state}</b>${stopped(s) ? '' : ` · ${(s.sog ?? 0).toFixed(1)} KT ${compass(dir)}`}</p>
+        <div class="m">${sit.inside ? 'IN ' + sit.bay : `${sit.dist.toFixed(1)} NM FROM THE ${sit.bay} ENTRANCE`}${s.dest ? ' · BOUND FOR ' + escS(s.dest.toUpperCase()) : ''}${s.lengthM ? ' · ' + s.lengthM + ' M' : ''}${ago != null ? ` · SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
       const mk = new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).setPopup(new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html)).addTo(map);
       mk._ship = s;
       shipMarkers.push(mk);
     }
+    checkBridges();
     renderShipList();
     renderRail();
     window.htDeclutter?.();
+  }
+
+  // any vessel other than a tug near a drawbridge: the bridge may be about to open
+  let nearBridge = [];
+  function checkBridges() {
+    nearBridge = [];
+    for (const b of (window.HT?.bridges || [])) {
+      for (const s of shipList) {
+        if (isTug(s.type)) continue;
+        const nm = nmBetween(s, b);
+        if (nm <= 0.22) nearBridge.push({ bridge: b, ship: s, m: Math.round(nm * 1852) }); // about 400 m
+      }
+    }
+    window.htNearBridge = Object.fromEntries(nearBridge.map((x) => [x.bridge.id, (x.ship.name || 'a vessel').toUpperCase()]));
+    window.htRenderBridges?.();
+    tick('bridge', nearBridge.map((x) => `${(x.ship.name || 'vessel').toUpperCase()} ${x.m} m from the ${x.bridge.name}: bridge may open`).join(' · '));
   }
 
   // ---- rail activity: the port's rail-served terminals load and unload big ships, so a big ship at berth
@@ -727,17 +789,30 @@
     window.htDeclutter?.();
   }
   function renderShipList() {
+    // alerts first: vessels near a drawbridge, then ships docked at the port (purple)
+    const alerts = $('#shipAlerts');
+    if (alerts) {
+      const docked = shipList.filter((s) => s._sit.state === 'DOCKED');
+      alerts.innerHTML = nearBridge.map((x) => `<li class="k-work clickable" data-lon="${x.ship.lon}" data-lat="${x.ship.lat}">
+          <div class="t">⚠ ${escS((x.ship.name || 'VESSEL').toUpperCase())} NEAR THE ${escS(x.bridge.name.toUpperCase())}</div>
+          <div class="m">${x.m} m away · the bridge may open soon</div></li>`).join('') +
+        docked.map((s) => `<li class="k-port clickable" data-lon="${s.lon}" data-lat="${s.lat}">
+          <div class="t">⚓ ${escS((s.name || 'VESSEL').toUpperCase())} DOCKED AT THE PORT</div>
+          <div class="m">${SHIP_KIND(s.type)[0]}${s.lengthM ? ' · ' + s.lengthM + ' M' : ''}${isCargo(s.type) || (s.type >= 80 && s.type <= 89) ? ' · loading/unloading: expect trains' : ''}</div></li>`).join('');
+    }
     const box = $('#shipList');
     if (!box) return;
-    const sorted = shipList.slice().sort((a, b) => ((b.lengthM || 0) - (a.lengthM || 0)));
+    const sorted = shipList.slice().sort((a, b) => a._sit.dist - b._sit.dist || (b.lengthM || 0) - (a.lengthM || 0));
     box.innerHTML = sorted.length ? sorted.map((s) => {
-      const [kind, color] = SHIP_KIND(s.type);
-      return `<li class="clickable" data-lon="${s.lon}" data-lat="${s.lat}" style="border-left-color:${color}"><div class="t">${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())}</div>
-        <div class="m">${kind} · ${stopped(s) ? (s.status === 5 ? 'MOORED' : s.status === 1 ? 'AT ANCHOR' : 'STOPPED') : `${(s.sog ?? 0).toFixed(1)} KT`}${s.dest ? ' · ' + escS(s.dest.toUpperCase()) : ''}</div></li>`;
-    }).join('') : '<li class="empty">NO SHIPS HEARD IN THE LAST 3 HOURS</li>';
+      const [kind] = SHIP_KIND(s.type), sit = s._sit, color = shipColor(s, sit);
+      const where = sit.inside ? `IN ${sit.bay}` : `${sit.dist.toFixed(1)} NM OUT`;
+      return `<li class="clickable ship-row" data-lon="${s.lon}" data-lat="${s.lat}" style="border-left-color:${color}">
+        <div class="t">${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())} <span class="pill st-${sit.state.replace(/\s/g, '')}">${sit.state}</span></div>
+        <div class="m">${kind} · ${where}${stopped(s) ? '' : ` · ${(s.sog ?? 0).toFixed(1)} KT`}${s.dest ? ' · ' + escS(s.dest.toUpperCase()) : ''}</div></li>`;
+    }).join('') : '<li class="empty">NO SHIPS WITHIN 15 NM IN THE LAST 3 HOURS</li>';
   }
   document.addEventListener('click', (e) => {
-    const li = e.target.closest('#shipList li[data-lon]'); if (!li) return;
+    const li = e.target.closest('#shipList li[data-lon], #shipAlerts li[data-lon]'); if (!li) return;
     map.flyTo({ center: [+li.dataset.lon, +li.dataset.lat], zoom: 13 });
   });
   loadShips();
