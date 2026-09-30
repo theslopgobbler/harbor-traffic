@@ -761,6 +761,15 @@
       const j = await (await fetch(`data/ships.json?t=${Date.now()}`, { cache: 'no-store' })).json();
       shipList = (j.ships || []).filter((s) => s.lat && s.lon);
     } catch { shipList = []; }
+    // demo: ?simship adds made-up traffic (a cargo ship coming in over the bar, one heading out, a tug and a fishing boat)
+    if (qs.has('simship')) {
+      const now = new Date().toISOString();
+      shipList.push(
+        { mmsi: 1, name: 'DEMO INBOUND (SIMULATED)', type: 70, lengthM: 190, lat: 46.905, lon: -124.2, sog: 11, cog: 75, heading: 75, status: 0, seen: now, dest: 'ABERDEEN' },
+        { mmsi: 2, name: 'DEMO OUTBOUND (SIMULATED)', type: 70, lengthM: 180, lat: 46.955, lon: -123.99, sog: 8, cog: 255, heading: 255, status: 0, seen: now, dest: 'TOKYO' },
+        { mmsi: 3, name: 'DEMO TUG (SIMULATED)', type: 52, lengthM: 30, lat: 46.95, lon: -123.97, sog: 7, cog: 250, heading: 250, status: 0, seen: now },
+        { mmsi: 4, name: 'DEMO FISHING (SIMULATED)', type: 30, lengthM: 22, lat: 46.86, lon: -124.3, sog: 6, cog: 200, heading: 200, status: 7, seen: now });
+    }
     for (const s of shipList) s._sit = situation(s);
     shipList = shipList.filter((s) => s._sit.inside || s._sit.dist <= MAX_NM);
     shipMarkers.splice(0).forEach((m) => m.remove());
