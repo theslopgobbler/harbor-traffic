@@ -1,18 +1,7 @@
 {
-  "updated": "2026-09-30T21:24:32.9799218+00:00",
+  "updated": "2026-09-30T21:43:10.3762509+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367417230,
-      "name": "DREDGE PATRIOT",
-      "lat": 46.96732,
-      "lon": -123.77987,
-      "sog": 0,
-      "cog": 0,
-      "heading": 169,
-      "classB": true,
-      "seen": "2026-09-30T19:40:57.3318075+00:00"
-    },
     {
       "mmsi": 567017000,
       "name": "SARITA NAREE",
@@ -24,6 +13,17 @@
       "status": 0,
       "classB": false,
       "seen": "2026-09-30T20:34:34.368926+00:00"
+    },
+    {
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96732,
+      "lon": -123.77987,
+      "sog": 0,
+      "cog": 0,
+      "heading": 169,
+      "classB": true,
+      "seen": "2026-09-30T19:40:57.3318075+00:00"
     },
     {
       "mmsi": 368368680,
