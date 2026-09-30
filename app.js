@@ -220,11 +220,17 @@
     return '---';
   };
   const wxMarkers = {};
+  // a small gap between the town's dot and its label, on whichever side config.js puts it
+  const gap = (a = 'center') => [/left/.test(a) ? 7 : /right/.test(a) ? -7 : 0, /^top/.test(a) ? 7 : /^bottom/.test(a) ? -7 : 0];
   for (const t of C.towns) {
     const el = document.createElement('div');
     el.className = 'wx-mk';
     el.innerHTML = `<span class="n">${esc(t.name)}</span><span class="v">--°</span><span class="e">---</span>`;
-    wxMarkers[t.id] = { el, m: new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat([t.lon, t.lat]).addTo(map) };
+    const dot = document.createElement('div');
+    dot.className = 'town-dot';
+    wxMarkers[t.id] = { el, dot, minor: !!t.minor,
+      m: new maplibregl.Marker({ element: el, anchor: t.a || 'center', offset: gap(t.a) }).setLngLat([t.lon, t.lat]).addTo(map),
+      d: t.a ? new maplibregl.Marker({ element: dot }).setLngLat([t.lon, t.lat]).addTo(map) : null };
   }
 
   const nws = async (url) => {
@@ -249,6 +255,7 @@
       const h = await nws(p.hourly);
       const now = h.properties.periods[0];
       state.wx[t.id] = { temp: now.temperature, f: now.shortForecast, day: now.isDaytime, wind: `${now.windDirection} ${now.windSpeed}`,
+        windDir: now.windDirection, windMph: parseInt(String(now.windSpeed).split(' to ').pop(), 10) || 0,
         rain: now.probabilityOfPrecipitation?.value ?? null };
       const mk = wxMarkers[t.id].el;
       mk.querySelector('.e').textContent = wxCode(now.shortForecast, now.isDaytime);
@@ -257,11 +264,16 @@
     });
     renderWeather();
     renderAlerts(); // alerts are matched to towns through the zones found above
+    announceWeather();
   }
+  // wx.js (radar, sky icon, weather effects) listens for this
+  const announceWeather = () => window.dispatchEvent(new CustomEvent('ht:weather', {
+    detail: { wx: state.wx, zonesByTown: state.zonesByTown, nws: state.nws, towns: C.towns } }));
   async function loadAlerts() {
     const j = await nws('https://api.weather.gov/alerts/active?area=WA');
     state.nws = j.features.map((f) => f.properties);
     renderAlerts();
+    announceWeather();
   }
 
   // ---------------- WSDOT alerts (written by the collector) ----------------
@@ -408,8 +420,45 @@
     rwMarkers.forEach((m) => (m.getElement().style.display = z >= 10 ? '' : 'none'));
     bridgeChip.style.display = z >= 11 ? 'none' : '';
     for (const { el } of Object.values(bridgeMarkers)) el.style.display = z >= 11 ? '' : 'none';
+    for (const { el, dot, minor } of Object.values(wxMarkers)) {
+      const hide = minor && z < 8.6;
+      el.style.display = hide ? 'none' : '';
+      dot.style.display = hide ? 'none' : '';
+    }
+    groupAlerts();
   }
   map.on('zoomend', showByZoom);
+
+  // zoomed out, alerts that would sit on top of each other merge into one triangle with a count
+  const groupMarkers = [];
+  function groupAlerts() {
+    groupMarkers.splice(0).forEach((m) => m.remove());
+    const items = roadMarkers.filter((x) => x.kind !== 'closure');
+    items.forEach((x) => (x.el.style.display = ''));
+    if (map.getZoom() >= 10.5) return;
+    const pts = items.map((x) => ({ x, p: map.project(x.m.getLngLat()) }));
+    const used = new Set();
+    for (let i = 0; i < pts.length; i++) {
+      if (used.has(i)) continue;
+      const grp = [i];
+      for (let j = i + 1; j < pts.length; j++) {
+        if (!used.has(j) && Math.hypot(pts[i].p.x - pts[j].p.x, pts[i].p.y - pts[j].p.y) < 34) grp.push(j);
+      }
+      if (grp.length < 2) continue;
+      grp.forEach((k) => { used.add(k); pts[k].x.el.style.display = 'none'; });
+      const lls = grp.map((k) => pts[k].x.m.getLngLat());
+      const at = [lls.reduce((s, l) => s + l.lng, 0) / lls.length, lls.reduce((s, l) => s + l.lat, 0) / lls.length];
+      const el = document.createElement('div');
+      el.className = `inc-mk group${grp.some((k) => pts[k].x.kind === 'work') ? ' work' : ''}`;
+      el.innerHTML = triSvg(String(grp.length));
+      el.title = `${grp.length} alerts here: click to zoom in`;
+      el.addEventListener('click', () => {
+        const b = new maplibregl.LngLatBounds(); lls.forEach((l) => b.extend(l));
+        map.fitBounds(b, { padding: fitPad(90), maxZoom: 12.5 });
+      });
+      groupMarkers.push(new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map));
+    }
+  }
 
   // ---------------- rendering ----------------
   const corridor = () => C.corridors.find((c) => c.id === state.route);
@@ -473,7 +522,7 @@
   // hollow orange warning triangle for every other alert
   const triSvg = (mark) => `<svg viewBox="0 0 28 26" aria-hidden="true"><polygon points="14,2 26,24 2,24" fill="rgba(0,0,0,.55)"
     stroke="${K.orange}" stroke-width="2.6" stroke-linejoin="miter"/>${mark ? `<text x="14" y="21" text-anchor="middle" fill="${K.orange}"
-    font-family="Share Tech Mono, monospace" font-size="13" font-weight="700">${mark}</text>` : ''}</svg>`;
+    font-family="Share Tech Mono, monospace" font-size="${mark.length > 1 ? 11 : 13}" font-weight="700">${mark}</text>` : ''}</svg>`;
 
   // closure and road-work stretches breathe in step with the markers (about 15 frames a second is plenty)
   let pulseLast = 0;
