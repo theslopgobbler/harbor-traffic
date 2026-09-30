@@ -1,7 +1,22 @@
 {
-  "updated": "2026-09-30T12:14:49.4356057+00:00",
+  "updated": "2026-09-30T12:44:10.3837140+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367573820,
+      "type": 52,
+      "dest": "SEATLE WA",
+      "callsign": "WDG8082",
+      "lengthM": 31,
+      "name": "OCEAN EAGLE",
+      "lat": 46.90558,
+      "lon": -124.47444,
+      "sog": 11.1,
+      "cog": 319,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-09-30T10:12:20.3861142+00:00"
+    },
     {
       "mmsi": 636024072,
       "name": "GOLD ETERNITY",
@@ -12,15 +27,6 @@
       "heading": 316,
       "status": 1,
       "classB": false,
-      "seen": "2026-09-30T11:10:52.1008707+00:00"
-    },
-    {
-      "mmsi": 109080129,
-      "lat": 46.48994,
-      "lon": -124.68239,
-      "sog": 2.5,
-      "cog": 77.9,
-      "classB": true,
       "seen": "2026-09-30T11:10:52.1008707+00:00"
     },
     {
@@ -36,34 +42,13 @@
       "seen": "2026-09-30T11:10:52.1008707+00:00"
     },
     {
-      "mmsi": 367324840,
-      "type": 31,
-      "dest": "GRAYS HARBOR",
-      "callsign": "WDE2412",
-      "lengthM": 20,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97854,
-      "lon": -123.88361,
-      "sog": 0,
-      "cog": 323.1,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-09-30T09:20:06.0163131+00:00"
-    },
-    {
-      "mmsi": 367573820,
-      "type": 52,
-      "dest": "SEATLE WA",
-      "callsign": "WDG8082",
-      "lengthM": 31,
-      "name": "OCEAN EAGLE",
-      "lat": 46.90558,
-      "lon": -124.47444,
-      "sog": 11.1,
-      "cog": 319,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-09-30T10:12:20.3861142+00:00"
+      "mmsi": 109080129,
+      "lat": 46.48994,
+      "lon": -124.68239,
+      "sog": 2.5,
+      "cog": 77.9,
+      "classB": true,
+      "seen": "2026-09-30T11:10:52.1008707+00:00"
     }
   ]
 }
