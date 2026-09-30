@@ -1,363 +1,7 @@
 {
-  "updated": "2026-09-30T19:57:43.5570429+00:00",
+  "updated": "2026-09-30T20:17:27.5514826+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-09-16T14:09:21.4230000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
-    {
-      "id": 712873,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Overnight southbound I-5 lane and ramp closures resume the week of Sept. 28 between Maytown Rd and Old Hwy 99 for a paving project.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 88.9,
-      "lat": 46.809909341,
-      "lon": -123.002876849,
-      "lat2": 46.903168672,
-      "lon2": -122.957832023,
-      "county": null,
-      "start": "2026-09-10T21:00:00.0000000+00:00",
-      "end": "2026-10-02T23:00:00.0000000+00:00",
-      "updated": "2026-09-24T19:06:16.7830000+00:00",
-      "path": [
-        [
-          -123.002876849,
-          46.809909341
-        ],
-        [
-          -122.957832023,
-          46.903168672
-        ]
-      ]
-    },
-    {
-      "id": 715621,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect I-5 lane reductions Monday through Friday nights near Lacey for concrete panel replacement. Work starts in northbound lanes and switches to southbound when complete. If it rains, work will be rescheduled.",
-      "description": "",
-      "link": "https://bit.ly/4we6ZaO",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "B",
-      "milepost": 109.2,
-      "lat": 47.049326841,
-      "lon": -122.817812592,
-      "lat2": 47.064531817,
-      "lon2": -122.753539928,
-      "county": null,
-      "start": "2026-09-25T17:49:00.0000000+00:00",
-      "end": "2026-10-03T02:00:00.0000000+00:00",
-      "updated": "2026-09-29T16:41:51.8500000+00:00",
-      "path": [
-        [
-          -122.81784,
-          47.04932
-        ],
-        [
-          -122.81495,
-          47.05132
-        ],
-        [
-          -122.8093,
-          47.05524
-        ],
-        [
-          -122.80902,
-          47.05542
-        ],
-        [
-          -122.80877,
-          47.05558
-        ],
-        [
-          -122.80848,
-          47.05573
-        ],
-        [
-          -122.80822,
-          47.05586
-        ],
-        [
-          -122.80793,
-          47.056
-        ],
-        [
-          -122.80767,
-          47.05612
-        ],
-        [
-          -122.80735,
-          47.05626
-        ],
-        [
-          -122.80705,
-          47.05637
-        ],
-        [
-          -122.80676,
-          47.05646
-        ],
-        [
-          -122.80646,
-          47.05656
-        ],
-        [
-          -122.80612,
-          47.05665
-        ],
-        [
-          -122.80583,
-          47.05673
-        ],
-        [
-          -122.80546,
-          47.05682
-        ],
-        [
-          -122.80167,
-          47.05745
-        ],
-        [
-          -122.77981,
-          47.06104
-        ],
-        [
-          -122.76746,
-          47.06308
-        ],
-        [
-          -122.7667,
-          47.06319
-        ],
-        [
-          -122.76594,
-          47.06328
-        ],
-        [
-          -122.76301,
-          47.06354
-        ],
-        [
-          -122.76,
-          47.06379
-        ],
-        [
-          -122.75858,
-          47.06391
-        ],
-        [
-          -122.75768,
-          47.06398
-        ],
-        [
-          -122.7566,
-          47.0641
-        ],
-        [
-          -122.75557,
-          47.06424
-        ],
-        [
-          -122.75351,
-          47.06454
-        ],
-        [
-          -122.75351,
-          47.06454
-        ]
-      ]
-    },
-    {
-      "id": 717224,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 96.71 near W Fork Hoquiam River to milepost 98 near Failor Lk Rd beginning at 6:21 am on September 30, 2026 until about 6:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 96.71,
-      "lat": 47.092306766,
-      "lon": -123.904620818,
-      "lat2": 47.108559674,
-      "lon2": -123.89933869,
-      "county": "Grays Harbor",
-      "start": "2026-09-30T13:21:00.0000000+00:00",
-      "end": "2026-10-01T01:00:00.0000000+00:00",
-      "updated": "2026-09-30T13:22:58.2630000+00:00",
-      "path": [
-        [
-          -123.90464,
-          47.0923
-        ],
-        [
-          -123.90463,
-          47.09232
-        ],
-        [
-          -123.90463,
-          47.0929
-        ],
-        [
-          -123.90467,
-          47.09329
-        ],
-        [
-          -123.90485,
-          47.09422
-        ],
-        [
-          -123.9049,
-          47.09442
-        ],
-        [
-          -123.90566,
-          47.09784
-        ],
-        [
-          -123.90608,
-          47.09959
-        ],
-        [
-          -123.90646,
-          47.10133
-        ],
-        [
-          -123.90654,
-          47.10165
-        ],
-        [
-          -123.90657,
-          47.10187
-        ],
-        [
-          -123.90658,
-          47.10213
-        ],
-        [
-          -123.90658,
-          47.10256
-        ],
-        [
-          -123.90655,
-          47.10269
-        ],
-        [
-          -123.90642,
-          47.10329
-        ],
-        [
-          -123.90629,
-          47.10391
-        ],
-        [
-          -123.90626,
-          47.10409
-        ],
-        [
-          -123.90621,
-          47.10428
-        ],
-        [
-          -123.90612,
-          47.10458
-        ],
-        [
-          -123.90602,
-          47.10478
-        ],
-        [
-          -123.90591,
-          47.10496
-        ],
-        [
-          -123.90578,
-          47.10512
-        ],
-        [
-          -123.90565,
-          47.10527
-        ],
-        [
-          -123.90545,
-          47.10545
-        ],
-        [
-          -123.90512,
-          47.10571
-        ],
-        [
-          -123.9047,
-          47.10595
-        ],
-        [
-          -123.9018,
-          47.10739
-        ],
-        [
-          -123.90108,
-          47.10773
-        ],
-        [
-          -123.89929,
-          47.10859
-        ],
-        [
-          -123.89929,
-          47.10859
-        ]
-      ]
-    },
     {
       "id": 584226,
       "kind": "work",
@@ -605,101 +249,6 @@
         [
           -123.19829,
           46.63197
-        ]
-      ]
-    },
-    {
-      "id": 712872,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.6,
-      "lat": 46.627033568,
-      "lon": -123.082208102,
-      "lat2": 46.626966642,
-      "lon2": -123.063374325,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-12T22:30:00.0000000+00:00",
-      "updated": "2026-09-10T21:06:34.0470000+00:00",
-      "path": [
-        [
-          -123.0822,
-          46.62703
-        ],
-        [
-          -123.08176,
-          46.62703
-        ],
-        [
-          -123.08101,
-          46.62703
-        ],
-        [
-          -123.07967,
-          46.62703
-        ],
-        [
-          -123.07843,
-          46.62702
-        ],
-        [
-          -123.07691,
-          46.62702
-        ],
-        [
-          -123.07664,
-          46.62702
-        ],
-        [
-          -123.07607,
-          46.62702
-        ],
-        [
-          -123.07582,
-          46.62702
-        ],
-        [
-          -123.07474,
-          46.62702
-        ],
-        [
-          -123.07107,
-          46.62702
-        ],
-        [
-          -123.06794,
-          46.627
-        ],
-        [
-          -123.06486,
-          46.62698
-        ],
-        [
-          -123.06443,
-          46.62697
-        ],
-        [
-          -123.06424,
-          46.62697
-        ],
-        [
-          -123.06344,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
         ]
       ]
     },
@@ -1253,6 +802,457 @@
       "start": "2026-09-30T15:07:00.0000000+00:00",
       "end": "2026-10-01T23:00:00.0000000+00:00",
       "updated": "2026-09-30T15:08:00.1800000+00:00"
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-09-16T14:09:21.4230000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
+    {
+      "id": 712873,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Overnight southbound I-5 lane and ramp closures resume the week of Sept. 28 between Maytown Rd and Old Hwy 99 for a paving project.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 88.9,
+      "lat": 46.809909341,
+      "lon": -123.002876849,
+      "lat2": 46.903168672,
+      "lon2": -122.957832023,
+      "county": null,
+      "start": "2026-09-10T21:00:00.0000000+00:00",
+      "end": "2026-10-02T23:00:00.0000000+00:00",
+      "updated": "2026-09-24T19:06:16.7830000+00:00",
+      "path": [
+        [
+          -123.002876849,
+          46.809909341
+        ],
+        [
+          -122.957832023,
+          46.903168672
+        ]
+      ]
+    },
+    {
+      "id": 715621,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect I-5 lane reductions Monday through Friday nights near Lacey for concrete panel replacement. Work starts in northbound lanes and switches to southbound when complete. If it rains, work will be rescheduled.",
+      "description": "",
+      "link": "https://bit.ly/4we6ZaO",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "B",
+      "milepost": 109.2,
+      "lat": 47.049326841,
+      "lon": -122.817812592,
+      "lat2": 47.064531817,
+      "lon2": -122.753539928,
+      "county": null,
+      "start": "2026-09-25T17:49:00.0000000+00:00",
+      "end": "2026-10-03T02:00:00.0000000+00:00",
+      "updated": "2026-09-29T16:41:51.8500000+00:00",
+      "path": [
+        [
+          -122.81784,
+          47.04932
+        ],
+        [
+          -122.81495,
+          47.05132
+        ],
+        [
+          -122.8093,
+          47.05524
+        ],
+        [
+          -122.80902,
+          47.05542
+        ],
+        [
+          -122.80877,
+          47.05558
+        ],
+        [
+          -122.80848,
+          47.05573
+        ],
+        [
+          -122.80822,
+          47.05586
+        ],
+        [
+          -122.80793,
+          47.056
+        ],
+        [
+          -122.80767,
+          47.05612
+        ],
+        [
+          -122.80735,
+          47.05626
+        ],
+        [
+          -122.80705,
+          47.05637
+        ],
+        [
+          -122.80676,
+          47.05646
+        ],
+        [
+          -122.80646,
+          47.05656
+        ],
+        [
+          -122.80612,
+          47.05665
+        ],
+        [
+          -122.80583,
+          47.05673
+        ],
+        [
+          -122.80546,
+          47.05682
+        ],
+        [
+          -122.80167,
+          47.05745
+        ],
+        [
+          -122.77981,
+          47.06104
+        ],
+        [
+          -122.76746,
+          47.06308
+        ],
+        [
+          -122.7667,
+          47.06319
+        ],
+        [
+          -122.76594,
+          47.06328
+        ],
+        [
+          -122.76301,
+          47.06354
+        ],
+        [
+          -122.76,
+          47.06379
+        ],
+        [
+          -122.75858,
+          47.06391
+        ],
+        [
+          -122.75768,
+          47.06398
+        ],
+        [
+          -122.7566,
+          47.0641
+        ],
+        [
+          -122.75557,
+          47.06424
+        ],
+        [
+          -122.75351,
+          47.06454
+        ],
+        [
+          -122.75351,
+          47.06454
+        ]
+      ]
+    },
+    {
+      "id": 717224,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 96.71 near W Fork Hoquiam River to milepost 98 near Failor Lk Rd beginning at 6:21 am on September 30, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 96.71,
+      "lat": 47.092306766,
+      "lon": -123.904620818,
+      "lat2": 47.108559674,
+      "lon2": -123.89933869,
+      "county": "Grays Harbor",
+      "start": "2026-09-30T13:21:00.0000000+00:00",
+      "end": "2026-10-01T01:00:00.0000000+00:00",
+      "updated": "2026-09-30T13:22:58.2630000+00:00",
+      "path": [
+        [
+          -123.90464,
+          47.0923
+        ],
+        [
+          -123.90463,
+          47.09232
+        ],
+        [
+          -123.90463,
+          47.0929
+        ],
+        [
+          -123.90467,
+          47.09329
+        ],
+        [
+          -123.90485,
+          47.09422
+        ],
+        [
+          -123.9049,
+          47.09442
+        ],
+        [
+          -123.90566,
+          47.09784
+        ],
+        [
+          -123.90608,
+          47.09959
+        ],
+        [
+          -123.90646,
+          47.10133
+        ],
+        [
+          -123.90654,
+          47.10165
+        ],
+        [
+          -123.90657,
+          47.10187
+        ],
+        [
+          -123.90658,
+          47.10213
+        ],
+        [
+          -123.90658,
+          47.10256
+        ],
+        [
+          -123.90655,
+          47.10269
+        ],
+        [
+          -123.90642,
+          47.10329
+        ],
+        [
+          -123.90629,
+          47.10391
+        ],
+        [
+          -123.90626,
+          47.10409
+        ],
+        [
+          -123.90621,
+          47.10428
+        ],
+        [
+          -123.90612,
+          47.10458
+        ],
+        [
+          -123.90602,
+          47.10478
+        ],
+        [
+          -123.90591,
+          47.10496
+        ],
+        [
+          -123.90578,
+          47.10512
+        ],
+        [
+          -123.90565,
+          47.10527
+        ],
+        [
+          -123.90545,
+          47.10545
+        ],
+        [
+          -123.90512,
+          47.10571
+        ],
+        [
+          -123.9047,
+          47.10595
+        ],
+        [
+          -123.9018,
+          47.10739
+        ],
+        [
+          -123.90108,
+          47.10773
+        ],
+        [
+          -123.89929,
+          47.10859
+        ],
+        [
+          -123.89929,
+          47.10859
+        ]
+      ]
+    },
+    {
+      "id": 712872,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.6,
+      "lat": 46.627033568,
+      "lon": -123.082208102,
+      "lat2": 46.626966642,
+      "lon2": -123.063374325,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-12T22:30:00.0000000+00:00",
+      "updated": "2026-09-10T21:06:34.0470000+00:00",
+      "path": [
+        [
+          -123.0822,
+          46.62703
+        ],
+        [
+          -123.08176,
+          46.62703
+        ],
+        [
+          -123.08101,
+          46.62703
+        ],
+        [
+          -123.07967,
+          46.62703
+        ],
+        [
+          -123.07843,
+          46.62702
+        ],
+        [
+          -123.07691,
+          46.62702
+        ],
+        [
+          -123.07664,
+          46.62702
+        ],
+        [
+          -123.07607,
+          46.62702
+        ],
+        [
+          -123.07582,
+          46.62702
+        ],
+        [
+          -123.07474,
+          46.62702
+        ],
+        [
+          -123.07107,
+          46.62702
+        ],
+        [
+          -123.06794,
+          46.627
+        ],
+        [
+          -123.06486,
+          46.62698
+        ],
+        [
+          -123.06443,
+          46.62697
+        ],
+        [
+          -123.06424,
+          46.62697
+        ],
+        [
+          -123.06344,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ]
+      ]
     }
   ]
 }
