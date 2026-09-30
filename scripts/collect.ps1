@@ -333,6 +333,12 @@ try {
     "bus alerts: $($alerts.Count) ($($status[0]))"
 } catch { "bus alerts failed: $($_.Exception.Message.Split("`n")[0])" }
 
+# ---------- bus routes and stops from GHT's schedule data: once a week ----------
+$busRoutes = Join-Path $dataDir 'bus-routes.json'
+if (-not (Test-Path $busRoutes) -or ((Get-Date) - (Get-Item $busRoutes).LastWriteTime).TotalDays -gt 7) {
+    try { & (Join-Path $PSScriptRoot 'build-gtfs.ps1') } catch { "bus routes failed: $($_.Exception.Message.Split("`n")[0])" }
+}
+
 # ---------- aircraft (ADS-B via adsb.lol, no key): low and local only; airliners at cruise don't matter here ----------
 try {
     $ac = Invoke-RestMethod 'https://api.adsb.lol/v2/point/47.2/-123.65/55' -UserAgent 'harbor-traffic/1.0 (traffic.harborevents.org)' -TimeoutSec 30
