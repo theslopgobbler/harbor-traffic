@@ -311,6 +311,28 @@ if ($aisKey) {
     "ships: $($keep.Count) on the map ($heard messages this run)"
 }
 
+# ---------- Grays Harbor Transit service alerts (their Service Alerts page, via its WordPress API) ----------
+try {
+    # their API is closed to outside requests, so this reads the page itself
+    $html = (Invoke-WebRequest -UseBasicParsing 'https://ghtransit.com/alerts/' -TimeoutSec 30).Content -replace '<script[\s\S]*?</script>', '' -replace '<style[\s\S]*?</style>', ''
+    $plain = ($html -replace '<(br|/p|/h\d|/li|/div)[^>]*>', "`n" -replace '<[^>]+>', '' -replace '&#8217;', "'" -replace '&#8211;', '-' -replace '&amp;', '&' -replace '&nbsp;', ' ')
+    $lines = @($plain -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+    $status = @($lines | Where-Object { $_ -match '(?i)operating normally|detour|suspended|cancel' } | Select-Object -First 1)
+    # the notices sit between the boilerplate intro and the "Find your ride" section
+    $start = [array]::FindIndex([string[]]$lines, [Predicate[string]]{ param($l) $l -match '(?i)real-time notices' })
+    $end = [array]::FindIndex([string[]]$lines, [Predicate[string]]{ param($l) $l -match '(?i)^Find your ride' })
+    $notice = if ($start -ge 0) { @($lines[($start + 1)..($(if ($end -gt $start) { $end - 1 } else { $lines.Count - 1 }))]) } else { @() }
+    $alerts = @()
+    if ($notice.Count) {
+        $route = if ($notice[0] -match '^\d+[A-Z]?$') { $notice[0] } else { $null }
+        $name = if ($route -and $notice.Count -gt 1) { $notice[1] } else { $null }
+        $body = @($notice | Select-Object -Skip $(if ($route) { 2 } else { 0 })) -join ' '
+        $alerts += [ordered]@{ route = $route; name = $name; text = ($body -replace '\s+\.', '.' -replace '\s{2,}', ' ').Trim() }
+    }
+    Save 'bus-alerts.json' ([ordered]@{ updated = $now.ToString('o'); status = "$($status[0])"; alerts = $alerts; source = 'https://ghtransit.com/alerts/' })
+    "bus alerts: $($alerts.Count) ($($status[0]))"
+} catch { "bus alerts failed: $($_.Exception.Message.Split("`n")[0])" }
+
 # ---------- aircraft (ADS-B via adsb.lol, no key): low and local only; airliners at cruise don't matter here ----------
 try {
     $ac = Invoke-RestMethod 'https://api.adsb.lol/v2/point/47.2/-123.65/55' -UserAgent 'harbor-traffic/1.0 (traffic.harborevents.org)' -TimeoutSec 30
