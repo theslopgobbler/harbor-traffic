@@ -731,7 +731,10 @@
     el.classList.remove('anchored');
     const len = Math.max(minLen(s), Math.min(260, s.lengthM ? metersToPx(s.lengthM, s.lat) : 0));
     el.style.width = el.style.height = len + 'px';
-    el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${shipOutline(s.type, color)}</svg>`;
+    // pixel-art ship by type (pixel.js), turned to its heading
+    const sprite = isCargo(s.type) ? 'cargo' : s.type >= 80 && s.type <= 89 ? 'tanker' : isTug(s.type) ? 'tug'
+      : s.type === 30 ? 'fishing' : s.type >= 60 && s.type <= 69 ? 'passenger' : 'boat';
+    el.innerHTML = `<div class="rot" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${window.htPix(sprite, color)}</div>`;
   }
   map.on('zoomend', () => { shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)); groupShips(); });
 
@@ -759,7 +762,7 @@
       el.className = 'ship-mk ship-grp' + (allStopped ? ' anchored' : '');
       el.style.width = el.style.height = '30px';
       el.innerHTML = (allStopped ? anchorSvg(color)
-        : `<svg viewBox="0 0 16 16"><polygon points="8,1 13,6 13,15 3,15 3,6" fill="rgba(2,8,7,.85)" stroke="${color}" stroke-width="1.4"/></svg>`) +
+        : window.htPix('boat', color)) +
         `<b style="color:${color}">${ships.length}</b>`;
       el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}. Click to zoom in.`;
       el.addEventListener('click', () => {
@@ -979,10 +982,15 @@
       ctx.save();
       // only the open Pacific off our coast: nothing inland (Puget Sound, Hood Canal) or north of the Strait (San Juans)
       const nw = map.project([-127, 48.0]), se = map.project([-123.98, 46.2]);
-      const cut = new Path2D();
-      cut.rect(nw.x, nw.y, se.x - nw.x, se.y - nw.y);
-      for (const b of bayPx) cut.rect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
-      ctx.clip(cut, 'evenodd');
+      // two separate cuts: first keep only the open-ocean box, then remove the bays. (Done in one even-odd cut,
+      // the part of a bay outside the box flipped back to "ocean" and swell showed in the inner harbor.)
+      const ocean = new Path2D();
+      ocean.rect(nw.x, nw.y, se.x - nw.x, se.y - nw.y);
+      ctx.clip(ocean);
+      const noBays = new Path2D();
+      noBays.rect(-10, -10, W + 20, H + 20);
+      for (const b of bayPx) noBays.rect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
+      ctx.clip(noBays, 'evenodd');
       const toward = ((sea.dirDeg + 180) % 360) * Math.PI / 180;
       const tx = Math.sin(toward), ty = -Math.cos(toward);   // direction the swell travels, on screen
       const cx = -ty, cy = tx;                               // along the crest

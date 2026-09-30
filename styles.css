@@ -85,6 +85,7 @@ body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.over
 /* ships */
 .ship-mk { cursor: pointer; filter: drop-shadow(0 0 3px rgba(191,244,255,.45)); }
 .ship-mk svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.ship-mk .rot { width: 100%; height: 100%; }
 .ship-mk.small { opacity: .7; }
 body.no-vessels .ship-mk { display: none !important; }
 
@@ -100,7 +101,7 @@ body.no-aircraft .air-mk { display: none !important; }
 /* buses */
 /* the marker box is bigger than the drawing so buses are easy to tap */
 .bus-mk { width: 34px; height: 36px; cursor: pointer; display: grid; place-items: center; }
-.bus-mk .ic { width: 14px; height: 30px; filter: drop-shadow(0 0 3px rgba(191,244,255,.45)); }
+.bus-mk .ic { width: 30px; height: 30px; filter: drop-shadow(0 0 3px rgba(191,244,255,.45)); }
 .bus-mk .ic svg { display: block; width: 100%; height: 100%; }
 .bus-mk b { position: absolute; left: 100%; top: 0; transform: translate(-6px, -2px); padding: 0 3px; font: 700 10px/12px var(--mono); background: rgba(2,8,7,.88); border: 1px solid; letter-spacing: .04em; }
 .bus-mk.stopped { opacity: .7; }
