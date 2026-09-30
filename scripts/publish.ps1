@@ -27,7 +27,7 @@ $utf8 = New-Object System.Text.UTF8Encoding($false)
 [IO.File]::WriteAllText((Join-Path $root 'version.txt'), $stamp, $utf8)
 
 # files to publish: everything except secrets, local-only bits and anything .gitignore names
-$skip = '^(wsdot-key\.txt|aisstream-key\.txt|github-token\.txt|\.git/|.*\.local\..*)'
+$skip = '^(notes/|wsdot-key\.txt|aisstream-key\.txt|github-token\.txt|\.git/|.*\.local\..*)'
 $files = Get-ChildItem $root -Recurse -File -Force | ForEach-Object {
     $_.FullName.Substring($root.Length + 1).Replace('\', '/')
 } | Where-Object { $_ -notmatch $skip }
