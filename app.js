@@ -265,6 +265,9 @@
     if (/sunny|clear/.test(f)) return day ? 'SUN' : 'CLR';
     return '---';
   };
+  // temperature colors: icy blue at freezing, through cyan, green, amber and orange, to red when hot
+  const tempColor = (f) => f == null ? '' : f <= 32 ? '#7fb8ff' : f <= 45 ? '#00e5ff' : f <= 60 ? '#39ff88' : f <= 72 ? '#d4ff3a' : f <= 82 ? '#ffc400' : f <= 90 ? '#ff7a1a' : '#ff2a3d';
+  const tempSpan = (f, text = `${f}°`) => `<span style="color:${tempColor(f)}">${text}</span>`;
   const wxMarkers = {};
   // a small gap between the town's dot and its label, on whichever side config.js puts it
   const gap = (a = 'center') => [/left/.test(a) ? 7 : /right/.test(a) ? -7 : 0, /^top/.test(a) ? 7 : /^bottom/.test(a) ? -7 : 0];
@@ -307,6 +310,7 @@
       const mk = wxMarkers[t.id].el;
       mk.querySelector('.e').textContent = wxCode(now.shortForecast, now.isDaytime);
       mk.querySelector('.v').textContent = `${now.temperature}°`;
+      mk.querySelector('.v').style.color = tempColor(now.temperature);
       mk.title = `${t.name}: ${now.shortForecast}, wind ${now.windDirection} ${now.windSpeed}`;
     });
     renderWeather();
@@ -389,7 +393,7 @@
         if (s.temp == null) continue;
         const el = document.createElement('div');
         el.className = 'wx-mk rw-mk';
-        el.innerHTML = `<span class="e">RD</span><span class="v">${Math.round(s.temp)}°</span>`;
+        el.innerHTML = `<span class="e">RD</span><span class="v" style="color:${tempColor(s.temp)}">${Math.round(s.temp)}°</span>`;
         el.title = `${s.name}: ${Math.round(s.temp)}°F, wind ${s.dir || ''} ${s.wind ?? '?'} mph (roadside sensor)`;
         rwMarkers.push(new maplibregl.Marker({ element: el, anchor: 'left', offset: [10, 0] }).setLngLat([s.lon, s.lat]).addTo(map));
       }
@@ -566,7 +570,7 @@
     for (const { r, el } of regionChips) {
       const s = regionSummary(r);
       el.classList.toggle('bad', s.closures.length > 0);
-      el.innerHTML = `<span class="nm">${esc(r.name.toUpperCase())}</span><span class="t">${tempRange(s.temps)}</span><span class="c">${s.worst}</span><span class="k">${counts(s).replace('ROADS CLEAR', 'CLEAR')}</span>`;
+      el.innerHTML = `<span class="nm">${esc(r.name.toUpperCase())}</span><span class="t">${s.temps.length ? tempSpan(Math.max(...s.temps), tempRange(s.temps)) : tempRange(s.temps)}</span><span class="c">${s.worst}</span><span class="k">${counts(s).replace('ROADS CLEAR', 'CLEAR')}</span>`;
     }
     const box = $('#overview');
     if (!box) return;
@@ -575,7 +579,7 @@
       const s = regionSummary(r);
       const top = s.closures[0] || s.alerts.find((a) => a.kind === 'collision') || s.alerts[0];
       return `<li class="clickable ${s.closures.length ? 'k-closure' : s.alerts.length ? 'k-work' : ''}" data-r="${r.id}">
-        <span><span class="rg">${esc(r.name.toUpperCase())}</span> · ${tempRange(s.temps)} ${s.worst}</span><span class="cnt">${counts(s)}</span>
+        <span><span class="rg">${esc(r.name.toUpperCase())}</span> · ${s.temps.length ? tempSpan(Math.max(...s.temps), tempRange(s.temps)) : tempRange(s.temps)} ${s.worst}</span><span class="cnt">${counts(s)}</span>
         ${s.wxAlerts.length ? `<span class="m">⚠ ${esc([...new Set(s.wxAlerts.map((a) => a.event.toUpperCase()))].join(' · '))}</span>` : ''}
         ${top ? `<span class="m">${esc(kindLabel[top.kind])}: ${esc(top.headline.slice(0, 110))}${top.headline.length > 110 ? '…' : ''}</span>` : ''}</li>`;
     }).join('')}</ul>`;
@@ -812,11 +816,11 @@
       const w = state.wx[t.id];
       if (!w) return `<li><span>${esc(t.name.toUpperCase())}</span><span class="m">…</span></li>`;
       return `<li><span>${esc(t.name.toUpperCase())}<br><span class="m">${esc(w.f)} · WIND ${esc(w.wind)}${w.rain != null ? ` · ${w.rain}% PRECIP` : ''}</span></span>
-        <span class="temp">${w.temp}°</span></li>`;
+        <span class="temp">${tempSpan(w.temp)}</span></li>`;
     }).join('');
     const rw = state.roadWx || [];
     $('#roadWxList').innerHTML = rw.length ? rw.map((s) => `<li><span>${esc(s.name.toUpperCase())}<br><span class="m">WIND ${esc(s.dir || '')} ${s.wind ?? '?'} MPH${s.gust ? ` G${s.gust}` : ''}${s.precip ? ` · ${s.precip}" PRECIP` : ''}</span></span>
-      <span class="temp">${s.temp != null ? Math.round(s.temp) + '°' : '–'}</span></li>`).join('') : '<li class="empty">NO ROADSIDE READINGS</li>';
+      <span class="temp">${s.temp != null ? tempSpan(Math.round(s.temp)) : '–'}</span></li>`).join('') : '<li class="empty">NO ROADSIDE READINGS</li>';
   }
 
   // ---------------- route filter ----------------
