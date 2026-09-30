@@ -1,555 +1,7 @@
 {
-  "updated": "2026-09-30T02:10:47.0411827+00:00",
+  "updated": "2026-09-30T02:32:25.9095009+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
-      "id": 713038,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Wednesday, Sept. 30: Travelers along westbound SR 6 between Rainbow Falls State Park (milepost 35.2) and Hope Creek Road (milepost 36.8) will take turns moving through a single lane daily from 7 a.m. to 5:30 p.m., for tree trimming work. Flaggers will direct travelers through the area. Plan ahead and expect delays.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "W",
-      "milepost": 35.2,
-      "lat": 46.630276512,
-      "lon": -123.231156234,
-      "lat2": 46.631971538,
-      "lon2": -123.198284271,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-01T00:30:00.0000000+00:00",
-      "updated": "2026-09-11T23:15:30.8770000+00:00",
-      "path": [
-        [
-          -123.2312,
-          46.63026
-        ],
-        [
-          -123.2308,
-          46.63025
-        ],
-        [
-          -123.22982,
-          46.63023
-        ],
-        [
-          -123.22795,
-          46.63035
-        ],
-        [
-          -123.22759,
-          46.63041
-        ],
-        [
-          -123.22584,
-          46.63065
-        ],
-        [
-          -123.22556,
-          46.63069
-        ],
-        [
-          -123.22344,
-          46.63097
-        ],
-        [
-          -123.22319,
-          46.631
-        ],
-        [
-          -123.22292,
-          46.63102
-        ],
-        [
-          -123.22253,
-          46.63105
-        ],
-        [
-          -123.22226,
-          46.63106
-        ],
-        [
-          -123.222,
-          46.63106
-        ],
-        [
-          -123.2216,
-          46.63105
-        ],
-        [
-          -123.2212,
-          46.63103
-        ],
-        [
-          -123.22081,
-          46.631
-        ],
-        [
-          -123.22042,
-          46.63094
-        ],
-        [
-          -123.22016,
-          46.6309
-        ],
-        [
-          -123.2199,
-          46.63086
-        ],
-        [
-          -123.21865,
-          46.6306
-        ],
-        [
-          -123.21718,
-          46.63031
-        ],
-        [
-          -123.21677,
-          46.63023
-        ],
-        [
-          -123.21647,
-          46.63018
-        ],
-        [
-          -123.21616,
-          46.63012
-        ],
-        [
-          -123.21584,
-          46.63008
-        ],
-        [
-          -123.21537,
-          46.63003
-        ],
-        [
-          -123.2149,
-          46.63
-        ],
-        [
-          -123.21458,
-          46.62999
-        ],
-        [
-          -123.21426,
-          46.62998
-        ],
-        [
-          -123.21378,
-          46.62999
-        ],
-        [
-          -123.21346,
-          46.63001
-        ],
-        [
-          -123.21315,
-          46.63003
-        ],
-        [
-          -123.21267,
-          46.63008
-        ],
-        [
-          -123.21144,
-          46.63025
-        ],
-        [
-          -123.21022,
-          46.6304
-        ],
-        [
-          -123.2077,
-          46.63073
-        ],
-        [
-          -123.20384,
-          46.63126
-        ],
-        [
-          -123.2023,
-          46.63145
-        ],
-        [
-          -123.2008,
-          46.63165
-        ],
-        [
-          -123.20048,
-          46.6317
-        ],
-        [
-          -123.20035,
-          46.63172
-        ],
-        [
-          -123.19829,
-          46.63197
-        ],
-        [
-          -123.19829,
-          46.63197
-        ]
-      ]
-    },
-    {
-      "id": 712872,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.6,
-      "lat": 46.627033568,
-      "lon": -123.082208102,
-      "lat2": 46.626966642,
-      "lon2": -123.063374325,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-12T22:30:00.0000000+00:00",
-      "updated": "2026-09-10T21:06:34.0470000+00:00",
-      "path": [
-        [
-          -123.0822,
-          46.62703
-        ],
-        [
-          -123.08176,
-          46.62703
-        ],
-        [
-          -123.08101,
-          46.62703
-        ],
-        [
-          -123.07967,
-          46.62703
-        ],
-        [
-          -123.07843,
-          46.62702
-        ],
-        [
-          -123.07691,
-          46.62702
-        ],
-        [
-          -123.07664,
-          46.62702
-        ],
-        [
-          -123.07607,
-          46.62702
-        ],
-        [
-          -123.07582,
-          46.62702
-        ],
-        [
-          -123.07474,
-          46.62702
-        ],
-        [
-          -123.07107,
-          46.62702
-        ],
-        [
-          -123.06794,
-          46.627
-        ],
-        [
-          -123.06486,
-          46.62698
-        ],
-        [
-          -123.06443,
-          46.62697
-        ],
-        [
-          -123.06424,
-          46.62697
-        ],
-        [
-          -123.06344,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ]
-      ]
-    },
-    {
-      "id": 640018,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock on US 101 near Ruby Beach. The speed limit is reduced from 55 mph to 25 mph from milepost 162.93 to 163.51. Work is for a fish passage project.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 162.93,
-      "lat": 47.684279605,
-      "lon": -124.405270313,
-      "lat2": 47.691732518,
-      "lon2": -124.410303833,
-      "county": null,
-      "start": "2025-03-18T21:38:00.0000000+00:00",
-      "end": "2027-01-31T23:00:00.0000000+00:00",
-      "updated": "2026-04-27T14:26:48.6970000+00:00",
-      "path": [
-        [
-          -124.40533,
-          47.6843
-        ],
-        [
-          -124.40537,
-          47.68443
-        ],
-        [
-          -124.40541,
-          47.68459
-        ],
-        [
-          -124.40551,
-          47.68509
-        ],
-        [
-          -124.40557,
-          47.6853
-        ],
-        [
-          -124.40563,
-          47.68547
-        ],
-        [
-          -124.40564,
-          47.68548
-        ],
-        [
-          -124.40572,
-          47.68565
-        ],
-        [
-          -124.40579,
-          47.68578
-        ],
-        [
-          -124.4059,
-          47.68594
-        ],
-        [
-          -124.406,
-          47.68606
-        ],
-        [
-          -124.40614,
-          47.68622
-        ],
-        [
-          -124.40624,
-          47.68632
-        ],
-        [
-          -124.4063,
-          47.68637
-        ],
-        [
-          -124.40653,
-          47.68655
-        ],
-        [
-          -124.40674,
-          47.68669
-        ],
-        [
-          -124.40698,
-          47.68684
-        ],
-        [
-          -124.40706,
-          47.68689
-        ],
-        [
-          -124.4073,
-          47.68704
-        ],
-        [
-          -124.40753,
-          47.68721
-        ],
-        [
-          -124.40767,
-          47.68732
-        ],
-        [
-          -124.40788,
-          47.6875
-        ],
-        [
-          -124.40801,
-          47.68762
-        ],
-        [
-          -124.40813,
-          47.68775
-        ],
-        [
-          -124.40827,
-          47.6879
-        ],
-        [
-          -124.40847,
-          47.68809
-        ],
-        [
-          -124.40867,
-          47.68829
-        ],
-        [
-          -124.40885,
-          47.68849
-        ],
-        [
-          -124.40902,
-          47.68869
-        ],
-        [
-          -124.40919,
-          47.6889
-        ],
-        [
-          -124.40934,
-          47.68911
-        ],
-        [
-          -124.40948,
-          47.68932
-        ],
-        [
-          -124.40954,
-          47.68943
-        ],
-        [
-          -124.40967,
-          47.68965
-        ],
-        [
-          -124.40978,
-          47.68988
-        ],
-        [
-          -124.40989,
-          47.6901
-        ],
-        [
-          -124.41001,
-          47.69042
-        ],
-        [
-          -124.41002,
-          47.69044
-        ],
-        [
-          -124.41009,
-          47.69067
-        ],
-        [
-          -124.41015,
-          47.6909
-        ],
-        [
-          -124.4102,
-          47.69114
-        ],
-        [
-          -124.41023,
-          47.69137
-        ],
-        [
-          -124.41026,
-          47.69168
-        ],
-        [
-          -124.41027,
-          47.6917
-        ],
-        [
-          -124.41027,
-          47.6917
-        ]
-      ]
-    },
     {
       "id": 693084,
       "kind": "work",
@@ -734,6 +186,27 @@
           46.903168672
         ]
       ]
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 717190,
@@ -1682,6 +1155,554 @@
       ]
     },
     {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
+      "id": 713038,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Wednesday, Sept. 30: Travelers along westbound SR 6 between Rainbow Falls State Park (milepost 35.2) and Hope Creek Road (milepost 36.8) will take turns moving through a single lane daily from 7 a.m. to 5:30 p.m., for tree trimming work. Flaggers will direct travelers through the area. Plan ahead and expect delays.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "W",
+      "milepost": 35.2,
+      "lat": 46.630276512,
+      "lon": -123.231156234,
+      "lat2": 46.631971538,
+      "lon2": -123.198284271,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-01T00:30:00.0000000+00:00",
+      "updated": "2026-09-11T23:15:30.8770000+00:00",
+      "path": [
+        [
+          -123.2312,
+          46.63026
+        ],
+        [
+          -123.2308,
+          46.63025
+        ],
+        [
+          -123.22982,
+          46.63023
+        ],
+        [
+          -123.22795,
+          46.63035
+        ],
+        [
+          -123.22759,
+          46.63041
+        ],
+        [
+          -123.22584,
+          46.63065
+        ],
+        [
+          -123.22556,
+          46.63069
+        ],
+        [
+          -123.22344,
+          46.63097
+        ],
+        [
+          -123.22319,
+          46.631
+        ],
+        [
+          -123.22292,
+          46.63102
+        ],
+        [
+          -123.22253,
+          46.63105
+        ],
+        [
+          -123.22226,
+          46.63106
+        ],
+        [
+          -123.222,
+          46.63106
+        ],
+        [
+          -123.2216,
+          46.63105
+        ],
+        [
+          -123.2212,
+          46.63103
+        ],
+        [
+          -123.22081,
+          46.631
+        ],
+        [
+          -123.22042,
+          46.63094
+        ],
+        [
+          -123.22016,
+          46.6309
+        ],
+        [
+          -123.2199,
+          46.63086
+        ],
+        [
+          -123.21865,
+          46.6306
+        ],
+        [
+          -123.21718,
+          46.63031
+        ],
+        [
+          -123.21677,
+          46.63023
+        ],
+        [
+          -123.21647,
+          46.63018
+        ],
+        [
+          -123.21616,
+          46.63012
+        ],
+        [
+          -123.21584,
+          46.63008
+        ],
+        [
+          -123.21537,
+          46.63003
+        ],
+        [
+          -123.2149,
+          46.63
+        ],
+        [
+          -123.21458,
+          46.62999
+        ],
+        [
+          -123.21426,
+          46.62998
+        ],
+        [
+          -123.21378,
+          46.62999
+        ],
+        [
+          -123.21346,
+          46.63001
+        ],
+        [
+          -123.21315,
+          46.63003
+        ],
+        [
+          -123.21267,
+          46.63008
+        ],
+        [
+          -123.21144,
+          46.63025
+        ],
+        [
+          -123.21022,
+          46.6304
+        ],
+        [
+          -123.2077,
+          46.63073
+        ],
+        [
+          -123.20384,
+          46.63126
+        ],
+        [
+          -123.2023,
+          46.63145
+        ],
+        [
+          -123.2008,
+          46.63165
+        ],
+        [
+          -123.20048,
+          46.6317
+        ],
+        [
+          -123.20035,
+          46.63172
+        ],
+        [
+          -123.19829,
+          46.63197
+        ],
+        [
+          -123.19829,
+          46.63197
+        ]
+      ]
+    },
+    {
+      "id": 712872,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.6,
+      "lat": 46.627033568,
+      "lon": -123.082208102,
+      "lat2": 46.626966642,
+      "lon2": -123.063374325,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-12T22:30:00.0000000+00:00",
+      "updated": "2026-09-10T21:06:34.0470000+00:00",
+      "path": [
+        [
+          -123.0822,
+          46.62703
+        ],
+        [
+          -123.08176,
+          46.62703
+        ],
+        [
+          -123.08101,
+          46.62703
+        ],
+        [
+          -123.07967,
+          46.62703
+        ],
+        [
+          -123.07843,
+          46.62702
+        ],
+        [
+          -123.07691,
+          46.62702
+        ],
+        [
+          -123.07664,
+          46.62702
+        ],
+        [
+          -123.07607,
+          46.62702
+        ],
+        [
+          -123.07582,
+          46.62702
+        ],
+        [
+          -123.07474,
+          46.62702
+        ],
+        [
+          -123.07107,
+          46.62702
+        ],
+        [
+          -123.06794,
+          46.627
+        ],
+        [
+          -123.06486,
+          46.62698
+        ],
+        [
+          -123.06443,
+          46.62697
+        ],
+        [
+          -123.06424,
+          46.62697
+        ],
+        [
+          -123.06344,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ]
+      ]
+    },
+    {
+      "id": 640018,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock on US 101 near Ruby Beach. The speed limit is reduced from 55 mph to 25 mph from milepost 162.93 to 163.51. Work is for a fish passage project.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 162.93,
+      "lat": 47.684279605,
+      "lon": -124.405270313,
+      "lat2": 47.691732518,
+      "lon2": -124.410303833,
+      "county": null,
+      "start": "2025-03-18T21:38:00.0000000+00:00",
+      "end": "2027-01-31T23:00:00.0000000+00:00",
+      "updated": "2026-04-27T14:26:48.6970000+00:00",
+      "path": [
+        [
+          -124.40533,
+          47.6843
+        ],
+        [
+          -124.40537,
+          47.68443
+        ],
+        [
+          -124.40541,
+          47.68459
+        ],
+        [
+          -124.40551,
+          47.68509
+        ],
+        [
+          -124.40557,
+          47.6853
+        ],
+        [
+          -124.40563,
+          47.68547
+        ],
+        [
+          -124.40564,
+          47.68548
+        ],
+        [
+          -124.40572,
+          47.68565
+        ],
+        [
+          -124.40579,
+          47.68578
+        ],
+        [
+          -124.4059,
+          47.68594
+        ],
+        [
+          -124.406,
+          47.68606
+        ],
+        [
+          -124.40614,
+          47.68622
+        ],
+        [
+          -124.40624,
+          47.68632
+        ],
+        [
+          -124.4063,
+          47.68637
+        ],
+        [
+          -124.40653,
+          47.68655
+        ],
+        [
+          -124.40674,
+          47.68669
+        ],
+        [
+          -124.40698,
+          47.68684
+        ],
+        [
+          -124.40706,
+          47.68689
+        ],
+        [
+          -124.4073,
+          47.68704
+        ],
+        [
+          -124.40753,
+          47.68721
+        ],
+        [
+          -124.40767,
+          47.68732
+        ],
+        [
+          -124.40788,
+          47.6875
+        ],
+        [
+          -124.40801,
+          47.68762
+        ],
+        [
+          -124.40813,
+          47.68775
+        ],
+        [
+          -124.40827,
+          47.6879
+        ],
+        [
+          -124.40847,
+          47.68809
+        ],
+        [
+          -124.40867,
+          47.68829
+        ],
+        [
+          -124.40885,
+          47.68849
+        ],
+        [
+          -124.40902,
+          47.68869
+        ],
+        [
+          -124.40919,
+          47.6889
+        ],
+        [
+          -124.40934,
+          47.68911
+        ],
+        [
+          -124.40948,
+          47.68932
+        ],
+        [
+          -124.40954,
+          47.68943
+        ],
+        [
+          -124.40967,
+          47.68965
+        ],
+        [
+          -124.40978,
+          47.68988
+        ],
+        [
+          -124.40989,
+          47.6901
+        ],
+        [
+          -124.41001,
+          47.69042
+        ],
+        [
+          -124.41002,
+          47.69044
+        ],
+        [
+          -124.41009,
+          47.69067
+        ],
+        [
+          -124.41015,
+          47.6909
+        ],
+        [
+          -124.4102,
+          47.69114
+        ],
+        [
+          -124.41023,
+          47.69137
+        ],
+        [
+          -124.41026,
+          47.69168
+        ],
+        [
+          -124.41027,
+          47.6917
+        ],
+        [
+          -124.41027,
+          47.6917
+        ]
+      ]
+    },
+    {
       "id": 705229,
       "kind": "closure",
       "category": "Construction",
@@ -1841,27 +1862,6 @@
       ]
     },
     {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -1925,27 +1925,6 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 717198,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on I-5 southbound at milepost 104.32 near US 101 beginning at 6:50 pm on September 29, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 104.32,
-      "lat": 47.021300118,
-      "lon": -122.906220635,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-09-30T01:50:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-09-30T01:52:36.6130000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -1965,6 +1944,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-09-14T14:42:15.5130000+00:00"
+    },
+    {
+      "id": 717198,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 104.32 near US 101 beginning at 6:50 pm on September 29, 2026 until further notice. The right lane is blocked on the ramp to US 101.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 104.32,
+      "lat": 47.021300118,
+      "lon": -122.906220635,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-09-30T01:50:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-09-30T02:19:47.9770000+00:00"
     },
     {
       "id": 712735,
