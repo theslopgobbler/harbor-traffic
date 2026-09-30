@@ -21,10 +21,11 @@
   const long = (name) => parts(name)[2].trim();
 
 
-  // a bus from above, front up: body in the route color, dark windows along both sides
-  const busSvg = (c) => `<svg viewBox="0 0 12 28"><rect x="1" y="1" width="10" height="26" rx="2.5" fill="${c}" stroke="#020807" stroke-width="1"/>
-    <rect x="2.5" y="2.5" width="7" height="4" rx="1" fill="#020807" opacity=".75"/>
-    <path d="M2.4 9 V24 M9.6 9 V24" stroke="#020807" stroke-width="1.2" stroke-dasharray="2.5 1.2" opacity=".7"/></svg>`;
+  // a bus from above, front up, in the same line style as the ships and alerts: a hollow outline in the
+  // route color over a dark fill, windshield bar up front, window dashes down both sides
+  const busSvg = (c) => `<svg viewBox="0 0 12 28"><rect x="1.2" y="1.2" width="9.6" height="25.6" rx="2.4" fill="rgba(2,8,7,.85)" stroke="${c}" stroke-width="1.4"/>
+    <path d="M3 4 H9" stroke="${c}" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M3.2 8 V23.5 M8.8 8 V23.5" stroke="${c}" stroke-width="1" stroke-dasharray="2.4 1.4" opacity=".85"/></svg>`;
 
   function render() {
     const seen = new Set();
@@ -40,17 +41,60 @@
       } else mk.setLngLat([b.lon, b.lat]);
       const el = mk.getElement();
       el.classList.toggle('stopped', b.mph < 2);
-      el.innerHTML = `<div class="ic" style="transform:rotate(${b.heading || 0}deg)">${busSvg(r.color || '#bff4ff')}</div><b style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</b>`;
+      el.innerHTML = `<div class="ic" style="transform:rotate(${b.heading || 0}deg)">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</b>`;
       el.title = `Route ${short(r.name)} · bus ${b.id}`;
+      mk._bus = b;
       mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</div>` : ''}
         <div class="m">GRAYS HARBOR TRANSIT GPS</div>`);
     }
     for (const [id, mk] of markers) if (!seen.has(id)) { mk.remove(); markers.delete(id); }
+    groupBuses();
     renderList();
     window.htDeclutter?.();
   }
+
+  // buses that would pile up (transit centers, zoomed out) merge into one icon with a count, like the ships
+  const groups = [];
+  function groupBuses() {
+    groups.splice(0).forEach((m) => m.remove());
+    const all = [...markers.values()];
+    all.forEach((m) => (m.getElement().style.display = ''));
+    if (map.getZoom() >= 16) return;
+    const pts = all.map((m) => ({ m, p: map.project(m.getLngLat()) }));
+    const used = new Set();
+    for (let i = 0; i < pts.length; i++) {
+      if (used.has(i)) continue;
+      const grp = [i];
+      for (let j = i + 1; j < pts.length; j++) if (!used.has(j) && Math.hypot(pts[i].p.x - pts[j].p.x, pts[i].p.y - pts[j].p.y) < 28) grp.push(j);
+      if (grp.length < 2) continue;
+      grp.forEach((k) => { used.add(k); pts[k].m.getElement().style.display = 'none'; });
+      const list = grp.map((k) => pts[k].m._bus);
+      const lls = grp.map((k) => pts[k].m.getLngLat());
+      const at = [lls.reduce((s, l) => s + l.lng, 0) / lls.length, lls.reduce((s, l) => s + l.lat, 0) / lls.length];
+      const oneRoute = list.every((b) => b.route === list[0].route);
+      const color = oneRoute ? (routes[list[0].route]?.color || '#bff4ff') : '#bff4ff';
+      const el = document.createElement('div');
+      el.className = 'bus-mk bus-grp';
+      el.innerHTML = `<div class="ic">${busSvg(color)}</div><b class="n">${list.length}</b>`;
+      el.title = `${list.length} buses here: click for details`;
+      // parked together (a transit center): list them; spread out: zoom in until they separate
+      const spreadM = Math.max(...lls.map((a) => Math.max(...lls.map((b) => a.distanceTo(b)))));
+      const pop = new maplibregl.Popup({ offset: 14, maxWidth: '300px' }).setHTML(`<h3>${list.length} BUSES HERE</h3>` + list.map((b) => {
+        const r = routes[b.route] || {};
+        return `<div class="m"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + esc(b.nextTime) : '') : ''}</div>`;
+      }).join(''));
+      const mk = new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map);
+      if (spreadM < 60) mk.setPopup(pop);
+      else el.addEventListener('click', () => {
+        const bb = new maplibregl.LngLatBounds(); lls.forEach((l) => bb.extend(l));
+        map.fitBounds(bb, { padding: 90, maxZoom: 16.5, minZoom: Math.min(16.5, map.getZoom() + 1.5) });
+      });
+      groups.push(mk);
+    }
+  }
+  map.on('zoomend', groupBuses);
 
   function renderList() {
     const box = $('#busBox');
