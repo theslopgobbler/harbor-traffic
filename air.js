@@ -67,11 +67,18 @@
   // ---- drawings (top-down, nose up) ----
   const planeSvg = (c) => `<svg viewBox="0 0 24 24"><path d="M12 1 L13.4 8 L22 12.5 L22 14 L13.4 12 L13 19 L16 21.5 L16 23 L12 22 L8 23 L8 21.5 L11 19 L10.6 12 L2 14 L2 12.5 L10.6 8 Z"
     fill="rgba(2,8,7,.8)" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
-  const heliSvg = (c) => `<svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="9.5" fill="none" stroke="${c}" stroke-width=".9" stroke-dasharray="2 2" opacity=".8"/>
-    <path d="M12 4 Q15.5 4 15.5 9 Q15.5 13 12 14 Q8.5 13 8.5 9 Q8.5 4 12 4 Z M11.2 14 L11.2 21 M12.8 14 L12.8 21 M9.5 21.5 L14.5 21.5" fill="rgba(2,8,7,.8)" stroke="${c}" stroke-width="1.3"/>
-    <path d="M3 10 L21 10 M12 1 L12 19" stroke="${c}" stroke-width=".8" opacity=".7"/></svg>`;
-  const colorOf = (a) => EMERG[a.squawk] ? '#ff2a3d' : isCoastGuard(a) ? '#ff2a3d' : isMil(a) ? '#ff7a1a' : isHeli(a) ? '#39ff88' : '#bff4ff';
-  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : isMil(a) ? 'MILITARY?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
+  // helicopter from above: rotor disc with two blades, teardrop cabin, tail boom, tail rotor; a red cross if medical
+  const heliSvg = (c, medical) => `<svg viewBox="0 0 28 28">
+    <circle cx="14" cy="11" r="10.5" fill="none" stroke="${c}" stroke-width="1" opacity=".55"/>
+    <path d="M14 5 Q18.5 5.5 18.5 11 Q18.5 15.5 14 16.5 Q9.5 15.5 9.5 11 Q9.5 5.5 14 5 Z" fill="rgba(2,8,7,.85)" stroke="${c}" stroke-width="1.6"/>
+    <path d="M14 16.5 L14 25 M11 25 L17 25" fill="none" stroke="${c}" stroke-width="1.6" stroke-linecap="square"/>
+    <path d="M5 2.5 L23 19.5 M23 2.5 L5 19.5" stroke="${c}" stroke-width="1.8" stroke-linecap="round"/>
+    ${medical ? '<path d="M12.6 9.2 H15.4 M14 7.8 V10.6" stroke="#ff2a3d" stroke-width="1.6"/>' : ''}</svg>`;
+  // likely air ambulance (Life Flight Network, Airlift Northwest and others): medical call signs or registrations
+  const isMedical = (a) => isHeli(a) && /LIFE|MEDEVAC|MEDIC|AIRLIFT|LIFEGUARD|MERCY|CARE|^LF|^LN|^AMF|^AIR ?EVAC/i.test(`${a.flight || ''} ${a.reg || ''}`) ||
+    /^N\d+(LF|LN|AL|MT)$/i.test(a.reg || '');
+  const colorOf = (a) => EMERG[a.squawk] ? '#ff2a3d' : isCoastGuard(a) ? '#ff2a3d' : isMil(a) ? '#ff7a1a' : isHeli(a) ? '#ffffff' : '#bff4ff';
+  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
   const altTxt = (alt) => alt < 100 ? 'GND' : alt >= 1000 ? (alt / 1000).toFixed(1) + 'K' : String(alt);
 
   // ---- markers ----
@@ -91,7 +98,8 @@
       } else mk.setLngLat([a.lon, a.lat]);
       const el = mk.getElement();
       el.classList.toggle('emerg', !!EMERG[a.squawk]);
-      el.innerHTML = `<div class="ic" style="transform:rotate(${a.track ?? 0}deg)">${isHeli(a) ? heliSvg(c) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(a.alt)}</span>`;
+      el.classList.toggle('heli', isHeli(a));
+      el.innerHTML = `<div class="ic" style="transform:rotate(${a.track ?? 0}deg)">${isHeli(a) ? heliSvg(c, isMedical(a)) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(a.alt)}</span>`;
       el.title = `${a.flight || a.reg || a.hex} · ${a.type || ''}`;
       const s = a._sit;
       mk.getPopup().setHTML(`<h3>${esc(a.flight || a.reg || a.hex)}${a.reg && a.reg !== a.flight ? ' · ' + esc(a.reg) : ''}</h3>
@@ -111,7 +119,8 @@
     alerts.innerHTML = flagged.map((a) => `<li class="${EMERG[a.squawk] ? 'k-closure' : 'k-work'} clickable" data-hex="${esc(a.hex)}">
       <div class="t">${EMERG[a.squawk] ? `⚠ SQUAWK ${a.squawk}: ${EMERG[a.squawk]}` : isCoastGuard(a) ? '⚠ COAST GUARD AIRCRAFT' : '⚠ POSSIBLE MILITARY AIRCRAFT'} · ${esc(a.flight || a.reg || a.hex)}</div>
       <div class="m">${esc(a.type || 'UNKNOWN TYPE')} · ${altTxt(a.alt)} FT · ${a._sit.state} · ${a._sit.homeNm.toFixed(1)} NM FROM ABERDEEN</div></li>`).join('');
-    const sorted = planes.slice().sort((a, b) => a._sit.homeNm - b._sit.homeNm);
+    // helicopters first, then nearest first
+    const sorted = planes.slice().sort((a, b) => (isHeli(b) - isHeli(a)) || a._sit.homeNm - b._sit.homeNm);
     list.innerHTML = sorted.length ? sorted.map((a) => `<li class="clickable" data-hex="${esc(a.hex)}" style="border-left-color:${colorOf(a)}">
       <div class="t">${esc(a.flight || a.reg || a.hex)} <span class="pill st-${a._sit.state.replace(/\s/g, '')}">${a._sit.state}</span></div>
       <div class="m">${kindOf(a)} · ${esc(a.type || '?')} · ${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT · ${a._sit.homeNm.toFixed(1)} NM AWAY
