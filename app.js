@@ -203,6 +203,104 @@
     renderBridges();
   }
   const kindIcon = { closure: '✕', collision: '!', work: '⚒', other: 'i' };
+  const getJson = async (path) => (await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' })).json();
+
+  // ---------------- cameras: nothing downloads until someone clicks ----------------
+  const CAM_MIN_MS = 2 * 60 * 1000; // at most one fresh image per camera every 2 minutes
+  const camLast = {};
+  const camById = {};
+  function camImg(cam) {
+    const now = Date.now();
+    if (!camLast[cam.id] || now - camLast[cam.id] >= CAM_MIN_MS) camLast[cam.id] = now;
+    // same URL inside the window, so the browser reuses its copy instead of downloading again
+    return `${cam.img}${cam.img.includes('?') ? '&' : '?'}t=${camLast[cam.id]}`;
+  }
+  function camHtml(cam) {
+    return `<div class="cam" data-cam="${cam.id}"><img alt="${esc(cam.title)}" src="${esc(camImg(cam))}">
+      <div class="m">${esc(cam.title)} · <span class="age">loaded ${fmtTime(new Date(camLast[cam.id]))}</span>
+      <button type="button" class="cam-refresh">Refresh</button></div></div>`;
+  }
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.cam-refresh');
+    if (!btn) return;
+    const box = btn.closest('.cam'), cam = camById[box.dataset.cam];
+    const wait = CAM_MIN_MS - (Date.now() - camLast[cam.id]);
+    if (wait > 0) { btn.textContent = `Refresh in ${Math.ceil(wait / 1000)}s`; setTimeout(() => (btn.textContent = 'Refresh'), 2500); return; }
+    box.querySelector('img').src = camImg(cam);
+    box.querySelector('.age').textContent = 'loaded ' + fmtTime(new Date(camLast[cam.id]));
+  });
+  const camMarkers = [];
+  async function loadCameras() {
+    try {
+      const j = await getJson('data/cameras.json');
+      for (const cam of j.cameras || []) {
+        camById[cam.id] = cam;
+        const el = document.createElement('div');
+        el.className = 'mk cam-mk';
+        el.title = cam.title;
+        el.innerHTML = '<i class="ic ic-cam">📷</i>';
+        const p = new maplibregl.Popup({ offset: 14, maxWidth: '340px' });
+        p.on('open', () => p.setHTML(`<h3>${esc(cam.title)}</h3>${camHtml(cam)}`));
+        camMarkers.push({ el, m: new maplibregl.Marker({ element: el }).setLngLat([cam.lon, cam.lat]).setPopup(p).addTo(map) });
+      }
+      showCams();
+      renderBridges();
+    } catch (e) { console.warn('cameras', e); }
+  }
+  const showCams = () => { const on = map.getZoom() >= 10; camMarkers.forEach(({ el }) => (el.style.display = on ? '' : 'none')); };
+  map.on('zoomend', showCams);
+
+  // ---------------- roadside weather stations ----------------
+  const rwMarkers = [];
+  async function loadRoadWeather() {
+    try {
+      const j = await getJson('data/road-weather.json');
+      state.roadWx = j.stations || [];
+      rwMarkers.splice(0).forEach((m) => m.remove());
+      for (const s of state.roadWx) {
+        if (s.temp == null) continue;
+        const el = document.createElement('div');
+        el.className = 'wx-mk rw-mk';
+        el.innerHTML = `<span class="e">🌡</span><span class="v">${Math.round(s.temp)}°</span>`;
+        el.title = `${s.name}: ${Math.round(s.temp)}°F, wind ${s.dir || ''} ${s.wind ?? '?'} mph (roadside sensor)`;
+        rwMarkers.push(new maplibregl.Marker({ element: el, anchor: 'left', offset: [8, 0] }).setLngLat([s.lon, s.lat]).addTo(map));
+      }
+      showRw();
+      renderWeather();
+    } catch (e) { console.warn('road weather', e); }
+  }
+  const showRw = () => { const on = map.getZoom() >= 10; rwMarkers.forEach((m) => (m.getElement().style.display = on ? '' : 'none')); };
+  map.on('zoomend', showRw);
+
+  // ---------------- I-5 live traffic sensors + travel times ----------------
+  const flowColor = ['#9aa39a', '#4f8a2b', '#e0b020', '#d4611c', '#b8322a'];
+  let flowData = { type: 'FeatureCollection', features: [] };
+  map.on('load', () => {
+    map.addSource('flow', { type: 'geojson', data: flowData });
+    map.addLayer({ id: 'flow', type: 'circle', source: 'flow', filter: ['>', ['get', 'level'], 0],
+      layout: { 'circle-sort-key': ['get', 'level'] },
+      paint: { 'circle-color': ['to-color', ['at', ['get', 'level'], ['literal', flowColor]]],
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 4, 12, 7, 15, 10],
+        'circle-stroke-color': '#fff', 'circle-stroke-width': 1 } }, 'outside');
+  });
+  async function loadFlow() {
+    try {
+      const j = await getJson('data/flow.json');
+      flowData = { type: 'FeatureCollection', features: (j.stations || []).map(([lat, lon, level, mp, dir, road]) => ({
+        type: 'Feature', geometry: { type: 'Point', coordinates: [lon, lat] }, properties: { level, mp, dir, road } })) };
+      map.getSource('flow')?.setData(flowData);
+    } catch (e) { console.warn('flow', e); }
+    try { state.travel = (await getJson('data/travel-times.json')).routes || []; } catch { state.travel = []; }
+    renderTravel();
+  }
+  function renderTravel() {
+    const t = state.travel || [];
+    $('#travelList').innerHTML = t.length ? t.map((r) => {
+      const slow = r.avg && r.now > r.avg * 1.25;
+      return `<li><div class="t">${esc(r.name.replace(/^\w+\s/, ''))} <span class="pill ${slow ? 'bad' : 'ok'}">${r.now} min</span></div>
+        <div class="m">usually ${r.avg} min · ${r.miles} mi</div></li>`;
+    }).join('') : '<li class="empty">No travel times right now.</li>';
+  }
 
   // ---------------- bridges ----------------
   const bridgeMarkers = {};
@@ -302,14 +400,24 @@
       bridgeMarkers[b.id].m.getPopup().setHTML(html);
       bridgeMarkers[b.id].el.querySelector('.ic').classList.toggle('shut', !!issues.length);
       b._issue = !!issues.length;
+      const cam = camById[b.cam];
       return `<li class="clickable" data-b="${b.id}"><div class="t">${esc(b.name)} ${pill}</div>
-        <div class="m">${esc(b.route)} · ${esc(b.town)}</div>${issues.map((r) => `<div class="m"><b>${esc(r.headline)}</b></div>`).join('')}</li>`;
+        <div class="m">${esc(b.route)} · ${esc(b.town)}</div>${issues.map((r) => `<div class="m"><b>${esc(r.headline)}</b></div>`).join('')}
+        ${cam && !TV ? `<button type="button" class="cam-show" data-cam="${cam.id}">📷 Show camera</button><div class="cam-slot"></div>` : ''}</li>`;
     }).join('');
     const bad = C.bridges.filter((b) => b._issue).length;
     bridgeChip.querySelector('.ic').classList.toggle('shut', bad > 0);
     bridgeChip.querySelector('.v').textContent = bad ? `${bad} bridge alert${bad > 1 ? 's' : ''}` : state.roadsUpdated ? 'Bridges OK' : 'Bridges';
   }
   $('#bridgeList').addEventListener('click', (e) => {
+    const show = e.target.closest('.cam-show');
+    if (show) {
+      const slot = show.nextElementSibling;
+      if (slot.innerHTML) { slot.innerHTML = ''; show.textContent = '📷 Show camera'; }
+      else { slot.innerHTML = camHtml(camById[show.dataset.cam]); show.textContent = '📷 Hide camera'; }
+      return;
+    }
+    if (e.target.closest('.cam')) return;
     const li = e.target.closest('li[data-b]'); if (!li) return;
     const b = C.bridges.find((x) => x.id === li.dataset.b);
     map.flyTo({ center: [b.lon, b.lat], zoom: 14 });
@@ -324,6 +432,9 @@
       return `<li><span><b>${esc(t.name)}</b><br><span class="m">${esc(w.f)} · wind ${esc(w.wind)}${w.rain != null ? ` · ${w.rain}% rain` : ''}</span></span>
         <span class="temp">${wxEmoji(w.f, w.day)} ${w.temp}°</span></li>`;
     }).join('');
+    const rw = state.roadWx || [];
+    $('#roadWxList').innerHTML = rw.length ? rw.map((s) => `<li><span><b>${esc(s.name)}</b><br><span class="m">wind ${esc(s.dir || '')} ${s.wind ?? '?'} mph${s.gust ? `, gusts ${s.gust}` : ''}${s.precip ? ` · ${s.precip}" rain` : ''}</span></span>
+      <span class="temp">${s.temp != null ? Math.round(s.temp) + '°' : '–'}</span></li>`).join('') : '<li class="empty">No roadside readings.</li>';
   }
 
   // ---------------- route picker ----------------
@@ -424,9 +535,10 @@
   const tick = () => { $('#clock').textContent = fmtTime(new Date()); };
   tick(); setInterval(tick, 15000);
   async function refresh() {
-    await Promise.allSettled([loadWeather(), loadAlerts(), loadRoads()]);
+    await Promise.allSettled([loadWeather(), loadAlerts(), loadRoads(), loadRoadWeather(), loadFlow()]);
     $('#updated').textContent = 'Updated ' + fmtTime(new Date());
   }
+  loadCameras(); // the list only; images wait for a click
   refresh();
   setInterval(refresh, 5 * 60 * 1000);
   setInterval(renderBridges, 60 * 1000);

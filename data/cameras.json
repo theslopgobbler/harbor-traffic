@@ -1,0 +1,275 @@
+{
+    "source":  "WSDOT Highway Cameras",
+    "cameras":  [
+                    {
+                        "id":  1141,
+                        "title":  "US 101 at MP 78.3: Cosmopolis Hill",
+                        "img":  "https://images.wsdot.wa.gov/rweather/Cosmopolis.jpg",
+                        "road":  "US 101",
+                        "mp":  78,
+                        "lat":  46.933937,
+                        "lon":  -123.72985
+                    },
+                    {
+                        "id":  1142,
+                        "title":  "US 101 at MP 100.4: State Camp Hill",
+                        "img":  "https://images.wsdot.wa.gov/rweather/statecamp_medium.jpg",
+                        "road":  "US 101",
+                        "mp":  100,
+                        "lat":  47.139125,
+                        "lon":  -123.89393
+                    },
+                    {
+                        "id":  1151,
+                        "title":  "SR 8 at MP 16.1: Rock Candy Mountain",
+                        "img":  "https://images.wsdot.wa.gov/rweather/rockcandymtn_medium.jpg",
+                        "road":  "SR 8",
+                        "mp":  16,
+                        "lat":  47.03348,
+                        "lon":  -123.09857
+                    },
+                    {
+                        "id":  1286,
+                        "title":  "I-5 at MP 107.2: Pacific Ave (Olympia)",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10720.jpg",
+                        "road":  "I-5",
+                        "mp":  107,
+                        "lat":  47.040283,
+                        "lon":  -122.857057
+                    },
+                    {
+                        "id":  1287,
+                        "title":  "I-5 at MP 104.8: Capitol Blvd",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10480.jpg",
+                        "road":  "I-5",
+                        "mp":  104,
+                        "lat":  47.025349,
+                        "lon":  -122.898496
+                    },
+                    {
+                        "id":  1353,
+                        "title":  "US 101 at MP 366.6: Crosby Blvd",
+                        "img":  "https://images.wsdot.wa.gov/orflow/101vc36664.jpg",
+                        "road":  "US 101",
+                        "mp":  368,
+                        "lat":  47.025667,
+                        "lon":  -122.918448
+                    },
+                    {
+                        "id":  3077,
+                        "title":  "I-5 at MP 104: Custer Way",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10404.jpg",
+                        "road":  "I-5",
+                        "mp":  104,
+                        "lat":  47.017396,
+                        "lon":  -122.90587
+                    },
+                    {
+                        "id":  3078,
+                        "title":  "I-5 at MP 105.6: Eastside St",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10567.jpg",
+                        "road":  "I-5",
+                        "mp":  106,
+                        "lat":  47.035205,
+                        "lon":  -122.88707
+                    },
+                    {
+                        "id":  3079,
+                        "title":  "I-5 at MP 108.3: Sleater-Kinney",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10835.jpg",
+                        "road":  "I-5",
+                        "mp":  108,
+                        "lat":  47.045719,
+                        "lon":  -122.834563
+                    },
+                    {
+                        "id":  3080,
+                        "title":  "I-5 at MP 109: Martin Way",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10907.jpg",
+                        "road":  "I-5",
+                        "mp":  109,
+                        "lat":  47.048,
+                        "lon":  -122.819753
+                    },
+                    {
+                        "id":  3081,
+                        "title":  "Plum @ Union (Olympia)",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10561.jpg",
+                        "road":  "City \u0026 County Cams",
+                        "mp":  203,
+                        "lat":  47.039727,
+                        "lon":  -122.891596
+                    },
+                    {
+                        "id":  3082,
+                        "title":  "Sleater-Kinney @ Martin Way (Olympia)",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10840.jpg",
+                        "road":  "City \u0026 County Cams",
+                        "mp":  204,
+                        "lat":  47.047902,
+                        "lon":  -122.833618
+                    },
+                    {
+                        "id":  3083,
+                        "title":  "College @ Martin Way (Lacey)",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10895.jpg",
+                        "road":  "City \u0026 County Cams",
+                        "mp":  202,
+                        "lat":  47.048766,
+                        "lon":  -122.823364
+                    },
+                    {
+                        "id":  8051,
+                        "title":  "US 101 at MP 152.5: Queets",
+                        "img":  "https://images.wsdot.wa.gov/rweather/Medium_Queets.jpg",
+                        "road":  "US 101",
+                        "mp":  153,
+                        "lat":  47.535669,
+                        "lon":  -124.333121
+                    },
+                    {
+                        "id":  8052,
+                        "title":  "US 101 at MP 359: Oyster Bay Rd.",
+                        "img":  "https://images.wsdot.wa.gov/rweather/Medium_OysterBayRD.jpg",
+                        "road":  "US 101",
+                        "mp":  359,
+                        "lat":  47.085076,
+                        "lon":  -123.032826
+                    },
+                    {
+                        "id":  8053,
+                        "title":  "SR 109 at MP 36.7: Pt. Grenville",
+                        "img":  "https://images.wsdot.wa.gov/rweather/PTGrenville.jpg",
+                        "road":  "SR 109",
+                        "mp":  37,
+                        "lat":  47.30281,
+                        "lon":  -124.250582
+                    },
+                    {
+                        "id":  9297,
+                        "title":  "I-5 at MP 85.5: Lewis County Line",
+                        "img":  "https://images.wsdot.wa.gov/sw/005vc08551.jpg",
+                        "road":  "I-5",
+                        "mp":  86,
+                        "lat":  46.765422,
+                        "lon":  -122.993245
+                    },
+                    {
+                        "id":  9338,
+                        "title":  "I-5 at MP 87.4: Thurston/Lewis County Line",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc08744.jpg",
+                        "road":  "I-5",
+                        "mp":  87,
+                        "lat":  46.790338,
+                        "lon":  -123.008039
+                    },
+                    {
+                        "id":  9339,
+                        "title":  "I-5 at MP 88.3: US 12 Interchange Grand Mound",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc08832.jpg",
+                        "road":  "I-5",
+                        "mp":  88,
+                        "lat":  46.802261,
+                        "lon":  -123.007164
+                    },
+                    {
+                        "id":  9340,
+                        "title":  "I-5 at MP 91.2: Scatter Creek",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc09127.jpg",
+                        "road":  "I-5",
+                        "mp":  91,
+                        "lat":  46.841996,
+                        "lon":  -122.983371
+                    },
+                    {
+                        "id":  9341,
+                        "title":  "I-5 at MP 93.2: Maytown South",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc09323.jpg",
+                        "road":  "I-5",
+                        "mp":  93,
+                        "lat":  46.869358,
+                        "lon":  -122.9695
+                    },
+                    {
+                        "id":  9342,
+                        "title":  "I-5 at MP 95.2: Maytown",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc09526.jpg",
+                        "road":  "I-5",
+                        "mp":  95,
+                        "lat":  46.897182,
+                        "lon":  -122.960505
+                    },
+                    {
+                        "id":  9343,
+                        "title":  "I-5 at MP 96: Maytown North",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc09611.jpg",
+                        "road":  "I-5",
+                        "mp":  96,
+                        "lat":  46.908647,
+                        "lon":  -122.954275
+                    },
+                    {
+                        "id":  9480,
+                        "title":  "I-5 at MP 109.9: Carpenter Rd South",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10993.jpg",
+                        "road":  "I-5",
+                        "mp":  110,
+                        "lat":  47.057008,
+                        "lon":  -122.806732
+                    },
+                    {
+                        "id":  9924,
+                        "title":  "I-5 at MP 105.2: Henderson Blvd",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10520.jpg",
+                        "road":  "I-5",
+                        "mp":  105,
+                        "lat":  47.030205,
+                        "lon":  -122.893552
+                    },
+                    {
+                        "id":  10069,
+                        "title":  "SR105 at MP 20: Graveyard Spit",
+                        "img":  "https://images.wsdot.wa.gov/sw/105vc02000.jpg",
+                        "road":  "SR 105",
+                        "mp":  20,
+                        "lat":  46.727513,
+                        "lon":  -124.048625
+                    },
+                    {
+                        "id":  10228,
+                        "title":  "US 101 at MP 83.4: Chehalis River Bridge",
+                        "img":  "https://images.wsdot.wa.gov/orflow/101vc08344.jpg",
+                        "road":  "US 101",
+                        "mp":  83,
+                        "lat":  46.972408,
+                        "lon":  -123.809225
+                    },
+                    {
+                        "id":  10229,
+                        "title":  "US 12 at MP .5: Wishkah Bridge",
+                        "img":  "https://images.wsdot.wa.gov/orflow/012vc00056.jpg",
+                        "road":  "US 12",
+                        "mp":  1,
+                        "lat":  46.977088,
+                        "lon":  -123.812191
+                    },
+                    {
+                        "id":  10230,
+                        "title":  "US 101 at MP 88.1: Simpson Ave",
+                        "img":  "https://images.wsdot.wa.gov/orflow/101vc08818.jpg",
+                        "road":  "US 101",
+                        "mp":  88,
+                        "lat":  46.975406,
+                        "lon":  -123.879001
+                    },
+                    {
+                        "id":  10255,
+                        "title":  "I-5 @ MP 107.8: Lilly Rd",
+                        "img":  "https://images.wsdot.wa.gov/orflow/005vc10787.jpg",
+                        "road":  "I-5",
+                        "mp":  108,
+                        "lat":  47.044195,
+                        "lon":  -122.844303
+                    }
+                ]
+}
