@@ -408,7 +408,6 @@
     rwMarkers.forEach((m) => (m.getElement().style.display = z >= 10 ? '' : 'none'));
     bridgeChip.style.display = z >= 11 ? 'none' : '';
     for (const { el } of Object.values(bridgeMarkers)) el.style.display = z >= 11 ? '' : 'none';
-    roadMarkers.forEach(({ el, kind }) => (el.style.display = kind === 'closure' || z >= 9.5 ? '' : 'none'));
   }
   map.on('zoomend', showByZoom);
 
@@ -471,6 +470,10 @@
   }
   const X_SVG = `<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="4,10 10,4 20,14 30,4 36,10 26,20 36,30 30,36 20,26 10,36 4,30 14,20"
     fill="${K.red}" stroke="#ffb3ba" stroke-width="1" stroke-linejoin="miter"/></svg>`;
+  // hollow orange warning triangle for every other alert
+  const triSvg = (mark) => `<svg viewBox="0 0 28 26" aria-hidden="true"><polygon points="14,2 26,24 2,24" fill="rgba(0,0,0,.55)"
+    stroke="${K.orange}" stroke-width="2.6" stroke-linejoin="miter"/>${mark ? `<text x="14" y="21" text-anchor="middle" fill="${K.orange}"
+    font-family="Share Tech Mono, monospace" font-size="13" font-weight="700">${mark}</text>` : ''}</svg>`;
 
   // closure and road-work stretches breathe in step with the markers (about 15 frames a second is plenty)
   let pulseLast = 0;
@@ -505,7 +508,7 @@
       const el = document.createElement('div');
       // one X-shaped outline, so the arms don't show a seam where they cross
       if (r.kind === 'closure') { el.className = 'x-mk'; el.innerHTML = X_SVG; }
-      else { el.className = `inc-mk ${r.kind}`; el.textContent = r.kind === 'collision' ? '!' : ''; }
+      else { el.className = `inc-mk ${r.kind}`; el.innerHTML = triSvg(r.kind === 'collision' ? '!' : ''); }
       const at = Array.isArray(r.path) && r.path.length > 1 ? midpoint(r.path) : [r.lon, r.lat];
       const m = new maplibregl.Marker({ element: el }).setLngLat(at).setPopup(popup(alertHtml(r))).addTo(map);
       roadMarkers.push({ el, m, kind: r.kind });
