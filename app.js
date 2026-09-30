@@ -173,7 +173,15 @@
   map.addControl(new maplibregl.ScaleControl({ unit: 'imperial' }), 'bottom-right');
   const phone = () => matchMedia('(max-width: 760px)').matches;
   // on phones the bottom sheet covers the lower part of the map
-  const fitPad = (p) => phone() ? { top: p, left: p, right: p, bottom: Math.round(innerHeight * 0.42) + p } : p;
+  // on phones, keep things clear of whatever the bottom sheet and the button row above it actually cover
+  const fitPad = (p) => {
+    if (!phone()) return p;
+    const mapBox = map.getContainer().getBoundingClientRect();
+    const sheet = document.querySelector('#panel').getBoundingClientRect();
+    const tools = document.querySelector('.map-tools').getBoundingClientRect();
+    const covered = Math.max(0, mapBox.bottom - Math.min(sheet.top, tools.height ? tools.top : sheet.top));
+    return { top: p, left: p, right: p, bottom: Math.min(mapBox.height * 0.6, covered + p) };
+  };
   const popup = (html) => new maplibregl.Popup({ offset: 16, maxWidth: '320px' }).setHTML(html);
 
   // coordinate readout, for the look of it
@@ -663,8 +671,9 @@
     map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
   }
-  const X_SVG = `<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="4,10 10,4 20,14 30,4 36,10 26,20 36,30 30,36 20,26 10,36 4,30 14,20"
-    fill="${K.red}" stroke="#ffb3ba" stroke-width="1" stroke-linejoin="miter"/></svg>`;
+  // closure: a hollow, spiked X in the same line style as the alert triangles
+  const X_SVG = `<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="2,2 20,13 38,2 27,20 38,38 20,27 2,38 13,20"
+    fill="rgba(255,42,61,.14)" stroke="${K.red}" stroke-width="3" stroke-linejoin="miter" stroke-miterlimit="10"/></svg>`;
   // hollow orange warning triangle for every other alert
   const triSvg = (mark) => `<svg viewBox="0 0 28 26" aria-hidden="true"><polygon points="14,2 26,24 2,24" fill="rgba(0,0,0,.55)"
     stroke="${K.orange}" stroke-width="2.6" stroke-linejoin="miter"/>${mark ? `<text x="14" y="21" text-anchor="middle" fill="${K.orange}"
