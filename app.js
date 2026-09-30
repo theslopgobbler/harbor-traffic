@@ -133,9 +133,6 @@
         paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.55, 'line-width': zw(10, 24), 'line-blur': 6 } },
       { id: 'inc', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
         paint: { 'line-color': ['get', 'color'], 'line-width': zwIf(['==', ['get', 'kind'], 'closure'], [4, 9], [3, 7]) } },
-      // road/rail crossings (where a train can block the road)
-      { id: 'crossings', type: 'circle', source: 'crossings', minzoom: 11,
-        paint: { 'circle-radius': zw(2, 5), 'circle-color': '#030807', 'circle-stroke-color': '#c28bff', 'circle-stroke-width': 1.6 } },
       { id: 'outside', type: 'fill', source: 'outside', paint: { 'fill-color': '#000000', 'fill-opacity': 0.6 } },
       { id: 'outside-edge', type: 'line', source: 'outside', paint: { 'line-color': K.cyan, 'line-opacity': 0.35, 'line-width': 1, 'line-dasharray': [4, 4] } },
       // the region boxes, only in the zoomed-out overview
@@ -993,17 +990,23 @@
   }
 
   loadCameras(); // the list only; images wait for a click
-  // rail crossings (the collector refreshes this from OpenStreetMap once a week)
-  getJson('data/crossings.json').then((j) => setSource('crossings', { type: 'FeatureCollection',
-    features: (j.crossings || []).filter((c) => c.kind === 'level_crossing').map((c) => ({ type: 'Feature',
-      geometry: { type: 'Point', coordinates: [c.lon, c.lat] }, properties: { road: c.road || '' } })) })).catch(() => {});
-  map.on('click', 'crossings', (e) => {
-    const road = e.features[0]?.properties.road;
-    new maplibregl.Popup({ offset: 8 }).setLngLat(e.lngLat)
-      .setHTML(`<h3>RAIL CROSSING</h3><p>${esc(road || 'Road crossing')}</p>${window.htRailLevel ? `<p style="color:#c28bff">⚠ RAIL ACTIVITY ${window.htRailLevel === 2 ? 'LIKELY' : 'POSSIBLE'}: a large ship is ${window.htRailLevel === 2 ? 'at berth' : 'moving'} in the harbor.</p>` : ''}<div class="m">Puget Sound &amp; Pacific Railroad. Trains can block this crossing; no live train positions are published.</div>`).addTo(map);
-  });
-  map.on('mouseenter', 'crossings', () => (map.getCanvas().style.cursor = 'pointer'));
-  map.on('mouseleave', 'crossings', () => (map.getCanvas().style.cursor = ''));
+  // show/hide road warnings: closures, alert triangles and their stretches (on by default; remembered per device;
+  // ?roads=0 hides them). The I-5 speed colors stay.
+  let roadsOn = qs.has('roads') ? qs.get('roads') !== '0' : store.get('ht.roads') !== false;
+  function setRoads(on) {
+    roadsOn = on; store.set('ht.roads', on);
+    const btn = $('#btnRoads');
+    btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on);
+    document.body.classList.toggle('no-roads', !on);
+    const apply = () => ['inc', 'inc-glow'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+    if (map.isStyleLoaded()) apply(); else map.once('load', apply);
+    declutterSoon();
+  }
+  $('#btnRoads').addEventListener('click', () => setRoads(!roadsOn));
+  setRoads(roadsOn);
+
+  // (rail crossings used to be drawn here; removed to keep the map clear. The collector still keeps
+  // data/crossings.json for the future train sensor project.)
   refresh();
   setInterval(refresh, 5 * 60 * 1000);
   setInterval(renderBridges, 60 * 1000);

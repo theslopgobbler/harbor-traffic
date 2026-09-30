@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202609301937" rel="stylesheet">
+<link href="styles.css?v=202609302323" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -71,6 +71,7 @@
     </div>
     <div class="map-tools">
       <!-- all button icons are line drawings, so they're the same size and color on every phone -->
+      <button id="btnRoads" class="tool toggle" type="button" aria-pressed="false" aria-label="Road warnings"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5 L18 17 H2 Z" fill="none" stroke="currentColor" stroke-linejoin="miter"/><path d="M10 7.5 V12 M10 14 V15" stroke="currentColor"/></svg><span> ROADS</span><b class="off">✕</b></button>
       <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15" fill="none" stroke="currentColor"/><path d="M10 2.5 V17.5" stroke="currentColor"/></svg><span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
       <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 V18 M3.1 6 L16.9 14 M3.1 14 L16.9 6 M8 3.5 L10 5.5 L12 3.5 M8 16.5 L10 14.5 L12 16.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg><span> WX FX</span><b class="off">✕</b></button>
       <!-- line-drawn icons (emoji would render as color pictures on phones) -->
@@ -112,7 +113,7 @@
     <section class="tab" id="tab-alerts"><h2>TSUNAMI</h2><ul id="tsunamiBox" class="list"></ul><ul id="quakeAlerts" class="list"></ul>
       <h2>STORM &amp; WEATHER WARNINGS</h2><ul id="alertList" class="list"></ul>
       <h2>EARTHQUAKES · LAST 7 DAYS</h2><ul id="quakeList" class="list"></ul>
-      <p class="fine">Earthquakes from the USGS: magnitude 1.5+ within 150 km (and 5.0+ out to 300 km), kept 7 days. Only M5.0+ within 300 km or M4.0+ within 60 km count as alerts, for their first 24 hours.; tsunami alerts from the National Weather Service. Rings on the map grow with magnitude and fade from red (last hour) to orange (today), amber (3 days) and grey.</p></section>
+      <p class="fine">Earthquakes from the USGS: magnitude 1.5+ within 150 km (and 5.0+ out to 300 km), kept 7 days. Only M5.0+ within 300 km or M4.0+ within 60 km count as alerts, for their first 24 hours.; tsunami alerts from the National Weather Service. Rings on the map grow and deepen in color with magnitude (pale yellow for small quakes through orange and red to crimson) and fade as they get older; the newest pulse.</p></section>
     <section class="tab" id="tab-bridges"><h2>DRAWBRIDGES</h2><ul id="bridgeList" class="list"></ul>
       <p class="fine">Openings happen on request from boats; there is no published schedule. WSDOT bridge maintenance: 360-533-9360.</p></section>
     <section class="tab" id="tab-weather"><h2>TOWNS</h2><ul id="wxList" class="list wx"></ul>
@@ -128,11 +129,11 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202609301937"></script>
-<script src="app.js?v=202609301937"></script>
-<script src="air.js?v=202609301937"></script>
-<script src="wx.js?v=202609301937"></script>
-<script src="seis.js?v=202609301937"></script>
-<script src="bus.js?v=202609301937"></script>
+<script src="config.js?v=202609302323"></script>
+<script src="app.js?v=202609302323"></script>
+<script src="air.js?v=202609302323"></script>
+<script src="wx.js?v=202609302323"></script>
+<script src="seis.js?v=202609302323"></script>
+<script src="bus.js?v=202609302323"></script>
 </body>
 </html>

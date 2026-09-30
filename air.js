@@ -158,7 +158,11 @@
       // relay missing, down, or empty: fall back to the collector's copy
       if (!j) j = await (await fetch(`data/aircraft.json?t=${Date.now()}`, { cache: 'no-store' })).json();
       updated = j.updated;
-      planes = (j.aircraft || []).filter((a) => a.lat && a.lon && a.lat > 46.5 && a.lat < 48 && a.lon > -124.6 && a.lon < -122.7 && (a.alt || 0) <= 15000);
+      // Olympia's busy training traffic is left out: everything west of about Rochester/McCleary, plus helicopters,
+      // possible military and emergencies anywhere in the area
+      const special = (a) => isHeli(a) || isMil(a) || isCoastGuard(a) || EMERG[a.squawk];
+      planes = (j.aircraft || []).filter((a) => a.lat && a.lon && a.lat > 46.5 && a.lat < 48 && a.lon > -124.6 && (a.alt || 0) <= 15000 &&
+        (a.lon < -123.05 || (a.lon < -122.7 && special(a))));
       for (const a of planes) a._sit = situation(a);
     } catch (e) { console.warn('aircraft', e); }
     render();

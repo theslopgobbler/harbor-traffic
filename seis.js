@@ -15,8 +15,10 @@
     const m = Math.round((Date.now() - t) / 60000);
     return m < 60 ? `${m} MIN AGO` : m < 1440 ? `${Math.round(m / 60)} H AGO` : `${Math.round(m / 1440)} D AGO`;
   };
-  // ring color by age: red in the last hour, orange today, amber in 3 days, dim after
-  const ageColor = (t) => { const h = (Date.now() - t) / 36e5; return h < 1 ? '#ff2a3d' : h < 24 ? '#ff7a1a' : h < 72 ? '#ffc400' : '#5f9c8b'; };
+  // color by strength: pale for small quakes, deepening to red and crimson for big ones
+  const magColor = (m) => m < 2.5 ? '#fff1a8' : m < 3.5 ? '#ffc400' : m < 4.5 ? '#ff7a1a' : m < 5.5 ? '#ff2a3d' : '#c0001e';
+  // age shows as fading: full strength today, fainter over the week
+  const ageFade = (t) => { const h = (Date.now() - t) / 36e5; return h < 24 ? 1 : h < 72 ? 0.7 : 0.4; };
   // worth an alert (the red count and the ticker) for its first 24 hours: big and regional, or moderate and close
   const BIG = (q) => (q.mag >= 5 && q.km <= 300 || q.mag >= 4 && q.km <= 60) && Date.now() - q.time < 864e5;
   // what shows on the map and in the list: nearby quakes, plus big ones farther out
@@ -26,17 +28,17 @@
   const empty = { type: 'FeatureCollection', features: [] };
   const toGeo = () => ({ type: 'FeatureCollection', features: quakes.map((q) => ({ type: 'Feature',
     geometry: { type: 'Point', coordinates: [q.lon, q.lat] },
-    properties: { id: q.id, mag: q.mag, color: ageColor(q.time), fresh: Date.now() - q.time < 36e5 ? 1 : 0 } })) });
+    properties: { id: q.id, mag: q.mag, color: magColor(q.mag), op: ageFade(q.time), fresh: Date.now() - q.time < 36e5 ? 1 : 0 } })) });
   function addLayers() {
     if (map.getSource('quakes')) return;
     map.addSource('quakes', { type: 'geojson', data: toGeo() });
     // a faint filled disc and a crisp ring, both sized by magnitude
     map.addLayer({ id: 'quake-fill', type: 'circle', source: 'quakes', paint: {
       'circle-radius': ['interpolate', ['linear'], ['get', 'mag'], 1.5, 4, 3, 8, 5, 18, 7, 34],
-      'circle-color': ['get', 'color'], 'circle-opacity': 0.12, 'circle-blur': 0.3 } }, 'outside');
+      'circle-color': ['get', 'color'], 'circle-opacity': ['*', 0.16, ['get', 'op']], 'circle-blur': 0.3 } }, 'outside');
     map.addLayer({ id: 'quake-ring', type: 'circle', source: 'quakes', paint: {
       'circle-radius': ['interpolate', ['linear'], ['get', 'mag'], 1.5, 4, 3, 8, 5, 18, 7, 34],
-      'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': ['get', 'color'], 'circle-stroke-width': 1.6 } }, 'outside');
+      'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': ['get', 'color'], 'circle-stroke-width': 1.6, 'circle-stroke-opacity': ['get', 'op'] } }, 'outside');
     // the newest ones get a ring that keeps expanding outward
     map.addLayer({ id: 'quake-pulse', type: 'circle', source: 'quakes', filter: ['==', ['get', 'fresh'], 1], paint: {
       'circle-radius': 10, 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': '#ff2a3d', 'circle-stroke-width': 1.4, 'circle-stroke-opacity': 0.8 } }, 'outside');
@@ -76,8 +78,8 @@
     const big = quakes.filter(BIG);
     $('#quakeAlerts').innerHTML = big.map((q) => `<li class="k-work clickable" data-q="${esc(q.id)}"><div class="t">⚠ M${q.mag.toFixed(1)} EARTHQUAKE ${Math.round(q.km)} KM AWAY</div>
       <div class="m">${esc(q.place)} · ${ago(q.time)} · depth ${q.depth.toFixed(0)} km</div></li>`).join('');
-    $('#quakeList').innerHTML = quakes.length ? quakes.map((q) => `<li class="clickable" data-q="${esc(q.id)}" style="border-left-color:${ageColor(q.time)}">
-      <div class="t"><span style="color:${ageColor(q.time)}">M${q.mag.toFixed(1)}</span> ${esc(q.place.toUpperCase())}</div>
+    $('#quakeList').innerHTML = quakes.length ? quakes.map((q) => `<li class="clickable" data-q="${esc(q.id)}" style="border-left-color:${magColor(q.mag)}">
+      <div class="t"><span style="color:${magColor(q.mag)}">M${q.mag.toFixed(1)}</span> ${esc(q.place.toUpperCase())}</div>
       <div class="m">${ago(q.time)} · ${Math.round(q.km)} KM FROM ABERDEEN · DEPTH ${q.depth.toFixed(0)} KM</div></li>`).join('')
       : '<li class="empty">NO EARTHQUAKES M1.5+ NEARBY THIS WEEK</li>';
     // counts and ticker
