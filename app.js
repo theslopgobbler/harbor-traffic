@@ -876,4 +876,20 @@
   setInterval(refresh, 5 * 60 * 1000);
   setInterval(renderBridges, 60 * 1000);
   if (TV) setTimeout(() => location.reload(), 6 * 60 * 60 * 1000); // keeps a TV browser from bogging down
+
+  // pick up new versions on their own: publish.ps1 writes the build stamp to version.txt and into the
+  // ?v= of every script. When they differ, reload at a new address so no cached copy is reused.
+  const BUILD = (document.querySelector('script[src*="app.js"]')?.src.match(/[?&]v=(\w+)/) || [])[1];
+  async function checkVersion() {
+    try {
+      const v = (await (await fetch(`version.txt?t=${Date.now()}`, { cache: 'no-store' })).text()).trim();
+      if (BUILD && /^\w+$/.test(v) && v !== BUILD) {
+        const q = new URLSearchParams(location.search);
+        q.set('build', v);
+        location.replace(`${location.pathname}?${q}`);
+      }
+    } catch {}
+  }
+  setInterval(checkVersion, 5 * 60 * 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) checkVersion(); }); // phone brought back up
 })();
