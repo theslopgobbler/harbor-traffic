@@ -117,6 +117,13 @@
     const label = { rise: 'SUNRISE', set: 'SUNSET', day: 'DAY', night: 'NIGHT' }[phase];
     const t = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     $('#sky').innerHTML = `<svg viewBox="0 0 48 42" role="img" aria-label="${label}">${art}${over}</svg>`;
+    // SUN instrument
+    const tt = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M/i, '');
+    const hm = (ms) => `${Math.floor(ms / 36e5)}:${String(Math.floor(ms % 36e5 / 6e4)).padStart(2, '0')}`;
+    $('#insSun').innerHTML = `<span class="up">↑${tt(rise)}</span> <span class="dn">↓${tt(set)}</span>`;
+    const nextRise = now < rise ? rise : sunTimes(new Date(+now + 864e5), HOME.lat, HOME.lon).rise;
+    $('#insSunLeft').textContent = now > rise && now < set ? `${hm(set - now)} LEFT` : '';
+    $('#insSunSub').textContent = now > rise && now < set ? `DAYLIGHT ${hm(set - rise)}` : `DARK · SUNRISE IN ${hm(nextRise - now)}`;
     $('#sky').title = `${label} · sunrise ${t(rise)} · sunset ${t(set)}`;
   }
 
@@ -603,7 +610,8 @@
   // draws on land.
   let sea = null, tideInfo = null;
   const BAYS = [
-    { id: 'gh', name: 'GRAYS HARBOR', box: [-124.095, 46.84, -123.76, 47.1], label: [-123.97, 46.93] },
+    // reaches out to the jetty tips, so swell stops at the harbor mouth
+    { id: 'gh', name: 'GRAYS HARBOR', box: [-124.135, 46.84, -123.76, 47.1], label: [-123.97, 46.93] },
     { id: 'wb', name: 'WILLAPA BAY', box: [-124.03, 46.36, -123.72, 46.73], label: [-123.93, 46.62] }
   ];
   const BAR_LINE = [[-124.175, 46.955], [-124.16, 46.9]]; // across the Grays Harbor bar, just outside the jetties
@@ -644,7 +652,7 @@
     const strength = clamp(tideInfo.rate / 1.5, 0.15, 1); // ~1.5 ft/h is a strong tide here
     for (const b of bayPx) {
       const area = Math.max(0, b.x1 - b.x0) * Math.max(0, b.y1 - b.y0);
-      const n = Math.min(500, Math.round(area / 1e4 * 5 * strength));
+      const n = Math.min(260, Math.round(area / 1e4 * 2.2 * strength));
       for (let i = 0; i < n; i++) currents.push(spawnCurrent(b, strength, true));
     }
   }
@@ -707,7 +715,7 @@
       const off = (t / 1000 * speed) % spacing;
       const diag = Math.hypot(W, H);
       const alpha = clamp(sea.waveFt / 12, 0.18, 0.8);
-      ctx.strokeStyle = sea.color;
+      ctx.strokeStyle = '#bff4ff'; // cool sea color; the bar's condition color lives on the bar line and the meter
       ctx.lineWidth = 1 + clamp(sea.waveFt / 8, 0, 1.6);
       ctx.setLineDash([14, 7, 4, 7]);
       for (let k = -Math.ceil(diag / spacing); k <= Math.ceil(diag / spacing); k++) {
@@ -730,15 +738,19 @@
       ctx.globalAlpha = 1;
       ctx.restore();
     }
-    // --- tidal current in the bays ---
-    ctx.lineWidth = 1.1;
+    // --- tidal current in the bays: calm water, just small chevrons drifting with the flow ---
+    ctx.lineWidth = 1.2;
+    ctx.lineJoin = 'miter';
     for (let i = 0; i < currents.length; i++) {
       const p = currents[i];
-      p.x += p.vx; p.y += p.vy; p.life++;
+      p.x += p.vx * 0.5; p.y += p.vy; p.life++;
       if (p.life > p.max || p.x < p.b.x0 || p.x > p.b.x1) { currents[i] = spawnCurrent(p.b, p.strength); continue; }
-      const a = Math.sin(Math.PI * p.life / p.max) * (0.3 + 0.4 * p.strength);
-      ctx.strokeStyle = tideInfo?.rising ? `rgba(0,229,255,${a})` : `rgba(255,196,0,${a})`;
-      ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - Math.sign(p.vx) * p.len, p.y); ctx.stroke();
+      const a = Math.sin(Math.PI * p.life / p.max) * (0.25 + 0.35 * p.strength);
+      const s = Math.sign(p.vx); // › points the way the water is going
+      ctx.strokeStyle = `rgba(80,230,190,${a})`;
+      ctx.beginPath();
+      for (const k of [0, 6]) { ctx.moveTo(p.x - s * (k + 4), p.y - 3.5); ctx.lineTo(p.x - s * k, p.y); ctx.lineTo(p.x - s * (k + 4), p.y + 3.5); }
+      ctx.stroke();
     }
     ctx.restore();
   }

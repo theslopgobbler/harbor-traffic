@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=10" rel="stylesheet">
+<link href="styles.css?v=11" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -32,6 +32,21 @@
       <svg id="seaWave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"></svg>
       <div class="sea-row"><span id="seaWaves">WAVES --</span><span id="seaWater">WATER --</span></div>
     </button>
+    <div class="inst inst-extra inst-roads" title="WSDOT closures and alerts in the area">
+      <div class="inst-lbl"><span>ROADS</span><b id="insRoadsSync"></b></div>
+      <div class="inst-big" id="insRoads">--</div>
+      <div class="inst-sub" id="insRoadsSub"></div>
+    </div>
+    <div class="inst inst-extra inst-wxa" title="National Weather Service alerts in the area">
+      <div class="inst-lbl"><span>WX ALERTS</span></div>
+      <div class="inst-big" id="insWx">--</div>
+      <div class="inst-sub" id="insWxSub"></div>
+    </div>
+    <div class="inst inst-extra inst-sun" title="Sunrise and sunset at Aberdeen">
+      <div class="inst-lbl"><span>SUN</span><b id="insSunLeft"></b></div>
+      <div class="inst-big" id="insSun">--</div>
+      <div class="inst-sub" id="insSunSub"></div>
+    </div>
     <div class="inst inst-clock">
       <div class="inst-lbl"><span class="live"><i></i>LIVE</span><span id="updated">SYNC…</span></div>
       <div class="inst-body"><span id="sky" class="sky"></span><div id="clock" class="clock">--:--</div></div>
@@ -95,8 +110,8 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=10"></script>
-<script src="app.js?v=10"></script>
-<script src="wx.js?v=10"></script>
+<script src="config.js?v=11"></script>
+<script src="app.js?v=11"></script>
+<script src="wx.js?v=11"></script>
 </body>
 </html>
