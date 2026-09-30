@@ -163,7 +163,8 @@
   const map = new maplibregl.Map({
     container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 30 },
     // extra room to the south: on phones the view centers below the area so it clears the bottom sheet
-    maxBounds: [W - pad * 2, S - pad * 3.5, E + pad * 2, N + pad * 1.5], minZoom: 5.5, maxZoom: 16,
+    // phones get no pan limit at all: the view has to sit well south of the area to clear the bottom sheet
+    maxBounds: matchMedia('(max-width: 760px)').matches ? null : [W - pad * 2, S - pad * 3.5, E + pad * 2, N + pad * 1.5], minZoom: 5.5, maxZoom: 16,
     dragRotate: false, pitchWithRotate: false, touchPitch: false, attributionControl: { compact: true },
     interactive: !TV
   });
@@ -210,7 +211,8 @@
     const r = regionById[id];
     regionBar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.r === id));
     if (!cycleTimer) $('#regionName').textContent = `▸ ${r.name.toUpperCase()}`;
-    map.fitBounds(r.bounds || C.bounds, { padding: fitPad(30), duration: animate && !TV ? 700 : 0 });
+    // phones jump straight there: an animated fit could end up off when the sheet moves mid-flight
+    map.fitBounds(r.bounds || C.bounds, { padding: fitPad(30), duration: animate && !TV && !phone() ? 700 : 0 });
   }
   regionBar.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-r]'); if (!b) return;
@@ -455,7 +457,8 @@
     const issues = state.roads.filter((r) =>
       (r.lat && miles({ lat: r.lat, lon: r.lon }, b) < 0.4) ||
       new RegExp(b.name.replace(/ bridge/i, ''), 'i').test(`${r.headline} ${r.description || ''}`));
-    return { blocked, issues };
+    const vessel = (window.htNearBridge || {})[b.id] || null; // wx.js: a non-tug vessel close by
+    return { blocked, issues, vessel };
   }
 
   // markers that only make sense up close
@@ -767,24 +770,27 @@
 
   function renderBridges() {
     $('#bridgeList').innerHTML = C.bridges.map((b) => {
-      const { blocked, issues } = bridgeStatus(b);
+      const { blocked, issues, vessel } = bridgeStatus(b);
       const pill = issues.length ? '<span class="pill bad">WSDOT ALERT</span>'
+        : vessel ? '<span class="pill bad">VESSEL NEAR · MAY OPEN</span>'
         : blocked ? `<span class="pill ok">DOWN TILL ${fmtTime(new Date(`${new Date().toDateString()} ${blocked}`)).toUpperCase()}</span>`
         : '<span class="pill">OPENS ON REQUEST</span>';
+      const vesselLine = vessel ? `${vessel} is close to the bridge; it may open soon.` : '';
       const html = `<h3>▲ ${esc(b.name)}</h3><div class="m">${esc(b.route)} · ${esc(b.town)}</div><p class="m">${esc(b.note)}</p>` +
-        issues.map((r) => `<p>${esc(r.headline)}</p>`).join('');
+        (vessel ? `<p style="color:var(--orange)">⚠ ${esc(vesselLine)}</p>` : '') + issues.map((r) => `<p>${esc(r.headline)}</p>`).join('');
       bridgeMarkers[b.id].m.getPopup().setHTML(html);
-      bridgeMarkers[b.id].el.classList.toggle('shut', !!issues.length);
-      b._issue = !!issues.length;
+      bridgeMarkers[b.id].el.classList.toggle('shut', !!issues.length || !!vessel);
+      b._issue = !!issues.length || !!vessel;
       const cam = camById[b.cam];
-      return `<li class="clickable ${issues.length ? 'k-closure' : ''}" data-b="${b.id}"><div class="t">${esc(b.name.toUpperCase())} ${pill}</div>
-        <div class="m">${esc(b.route)} · ${esc(b.town.toUpperCase())}</div>${issues.map((r) => `<div class="m">${esc(r.headline)}</div>`).join('')}
+      return `<li class="clickable ${issues.length || vessel ? 'k-closure' : ''}" data-b="${b.id}"><div class="t">${esc(b.name.toUpperCase())} ${pill}</div>
+        <div class="m">${esc(b.route)} · ${esc(b.town.toUpperCase())}</div>${vessel ? `<div class="m">⚠ ${esc(vesselLine)}</div>` : ''}${issues.map((r) => `<div class="m">${esc(r.headline)}</div>`).join('')}
         ${cam && !TV ? `<button type="button" class="cam-show" data-cam="${cam.id}">◉ SHOW CAMERA</button><div class="cam-slot"></div>` : ''}</li>`;
     }).join('');
     const bad = C.bridges.filter((b) => b._issue).length;
     bridgeChip.classList.toggle('shut', bad > 0);
     bridgeChip.querySelector('.v').textContent = bad ? `▲ ${bad} BRIDGE ALERT${bad > 1 ? 'S' : ''}` : state.roadsUpdated ? '▲ BRIDGES OK' : '▲ BRIDGES';
   }
+  window.htRenderBridges = () => renderBridges();
   $('#bridgeList').addEventListener('click', (e) => {
     const show = e.target.closest('.cam-show');
     if (show) {
@@ -844,17 +850,34 @@
 
   // ---------------- tabs & sheet ----------------
   const panel = $('#panel');
+  // the handle shows a fat chevron: up while tapping will raise the sheet, down once it's all the way up
+  const handle = $('#sheetHandle');
+  const syncHandle = () => {
+    const up = !panel.classList.contains('max');
+    handle.classList.toggle('down', !up);
+    handle.setAttribute('aria-label', up ? 'Raise the details' : 'Lower the details');
+  };
   document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button').forEach((x) => x.setAttribute('aria-selected', x === b));
     document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('on', t.id === 'tab-' + b.dataset.tab));
     panel.classList.remove('min');
+    syncHandle();
   }));
   $('#tab-roads').classList.add('on');
-  $('#sheetHandle').addEventListener('click', () => {
+  handle.innerHTML = '<svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 11 L20 3 L36 11" fill="none" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/></svg>';
+  handle.addEventListener('click', () => {
     if (panel.classList.contains('min')) panel.classList.remove('min');
     else if (panel.classList.contains('max')) { panel.classList.remove('max'); panel.classList.add('min'); }
     else panel.classList.add('max');
+    syncHandle();
   });
+  syncHandle();
+  // open a tab from elsewhere (the SEA instrument): pick the tab, raise the sheet on phones, start at the top
+  window.htOpenTab = (name) => {
+    document.querySelector(`.tabs button[data-tab="${name}"]`)?.click();
+    if (phone()) { panel.classList.remove('min'); panel.classList.add('max'); syncHandle(); }
+    panel.scrollTop = 0;
+  };
 
   // ---------------- my location & facing direction ----------------
   let meMarker = null, watching = false;
@@ -926,6 +949,7 @@
     for (const a of state.nws.filter((x) => (x.affectedZones || []).some((z) => allZones.has(z))))
       add('a', `⚠ ${a.event.toUpperCase()}`, `until ${fmtWhen(a.ends || a.expires)}`);
     const t = window.htTicker;
+    if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
     if (t.rail) add('r', '⚠ RAIL', t.rail);
     if (t.sea) add('c', 'BAR', t.sea);
     for (const r of state.travel || []) if (r.avg && r.now > r.avg * 1.25) add('a', 'SLOW', `${r.name.replace(/^\w+\s/, '')} ${r.now} min (normal ${r.avg})`);
