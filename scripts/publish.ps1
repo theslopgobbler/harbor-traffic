@@ -18,6 +18,14 @@ function GH($method, $path, $body) {
     Invoke-RestMethod @p
 }
 
+# stamp this build: every ?v= in index.html gets the build time, and version.txt tells open pages to reload
+$stamp = (Get-Date).ToUniversalTime().ToString('yyyyMMddHHmm')
+$indexFile = Join-Path $root 'index.html'
+$html = [IO.File]::ReadAllText($indexFile) -replace '\?v=\w+"', "?v=$stamp`""
+$utf8 = New-Object System.Text.UTF8Encoding($false)
+[IO.File]::WriteAllText($indexFile, $html, $utf8)
+[IO.File]::WriteAllText((Join-Path $root 'version.txt'), $stamp, $utf8)
+
 # files to publish: everything except secrets, local-only bits and anything .gitignore names
 $skip = '^(wsdot-key\.txt|github-token\.txt|\.git/|.*\.local\..*)'
 $files = Get-ChildItem $root -Recurse -File -Force | ForEach-Object {
