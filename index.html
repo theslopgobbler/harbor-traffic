@@ -10,29 +10,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=7" rel="stylesheet">
+<link href="styles.css?v=9" rel="stylesheet">
 </head>
 <body>
 <header class="top">
-  <div class="brand">
-    <h1>HARBOR<span>//</span>TRAFFIC</h1>
-    <div class="sub">GRAYS HARBOR · COAST · I-5 <span class="live"><i></i>LIVE</span></div>
-  </div>
-  <nav class="regions" id="regions" aria-label="Map region"></nav>
-  <div class="gauge" id="windGauge" title="Wind at Westport (NOAA station 9441102)">
-    <svg id="windDial" viewBox="0 0 60 60" aria-hidden="true"></svg>
-    <div class="gauge-txt"><span>WIND</span><b id="windDir">---</b><i id="windSpd">-- KT</i></div>
-  </div>
-  <div class="tide" id="tide" title="Tide at Aberdeen (NOAA predictions)">
-    <div class="tide-head"><span>TIDE LEVEL</span><b id="tideNow">--</b></div>
-    <svg id="tideChart" viewBox="0 0 160 40" preserveAspectRatio="none" aria-hidden="true"></svg>
-    <div class="tide-foot" id="tideNext"></div>
-  </div>
-  <div class="now">
-    <div class="clockrow"><span id="sky" class="sky"></span><div id="clock" class="clock">--:--</div></div>
-    <div id="updated" class="updated">SYNC…</div>
+  <div class="instruments">
+    <div class="inst inst-wind" id="windGauge" title="Wind at Westport (NOAA station 9441102)">
+      <div class="inst-lbl">WIND</div>
+      <div class="inst-body">
+        <svg id="windDial" viewBox="0 0 60 60" aria-hidden="true"></svg>
+        <div class="gauge-txt"><b id="windDir">---</b><i id="windSpd">-- KT</i></div>
+      </div>
+    </div>
+    <div class="inst inst-tide" id="tide" title="Tide at Aberdeen (NOAA predictions)">
+      <div class="inst-lbl"><span>TIDE<em> LEVEL</em></span><b id="tideNow">--</b></div>
+      <svg id="tideChart" viewBox="0 0 160 40" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="tide-foot" id="tideNext"></div>
+    </div>
+    <button class="inst inst-sea" id="sea" type="button" aria-label="Sea and bar conditions: open details">
+      <div class="inst-lbl"><span>SEA<em> STATE</em></span><b id="seaBar">BAR --</b></div>
+      <svg id="seaWave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="sea-row"><span id="seaWaves">WAVES --</span><span id="seaWater">WATER --</span></div>
+    </button>
+    <div class="inst inst-clock">
+      <div class="inst-lbl"><span class="live"><i></i>LIVE</span><span id="updated">SYNC…</span></div>
+      <div class="inst-body"><span id="sky" class="sky"></span><div id="clock" class="clock">--:--</div></div>
+    </div>
   </div>
 </header>
+<nav class="regions" id="regions" aria-label="Map region"></nav>
 
 <main class="layout">
   <div class="map-wrap">
@@ -48,12 +54,7 @@
       <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar">◫<span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
       <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects">❅<span> WX FX</span><b class="off">✕</b></button>
     </div>
-    <button class="sea" id="sea" type="button" aria-label="Sea and bar conditions: open details">
-      <div class="sea-head"><span>SEA STATE</span><b id="seaBar">BAR --</b></div>
-      <svg id="seaWave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"></svg>
-      <div class="sea-row"><span id="seaWaves">WAVES --</span><span id="seaWater">WATER --</span></div>
-    </button>
-    <div class="legend" aria-hidden="true">
+   <div class="legend" aria-hidden="true">
       <span><b class="x">✕</b>CLOSED</span>
       <span><b class="tri">△</b>ALERT</span>
       <span><i class="ln red"></i>SLOW/INCIDENT</span>
@@ -94,8 +95,8 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=7"></script>
-<script src="app.js?v=7"></script>
-<script src="wx.js?v=7"></script>
+<script src="config.js?v=9"></script>
+<script src="app.js?v=9"></script>
+<script src="wx.js?v=9"></script>
 </body>
 </html>

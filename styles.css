@@ -13,46 +13,50 @@ button, select { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 a { color: var(--cyan); }
 
-/* header */
-.top { display: flex; align-items: center; gap: 16px; padding: 8px 16px; background: #020605;
-  border-bottom: 1px solid var(--line-2); box-shadow: 0 1px 12px rgba(0,229,255,.12); }
-h1 { font: 800 22px/1 var(--disp); letter-spacing: .08em; margin: 0; color: var(--cyan); text-shadow: var(--glow-c); white-space: nowrap; }
-h1 span { color: var(--green); }
-.sub { font-size: 11px; letter-spacing: .14em; color: var(--dim); margin-top: 4px; white-space: nowrap; }
-.live { color: var(--green); margin-left: 6px; }
-.live i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 4px; box-shadow: 0 0 6px var(--green); animation: blink 1.6s steps(2) infinite; }
+/* header: a strip of dashboard instruments */
+.top { display: flex; align-items: stretch; padding: 8px 12px; background: #020605; border-bottom: 1px solid var(--line-2); box-shadow: 0 1px 12px rgba(0,229,255,.12); }
+.instruments { display: flex; gap: 8px; width: 100%; justify-content: center; align-items: stretch; }
+.inst { position: relative; flex: none; height: 70px; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 8px 3px;
+  background: linear-gradient(#030d0c, #020706); border: 1px solid var(--line-2); box-shadow: inset 0 0 12px rgba(0,229,255,.06);
+  font: 10px/1.25 var(--mono); letter-spacing: .12em; color: var(--dim); text-align: left; }
+/* bezel screws, like panel-mounted gauges */
+.inst::before, .inst::after { content: ""; position: absolute; top: 3px; width: 3px; height: 3px; border-radius: 50%; background: var(--line-2); }
+.inst::before { left: 3px; } .inst::after { right: 3px; }
+.inst-lbl { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; white-space: nowrap; padding: 0 3px; }
+.inst-lbl em { font-style: normal; }
+.inst-lbl b { font-weight: 400; font-size: 12px; color: var(--cyan); text-shadow: var(--glow-c); overflow: hidden; text-overflow: ellipsis; }
+.inst-body { display: flex; align-items: center; gap: 6px; flex: 1; }
+.live { color: var(--green); }
+.live i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-right: 4px; box-shadow: 0 0 6px var(--green); animation: blink 1.6s steps(2) infinite; }
 @keyframes blink { 50% { opacity: .15; } }
-.now { text-align: right; }
-.clockrow { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
-.sky { display: inline-block; width: 44px; height: 38px; }
-.sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
 
-/* tide gauge */
-.tide { margin-left: auto; width: 200px; font-size: 10px; letter-spacing: .12em; color: var(--dim); border: 1px solid var(--line); padding: 3px 6px 2px; background: rgba(0,229,255,.03); }
-.tide-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; white-space: nowrap; }
-.tide-head b { color: var(--cyan); font-weight: 400; font-size: 12px; text-shadow: var(--glow-c); }
-.tide svg { display: block; width: 100%; height: 34px; margin: 1px 0; }
+.inst-wind svg { width: 48px; height: 48px; }
+.gauge-txt { display: flex; flex-direction: column; line-height: 1.3; }
+.gauge-txt b { color: var(--amber); font-weight: 400; font-size: 12px; text-shadow: 0 0 5px rgba(255,196,0,.5); }
+.gauge-txt i { color: var(--text); font-style: normal; font-size: 12px; }
+
+.inst-tide { width: 200px; }
+.inst-tide svg { display: block; width: 100%; height: 30px; }
 .tide-foot { display: flex; justify-content: space-between; font-size: 9px; }
 .tide-foot span:nth-child(2) { color: var(--text); }
 
-/* wind gauge */
-.gauge { margin-left: auto; display: flex; align-items: center; gap: 6px; }
-.gauge svg { width: 50px; height: 50px; }
-.gauge-txt { display: flex; flex-direction: column; font-size: 10px; letter-spacing: .12em; color: var(--dim); line-height: 1.25; }
-.gauge-txt b { color: var(--amber); font-weight: 400; font-size: 12px; text-shadow: 0 0 5px rgba(255,196,0,.5); }
-.gauge-txt i { color: var(--text); font-style: normal; font-size: 12px; }
-.gauge + .tide { margin-left: 0; }
+.inst-sea { width: 210px; cursor: pointer; }
+.inst-sea:hover { border-color: var(--cyan); }
+.inst-sea.alert { border-color: var(--orange); box-shadow: inset 0 0 12px rgba(255,122,26,.2), 0 0 8px rgba(255,122,26,.35); }
+.inst-sea svg { display: block; width: 100%; height: 26px; }
+.sea-row { display: flex; justify-content: space-between; color: var(--text); white-space: nowrap; font-size: 10px; }
 
-/* sea state */
-.sea { position: absolute; right: 14px; bottom: 34px; z-index: 2; width: 230px; text-align: left; cursor: pointer;
-  background: rgba(2,8,7,.85); border: 1px solid var(--line-2); color: var(--dim); padding: 5px 8px; font: 10px/1.3 var(--mono); letter-spacing: .1em; }
-.sea:hover { border-color: var(--cyan); }
-.sea.alert { border-color: var(--orange); box-shadow: 0 0 8px rgba(255,122,26,.4); }
-.sea-head { display: flex; justify-content: space-between; gap: 8px; white-space: nowrap; }
-.sea-head b { font-weight: 400; overflow: hidden; text-overflow: ellipsis; }
-.sea svg { display: block; width: 100%; height: 24px; margin: 2px 0; }
-.sea-row { display: flex; justify-content: space-between; color: var(--text); white-space: nowrap; }
+.inst-clock .inst-body { justify-content: flex-end; }
+.clock { font: 600 26px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
+.sky { display: inline-block; width: 40px; height: 34px; }
+.sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
 
+/* region buttons: their own bar under the instruments */
+.regions { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; padding: 6px 12px; background: #020605; border-bottom: 1px solid var(--line); }
+.regions button { background: transparent; border: 1px solid var(--line-2); color: var(--dim); padding: 5px 10px; cursor: pointer;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); }
+.regions button:hover { color: var(--text); border-color: var(--cyan); }
+.regions button[aria-pressed="true"] { background: var(--cyan); color: #001417; border-color: var(--cyan); box-shadow: var(--glow-c); }
 /* overview (full view) */
 .overview:empty { display: none; }
 .overview .list li { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; }
@@ -70,19 +74,19 @@ h1 span { color: var(--green); }
 .rg-chip.bad { border-color: var(--red); box-shadow: 0 0 10px rgba(255,42,61,.45); }
 body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.overview-mode .br-chip { display: none !important; }
 
+/* labels on the water */
+.bay-lbl { display: flex; flex-direction: column; align-items: center; font: 10px/1.3 var(--mono); letter-spacing: .15em; pointer-events: none; text-shadow: 0 0 4px #000; }
+.bay-lbl b { font-weight: 400; color: #0bb3cc; }
+.bay-lbl .eb { color: var(--amber); } .bay-lbl .fl { color: var(--cyan); }
+.bar-lbl { font: 10px/1 var(--mono); letter-spacing: .12em; padding: 2px 5px; border: 1px dashed; background: rgba(2,8,7,.8); pointer-events: none; white-space: nowrap; }
+.bar-lbl:empty { display: none; }
+body.fx-off .bay-lbl, body.fx-off .bar-lbl, body.overview-mode .bay-lbl { display: none; }
+
 /* radar / weather-effect toggles: the ✕ turns them off */
 .tool.toggle .off { display: none; margin-left: 6px; color: var(--red); font-weight: 400; }
 .tool.toggle.on .off { display: inline; }
 .tool .stamp { color: var(--dim); font-size: 10px; }
 canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-.clock { font: 600 24px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
-.updated { font-size: 11px; color: var(--dim); margin-top: 4px; letter-spacing: .08em; }
-
-.regions { display: flex; gap: 4px; flex-wrap: wrap; }
-.regions button { background: transparent; border: 1px solid var(--line-2); color: var(--dim); padding: 6px 10px; cursor: pointer;
-  font-size: 13px; letter-spacing: .08em; text-transform: uppercase; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); }
-.regions button:hover { color: var(--text); border-color: var(--cyan); }
-.regions button[aria-pressed="true"] { background: var(--cyan); color: #001417; border-color: var(--cyan); box-shadow: var(--glow-c); }
 
 /* layout */
 .layout { flex: 1; position: relative; display: grid; grid-template-columns: 1fr var(--panel-w); min-height: 0; }
@@ -214,7 +218,7 @@ details summary { cursor: pointer; }
 
 /* TV: fixed, glanceable, nothing to press */
 body.tv { font-size: 18px; --panel-w: 460px; }
-body.tv h1 { font-size: 30px; }
+body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 40px; } body.tv .inst-tide, body.tv .inst-sea { width: 260px; }
 body.tv .clock { font-size: 40px; }
 body.tv .map-tools, body.tv .tabs, body.tv .route-pick { display: none; }
 body.tv .tab { display: block; }
@@ -226,21 +230,21 @@ body.tv .list .m { font-size: 14px; }
 
 /* phone: map fills the screen, details in a bottom sheet */
 @media (max-width: 760px) {
-  .top { flex-wrap: wrap; padding: 8px 12px; gap: 8px; }
-  h1 { font-size: 17px; }
-  .sub { display: none; }
-  .clock { font-size: 18px; }
-  .sky { width: 32px; height: 28px; }
-  .tide { width: 140px; padding: 2px 5px; }
-  .gauge svg { width: 38px; height: 38px; }
-  .gauge-txt span { display: none; }
-  .sea { top: 112px; bottom: auto; right: 8px; width: 150px; padding: 3px 6px; }
-  .sea-row span:last-child { display: none; }
-  .sea-head span { display: none; }
-  .tide svg { height: 22px; }
+  .top { padding: 6px 8px; }
+  .instruments { overflow-x: auto; scrollbar-width: none; justify-content: flex-start; gap: 5px; }
+  .inst { height: 58px; padding: 3px 6px; }
+  .inst-wind svg { width: 36px; height: 36px; }
+  .inst-tide { width: 128px; }
+  .inst-lbl em { display: none; }
+  .inst-lbl { gap: 4px; }
+  .inst-tide svg { height: 22px; }
   .tide-foot span:first-child, .tide-foot span:last-child { display: none; }
   .tide-foot { justify-content: center; }
-  .regions { order: 3; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .inst-sea { width: 128px; }
+  .sea-row span:last-child { display: none; }
+  .inst-clock .clock { font-size: 18px; }
+  .sky { width: 28px; height: 26px; }
+  .regions { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 5px 8px; }
   .regions button { flex: none; font-size: 12px; padding: 6px 9px; }
   .layout { display: block; }
   .map-wrap { position: absolute; inset: 0; }

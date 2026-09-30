@@ -374,7 +374,9 @@
     last = t;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
-    if (!fxOn || REDUCED || !zones.length) return;
+    if (!fxOn || REDUCED) return;
+    drawOcean(t);
+    if (!zones.length) return;
     if (dirty) reproject();
     for (const z of zones) {
       const b = z.box;
@@ -439,7 +441,8 @@
     const btn = $('#btnFx');
     btn.classList.toggle('on', on);
     btn.setAttribute('aria-pressed', on);
-    for (const id of ['wxzones-fill', 'wxzones-line', 'wxzones-label']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+    for (const id of ['wxzones-fill', 'wxzones-line', 'wxzones-label', 'barline']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+    document.body.classList.toggle('fx-off', !on);
   }
   $('#btnFx').addEventListener('click', () => setFx(!fxOn));
 
@@ -477,6 +480,9 @@
       const cur = pts.reduce((a, b) => (Math.abs(b.t - now) < Math.abs(a.t - now) ? b : a));
       const after = pts.find((p) => p.t > cur.t);
       const rising = after ? after.v > cur.v : false;
+      // how fast the tide is moving right now (ft per hour) drives the harbor current streaks
+      tideInfo = { rising, rate: after ? Math.abs(after.v - cur.v) / ((after.t - cur.t) / 36e5) : 0 };
+      updateBays();
       const zero = lo < 0 && hi > 0 ? `<path d="M0 ${Y(0).toFixed(1)} H160" stroke="#12403a" stroke-dasharray="2 3"/>` : '';
       $('#tideChart').innerHTML = `${zero}
         <path d="${line} L160 40 L0 40 Z" fill="rgba(0,229,255,.12)"/>
@@ -563,6 +569,8 @@
     const b = m?.buoy, bar = m?.bar, lvl = barLevel(bar?.conditions);
     waveColor = bar ? barColor[lvl] : '#00e5ff';
     if (b?.waveFt != null) { waveAmp = clamp(b.waveFt / 2.2, 1.2, 10); wavePeriod = b.periodS || 10; }
+    sea = { waveFt: b?.waveFt ?? null, periodS: b?.periodS || 10, dirDeg: b?.dirDeg ?? 270, color: waveColor, bar: bar?.conditions || null };
+    updateBar();
     const water = waterWestport ?? b?.waterF;
     $('#seaBar').textContent = bar?.conditions ? `BAR ${bar.conditions.toUpperCase().replace(', BECOMING', ' →')}` : 'BAR --';
     $('#seaBar').style.color = waveColor;
@@ -570,6 +578,7 @@
     $('#seaWater').textContent = water != null ? `WATER ${Math.round(water)}°` : '';
     const alerts = m?.alerts || [];
     $('#sea').classList.toggle('alert', alerts.length > 0 || lvl >= 2);
+    $('#sea').title = [bar?.text, b ? `Buoy 46211: ${b.waveFt} ft, ${b.periodS} s, from ${compass(b.dirDeg)}` : ''].filter(Boolean).join('\n');
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const when = (iso) => iso ? new Date(iso).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
     $('#seaDetail').innerHTML = `
@@ -587,8 +596,153 @@
   loadSea();
   setInterval(loadSea, 10 * 60 * 1000);
 
+  // ================= the ocean and the bays, drawn on the water itself =================
+  // Open ocean: swell crests rolling in from the buoy's wave direction (spacing and speed from the period,
+  // brightness from the height, whitecaps in big seas). Bays: current streaks flowing out on the ebb and in
+  // on the flood, as fast as the tide is changing. The map's own water shapes are the mask, so nothing
+  // draws on land.
+  let sea = null, tideInfo = null;
+  const BAYS = [
+    { id: 'gh', name: 'GRAYS HARBOR', box: [-124.095, 46.84, -123.76, 47.1], label: [-123.97, 46.93] },
+    { id: 'wb', name: 'WILLAPA BAY', box: [-124.03, 46.36, -123.72, 46.73], label: [-123.93, 46.62] }
+  ];
+  const BAR_LINE = [[-124.175, 46.955], [-124.16, 46.9]]; // across the Grays Harbor bar, just outside the jetties
+  let water = null, waterDirty = true, bayPx = [];
+  function rebuildWater() {
+    try {
+      const feats = map.querySourceFeatures('omt', { sourceLayer: 'water', filter: ['==', ['get', 'class'], 'ocean'] });
+      const p = new Path2D();
+      for (const f of feats) {
+        const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.type === 'MultiPolygon' ? f.geometry.coordinates : [];
+        for (const poly of polys) for (const ring of poly) {
+          ring.forEach(([lng, lat], i) => { const q = map.project([lng, lat]); i ? p.lineTo(q.x, q.y) : p.moveTo(q.x, q.y); });
+          p.closePath();
+        }
+      }
+      water = feats.length ? p : null;
+      bayPx = BAYS.map((bay) => {
+        const a = map.project([bay.box[0], bay.box[3]]), c = map.project([bay.box[2], bay.box[1]]);
+        return { ...bay, x0: a.x, y0: a.y, x1: c.x, y1: c.y };
+      });
+      waterDirty = false;
+      resetCurrents();
+    } catch (e) { console.warn('water', e); }
+  }
+  // rebuild shortly after the view settles or new tiles arrive (the map is never fully "idle":
+  // the road-work pulse keeps it busy)
+  let waterTimer = 0;
+  const soon = () => { clearTimeout(waterTimer); waterTimer = setTimeout(rebuildWater, 250); };
+  map.on('move', () => { waterDirty = true; clearTimeout(waterTimer); });
+  map.on('moveend', soon);
+  map.on('sourcedata', (e) => { if (e.sourceId === 'omt' && e.tile && !map.isMoving()) soon(); });
+
+  // bay current streaks
+  let currents = [];
+  function resetCurrents() {
+    currents = [];
+    if (!tideInfo) return;
+    const strength = clamp(tideInfo.rate / 1.5, 0.15, 1); // ~1.5 ft/h is a strong tide here
+    for (const b of bayPx) {
+      const area = Math.max(0, b.x1 - b.x0) * Math.max(0, b.y1 - b.y0);
+      const n = Math.min(500, Math.round(area / 1e4 * 5 * strength));
+      for (let i = 0; i < n; i++) currents.push(spawnCurrent(b, strength, true));
+    }
+  }
+  function spawnCurrent(b, strength) {
+    const dir = tideInfo.rising ? 1 : -1; // flood runs in (east), ebb runs out (west)
+    return { b, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: dir * (0.6 + strength * 2.2) * rnd(0.7, 1.2), vy: rnd(-0.08, 0.08),
+      len: rnd(8, 18), life: 0, max: rnd(50, 110), strength };
+  }
+  // text labels in the bays and on the bar
+  const bayMarkers = BAYS.map((bay) => {
+    const el = document.createElement('div');
+    el.className = 'bay-lbl';
+    return { bay, el, m: new maplibregl.Marker({ element: el }).setLngLat(bay.label).addTo(map) };
+  });
+  function updateBays() {
+    for (const { bay, el } of bayMarkers) {
+      if (!tideInfo) { el.textContent = ''; continue; }
+      const word = tideInfo.rising ? 'FLOOD ▶' : '◀ EBB';
+      el.innerHTML = `<b>${bay.name}</b><span class="${tideInfo.rising ? 'fl' : 'eb'}">${word} ${tideInfo.rate.toFixed(1)} FT/H</span>`;
+    }
+    resetCurrents();
+  }
+  const barEl = document.createElement('div');
+  barEl.className = 'bar-lbl';
+  new maplibregl.Marker({ element: barEl, anchor: 'right', offset: [-8, 0] }).setLngLat([(BAR_LINE[0][0] + BAR_LINE[1][0]) / 2, (BAR_LINE[0][1] + BAR_LINE[1][1]) / 2]).addTo(map);
+  function updateBar() {
+    if (!sea?.bar) { barEl.textContent = ''; return; }
+    barEl.textContent = `BAR ${sea.bar.split(',')[0].toUpperCase()}`;
+    barEl.style.color = sea.color;
+    barEl.style.borderColor = sea.color;
+    const src = map.getSource('barline');
+    if (src) { src.setData(barGeo()); map.setPaintProperty('barline', 'line-color', sea.color); }
+  }
+  const barGeo = () => ({ type: 'Feature', geometry: { type: 'LineString', coordinates: BAR_LINE }, properties: {} });
+  function addBarLayer() {
+    if (map.getSource('barline')) return;
+    map.addSource('barline', { type: 'geojson', data: barGeo() });
+    map.addLayer({ id: 'barline', type: 'line', source: 'barline', layout: { 'line-cap': 'round', visibility: fxOn ? 'visible' : 'none' },
+      paint: { 'line-color': sea?.color || '#ffc400', 'line-width': 3, 'line-dasharray': [0.6, 1.8] } }, 'outside');
+  }
+
+  function drawOcean(t) {
+    if (!water || waterDirty) return;
+    ctx.save();
+    ctx.clip(water, 'nonzero');
+    // --- swell on the open ocean (the bays are cut out) ---
+    if (sea?.waveFt != null) {
+      ctx.save();
+      const cut = new Path2D();
+      cut.rect(0, 0, W, H);
+      for (const b of bayPx) cut.rect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
+      ctx.clip(cut, 'evenodd');
+      const toward = ((sea.dirDeg + 180) % 360) * Math.PI / 180;
+      const tx = Math.sin(toward), ty = -Math.cos(toward);   // direction the swell travels, on screen
+      const cx = -ty, cy = tx;                               // along the crest
+      const spacing = clamp(sea.periodS * 4.5, 28, 80);
+      const speed = spacing / Math.max(3, sea.periodS * 0.5); // px per second
+      const off = (t / 1000 * speed) % spacing;
+      const diag = Math.hypot(W, H);
+      const alpha = clamp(sea.waveFt / 12, 0.18, 0.8);
+      ctx.strokeStyle = sea.color;
+      ctx.lineWidth = 1 + clamp(sea.waveFt / 8, 0, 1.6);
+      ctx.setLineDash([14, 7, 4, 7]);
+      for (let k = -Math.ceil(diag / spacing); k <= Math.ceil(diag / spacing); k++) {
+        const d = k * spacing + off;
+        const px = W / 2 + tx * d, py = H / 2 + ty * d;
+        ctx.globalAlpha = alpha * (0.55 + 0.45 * Math.sin(k * 1.7)); // uneven sets, like real swell
+        ctx.lineDashOffset = k * 11;
+        ctx.beginPath(); ctx.moveTo(px - cx * diag, py - cy * diag); ctx.lineTo(px + cx * diag, py + cy * diag); ctx.stroke();
+        // whitecaps once the seas get big
+        if (sea.waveFt >= 8) {
+          ctx.globalAlpha = clamp((sea.waveFt - 6) / 10, 0.2, 0.8) * (0.5 + 0.5 * Math.sin(t / 300 + k));
+          ctx.fillStyle = '#e8f6ff';
+          for (let s = -8; s <= 8; s++) {
+            const u = s * 70 + ((k * 37) % 70);
+            ctx.fillRect(px + cx * u, py + cy * u, 2, 2);
+          }
+        }
+      }
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+      ctx.restore();
+    }
+    // --- tidal current in the bays ---
+    ctx.lineWidth = 1.1;
+    for (let i = 0; i < currents.length; i++) {
+      const p = currents[i];
+      p.x += p.vx; p.y += p.vy; p.life++;
+      if (p.life > p.max || p.x < p.b.x0 || p.x > p.b.x1) { currents[i] = spawnCurrent(p.b, p.strength); continue; }
+      const a = Math.sin(Math.PI * p.life / p.max) * (0.3 + 0.4 * p.strength);
+      ctx.strokeStyle = tideInfo?.rising ? `rgba(0,229,255,${a})` : `rgba(255,196,0,${a})`;
+      ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - Math.sign(p.vx) * p.len, p.y); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   // ================= wiring =================
-  const ready = () => { addRadar(); addZoneLayers(); setRadar(radarOn); setFx(fxOn); };
+  const ready = () => { addRadar(); addZoneLayers(); addBarLayer(); setRadar(radarOn); setFx(fxOn); };
   if (map.isStyleLoaded()) ready(); else map.once('load', ready);
   let lastWx = null;
   window.addEventListener('ht:weather', (e) => {
