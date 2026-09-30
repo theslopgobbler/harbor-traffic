@@ -117,13 +117,13 @@ details summary { cursor: pointer; }
 .rw-mk { border-style: dashed; font-size: 11px; }
 
 .x-mk { width: 40px; height: 40px; cursor: pointer; filter: drop-shadow(0 0 6px var(--red)); animation: pulse 1.8s ease-in-out infinite; }
-.x-mk::before, .x-mk::after { content: ""; position: absolute; left: 50%; top: 50%; width: 44px; height: 8px; margin: -4px 0 0 -22px; background: var(--red); border: 1px solid #ffb3ba; }
-.x-mk::before { transform: rotate(45deg); } .x-mk::after { transform: rotate(-45deg); }
+.x-mk svg { display: block; width: 100%; height: 100%; overflow: visible; }
 @keyframes pulse { 50% { filter: drop-shadow(0 0 16px var(--red)) brightness(1.3); } }
 .inc-mk { width: 22px; height: 22px; display: grid; place-items: center; font: 700 14px/1 var(--mono); cursor: pointer;
   clip-path: polygon(50% 0, 100% 100%, 0 100%); padding-top: 5px; }
 .inc-mk.collision { background: var(--orange); color: #000; }
-.inc-mk.work { background: var(--amber); color: #000; }
+.inc-mk.work { background: var(--amber); color: #000; animation: workpulse 1.8s ease-in-out infinite; }
+@keyframes workpulse { 50% { opacity: .35; } }
 .inc-mk.other { background: var(--dim); color: #000; }
 .br-mk { color: var(--cyan); font-size: 18px; text-shadow: var(--glow-c); cursor: pointer; line-height: 1; }
 .br-mk.shut { color: var(--red); text-shadow: var(--glow-r); }
