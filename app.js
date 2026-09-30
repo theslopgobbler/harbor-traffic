@@ -440,6 +440,23 @@
   }
 
   const midpoint = (path) => path[Math.floor(path.length / 2)];
+  const X_SVG = `<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="4,10 10,4 20,14 30,4 36,10 26,20 36,30 30,36 20,26 10,36 4,30 14,20"
+    fill="${K.red}" stroke="#ffb3ba" stroke-width="1" stroke-linejoin="miter"/></svg>`;
+
+  // closure and road-work stretches breathe in step with the markers (about 15 frames a second is plenty)
+  let pulseLast = 0;
+  const pulse = (t) => {
+    if (t - pulseLast > 66 && map.getLayer('inc-glow')) {
+      pulseLast = t;
+      const s = (Math.sin(t / 1800 * Math.PI * 2) + 1) / 2; // 0..1 over 1.8 s, like the CSS pulse
+      map.setPaintProperty('inc-glow', 'line-opacity',
+        ['match', ['get', 'kind'], ['closure', 'work'], 0.2 + 0.6 * s, 0.5]);
+      map.setPaintProperty('inc', 'line-opacity',
+        ['match', ['get', 'kind'], ['closure', 'work'], 0.6 + 0.4 * s, 1]);
+    }
+    requestAnimationFrame(pulse);
+  };
+  requestAnimationFrame(pulse);
   function renderRoads() {
     roadMarkers.splice(0).forEach(({ m }) => m.remove());
     let list = state.roads.filter(onRoute);
@@ -457,7 +474,8 @@
     for (const r of state.roads) {
       if (!r.lat) continue;
       const el = document.createElement('div');
-      if (r.kind === 'closure') el.className = 'x-mk';
+      // one X-shaped outline, so the arms don't show a seam where they cross
+      if (r.kind === 'closure') { el.className = 'x-mk'; el.innerHTML = X_SVG; }
       else { el.className = `inc-mk ${r.kind}`; el.textContent = r.kind === 'collision' ? '!' : ''; }
       const at = Array.isArray(r.path) && r.path.length > 1 ? midpoint(r.path) : [r.lon, r.lat];
       const m = new maplibregl.Marker({ element: el }).setLngLat(at)
