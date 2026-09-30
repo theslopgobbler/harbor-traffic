@@ -731,10 +731,7 @@
     el.classList.remove('anchored');
     const len = Math.max(minLen(s), Math.min(260, s.lengthM ? metersToPx(s.lengthM, s.lat) : 0));
     el.style.width = el.style.height = len + 'px';
-    // pixel-art ship by type (pixel.js), turned to its heading
-    const sprite = isCargo(s.type) ? 'cargo' : s.type >= 80 && s.type <= 89 ? 'tanker' : isTug(s.type) ? 'tug'
-      : s.type === 30 ? 'fishing' : s.type >= 60 && s.type <= 69 ? 'passenger' : 'boat';
-    el.innerHTML = `<div class="rot" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${window.htPix(sprite, color)}</div>`;
+    el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${shipOutline(s.type, color)}</svg>`;
   }
   map.on('zoomend', () => { shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)); groupShips(); });
 
@@ -762,7 +759,7 @@
       el.className = 'ship-mk ship-grp' + (allStopped ? ' anchored' : '');
       el.style.width = el.style.height = '30px';
       el.innerHTML = (allStopped ? anchorSvg(color)
-        : window.htPix('boat', color)) +
+        : `<svg viewBox="0 0 16 16"><polygon points="8,1 13,6 13,15 3,15 3,6" fill="rgba(2,8,7,.85)" stroke="${color}" stroke-width="1.4"/></svg>`) +
         `<b style="color:${color}">${ships.length}</b>`;
       el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}. Click to zoom in.`;
       el.addEventListener('click', () => {

@@ -98,8 +98,11 @@
     return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden }; };
 
 
-  // a pixel-art bus from above (pixel.js), front up, in the route's color
-  const busSvg = (c) => window.htPix('bus', c);
+  // a bus from above, front up, in the same line style as the ships and alerts: a hollow outline in the
+  // route color over a dark fill, windshield bar up front, window dashes down both sides
+  const busSvg = (c) => `<svg viewBox="0 0 12 28"><rect x="1.2" y="1.2" width="9.6" height="25.6" rx="2.4" fill="rgba(2,8,7,.85)" stroke="${c}" stroke-width="1.4"/>
+    <path d="M3 4 H9" stroke="${c}" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M3.2 8 V23.5 M8.8 8 V23.5" stroke="${c}" stroke-width="1" stroke-dasharray="2.4 1.4" opacity=".85"/></svg>`;
 
   function render() {
     const seen = new Set();

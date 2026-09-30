@@ -64,10 +64,16 @@
     return { state, field: near.f, fieldNm: near.d, homeNm: nm(a, HOME) };
   }
 
-  // ---- drawings: pixel art from pixel.js, nose up (a red pixel cross on the cabin if medical) ----
-  const planeSvg = (c) => window.htPix('plane', c);
-  const heliSvg = (c, medical) => window.htPix('heli', c, medical
-    ? '<rect x="5" y="4" width="1" height="3" fill="#ff2a3d"/><rect x="4" y="5" width="3" height="1" fill="#ff2a3d"/>' : '');
+  // ---- drawings (top-down, nose up) ----
+  const planeSvg = (c) => `<svg viewBox="0 0 24 24"><path d="M12 1 L13.4 8 L22 12.5 L22 14 L13.4 12 L13 19 L16 21.5 L16 23 L12 22 L8 23 L8 21.5 L11 19 L10.6 12 L2 14 L2 12.5 L10.6 8 Z"
+    fill="rgba(2,8,7,.8)" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
+  // helicopter from above: rotor disc with two blades, teardrop cabin, tail boom, tail rotor; a red cross if medical
+  const heliSvg = (c, medical) => `<svg viewBox="0 0 28 28">
+    <circle cx="14" cy="11" r="10.5" fill="none" stroke="${c}" stroke-width="1" opacity=".55"/>
+    <path d="M14 5 Q18.5 5.5 18.5 11 Q18.5 15.5 14 16.5 Q9.5 15.5 9.5 11 Q9.5 5.5 14 5 Z" fill="rgba(2,8,7,.85)" stroke="${c}" stroke-width="1.6"/>
+    <path d="M14 16.5 L14 25 M11 25 L17 25" fill="none" stroke="${c}" stroke-width="1.6" stroke-linecap="square"/>
+    <path d="M5 2.5 L23 19.5 M23 2.5 L5 19.5" stroke="${c}" stroke-width="1.8" stroke-linecap="round"/>
+    ${medical ? '<path d="M12.6 9.2 H15.4 M14 7.8 V10.6" stroke="#ff2a3d" stroke-width="1.6"/>' : ''}</svg>`;
   // likely air ambulance (Life Flight Network, Airlift Northwest and others): medical call signs or registrations
   const isMedical = (a) => isHeli(a) && /LIFE|MEDEVAC|MEDIC|AIRLIFT|LIFEGUARD|MERCY|CARE|^LF|^LN|^AMF|^AIR ?EVAC/i.test(`${a.flight || ''} ${a.reg || ''}`) ||
     /^N\d+(LF|LN|AL|MT)$/i.test(a.reg || '');
