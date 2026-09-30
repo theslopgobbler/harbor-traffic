@@ -15,8 +15,11 @@
 
   let routes = {}, buses = [], notices = [], siteAlerts = null;
   const markers = new Map();
-  const short = (name) => (name || '').split(' - ')[0].trim();          // "20 - Aberdeen-Hoquiam" -> "20"
-  const long = (name) => (name || '').split(' - ').slice(1).join(' - ');
+  // "20 - Aberdeen-Hoquiam" -> "20" and "Aberdeen-Hoquiam" (some names drop the space: "25- Hoquiam DASH")
+  const parts = (name) => (name || '').match(/^\s*([0-9]+[A-Z]?)\s*-\s*(.*)$/) || [null, name || '', ''];
+  const short = (name) => parts(name)[1].trim();
+  const long = (name) => parts(name)[2].trim();
+
 
   // a bus from above, front up: body in the route color, dark windows along both sides
   const busSvg = (c) => `<svg viewBox="0 0 12 28"><rect x="1" y="1" width="10" height="26" rx="2.5" fill="${c}" stroke="#020807" stroke-width="1"/>
