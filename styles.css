@@ -141,6 +141,7 @@ body.fx-off .bay-lbl, body.fx-off .bar-lbl, body.overview-mode .bay-lbl { displa
 .tool.toggle .off { display: none; margin-left: 6px; color: var(--red); font-weight: 400; }
 .tool.toggle.on .off { display: inline; }
 .tool .stamp { color: var(--dim); font-size: 10px; }
+.tool svg.ti { width: 18px; height: 18px; vertical-align: -4px; }
 canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 
 /* layout */
