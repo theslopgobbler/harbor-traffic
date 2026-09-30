@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202609301931" rel="stylesheet">
+<link href="styles.css?v=202609301932" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -72,9 +72,10 @@
     <div class="map-tools">
       <button id="btnRadar" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather radar">◫<span> RADAR</span> <small class="stamp"></small><b class="off">✕</b></button>
       <button id="btnFx" class="tool toggle" type="button" aria-pressed="false" aria-label="Weather effects">❅<span> WX FX</span><b class="off">✕</b></button>
-      <button id="btnVessels" class="tool toggle" type="button" aria-pressed="false" aria-label="Show ships">⛴<span> SHIPS</span><b class="off">✕</b></button>
-      <button id="btnAir" class="tool toggle" type="button" aria-pressed="false" aria-label="Show aircraft">✈<span> AIR</span><b class="off">✕</b></button>
-      <button id="btnBus" class="tool toggle" type="button" aria-pressed="false" aria-label="Show buses">🚌<span> BUS</span><b class="off">✕</b></button>
+      <!-- line-drawn icons (emoji would render as color pictures on phones) -->
+      <button id="btnVessels" class="tool toggle" type="button" aria-pressed="false" aria-label="Show ships"><svg class="ti" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12 H18 L15.5 16 H4.5 Z M6 12 V8 H13 V12 M9 8 V5 H11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span> SHIPS</span><b class="off">✕</b></button>
+      <button id="btnAir" class="tool toggle" type="button" aria-pressed="false" aria-label="Show aircraft"><svg class="ti" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L11 8 L17.5 11 V12.5 L11 11 L10.6 15.5 L12.8 17 V18 L10 17.4 L7.2 18 V17 L9.4 15.5 L9 11 L2.5 12.5 V11 L9 8 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span> AIR</span><b class="off">✕</b></button>
+      <button id="btnBus" class="tool toggle" type="button" aria-pressed="false" aria-label="Show buses"><svg class="ti" viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="2.5" width="12" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 9.5 H16 M6.5 18 V15.5 M13.5 18 V15.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="12.5" r=".9" fill="currentColor"/><circle cx="13" cy="12.5" r=".9" fill="currentColor"/></svg><span> BUS</span><b class="off">✕</b></button>
     </div>
    <div class="legend" aria-hidden="true">
       <span><b class="x"><svg viewBox="0 0 11 11" width="13" height="13" shape-rendering="crispEdges"><path d="M0 0h2v1h-2zM1 1h2v1h-2zM2 2h2v1h-2zM3 3h2v1h-2zM4 4h3v1h-3zM4 5h3v1h-3zM4 6h3v1h-3zM3 7h2v1h-2zM2 8h2v1h-2zM1 9h2v1h-2zM0 10h2v1h-2zM9 0h2v1h-2zM8 1h2v1h-2zM7 2h2v1h-2zM6 3h2v1h-2zM6 7h2v1h-2zM7 8h2v1h-2zM8 9h2v1h-2zM9 10h2v1h-2z" fill="#d11a2a"/></svg></b>CLOSED</span>
@@ -115,7 +116,8 @@
       <p class="fine">Openings happen on request from boats; there is no published schedule. WSDOT bridge maintenance: 360-533-9360.</p></section>
     <section class="tab" id="tab-weather"><h2>TOWNS</h2><ul id="wxList" class="list wx"></ul>
       <h2>ROADSIDE SENSORS</h2><ul id="roadWxList" class="list wx"></ul>
-      <p class="fine">Readings from WSDOT weather stations on the highway itself.</p></section>
+      <p class="fine">Readings from WSDOT weather stations on the highway itself.</p>
+      <p class="fine">Codes on the map: SUN sunny · CLR clear night · PCLD partly cloudy · CLDY cloudy · SHWR showers · RAIN rain · SNOW snow · ICE sleet/freezing rain · FOG fog · HAZE haze/smoke · WIND windy · TSTM thunderstorm · RD roadside sensor.</p></section>
     <section class="tab" id="tab-air"><ul id="airAlerts" class="list"></ul><h2>LOW AIRCRAFT</h2><ul id="airList" class="list"></ul><p class="fine" id="airNote"></p><p class="fine">Aircraft at 15,000 ft and below inside the area. "Possible military" is a guess from the aircraft type, call sign and ADS-B flags.</p></section>
     <section class="tab" id="tab-sea"><h2>GRAYS HARBOR BAR</h2><div id="seaDetail"></div></section>
   </aside>
@@ -125,11 +127,11 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202609301931"></script>
-<script src="app.js?v=202609301931"></script>
-<script src="air.js?v=202609301931"></script>
-<script src="wx.js?v=202609301931"></script>
-<script src="seis.js?v=202609301931"></script>
-<script src="bus.js?v=202609301931"></script>
+<script src="config.js?v=202609301932"></script>
+<script src="app.js?v=202609301932"></script>
+<script src="air.js?v=202609301932"></script>
+<script src="wx.js?v=202609301932"></script>
+<script src="seis.js?v=202609301932"></script>
+<script src="bus.js?v=202609301932"></script>
 </body>
 </html>
