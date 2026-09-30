@@ -126,7 +126,7 @@
       mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</div>` : ''}
-        <div class="m">GRAYS HARBOR TRANSIT GPS</div>`);
+        `);
     }
     for (const [id, mk] of markers) if (!seen.has(id)) { mk.remove(); markers.delete(id); }
     groupBuses();
@@ -155,7 +155,8 @@
       const oneRoute = list.every((b) => b.route === list[0].route);
       const color = oneRoute ? (routes[list[0].route]?.color || '#bff4ff') : '#bff4ff';
       const el = document.createElement('div');
-      el.className = 'bus-mk bus-grp';
+      // a pile of parked buses (all stopped, e.g. at a transit center) is drawn faint so it doesn't hog the map
+      el.className = 'bus-mk bus-grp' + (list.every((b) => b.mph < 2) ? ' parked' : '');
       el.innerHTML = `<div class="ic">${busSvg(color)}</div><b class="n">${list.length}</b>`;
       el.title = `${list.length} buses here: click for details`;
       // parked together (a transit center): list them; spread out: zoom in until they separate

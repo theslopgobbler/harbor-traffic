@@ -182,6 +182,24 @@
     return { top: p, left: p, right: p, bottom: Math.min(mapBox.height * 0.6, covered + p) };
   };
   const popup = (html) => new maplibregl.Popup({ offset: 16, maxWidth: '320px' }).setHTML(html);
+  // if an open popup runs off the map (or under the phone's bottom sheet and buttons), slide the map so it all shows
+  function keepInView(p) {
+    requestAnimationFrame(() => {
+      const el = p.getElement(); if (!el) return;
+      const r = el.getBoundingClientRect(), box = map.getContainer().getBoundingClientRect();
+      const tools = document.querySelector('.map-tools')?.getBoundingClientRect();
+      const sheet = document.querySelector('#panel')?.getBoundingClientRect();
+      const bottom = phone() ? Math.min(box.bottom, sheet?.top ?? box.bottom, tools?.height ? tools.top : box.bottom) : box.bottom;
+      const m = 10;
+      let dx = 0, dy = 0;
+      if (r.top < box.top + m) dy = r.top - box.top - m;
+      else if (r.bottom > bottom - m) dy = Math.min(r.bottom - bottom + m, r.top - box.top - m);
+      if (r.left < box.left + m) dx = r.left - box.left - m;
+      else if (r.right > box.right - m) dx = r.right - box.right + m;
+      if (dx || dy) map.panBy([dx, dy], { duration: 300 });
+    });
+  }
+  window.htKeepInView = keepInView;
 
   // coordinate readout, for the look of it
   const readout = () => {
@@ -371,7 +389,12 @@
         el.className = 'cam-mk';
         el.title = cam.title;
         const p = new maplibregl.Popup({ offset: 12, maxWidth: '340px' });
-        p.on('open', () => p.setHTML(`<h3>CAM ${esc(cam.title)}</h3>${camHtml(cam)}`));
+        p.on('open', () => {
+          p.setHTML(`<h3>CAM ${esc(cam.title)}</h3>${camHtml(cam)}`);
+          keepInView(p);
+          // the image changes the popup's size when it arrives, so check again then
+          p.getElement()?.querySelector('img')?.addEventListener('load', () => keepInView(p), { once: true });
+        });
         camMarkers.push({ el, m: new maplibregl.Marker({ element: el }).setLngLat([cam.lon, cam.lat]).setPopup(p).addTo(map) });
       }
       showByZoom();
