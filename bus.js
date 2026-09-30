@@ -20,6 +20,83 @@
   const short = (name) => parts(name)[1].trim();
   const long = (name) => parts(name)[2].trim();
 
+  // ---- route lines and stops (from GHT's published schedule data; data/bus-routes.json and bus-stops.json) ----
+  const shapesByRoute = {}; // route number -> [{ c: [[lon,lat]...], d: [meters along] }]
+  const mx = (a, b) => { const dx = (b[0] - a[0]) * 76000, dy = (b[1] - a[1]) * 111000; return Math.hypot(dx, dy); }; // meters, near 47°N
+  async function loadRoutes() {
+    try {
+      const [r, s] = await Promise.all([fetch('data/bus-routes.json').then((x) => x.json()), fetch('data/bus-stops.json').then((x) => x.json())]);
+      for (const f of r.features || []) {
+        const c = f.geometry.coordinates, d = [0];
+        for (let i = 1; i < c.length; i++) d.push(d[i - 1] + mx(c[i - 1], c[i]));
+        (shapesByRoute[f.properties.route] ||= []).push({ c, d });
+      }
+      const add = () => {
+        if (map.getSource('bus-routes')) return;
+        map.addSource('bus-routes', { type: 'geojson', data: r });
+        map.addSource('bus-stops', { type: 'geojson', data: s });
+        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, layout: { 'line-join': 'round', 'line-cap': 'round' },
+          paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.55, 'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1.2, 14, 3.5] } }, 'flow-glow');
+        map.addLayer({ id: 'bus-stops', type: 'circle', source: 'bus-stops', minzoom: 13.5, paint: {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 13.5, 2.5, 16, 5], 'circle-color': '#020807',
+          'circle-stroke-color': '#bff4ff', 'circle-stroke-width': 1.4 } });
+        map.on('click', 'bus-stops', (e) => {
+          const p = e.features[0].properties;
+          new maplibregl.Popup({ offset: 8, maxWidth: '260px' }).setLngLat(e.lngLat)
+            .setHTML(`<h3>BUS STOP</h3><p>${esc(p.name)}</p><div class="m">ROUTES ${esc(p.routes)}</div>`).addTo(map);
+        });
+        map.on('mouseenter', 'bus-stops', () => (map.getCanvas().style.cursor = 'pointer'));
+        map.on('mouseleave', 'bus-stops', () => (map.getCanvas().style.cursor = ''));
+        showLayers();
+      };
+      if (map.isStyleLoaded()) add(); else map.once('load', add);
+    } catch (e) { console.warn('bus routes', e); }
+  }
+  const showLayers = () => ['bus-route-lines', 'bus-stops'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+
+  // ---- estimated positions between GPS reports ----
+  // Each report gives position, heading and speed. Between reports (20 s apart), each moving bus is slid along
+  // its route line at its last speed, twice a second, for up to 90 s. A stopped bus stays put.
+  const bearing = (a, b) => (Math.atan2((b[0] - a[0]) * 0.68, b[1] - a[1]) * 180 / Math.PI + 360) % 360;
+  const diff = (a, b) => Math.abs(((a - b + 540) % 360) - 180);
+  function snap(b, routeNo) {
+    let best = null;
+    for (const sh of shapesByRoute[routeNo] || []) {
+      for (let i = 0; i < sh.c.length - 1; i++) {
+        const dist = mx([b.lon, b.lat], sh.c[i]);
+        if (dist > 250 || (best && dist >= best.dist)) continue;
+        if (diff(bearing(sh.c[i], sh.c[i + 1]), b.heading || 0) > 90) continue; // going the right way along it
+        best = { sh, i, dist };
+      }
+    }
+    return best;
+  }
+  function along(sh, meters) {
+    const d = sh.d, c = sh.c;
+    if (meters >= d[d.length - 1]) return c[c.length - 1];
+    let i = 1; while (d[i] < meters) i++;
+    const f = (meters - d[i - 1]) / ((d[i] - d[i - 1]) || 1);
+    return [c[i - 1][0] + (c[i][0] - c[i - 1][0]) * f, c[i - 1][1] + (c[i][1] - c[i - 1][1]) * f];
+  }
+  function glide() {
+    if (document.hidden || !on) return;
+    const now = Date.now();
+    for (const mk of markers.values()) {
+      const b = mk._bus;
+      if (!b || b.mph < 2) continue;
+      // the route lines may arrive after the buses: match each bus to its line once they're in
+      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, short(routes[b.route]?.name)); }
+      if (!b._snap) continue;
+      const secs = Math.min(90, (now - b._at) / 1000);
+      const start = b._snap.sh.d[b._snap.i];
+      mk.setLngLat(along(b._snap.sh, start + b.mph * 0.44704 * secs));
+    }
+  }
+  setInterval(glide, 500);
+  // for checking from the browser console: how many moving buses are matched to a route line
+  window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
+    return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden }; };
+
 
   // a bus from above, front up, in the same line style as the ships and alerts: a hollow outline in the
   // route color over a dark fill, windshield bar up front, window dashes down both sides
@@ -44,6 +121,8 @@
       el.innerHTML = `<div class="ic" style="transform:rotate(${b.heading || 0}deg)">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</b>`;
       el.title = `Route ${short(r.name)} · bus ${b.id}`;
       mk._bus = b;
+      b._at = Date.now();
+      b._snap = snap(b, short(r.name));
       mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</div>` : ''}
@@ -137,12 +216,13 @@
     const btn = $('#btnBus');
     btn.classList.toggle('on', v); btn.setAttribute('aria-pressed', v);
     document.body.classList.toggle('no-buses', !v);
+    showLayers(); // route lines and stops follow the bus button
     window.htDeclutter?.();
   }
   $('#btnBus').addEventListener('click', () => setOn(!on));
   setOn(on);
 
-  loadBuses(); loadAlerts();
+  loadRoutes(); loadBuses(); loadAlerts();
   setInterval(loadBuses, 20000);
   setInterval(loadAlerts, 10 * 60 * 1000);
 })();
