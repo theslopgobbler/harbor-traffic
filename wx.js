@@ -833,8 +833,10 @@
     // --- swell on the open ocean (the bays are cut out) ---
     if (sea?.waveFt != null) {
       ctx.save();
+      // only the open Pacific off our coast: nothing inland (Puget Sound, Hood Canal) or north of the Strait (San Juans)
+      const nw = map.project([-127, 48.0]), se = map.project([-123.98, 46.2]);
       const cut = new Path2D();
-      cut.rect(0, 0, W, H);
+      cut.rect(nw.x, nw.y, se.x - nw.x, se.y - nw.y);
       for (const b of bayPx) cut.rect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
       ctx.clip(cut, 'evenodd');
       const toward = ((sea.dirDeg + 180) % 360) * Math.PI / 180;
