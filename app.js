@@ -73,6 +73,7 @@
         return { type: 'Feature', properties: { name: r.name }, geometry: { type: 'Polygon', coordinates: [[[w, s], [e, s], [e, n], [w, n], [w, s]]] } };
       }) } },
       flow: { type: 'geojson', data: empty },
+      crossings: { type: 'geojson', data: empty },
       incidents: { type: 'geojson', data: empty }
     },
     layers: [
@@ -104,6 +105,13 @@
       { id: 'road-sec', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 8,
         filter: ['in', ['get', 'class'], ['literal', ['secondary']]],
         paint: { 'line-color': '#3a6f78', 'line-width': zw(0.6, 3) } },
+      // railroads (Puget Sound & Pacific: Centralia–Elma–Aberdeen–Hoquiam and the port), classic tie-hatched line
+      { id: 'rail-ties', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 10,
+        filter: ['==', ['get', 'class'], 'rail'],
+        paint: { 'line-color': '#c28bff', 'line-opacity': 0.6, 'line-width': zw(3, 7), 'line-dasharray': [0.25, 2.5] } },
+      { id: 'rail', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 8,
+        filter: ['==', ['get', 'class'], 'rail'],
+        paint: { 'line-color': '#c28bff', 'line-opacity': 0.8, 'line-width': zw(0.8, 1.6) } },
       { id: 'road-main-glow', type: 'line', source: 'omt', 'source-layer': 'transportation', filter: mainRoads,
         layout: { 'line-cap': 'round', 'line-join': 'round' },
         paint: { 'line-color': '#7fe9ff', 'line-opacity': 0.22, 'line-width': zw(5, 16), 'line-blur': 5 } },
@@ -125,6 +133,9 @@
         paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.55, 'line-width': zw(10, 24), 'line-blur': 6 } },
       { id: 'inc', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
         paint: { 'line-color': ['get', 'color'], 'line-width': zwIf(['==', ['get', 'kind'], 'closure'], [4, 9], [3, 7]) } },
+      // road/rail crossings (where a train can block the road)
+      { id: 'crossings', type: 'circle', source: 'crossings', minzoom: 11,
+        paint: { 'circle-radius': zw(2, 5), 'circle-color': '#030807', 'circle-stroke-color': '#c28bff', 'circle-stroke-width': 1.6 } },
       { id: 'outside', type: 'fill', source: 'outside', paint: { 'fill-color': '#000000', 'fill-opacity': 0.6 } },
       { id: 'outside-edge', type: 'line', source: 'outside', paint: { 'line-color': K.cyan, 'line-opacity': 0.35, 'line-width': 1, 'line-dasharray': [4, 4] } },
       // the region boxes, only in the zoomed-out overview
@@ -872,6 +883,17 @@
     $('#updated').textContent = 'SYNC ' + fmtTime(new Date()).toUpperCase();
   }
   loadCameras(); // the list only; images wait for a click
+  // rail crossings (the collector refreshes this from OpenStreetMap once a week)
+  getJson('data/crossings.json').then((j) => setSource('crossings', { type: 'FeatureCollection',
+    features: (j.crossings || []).filter((c) => c.kind === 'level_crossing').map((c) => ({ type: 'Feature',
+      geometry: { type: 'Point', coordinates: [c.lon, c.lat] }, properties: { road: c.road || '' } })) })).catch(() => {});
+  map.on('click', 'crossings', (e) => {
+    const road = e.features[0]?.properties.road;
+    new maplibregl.Popup({ offset: 8 }).setLngLat(e.lngLat)
+      .setHTML(`<h3>RAIL CROSSING</h3><p>${esc(road || 'Road crossing')}</p><div class="m">Puget Sound &amp; Pacific Railroad. Trains can block this crossing; no live train positions are published.</div>`).addTo(map);
+  });
+  map.on('mouseenter', 'crossings', () => (map.getCanvas().style.cursor = 'pointer'));
+  map.on('mouseleave', 'crossings', () => (map.getCanvas().style.cursor = ''));
   refresh();
   setInterval(refresh, 5 * 60 * 1000);
   setInterval(renderBridges, 60 * 1000);
