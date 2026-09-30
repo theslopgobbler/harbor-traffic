@@ -237,7 +237,7 @@
     const next = [];
     for (const [url, c] of Object.entries(byZone)) {
       fromAlerts(url, nws, c);
-      if (c.kind === 'none' && !c.wind) continue;
+      if (c.kind === 'none' && !c.wind && !SIM.length) continue;
       if (['rain', 'storm', 'snow', 'hail'].includes(c.kind) && !previewing) c.rate = await precipRate(c.town, c.kind === 'snow');
       try {
         const g = await zoneGeometry(url);
@@ -245,6 +245,10 @@
         const rings = g.type === 'Polygon' ? [g.coordinates[0]] : g.type === 'MultiPolygon' ? g.coordinates.map((p) => p[0]) : [];
         next.push({ url, cond: c, geometry: g, rings, parts: [] });
       } catch (e) { console.warn('zone', url, e); }
+    }
+    // demo mode: ?sim=snow,storm takes turns across the forecast areas (for showing the effects off)
+    if (SIM.length) {
+      next.forEach((z, i) => Object.assign(z.cond, SIM_COND[SIM[i % SIM.length]] || {}, { rate: null, pop: 100 }));
     }
     zones = next;
     const color = (c) => COLOR[c.kind] || COLOR.wind;
@@ -262,10 +266,19 @@
     resetParticles();
     // the sky icon uses Aberdeen's own conditions
     const home = wx.aberdeen;
-    if (home) { skyCond = classify(home.f, home.windMph); skySvg(); }
+    if (home) { skyCond = SIM.length ? { ...SIM_COND[SIM[SIM.length - 1]], cloud: 2 } : classify(home.f, home.windMph); skySvg(); }
   }
   let pendingZones = null;
   let previewing = false; // htWx.preview() in use: skip the real precipitation rates
+  const SIM = (qs.get('sim') || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const SIM_COND = {
+    rain: { kind: 'rain', level: 3, wind: 1, windMph: 24, windDir: 'SW' },
+    snow: { kind: 'snow', level: 3, wind: 1, windMph: 20, windDir: 'W' },
+    storm: { kind: 'storm', level: 3, wind: 2, windMph: 35, windDir: 'SW' },
+    hail: { kind: 'hail', level: 2, wind: 1, windMph: 22, windDir: 'SW' },
+    fog: { kind: 'fog', level: 3, wind: 0 },
+    wind: { kind: 'none', level: 0, wind: 3, windMph: 50, windDir: 'SW' }
+  };
   function addZoneLayers() {
     if (map.getSource('wxzones')) return;
     map.addSource('wxzones', { type: 'geojson', data: pendingZones ? pendingZones[0] : empty });
@@ -426,7 +439,7 @@
       }
       // lightning
       if (z.cond.kind === 'storm') {
-        if (t > z.nextBolt) { z.flash = 1; z.bolt = boltPath(z); z.nextBolt = t + rnd(z.cond.level >= 3 ? 1200 : 2500, 7000); }
+        if (t > z.nextBolt) { z.flash = 1; z.bolt = boltPath(z); z.nextBolt = t + (SIM.length ? rnd(500, 1400) : rnd(z.cond.level >= 3 ? 1200 : 2500, 7000)); }
         if (z.flash > 0.02) {
           ctx.fillStyle = `rgba(255,190,250,${0.22 * z.flash})`; ctx.fillRect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
           if (z.bolt) {
@@ -434,7 +447,7 @@
             ctx.beginPath(); z.bolt.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke();
             ctx.shadowBlur = 0;
           }
-          z.flash *= 0.82;
+          z.flash *= SIM.length ? 0.95 : 0.82; // demo mode lets each strike linger so it shows up in screenshots
         }
       }
       ctx.restore();
