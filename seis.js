@@ -17,7 +17,10 @@
   };
   // ring color by age: red in the last hour, orange today, amber in 3 days, dim after
   const ageColor = (t) => { const h = (Date.now() - t) / 36e5; return h < 1 ? '#ff2a3d' : h < 24 ? '#ff7a1a' : h < 72 ? '#ffc400' : '#5f9c8b'; };
-  const BIG = (q) => q.mag >= 4 && q.km <= 150 && Date.now() - q.time < 864e5; // strong, close, recent
+  // worth an alert (the red count and the ticker) for its first 24 hours: big and regional, or moderate and close
+  const BIG = (q) => (q.mag >= 5 && q.km <= 300 || q.mag >= 4 && q.km <= 60) && Date.now() - q.time < 864e5;
+  // what shows on the map and in the list: nearby quakes, plus big ones farther out
+  const SHOWN = (q) => q.km <= 150 || q.mag >= 5;
 
   let quakes = [], tsunami = [];
   const empty = { type: 'FeatureCollection', features: [] };
@@ -98,7 +101,7 @@
       const j = await (await fetch(`https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=47.0&longitude=-123.8&maxradiuskm=300&minmagnitude=1.5&starttime=${since}&orderby=time`)).json();
       quakes = (j.features || []).map((f) => ({ id: f.id, mag: f.properties.mag, place: f.properties.place || 'Unknown location', time: f.properties.time,
         url: f.properties.url, felt: f.properties.felt, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1], depth: f.geometry.coordinates[2] || 0 }))
-        .map((q) => ({ ...q, km: km(HOME, q) }));
+        .map((q) => ({ ...q, km: km(HOME, q) })).filter(SHOWN);
     } catch (e) { console.warn('quakes', e); }
     render();
   }
