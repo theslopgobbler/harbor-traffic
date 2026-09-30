@@ -703,7 +703,7 @@
   // how many screen pixels a ship's length covers at the current zoom
   const metersToPx = (m, lat) => m / (156543.03 * Math.cos(lat * Math.PI / 180) / 2 ** map.getZoom());
   // minimum on-screen length by type, so nothing gets lost when zoomed out; real size takes over up close
-  const minLen = (s) => isCargo(s.type) ? 58 : s.type >= 80 && s.type <= 89 ? 48 : s.type >= 60 && s.type <= 69 ? 40 : isTug(s.type) ? 26 : s.classB ? 18 : 22;
+  const minLen = (s) => isCargo(s.type) ? 40 : s.type >= 80 && s.type <= 89 ? 36 : s.type >= 60 && s.type <= 69 ? 32 : isTug(s.type) ? 24 : s.classB ? 18 : 22;
   function drawShip(el, s) {
     const sit = s._sit;
     const color = shipColor(s, sit);
@@ -719,7 +719,42 @@
     el.style.width = el.style.height = len + 'px';
     el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${shipOutline(s.type, color)}</svg>`;
   }
-  map.on('zoomend', () => shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)));
+  map.on('zoomend', () => { shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)); groupShips(); });
+
+  // zoomed out, ships that would pile up merge into one icon with a count (like the road alerts):
+  // a purple anchor if they're all tied up or anchored, otherwise a small hull
+  const shipGroups = [];
+  function groupShips() {
+    shipGroups.splice(0).forEach((m) => m.remove());
+    shipMarkers.forEach((m) => (m.getElement().style.display = ''));
+    if (map.getZoom() >= 12) return;
+    const pts = shipMarkers.map((m) => ({ m, p: map.project(m.getLngLat()) }));
+    const used = new Set();
+    for (let i = 0; i < pts.length; i++) {
+      if (used.has(i)) continue;
+      const grp = [i];
+      for (let j = i + 1; j < pts.length; j++) if (!used.has(j) && Math.hypot(pts[i].p.x - pts[j].p.x, pts[i].p.y - pts[j].p.y) < 36) grp.push(j);
+      if (grp.length < 2) continue;
+      grp.forEach((k) => { used.add(k); pts[k].m.getElement().style.display = 'none'; });
+      const ships = grp.map((k) => pts[k].m._ship);
+      const lls = grp.map((k) => pts[k].m.getLngLat());
+      const at = [lls.reduce((s, l) => s + l.lng, 0) / lls.length, lls.reduce((s, l) => s + l.lat, 0) / lls.length];
+      const allStopped = ships.every(stopped);
+      const color = allStopped ? '#c28bff' : ships.some((s) => isCargo(s.type)) ? '#d11a2a' : '#bff4ff';
+      const el = document.createElement('div');
+      el.className = 'ship-mk ship-grp' + (allStopped ? ' anchored' : '');
+      el.style.width = el.style.height = '30px';
+      el.innerHTML = (allStopped ? anchorSvg(color)
+        : `<svg viewBox="0 0 16 16"><polygon points="8,1 13,6 13,15 3,15 3,6" fill="rgba(2,8,7,.85)" stroke="${color}" stroke-width="1.4"/></svg>`) +
+        `<b style="color:${color}">${ships.length}</b>`;
+      el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}. Click to zoom in.`;
+      el.addEventListener('click', () => {
+        const b = new maplibregl.LngLatBounds(); lls.forEach((l) => b.extend(l));
+        map.fitBounds(b, { padding: 90, maxZoom: 14, minZoom: 12.2 });
+      });
+      shipGroups.push(new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map));
+    }
+  }
 
   async function loadShips() {
     try {
@@ -744,6 +779,7 @@
       mk._ship = s;
       shipMarkers.push(mk);
     }
+    groupShips();
     checkBridges();
     renderShipList();
     renderRail();
