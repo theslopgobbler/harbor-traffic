@@ -5,72 +5,77 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Harbor Traffic</title>
 <meta name="description" content="Grays Harbor roads, bridges and weather at a glance: Hoh Rain Forest to South Bend, the coast to Olympia.">
-<meta name="theme-color" content="#132318">
+<meta name="theme-color" content="#030807">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Alegreya+Sans+SC:wght@500;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=4" rel="stylesheet">
+<link href="styles.css?v=5" rel="stylesheet">
 </head>
 <body>
 <header class="top">
   <div class="brand">
-    <span class="kicker">Aberdeen · Hoquiam · Coast · Olympia</span>
-    <h1>Harbor Traffic</h1>
+    <h1>HARBOR<span>//</span>TRAFFIC</h1>
+    <div class="sub">GRAYS HARBOR · COAST · I-5 <span class="live"><i></i>LIVE</span></div>
   </div>
+  <nav class="regions" id="regions" aria-label="Map region"></nav>
   <div class="now">
     <div id="clock" class="clock">--:--</div>
-    <div id="updated" class="updated">Loading…</div>
+    <div id="updated" class="updated">SYNC…</div>
   </div>
 </header>
 
 <main class="layout">
-  <div id="map" class="map" role="application" aria-label="Map of Grays Harbor roads and weather"></div>
-
-  <div class="map-tools">
-    <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎ <span>Me</span></button>
-    <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤ <span>Heading</span></button>
-    <button id="btnReset" class="tool" type="button" aria-label="Show whole region">⤢ <span>All</span></button>
+  <div class="map-wrap">
+    <div id="map" class="map" role="application" aria-label="Map of Grays Harbor roads and weather"></div>
+    <div class="hud" aria-hidden="true">
+      <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+      <div class="readout" id="readout">N 47.0000 W 123.0000</div>
+      <div class="region-name" id="regionName"></div>
+    </div>
+    <div class="map-tools">
+      <button id="btnLocate" class="tool" type="button" aria-label="Show my location">◎<span> ME</span></button>
+      <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden>➤<span> HDG</span></button>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><b class="x">✕</b>CLOSED</span>
+      <span><i class="ln red"></i>SLOW/INCIDENT</span>
+      <span><i class="ln yel"></i>WORK/MODERATE</span>
+      <span><i class="ln grn"></i>CLEAR</span>
+      <span><b class="br">▲</b>BRIDGE</span>
+      <span><b class="cm">◉</b>CAM</span>
+    </div>
   </div>
 
   <aside class="panel" id="panel">
     <button class="sheet-handle" id="sheetHandle" type="button" aria-label="Expand or collapse details"></button>
 
     <label class="route-pick">
-      <span class="label">Your route</span>
-      <select id="route"><option value="">Whole region</option></select>
+      <span class="label">ROUTE FILTER</span>
+      <select id="route"><option value="">ALL ROADS</option></select>
     </label>
 
     <nav class="tabs" role="tablist">
-      <button role="tab" data-tab="alerts" aria-selected="true">Alerts <b id="nAlerts"></b></button>
-      <button role="tab" data-tab="roads" aria-selected="false">Roads <b id="nRoads"></b></button>
-      <button role="tab" data-tab="bridges" aria-selected="false">Bridges</button>
-      <button role="tab" data-tab="weather" aria-selected="false">Weather</button>
+      <button role="tab" data-tab="roads" aria-selected="true">ROADS <b id="nRoads"></b></button>
+      <button role="tab" data-tab="alerts" aria-selected="false">WX ALERT <b id="nAlerts"></b></button>
+      <button role="tab" data-tab="bridges" aria-selected="false">BRIDGES</button>
+      <button role="tab" data-tab="weather" aria-selected="false">WEATHER</button>
     </nav>
 
-    <section class="tab" id="tab-alerts"><h2>Weather alerts</h2><ul id="alertList" class="list"></ul></section>
-    <section class="tab" id="tab-roads"><h2>Closures &amp; incidents</h2><ul id="roadList" class="list"></ul>
-      <h2>Olympia travel times</h2><ul id="travelList" class="list"></ul></section>
-    <section class="tab" id="tab-bridges"><h2>Drawbridges</h2><ul id="bridgeList" class="list"></ul>
+    <section class="tab" id="tab-roads"><h2>CLOSURES / INCIDENTS</h2><ul id="roadList" class="list"></ul>
+      <h2>TRAVEL TIMES</h2><ul id="travelList" class="list"></ul></section>
+    <section class="tab" id="tab-alerts"><h2>WEATHER ALERTS</h2><ul id="alertList" class="list"></ul></section>
+    <section class="tab" id="tab-bridges"><h2>DRAWBRIDGES</h2><ul id="bridgeList" class="list"></ul>
       <p class="fine">Openings happen on request from boats; there is no published schedule. WSDOT bridge maintenance: 360-533-9360.</p></section>
-    <section class="tab" id="tab-weather"><h2>Right now</h2><ul id="wxList" class="list wx"></ul>
-      <h2>Roadside sensors</h2><ul id="roadWxList" class="list wx"></ul>
+    <section class="tab" id="tab-weather"><h2>TOWNS</h2><ul id="wxList" class="list wx"></ul>
+      <h2>ROADSIDE SENSORS</h2><ul id="roadWxList" class="list wx"></ul>
       <p class="fine">Readings from WSDOT weather stations on the highway itself.</p></section>
   </aside>
 </main>
 
-<div class="legend" aria-hidden="true">
-  <span><i class="ic ic-closure">✕</i>Closure</span>
-  <span><i class="ic ic-collision">!</i>Collision</span>
-  <span><i class="ic ic-work">⚒</i>Work</span>
-  <span><i class="ic ic-bridge">⌂</i>Bridge</span>
-  <span><i class="ic ic-cam">📷</i>Camera</span>
-  <span><i class="dot" style="background:#4f8a2b"></i><i class="dot" style="background:#e0b020"></i><i class="dot" style="background:#d4611c"></i><i class="dot" style="background:#b8322a"></i>I-5 traffic</span>
-</div>
-
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="config.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

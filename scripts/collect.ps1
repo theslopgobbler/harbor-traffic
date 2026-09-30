@@ -32,6 +32,14 @@ function To-Iso($s) {
 function In-Box($loc) {
     return $loc -and $loc.Latitude -ne 0 -and $loc.Longitude -ge $boxW -and $loc.Longitude -le $boxE -and $loc.Latitude -ge $boxS -and $loc.Latitude -le $boxN
 }
+# the box is a rectangle; these corners are outside the area we cover (Chehalis/Centralia, Hood Canal)
+function In-Area($lat, $lon) {
+    if (-not (In-Box ([pscustomobject]@{ Latitude = $lat; Longitude = $lon }))) { return $false }
+    if ($lon -gt -123.05 -and $lat -lt 46.76) { return $false }
+    if ($lon -gt -123.30 -and $lat -gt 47.25) { return $false }
+    return $true
+}
+function Loc-In-Area($loc) { return $loc -and $loc.Latitude -ne 0 -and (In-Area $loc.Latitude $loc.Longitude) }
 function Kind($a) {
     $txt = "$($a.EventCategory) $($a.HeadlineDescription)"
     if ($txt -match '(?i)collision|crash|disabled vehicle|incident') { return 'collision' }
@@ -60,8 +68,8 @@ function Road-Label($name) {
 $alerts = @()
 foreach ($a in $raw) {
     $s = $a.StartRoadwayLocation; $e = $a.EndRoadwayLocation
-    if (-not ((In-Box $s) -or (In-Box $e))) { continue }
-    $p = if (In-Box $s) { $s } else { $e }
+    if (-not ((Loc-In-Area $s) -or (Loc-In-Area $e))) { continue }
+    $p = if (Loc-In-Area $s) { $s } else { $e }
     $alerts += [ordered]@{
         id          = $a.AlertID
         kind        = Kind $a
@@ -91,6 +99,45 @@ $histDir = Join-Path $dataDir 'history'
 New-Item -ItemType Directory -Force $histDir | Out-Null
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
+# ---------- road paths for alert stretches ----------
+# WSDOT gives a start and end point; to draw the stretch along the highway we ask the public OSRM router once
+# per stretch and keep the answer in data/paths.json, so each stretch is looked up only once.
+$pathFile = Join-Path $dataDir 'paths.json'
+$paths = @{}
+if (Test-Path $pathFile) { (Get-Content $pathFile -Raw | ConvertFrom-Json).PSObject.Properties | ForEach-Object { $paths[$_.Name] = $_.Value } }
+function Km($lat1, $lon1, $lat2, $lon2) {
+    $r = [math]::PI / 180; $dLat = ($lat2 - $lat1) * $r; $dLon = ($lon2 - $lon1) * $r
+    $h = [math]::Pow([math]::Sin($dLat / 2), 2) + [math]::Cos($lat1 * $r) * [math]::Cos($lat2 * $r) * [math]::Pow([math]::Sin($dLon / 2), 2)
+    return 12742 * [math]::Asin([math]::Sqrt($h))
+}
+$usedKeys = @{}
+foreach ($al in $alerts) {
+    if (-not $al.lat2 -or $al.lat2 -eq 0) { continue }
+    $straight = Km $al.lat $al.lon $al.lat2 $al.lon2
+    if ($straight -lt 0.15 -or $straight -gt 80) { continue }
+    $key = '{0:F4},{1:F4};{2:F4},{3:F4}' -f $al.lon, $al.lat, $al.lon2, $al.lat2
+    $usedKeys[$key] = $true
+    if (-not $paths.ContainsKey($key)) {
+        try {
+            Start-Sleep -Milliseconds 1100   # the public router asks for at most one request a second
+            $rt = Invoke-RestMethod "https://router.project-osrm.org/route/v1/driving/$($key)?overview=full&geometries=geojson" -TimeoutSec 30
+            $route = $rt.routes[0]
+            # a route much longer than the straight line means it detoured (e.g. wrong side of a divided highway)
+            if ($route -and ($route.distance / 1000) -lt ($straight * 2 + 2)) {
+                $pts = @($route.geometry.coordinates)
+                $step = [math]::Max(1, [math]::Floor($pts.Count / 150))
+                $keep = for ($i = 0; $i -lt $pts.Count; $i += $step) { , @([math]::Round($pts[$i][0], 5), [math]::Round($pts[$i][1], 5)) }
+                $last = $pts[$pts.Count - 1]
+                $paths[$key] = @($keep) + , @([math]::Round($last[0], 5), [math]::Round($last[1], 5))
+            } else { $paths[$key] = @(@($al.lon, $al.lat), @($al.lon2, $al.lat2)) }
+        } catch { "path lookup failed: $($_.Exception.Message)" }
+    }
+    if ($paths.ContainsKey($key)) { $al.path = $paths[$key] }
+}
+# forget stretches whose alerts are gone
+$kept = [ordered]@{}; foreach ($k in $usedKeys.Keys) { if ($paths.ContainsKey($k)) { $kept[$k] = $paths[$k] } }
+[IO.File]::WriteAllText($pathFile, ($kept | ConvertTo-Json -Depth 5 -Compress), $utf8)
+
 function Save($name, $obj) {
     [IO.File]::WriteAllText((Join-Path $dataDir $name), ($obj | ConvertTo-Json -Depth 6), $utf8)
 }
@@ -100,13 +147,6 @@ Save 'wsdot-alerts.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WS
 # ---------- the other WSDOT feeds; one failing never stops the rest ----------
 $base = 'https://wsdot.wa.gov/Traffic/api'
 function Wsdot($path) { $x = Invoke-RestMethod -Uri "$base/$($path)?AccessCode=$code" -TimeoutSec 60; foreach ($i in $x) { $i } }
-# the box is a rectangle; these corners are outside the area we cover (Chehalis/Centralia, Hood Canal)
-function In-Area($lat, $lon) {
-    if (-not (In-Box ([pscustomobject]@{ Latitude = $lat; Longitude = $lon }))) { return $false }
-    if ($lon -gt -123.05 -and $lat -lt 46.76) { return $false }
-    if ($lon -gt -123.30 -and $lat -gt 47.25) { return $false }
-    return $true
-}
 
 # cameras: just the list; the page loads an image only when someone clicks it
 $flowSummary = $null

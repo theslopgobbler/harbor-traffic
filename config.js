@@ -3,6 +3,16 @@ window.HT = {
   // [west, south, east, north]: Hoh Rain Forest to South Bend, coast to I-5 at Olympia/Grand Mound
   bounds: [-124.45, 46.60, -122.80, 47.92],
 
+  // Views for the region buttons. bounds = [west, south, east, north]; null = everything
+  regions: [
+    { id: 'all',     name: 'Full',          bounds: null },
+    { id: 'north',   name: 'North Coast',   bounds: [-124.45, 47.18, -123.72, 47.92] },
+    { id: 'harbor',  name: 'Harbor',        bounds: [-124.22, 46.86, -123.68, 47.08] },
+    { id: 'willapa', name: 'Willapa',       bounds: [-124.10, 46.60, -123.62, 46.93] },
+    { id: 'east',    name: 'East County',   bounds: [-123.72, 46.77, -123.10, 47.13] },
+    { id: 'olympia', name: 'Olympia · I-5', bounds: [-123.20, 46.74, -122.78, 47.12] }
+  ],
+
   towns: [
     { id: 'hoh',        name: 'Hoh Rain Forest', lat: 47.8606, lon: -123.9349 },
     { id: 'kalaloch',   name: 'Kalaloch',        lat: 47.6082, lon: -124.3735 },
