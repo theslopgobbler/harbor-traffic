@@ -162,7 +162,8 @@
 
   const map = new maplibregl.Map({
     container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 30 },
-    maxBounds: [W - pad, S - pad, E + pad, N + pad], minZoom: 5.5, maxZoom: 16,
+    // extra room to the south: on phones the view centers below the area so it clears the bottom sheet
+    maxBounds: [W - pad * 2, S - pad * 3.5, E + pad * 2, N + pad * 1.5], minZoom: 5.5, maxZoom: 16,
     dragRotate: false, pitchWithRotate: false, touchPitch: false, attributionControl: { compact: true },
     interactive: !TV
   });
@@ -208,7 +209,7 @@
     region = id;
     const r = regionById[id];
     regionBar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.r === id));
-    $('#regionName').textContent = `▸ ${r.name.toUpperCase()}`;
+    if (!cycleTimer) $('#regionName').textContent = `▸ ${r.name.toUpperCase()}`;
     map.fitBounds(r.bounds || C.bounds, { padding: fitPad(30), duration: animate && !TV ? 700 : 0 });
   }
   regionBar.addEventListener('click', (e) => {
@@ -217,15 +218,30 @@
     store.set('ht.region', b.dataset.r);
     showRegion(b.dataset.r);
   });
-  // TV: ?tv&cycle=30 steps through the regions every 30 seconds
-  let cycleTimer = null;
-  const stopCycle = () => { clearInterval(cycleTimer); cycleTimer = null; };
+  // TV: steps through the regions on its own (10 s each; ?cycle=20 to change, ?cycle=0 or ?region=x to hold still),
+  // with a countdown on the map and a bar that drains until the next area
+  let cycleTimer = null, cycleNext = 0, cycleMs = 0;
+  const stopCycle = () => { clearInterval(cycleTimer); cycleTimer = null; $('#cycleBar').style.display = 'none'; showRegionName(); };
+  const ids = C.regions.map((r) => r.id);
+  const nextId = () => ids[(ids.indexOf(region) + 1) % ids.length];
+  function showRegionName(secsLeft) {
+    const name = regionById[region].name.toUpperCase();
+    $('#regionName').textContent = secsLeft != null ? `▸ ${name} · NEXT ${regionById[nextId()].name.toUpperCase()} ${secsLeft}` : `▸ ${name}`;
+  }
   map.once('load', () => {
     showRegion(region, false);
-    const secs = +qs.get('cycle');
-    if (TV && qs.has('cycle')) {
-      const ids = C.regions.map((r) => r.id);
-      cycleTimer = setInterval(() => showRegion(ids[(ids.indexOf(region) + 1) % ids.length]), Math.max(10, secs || 30) * 1000);
+    const secs = qs.has('cycle') ? +qs.get('cycle') : 10;
+    if (TV && secs > 0 && !qs.has('region')) {
+      cycleMs = Math.max(5, secs) * 1000;
+      cycleNext = Date.now() + cycleMs;
+      $('#cycleBar').style.display = 'block';
+      cycleTimer = setInterval(() => {
+        const left = cycleNext - Date.now();
+        if (left <= 0) { showRegion(nextId()); cycleNext = Date.now() + cycleMs; }
+        const l = Math.max(0, cycleNext - Date.now());
+        showRegionName(Math.ceil(l / 1000));
+        $('#cycleBar').style.transform = `scaleX(${l / cycleMs})`;
+      }, 200);
     }
   });
   window.addEventListener('resize', () => TV && showRegion(region, false));
@@ -894,8 +910,53 @@
   tick(); setInterval(tick, 10000);
   async function refresh() {
     await Promise.allSettled([loadWeather(), loadAlerts(), loadRoads(), loadRoadWeather(), loadFlow()]);
+    window.htTickerRefresh();
     $('#updated').textContent = 'SYNC ' + fmtTime(new Date()).toUpperCase();
   }
+  // ---------------- TV: scrolling ticker and a side panel that scrolls itself ----------------
+  window.htTicker = window.htTicker || {}; // wx.js adds tide, wind, sea, rail and sun lines here
+  let tickerSig = '';
+  function renderTicker() {
+    if (!TV) return;
+    const items = [];
+    const add = (cls, label, text) => items.push(`<span class="ti ${cls}"><b>${esc(label)}</b> ${esc(text)}</span>`);
+    for (const r of state.roads.filter((x) => x.kind === 'closure')) add('x', '✕ CLOSED', `${r.roadLabel}${r.milepost ? ' MP ' + r.milepost : ''}: ${r.headline.slice(0, 120)}`);
+    for (const r of state.roads.filter((x) => x.kind === 'collision')) add('a', '! INCIDENT', `${r.roadLabel}: ${r.headline.slice(0, 120)}`);
+    const allZones = new Set(Object.values(state.zonesByTown).flat());
+    for (const a of state.nws.filter((x) => (x.affectedZones || []).some((z) => allZones.has(z))))
+      add('a', `⚠ ${a.event.toUpperCase()}`, `until ${fmtWhen(a.ends || a.expires)}`);
+    const t = window.htTicker;
+    if (t.rail) add('r', '⚠ RAIL', t.rail);
+    if (t.sea) add('c', 'BAR', t.sea);
+    for (const r of state.travel || []) if (r.avg && r.now > r.avg * 1.25) add('a', 'SLOW', `${r.name.replace(/^\w+\s/, '')} ${r.now} min (normal ${r.avg})`);
+    const work = state.roads.filter((x) => x.kind === 'work' || x.kind === 'other').length;
+    if (work) add('w', `△ ${work}`, 'road work zones and alerts in the area');
+    if (t.tide) add('c', 'TIDE', t.tide);
+    if (t.wind) add('c', 'WIND', t.wind);
+    if (t.sun) add('c', 'SUN', t.sun);
+    if (!state.roads.some((x) => x.kind === 'closure' || x.kind === 'collision')) add('ok', 'ROADS', 'no closures or collisions reported');
+    const html = items.join('<i class="sep">◆</i>');
+    if (html === tickerSig) return; // unchanged: don't restart the scroll
+    tickerSig = html;
+    const track = $('#ticker');
+    track.innerHTML = `<div class="tk">${html}<i class="sep">◆</i></div><div class="tk">${html}<i class="sep">◆</i></div>`;
+    const w = track.firstElementChild.getBoundingClientRect().width;
+    track.style.animationDuration = `${Math.max(20, w / 90)}s`; // about 90 px a second
+  }
+  window.htTickerRefresh = () => { clearTimeout(renderTicker._t); renderTicker._t = setTimeout(renderTicker, 400); };
+  if (TV) {
+    setInterval(renderTicker, 60 * 1000);
+    // the side panel scrolls down slowly, rests at the bottom, then starts again from the top
+    let hold = 0;
+    setInterval(() => {
+      const p = $('#panel');
+      if (p.scrollHeight <= p.clientHeight + 4) return;
+      if (hold > 0) { hold--; return; }
+      if (p.scrollTop + p.clientHeight >= p.scrollHeight - 2) { hold = 60; setTimeout(() => { p.scrollTop = 0; hold = 60; }, 3000); return; }
+      p.scrollTop += 1;
+    }, 50);
+  }
+
   loadCameras(); // the list only; images wait for a click
   // rail crossings (the collector refreshes this from OpenStreetMap once a week)
   getJson('data/crossings.json').then((j) => setSource('crossings', { type: 'FeatureCollection',
