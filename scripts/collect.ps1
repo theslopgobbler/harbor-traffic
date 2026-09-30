@@ -254,6 +254,27 @@ try {
     "marine: waves $($marine.buoy.waveFt) ft, bar $($marine.bar.conditions)"
 } catch { "marine failed: $($_.Exception.Message)" }
 
+# ---------- rail crossings from OpenStreetMap: once a week is plenty (they rarely change) ----------
+$crossFile = Join-Path $dataDir 'crossings.json'
+$crossOld = -not (Test-Path $crossFile) -or ((Get-Date) - (Get-Item $crossFile).LastWriteTime).TotalDays -gt 7 -or
+    ((Get-Content $crossFile -Raw) -match '"crossings":\s*\[\s*\]')
+if ($crossOld) {
+    $q = '[out:json][timeout:90];node["railway"="level_crossing"](46.6,-124.45,47.2,-122.8)->.c;.c out body;way(bn.c)[highway];out body;'
+    foreach ($server in 'https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter') {
+        try {
+            $r = Invoke-RestMethod -Method Post -Uri $server -Body @{ data = $q } -UserAgent 'harbor-traffic/1.0 (traffic.harborevents.org)' -Headers @{ Accept = 'application/json' } -TimeoutSec 120
+            $roadOf = @{}
+            foreach ($w in @($r.elements | Where-Object type -eq 'way')) {
+                $nm = if ($w.tags.name) { $w.tags.name } elseif ($w.tags.ref) { $w.tags.ref } else { $null }
+                if ($nm) { foreach ($nd in $w.nodes) { if (-not $roadOf["$nd"]) { $roadOf["$nd"] = $nm } } }
+            }
+            $cx = @($r.elements | Where-Object type -eq 'node' | ForEach-Object {
+                [ordered]@{ id = $_.id; lat = [math]::Round($_.lat, 6); lon = [math]::Round($_.lon, 6); road = $roadOf["$($_.id)"]; kind = 'level_crossing' } })
+            if ($cx.Count) { Save 'crossings.json' ([ordered]@{ source = 'OpenStreetMap contributors (ODbL)'; updated = $now.ToString('o'); crossings = $cx }); "$($cx.Count) rail crossings"; break }
+        } catch { "crossings from $server failed: $($_.Exception.Message.Split("`n")[0])" }
+    }
+}
+
 # compact history line for the "worst times" report:
 # a = active alerts, f = I-5 sensors per level [open, moderate, heavy, stop-and-go] by direction, tt = travel minutes by route id
 $line = [ordered]@{
