@@ -15,9 +15,45 @@ const AIR_SOURCES = [
 ];
 let air = { at: 0, body: null, source: null, tried: 0 };
 let airReport = [];
-async function refreshAir() {
+
+// OpenSky Network, used first when its credentials are set as Worker secrets (OPENSKY_CLIENT_ID and
+// OPENSKY_CLIENT_SECRET). It accepts Cloudflare's servers because the account identifies us. Its replies
+// don't include aircraft type or the military flag, so those come from call signs only.
+let osToken = { value: null, until: 0 };
+async function openSky(env) {
+  if (!env.OPENSKY_CLIENT_ID || !env.OPENSKY_CLIENT_SECRET) throw new Error('not set up (no secrets)');
+  if (!osToken.value || Date.now() > osToken.until) {
+    const t = await fetch('https://auth.opensky-network.org/auth/realms/opensky-network/protocol/openid-connect/token', {
+      method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `grant_type=client_credentials&client_id=${encodeURIComponent(env.OPENSKY_CLIENT_ID)}&client_secret=${encodeURIComponent(env.OPENSKY_CLIENT_SECRET)}`
+    });
+    if (!t.ok) throw new Error(`login HTTP ${t.status}`);
+    const tj = await t.json();
+    osToken = { value: tj.access_token, until: Date.now() + ((tj.expires_in || 1800) - 60) * 1000 };
+  }
+  const r = await fetch('https://opensky-network.org/api/states/all?lamin=46.5&lomin=-124.6&lamax=48&lomax=-122.7&extended=1',
+    { headers: { Authorization: `Bearer ${osToken.value}` } });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const j = await r.json();
+  // OpenSky's arrays -> the same shape as the ADS-B feeds (feet, knots, feet per minute)
+  return (j.states || []).map((s) => ({
+    hex: s[0], flight: (s[1] || '').trim(), lon: s[5], lat: s[6],
+    alt_baro: s[8] ? 'ground' : s[7] != null ? Math.round(s[7] * 3.28084) : null,
+    gs: s[9] != null ? s[9] * 1.94384 : null, track: s[10], baro_rate: s[11] != null ? Math.round(s[11] * 196.85) : null,
+    squawk: s[14], category: s[17] >= 2 && s[17] <= 8 ? `A${s[17] - 1}` : null
+  })).filter((a) => a.lat != null && a.lon != null);
+}
+
+async function refreshAir(env) {
   airReport = [];
   air.tried = Date.now();
+  try {
+    const list = await openSky(env);
+    const at = Date.now();
+    air = { at, tried: at, source: 'OpenSky', body: JSON.stringify({ ac: list, source: 'OpenSky', at: new Date(at).toISOString() }) };
+    airReport.push(`OpenSky: OK, ${list.length} aircraft`);
+    return;
+  } catch (e) { airReport.push(`OpenSky: ${e.message}`); }
   for (const s of AIR_SOURCES) {
     try {
       const up = await fetch(s.url, { headers: UA });
@@ -75,7 +111,7 @@ async function refreshBuses() {
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
     const cors = {
       'Access-Control-Allow-Origin': ALLOWED.includes(origin) ? origin : ALLOWED[0],
@@ -87,12 +123,13 @@ export default {
     const path = new URL(request.url).pathname;
 
     if (path === '/debug') {
-      await Promise.all([refreshAir(), refreshBuses()]);
+      await Promise.all([refreshAir(env), refreshBuses()]);
       return new Response([...airReport, `serving aircraft from: ${air.source || 'nothing yet'}`, busReport].join('\n'),
         { headers: { ...cors, 'Content-Type': 'text/plain' } });
     }
     if (path === '/aircraft') {
-      if (Date.now() - air.tried > 15000) await refreshAir();
+      // OpenSky's free allowance (4,000 a day) covers one check every 30 s; the others every 15 s
+      if (Date.now() - air.tried > (air.source === 'OpenSky' ? 30000 : 15000)) await refreshAir(env);
       return json(air.body || '{"ac":[]}');
     }
     if (path === '/buses') {

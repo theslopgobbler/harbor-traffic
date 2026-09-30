@@ -127,7 +127,7 @@
         ${a._sit.state === 'INBOUND' ? ' · TO ' + esc(a._sit.field.id) : a._sit.state === 'OUTBOUND' ? ' · FROM ' + esc(a._sit.field.id) : ''}</div></li>`).join('')
       : '<li class="empty">NO LOW AIRCRAFT IN THE AREA</li>';
     const age = updated ? Math.round((Date.now() - Date.parse(updated)) / 60000) : null;
-    note.textContent = live ? `Live ADS-B positions (${liveSource}), refreshed every 15 seconds.`
+    note.textContent = live ? `Live ADS-B positions (${liveSource}), refreshed about every 30 seconds.`
       : `ADS-B positions (adsb.lol) from the last collector run${age != null ? `, ${age} min ago` : ''}.${C.airRelay ? ' The live relay isn\'t answering right now.' : ''}`;
     $('#nAir').textContent = flagged.length || '';
     window.htTicker = window.htTicker || {};
@@ -181,5 +181,5 @@
   setOn(on);
 
   load();
-  setInterval(load, C.airRelay ? 15000 : 60000);
+  setInterval(load, C.airRelay ? 30000 : 60000); // the relay refreshes about every 30 s
 })();
