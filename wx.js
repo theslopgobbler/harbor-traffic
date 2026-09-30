@@ -626,6 +626,46 @@
     : t === 36 ? ['SAILING', '#5f9c8b'] : t === 37 ? ['PLEASURE', '#5f9c8b'] : ['VESSEL', '#8fa8a8'];
   const shipMarkers = [];
   let shipList = [];
+  const CLOSE_Z = 12.5; // from here in, ships are drawn as top-down outlines at roughly their real size
+
+  // top-down ship outlines, bow up, drawn in a 20 x 100 box (length along the box)
+  function shipOutline(type, color) {
+    const hull = `<path d="M10 0 C15 8 18 18 18 30 L18 94 Q18 100 12 100 L8 100 Q2 100 2 94 L2 30 C2 18 5 8 10 0 Z" fill="rgba(2,8,7,.75)" stroke="${color}" stroke-width="1.4" vector-effect="non-scaling-stroke"/>`;
+    const s = (d) => `<path d="${d}" fill="none" stroke="${color}" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+    const box = (x, y, w, h, o = 0.25) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${color}" fill-opacity="${o}" stroke="${color}" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+    if (type >= 70 && type <= 79) // cargo: hatch covers, bridge aft
+      return hull + [22, 34, 46, 58, 70].map((y) => box(5, y, 10, 9, 0.12)).join('') + box(4, 82, 12, 9, 0.35);
+    if (type >= 80 && type <= 89) // tanker: pipe run down the deck, manifold, bridge aft
+      return hull + s('M10 14 L10 80') + s('M5 48 L15 48') + `<circle cx="10" cy="48" r="2" fill="none" stroke="${color}" vector-effect="non-scaling-stroke"/>` + box(4, 82, 12, 9, 0.35);
+    if ([31, 32, 52].includes(type)) // tug: short and beamy, cabin forward, towing bitt aft
+      return `<path d="M10 20 C18 24 19 34 19 46 L19 86 Q19 96 10 96 Q1 96 1 86 L1 46 C1 34 2 24 10 20 Z" fill="rgba(2,8,7,.75)" stroke="${color}" stroke-width="1.4" vector-effect="non-scaling-stroke"/>` + box(5, 34, 10, 22, 0.3) + `<circle cx="10" cy="78" r="2.5" fill="none" stroke="${color}" vector-effect="non-scaling-stroke"/>`;
+    if (type === 30) // fishing: wheelhouse forward, outrigger booms
+      return hull + box(5, 24, 10, 16, 0.3) + s('M2 50 L-10 64 M18 50 L30 64') + s('M10 60 L10 90');
+    if (type >= 60 && type <= 69) // passenger: stacked decks
+      return hull + box(4, 22, 12, 66, 0.12) + box(6, 30, 8, 50, 0.2);
+    return hull + box(5, 60, 10, 18, 0.25); // anything else: small cabin
+  }
+  // how many screen pixels a ship's length covers at the current zoom
+  const metersToPx = (m, lat) => m / (156543.03 * Math.cos(lat * Math.PI / 180) / 2 ** map.getZoom());
+  function drawShip(el, s) {
+    const [, color] = SHIP_KIND(s.type);
+    const dir = s.heading ?? s.cog ?? 0;
+    const big = (s.lengthM || 0) >= 100 || (s.type >= 70 && s.type <= 89);
+    const small = s.classB || ((s.lengthM || 0) > 0 && s.lengthM < 30);
+    if (map.getZoom() >= CLOSE_Z) {
+      // real size when we know it, but never so small it can't be seen or tapped
+      const len = Math.max(26, Math.min(220, metersToPx(s.lengthM || (big ? 150 : small ? 15 : 40), s.lat)));
+      el.style.width = el.style.height = len + 'px';
+      el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${dir}deg)">${shipOutline(s.type, color)}</svg>`;
+      return;
+    }
+    const px = big ? 20 : small ? 12 : 16;
+    el.style.width = el.style.height = px + 'px';
+    el.innerHTML = stopped(s)
+      ? `<svg viewBox="0 0 16 16"><polygon points="8,2 14,8 8,14 2,8" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6"/></svg>`
+      : `<svg viewBox="0 0 16 16" style="transform:rotate(${dir}deg)"><polygon points="8,1 12.5,6 12.5,15 3.5,15 3.5,6" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6" stroke-linejoin="miter"/><line x1="8" y1="4" x2="8" y2="11" stroke="${color}" stroke-width="1"/></svg>`;
+  }
+  map.on('zoomend', () => shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)));
   const escS = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const stopped = (s) => s.status === 1 || s.status === 5 || (s.sog ?? 0) < 0.5; // at anchor, moored, or not moving
   async function loadShips() {
@@ -636,22 +676,19 @@
     shipMarkers.splice(0).forEach((m) => m.remove());
     for (const s of shipList) {
       const [kind, color] = SHIP_KIND(s.type);
-      const big = (s.lengthM || 0) >= 100 || (s.type >= 70 && s.type <= 89);
       const small = s.classB || ((s.lengthM || 0) > 0 && s.lengthM < 30);
-      const px = big ? 20 : small ? 12 : 16;
       const el = document.createElement('div');
       el.className = 'ship-mk' + (small ? ' small' : '');
-      el.style.width = el.style.height = px + 'px';
+      drawShip(el, s);
       const dir = s.heading ?? s.cog ?? 0;
-      el.innerHTML = stopped(s)
-        ? `<svg viewBox="0 0 16 16"><polygon points="8,2 14,8 8,14 2,8" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6"/></svg>`
-        : `<svg viewBox="0 0 16 16" style="transform:rotate(${dir}deg)"><polygon points="8,1 12.5,6 12.5,15 3.5,15 3.5,6" fill="rgba(2,8,7,.7)" stroke="${color}" stroke-width="1.6" stroke-linejoin="miter"/><line x1="8" y1="4" x2="8" y2="11" stroke="${color}" stroke-width="1"/></svg>`;
       el.title = s.name || 'Vessel';
       const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
       const html = `<h3>${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
         <p><span style="color:${color}">${kind}</span> · ${stopped(s) ? (s.status === 1 ? 'AT ANCHOR' : s.status === 5 ? 'MOORED' : 'STOPPED') : `${(s.sog ?? 0).toFixed(1)} KT · ${compass(dir)} ${Math.round(dir)}°`}</p>
         <div class="m">${s.dest ? 'BOUND FOR ' + escS(s.dest.toUpperCase()) + ' · ' : ''}${s.lengthM ? s.lengthM + ' M · ' : ''}${ago != null ? `SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
-      shipMarkers.push(new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).setPopup(new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html)).addTo(map));
+      const mk = new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).setPopup(new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html)).addTo(map);
+      mk._ship = s;
+      shipMarkers.push(mk);
     }
     renderShipList();
     window.htDeclutter?.();
