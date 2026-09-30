@@ -233,12 +233,13 @@
   for (const t of C.towns) {
     const el = document.createElement('div');
     el.className = 'wx-mk';
+    if (t.minor) el.dataset.minor = '1';
     el.innerHTML = `<span class="n">${esc(t.name)}</span><span class="v">--°</span><span class="e">---</span>`;
     const dot = document.createElement('div');
     dot.className = 'town-dot';
     wxMarkers[t.id] = { el, dot, minor: !!t.minor,
-      m: new maplibregl.Marker({ element: el, anchor: t.a || 'center', offset: gap(t.a) }).setLngLat([t.lon, t.lat]).addTo(map),
-      d: t.a ? new maplibregl.Marker({ element: dot }).setLngLat([t.lon, t.lat]).addTo(map) : null };
+      m: new maplibregl.Marker({ element: el, anchor: t.a || 'left', offset: gap(t.a || 'left') }).setLngLat([t.lon, t.lat]).addTo(map),
+      d: new maplibregl.Marker({ element: dot }).setLngLat([t.lon, t.lat]).addTo(map) };
   }
 
   const nws = async (url) => {
@@ -438,8 +439,63 @@
       dot.style.display = hide ? 'none' : '';
     }
     groupAlerts();
+    declutterSoon();
   }
   map.on('zoomend', showByZoom);
+
+  // ---------------- keep labels from overlapping ----------------
+  // Labels are placed in priority order. Each takes its own spot if it's free, otherwise the nearest free
+  // nudge around it (the town's dot stays at the true location), otherwise it's hidden. Markers, the map
+  // buttons and the legend count as things to stay off of. Uses the CSS "translate" property, which
+  // stacks on top of the transform MapLibre uses to position markers.
+  const LABELS = [
+    ['.rg-chip', 0], ['.bar-lbl', 1], ['.wx-mk:not(.rw-mk):not(.br-chip):not(.rg-chip)', 2],
+    ['.br-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
+  ];
+  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .town-dot, .me, .map-tools .tool, .maplibregl-ctrl-group, .legend';
+  function declutter() {
+    const wrapBox = map.getContainer().getBoundingClientRect();
+    const shown = (el) => el.offsetParent !== null && getComputedStyle(el).display !== 'none';
+    const placed = [];
+    for (const o of document.querySelectorAll(OBSTACLES)) {
+      if (!shown(o)) continue;
+      const r = o.getBoundingClientRect();
+      if (r.width && r.height) placed.push(r);
+    }
+    const hits = (r) => placed.some((p) => r.left < p.right + 2 && r.right > p.left - 2 && r.top < p.bottom + 2 && r.bottom > p.top - 2);
+    const inside = (r) => r.left >= wrapBox.left - 40 && r.right <= wrapBox.right + 40 && r.top >= wrapBox.top - 20 && r.bottom <= wrapBox.bottom + 20;
+    const labels = [];
+    for (const [sel, pri] of LABELS) {
+      document.querySelectorAll(sel).forEach((el) => {
+        el.style.translate = ''; el.style.visibility = '';
+        // minor towns go after the main ones
+        if (shown(el)) labels.push({ el, pri: pri === 2 && el.dataset.minor ? 5 : pri });
+      });
+    }
+    labels.sort((a, b) => a.pri - b.pri);
+    for (const { el } of labels) {
+      const r0 = el.getBoundingClientRect();
+      const w = r0.width, h = r0.height, dx = w / 2 + 6, dy = h + 3;
+      const tries = [[0, 0], [0, -dy], [0, dy], [dx, 0], [-dx, 0], [dx, -dy], [-dx, -dy], [dx, dy], [-dx, dy],
+        [0, -2 * dy], [0, 2 * dy], [2 * dx, 0], [-2 * dx, 0]];
+      let ok = false;
+      for (const [x, y] of tries) {
+        const r = { left: r0.left + x, right: r0.right + x, top: r0.top + y, bottom: r0.bottom + y };
+        if ((x || y) && !inside(r)) continue;
+        if (!hits(r)) {
+          if (x || y) el.style.translate = `${x}px ${y}px`;
+          placed.push(r); ok = true; break;
+        }
+      }
+      if (!ok) el.style.visibility = 'hidden';
+    }
+  }
+  let declutterTimer = 0;
+  const declutterSoon = () => { clearTimeout(declutterTimer); declutterTimer = setTimeout(declutter, 60); };
+  map.on('moveend', declutterSoon);
+  window.addEventListener('resize', declutterSoon);
+  window.htDeclutter = declutterSoon; // wx.js calls this when its labels change
+  setInterval(declutter, 5000);        // text inside labels changes as data arrives
 
   // ---------------- overview (zoomed out): one summary per region ----------------
   const CODE_RANK = { TSTM: 9, ICE: 8, SNOW: 7, RAIN: 5, SHWR: 4, FOG: 3, WIND: 3, HAZE: 2, CLDY: 1, PCLD: 1, SUN: 0, CLR: 0, '---': -1 };
@@ -560,13 +616,24 @@
   const linePopup = new maplibregl.Popup({ offset: 6, maxWidth: '320px' });
   map.on('click', (e) => {
     if (!map.getLayer('inc-glow')) return;
+    // a tap on a marker also reaches the map; the marker handles it, so don't open a second popup
+    if (e.originalEvent?.target?.closest?.('.maplibregl-marker')) return;
     const box = [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]];
     const inc = map.queryRenderedFeatures(box, { layers: ['inc-glow', 'inc'] });
     // closures first when stretches overlap
     const hit = inc.sort((a, b) => (b.properties.kind === 'closure') - (a.properties.kind === 'closure'))[0];
     if (hit) {
-      const r = state.roads.find((x) => x.id === hit.properties.id);
-      if (r) return linePopup.setLngLat(e.lngLat).setHTML(alertHtml(r)).addTo(map);
+      // a stretch opens its own marker's popup, so there's only ever one
+      const rm = roadMarkers.find((x) => x.id === hit.properties.id);
+      if (!rm) return;
+      if (rm.el.style.display === 'none') {
+        // merged into a group: zoom in until it stands alone, then open it
+        const r = state.roads.find((x) => x.id === hit.properties.id);
+        const b = new maplibregl.LngLatBounds(); (r?.path || [[r.lon, r.lat]]).forEach((p) => b.extend(p));
+        map.once('moveend', () => setTimeout(() => { if (!rm.m.getPopup().isOpen()) rm.m.togglePopup(); }, 50));
+        map.fitBounds(b, { padding: fitPad(80), maxZoom: 13, minZoom: 10.6 });
+      } else if (!rm.m.getPopup().isOpen()) rm.m.togglePopup();
+      return;
     }
     const fl = map.queryRenderedFeatures(box, { layers: ['flow-glow', 'flow'] })[0];
     if (fl) {
@@ -622,7 +689,7 @@
       else { el.className = `inc-mk ${r.kind}`; el.innerHTML = triSvg(r.kind === 'collision' ? '!' : ''); }
       const at = Array.isArray(r.path) && r.path.length > 1 ? midpoint(r.path) : [r.lon, r.lat];
       const m = new maplibregl.Marker({ element: el }).setLngLat(at).setPopup(popup(alertHtml(r))).addTo(map);
-      roadMarkers.push({ el, m, kind: r.kind });
+      roadMarkers.push({ el, m, kind: r.kind, id: r.id });
     }
     showByZoom();
     renderOverview();

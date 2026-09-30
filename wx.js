@@ -666,6 +666,7 @@
       el.innerHTML = `<b>${bay.name}</b><span class="${tideInfo.rising ? 'fl' : 'eb'}">${word} ${tideInfo.rate.toFixed(1)} FT/H</span>`;
     }
     resetCurrents();
+    window.htDeclutter?.();
   }
   const barEl = document.createElement('div');
   barEl.className = 'bar-lbl';
@@ -675,6 +676,7 @@
     barEl.textContent = `BAR ${sea.bar.split(',')[0].toUpperCase()}`;
     barEl.style.color = sea.color;
     barEl.style.borderColor = sea.color;
+    window.htDeclutter?.();
     const src = map.getSource('barline');
     if (src) { src.setData(barGeo()); map.setPaintProperty('barline', 'line-color', sea.color); }
   }
