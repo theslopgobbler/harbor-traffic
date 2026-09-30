@@ -462,7 +462,7 @@
   // stacks on top of the transform MapLibre uses to position markers.
   const LABELS = [
     ['.rg-chip', 0], ['.bar-lbl', 1], ['.wx-mk:not(.rw-mk):not(.br-chip):not(.rg-chip)', 2],
-    ['.br-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
+    ['.br-chip', 3], ['.rail-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
   ];
   const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .town-dot, .me, .map-tools .tool, .maplibregl-ctrl-group, .legend';
   function declutter() {
@@ -890,7 +890,7 @@
   map.on('click', 'crossings', (e) => {
     const road = e.features[0]?.properties.road;
     new maplibregl.Popup({ offset: 8 }).setLngLat(e.lngLat)
-      .setHTML(`<h3>RAIL CROSSING</h3><p>${esc(road || 'Road crossing')}</p><div class="m">Puget Sound &amp; Pacific Railroad. Trains can block this crossing; no live train positions are published.</div>`).addTo(map);
+      .setHTML(`<h3>RAIL CROSSING</h3><p>${esc(road || 'Road crossing')}</p>${window.htRailLevel ? `<p style="color:#c28bff">⚠ RAIL ACTIVITY ${window.htRailLevel === 2 ? 'LIKELY' : 'POSSIBLE'}: a large ship is ${window.htRailLevel === 2 ? 'at berth' : 'moving'} in the harbor.</p>` : ''}<div class="m">Puget Sound &amp; Pacific Railroad. Trains can block this crossing; no live train positions are published.</div>`).addTo(map);
   });
   map.on('mouseenter', 'crossings', () => (map.getCanvas().style.cursor = 'pointer'));
   map.on('mouseleave', 'crossings', () => (map.getCanvas().style.cursor = ''));
