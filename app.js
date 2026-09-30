@@ -671,8 +671,14 @@
     map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
   }
-  // closure: a plain red X, same line weight as the alert triangles
-  const X_SVG = `<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 5 L23 23 M23 5 L5 23" fill="none" stroke="${K.red}" stroke-width="3.2" stroke-linecap="square"/></svg>`;
+  // closure: a pixel-art X on an 11x11 grid, two blocks thick, hard edges
+  const X_RED = '#d11a2a';
+  const X_SVG = (() => {
+    const cells = new Set();
+    for (let i = 0; i < 11; i++) for (const x of [i, i + 1, 10 - i, 9 - i]) if (x >= 0 && x <= 10) cells.add(`${x},${i}`);
+    const rects = [...cells].map((c) => { const [x, y] = c.split(','); return `<rect x="${x}" y="${y}" width="1" height="1"/>`; }).join('');
+    return `<svg viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><g fill="${X_RED}">${rects}</g></svg>`;
+  })();
   // hollow orange warning triangle for every other alert
   const triSvg = (mark) => `<svg viewBox="0 0 28 26" aria-hidden="true"><polygon points="14,2 26,24 2,24" fill="rgba(0,0,0,.55)"
     stroke="${K.orange}" stroke-width="2.6" stroke-linejoin="miter"/>${mark ? `<text x="14" y="21" text-anchor="middle" fill="${K.orange}"
