@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T09:20:06.0163131+00:00",
+  "updated": "2026-09-30T09:37:41.2528691+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,11 +10,11 @@
     "waterF": 57.4
   },
   "bar": {
-    "issued": "2026-09-30T01:51:00+00:00",
-    "text": "Combined seas 6 to 8 ft, subsiding to 4 to 6 ft by Wednesday morning. Bar conditions moderate, becoming light. Maximum ebb currents will occur around 700 PM this evening, 715 AM Wednesday, and 745 PM Wednesday. The evening ebb tonight will be very strong. The evening ebb on Wednesday will be strong.",
+    "issued": "2026-09-30T09:34:00+00:00",
+    "text": "Combined seas 6 to 8 ft, subsiding to 4 to 6 ft Wednesday. Bar conditions moderate, becoming light. Maximum ebb currents will occur around 715 AM Wednesday, 745 PM Wednesday, and 815 AM Thursday. The Wednesday evening ebb will be strong.",
     "conditions": "moderate, becoming light",
-    "seas": "6 to 8 ft, subsiding to 4 to 6 ft by Wednesday morning",
-    "ebb": "The evening ebb tonight will be very strong"
+    "seas": "6 to 8 ft, subsiding to 4 to 6 ft Wednesday",
+    "ebb": "evening ebb will be strong"
   },
   "alerts": []
 }
