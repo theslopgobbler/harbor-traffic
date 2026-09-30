@@ -143,7 +143,7 @@ body.fx-off .bay-lbl, body.fx-off .bar-lbl, body.overview-mode .bay-lbl { displa
 .tool .stamp { color: var(--dim); font-size: 10px; }
 /* line-drawn button icons ("btn-ic", not "ti": that name belongs to the ticker) */
 .tool svg.btn-ic { width: 24px; height: 24px; vertical-align: -6px; color: inherit; }
-.tool svg.btn-ic * { stroke-width: 1.9; }
+.tool svg.btn-ic * { stroke-width: 1.1; } /* thin, like the radar and effects symbols */
 canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 
 /* layout */
