@@ -311,6 +311,22 @@ if ($aisKey) {
     "ships: $($keep.Count) on the map ($heard messages this run)"
 }
 
+# ---------- aircraft (ADS-B via adsb.lol, no key): low and local only; airliners at cruise don't matter here ----------
+try {
+    $ac = Invoke-RestMethod 'https://api.adsb.lol/v2/point/47.2/-123.65/55' -UserAgent 'harbor-traffic/1.0 (traffic.harborevents.org)' -TimeoutSec 30
+    $planes = @($ac.ac | Where-Object {
+        $_.lat -and $_.lon -and $_.lat -gt 46.5 -and $_.lat -lt 48.0 -and $_.lon -gt -124.6 -and $_.lon -lt -122.7 -and
+        ($_.alt_baro -eq 'ground' -or ([double]$_.alt_baro) -le 15000)
+    } | ForEach-Object { [ordered]@{
+        hex = $_.hex; flight = "$($_.flight)".Trim(); reg = $_.r; type = $_.t; cat = $_.category
+        alt = if ($_.alt_baro -eq 'ground') { 0 } else { [int]$_.alt_baro }; gs = $_.gs; track = $_.track; rate = $_.baro_rate
+        lat = [math]::Round($_.lat, 5); lon = [math]::Round($_.lon, 5); squawk = $_.squawk; emergency = $_.emergency
+        mil = [bool](([int]$_.dbFlags) -band 1)
+    } })
+    Save 'aircraft.json' ([ordered]@{ updated = $now.ToString('o'); source = 'ADS-B via adsb.lol'; aircraft = $planes })
+    "aircraft: $($planes.Count) low and local"
+} catch { "aircraft failed: $($_.Exception.Message.Split("`n")[0])" }
+
 # ---------- rail crossings from OpenStreetMap: once a week is plenty (they rarely change) ----------
 $crossFile = Join-Path $dataDir 'crossings.json'
 $crossOld = -not (Test-Path $crossFile) -or ((Get-Date) - (Get-Item $crossFile).LastWriteTime).TotalDays -gt 7 -or

@@ -495,7 +495,7 @@
     ['.rg-chip', 0], ['.bar-lbl', 1], ['.wx-mk:not(.rw-mk):not(.br-chip):not(.rg-chip)', 2],
     ['.br-chip', 3], ['.rail-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
   ];
-  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .town-dot, .me, .map-tools .tool, .maplibregl-ctrl-group, .legend';
+  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .air-mk, .town-dot, .me, .map-tools .tool, .maplibregl-ctrl-group, .legend';
   function declutter() {
     const wrapBox = map.getContainer().getBoundingClientRect();
     const shown = (el) => el.offsetParent !== null && getComputedStyle(el).display !== 'none';
@@ -954,6 +954,7 @@
       add('a', `⚠ ${a.event.toUpperCase()}`, `until ${fmtWhen(a.ends || a.expires)}`);
     const t = window.htTicker;
     if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
+    if (t.air) add('a', '✈ AIR', t.air);
     if (t.rail) add('r', '⚠ RAIL', t.rail);
     if (t.sea) add('c', 'BAR', t.sea);
     for (const r of state.travel || []) if (r.avg && r.now > r.avg * 1.25) add('a', 'SLOW', `${r.name.replace(/^\w+\s/, '')} ${r.now} min (normal ${r.avg})`);
