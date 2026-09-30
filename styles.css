@@ -267,6 +267,8 @@ details summary { cursor: pointer; }
   background: rgba(2,8,7,.7); border: 1px solid rgba(0,229,255,.3); }
 .nav-tools .tool[hidden] { display: none; }
 body.tv .nav-tools { display: none; }
+.list li.tsunami { background: rgba(255,42,61,.12); border-color: var(--red); animation: workpulse 2s ease-in-out infinite; }
+#quakeAlerts:empty { display: none; }
 
 /* TV: region countdown bar and bottom ticker */
 .cycle-bar { display: none; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--cyan); box-shadow: var(--glow-c);
