@@ -1,7 +1,19 @@
 {
-  "updated": "2026-10-01T19:00:24.3811686+00:00",
+  "updated": "2026-10-01T19:20:34.2221493+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.90623,
+      "lon": -124.10738,
+      "sog": 0,
+      "cog": 318.7,
+      "heading": 316,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T19:20:34.2221493+00:00"
+    },
     {
       "mmsi": 367310520,
       "name": "JAMES T",
@@ -13,18 +25,6 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-01T17:42:53.9009193+00:00"
-    },
-    {
-      "mmsi": 338142000,
-      "name": "R/V ZEPHYR",
-      "lat": 46.66423,
-      "lon": -124.23304,
-      "sog": 9,
-      "cog": 349.8,
-      "heading": 350,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T16:20:23.6799464+00:00"
     }
   ]
 }
