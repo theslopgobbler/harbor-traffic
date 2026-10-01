@@ -304,6 +304,27 @@
     const s = northSouth ? t : (t + 45) % 90;
     return s < 40 ? 'go' : s < 44 ? 'slow' : 'stop';
   }
+  // turn signals: looking up to 100 m ahead along its route line, a bend of more than 55° within that stretch is a
+  // turn coming up, and the chased bus blinks that side (gentle highway curves don't count)
+  function turnAhead(b) {
+    if (!b?._snap) return null;
+    const sh = b._snap.sh, s = b._along ?? b._obs ?? 0;
+    const now = bearing(along(sh, s), along(sh, s + 20));
+    for (let d = 20; d <= 100; d += 10) {
+      const later = bearing(along(sh, s + d), along(sh, s + d + 20));
+      const turn = ((later - now + 540) % 360) - 180; // + right, - left
+      if (Math.abs(turn) > 55) return turn > 0 ? 'r' : 'l';
+    }
+    return null;
+  }
+  function signalTurn() {
+    if (!chase || !follow) return;
+    const mk = markers.get(follow.id); if (!mk) return;
+    const side = mk._rolling || mk._bus.mph >= 2 ? turnAhead(mk._bus) : null;
+    const el = mk.getElement();
+    el.classList.toggle('turn-l', side === 'l');
+    el.classList.toggle('turn-r', side === 'r');
+  }
   // the tilted view looks far up the road: things on screen within 2 km of the bus, plus anything right around it
   function inChaseView(here, p) {
     const d = mx(here, p);
@@ -447,15 +468,20 @@
     const main = b._snap.sh, i0 = b._snap.i, p = [b.lon, b.lat];
     const heading = b.mph >= 2 ? b.heading : null;
     let limit = main.d[main.d.length - 1];
+    const dirHere = i0 < main.c.length - 1 ? bearing(main.c[i0], main.c[i0 + 1]) : null;
     for (const r of [rt, rt + 'P']) for (const sh of shapesByRoute[r] || []) {
       if (sh === main) continue;
       const o = onLine(sh, p, null, heading, 40);
       if (!o) continue; // this version doesn't come by here
+      // only a version running along this same road the same way counts (not one crossing at an intersection,
+      // and not the other side of the street)
+      if (mx(main.c[i0], sh.c[o.i]) > 30) continue;
+      if (dirHere != null && o.i < sh.c.length - 1 && diff(bearing(sh.c[o.i], sh.c[o.i + 1]), dirHere) > 30) continue;
       // walk both lines forward together until they're more than 25 m apart
       let j = o.i;
       for (let k = i0; k < main.c.length && main.d[k] - main.d[i0] < 4000; k++) {
         while (j < sh.c.length - 1 && mx(main.c[k], sh.c[j + 1]) <= mx(main.c[k], sh.c[j])) j++;
-        if (mx(main.c[k], sh.c[j]) > 25) { limit = Math.min(limit, main.d[Math.max(i0, k - 1)]); break; }
+        if (mx(main.c[k], sh.c[j]) > 35) { limit = Math.min(limit, main.d[Math.max(i0, k - 1)]); break; }
       }
     }
     return limit;
@@ -496,6 +522,13 @@
         // (and hard-stopped at a split: up to it, or holding still if it's already there)
         else mk._s = Math.min(end, Math.max(mk._s, b._fork ?? end), mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
         b._along = mk._s;
+        // is the drawn bus actually rolling? (smoothed, so a moment's pause doesn't flicker) The chase sprite
+        // bobs only while it rolls and shows brake lights when it's standing still.
+        const moved = mk._prevS == null || dt <= 0 ? 0 : (mk._s - mk._prevS) / dt;
+        mk._prevS = mk._s;
+        mk._ds = (mk._ds || 0) * 0.85 + moved * 0.15;
+        const rolling = mk._ds > 0.6;
+        if (rolling !== mk._rolling) { mk._rolling = rolling; mk.getElement().classList.toggle('rolling', rolling); }
         pos = along(sh, mk._s);
       } else pos = [b.lon, b.lat];
       // a bus that jumped to a new line, or has none, eases over from where it was drawn
@@ -513,13 +546,14 @@
       }
     }
     chaseCamera(dt);
-    if (t - lastFollow > 250) { lastFollow = t; keepFollowing(); }
+    if (t - lastFollow > 250) { lastFollow = t; keepFollowing(); signalTurn(); }
   }
   requestAnimationFrame(glide);
+  window.htBusInternals = { markers, shapesByRoute }; // for checking from the browser console
   // for checking from the browser console: how many moving buses are matched to a route line
   window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
     return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden,
-      splitAhead: bs.filter((b) => b._snap).map((b) => `${busRoute(b)}/${b.id}: ${Math.round((b._fork ?? 0) - (b._obs ?? 0))} m`) }; };
+      splitAhead: bs.filter((b) => b._snap).map((b) => `${busRoute(b)}/${b.id}: ${Math.round((b._fork ?? 0) - (b._obs ?? 0))} m${turnAhead(b) ? ' turn ' + turnAhead(b) : ''}`) }; };
 
   // ---- stops: tap one for its next buses (live estimates plus the timetable) ----
   // a stop's route list says "20P" for the Port Industrial runs of route 20
@@ -682,7 +716,8 @@
     <rect x="5" y="4" width="14" height="4" fill="#020807"/>
     <text x="12" y="7.3" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="3.6" fill="#ffc400">${esc(rt)}</text>
     <rect x="5" y="9" width="14" height="5" fill="#0b2b2a"/><rect x="6" y="10" width="3" height="1" fill="#bff4ff" opacity=".7"/><rect x="6" y="11" width="1" height="1" fill="#bff4ff" opacity=".7"/>
-    <rect x="4" y="15" width="3" height="2" fill="${stopped ? '#ff2a3d' : '#8a1520'}"/><rect x="17" y="15" width="3" height="2" fill="${stopped ? '#ff2a3d' : '#8a1520'}"/>
+    <rect class="tl" x="4" y="15" width="3" height="2"/><rect class="tl" x="17" y="15" width="3" height="2"/>
+    <rect class="ts ts-l" x="4" y="17" width="2" height="1.5"/><rect class="ts ts-r" x="18" y="17" width="2" height="1.5"/>
     <rect x="9" y="15" width="6" height="2" fill="#020807" opacity=".6"/>
     <rect x="3" y="19" width="18" height="2" fill="#2b3b39"/>
     <rect x="4" y="21" width="4" height="2" fill="#000"/><rect x="16" y="21" width="4" height="2" fill="#000"/></svg>`;
