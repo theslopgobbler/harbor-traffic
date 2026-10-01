@@ -923,15 +923,14 @@
   }));
   $('#tab-roads').classList.add('on');
   handle.innerHTML = '<svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 11 L20 3 L36 11" fill="none" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/></svg>';
-  // the handle: tucked away (only the handle showing) or small → half; half → full; full → half.
-  // The ▾ in the corner tucks it away entirely. Swiping on the handle works too (down to lower, up to raise).
+  // the handle cycles: half → full → tucked away (only the handle showing) → half (small counts as half).
+  // Swiping on the handle works too (down to lower, up to raise).
   const setSheet = (s) => { panel.classList.remove('min', 'max', 'gone'); if (s) panel.classList.add(s); syncHandle(); };
   const sheetState = () => (['gone', 'min', 'max'].find((c) => panel.classList.contains(c)) || '');
   handle.addEventListener('click', () => {
     const s = sheetState();
-    setSheet(s === 'gone' || s === 'min' ? '' : s === 'max' ? '' : 'max');
+    setSheet(s === 'max' ? 'gone' : s === 'gone' ? '' : 'max');
   });
-  $('#sheetHide').addEventListener('click', () => setSheet('gone'));
   let swipeY = null;
   handle.addEventListener('touchstart', (e) => { swipeY = e.touches[0].clientY; }, { passive: true });
   handle.addEventListener('touchend', (e) => {

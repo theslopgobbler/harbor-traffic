@@ -521,10 +521,6 @@ body.tv .list .m { font-size: 14px; }
   .panel.gone > :not(.sheet-handle) { visibility: hidden; }
   .layout:has(.panel.gone) .map-tools { bottom: calc(40px + env(safe-area-inset-bottom)); }
   .layout:has(.panel.gone) .bus-bar { bottom: calc(96px + env(safe-area-inset-bottom)); }
-  .sheet-hide { display: grid; place-items: center; position: absolute; top: 0; right: 6px; width: 40px; height: 26px; padding: 0;
-    background: none; border: 0; color: var(--cyan); cursor: pointer; z-index: 1; }
-  .sheet-hide svg { width: 20px; height: 8px; }
-  .panel.gone .sheet-hide { display: none; }
   /* zoom and location buttons: halfway down the part of the map above the sheet */
   .maplibregl-ctrl-top-right { top: calc((100% - 38%) / 2); }
   .layout:has(.panel.min) .maplibregl-ctrl-top-right { top: calc((100% - 112px) / 2); }
@@ -536,7 +532,6 @@ body.tv .list .m { font-size: 14px; }
   .inst.zoomed { position: absolute; left: 0; top: 0; zoom: 2; z-index: 6; background: #030d0c;
     box-shadow: 0 0 0 1px var(--cyan), 0 6px 18px rgba(0,0,0,.6); }
 }
-@media (min-width: 761px) { .sheet-hide { display: none; } } /* (desktop has a side panel, nothing to tuck away) */
 /* hide/show the instrument panel: a small tab at the top edge of the map */
 .top-toggle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 4; width: 46px; height: 16px; padding: 0;
   display: grid; place-items: center; background: rgba(2,8,7,.8); border: 1px solid var(--line-2); border-top: 0; color: var(--cyan); cursor: pointer; }
