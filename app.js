@@ -167,6 +167,15 @@
         layout: { 'text-field': ['concat', '△ ', up('name'), '\n', ['to-string', ['get', 'ele_ft']], ' FT'],
           'text-font': font('r'), 'text-size': 10, 'text-anchor': 'top', 'text-letter-spacing': 0.1 },
         paint: { 'text-color': '#27c48d', 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
+      // street names, only zoomed well in: small and dim, along the street (lying flat on the road in the bus
+      // chase view, like road markings), well spaced, and dropped wherever they'd crowd; the highway number
+      // shields below win any space they both want
+      { id: 'street-names', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 15,
+        filter: ['has', 'name'],
+        layout: { 'symbol-placement': 'line', 'symbol-spacing': 380, 'text-field': up('name'), 'text-font': font('r'),
+          'text-size': ['interpolate', ['linear'], ['zoom'], 15, 9, 17, 11], 'text-letter-spacing': 0.12,
+          'text-max-angle': 30, 'text-padding': 6, 'text-pitch-alignment': 'map', 'text-rotation-alignment': 'map' },
+        paint: { 'text-color': '#8cc7ba', 'text-opacity': 0.85, 'text-halo-color': K.bg, 'text-halo-width': 1.6 } },
       { id: 'shields', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 8,
         filter: ['in', ['get', 'network'], ['literal', ['us-interstate', 'us-highway', 'us-state']]],
         layout: { 'symbol-placement': 'line', 'symbol-spacing': 320, 'text-field': ['get', 'ref'], 'text-font': font('b'),
