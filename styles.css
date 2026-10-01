@@ -152,6 +152,20 @@ body.no-roads .x-mk, body.no-roads .inc-mk { display: none !important; }
 button.go { background: var(--cyan) !important; border: 1px solid var(--cyan); color: #020807 !important; font: 700 11px/1 var(--mono); letter-spacing: .1em; padding: 0 8px; cursor: pointer; }
 .maplibregl-popup button.go { height: 26px; margin-top: 6px; }
 .stop-row button.go { height: 22px; margin: 0; font-size: 10px; }
+/* chase view: the followed bus is a pixel sprite standing on its spot, seen from behind; the far edge of the
+   tilted map fades into the dark like a game's draw distance */
+.bus-mk.chase .sprite { position: absolute; left: 50%; bottom: 50%; width: 66px; height: 69px; transform: translateX(-50%);
+  image-rendering: pixelated; filter: drop-shadow(0 0 6px var(--c)); }
+.bus-mk.chase .sprite svg { display: block; width: 100%; height: 100%; }
+.bus-mk.chase:not(.stopped) .sprite { animation: busbob .45s steps(2) infinite; }
+@keyframes busbob { 50% { transform: translate(-50%, -2px); } }
+.bus-mk.chase .tag { position: absolute; left: 50%; top: 50%; transform: translate(-50%, 4px); padding: 1px 5px; white-space: nowrap;
+  font: 700 10px/12px var(--mono); letter-spacing: .1em; color: #fff; background: rgba(2,8,7,.85); border: 1px solid; }
+.bus-mk.chase { z-index: 3; }
+body.chase canvas.fx { display: none; }
+body.chase .map-wrap::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 32%; z-index: 1; pointer-events: none;
+  background: linear-gradient(var(--bg) 0%, rgba(3,8,7,.6) 45%, transparent 100%); }
+.bus-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
 .bus-mk.sel .ic { filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px #00e5ff); }
 .stop-sec { margin-top: 7px; padding-bottom: 2px; font-size: 10px; color: var(--cyan); letter-spacing: .15em; border-bottom: 1px solid var(--line-2); }
 .stop-row { display: flex; align-items: center; gap: 4px; padding: 3px 0; font-size: 11px; }

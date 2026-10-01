@@ -321,7 +321,9 @@
   new ResizeObserver(size).observe(wrap);
   size();
   map.on('move', () => (dirty = true));
-  map.on('moveend', () => resetParticles());
+  // (chase view moves the camera every frame: weather effects and the sea pause until it ends)
+  const chasing = () => document.body.classList.contains('chase');
+  map.on('moveend', () => { if (!chasing()) resetParticles(); });
 
   function reproject() {
     for (const z of zones) {
@@ -402,7 +404,7 @@
   let last = 0;
   function frame(t) {
     requestAnimationFrame(frame);
-    if (t - last < 33 || document.hidden) return; // ~30 fps
+    if (t - last < 33 || document.hidden || document.body.classList.contains('chase')) return; // ~30 fps
     last = t;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
@@ -945,7 +947,7 @@
   let waterTimer = 0;
   const soon = () => { clearTimeout(waterTimer); waterTimer = setTimeout(rebuildWater, 250); };
   map.on('move', () => { waterDirty = true; clearTimeout(waterTimer); });
-  map.on('moveend', soon);
+  map.on('moveend', () => { if (!document.body.classList.contains('chase')) soon(); });
   map.on('sourcedata', (e) => { if (e.sourceId === 'omt' && e.tile && !map.isMoving()) soon(); });
 
   // bay current streaks
