@@ -218,7 +218,14 @@
   };
   map.on('move', readout);
   // when the map turns (following a bus heading-up), icons drawn at a compass heading turn back by the same amount
-  map.on('rotate', () => map.getContainer().style.setProperty('--brg', `${map.getBearing()}deg`));
+  // (at most 10 times a second and only when it's turned a bit: changing it makes the browser restyle every icon)
+  let brgSet = 0, brgAt = 0, brgTimer = 0;
+  const setBrg = () => { brgTimer = 0; brgAt = Date.now(); brgSet = map.getBearing(); map.getContainer().style.setProperty('--brg', `${brgSet.toFixed(1)}deg`); };
+  map.on('rotate', () => {
+    if (Math.abs(((map.getBearing() - brgSet + 540) % 360) - 180) < 0.5 || brgTimer) return;
+    const wait = 100 - (Date.now() - brgAt);
+    if (wait <= 0) setBrg(); else brgTimer = setTimeout(setBrg, wait);
+  });
 
   // data that arrives before the style is ready waits here
   const setSource = (id, data) => {

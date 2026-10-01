@@ -163,10 +163,16 @@
     for (const f of stopsGeo?.features || []) {
       if (!serves(String(f.properties.routes || '').split(' '), rt)) continue;
       const p = f.geometry.coordinates;
+      // a stop named for its direction ("... Eastbound") only counts where the line runs that way, not for
+      // buses going the other way past it on the far side of the road
+      const dir = { north: 0, east: 90, south: 180, west: 270 }[(String(f.properties.name).match(/(north|south|east|west)\s*bound/i)?.[1] || '').toLowerCase()];
       // every pass by the stop (a line can go by the same corner more than once)
       let last = -1e9;
       for (let i = 0; i < sh.c.length; i++) {
-        if (mx(p, sh.c[i]) < 30 && sh.d[i] - last > 100) { sh.stops.push({ d: sh.d[i], name: f.properties.name }); last = sh.d[i]; }
+        if (mx(p, sh.c[i]) < 30 && sh.d[i] - last > 100) {
+          if (dir != null && i < sh.c.length - 1 && diff(bearing(sh.c[i], sh.c[i + 1]), dir) > 80) continue;
+          sh.stops.push({ d: sh.d[i], name: f.properties.name }); last = sh.d[i];
+        }
       }
     }
     sh.stops.sort((a, b) => a.d - b.d);
@@ -317,7 +323,7 @@
     // resolution: at most 1.5×, and fewer pixels on a big screen (about 1.2 million drawn per frame at most),
     // which is what makes a large desktop window struggle
     const box = map.getContainer();
-    map.setPixelRatio(v ? Math.max(0.6, Math.min(devicePixelRatio, 1.5, Math.sqrt(1.2e6 / Math.max(1, box.clientWidth * box.clientHeight)))) : devicePixelRatio);
+    map.setPixelRatio(v ? Math.max(0.6, Math.min(devicePixelRatio, 1.5, Math.sqrt(0.9e6 / Math.max(1, box.clientWidth * box.clientHeight)))) : devicePixelRatio);
     padCache = null;
     if (v) {
       if (phone() && !$('#panel').classList.contains('gone')) $('#panel').classList.add('min'); // more road on screen
@@ -400,11 +406,11 @@
     const mk = markers.get(follow.id); if (!mk) return;
     const at = mk.getLngLat(), here = [at.lng, at.lat], now = Date.now();
     const near = new Set();
-    // the nearest 30 in view at most
+    // the nearest 15 in view at most
     const pick = [];
     signals.forEach((p, i) => { if (inChaseView(here, p)) pick.push([mx(here, p), i]); });
     pick.sort((a, b) => a[0] - b[0]);
-    pick.slice(0, 30).forEach(([, i]) => {
+    pick.slice(0, 15).forEach(([, i]) => {
       const p = signals[i];
       near.add(i);
       let m = sigMarkers.get(i);
@@ -434,20 +440,27 @@
     const b = markers.get(follow.id)?._bus, rt = b ? busRoute(b) : follow.route;
     const next = b ? nextStopOf(b) : null, color = routeColor(rt);
     const near = new Set();
-    // the nearest 25 in view at most; a stop's twin across the street (same name, a few meters away) is one sign,
-    // preferring the one on this bus's route
-    const servesHere = (f) => serves(String(f.properties.routes || '').split(' '), rt);
-    const cand = stopsGeo.features.filter((f) => inChaseView(here, f.geometry.coordinates))
-      .map((f) => [mx(here, f.geometry.coordinates) - (servesHere(f) ? 1000 : 0), f]).sort((a, b) => a[0] - b[0]);
-    const pick = [];
-    for (const [, f] of cand) {
-      if (pick.some((g) => g.properties.name === f.properties.name && mx(g.geometry.coordinates, f.geometry.coordinates) < 80)) continue;
-      pick.push(f);
-      if (pick.length >= 25) break;
-    }
-    // names only for the next few stops ahead of the bus on its route (the rest are plain signs)
+    // only the next 4 stops ahead of the bus on its route get a sign (with its name); a stop's twin across the
+    // street (same name, a few meters away) is one sign: the one nearest the bus's line
     const s0 = b?._along ?? b?._obs ?? 0;
-    const ahead = b?._snap ? lineStops(b._snap.sh, rt).filter((s) => s.d > s0 - 10).slice(0, 4).map((s) => s.name) : [];
+    const all = b?._snap ? lineStops(b._snap.sh, rt) : [];
+    const ahead = all.filter((s) => s.d > s0 - 10).slice(0, 4).map((s) => s.name);
+    // plus the stop it just passed, dimmed, until it's well behind (off the bottom of the screen)
+    let passed = null;
+    for (const s of all) { if (s.d <= s0 - 10) passed = s; else break; }
+    if (passed && s0 - passed.d > 300) passed = null;
+    const line = b?._snap?.sh;
+    const pick = [];
+    for (const name of [...ahead, ...(passed && !ahead.includes(passed.name) ? [passed.name] : [])]) {
+      let best = null;
+      for (const f of stopsGeo.features) {
+        if (f.properties.name !== name || !serves(String(f.properties.routes || '').split(' '), rt)) continue;
+        const p = f.geometry.coordinates;
+        const d = line ? Math.min(...line.c.map((c) => mx(p, c))) : mx(here, p);
+        if (!best || d < best[0]) best = [d, f];
+      }
+      if (best && !pick.includes(best[1])) pick.push(best[1]);
+    }
     for (const f of pick) {
       const p = f.geometry.coordinates;
       const id = f.properties.id;
@@ -463,7 +476,8 @@
       const el = m.getElement(), mine = serves(String(f.properties.routes || '').split(' '), rt);
       el.classList.toggle('mine', mine);
       el.classList.toggle('next', mine && f.properties.name === next);
-      el.classList.toggle('named', mine && ahead.includes(f.properties.name));
+      el.classList.toggle('named', mine);
+      el.classList.toggle('past', !!passed && f.properties.name === passed.name && !ahead.includes(passed.name));
       el.style.setProperty('--sc', mine ? color : '#5f9c8b');
     }
     for (const [id, m] of stopSigns) if (!near.has(id)) { m.remove(); stopSigns.delete(id); }
@@ -472,7 +486,8 @@
     const tags = [...stopSigns.values()].map((m) => m.getElement()).filter((el) => el.classList.contains('named'));
     tags.forEach((el) => el.classList.remove('quiet'));
     const order = tags.map((el) => ({ el, r: el.querySelector('span').getBoundingClientRect() }))
-      .sort((a, b) => (b.el.classList.contains('next') - a.el.classList.contains('next')) || (b.r.bottom - a.r.bottom));
+      .sort((a, b) => (b.el.classList.contains('next') - a.el.classList.contains('next')) ||
+        (a.el.classList.contains('past') - b.el.classList.contains('past')) || (b.r.bottom - a.r.bottom)); // (the passed stop gives way)
     const placed = [];
     for (const { el, r } of order) {
       if (placed.some((p) => r.left < p.right + 4 && p.left < r.right + 4 && r.top < p.bottom + 2 && p.top < r.bottom + 2)) el.classList.add('quiet');
