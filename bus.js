@@ -222,6 +222,13 @@
     renderFollow();
     bar.hidden = TV || !!follow || !(picked && barOn);
     if (bar.hidden) return;
+    // desktop: the route bar also starts just right of the column of map buttons (centered, it could slide
+    // over them in a narrow window)
+    const tools = $('.map-tools');
+    if (!phone() && tools) {
+      const left = Math.round(tools.getBoundingClientRect().right - map.getContainer().getBoundingClientRect().left + 14);
+      Object.assign(bar.style, { left: left + 'px', transform: 'none', width: `min(440px, calc(100% - ${left + 60}px))` });
+    } else Object.assign(bar.style, { left: '', transform: '', width: '' });
     const list = routeBuses(picked), b = list[busIdx];
     bar.innerHTML = `<div class="row"><button type="button" data-act="prevRoute" aria-label="Previous route">◀</button>
         <span class="bus-no" style="background:${esc(routeColor(picked))}">${esc(picked)}</span>
