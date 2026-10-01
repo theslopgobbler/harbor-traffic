@@ -322,7 +322,8 @@
   size();
   map.on('move', () => (dirty = true));
   // (chase view moves the camera every frame: weather effects and the sea pause until it ends)
-  const chasing = () => document.body.classList.contains('chase');
+  // (following a bus also moves the camera every frame: hold the resets until it's over)
+  const chasing = () => document.body.classList.contains('chase') || document.body.classList.contains('following');
   map.on('moveend', () => { if (!chasing()) resetParticles(); });
 
   function reproject() {
@@ -947,7 +948,7 @@
   let waterTimer = 0;
   const soon = () => { clearTimeout(waterTimer); waterTimer = setTimeout(rebuildWater, 250); };
   map.on('move', () => { waterDirty = true; clearTimeout(waterTimer); });
-  map.on('moveend', () => { if (!document.body.classList.contains('chase')) soon(); });
+  map.on('moveend', () => { const b = document.body.classList; if (!b.contains('chase') && !b.contains('following')) soon(); });
   map.on('sourcedata', (e) => { if (e.sourceId === 'omt' && e.tile && !map.isMoving()) soon(); });
 
   // bay current streaks
