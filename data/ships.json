@@ -1,42 +1,7 @@
 {
-  "updated": "2026-10-01T05:33:30.5442330+00:00",
+  "updated": "2026-10-01T05:52:14.2914934+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 303636000,
-      "name": "MARK I",
-      "lat": 46.75199,
-      "lon": -124.27716,
-      "sog": 8.6,
-      "cog": 7.6,
-      "heading": 11,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T03:35:06.2911682+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97849,
-      "lon": -123.88359,
-      "sog": 0.1,
-      "cog": 233.3,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T05:11:13.7959416+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.7075,
-      "lon": -123.96534,
-      "sog": 0,
-      "cog": 221.1,
-      "heading": 298,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
-    },
     {
       "mmsi": 367317770,
       "type": 31,
@@ -51,18 +16,6 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-01T03:35:06.2911682+00:00"
-    },
-    {
-      "mmsi": 567017000,
-      "name": "SARITA NAREE",
-      "lat": 46.92648,
-      "lon": -124.09451,
-      "sog": 0.1,
-      "cog": 315.9,
-      "heading": 52,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
     },
     {
       "mmsi": 366765940,
@@ -89,6 +42,29 @@
       "cog": 180,
       "heading": 300,
       "status": 5,
+      "classB": false,
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97849,
+      "lon": -123.88359,
+      "sog": 0.1,
+      "cog": 233.3,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T05:11:13.7959416+00:00"
+    },
+    {
+      "mmsi": 303636000,
+      "name": "MARK I",
+      "lat": 46.75199,
+      "lon": -124.27716,
+      "sog": 8.6,
+      "cog": 7.6,
+      "heading": 11,
+      "status": 0,
       "classB": false,
       "seen": "2026-10-01T03:35:06.2911682+00:00"
     }
