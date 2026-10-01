@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T13:29:09.3031655+00:00",
+  "updated": "2026-10-01T13:50:36.9610168+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1391,6 +1391,27 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
+      "id": 717354,
+      "kind": "closure",
+      "category": "Closure",
+      "priority": "Highest",
+      "headline": "Closure on US 101 in both directions at milepost 177, across the Hoh River Bridge beginning at 5:00 am on October 1, 2026 until about 12:00 pm on October 6, 2026.  Road is closed. There are no detours available.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 177.0,
+      "lat": 47.810672804,
+      "lon": -124.252786023,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-10-01T12:00:00.0000000+00:00",
+      "end": "2026-10-06T19:00:00.0000000+00:00",
+      "updated": "2026-10-01T13:29:28.7370000+00:00"
+    },
+    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -1410,27 +1431,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-09-14T14:42:15.5130000+00:00"
-    },
-    {
-      "id": 715429,
-      "kind": "closure",
-      "category": "Closure",
-      "priority": "Highest",
-      "headline": "Closure on US 101 both directions at milepost 177 near Hoh River beginning at 5:00 am on September 24, 2026 until about 12:00 pm on October 6, 2026.  Road is closed. There are no detours available.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 177.0,
-      "lat": 47.810672804,
-      "lon": -124.252786023,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-09-24T12:00:00.0000000+00:00",
-      "end": "2026-10-06T19:00:00.0000000+00:00",
-      "updated": "2026-10-01T13:18:44.1870000+00:00"
     },
     {
       "id": 712735,
