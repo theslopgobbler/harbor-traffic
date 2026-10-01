@@ -1,54 +1,7 @@
 {
-  "updated": "2026-10-01T01:25:07.5299754+00:00",
+  "updated": "2026-10-01T01:42:05.4059393+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97855,
-      "lon": -123.8836,
-      "sog": 0,
-      "cog": 295,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-09-30T23:40:50.638092+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.90623,
-      "lon": -124.1074,
-      "sog": 0,
-      "cog": 265.1,
-      "heading": 314,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-09-30T23:25:40.4991287+00:00"
-    },
-    {
-      "mmsi": 538012030,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96404,
-      "lon": -123.85304,
-      "sog": 0,
-      "cog": 180,
-      "heading": 299,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-01T00:23:02.5813349+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.69852,
-      "lon": -123.97714,
-      "sog": 8.1,
-      "cog": 256.4,
-      "heading": 257,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-01T00:23:02.5813349+00:00"
-    },
     {
       "mmsi": 367463820,
       "name": "TRINITY",
@@ -68,6 +21,69 @@
       "cog": 60.3,
       "heading": 64,
       "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T00:23:02.5813349+00:00"
+    },
+    {
+      "mmsi": 303636000,
+      "name": "MARK I",
+      "lat": 46.47563,
+      "lon": -124.33583,
+      "sog": 9.2,
+      "cog": 8.7,
+      "heading": 7,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T01:42:05.4059393+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.90623,
+      "lon": -124.1074,
+      "sog": 0,
+      "cog": 265.1,
+      "heading": 314,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-09-30T23:25:40.4991287+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97853,
+      "lon": -123.88359,
+      "sog": 0,
+      "cog": 222.8,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T01:42:05.4059393+00:00"
+    },
+    {
+      "mmsi": 538012030,
+      "lat": 46.96404,
+      "lon": -123.85304,
+      "sog": 0,
+      "cog": 180,
+      "heading": 299,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-01T00:23:02.5813349+00:00",
+      "name": "GLBS OLYMPIA",
+      "type": 70,
+      "dest": "US GHR",
+      "callsign": "V7A3856",
+      "lengthM": 199
+    },
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.69852,
+      "lon": -123.97714,
+      "sog": 8.1,
+      "cog": 256.4,
+      "heading": 257,
+      "status": 5,
       "classB": false,
       "seen": "2026-10-01T00:23:02.5813349+00:00"
     }
