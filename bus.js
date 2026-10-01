@@ -311,6 +311,11 @@
     for (const [i, m] of sigMarkers) if (!near.has(i)) { m.remove(); sigMarkers.delete(i); }
   }
   setInterval(updateSignals, 1000);
+  // say so on the map, so nobody waits on a pretend green
+  const chaseNote = document.createElement('div');
+  chaseNote.className = 'chase-note';
+  chaseNote.textContent = 'TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE';
+  map.getContainer().parentElement.appendChild(chaseNote);
   // the camera centers on the bus but lower on the screen, so you see the road ahead of it
   const chasePad = () => { const seen = map.getContainer().clientHeight - covered(); return { top: seen * 0.3, bottom: covered(), left: 0, right: 0 }; };
   // every frame in chase view: stay on the bus and turn smoothly with the road
@@ -376,14 +381,35 @@
   // reports to catch up, instead of snapping back. A bus with no line (or a new one) glides straight to its report.
   const PACE = 0.9, MAX_S = 30, CATCH_S = 8, BLEND_MS = 1500;
   // where along a line a reported position is: the closest point near where the bus is drawn now
-  function onLine(sh, p, near, heading) {
+  // A route can have several versions that share streets and then split (a detour loop, a different end of the
+  // line). Before the next report shows which way the bus went, it shouldn't guess: so this finds how far ahead
+  // every version of its route that fits where the bus is (and the way it's heading) still runs together,
+  // and the bus waits at the split for the next report.
+  function forkAhead(b, rt) {
+    const main = b._snap.sh, i0 = b._snap.i, p = [b.lon, b.lat];
+    const heading = b.mph >= 2 ? b.heading : null;
+    let limit = main.d[main.d.length - 1];
+    for (const r of [rt, rt + 'P']) for (const sh of shapesByRoute[r] || []) {
+      if (sh === main) continue;
+      const o = onLine(sh, p, null, heading, 40);
+      if (!o) continue; // this version doesn't come by here
+      // walk both lines forward together until they're more than 25 m apart
+      let j = o.i;
+      for (let k = i0; k < main.c.length && main.d[k] - main.d[i0] < 4000; k++) {
+        while (j < sh.c.length - 1 && mx(main.c[k], sh.c[j + 1]) <= mx(main.c[k], sh.c[j])) j++;
+        if (mx(main.c[k], sh.c[j]) > 25) { limit = Math.min(limit, main.d[Math.max(i0, k - 1)]); break; }
+      }
+    }
+    return limit;
+  }
+  function onLine(sh, p, near, heading, radius) {
     let best = null;
     for (let i = 0; i < sh.c.length; i++) {
       if (near != null && Math.abs(sh.d[i] - near) > 800) continue;
       // moving: only the part of the line going its way (not the other side of an out-and-back street)
       if (heading != null && i < sh.c.length - 1 && diff(bearing(sh.c[i], sh.c[i + 1]), heading) > 90) continue;
       const dist = mx(p, sh.c[i]);
-      if (dist < 120 && (!best || dist < best.dist)) best = { i, dist };
+      if (dist < (radius || 60) && (!best || dist < best.dist)) best = { i, dist };
     }
     return best;
   }
@@ -398,17 +424,19 @@
       const b = mk._bus;
       if (!b) continue;
       // the route lines may arrive after the buses: match each bus to its line once they're in
-      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); if (b._snap) b._obs = b._snap.sh.d[b._snap.i]; }
+      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); if (b._snap) { b._obs = b._snap.sh.d[b._snap.i]; b._fork = forkAhead(b, busRoute(b)); } }
       let pos;
       if (b._snap) {
         const sh = b._snap.sh, end = sh.d[sh.d.length - 1];
         if (mk._sh !== sh || mk._s == null) { mk._sh = sh; mk._s = b._obs; } // a new line: start at the report
         const v = b.mph >= 2 ? b.mph * 0.44704 : 0; // meters a second
-        const target = Math.min(end, b._obs + v * PACE * Math.min(MAX_S, (now - b._at) / 1000));
+        // (never past a split in its route: it waits there for the next report to say which way it went)
+        const target = Math.min(end, b._fork ?? end, b._obs + v * PACE * Math.min(MAX_S, (now - b._at) / 1000));
         const gap = target - mk._s;
         if (gap > 400 || gap < -200) mk._s = target; // far off (a missed turn, a stale report): just go there
         // never faster than a bit over the bus's own speed, so catching up looks like driving, not a lurch
-        else mk._s = Math.min(end, mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
+        // (and hard-stopped at a split: up to it, or holding still if it's already there)
+        else mk._s = Math.min(end, Math.max(mk._s, b._fork ?? end), mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
         b._along = mk._s;
         pos = along(sh, mk._s);
       } else pos = [b.lon, b.lat];
@@ -432,7 +460,8 @@
   requestAnimationFrame(glide);
   // for checking from the browser console: how many moving buses are matched to a route line
   window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
-    return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden }; };
+    return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden,
+      splitAhead: bs.filter((b) => b._snap).map((b) => `${busRoute(b)}/${b.id}: ${Math.round((b._fork ?? 0) - (b._obs ?? 0))} m`) }; };
 
   // ---- stops: tap one for its next buses (live estimates plus the timetable) ----
   // a stop's route list says "20P" for the Port Industrial runs of route 20
@@ -649,6 +678,7 @@
       }
       b._snap = sn || snap(b, rt);
       b._obs = b._snap ? b._snap.sh.d[b._snap.i] : undefined;
+      b._fork = b._snap ? forkAhead(b, rt) : undefined;
       if (window.htTrace && follow?.id === b.id) window.htTrace.push({ t: Date.now(), same: !!sn, newLine: b._snap?.sh !== mk._sh, obs: Math.round(b._obs), drawn: Math.round(mk._s), mph: Math.round(b.mph) });
       b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
       b._at = Date.now();
