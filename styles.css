@@ -25,6 +25,8 @@ a { color: var(--cyan); }
 .inst::before { left: 3px; } .inst::after { right: 3px; }
 .inst-lbl { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; white-space: nowrap; padding: 0 3px; }
 .inst-lbl em { font-style: normal; }
+/* which station the wind gauge is reading */
+.inst-lbl .where { min-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--dim); font-size: 9px; letter-spacing: .08em; }
 .inst-lbl b { font-weight: 400; font-size: 12px; color: var(--cyan); text-shadow: var(--glow-c); overflow: hidden; text-overflow: ellipsis; }
 .inst-body { display: flex; align-items: center; gap: 6px; flex: 1; }
 .live { color: var(--green); }

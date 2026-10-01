@@ -590,25 +590,99 @@
       <circle cx="30" cy="30" r="26" fill="none" stroke="#12403a" stroke-width=".6"/>${ticks}${card}${needle}
       <circle cx="30" cy="30" r="2.4" fill="#020807" stroke="#ffc400" stroke-width="1"/>`;
   }
-  async function loadWind() {
+  // The wind gauge reads the weather station nearest the middle of the map: NOAA's Westport and Toke Point
+  // stations, the airport stations (Hoquiam, Olympia, Shelton, Chehalis, Quillayute), and WSDOT's roadside stations
+  // (the collector saves those). A station that hasn't reported lately is skipped for the next nearest.
+  // The harbor chop on the water always uses Westport, since that's the water it draws.
+  const WIND_STATIONS = [
+    { id: '9441102', name: 'WESTPORT', lat: 46.9043, lon: -124.1051, src: 'coops' },
+    { id: '9440910', name: 'TOKE POINT', lat: 46.7075, lon: -123.9669, src: 'coops' },
+    { id: 'KHQM', name: 'HOQUIAM AIRPORT', lat: 46.9712, lon: -123.9366, src: 'nws' },
+    { id: 'KOLM', name: 'OLYMPIA AIRPORT', lat: 46.9733, lon: -122.9026, src: 'nws' },
+    { id: 'KSHN', name: 'SHELTON AIRPORT', lat: 47.2336, lon: -123.1475, src: 'nws' },
+    { id: 'KCLS', name: 'CHEHALIS AIRPORT', lat: 46.677, lon: -122.9828, src: 'nws' },
+    { id: 'KUIL', name: 'QUILLAYUTE AIRPORT', lat: 47.9375, lon: -124.555, src: 'nws' }
+  ];
+  let roadWind = [];
+  async function loadRoadWind() {
     try {
-      const j = await (await fetch('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=wind&date=latest&station=9441102&units=english&time_zone=lst_ldt&format=json&application=harbor_traffic')).json();
-      const d = j.data?.[0];
-      if (!d) throw new Error('no wind');
-      const kt = Math.round(+d.s), gust = Math.round(+d.g), deg = +d.d;
-      windKt = kt; // the harbor chop uses this
-      $('#windDial').innerHTML = dialSvg(kt < 1 ? null : deg, kt);
-      $('#windDir').textContent = kt < 1 ? 'CALM' : `${d.dr} ${String(Math.round(deg)).padStart(3, '0')}°`;
-      $('#windSpd').textContent = kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`;
-      tick('wind', kt < 1 ? 'calm at Westport' : `from the ${d.dr} at ${kt} kt (${Math.round(kt * 1.151)} mph)${gust > kt + 2 ? `, gusts ${gust} kt` : ''} at Westport`);
-      $('#windGauge').title = `Wind at Westport: from the ${d.dr} at ${kt} knots (${Math.round(kt * 1.151)} mph)${gust ? `, gusts ${gust} kt` : ''}. Observed ${d.t}.`;
-    } catch (e) {
-      console.warn('wind', e);
-      $('#windDial').innerHTML = dialSvg(null, 0);
+      const j = await (await fetch(`data/road-weather.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      roadWind = (j.stations || []).filter((s) => s.lat && s.lon && s.wind != null)
+        .map((s) => ({ id: 'wsdot' + s.id, name: String(s.name).replace(/\s+on\s+.*$/i, '').toUpperCase(), lat: s.lat, lon: s.lon, src: 'wsdot', s }));
+    } catch {}
+  }
+  const windCache = {}; // station -> { at, d }
+  const hhmm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  async function readWind(st) {
+    const c = windCache[st.id];
+    if (c && Date.now() - c.at < 6 * 60 * 1000) return c.d;
+    let d = null;
+    try {
+      if (st.src === 'coops') {
+        const j = await (await fetch(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=wind&date=latest&station=${st.id}&units=english&time_zone=lst_ldt&format=json&application=harbor_traffic`)).json();
+        const x = j.data?.[0];
+        if (x && x.s !== '') d = { kt: Math.round(+x.s), gust: Math.round(+x.g || 0), deg: +x.d, dr: x.dr, t: x.t ? hhmm(new Date(x.t.replace(' ', 'T'))) : '' };
+      } else if (st.src === 'nws') {
+        const p = (await (await fetch(`https://api.weather.gov/stations/${st.id}/observations/latest`)).json()).properties;
+        const age = p?.timestamp ? Date.now() - new Date(p.timestamp) : Infinity;
+        if (p?.windSpeed?.value != null && age < 3 * 3600 * 1000) {
+          const deg = p.windDirection?.value;
+          d = { kt: Math.round(p.windSpeed.value / 1.852), gust: p.windGust?.value != null ? Math.round(p.windGust.value / 1.852) : 0,
+            deg: deg ?? 0, dr: deg != null ? compass(deg) : '', t: hhmm(new Date(p.timestamp)) };
+        }
+      } else {
+        const s = st.s, age = s.time ? Date.now() - new Date(s.time) : Infinity;
+        if (age < 3 * 3600 * 1000) d = { kt: Math.round(s.wind / 1.151), gust: s.gust ? Math.round(s.gust / 1.151) : 0,
+          deg: Math.max(0, DIRS.indexOf(s.dir)) * 22.5, dr: s.dir || '', t: hhmm(new Date(s.time)) };
+      }
+    } catch (e) { console.warn('wind', st.id, e.message); }
+    windCache[st.id] = { at: Date.now(), d };
+    return d;
+  }
+  let windShown = null;
+  function showWind(st, d) {
+    windShown = st.id;
+    const { kt, gust, deg, dr } = d;
+    $('#windDial').innerHTML = dialSvg(kt < 1 ? null : deg, kt);
+    $('#windDir').textContent = kt < 1 ? 'CALM' : `${dr} ${String(Math.round(deg)).padStart(3, '0')}°`;
+    $('#windSpd').textContent = kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`;
+    $('#windWhere').textContent = st.name;
+    const place = st.name.replace(/ AIRPORT$/, '').toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+    tick('wind', kt < 1 ? `calm at ${place}` : `from the ${dr} at ${kt} kt (${Math.round(kt * 1.151)} mph)${gust > kt + 2 ? `, gusts ${gust} kt` : ''} at ${place}`);
+    $('#windGauge').title = `Wind at ${place}: from the ${dr} at ${kt} knots (${Math.round(kt * 1.151)} mph)${gust ? `, gusts ${gust} kt` : ''}. Observed ${d.t}.`;
+  }
+  // the nearest station to the middle of the map that has a recent reading (tries the three nearest)
+  async function updateWindGauge() {
+    const c = map.getCenter();
+    const near = [...WIND_STATIONS, ...roadWind]
+      .map((s) => [Math.hypot((s.lon - c.lng) * 0.68, s.lat - c.lat), s]).sort((a, b) => a[0] - b[0]).slice(0, 3).map((x) => x[1]);
+    for (const st of near) {
+      const d = await readWind(st);
+      if (d) { showWind(st, d); return; }
     }
+    if (!windShown) $('#windDial').innerHTML = dialSvg(null, 0);
+  }
+  // Westport for the harbor chop, then the gauge
+  async function loadWind() {
+    const d = await readWind(WIND_STATIONS[0]);
+    if (d) windKt = d.kt;
+    await loadRoadWind();
+    updateWindGauge();
   }
   loadWind();
   setInterval(loadWind, 6 * 60 * 1000);
+  // the 12/24-hour switch: redraw the times shown here (sun, tide, sea, wind)
+  window.addEventListener('ht:clock', () => {
+    skySvg(); loadTide(); loadSea();
+    for (const k in windCache) delete windCache[k];
+    updateWindGauge();
+  });
+  // when the map settles somewhere new (at most every 5 s: following a bus moves it all the time)
+  let windAt = 0, windTimer = 0;
+  map.on('moveend', () => {
+    clearTimeout(windTimer);
+    windTimer = setTimeout(() => { windAt = Date.now(); updateWindGauge(); }, Math.max(800, 5000 - (Date.now() - windAt)));
+  });
 
   // ================= sea state (Grays Harbor buoy + NWS bar forecast, saved by the collector) =================
   const compass = (deg) => DIRS[Math.round(((deg % 360) + 360) % 360 / 22.5) % 16];

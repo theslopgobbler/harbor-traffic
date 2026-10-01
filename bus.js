@@ -53,42 +53,64 @@
         (shapesByRoute[p.route] ||= []).push({ c, d, mps: p.mps || 7 });
         routeInfo[p.route] ||= { name: p.name, color: p.color };
       }
-      const lanes = ['interpolate', ['linear'], ['zoom'], 14.5, 0, 16, ['*', ['get', 'lane'], 3.5]];
-      // A line's offset is to the right of the way it was drawn, so a route's out-and-back legs would split to both
-      // sides of the street (the doubled "candy cane" look). So the lines are cut into pieces that all point the same
-      // general way (east-north-east), and each route's lane lands on one side no matter which way the bus goes.
-      const REF = [Math.cos(0.35), Math.sin(0.35)]; // 20° north of east: no street grid runs square across it
-      const pieces = [];
-      for (const f of r.features || []) {
-        const c = f.geometry.coordinates;
-        let run = [c[0]], dir = 0;
-        const flush = () => { if (run.length > 1) pieces.push({ type: 'Feature', properties: f.properties,
-          geometry: { type: 'LineString', coordinates: dir < 0 ? run.slice().reverse() : run } }); };
-        for (let i = 1; i < c.length; i++) {
-          const ex = (c[i][0] - c[i - 1][0]) * 0.68, ey = c[i][1] - c[i - 1][1];
-          const dot = ex * REF[0] + ey * REF[1];
-          // running nearly crosswise to the reference way, a wiggle could flip it back and forth (each flip is a
-          // break in the drawn line): keep the way it was going until the road really turns
-          if (dir && Math.abs(dot) < 0.4 * Math.hypot(ex, ey)) { run.push(c[i]); continue; }
-          const d = dot >= 0 ? 1 : -1;
-          if (dir && d !== dir) { flush(); run = [c[i - 1]]; }
-          dir = d; run.push(c[i]);
+      // Up close (zoom 15+), routes that share a street sit side by side: each route's line is shifted sideways by
+      // its lane (5 m per lane). The shift is to one fixed side of the road whichever way the bus is going (so a
+      // route's out-and-back legs land on top of each other, not doubled), judged against a reference direction
+      // (20° north of east, which no street grid runs square across). Where a winding road turns past crosswise,
+      // the line changes sides gradually over about 30 m, so each route stays one unbroken line.
+      const REF = [Math.cos(0.35), Math.sin(0.35)];
+      function laneLine(c, laneM) {
+        const n = c.length;
+        const v = [], side = [];
+        let cur = 0;
+        for (let i = 0; i < n - 1; i++) {
+          const vx = (c[i + 1][0] - c[i][0]) * 76000, vy = (c[i + 1][1] - c[i][1]) * 111000, len = Math.hypot(vx, vy);
+          v.push(len ? [vx / len, vy / len, len] : null);
+          if (!len) { side.push(cur || 1); continue; }
+          const dot = (vx * REF[0] + vy * REF[1]) / len;
+          // nearly crosswise, keep the side it was on (a wiggle shouldn't flip it)
+          if (!(cur && Math.abs(dot) < 0.4)) cur = dot >= 0 ? 1 : -1;
+          side.push(cur);
         }
-        flush();
+        // the side at each point, eased over 15 m each way so a change of side is gradual
+        const d = [0];
+        for (let i = 1; i < n; i++) d.push(d[i - 1] + (v[i - 1]?.[2] || 0));
+        const out = [];
+        let lo = 0, hi = 0;
+        for (let i = 0; i < n; i++) {
+          while (d[lo] < d[i] - 15) lo++;
+          while (hi < n - 2 && d[hi + 1] <= d[i] + 15) hi++;
+          let sum = 0, cnt = 0;
+          for (let k = Math.max(0, lo - 1); k <= Math.min(n - 2, hi); k++) { sum += side[k]; cnt++; }
+          const sm = cnt ? sum / cnt : 1;
+          // the way the road runs here (the two segments around the point, averaged), and its right-hand side
+          const a = v[i - 1] || v[i], b = v[i] || v[i - 1];
+          if (!a || !b) { out.push(c[i]); continue; }
+          let tx = a[0] + b[0], ty = a[1] + b[1];
+          const tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl;
+          const off = laneM * sm;
+          out.push([c[i][0] + (ty * off) / 76000, c[i][1] - (tx * off) / 111000]);
+        }
+        return out;
       }
-      const laneData = { type: 'FeatureCollection', features: pieces };
+      const laneData = { type: 'FeatureCollection', features: (r.features || []).map((f) => ({ type: 'Feature', properties: f.properties,
+        geometry: { type: 'LineString', coordinates: laneLine(f.geometry.coordinates, f.properties.lane * 5) } })) };
       const add = () => {
         if (map.getSource('bus-routes')) return;
-        map.addSource('bus-routes', { type: 'geojson', data: laneData });
+        map.addSource('bus-routes', { type: 'geojson', data: r });          // the lines as they run (zoomed out)
+        map.addSource('bus-lanes', { type: 'geojson', data: laneData });   // shifted into lanes (zoomed in)
         map.addSource('bus-stops', { type: 'geojson', data: s });
-        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, layout: { 'line-join': 'round', 'line-cap': 'round' },
-          paint: { 'line-color': ['get', 'color'], 'line-opacity': routeOpacity(), 'line-offset': lanes,
-            'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1.2, 14, 3] } }, 'flow-glow');
+        const width = (w0, w1) => ['interpolate', ['linear'], ['zoom'], 9, w0, 14, w1];
+        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, maxzoom: 15, layout: { 'line-join': 'round', 'line-cap': 'round' },
+          paint: { 'line-color': ['get', 'color'], 'line-opacity': routeOpacity(), 'line-width': width(1.2, 3) } }, 'flow-glow');
+        map.addLayer({ id: 'bus-route-lanes', type: 'line', source: 'bus-lanes', minzoom: 15, layout: { 'line-join': 'round', 'line-cap': 'round' },
+          paint: { 'line-color': ['get', 'color'], 'line-opacity': routeOpacity(), 'line-width': width(1.2, 3) } }, 'flow-glow');
         // the picked route, drawn again on top of all the others (brighter and a bit wider)
-        map.addLayer({ id: 'bus-route-picked', type: 'line', source: 'bus-routes', minzoom: 9, filter: ['==', ['get', 'route'], '__none__'],
-          layout: { 'line-join': 'round', 'line-cap': 'round' },
-          paint: { 'line-color': ['get', 'color'], 'line-opacity': 1, 'line-offset': lanes,
-            'line-width': ['interpolate', ['linear'], ['zoom'], 9, 2.2, 14, 5] } }, 'flow-glow');
+        const none = ['==', ['get', 'route'], '__none__'];
+        map.addLayer({ id: 'bus-route-picked', type: 'line', source: 'bus-routes', minzoom: 9, maxzoom: 15, filter: none,
+          layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-opacity': 1, 'line-width': width(2.2, 5) } }, 'flow-glow');
+        map.addLayer({ id: 'bus-route-picked-lanes', type: 'line', source: 'bus-lanes', minzoom: 15, filter: none,
+          layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-opacity': 1, 'line-width': width(2.2, 5) } }, 'flow-glow');
         map.addLayer({ id: 'bus-stops', type: 'circle', source: 'bus-stops', minzoom: 13.5, paint: {
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 13.5, 2.5, 16, 6], 'circle-color': '#020807',
           'circle-stroke-color': '#bff4ff', 'circle-stroke-width': 1.4 } });
@@ -102,7 +124,8 @@
           const stop = map.getLayer('bus-stops') && map.getLayoutProperty('bus-stops', 'visibility') !== 'none'
             ? map.queryRenderedFeatures(box, { layers: ['bus-stops'] })[0] : null;
           if (stop) return focusStop(stop.properties.id);
-          const hit = map.queryRenderedFeatures(box, { layers: ['bus-route-picked'] })[0] || map.queryRenderedFeatures(box, { layers: ['bus-route-lines'] })[0];
+          const hit = map.queryRenderedFeatures(box, { layers: ['bus-route-picked', 'bus-route-picked-lanes'] })[0] ||
+            map.queryRenderedFeatures(box, { layers: ['bus-route-lines', 'bus-route-lanes'] })[0];
           pickRoute(hit ? hit.properties.route.replace(/P$/, '') : null, { bar: !!hit });
           if (hit) new maplibregl.Popup({ offset: 6, maxWidth: '240px', closeButton: false }).setLngLat(e.lngLat)
             .setHTML(`<h3>ROUTE ${esc(hit.properties.route)}</h3><p>${esc((hit.properties.name || '').toUpperCase())}</p>`).addTo(map);
@@ -134,9 +157,9 @@
     if (route !== picked) busIdx = -1;
     picked = route;
     if (map.getLayer('bus-route-lines')) {
-      map.setPaintProperty('bus-route-lines', 'line-opacity', routeOpacity());
+      for (const id of ['bus-route-lines', 'bus-route-lanes']) map.setPaintProperty(id, 'line-opacity', routeOpacity());
       // route 20 also brings up its Port Industrial runs (20P)
-      map.setFilter('bus-route-picked', ['in', ['get', 'route'], ['literal', picked ? [picked, picked + 'P'] : ['__none__']]]);
+      for (const id of ['bus-route-picked', 'bus-route-picked-lanes']) map.setFilter(id, ['in', ['get', 'route'], ['literal', picked ? [picked, picked + 'P'] : ['__none__']]]);
     }
     if (picked && opt.fit) fitRoute(picked);
     renderBar();
@@ -146,7 +169,7 @@
     for (const sh of shapesByRoute[rt] || []) sh.c.forEach((p) => b.extend(p));
     if (!b.isEmpty()) map.fitBounds(b, { padding: window.htFitPad ? window.htFitPad(50) : 50, maxZoom: 14.5 });
   }
-  const showLayers = () => ['bus-route-lines', 'bus-route-picked', 'bus-stops', 'bus-stop-focus'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+  const showLayers = () => ['bus-route-lines', 'bus-route-lanes', 'bus-route-picked', 'bus-route-picked-lanes', 'bus-stops', 'bus-stop-focus'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
 
   // move the map so a point sits in the middle of the part you can see (on phones the sheet covers the bottom)
   function covered() {
@@ -175,6 +198,12 @@
       for (let i = 0; i < sh.c.length; i++) {
         if (mx(p, sh.c[i]) < 30 && sh.d[i] - last > 100) {
           if (dir != null && i < sh.c.length - 1 && diff(bearing(sh.c[i], sh.c[i + 1]), dir) > 80) continue;
+          // buses stop on the right side of the road: a stop more than 4 m to the left of the way the line runs
+          // is the stop for the other direction (on an out-and-back street both are within reach of the line)
+          const a = sh.c[Math.max(0, Math.min(i, sh.c.length - 2))], z = sh.c[Math.max(1, Math.min(i + 1, sh.c.length - 1))];
+          const vx = (z[0] - a[0]) * 76000, vy = (z[1] - a[1]) * 111000, wx = (p[0] - a[0]) * 76000, wy = (p[1] - a[1]) * 111000;
+          const len = Math.hypot(vx, vy);
+          if (len > 0 && (vx * wy - vy * wx) / len > 4) continue;
           sh.stops.push({ d: sh.d[i], name: f.properties.name }); last = sh.d[i];
         }
       }
@@ -224,7 +253,7 @@
         <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>
       ${st ? `<div class="fb-stop"><span class="fb-word">${st.word}</span>${esc(st.name.toUpperCase())}</div>` : ''}
       <div class="fb-sub">${follow.stop ? `${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}`
-        : b?.nextStop ? `DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}` : ''}${chase ? '<span class="fb-note">TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE</span>' : ''}</div>`;
+        : b?.nextStop ? `DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}` : ''}${chase ? '<span class="fb-note">TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE</span>' : ''}</div>`;
   }
   function renderBar() {
     if (!bar) return;
@@ -679,7 +708,7 @@
     }
   }
   requestAnimationFrame(glide);
-  window.htBusInternals = { markers, shapesByRoute }; // for checking from the browser console
+  window.htBusInternals = { markers, shapesByRoute, lineStops: (sh, rt) => lineStops(sh, rt) }; // for checking from the browser console
   // for checking from the browser console: how many moving buses are matched to a route line
   window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
     return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden,
@@ -733,7 +762,14 @@
       seen.add(k); return true;
     });
   }
-  const clock = (min) => { const h = Math.floor(min / 60) % 24, m = min % 60; return `${(h % 12) || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`; };
+  const clock = (min) => {
+    const h = Math.floor(min / 60) % 24, m = String(min % 60).padStart(2, '0');
+    return window.htClock24 ? `${String(h).padStart(2, '0')}:${m}` : `${(h % 12) || 12}:${m} ${h < 12 ? 'AM' : 'PM'}`;
+  };
+  // the tracker's times ("05:45 PM") in the page's 12/24-hour format
+  const tt = (s) => esc(window.htClockText ? window.htClockText(s) : s);
+  // the 12/24-hour switch: redraw the bus bits showing times
+  window.addEventListener('ht:clock', () => { renderBar(); refreshStop(); render(); });
   const baseRt = (rt) => rt.replace(/P$/, '');
 
   // live arrivals: buses already on their way here, then buses that will come by on their next trip. Those wait at
@@ -911,7 +947,7 @@
       const el = mk.getElement();
       mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
-        ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</div>` : ''}
+        ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}</div>` : ''}
         ${TV ? '' : `<button type="button" class="go" data-follow="${esc(b.id)}">FOLLOW THIS BUS</button>`}`);
     }
     for (const [id, mk] of markers) if (!seen.has(id)) { mk.remove(); markers.delete(id); }
@@ -951,7 +987,7 @@
       const spreadM = Math.max(...lls.map((a) => Math.max(...lls.map((b) => a.distanceTo(b)))));
       const pop = new maplibregl.Popup({ offset: 14, maxWidth: '300px' }).setHTML(`<h3>${list.length} BUSES HERE</h3>` + list.map((b) => {
         const r = routes[b.route] || {};
-        return `<div class="m bus-row" data-route="${esc(short(r.name))}" style="cursor:pointer"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + esc(b.nextTime) : '') : ''}</div>`;
+        return `<div class="m bus-row" data-route="${esc(short(r.name))}" style="cursor:pointer"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + tt(b.nextTime) : '') : ''}</div>`;
       }).join(''));
       const mk = new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map);
       // tapping the group brings up its route when every bus in it is on the same route

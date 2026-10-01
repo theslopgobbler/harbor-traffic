@@ -335,7 +335,10 @@ try {
 
 # ---------- bus routes and stops from GHT's schedule data: once a week ----------
 $busRoutes = Join-Path $dataDir 'bus-routes.json'
-if (-not (Test-Path $busRoutes) -or ((Get-Date) - (Get-Item $busRoutes).LastWriteTime).TotalDays -gt 7) {
+# (judged by the date inside the file: a fresh checkout makes every file look new, so it never ran here before)
+$busOld = $true
+if (Test-Path $busRoutes) { try { $u = (Get-Content $busRoutes -Raw | ConvertFrom-Json).updated; if ($u) { $busOld = ((Get-Date) - [datetime]$u).TotalDays -gt 7 } } catch {} }
+if ($busOld) {
     try { & (Join-Path $PSScriptRoot 'build-gtfs.ps1') } catch { "bus routes failed: $($_.Exception.Message.Split("`n")[0])" }
 }
 

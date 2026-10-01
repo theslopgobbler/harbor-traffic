@@ -11,6 +11,27 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
   };
   const townById = Object.fromEntries(C.towns.map((t) => [t.id, t]));
+
+  // ---- 12- or 24-hour time, everywhere on the page ----
+  // 12-hour unless this device chose 24 (the switch under LIVE), or a TV link says ?clock=24.
+  // Every time the page writes goes through the browser's toLocaleTimeString / toLocaleString with an hour in it,
+  // so those follow the setting here; the few made by hand ask window.htClock24.
+  window.htClock24 = qs.get('clock') ? qs.get('clock') === '24' : store.get('ht.clock24') === true;
+  for (const fn of ['toLocaleTimeString', 'toLocaleString']) {
+    const orig = Date.prototype[fn];
+    Date.prototype[fn] = function (loc, opts) {
+      if (opts && 'hour' in opts && !opts.hourCycle) opts = { ...opts, hour12: !window.htClock24 };
+      else if (!opts && fn === 'toLocaleTimeString') opts = { hour12: !window.htClock24 };
+      return orig.call(this, loc, opts);
+    };
+  }
+  // a time someone else wrote as "05:45 PM" (the bus tracker's), in the page's format
+  window.htClockText = (s) => {
+    const m = String(s || '').match(/^\s*(\d{1,2}):(\d{2})\s*([AP])M\s*$/i);
+    if (!m || !window.htClock24) return s;
+    const h = (+m[1] % 12) + (/p/i.test(m[3]) ? 12 : 0);
+    return `${String(h).padStart(2, '0')}:${m[2]}`;
+  };
   const fmtTime = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
   const fmtWhen = (iso) => {
     if (!iso) return '';
@@ -1063,20 +1084,27 @@
   if (bigText) { document.body.classList.add('big-text'); if (map.loaded()) applyBigText(true); else map.once('load', () => applyBigText(true)); }
 
   // ---------------- clock & refresh ----------------
-  // 24-hour by default; the switch under LIVE flips it to 12-hour (remembered per device; ?clock=12 for a TV)
-  let clock24 = qs.get('clock') ? qs.get('clock') !== '12' : store.get('ht.clock24') !== false;
+  // the switch under LIVE flips every time on the page between 12- and 24-hour (see window.htClock24 above)
   const tick = () => {
     const d = new Date();
-    $('#clock').innerHTML = clock24 ? d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })
+    $('#clock').innerHTML = window.htClock24 ? `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
       : `${(d.getHours() % 12) || 12}:${String(d.getMinutes()).padStart(2, '0')}<small>${d.getHours() < 12 ? 'AM' : 'PM'}</small>`;
-    $('#clockFmt').textContent = clock24 ? '24H' : '12H';
+    $('#clockFmt').textContent = window.htClock24 ? '24H' : '12H';
   };
-  $('#clockFmt').addEventListener('click', () => { clock24 = !clock24; store.set('ht.clock24', clock24); tick(); });
+  let lastSync = null;
+  const showSync = () => { if (lastSync) $('#updated').textContent = 'SYNC ' + fmtTime(lastSync).toUpperCase(); };
+  $('#clockFmt').addEventListener('click', () => {
+    window.htClock24 = !window.htClock24; store.set('ht.clock24', window.htClock24);
+    tick(); showSync();
+    // redraw what's on screen with the new times; the rest catches up on its next refresh
+    renderRoads(); renderBridges(); renderAlerts();
+    window.dispatchEvent(new Event('ht:clock'));
+  });
   tick(); setInterval(tick, 10000);
   async function refresh() {
     await Promise.allSettled([loadWeather(), loadAlerts(), loadRoads(), loadRoadWeather(), loadFlow()]);
     window.htTickerRefresh();
-    $('#updated').textContent = 'SYNC ' + fmtTime(new Date()).toUpperCase();
+    lastSync = new Date(); showSync();
   }
   // ---------------- TV: scrolling ticker and a side panel that scrolls itself ----------------
   window.htTicker = window.htTicker || {}; // wx.js adds tide, wind, sea, rail and sun lines here
