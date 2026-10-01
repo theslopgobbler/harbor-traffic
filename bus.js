@@ -99,14 +99,14 @@
             ? map.queryRenderedFeatures(box, { layers: ['bus-stops'] })[0] : null;
           if (stop) return focusStop(stop.properties.id);
           const hit = map.queryRenderedFeatures(box, { layers: ['bus-route-picked'] })[0] || map.queryRenderedFeatures(box, { layers: ['bus-route-lines'] })[0];
-          pickRoute(hit ? hit.properties.route.replace(/P$/, '') : null);
+          pickRoute(hit ? hit.properties.route.replace(/P$/, '') : null, { bar: !!hit });
           if (hit) new maplibregl.Popup({ offset: 6, maxWidth: '240px', closeButton: false }).setLngLat(e.lngLat)
             .setHTML(`<h3>ROUTE ${esc(hit.properties.route)}</h3><p>${esc((hit.properties.name || '').toUpperCase())}</p>`).addTo(map);
         });
         map.on('mouseenter', 'bus-stops', () => (map.getCanvas().style.cursor = 'pointer'));
         map.on('mouseleave', 'bus-stops', () => (map.getCanvas().style.cursor = ''));
         showLayers();
-        if (picked) pickRoute(picked, { force: true });
+        if (picked) pickRoute(picked, { force: true, bar: barOn });
       };
       if (map.isStyleLoaded()) add(); else map.once('load', add);
     } catch (e) { console.warn('bus routes', e); }
@@ -121,7 +121,11 @@
   const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt).sort((a, b) => a.id.localeCompare(b.id));
   const routeColor = (rt) => Object.values(routes).find((r) => short(r.name) === rt)?.color || routeInfo[rt]?.color || '#bff4ff';
   const routeName = (rt) => long(Object.values(routes).find((r) => short(r.name) === rt)?.name) || routeInfo[rt]?.name || '';
+  // the bar (step through routes and buses) opens when you pick a route itself: its line or its row in the panel.
+  // Tapping a bus, a stop or a group only brings its route up; their own popups have what you need.
+  let barOn = false;
   function pickRoute(route, opt = {}) {
+    if ('bar' in opt) barOn = opt.bar; else if (route !== picked) barOn = true;
     if (route === picked && !opt.force) return renderBar();
     if (route !== picked) busIdx = -1;
     picked = route;
@@ -175,7 +179,7 @@
   }
   function renderBar() {
     if (!bar) return;
-    bar.hidden = TV || (!picked && !follow);
+    bar.hidden = TV || (!follow && !(picked && barOn));
     if (bar.hidden) return;
     markers.forEach((mk) => mk.getElement().classList.toggle('sel', !!mk._bus && (follow ? mk._bus.id === follow.id : busIdx >= 0 && mk._bus.id === routeBuses(picked)[busIdx]?.id)));
     if (follow) {
@@ -678,7 +682,7 @@
     map.setFilter('bus-stop-focus', ['==', ['get', 'id'], id]);
     // one route at this stop: bring it up too
     const rts = [...new Set(stopFocus.routes.map((r) => r.replace(/P$/, '')))];
-    if (rts.length === 1) pickRoute(rts[0]);
+    if (rts.length === 1) pickRoute(rts[0], { bar: false });
     lookAt(stopFocus.at, Math.max(map.getZoom(), 15.5));
     stopPop?.remove();
     const pop = stopPop = new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setLngLat(stopFocus.at).setHTML('<div class="m">LOADING…</div>').addTo(map);
@@ -701,10 +705,10 @@
     if (f) { const s = stopFocus; startFollow(f.dataset.follow, s ? { id: s.id, name: s.name, at: s.at } : null); return; }
     // in a group's list, tapping a bus brings up that bus's route
     const row = e.target.closest('.bus-row[data-route]');
-    if (row) { pickRoute(row.dataset.route); return; }
+    if (row) { pickRoute(row.dataset.route, { bar: false }); return; }
     // a route in the panel's transit list: bring it up and show the whole route
     const li = e.target.closest('#busBox li[data-route]');
-    if (li) { pickRoute(li.dataset.route, { fit: true, force: true }); if (phone()) $('#panel').classList.add('min'); }
+    if (li) { pickRoute(li.dataset.route, { fit: true, force: true, bar: true }); if (phone()) $('#panel').classList.add('min'); }
   });
   window.htPickRoute = (r) => pickRoute(r); // for checking from the browser console
   window.htFocusStop = (id) => focusStop(id);
@@ -756,11 +760,12 @@
         const el = document.createElement('div');
         el.className = 'bus-mk';
         mk = new maplibregl.Marker({ element: el }).setLngLat([b.lon, b.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '280px' })).addTo(map);
-        // tapping a bus also brings its route to the top, with this bus picked in the bar
+        // tapping a bus brings its route to the top (its popup has FOLLOW; the bar stays closed), with this bus
+        // picked in case the bar is opened later
         const theMk = mk;
         el.addEventListener('click', () => {
           const rt = theMk._bus ? busRoute(theMk._bus) : null;
-          pickRoute(rt || null);
+          pickRoute(rt || null, { bar: false });
           if (rt) { busIdx = routeBuses(rt).findIndex((x) => x.id === theMk._bus.id); renderBar(); }
         });
         markers.set(b.id, mk);
@@ -832,7 +837,7 @@
       }).join(''));
       const mk = new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map);
       // tapping the group brings up its route when every bus in it is on the same route
-      el.addEventListener('click', () => { if (oneRoute) pickRoute(short(routes[list[0].route]?.name) || null); });
+      el.addEventListener('click', () => { if (oneRoute) pickRoute(short(routes[list[0].route]?.name) || null, { bar: false }); });
       if (spreadM < 60) mk.setPopup(pop);
       else el.addEventListener('click', () => {
         const bb = new maplibregl.LngLatBounds(); lls.forEach((l) => bb.extend(l));
