@@ -304,6 +304,14 @@
     const s = northSouth ? t : (t + 45) % 90;
     return s < 40 ? 'go' : s < 44 ? 'slow' : 'stop';
   }
+  // the tilted view looks far up the road: things on screen within 2 km of the bus, plus anything right around it
+  function inChaseView(here, p) {
+    const d = mx(here, p);
+    if (d < 250) return true;
+    if (d > 2000) return false;
+    const b = map.getBounds();
+    return b.contains(p);
+  }
   async function updateSignals() {
     if (!chase || !follow) { sigMarkers.forEach((m) => m.remove()); sigMarkers.clear(); updateStopSigns(null); return; }
     if (!signals) { try { signals = (await (await fetch('data/signals.json')).json()).signals || []; } catch { signals = []; } clusterSignals(); }
@@ -311,7 +319,7 @@
     const at = mk.getLngLat(), here = [at.lng, at.lat], now = Date.now();
     const near = new Set();
     signals.forEach((p, i) => {
-      if (mx(here, p) > 700) return;
+      if (!inChaseView(here, p)) return;
       near.add(i);
       let m = sigMarkers.get(i);
       if (!m) {
@@ -332,8 +340,8 @@
   const stopSigns = new Map();
   const STOP_SVG = `<svg viewBox="0 0 10 24" shape-rendering="crispEdges" aria-hidden="true">
     <rect x="4" y="8" width="2" height="16" fill="#3b4b49"/><rect x="0" y="0" width="10" height="9" fill="#020807"/>
-    <rect x="1" y="1" width="8" height="7" fill="var(--sc)"/>
-    <rect x="3" y="2" width="4" height="4" fill="#020807"/><rect x="3" y="3" width="4" height="1" fill="var(--sc)"/>
+    <rect x="1" y="1" width="8" height="7" style="fill:var(--sc)"/>
+    <rect x="3" y="2" width="4" height="4" fill="#020807"/><rect x="3" y="3" width="4" height="1" style="fill:var(--sc)"/>
     <rect x="3" y="6" width="1" height="1" fill="#020807"/><rect x="6" y="6" width="1" height="1" fill="#020807"/></svg>`;
   function updateStopSigns(here) {
     if (!chase || !follow || !here || !stopsGeo) { stopSigns.forEach((m) => m.remove()); stopSigns.clear(); return; }
@@ -342,7 +350,7 @@
     const near = new Set();
     for (const f of stopsGeo.features) {
       const p = f.geometry.coordinates;
-      if (mx(here, p) > 600) continue;
+      if (!inChaseView(here, p)) continue;
       const id = f.properties.id;
       near.add(id);
       let m = stopSigns.get(id);
