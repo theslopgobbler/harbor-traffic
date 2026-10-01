@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202610010422" rel="stylesheet">
+<link href="styles.css?v=202610011523" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -67,6 +67,8 @@
     </div>
     <!-- bus bar: step through routes and their buses, or follow one (bus.js fills it) -->
     <div class="bus-bar" id="busBar" hidden></div>
+    <!-- following a bus: its route, speed and stops, across the top of the map -->
+    <div class="follow-bar" id="followBar" hidden></div>
     <!-- my location and heading: tucked on the right edge, well below the zoom buttons -->
     <div class="nav-tools">
       <button id="btnLocate" class="tool" type="button" aria-label="Show my location"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor"/><circle cx="10" cy="10" r="2.2" fill="currentColor"/><path d="M10 1.5 V4 M10 16 V18.5 M1.5 10 H4 M16 10 H18.5" stroke="currentColor"/></svg></button>
@@ -128,14 +130,14 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202610010422"></script>
-<script src="pixel.js?v=202610010422"></script>
-<script src="app.js?v=202610010422"></script>
-<script src="air.js?v=202610010422"></script>
-<script src="wx.js?v=202610010422"></script>
-<script src="seis.js?v=202610010422"></script>
-<script src="bus.js?v=202610010422"></script>
-<script src="river.js?v=202610010422"></script>
-<script src="count.js?v=202610010422"></script>
+<script src="config.js?v=202610011523"></script>
+<script src="pixel.js?v=202610011523"></script>
+<script src="app.js?v=202610011523"></script>
+<script src="air.js?v=202610011523"></script>
+<script src="wx.js?v=202610011523"></script>
+<script src="seis.js?v=202610011523"></script>
+<script src="bus.js?v=202610011523"></script>
+<script src="river.js?v=202610011523"></script>
+<script src="count.js?v=202610011523"></script>
 </body>
 </html>

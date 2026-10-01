@@ -177,25 +177,48 @@
     const here = b._along ?? b._obs ?? 0;
     return lineStops(b._snap.sh, busRoute(b)).find((s) => s.d > here + 15)?.name || null;
   }
-  function renderBar() {
-    if (!bar) return;
-    bar.hidden = TV || (!follow && !(picked && barOn));
-    if (bar.hidden) return;
-    markers.forEach((mk) => mk.getElement().classList.toggle('sel', !!mk._bus && (follow ? mk._bus.id === follow.id : busIdx >= 0 && mk._bus.id === routeBuses(picked)[busIdx]?.id)));
-    if (follow) {
-      const b = buses.find((x) => x.id === follow.id);
-      const rt = b ? busRoute(b) : follow.route;
-      const eta = b && follow.stop ? etaTo(b, follow.stop) : null;
-      const nx = b ? nextStopOf(b) : null;
-      bar.innerHTML = `<div class="row"><span class="bus-no" style="background:${esc(routeColor(rt))}">${esc(rt)}</span>
-        <span class="what follow"><b>BUS ${esc(follow.id)}</b>${b ? ` · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}` : ' · LOST SIGNAL'}${nx ? ` · NEXT STOP <b>${esc(nx.toUpperCase())}</b>` : ''}
-        ${follow.stop ? `<br><span class="m">${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}</span>`
-          : b?.nextStop ? `<br><span class="m">DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</span>` : ''}</span>
+  // where the followed bus is with its stops: at one, pulling in, just leaving one, or on the way to the next
+  function stopStatus(b) {
+    if (!b?._snap || !stopsGeo) return null;
+    const here = b._along ?? b._obs ?? 0, list = lineStops(b._snap.sh, busRoute(b));
+    const next = list.find((s) => s.d > here + 15);
+    let prev = null; for (const s of list) { if (s.d <= here + 15) prev = s; else break; }
+    const rolling = markers.get(b.id)?._rolling;
+    if (!rolling && prev && here - prev.d < 35) return { word: 'AT', name: prev.name };
+    if (!rolling && next && next.d - here < 35) return { word: 'AT', name: next.name };
+    if (next && next.d - here < 150) return { word: 'NOW ARRIVING', name: next.name };
+    if (rolling && prev && here - prev.d < 120) return { word: 'DEPARTING', name: prev.name, then: next?.name };
+    return next ? { word: 'NEXT STOP', name: next.name } : null;
+  }
+  // following: a see-through banner across the top of the map (under the instruments, clear of + and -), big
+  // enough to read at a glance; the bottom bar is only for picking routes
+  const followBar = $('#followBar');
+  const followTop = () => (follow && followBar && !followBar.hidden ? followBar.offsetHeight + 12 : 0);
+  function renderFollow() {
+    if (!followBar) return;
+    followBar.hidden = TV || !follow;
+    document.body.classList.toggle('following', !!follow && !TV);
+    if (!follow) return;
+    const b = buses.find((x) => x.id === follow.id);
+    const rt = b ? busRoute(b) : follow.route;
+    const st = b ? stopStatus(b) : null;
+    follow.status = st ? st.word + st.name : '';
+    const eta = b && follow.stop ? etaTo(b, follow.stop) : null;
+    followBar.innerHTML = `<div class="fb-top"><span class="bus-no big" style="background:${esc(routeColor(rt))}">${esc(rt)}</span>
+        <span class="fb-id">BUS ${esc(follow.id)}<small>${b ? (b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH') : 'LOST SIGNAL'}</small></span>
         <button type="button" data-act="turn" ${chase ? 'hidden' : ''} aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
         <button type="button" data-act="chase" class="${chase ? 'on' : ''}" aria-label="${chase ? 'Leave the chase view' : 'Chase view: ride behind the bus'}">${chase ? '2D' : '3D'}</button>
-        <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>`;
-      return;
-    }
+        <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>
+      ${st ? `<div class="fb-stop"><span class="fb-word">${st.word}</span>${esc(st.name.toUpperCase())}</div>` : ''}
+      <div class="fb-sub">${follow.stop ? `${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}`
+        : b?.nextStop ? `DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}` : ''}${chase ? '<span class="fb-note">TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE</span>' : ''}</div>`;
+  }
+  function renderBar() {
+    if (!bar) return;
+    markers.forEach((mk) => mk.getElement().classList.toggle('sel', !!mk._bus && (follow ? mk._bus.id === follow.id : busIdx >= 0 && mk._bus.id === routeBuses(picked)[busIdx]?.id)));
+    renderFollow();
+    bar.hidden = TV || !!follow || !(picked && barOn);
+    if (bar.hidden) return;
     const list = routeBuses(picked), b = list[busIdx];
     bar.innerHTML = `<div class="row"><button type="button" data-act="prevRoute" aria-label="Previous route">◀</button>
         <span class="bus-no" style="background:${esc(routeColor(picked))}">${esc(picked)}</span>
@@ -213,7 +236,7 @@
     const mk = markers.get(b.id); if (!mk) return;
     lookAt(mk.getLngLat(), zoom ?? Math.max(map.getZoom(), 16));
   }
-  bar?.addEventListener('click', (e) => {
+  const onBarClick = (e) => {
     const act = e.target.closest('button')?.dataset.act; if (!act) return;
     const rs = allRoutes(), list = routeBuses(picked);
     if (act === 'close') { stopFollow(); pickRoute(null); }
@@ -227,7 +250,9 @@
       busIdx = busIdx < 0 ? (act === 'nextBus' ? 0 : list.length - 1) : (busIdx + (act === 'nextBus' ? 1 : list.length - 1)) % list.length;
       showBus(list[busIdx]); renderBar();
     } else if (act === 'follow' && list[busIdx]) startFollow(list[busIdx].id, null);
-  });
+  };
+  bar?.addEventListener('click', onBarClick);
+  followBar?.addEventListener('click', onBarClick);
 
   // following: the map keeps the bus in view until you drag the map or press ✕. Like a car GPS, the map turns
   // so the bus points up (the road ahead fills the screen); the N button switches to north-up.
@@ -270,6 +295,12 @@
     // the camera rides with the bus, so dragging is off in chase view (on a phone, a pinch counts as a drag, and a
     // drag ends following); pinching to zoom still works
     if (!TV) v ? map.dragPan.disable() : map.dragPan.enable();
+    // keep the phone cool: the tilted view looks far down the road, so it draws a lot more map. While chasing,
+    // draw at a lower resolution and leave out the contour lines and hill shading (computed on the phone itself
+    // from elevation tiles), then put both back after
+    for (const id of ['hillshade', 'contours', 'contour-label']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', v ? 'none' : 'visible');
+    map.setPixelRatio(v ? Math.min(devicePixelRatio, 1.5) : devicePixelRatio);
+    padCache = null;
     if (v) {
       if (phone()) $('#panel').classList.add('min'); // more road on screen
       map.setMaxZoom(18);
@@ -335,12 +366,13 @@
     el.classList.toggle('turn-r', side === 'r');
   }
   // the tilted view looks far up the road: things on screen within 2 km of the bus, plus anything right around it
+  let viewBounds = null, viewAt = 0;
   function inChaseView(here, p) {
     const d = mx(here, p);
     if (d < 250) return true;
     if (d > 2000) return false;
-    const b = map.getBounds();
-    return b.contains(p);
+    if (!viewBounds || Date.now() - viewAt > 500) { viewBounds = map.getBounds(); viewAt = Date.now(); }
+    return viewBounds.contains(p);
   }
   async function updateSignals() {
     if (!chase || !follow) { sigMarkers.forEach((m) => m.remove()); sigMarkers.clear(); updateStopSigns(null); return; }
@@ -348,8 +380,12 @@
     const mk = markers.get(follow.id); if (!mk) return;
     const at = mk.getLngLat(), here = [at.lng, at.lat], now = Date.now();
     const near = new Set();
-    signals.forEach((p, i) => {
-      if (!inChaseView(here, p)) return;
+    // the nearest 30 in view at most
+    const pick = [];
+    signals.forEach((p, i) => { if (inChaseView(here, p)) pick.push([mx(here, p), i]); });
+    pick.sort((a, b) => a[0] - b[0]);
+    pick.slice(0, 30).forEach(([, i]) => {
+      const p = signals[i];
       near.add(i);
       let m = sigMarkers.get(i);
       if (!m) {
@@ -378,9 +414,11 @@
     const b = markers.get(follow.id)?._bus, rt = b ? busRoute(b) : follow.route;
     const next = b ? nextStopOf(b) : null, color = routeColor(rt);
     const near = new Set();
-    for (const f of stopsGeo.features) {
+    // the nearest 25 in view at most
+    const pick = stopsGeo.features.filter((f) => inChaseView(here, f.geometry.coordinates))
+      .map((f) => [mx(here, f.geometry.coordinates), f]).sort((a, b) => a[0] - b[0]).slice(0, 25).map((x) => x[1]);
+    for (const f of pick) {
       const p = f.geometry.coordinates;
-      if (!inChaseView(here, p)) continue;
       const id = f.properties.id;
       near.add(id);
       let m = stopSigns.get(id);
@@ -399,13 +437,17 @@
     for (const [id, m] of stopSigns) if (!near.has(id)) { m.remove(); stopSigns.delete(id); }
   }
   setInterval(updateSignals, 1000);
-  // say so on the map, so nobody waits on a pretend green
-  const chaseNote = document.createElement('div');
-  chaseNote.className = 'chase-note';
-  chaseNote.textContent = 'TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE';
-  map.getContainer().parentElement.appendChild(chaseNote);
   // the camera centers on the bus but lower on the screen, so you see the road ahead of it
-  const chasePad = () => { const seen = map.getContainer().clientHeight - covered(); return { top: seen * 0.3, bottom: covered(), left: 0, right: 0 }; };
+  // (measured twice a second, not every frame: measuring the page every frame makes the browser redo its layout)
+  let padCache = null, padAt = 0;
+  const chasePad = () => {
+    if (!padCache || Date.now() - padAt > 500) {
+      const seen = map.getContainer().clientHeight - covered();
+      padCache = { top: Math.max(0, seen * 0.3 + followTop()), bottom: covered(), left: 0, right: 0 };
+      padAt = Date.now();
+    }
+    return padCache;
+  };
   // every frame in chase view: stay on the bus and turn smoothly with the road
   function chaseCamera(dt) {
     if (!chase || !follow || map.isEasing()) return;
@@ -433,12 +475,10 @@
     if (!follow || chase || (!now && map.isMoving())) return;
     const mk = markers.get(follow.id); if (!mk) return;
     const b = mk._bus, box = map.getContainer();
-    // passed a stop since the bar was drawn: show the new next stop
-    const nx = nextStopOf(b);
-    if (nx !== follow.nx) { follow.nx = nx; renderBar(); }
-    const seen = box.clientHeight - covered(); // the part of the map not under the sheet
+    // the part of the map you can see: below the follow banner, above the sheet
+    const top = followTop(), seen = box.clientHeight - covered() - top;
     // heading-up: the bus sits low on the screen so you can see where it's going; north-up: in the middle
-    const want = [box.clientWidth / 2, followUp ? seen * 0.6 : seen / 2];
+    const want = [box.clientWidth / 2, top + (followUp ? seen * 0.6 : seen / 2)];
     const h = followUp ? headingOf(b) : 0;
     const turn = h == null ? 0 : Math.abs(((h - map.getBearing() + 540) % 360) - 180);
     const p = map.project(mk.getLngLat());
@@ -573,7 +613,11 @@
       }
     }
     chaseCamera(dt);
-    if (t - lastFollow > 250) { lastFollow = t; keepFollowing(); signalTurn(); }
+    if (t - lastFollow > 250) {
+      lastFollow = t; keepFollowing(); signalTurn();
+      // the banner's stop line changes as the bus reaches, stops at and leaves each stop
+      if (follow) { const b = markers.get(follow.id)?._bus, st = b ? stopStatus(b) : null; if ((st ? st.word + st.name : '') !== follow.status) renderFollow(); }
+    }
   }
   requestAnimationFrame(glide);
   window.htBusInternals = { markers, shapesByRoute }; // for checking from the browser console

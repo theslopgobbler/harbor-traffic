@@ -761,7 +761,8 @@
   // closure and road-work stretches breathe in step with the markers (about 15 frames a second is plenty)
   let pulseLast = 0;
   const pulse = (t) => {
-    if (t - pulseLast > 66 && map.getLayer('inc-glow')) {
+    // (paused in the bus chase view, which redraws the map every frame already)
+    if (t - pulseLast > 66 && map.getLayer('inc-glow') && !document.body.classList.contains('chase')) {
       pulseLast = t;
       const s = (Math.sin(t / 1800 * Math.PI * 2) + 1) / 2; // 0..1 over 1.8 s, like the CSS pulse
       map.setPaintProperty('inc-glow', 'line-opacity',
