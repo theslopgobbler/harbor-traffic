@@ -78,21 +78,32 @@
     const f = (meters - d[i - 1]) / ((d[i] - d[i - 1]) || 1);
     return [c[i - 1][0] + (c[i][0] - c[i - 1][0]) * f, c[i - 1][1] + (c[i][1] - c[i - 1][1]) * f];
   }
+  // Estimates are deliberately cautious (70% of the last speed, at most 45 s) so a bus rarely gets ahead of
+  // reality, and when a new report arrives the bus glides there over 1.5 s from wherever it's drawn,
+  // instead of jumping (forward or back).
+  const PACE = 0.7, MAX_S = 45, BLEND_MS = 1500;
   function glide() {
     if (document.hidden || !on) return;
     const now = Date.now();
     for (const mk of markers.values()) {
       const b = mk._bus;
-      if (!b || b.mph < 2) continue;
+      if (!b) continue;
       // the route lines may arrive after the buses: match each bus to its line once they're in
-      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, short(routes[b.route]?.name)); }
-      if (!b._snap) continue;
-      const secs = Math.min(90, (now - b._at) / 1000);
-      const start = b._snap.sh.d[b._snap.i];
-      mk.setLngLat(along(b._snap.sh, start + b.mph * 0.44704 * secs));
+      if (b.mph >= 2 && !b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, short(routes[b.route]?.name)); }
+      // where the bus should be now: its report, slid along its route if it's moving
+      let target = [b.lon, b.lat];
+      if (b.mph >= 2 && b._snap) {
+        const secs = Math.min(MAX_S, (now - b._at) / 1000);
+        target = along(b._snap.sh, b._snap.sh.d[b._snap.i] + b.mph * 0.44704 * PACE * secs);
+      }
+      // ease from where it was drawn when the report arrived
+      const k = b._from ? Math.min(1, (now - b._at) / BLEND_MS) : 1;
+      const e = k < 1 ? k * k * (3 - 2 * k) : 1; // smooth start and stop
+      const pos = k < 1 ? [b._from[0] + (target[0] - b._from[0]) * e, b._from[1] + (target[1] - b._from[1]) * e] : target;
+      if (k < 1 || (b.mph >= 2 && b._snap)) mk.setLngLat(pos);
     }
   }
-  setInterval(glide, 500);
+  setInterval(glide, 250);
   // for checking from the browser console: how many moving buses are matched to a route line
   window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
     return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden }; };
@@ -115,7 +126,11 @@
         el.className = 'bus-mk';
         mk = new maplibregl.Marker({ element: el }).setLngLat([b.lon, b.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '280px' })).addTo(map);
         markers.set(b.id, mk);
-      } else mk.setLngLat([b.lon, b.lat]);
+      } else {
+        // already on the map: remember where it's drawn and let glide() ease it to the new report
+        const ll = mk.getLngLat();
+        b._from = [ll.lng, ll.lat];
+      }
       const el = mk.getElement();
       el.classList.toggle('stopped', b.mph < 2);
       el.innerHTML = `<div class="ic" style="transform:rotate(${b.heading || 0}deg)">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</b>`;
