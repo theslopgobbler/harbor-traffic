@@ -539,7 +539,7 @@
     ['.rg-chip', 0], ['.bar-lbl', 1], ['.wx-mk:not(.rw-mk):not(.br-chip):not(.rg-chip)', 2],
     ['.br-chip', 3], ['.rail-chip', 3], ['.bay-lbl', 4], ['.rw-mk', 6]
   ];
-  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .air-mk, .bus-mk, .town-dot, .me, .map-tools .tool, .nav-tools .tool, .maplibregl-ctrl-group, .legend';
+  const OBSTACLES = '.x-mk, .inc-mk, .br-mk, .cam-mk, .ship-mk, .air-mk, .bus-mk, .river-mk, .town-dot, .me, .map-tools .tool, .nav-tools .tool, .maplibregl-ctrl-group, .legend';
   function declutter() {
     const wrapBox = map.getContainer().getBoundingClientRect();
     const shown = (el) => el.offsetParent !== null && getComputedStyle(el).display !== 'none';
@@ -686,7 +686,7 @@
     const alertedTowns = new Set(list.flatMap((a) => townsForZones(a.affectedZones || []).map((t) => t.id)));
     for (const [id, { el }] of Object.entries(wxMarkers)) el.classList.toggle('alerted', alertedTowns.has(id));
     // PERIL count: weather warnings plus tsunami alerts and strong nearby quakes (from seis.js)
-    window.htPerilRefresh = () => { $('#nAlerts').textContent = (list.length + (window.htPerilExtra || 0)) || ''; };
+    window.htPerilRefresh = () => { $('#nAlerts').textContent = (list.length + (window.htPerilExtra || 0) + (window.htPerilFlood || 0)) || ''; };
     window.htPerilRefresh();
     // WX ALERTS instrument: the whole area
     const allZones = new Set(Object.values(state.zonesByTown).flat());
@@ -1002,6 +1002,7 @@
     const t = window.htTicker;
     if (t.tsunami) add('x', '🌊 TSUNAMI', t.tsunami);
     if (t.quake) add('a', '⚠ QUAKE', t.quake);
+    if (t.flood) add('x', '🌊 FLOOD', t.flood);
     if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
     if (t.air) add('a', '✈ AIR', t.air);
     if (t.bus) add('a', '🚌 BUS', t.bus);
