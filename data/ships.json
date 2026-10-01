@@ -1,19 +1,7 @@
 {
-  "updated": "2026-10-01T11:19:42.6220215+00:00",
+  "updated": "2026-10-01T11:36:14.6484031+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.92059,
-      "lon": -124.1165,
-      "sog": 0,
-      "cog": 0.5,
-      "heading": 282,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-01T08:23:14.9304717+00:00"
-    },
     {
       "mmsi": 367324840,
       "name": "MARY ROSE BRUSCO",
