@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-01T08:44:28.2086447+00:00",
+  "updated": "2026-10-01T09:00:12.4696426+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a8690a",
-      "flight": "ATN3337",
-      "reg": "N641AZ",
-      "type": "B763",
-      "cat": "A5",
-      "alt": 12300,
-      "gs": 354.1,
-      "track": 1.29,
-      "rate": -1408,
-      "lat": 46.76028,
-      "lon": -122.73343,
-      "squawk": "2061",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
