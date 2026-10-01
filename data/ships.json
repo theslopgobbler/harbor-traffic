@@ -1,5 +1,29 @@
 {
-  "updated": "2026-10-01T13:03:34.6763978+00:00",
+  "updated": "2026-10-01T13:29:09.3031655+00:00",
   "source": "AIS via aisstream.io",
-  "ships": []
+  "ships": [
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.92031,
+      "lon": -124.12238,
+      "sog": 0.1,
+      "cog": 179.8,
+      "heading": 101,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-01T13:29:09.3031655+00:00"
+    },
+    {
+      "mmsi": 367327250,
+      "name": "ENDEAVOR",
+      "lat": 46.8818,
+      "lon": -124.32798,
+      "sog": 7.3,
+      "cog": 244.7,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-01T13:29:09.3031655+00:00"
+    }
+  ]
 }
