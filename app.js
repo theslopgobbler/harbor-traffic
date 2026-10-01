@@ -263,6 +263,25 @@
   });
   window.addEventListener('resize', () => TV && showRegion(region, false));
 
+  // the label (and button) follow wherever you pan: zoomed out it's FULL, otherwise the smallest region
+  // containing the middle of the view, or the nearest one if you're between them
+  map.on('moveend', () => {
+    if (cycleTimer) return; // the TV's cycle sets its own label
+    const c = map.getCenter();
+    let id = 'all';
+    if (map.getZoom() >= OVERVIEW_Z) {
+      const withB = C.regions.filter((r) => r.bounds);
+      const inside = withB.filter(({ bounds: [w, s, e, n] }) => c.lng >= w && c.lng <= e && c.lat >= s && c.lat <= n)
+        .sort((a, b) => (a.bounds[2] - a.bounds[0]) * (a.bounds[3] - a.bounds[1]) - (b.bounds[2] - b.bounds[0]) * (b.bounds[3] - b.bounds[1]));
+      const mid = (r) => [(r.bounds[0] + r.bounds[2]) / 2, (r.bounds[1] + r.bounds[3]) / 2];
+      id = (inside[0] || withB.sort((a, b) => Math.hypot(mid(a)[0] - c.lng, mid(a)[1] - c.lat) - Math.hypot(mid(b)[0] - c.lng, mid(b)[1] - c.lat))[0]).id;
+    }
+    if (id === region) return;
+    region = id;
+    regionBar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.r === id));
+    $('#regionName').textContent = `▸ ${regionById[id].name.toUpperCase()}`;
+  });
+
   // ---------------- weather ----------------
   // short readout codes instead of pictures, like an old nav unit
   const wxCode = (f = '', day = true) => {

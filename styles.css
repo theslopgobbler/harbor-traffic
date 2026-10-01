@@ -343,6 +343,12 @@ body.tv .list .m { font-size: 14px; }
     padding: 4px 14px calc(16px + env(safe-area-inset-bottom)); transition: height .2s ease; z-index: 3; }
   .panel.min { height: 112px; overflow: hidden; }
   .panel.max { height: 82%; }
+  /* the handle: a bright bar with a small chevron above it (up while tapping raises the sheet, down when it's all the way up) */
+  .sheet-handle { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; height: 24px; padding: 3px 0 0;
+    border: 0; background: none; cursor: pointer; }
+  .sheet-handle svg { width: 22px; height: 7px; stroke: var(--cyan); fill: none; transition: transform .2s ease; }
+  .sheet-handle::after { content: ""; width: 48px; height: 4px; background: var(--cyan); box-shadow: var(--glow-c); border-radius: 2px; }
+  .sheet-handle.down svg { transform: rotate(180deg); }
   /* a fat chevron: up while tapping raises the sheet, down when it's all the way up */
 
   .legend, .readout { display: none; }
