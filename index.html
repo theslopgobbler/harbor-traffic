@@ -10,13 +10,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202610011558" rel="stylesheet">
+<link href="styles.css?v=202610011646" rel="stylesheet">
 </head>
 <body>
 <header class="top">
   <div class="instruments">
-    <div class="inst inst-wind" id="windGauge" title="Wind at Westport (NOAA station 9441102)">
-      <div class="inst-lbl">WIND</div>
+    <div class="inst inst-wind" id="windGauge" title="Wind at the weather station nearest the map's center">
+      <div class="inst-lbl"><span>WIND</span><span class="where" id="windWhere"></span></div>
       <div class="inst-body">
         <svg id="windDial" viewBox="0 0 60 60" aria-hidden="true"></svg>
         <div class="gauge-txt"><b id="windDir">---</b><i id="windSpd">-- KT</i></div>
@@ -131,14 +131,14 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202610011558"></script>
-<script src="pixel.js?v=202610011558"></script>
-<script src="app.js?v=202610011558"></script>
-<script src="air.js?v=202610011558"></script>
-<script src="wx.js?v=202610011558"></script>
-<script src="seis.js?v=202610011558"></script>
-<script src="bus.js?v=202610011558"></script>
-<script src="river.js?v=202610011558"></script>
-<script src="count.js?v=202610011558"></script>
+<script src="config.js?v=202610011646"></script>
+<script src="pixel.js?v=202610011646"></script>
+<script src="app.js?v=202610011646"></script>
+<script src="air.js?v=202610011646"></script>
+<script src="wx.js?v=202610011646"></script>
+<script src="seis.js?v=202610011646"></script>
+<script src="bus.js?v=202610011646"></script>
+<script src="river.js?v=202610011646"></script>
+<script src="count.js?v=202610011646"></script>
 </body>
 </html>

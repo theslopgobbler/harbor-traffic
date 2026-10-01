@@ -90,16 +90,22 @@ foreach ($p in & $csv 'shapes') {
 function Get-M($a, $b) { $dx = ($b[0] - $a[0]) * 76000; $dy = ($b[1] - $a[1]) * 111000; [math]::Sqrt($dx * $dx + $dy * $dy) }
 function Get-Brg($a, $b) { ([math]::Atan2(($b[0] - $a[0]) * 0.68, $b[1] - $a[1]) * 180 / [math]::PI + 360) % 360 }
 function Get-Turn($a, $b, $c) { $t = [math]::Abs(((Get-Brg $b $c) - (Get-Brg $a $b) + 540) % 360 - 180); $t }
-function Get-CleanLine($line) {
+function Get-CleanLine($line, [switch]$Quick) {
     $changed = $true; $guard = 0
-    while ($changed -and $guard -lt 50) {
+    # (-Quick, for a line already following the streets: one pass for jabs, no loop search; those lines are long)
+    $maxPass = if ($Quick) { 1 } else { 50 }
+    while ($changed -and $guard -lt $maxPass) {
         $changed = $false; $guard++
-        # a jab: the line doubles back (turns more than 150°) after a short leg (under 80 m): drop the tip
+        # a jab: the line goes out and comes straight back the same way (turns more than 150°, and the points either
+        # side of the tip end up within 20 m of each other): drop the tip. A tight U around a block isn't one:
+        # its two sides are a block apart.
         for ($i = 1; $i -lt $line.Count - 1; $i++) {
             $legA = Get-M $line[$i - 1] $line[$i]; $legB = Get-M $line[$i] $line[$i + 1]
-            if ([math]::Min($legA, $legB) -lt 80 -and (Get-Turn $line[$i - 1] $line[$i] $line[$i + 1]) -gt 150) { $line.RemoveAt($i); $changed = $true; $i-- }
+            if ([math]::Min($legA, $legB) -lt 80 -and (Get-M $line[$i - 1] $line[$i + 1]) -lt 20 -and
+                (Get-Turn $line[$i - 1] $line[$i] $line[$i + 1]) -gt 150) { $line.RemoveAt($i); $changed = $true; $i-- }
         }
         # a small loop: the line comes back within 15 m of where it was after under 200 m: cut the loop out
+        if ($Quick) { continue }
         for ($i = 0; $i -lt $line.Count - 3; $i++) {
             $run = 0.0
             for ($j = $i + 1; $j -lt [math]::Min($line.Count, $i + 14); $j++) {
@@ -109,8 +115,73 @@ function Get-CleanLine($line) {
             }
         }
     }
+    # a removed jab leaves the same point twice in a row (and a line with no length between them confuses which
+    # way it's going): keep one
+    for ($i = $line.Count - 1; $i -ge 1; $i--) { if ((Get-M $line[$i - 1] $line[$i]) -lt 1) { $line.RemoveAt($i) } }
     # (cleans the list in place; returns nothing, since PowerShell would unroll a returned list)
 }
+
+# Follow the streets: GHT's lines are sparse in places (points up to 1 km apart), so drawn straight they cut across
+# blocks. Each line's points go to the public OSRM router as waypoints and come back as the path along the
+# streets between them. A leg that comes back much longer than the straight line (the router went around
+# something) keeps the straight line. Answers are kept in data/route-snap.json by the line's points, so the router
+# is only asked again when GHT changes a route.
+$snapFile = Join-Path $dataDir 'route-snap.json'
+$snapCache = @{}
+if (Test-Path $snapFile) { try { foreach ($p in (Get-Content $snapFile -Raw | ConvertFrom-Json).PSObject.Properties) { $snapCache[$p.Name] = $p.Value } } catch {} }
+$snapUsed = @{}
+$script:newSnaps = 0
+# (written by hand to keep the nested lists intact in Windows PowerShell)
+function Save-Snaps($table) {
+    $parts = foreach ($k in $table.Keys) { "`"$k`":[" + ((@($table[$k]) | ForEach-Object { "[$($_[0]),$($_[1])]" }) -join ',') + ']' }
+    [IO.File]::WriteAllText($snapFile, "{$($parts -join ',')}", (New-Object System.Text.UTF8Encoding($false)))
+}
+$sha = [Security.Cryptography.SHA1]::Create()
+function Get-SnapKey($line) {
+    $txt = ($line | ForEach-Object { "$($_[0]),$($_[1])" }) -join ';'
+    ([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($txt))) -replace '-', '').Substring(0, 20)
+}
+function Set-Snapped($line) {
+    $gap = $false; for ($i = 1; $i -lt $line.Count; $i++) { if ((Get-M $line[$i - 1] $line[$i]) -gt 120) { $gap = $true; break } }
+    if (-not $gap) { return }
+    $key = Get-SnapKey $line
+    if ($snapCache.ContainsKey($key)) { $res = $snapCache[$key] }
+    else {
+        $acc = New-Object System.Collections.Generic.List[object]
+        $ok = $true
+        # 40 waypoints per request (the next request starts where this one ended)
+        for ($s = 0; $s -lt $line.Count - 1; $s += 39) {
+            $wp = @($line.GetRange($s, [math]::Min(40, $line.Count - $s)))
+            $coords = ($wp | ForEach-Object { "$($_[0]),$($_[1])" }) -join ';'
+            try {
+                Start-Sleep -Milliseconds 1100   # the public router asks for at most one request a second
+                $rt = Invoke-RestMethod "https://router.project-osrm.org/route/v1/driving/$($coords)?overview=false&steps=true&geometries=geojson" -TimeoutSec 60
+            } catch { $ok = $false; break }
+            $legs = @($rt.routes[0].legs)
+            if ($legs.Count -ne $wp.Count - 1) { $ok = $false; break }
+            for ($k = 0; $k -lt $legs.Count; $k++) {
+                $straight = Get-M $wp[$k] $wp[$k + 1]
+                $pts2 = New-Object System.Collections.Generic.List[object]
+                foreach ($st in $legs[$k].steps) { foreach ($c in $st.geometry.coordinates) { $pts2.Add(@([math]::Round([double]$c[0], 5), [math]::Round([double]$c[1], 5))) } }
+                if ($pts2.Count -lt 2 -or $legs[$k].distance -gt $straight * 1.8 + 150) { $pts2 = [System.Collections.Generic.List[object]]@($wp[$k], $wp[$k + 1]) }
+                foreach ($c in $pts2) {
+                    # one point every 15 m or more is plenty (the router's paths are dense)
+                    if ($acc.Count -and (Get-M $acc[$acc.Count - 1] $c) -lt 15) { continue }
+                    $acc.Add($c)
+                }
+            }
+        }
+        if (-not $ok) { return }   # the router didn't answer: keep the line as it was this time
+        $res = $acc.ToArray()
+        $snapCache[$key] = $res
+        # save as it goes, so a build that's stopped partway doesn't have to ask the router again
+        $script:newSnaps++
+        if ($script:newSnaps % 5 -eq 0) { Save-Snaps $snapCache }
+    }
+    $snapUsed[$key] = $res
+    $line.Clear(); foreach ($c in $res) { $line.Add(@([double]$c[0], [double]$c[1])) }
+}
+
 $features = foreach ($sid in $pts.Keys) {
     $rid = $shapeRoute[$sid]; if (-not $rid) { continue }
     $r = $routes[$rid]
@@ -129,6 +200,8 @@ $features = foreach ($sid in $pts.Keys) {
     $end = $sorted[-1]; $line.Add(@([math]::Round($end[1], 5), [math]::Round($end[2], 5)))
     Get-CleanLine $line
     if ($line.Count -lt 2) { continue }
+    Set-Snapped $line
+    Get-CleanLine $line -Quick   # (a waypoint just off the road can leave a little out-and-back of its own)
     # length along the cleaned line (what the bus is drawn moving along)
     $len = 0.0; for ($i = 1; $i -lt $line.Count; $i++) { $len += Get-M $line[$i - 1] $line[$i] }
     # typical speed along this shape, stops included (meters per second), for arrival estimates
@@ -145,7 +218,10 @@ $stops = foreach ($s in & $csv 'stops') {
         geometry = [ordered]@{ type = 'Point'; coordinates = @([math]::Round([double]$s.stop_lon, 5), [math]::Round([double]$s.stop_lat, 5)) } }
 }
 $utf8 = New-Object System.Text.UTF8Encoding($false)
-[IO.File]::WriteAllText((Join-Path $dataDir 'bus-routes.json'), ([ordered]@{ type = 'FeatureCollection'; features = @($features) } | ConvertTo-Json -Depth 8 -Compress), $utf8)
+# (with the date it was built inside, for the collector's once-a-week check: a fresh checkout makes every file look new)
+[IO.File]::WriteAllText((Join-Path $dataDir 'bus-routes.json'), ([ordered]@{ type = 'FeatureCollection'; updated = [DateTimeOffset]::UtcNow.ToString('o'); features = @($features) } | ConvertTo-Json -Depth 8 -Compress), $utf8)
+# the street paths, kept for next time (only the ones still in use)
+Save-Snaps $snapUsed
 [IO.File]::WriteAllText((Join-Path $dataDir 'bus-stops.json'), ([ordered]@{ type = 'FeatureCollection'; features = @($stops) } | ConvertTo-Json -Depth 6 -Compress), $utf8)
 # data/bus-times.json: every scheduled departure from every stop, read when someone opens a stop
 # (written by hand: ConvertTo-Json in Windows PowerShell wraps sorted arrays as {"value":...,"Count":...})
