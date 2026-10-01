@@ -280,7 +280,7 @@
     if (!follow) return;
     // back to north-up (and flat) for the rest of the map, in one camera move so neither cancels the other
     if (chase) setChase(false, true);
-    else if (map.getBearing()) map.easeTo({ bearing: 0, duration: 600 });
+    else map.easeTo({ bearing: 0, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 600 });
     follow = null;
     renderBar();
   }
@@ -295,7 +295,7 @@
   }
   // ---- chase view: zoom all the way in while following (or press 3D) and the camera drops in behind the bus,
   // tilted like a driving game, and the bus becomes a pixel sprite seen from behind. Zoom out or press 2D to leave.
-  let chase = false, chaseBrg = 0;
+  let chase = false, chaseBrg = 0, radarWas = null;
   const CHASE_PITCH = 58, CHASE_ZOOM = 17;
   function setChase(v, northUp) {
     if (v === chase || (v && !follow)) return;
@@ -309,7 +309,15 @@
     // draw at a lower resolution and leave out the contour lines and hill shading (computed on the phone itself
     // from elevation tiles), then put both back after
     for (const id of ['hillshade', 'contours', 'contour-label']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', v ? 'none' : 'visible');
-    map.setPixelRatio(v ? Math.min(devicePixelRatio, 1.5) : devicePixelRatio);
+    // the radar overlay too, if it's on (put back the way it was)
+    if (map.getLayer('radar')) {
+      if (v) { radarWas = map.getLayoutProperty('radar', 'visibility'); map.setLayoutProperty('radar', 'visibility', 'none'); }
+      else if (radarWas) map.setLayoutProperty('radar', 'visibility', radarWas);
+    }
+    // resolution: at most 1.5×, and fewer pixels on a big screen (about 1.2 million drawn per frame at most),
+    // which is what makes a large desktop window struggle
+    const box = map.getContainer();
+    map.setPixelRatio(v ? Math.max(0.6, Math.min(devicePixelRatio, 1.5, Math.sqrt(1.2e6 / Math.max(1, box.clientWidth * box.clientHeight)))) : devicePixelRatio);
     padCache = null;
     if (v) {
       if (phone() && !$('#panel').classList.contains('gone')) $('#panel').classList.add('min'); // more road on screen
@@ -318,8 +326,10 @@
       map.easeTo({ center: mk ? mk.getLngLat() : map.getCenter(), zoom: CHASE_ZOOM, pitch: CHASE_PITCH, bearing: chaseBrg,
         padding: chasePad(), duration: 1400 });
     } else {
-      map.easeTo({ pitch: 0, zoom: Math.min(map.getZoom(), 15.5), padding: { top: 0, bottom: 0, left: 0, right: 0 },
-        ...(northUp ? { bearing: 0 } : {}), duration: 800 });
+      // still following (flat view next): settle where the flat follow keeps the bus; done following: no padding
+      const pad = northUp ? { top: 0, bottom: 0, left: 0, right: 0 } : chasePad();
+      map.easeTo({ pitch: 0, zoom: Math.min(map.getZoom(), 15.5), padding: pad,
+        ...(northUp ? { bearing: 0 } : followUp ? {} : { bearing: 0 }), duration: 800 });
       map.once('moveend', () => { if (!chase) map.setMaxZoom(16); });
     }
     if (mk) drawBus(mk);
@@ -470,29 +480,33 @@
     }
   }
   setInterval(updateSignals, 1000);
-  // the camera centers on the bus but lower on the screen, so you see the road ahead of it
+  // Where the bus sits on screen while following: in the part of the map you can see (below the follow banner,
+  // above the sheet), a share of the way down it: the middle when north-up, lower when it faces up or in chase
+  // view, so more of the road ahead shows. Done with map padding, so the bus stays exactly there.
   // (measured twice a second, not every frame: measuring the page every frame makes the browser redo its layout)
   let padCache = null, padAt = 0;
+  const followShare = () => (chase ? 0.65 : followUp ? 0.6 : 0.5);
   const chasePad = () => {
     if (!padCache || Date.now() - padAt > 500) {
-      const seen = map.getContainer().clientHeight - covered();
-      padCache = { top: Math.max(0, seen * 0.3 + followTop()), bottom: covered(), left: 0, right: 0 };
+      const top = followTop(), seen = map.getContainer().clientHeight - covered() - top;
+      padCache = { top: Math.max(0, top + (2 * followShare() - 1) * seen), bottom: covered(), left: 0, right: 0 };
       padAt = Date.now();
     }
     return padCache;
   };
-  // every frame in chase view: stay on the bus and turn smoothly with the road
+  // every frame while following (flat or chase view): stay locked on the bus and turn smoothly with the road
+  // (heading-up and chase), or keep north up
   function chaseCamera(dt) {
-    if (!chase || !follow || map.isEasing()) return;
+    if (!follow || map.isEasing()) return;
     const mk = markers.get(follow.id); if (!mk) return;
-    const h = headingOf(mk._bus);
+    const h = chase || followUp ? headingOf(mk._bus) : 0;
     if (h != null) chaseBrg += (((h - chaseBrg + 540) % 360) - 180) * Math.min(1, dt * 2);
     map.jumpTo({ center: mk.getLngLat(), bearing: chaseBrg, padding: chasePad() });
   }
-  // outside chase view the map is always flat and unpadded: if a pinch interrupted the camera on its way back,
+  // when not following, the map is always flat and unpadded: if a pinch interrupted the camera on its way back,
   // straighten it once the map settles
   map.on('moveend', () => {
-    if (chase || map.isEasing()) return;
+    if (chase || follow || map.isEasing()) return;
     const p = map.getPadding();
     if (map.getPitch() > 0.5 || p.top || p.bottom) {
       map.easeTo({ pitch: 0, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 400 });
@@ -504,22 +518,15 @@
     if (follow && !chase && e.originalEvent && map.getZoom() >= 15.95) setChase(true);
     else if (chase && e.originalEvent && map.getZoom() < 15) setChase(false);
   });
+  // starting to follow (or switching north-up / heading-up): glide over to the bus; from then on chaseCamera()
+  // keeps it locked in place every frame
   function keepFollowing(now) {
-    if (!follow || chase || (!now && map.isMoving())) return;
+    if (!follow || chase || !now) return;
     const mk = markers.get(follow.id); if (!mk) return;
-    const b = mk._bus, box = map.getContainer();
-    // the part of the map you can see: below the follow banner, above the sheet
-    const top = followTop(), seen = box.clientHeight - covered() - top;
-    // heading-up: the bus sits low on the screen so you can see where it's going; north-up: in the middle
-    const want = [box.clientWidth / 2, top + (followUp ? seen * 0.6 : seen / 2)];
-    const h = followUp ? headingOf(b) : 0;
-    const turn = h == null ? 0 : Math.abs(((h - map.getBearing() + 540) % 360) - 180);
-    const p = map.project(mk.getLngLat());
-    // only move when it drifts or turns, so the map isn't always in motion
-    if (now || turn > 6 || Math.hypot(p.x - want[0], p.y - want[1]) > Math.min(box.clientWidth, box.clientHeight) * 0.1) {
-      map.easeTo({ center: mk.getLngLat(), zoom: now ? Math.max(map.getZoom(), 15.5) : map.getZoom(),
-        bearing: h == null ? map.getBearing() : h, offset: [0, want[1] - box.clientHeight / 2], duration: now ? 900 : 1200 });
-    }
+    const h = followUp ? headingOf(mk._bus) : 0;
+    chaseBrg = h ?? map.getBearing();
+    padCache = null;
+    map.easeTo({ center: mk.getLngLat(), zoom: Math.max(map.getZoom(), 15.5), bearing: chaseBrg, padding: chasePad(), duration: 900 });
   }
 
   // ---- estimated positions between GPS reports ----
@@ -647,7 +654,7 @@
     }
     chaseCamera(dt);
     if (t - lastFollow > 250) {
-      lastFollow = t; keepFollowing(); signalTurn();
+      lastFollow = t; signalTurn();
       // the banner's stop line changes as the bus reaches, stops at and leaves each stop
       if (follow) { const b = markers.get(follow.id)?._bus, st = b ? stopStatus(b) : null; if ((st ? st.word + st.name : '') !== follow.status) renderFollow(); }
     }

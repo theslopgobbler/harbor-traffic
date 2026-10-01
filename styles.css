@@ -176,6 +176,7 @@ body.chase .maplibregl-marker:not(.bus-mk):not(.sig-mk):not(.stop-sign) { displa
 body.chase .sig-mk, body.chase .stop-sign, body.chase .bus-mk:not(.chase) .ic { filter: none !important; }
 body.chase .bus-mk.chase .sprite { filter: none; }
 body.chase .tool { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+body.chase .hud { background: none; } /* the scanlines and grid over the whole map: one less full-screen layer */
 /* following a bus: a see-through banner across the top of the map, left of the zoom buttons */
 /* (desktop: starts right of the column of map buttons on the left; phones: full width, see below) */
 .follow-bar { position: absolute; top: 20px; left: 160px; right: 60px; z-index: 3; max-width: 640px; padding: 6px 8px 7px;
@@ -200,7 +201,8 @@ body.following .region-name { display: none; }
 /* the route bar at the bottom is see-through too */
 .bus-bar { background: rgba(2,8,7,.66) !important; }
 /* bus stop signs in chase view: a pixel sign on a pole in the route's color, with the stop's name */
-.stop-sign { position: relative; width: 12px; height: 29px; pointer-events: none; opacity: .5; }
+/* (no position here: the map positions its markers absolutely, and overriding that puts them in the wrong place) */
+.stop-sign { width: 12px; height: 29px; pointer-events: none; opacity: .5; }
 .stop-sign svg { display: block; width: 100%; height: 100%; }
 .stop-sign span { display: none; position: absolute; left: 50%; bottom: 100%; transform: translate(-50%, -3px); white-space: nowrap;
   padding: 1px 4px; font: 9px/11px var(--mono); letter-spacing: .08em; color: var(--text); background: rgba(2,8,7,.85); border: 1px solid var(--sc); }
