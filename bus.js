@@ -40,81 +40,25 @@
     try {
       const [r, s] = await Promise.all([fetch('data/bus-routes.json').then((x) => x.json()), fetch('data/bus-stops.json').then((x) => x.json())]);
       stopsGeo = s;
-      // up close, routes that share a street spread apart: each route gets a lane, and every line keeps to the
-      // right of its direction of travel (so a route's two directions sit on either side, like real traffic)
-      const base = (rt) => rt.replace(/P$/, ''); // 20P (Port Industrial) shares route 20's lane
-      const order = [...new Set(r.features.map((f) => base(f.properties.route)))].sort(natural);
+      // Routes that share a street simply overlap (side-by-side lanes pulled the lines, buses and stops off the
+      // road); the route you're looking at (picked, or the bus you're following) is drawn again on top
       for (const f of r.features || []) {
         const p = f.properties;
         p.color = COLORS[p.route] || p.color;
-        p.lane =(order.indexOf(base(p.route)) % 4) + 1;
         const c = f.geometry.coordinates, d = [0];
         for (let i = 1; i < c.length; i++) d.push(d[i - 1] + mx(c[i - 1], c[i]));
-        const entry = { c, d, mps: p.mps || 7, lc: null }; // lc: the same line shifted into its lane (set below)
-        (shapesByRoute[p.route] ||= []).push(entry);
-        Object.defineProperty(f, '_entry', { value: entry });
+        (shapesByRoute[p.route] ||= []).push({ c, d, mps: p.mps || 7 });
         routeInfo[p.route] ||= { name: p.name, color: p.color };
       }
-      // Up close (zoom 15+), routes that share a street sit side by side: each route's line is shifted sideways by
-      // its lane (5 m per lane). The shift is to one fixed side of the road whichever way the bus is going (so a
-      // route's out-and-back legs land on top of each other, not doubled), judged against a reference direction
-      // (20° north of east, which no street grid runs square across). Where a winding road turns past crosswise,
-      // the line changes sides gradually over about 30 m, so each route stays one unbroken line.
-      const REF = [Math.cos(0.35), Math.sin(0.35)];
-      function laneLine(c, laneM) {
-        const n = c.length;
-        const v = [], side = [];
-        let cur = 0;
-        for (let i = 0; i < n - 1; i++) {
-          const vx = (c[i + 1][0] - c[i][0]) * 76000, vy = (c[i + 1][1] - c[i][1]) * 111000, len = Math.hypot(vx, vy);
-          v.push(len ? [vx / len, vy / len, len] : null);
-          if (!len) { side.push(cur || 1); continue; }
-          const dot = (vx * REF[0] + vy * REF[1]) / len;
-          // nearly crosswise, keep the side it was on (a wiggle shouldn't flip it)
-          if (!(cur && Math.abs(dot) < 0.4)) cur = dot >= 0 ? 1 : -1;
-          side.push(cur);
-        }
-        // the side at each point, eased over 15 m each way so a change of side is gradual
-        const d = [0];
-        for (let i = 1; i < n; i++) d.push(d[i - 1] + (v[i - 1]?.[2] || 0));
-        const out = [];
-        let lo = 0, hi = 0;
-        for (let i = 0; i < n; i++) {
-          while (d[lo] < d[i] - 15) lo++;
-          while (hi < n - 2 && d[hi + 1] <= d[i] + 15) hi++;
-          let sum = 0, cnt = 0;
-          for (let k = Math.max(0, lo - 1); k <= Math.min(n - 2, hi); k++) { sum += side[k]; cnt++; }
-          const sm = cnt ? sum / cnt : 1;
-          // the way the road runs here (the two segments around the point, averaged), and its right-hand side
-          const a = v[i - 1] || v[i], b = v[i] || v[i - 1];
-          if (!a || !b) { out.push(c[i]); continue; }
-          let tx = a[0] + b[0], ty = a[1] + b[1];
-          const tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl;
-          const off = laneM * sm;
-          out.push([c[i][0] + (ty * off) / 76000, c[i][1] - (tx * off) / 111000]);
-        }
-        return out;
-      }
-      const laneData = { type: 'FeatureCollection', features: (r.features || []).map((f) => {
-        const lc = laneLine(f.geometry.coordinates, f.properties.lane * 5);
-        if (f._entry) f._entry.lc = lc; // buses are drawn on it up close, point for point with the line they follow
-        return { type: 'Feature', properties: f.properties, geometry: { type: 'LineString', coordinates: lc } };
-      }) };
       const add = () => {
         if (map.getSource('bus-routes')) return;
-        map.addSource('bus-routes', { type: 'geojson', data: r });          // the lines as they run (zoomed out)
-        map.addSource('bus-lanes', { type: 'geojson', data: laneData });   // shifted into lanes (zoomed in)
+        map.addSource('bus-routes', { type: 'geojson', data: r });
         map.addSource('bus-stops', { type: 'geojson', data: s });
         const width = (w0, w1) => ['interpolate', ['linear'], ['zoom'], 9, w0, 14, w1];
-        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, maxzoom: 15, layout: { 'line-join': 'round', 'line-cap': 'round' },
-          paint: { 'line-color': ['get', 'color'], 'line-opacity': routeOpacity(), 'line-width': width(1.2, 3) } }, 'flow-glow');
-        map.addLayer({ id: 'bus-route-lanes', type: 'line', source: 'bus-lanes', minzoom: 15, layout: { 'line-join': 'round', 'line-cap': 'round' },
+        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, layout: { 'line-join': 'round', 'line-cap': 'round' },
           paint: { 'line-color': ['get', 'color'], 'line-opacity': routeOpacity(), 'line-width': width(1.2, 3) } }, 'flow-glow');
         // the picked route, drawn again on top of all the others (brighter and a bit wider)
-        const none = ['==', ['get', 'route'], '__none__'];
-        map.addLayer({ id: 'bus-route-picked', type: 'line', source: 'bus-routes', minzoom: 9, maxzoom: 15, filter: none,
-          layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-opacity': 1, 'line-width': width(2.2, 5) } }, 'flow-glow');
-        map.addLayer({ id: 'bus-route-picked-lanes', type: 'line', source: 'bus-lanes', minzoom: 15, filter: none,
+        map.addLayer({ id: 'bus-route-picked', type: 'line', source: 'bus-routes', minzoom: 9, filter: ['==', ['get', 'route'], '__none__'],
           layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-opacity': 1, 'line-width': width(2.2, 5) } }, 'flow-glow');
         map.addLayer({ id: 'bus-stops', type: 'circle', source: 'bus-stops', minzoom: 13.5, paint: {
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 13.5, 2.5, 16, 6], 'circle-color': '#020807',
@@ -129,8 +73,7 @@
           const stop = map.getLayer('bus-stops') && map.getLayoutProperty('bus-stops', 'visibility') !== 'none'
             ? map.queryRenderedFeatures(box, { layers: ['bus-stops'] })[0] : null;
           if (stop) return focusStop(stop.properties.id);
-          const hit = map.queryRenderedFeatures(box, { layers: ['bus-route-picked', 'bus-route-picked-lanes'] })[0] ||
-            map.queryRenderedFeatures(box, { layers: ['bus-route-lines', 'bus-route-lanes'] })[0];
+          const hit = map.queryRenderedFeatures(box, { layers: ['bus-route-picked'] })[0] || map.queryRenderedFeatures(box, { layers: ['bus-route-lines'] })[0];
           pickRoute(hit ? hit.properties.route.replace(/P$/, '') : null, { bar: !!hit });
           if (hit) new maplibregl.Popup({ offset: 6, maxWidth: '240px', closeButton: false }).setLngLat(e.lngLat)
             .setHTML(`<h3>ROUTE ${esc(hit.properties.route)}</h3><p>${esc((hit.properties.name || '').toUpperCase())}</p>`).addTo(map);
@@ -162,9 +105,9 @@
     if (route !== picked) busIdx = -1;
     picked = route;
     if (map.getLayer('bus-route-lines')) {
-      for (const id of ['bus-route-lines', 'bus-route-lanes']) map.setPaintProperty(id, 'line-opacity', routeOpacity());
+      map.setPaintProperty('bus-route-lines', 'line-opacity', routeOpacity());
       // route 20 also brings up its Port Industrial runs (20P)
-      for (const id of ['bus-route-picked', 'bus-route-picked-lanes']) map.setFilter(id, ['in', ['get', 'route'], ['literal', picked ? [picked, picked + 'P'] : ['__none__']]]);
+      map.setFilter('bus-route-picked', ['in', ['get', 'route'], ['literal', picked ? [picked, picked + 'P'] : ['__none__']]]);
     }
     if (picked && opt.fit) fitRoute(picked);
     renderBar();
@@ -174,7 +117,7 @@
     for (const sh of shapesByRoute[rt] || []) sh.c.forEach((p) => b.extend(p));
     if (!b.isEmpty()) map.fitBounds(b, { padding: window.htFitPad ? window.htFitPad(50) : 50, maxZoom: 14.5 });
   }
-  const showLayers = () => ['bus-route-lines', 'bus-route-lanes', 'bus-route-picked', 'bus-route-picked-lanes', 'bus-stops', 'bus-stop-focus'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+  const showLayers = () => ['bus-route-lines', 'bus-route-picked', 'bus-stops', 'bus-stop-focus'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
 
   // move the map so a point sits in the middle of the part you can see (on phones the sheet covers the bottom)
   function covered() {
@@ -599,9 +542,9 @@
     }
     return best;
   }
-  // the point a given distance along a line; inLane: on its lane-shifted copy (what's drawn from zoom 15 in)
-  function along(sh, meters, inLane) {
-    const d = sh.d, c = inLane && sh.lc ? sh.lc : sh.c;
+  // the point a given distance along a line
+  function along(sh, meters) {
+    const d = sh.d, c = sh.c;
     if (meters >= d[d.length - 1]) return c[c.length - 1];
     let i = 1; while (d[i] < meters) i++;
     const f = (meters - d[i - 1]) / ((d[i] - d[i - 1]) || 1);
@@ -657,7 +600,6 @@
     const dt = Math.min(0.25, (t - (lastFrame || t)) / 1000);
     lastFrame = t;
     const now = Date.now();
-    const lanesShown = map.getZoom() >= 15; // (the lane-shifted route lines show from zoom 15 in)
     for (const mk of markers.values()) {
       const b = mk._bus;
       if (!b) continue;
@@ -676,7 +618,7 @@
         // (and hard-stopped at a split: up to it, or holding still if it's already there)
         else mk._s = Math.min(end, Math.max(mk._s, b._fork ?? end), mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
         b._along = mk._s;
-        pos = along(sh, mk._s, lanesShown); // up close, on its route's lane like the line it's drawn on
+        pos = along(sh, mk._s);
       } else if (b.mph >= 2) {
         // off its route line (heading out to start a route, a detour): carry on straight along its GPS heading
         // for a little while, a bit under its speed
