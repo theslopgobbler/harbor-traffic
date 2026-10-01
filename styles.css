@@ -536,7 +536,7 @@ body.tv .list .m { font-size: 14px; }
   .inst.zoomed { position: absolute; left: 0; top: 0; zoom: 2; z-index: 6; background: #030d0c;
     box-shadow: 0 0 0 1px var(--cyan), 0 6px 18px rgba(0,0,0,.6); }
 }
-.sheet-hide { display: none; }
+@media (min-width: 761px) { .sheet-hide { display: none; } } /* (desktop has a side panel, nothing to tuck away) */
 /* hide/show the instrument panel: a small tab at the top edge of the map */
 .top-toggle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 4; width: 46px; height: 16px; padding: 0;
   display: grid; place-items: center; background: rgba(2,8,7,.8); border: 1px solid var(--line-2); border-top: 0; color: var(--cyan); cursor: pointer; }
