@@ -177,6 +177,38 @@
     if (rolling && prev && here - prev.d < 120) return { word: 'DEPARTING', name: prev.name, then: next?.name };
     return next ? { word: 'NEXT STOP', name: next.name } : null;
   }
+  // the street the bus is on: the named street under it on the map that runs the same way it's going (so a
+  // cross street at an intersection doesn't count), from an invisible copy of the street lines (app.js 'street-q')
+  function segDist(p, a, b) {
+    const ax = (a[0] - p[0]) * 76000, ay = (a[1] - p[1]) * 111000, bx = (b[0] - p[0]) * 76000, by = (b[1] - p[1]) * 111000;
+    const dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy;
+    const t = L ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L)) : 0;
+    return Math.hypot(ax + t * dx, ay + t * dy);
+  }
+  function streetOf(mk) {
+    const ll = mk.getLngLat(), here = [ll.lng, ll.lat];
+    // at a transit center (a bus bay, not a road): say that instead
+    const tc = stopsGeo?.features.find((f) => /transit (center|ctr)/i.test(f.properties.name) && mx(here, f.geometry.coordinates) < 70);
+    if (tc) return 'AT ' + String(tc.properties.name).toUpperCase();
+    if (!map.getLayer('street-q') || map.getZoom() < 12) return null;
+    const p = map.project(ll);
+    const feats = map.queryRenderedFeatures([[p.x - 14, p.y - 14], [p.x + 14, p.y + 14]], { layers: ['street-q'] });
+    const h = mk._bus ? headingOf(mk._bus) : null;
+    let best = null;
+    for (const f of feats) {
+      const g = f.geometry, lines = g.type === 'LineString' ? [g.coordinates] : g.type === 'MultiLineString' ? g.coordinates : [];
+      for (const c of lines) for (let i = 0; i < c.length - 1; i++) {
+        const dist = segDist(here, c[i], c[i + 1]);
+        if (dist > 40) continue;
+        const b = bearing(c[i], c[i + 1]);
+        const turn = h == null ? 0 : Math.min(diff(b, h), diff(b, (h + 180) % 360)); // either way along the street
+        if (turn > 35) continue;
+        const score = dist + turn;
+        if (!best || score < best.s) best = { s: score, name: f.properties.name };
+      }
+    }
+    return best ? 'ON ' + (window.htShortStreet ? window.htShortStreet(best.name) : best.name.toUpperCase()) : null;
+  }
   // following: a see-through banner across the top of the map (under the instruments, clear of + and -), big
   // enough to read at a glance; the bottom bar is only for picking routes
   const followBar = $('#followBar');
@@ -195,7 +227,7 @@
     follow.status = st ? st.word + st.name : '';
     const eta = b && follow.stop ? etaTo(b, follow.stop) : null;
     followBar.innerHTML = `<div class="fb-top"><span class="bus-no big" style="background:${esc(routeColor(rt))}">${esc(rt)}</span>
-        <span class="fb-id">BUS ${esc(follow.id)}<small>${b ? (b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH') : 'LOST SIGNAL'}</small></span>
+        <span class="fb-id">BUS ${esc(follow.id)}<small>${b ? (b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH') : 'LOST SIGNAL'}${follow.street && !(st && follow.street === 'AT ' + st.name.toUpperCase()) ? ` · ${esc(follow.street)}` : ''}</small></span>
         <button type="button" data-act="turn" ${chase ? 'hidden' : ''} aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
         <button type="button" data-act="chase" class="${chase ? 'on' : ''}" aria-label="${chase ? 'Leave the chase view' : 'Chase view: ride behind the bus'}">${chase ? '2D' : '3D'}</button>
         <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>
@@ -653,7 +685,13 @@
     if (t - lastFollow > 250) {
       lastFollow = t; signalTurn();
       // the banner's stop line changes as the bus reaches, stops at and leaves each stop
-      if (follow) { const b = markers.get(follow.id)?._bus, st = b ? stopStatus(b) : null; if ((st ? st.word + st.name : '') !== follow.status) renderFollow(); }
+      if (follow) {
+        const mk = markers.get(follow.id), b = mk?._bus, st = b ? stopStatus(b) : null;
+        // and the street it's on, once a second (keeping the last one through a gap, like an intersection)
+        let street = follow.street;
+        if (mk && t - (follow.streetAt || 0) > 1000) { follow.streetAt = t; street = streetOf(mk) || follow.street; }
+        if ((st ? st.word + st.name : '') !== follow.status || street !== follow.street) { follow.street = street; renderFollow(); }
+      }
     }
   }
   requestAnimationFrame(glide);
