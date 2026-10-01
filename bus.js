@@ -424,9 +424,20 @@
     const b = markers.get(follow.id)?._bus, rt = b ? busRoute(b) : follow.route;
     const next = b ? nextStopOf(b) : null, color = routeColor(rt);
     const near = new Set();
-    // the nearest 25 in view at most
-    const pick = stopsGeo.features.filter((f) => inChaseView(here, f.geometry.coordinates))
-      .map((f) => [mx(here, f.geometry.coordinates), f]).sort((a, b) => a[0] - b[0]).slice(0, 25).map((x) => x[1]);
+    // the nearest 25 in view at most; a stop's twin across the street (same name, a few meters away) is one sign,
+    // preferring the one on this bus's route
+    const servesHere = (f) => serves(String(f.properties.routes || '').split(' '), rt);
+    const cand = stopsGeo.features.filter((f) => inChaseView(here, f.geometry.coordinates))
+      .map((f) => [mx(here, f.geometry.coordinates) - (servesHere(f) ? 1000 : 0), f]).sort((a, b) => a[0] - b[0]);
+    const pick = [];
+    for (const [, f] of cand) {
+      if (pick.some((g) => g.properties.name === f.properties.name && mx(g.geometry.coordinates, f.geometry.coordinates) < 80)) continue;
+      pick.push(f);
+      if (pick.length >= 25) break;
+    }
+    // names only for the next few stops ahead of the bus on its route (the rest are plain signs)
+    const s0 = b?._along ?? b?._obs ?? 0;
+    const ahead = b?._snap ? lineStops(b._snap.sh, rt).filter((s) => s.d > s0 - 10).slice(0, 4).map((s) => s.name) : [];
     for (const f of pick) {
       const p = f.geometry.coordinates;
       const id = f.properties.id;
@@ -442,9 +453,21 @@
       const el = m.getElement(), mine = serves(String(f.properties.routes || '').split(' '), rt);
       el.classList.toggle('mine', mine);
       el.classList.toggle('next', mine && f.properties.name === next);
+      el.classList.toggle('named', mine && ahead.includes(f.properties.name));
       el.style.setProperty('--sc', mine ? color : '#5f9c8b');
     }
     for (const [id, m] of stopSigns) if (!near.has(id)) { m.remove(); stopSigns.delete(id); }
+    // and no two name tags on top of each other: the next stop first, then nearest first; a tag that would
+    // overlap one already shown waits until there's room
+    const tags = [...stopSigns.values()].map((m) => m.getElement()).filter((el) => el.classList.contains('named'));
+    tags.forEach((el) => el.classList.remove('quiet'));
+    const order = tags.map((el) => ({ el, r: el.querySelector('span').getBoundingClientRect() }))
+      .sort((a, b) => (b.el.classList.contains('next') - a.el.classList.contains('next')) || (b.r.bottom - a.r.bottom));
+    const placed = [];
+    for (const { el, r } of order) {
+      if (placed.some((p) => r.left < p.right + 4 && p.left < r.right + 4 && r.top < p.bottom + 2 && p.top < r.bottom + 2)) el.classList.add('quiet');
+      else placed.push(r);
+    }
   }
   setInterval(updateSignals, 1000);
   // the camera centers on the bus but lower on the screen, so you see the road ahead of it
