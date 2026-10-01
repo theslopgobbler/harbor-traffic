@@ -166,6 +166,15 @@ body.chase canvas.fx { display: none; }
 .chase-note { display: none; position: absolute; left: 44px; top: 34px; z-index: 2; pointer-events: none;
   font: 9px/1 var(--mono); letter-spacing: .12em; color: var(--dim); }
 body.chase .chase-note { display: block; }
+/* bus stop signs in chase view: a pixel sign on a pole in the route's color, with the stop's name */
+.stop-sign { position: relative; width: 12px; height: 29px; pointer-events: none; opacity: .5; }
+.stop-sign svg { display: block; width: 100%; height: 100%; }
+.stop-sign span { display: none; position: absolute; left: 50%; bottom: 100%; transform: translate(-50%, -3px); white-space: nowrap;
+  padding: 1px 4px; font: 9px/11px var(--mono); letter-spacing: .08em; color: var(--text); background: rgba(2,8,7,.85); border: 1px solid var(--sc); }
+.stop-sign.mine { opacity: 1; width: 16px; height: 38px; }
+.stop-sign.mine span { display: block; }
+.stop-sign.next { filter: drop-shadow(0 0 5px var(--sc)); z-index: 2; }
+.stop-sign.next span { color: #020807; background: var(--sc); font-weight: 700; }
 /* pixel traffic signals in chase view: unlit lamps dark, the lit one glowing */
 .sig-mk { width: 14px; height: 40px; pointer-events: none; }
 .sig-mk svg { display: block; width: 100%; height: 100%; }
