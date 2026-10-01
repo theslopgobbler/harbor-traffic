@@ -187,7 +187,8 @@
         <span class="what follow"><b>BUS ${esc(follow.id)}</b>${b ? ` · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}` : ' · LOST SIGNAL'}${nx ? ` · NEXT STOP <b>${esc(nx.toUpperCase())}</b>` : ''}
         ${follow.stop ? `<br><span class="m">${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}</span>`
           : b?.nextStop ? `<br><span class="m">DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</span>` : ''}</span>
-        <button type="button" data-act="turn" aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
+        <button type="button" data-act="turn" ${chase ? 'hidden' : ''} aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
+        <button type="button" data-act="chase" class="${chase ? 'on' : ''}" aria-label="${chase ? 'Leave the chase view' : 'Chase view: ride behind the bus'}">${chase ? '2D' : '3D'}</button>
         <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>`;
       return;
     }
@@ -213,6 +214,7 @@
     const rs = allRoutes(), list = routeBuses(picked);
     if (act === 'close') { stopFollow(); pickRoute(null); }
     else if (act === 'unfollow') stopFollow();
+    else if (act === 'chase') setChase(!chase);
     else if (act === 'turn') { followUp = !followUp; store.set('ht.followUp', followUp); renderBar(); keepFollowing(true); }
     else if (act === 'prevRoute' || act === 'nextRoute') {
       const i = rs.indexOf(picked), n = rs.length;
@@ -237,6 +239,7 @@
   }
   function stopFollow() {
     if (!follow) return;
+    setChase(false);
     follow = null;
     if (map.getBearing()) map.easeTo({ bearing: 0, duration: 600 }); // back to north-up for the rest of the map
     renderBar();
@@ -250,8 +253,45 @@
     }
     return b.mph >= 2 ? b.heading || 0 : null;
   }
+  // ---- chase view: zoom all the way in while following (or press 3D) and the camera drops in behind the bus,
+  // tilted like a driving game, and the bus becomes a pixel sprite seen from behind. Zoom out or press 2D to leave.
+  let chase = false, chaseBrg = 0;
+  const CHASE_PITCH = 58, CHASE_ZOOM = 17;
+  function setChase(v) {
+    if (v === chase || (v && !follow)) return;
+    chase = v;
+    document.body.classList.toggle('chase', v);
+    const mk = follow && markers.get(follow.id);
+    if (v) {
+      if (phone()) $('#panel').classList.add('min'); // more road on screen
+      map.setMaxZoom(18);
+      chaseBrg = (mk && headingOf(mk._bus)) ?? map.getBearing();
+      map.easeTo({ center: mk ? mk.getLngLat() : map.getCenter(), zoom: CHASE_ZOOM, pitch: CHASE_PITCH, bearing: chaseBrg,
+        padding: chasePad(), duration: 1400 });
+    } else {
+      map.easeTo({ pitch: 0, zoom: Math.min(map.getZoom(), 15.5), padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 800 });
+      map.once('moveend', () => { if (!chase) map.setMaxZoom(16); });
+    }
+    if (mk) drawBus(mk);
+    renderBar();
+  }
+  // the camera centers on the bus but lower on the screen, so you see the road ahead of it
+  const chasePad = () => { const seen = map.getContainer().clientHeight - covered(); return { top: seen * 0.3, bottom: covered(), left: 0, right: 0 }; };
+  // every frame in chase view: stay on the bus and turn smoothly with the road
+  function chaseCamera(dt) {
+    if (!chase || !follow || map.isEasing()) return;
+    const mk = markers.get(follow.id); if (!mk) return;
+    const h = headingOf(mk._bus);
+    if (h != null) chaseBrg += (((h - chaseBrg + 540) % 360) - 180) * Math.min(1, dt * 2);
+    map.jumpTo({ center: mk.getLngLat(), bearing: chaseBrg, padding: chasePad() });
+  }
+  // zooming all the way in while following starts it; zooming well out ends it
+  map.on('zoomend', (e) => {
+    if (follow && !chase && e.originalEvent && map.getZoom() >= 15.95) setChase(true);
+    else if (chase && e.originalEvent && map.getZoom() < 15) setChase(false);
+  });
   function keepFollowing(now) {
-    if (!follow || (!now && map.isMoving())) return;
+    if (!follow || chase || (!now && map.isMoving())) return;
     const mk = markers.get(follow.id); if (!mk) return;
     const b = mk._bus, box = map.getContainer();
     // passed a stop since the bar was drawn: show the new next stop
@@ -350,6 +390,7 @@
         if (ic) ic.style.transform = `rotate(calc(${Math.round(h)}deg - var(--brg, 0deg)))`;
       }
     }
+    chaseCamera(dt);
     if (t - lastFollow > 250) { lastFollow = t; keepFollowing(); }
   }
   requestAnimationFrame(glide);
@@ -509,6 +550,36 @@
     <path d="M3 4 H9" stroke="${c}" stroke-width="1.6" stroke-linecap="round"/>
     <path d="M3.2 8 V23.5 M8.8 8 V23.5" stroke="${c}" stroke-width="1" stroke-dasharray="2.4 1.4" opacity=".85"/></svg>`;
 
+  // in chase view, the followed bus seen from behind and a little above, in pixel art: roof, route sign, rear
+  // window, tail lights (bright red while it's stopped, like brake lights), bumper and wheels
+  const spriteSvg = (c, rt, stopped) => `<svg viewBox="0 0 24 25" shape-rendering="crispEdges" aria-hidden="true">
+    <rect x="2" y="22" width="20" height="3" fill="rgba(0,0,0,.5)"/>
+    <rect x="4" y="0" width="16" height="3" fill="${c}" opacity=".55"/>
+    <rect x="3" y="2" width="18" height="18" fill="#020807"/><rect x="4" y="3" width="16" height="16" fill="${c}"/>
+    <rect x="5" y="4" width="14" height="4" fill="#020807"/>
+    <text x="12" y="7.3" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="3.6" fill="#ffc400">${esc(rt)}</text>
+    <rect x="5" y="9" width="14" height="5" fill="#0b2b2a"/><rect x="6" y="10" width="3" height="1" fill="#bff4ff" opacity=".7"/><rect x="6" y="11" width="1" height="1" fill="#bff4ff" opacity=".7"/>
+    <rect x="4" y="15" width="3" height="2" fill="${stopped ? '#ff2a3d' : '#8a1520'}"/><rect x="17" y="15" width="3" height="2" fill="${stopped ? '#ff2a3d' : '#8a1520'}"/>
+    <rect x="9" y="15" width="6" height="2" fill="#020807" opacity=".6"/>
+    <rect x="3" y="19" width="18" height="2" fill="#2b3b39"/>
+    <rect x="4" y="21" width="4" height="2" fill="#000"/><rect x="16" y="21" width="4" height="2" fill="#000"/></svg>`;
+  // draw a bus marker: the top-down icon pointed along its street, or the chase sprite for the bus being chased
+  function drawBus(mk) {
+    const b = mk._bus, r = routes[b.route] || {}, rt = short(r.name), color = r.color || '#bff4ff';
+    const el = mk.getElement();
+    el.classList.toggle('stopped', b.mph < 2);
+    const chased = chase && follow?.id === b.id;
+    el.classList.toggle('chase', chased);
+    if (chased) {
+      el.innerHTML = `<div class="sprite" style="--c:${esc(color)}">${spriteSvg(color, rt, b.mph < 2)}</div><span class="tag" style="border-color:${esc(color)}">BUS ${esc(b.id)}</span>`;
+    } else {
+      const h = Math.round((b._snap ? headingOf(b) : null) ?? b.heading ?? 0);
+      mk._h = h;
+      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(color)}</div><b style="color:${esc(color)};border-color:${esc(color)}">${esc(rt)}</b>`;
+    }
+    el.title = `Route ${rt} · bus ${b.id}`;
+  }
+
   function render() {
     const seen = new Set();
     for (const b of buses) {
@@ -546,12 +617,8 @@
       b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
       b._at = Date.now();
       mk._bus = b;
+      drawBus(mk);
       const el = mk.getElement();
-      el.classList.toggle('stopped', b.mph < 2);
-      const h = Math.round((b._snap ? headingOf(b) : null) ?? b.heading ?? 0);
-      mk._h = h;
-      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(rt)}</b>`;
-      el.title = `Route ${rt} · bus ${b.id}`;
       mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</div>` : ''}
