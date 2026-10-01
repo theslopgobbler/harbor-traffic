@@ -99,7 +99,7 @@
       const el = mk.getElement();
       el.classList.toggle('emerg', !!EMERG[a.squawk]);
       el.classList.toggle('heli', isHeli(a));
-      el.innerHTML = `<div class="ic" style="transform:rotate(${a.track ?? 0}deg)">${isHeli(a) ? heliSvg(c, isMedical(a)) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(a.alt)}</span>`;
+      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${a.track ?? 0}deg - var(--brg, 0deg)))">${isHeli(a) ? heliSvg(c, isMedical(a)) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(a.alt)}</span>`;
       el.title = `${a.flight || a.reg || a.hex} · ${a.type || ''}`;
       const s = a._sit;
       mk.getPopup().setHTML(`<h3>${esc(a.flight || a.reg || a.hex)}${a.reg && a.reg !== a.flight ? ' · ' + esc(a.reg) : ''}</h3>

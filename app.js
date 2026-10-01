@@ -27,7 +27,8 @@
   const roadNum = (s) => String(s || '').replace(/\D/g, '').replace(/^0+/, '');
   const getJson = async (path) => (await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' })).json();
 
-  const state = { route: TV ? '' : store.get('ht.route') || '', wx: {}, zonesByTown: {}, nws: [], roads: [], roadsUpdated: null, me: null, heading: null };
+  // (the old route filter is gone: the road list follows whatever part of the map is on screen)
+  const state = { route: '', wx: {}, zonesByTown: {}, nws: [], roads: [], roadsUpdated: null, me: null, heading: null };
 
   // ---------------- colors (kept in sync with styles.css) ----------------
   const K = { bg: '#030807', cyan: '#00e5ff', green: '#39ff88', amber: '#ffc400', orange: '#ff7a1a', red: '#ff2a3d', dim: '#5f9c8b', magenta: '#ff2bd6' };
@@ -181,6 +182,7 @@
     const covered = Math.max(0, mapBox.bottom - Math.min(sheet.top, tools.height ? tools.top : sheet.top));
     return { top: p, left: p, right: p, bottom: Math.min(mapBox.height * 0.6, covered + p) };
   };
+  window.htFitPad = fitPad;
   const popup = (html) => new maplibregl.Popup({ offset: 16, maxWidth: '320px' }).setHTML(html);
   // if an open popup runs off the map (or under the phone's bottom sheet and buttons), slide the map so it all shows
   function keepInView(p) {
@@ -207,6 +209,8 @@
     $('#readout').textContent = `N ${c.lat.toFixed(4)}  W ${Math.abs(c.lng).toFixed(4)}  Z${map.getZoom().toFixed(1)}`;
   };
   map.on('move', readout);
+  // when the map turns (following a bus heading-up), icons drawn at a compass heading turn back by the same amount
+  map.on('rotate', () => map.getContainer().style.setProperty('--brg', `${map.getBearing()}deg`));
 
   // data that arrives before the style is ready waits here
   const setSource = (id, data) => {
@@ -770,9 +774,6 @@
   requestAnimationFrame(pulse);
   function renderRoads() {
     roadMarkers.splice(0).forEach(({ m }) => m.remove());
-    let list = state.roads.filter(onRoute);
-    if (state.me) list = list.map((r) => ({ ...r, dist: r.lat ? miles(state.me, r) : null })).sort((a, b) => (a.dist ?? 1e9) - (b.dist ?? 1e9));
-    else list = list.slice().sort((a, b) => ['closure', 'collision', 'work', 'other'].indexOf(a.kind) - ['closure', 'collision', 'work', 'other'].indexOf(b.kind));
 
     // stretches on the map
     const features = state.roads.filter((r) => Array.isArray(r.path) && r.path.length > 1).map((r) => ({
@@ -794,9 +795,30 @@
     }
     showByZoom();
     renderOverview();
+    renderRoadList();
+  }
+
+  // is an alert (its stretch or its point) inside the part of the map the viewer can see?
+  function onScreen(r) {
+    const b = map.getBounds();
+    // on a phone the bottom sheet covers part of the map: only count what's above it
+    const sheet = $('#panel'), mapEl = map.getContainer();
+    if (sheet && window.innerWidth <= 760) {
+      const covered = mapEl.getBoundingClientRect().bottom - sheet.getBoundingClientRect().top;
+      if (covered > 0) b.setSouthWest([b.getWest(), map.unproject([0, mapEl.clientHeight - covered]).lat]);
+    }
+    const pts = Array.isArray(r.path) && r.path.length > 1 ? r.path : r.lat ? [[r.lon, r.lat]] : [];
+    return pts.some((p) => b.contains(p));
+  }
+
+  function renderRoadList() {
+    let list = TV ? state.roads.slice() : state.roads.filter(onScreen);
+    const elsewhere = state.roads.length - list.length;
+    if (state.me) list = list.map((r) => ({ ...r, dist: r.lat ? miles(state.me, r) : null })).sort((a, b) => (a.dist ?? 1e9) - (b.dist ?? 1e9));
+    else list = list.slice().sort((a, b) => ['closure', 'collision', 'work', 'other'].indexOf(a.kind) - ['closure', 'collision', 'work', 'other'].indexOf(b.kind));
 
     $('#nRoads').textContent = list.filter((r) => r.kind === 'closure' || r.kind === 'collision').length || '';
-    // ROADS instrument: the whole area, whatever route is picked
+    // ROADS instrument: the whole area, whatever is on screen
     const allC = state.roads.filter((r) => r.kind === 'closure'), allA = state.roads.filter((r) => r.kind !== 'closure');
     const topR = allC[0] || state.roads.find((r) => r.kind === 'collision') || allA[0];
     $('#insRoads').innerHTML = !state.roads.length ? '<span class="ok">ALL CLEAR</span>'
@@ -807,7 +829,8 @@
     $('#roadList').innerHTML = (list.length ? list.map((r, i) => `<li class="clickable k-${r.kind}" data-i="${i}">
         <div class="t"><span class="tag ${r.kind}">${kindLabel[r.kind]}</span>${esc(r.headline)}</div>
         <div class="m">${esc(r.roadLabel || r.road)}${r.milepost ? ' MP ' + esc(r.milepost) : ''}${r.dist != null ? ` · ${r.dist.toFixed(1)} MI AWAY` : ''}</div></li>`).join('')
-      : `<li class="empty">NO CLOSURES OR INCIDENTS ${corridor() ? 'ON ROUTE' : ''}</li>`) +
+      : `<li class="empty">NO CLOSURES OR INCIDENTS${TV ? '' : ' ON SCREEN'}</li>`) +
+      (elsewhere > 0 ? `<li class="empty m" style="border:0;padding:2px 0">${elsewhere} MORE ELSEWHERE · PAN OR ZOOM OUT TO SEE THEM</li>` : '') +
       `<li class="empty m" style="border:0;padding:2px 0">${stale}</li>`;
     $('#roadList').onclick = (e) => {
       const li = e.target.closest('li[data-i]'); if (!li) return;
@@ -870,34 +893,9 @@
       <span class="temp">${s.temp != null ? tempSpan(Math.round(s.temp)) : '–'}</span></li>`).join('') : '<li class="empty">NO ROADSIDE READINGS</li>';
   }
 
-  // ---------------- route filter ----------------
-  const sel = $('#route');
-  for (const c of C.corridors) sel.insertAdjacentHTML('beforeend', `<option value="${c.id}">${esc(c.name.toUpperCase())}</option>`);
-  sel.value = state.route;
-  function applyRoute(fit) {
-    const c = corridor();
-    if (map.getLayer('route-hl')) {
-      let filter = ['==', ['get', 'ref'], '__none__'];
-      if (c) {
-        // only the stretch between the route's towns, not the whole highway
-        const ts = c.towns.map((id) => townById[id]), g = 0.06;
-        const w = Math.min(...ts.map((t) => t.lon)) - g, e = Math.max(...ts.map((t) => t.lon)) + g;
-        const s = Math.min(...ts.map((t) => t.lat)) - g, n = Math.max(...ts.map((t) => t.lat)) + g;
-        const box = { type: 'Polygon', coordinates: [[[w, s], [e, s], [e, n], [w, n], [w, s]]] };
-        filter = ['all', ['within', box],
-          ['any', ...c.roads.map(([ref, net]) => ['all', ['==', ['get', 'ref'], ref], ['==', ['get', 'network'], net]])]];
-      }
-      map.setFilter('route-hl', filter);
-    }
-    if (c && fit) {
-      const b = new maplibregl.LngLatBounds();
-      c.towns.forEach((id) => b.extend([townById[id].lon, townById[id].lat]));
-      map.fitBounds(b, { padding: fitPad(60), maxZoom: 11 });
-    }
-    renderAlerts(); renderRoads(); renderWeather();
-  }
-  sel.addEventListener('change', () => { state.route = sel.value; store.set('ht.route', state.route); applyRoute(true); });
-  map.on('load', () => applyRoute(false));
+  // the road list follows the map: when it settles after a pan or zoom, list what's on screen
+  let roadListTimer = 0;
+  map.on('moveend', () => { clearTimeout(roadListTimer); roadListTimer = setTimeout(renderRoadList, 250); });
 
   // ---------------- tabs & sheet ----------------
   const panel = $('#panel');
@@ -942,7 +940,7 @@
     if (h == null || isNaN(h)) return;
     state.heading = h;
     cone.style.display = '';
-    cone.style.transform = `rotate(${h}deg)`;
+    cone.style.transform = `rotate(calc(${h}deg - var(--brg, 0deg)))`;
   }
   $('#btnLocate').addEventListener('click', () => {
     if (!('geolocation' in navigator)) return alert('This browser cannot share location.');
@@ -980,7 +978,15 @@
   });
 
   // ---------------- clock & refresh ----------------
-  const tick = () => { $('#clock').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }); };
+  // 24-hour by default; the switch under LIVE flips it to 12-hour (remembered per device; ?clock=12 for a TV)
+  let clock24 = qs.get('clock') ? qs.get('clock') !== '12' : store.get('ht.clock24') !== false;
+  const tick = () => {
+    const d = new Date();
+    $('#clock').innerHTML = clock24 ? d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })
+      : `${(d.getHours() % 12) || 12}:${String(d.getMinutes()).padStart(2, '0')}<small>${d.getHours() < 12 ? 'AM' : 'PM'}</small>`;
+    $('#clockFmt').textContent = clock24 ? '24H' : '12H';
+  };
+  $('#clockFmt').addEventListener('click', () => { clock24 = !clock24; store.set('ht.clock24', clock24); tick(); });
   tick(); setInterval(tick, 10000);
   async function refresh() {
     await Promise.allSettled([loadWeather(), loadAlerts(), loadRoads(), loadRoadWeather(), loadFlow()]);

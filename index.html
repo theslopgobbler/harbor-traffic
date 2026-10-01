@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202610010026" rel="stylesheet">
+<link href="styles.css?v=202610010040" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -48,7 +48,8 @@
       <div class="inst-sub" id="insSunSub"></div>
     </div>
     <div class="inst inst-clock">
-      <div class="clock-col"><span class="live"><i></i>LIVE</span><span id="sky" class="sky"></span></div>
+      <div class="clock-col"><span class="live"><i></i>LIVE</span><button type="button" id="clockFmt" class="clock-fmt" aria-label="Switch between 24-hour and 12-hour time">24H</button></div>
+      <span id="sky" class="sky"></span>
       <div class="clock-col clock-right"><span id="updated">SYNC…</span><div id="clock" class="clock">--:--</div></div>
     </div>
   </div>
@@ -64,6 +65,8 @@
       <div class="region-name" id="regionName"></div>
       <div class="cycle-bar" id="cycleBar"></div>
     </div>
+    <!-- bus bar: step through routes and their buses, or follow one (bus.js fills it) -->
+    <div class="bus-bar" id="busBar" hidden></div>
     <!-- my location and heading: tucked on the right edge, well below the zoom buttons -->
     <div class="nav-tools">
       <button id="btnLocate" class="tool" type="button" aria-label="Show my location"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor"/><circle cx="10" cy="10" r="2.2" fill="currentColor"/><path d="M10 1.5 V4 M10 16 V18.5 M1.5 10 H4 M16 10 H18.5" stroke="currentColor"/></svg></button>
@@ -92,11 +95,6 @@
 
   <aside class="panel" id="panel">
     <button class="sheet-handle" id="sheetHandle" type="button" aria-label="Expand or collapse details"></button>
-
-    <label class="route-pick">
-      <span class="label">ROUTE FILTER</span>
-      <select id="route"><option value="">ALL ROADS</option></select>
-    </label>
 
     <nav class="tabs" role="tablist">
       <button role="tab" data-tab="roads" aria-selected="true">ROADS <b id="nRoads"></b></button>
@@ -130,13 +128,14 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202610010026"></script>
-<script src="pixel.js?v=202610010026"></script>
-<script src="app.js?v=202610010026"></script>
-<script src="air.js?v=202610010026"></script>
-<script src="wx.js?v=202610010026"></script>
-<script src="seis.js?v=202610010026"></script>
-<script src="bus.js?v=202610010026"></script>
-<script src="river.js?v=202610010026"></script>
+<script src="config.js?v=202610010040"></script>
+<script src="pixel.js?v=202610010040"></script>
+<script src="app.js?v=202610010040"></script>
+<script src="air.js?v=202610010040"></script>
+<script src="wx.js?v=202610010040"></script>
+<script src="seis.js?v=202610010040"></script>
+<script src="bus.js?v=202610010040"></script>
+<script src="river.js?v=202610010040"></script>
+<script src="count.js?v=202610010040"></script>
 </body>
 </html>
