@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T17:42:53.9009193+00:00",
+  "updated": "2026-10-01T17:59:47.4533244+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1472,6 +1472,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 717397,
+      "kind": "closure",
+      "category": "Chehalis River Bridge",
+      "priority": "Highest",
+      "headline": "Chehalis River Bridge is closed to vehicle traffic at 10:45 AM Thursday, October 1. A maintenance opening is in progress. Travelers can expect delays for up to 15 minutes on US 101 both directions at 83.22 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 83.22,
+      "lat": 46.970542365,
+      "lon": -123.805207969,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-01T17:45:19.5130000+00:00",
+      "end": "2026-10-01T18:00:19.5130000+00:00",
+      "updated": "2026-10-01T17:45:24.5730000+00:00"
     },
     {
       "id": 686738,
