@@ -112,39 +112,53 @@ async function refreshBuses() {
   } catch (e) { busReport = `buses: ${e.message}`; }
 }
 
-// ---- viewers: one Durable Object (binding VIEWERS, class Viewers) keeps the tally for everyone.
-// It remembers only random tab IDs and when each last checked in (in memory, gone in 3 minutes), plus
-// per-day totals (stored): page opens, the most at once, and opens by kind (TV, phone, desktop).
+// ---- viewers: a small D1 database (binding DB) keeps the tally for everyone, so it can be set up entirely in
+// the Cloudflare dashboard. It holds only random tab IDs with when each last checked in (cleared after an
+// hour), plus per-day totals: page opens, the most at once, and opens by kind (TV, phone, desktop).
 const WINDOW_MS = 3 * 60 * 1000;
 const KINDS = ['tv', 'phone', 'desktop'];
 const pacificDay = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(t); // YYYY-MM-DD
-export class Viewers {
-  constructor(state) { this.state = state; this.seen = new Map(); this.days = null; }
-  async fetch(request) {
-    const u = new URL(request.url), now = Date.now();
-    for (const [k, v] of this.seen) if (now - v.t > WINDOW_MS) this.seen.delete(k);
-    this.days ||= (await this.state.storage.get('days')) || {};
-    const today = pacificDay(now);
-    const d = this.days[today] ||= { opens: 0, peak: 0, peakAt: null, tv: 0, phone: 0, desktop: 0 };
-    if (u.pathname === '/hello') {
-      const id = u.searchParams.get('id') || '', k = KINDS.includes(u.searchParams.get('k')) ? u.searchParams.get('k') : 'desktop';
-      if (!/^[a-z0-9]{8,32}$/.test(id)) return new Response('bad id', { status: 400 });
-      let dirty = false;
-      if (u.searchParams.get('first') === '1' && !this.seen.has(id)) { d.opens++; d[k]++; dirty = true; }
-      this.seen.set(id, { t: now, k });
-      if (this.seen.size > d.peak) { d.peak = this.seen.size; d.peakAt = new Date(now).toISOString(); dirty = true; }
-      if (dirty) {
-        for (const day of Object.keys(this.days).sort().slice(0, -60)) delete this.days[day]; // keep 60 days
-        await this.state.storage.put('days', this.days);
-      }
-      return Response.json({ ok: true });
-    }
-    // /stats
-    const byKind = Object.fromEntries(KINDS.map((x) => [x, 0]));
-    for (const v of this.seen.values()) byKind[v.k]++;
-    const days = Object.keys(this.days).sort().reverse().slice(0, 30).map((day) => ({ day, ...this.days[day] }));
-    return Response.json({ now: this.seen.size, byKind, days, at: new Date(now).toISOString() });
+let tablesReady = false;
+async function viewerTables(db) {
+  if (tablesReady) return;
+  await db.batch([
+    db.prepare('CREATE TABLE IF NOT EXISTS seen (id TEXT PRIMARY KEY, kind TEXT, t INTEGER)'),
+    db.prepare('CREATE TABLE IF NOT EXISTS days (day TEXT PRIMARY KEY, opens INTEGER DEFAULT 0, peak INTEGER DEFAULT 0, peak_at TEXT, tv INTEGER DEFAULT 0, phone INTEGER DEFAULT 0, desktop INTEGER DEFAULT 0)')
+  ]);
+  tablesReady = true;
+}
+async function hello(db, u) {
+  const id = u.searchParams.get('id') || '', k = KINDS.includes(u.searchParams.get('k')) ? u.searchParams.get('k') : 'desktop';
+  if (!/^[a-z0-9]{8,32}$/.test(id)) return new Response('bad id', { status: 400 });
+  await viewerTables(db);
+  const now = Date.now(), today = pacificDay(now);
+  const steps = [
+    db.prepare('INSERT INTO seen (id, kind, t) VALUES (?1, ?2, ?3) ON CONFLICT(id) DO UPDATE SET kind = ?2, t = ?3').bind(id, k, now),
+    db.prepare('INSERT INTO days (day) VALUES (?1) ON CONFLICT(day) DO NOTHING').bind(today)
+  ];
+  // a newly opened tab: one more visit today (kind is one of three fixed names, so it's safe in the SQL)
+  if (u.searchParams.get('first') === '1') steps.push(db.prepare(`UPDATE days SET opens = opens + 1, ${k} = ${k} + 1 WHERE day = ?1`).bind(today));
+  // the most watching at once today
+  steps.push(db.prepare(`UPDATE days SET peak = (SELECT COUNT(*) FROM seen WHERE t > ?3), peak_at = ?2
+    WHERE day = ?1 AND peak < (SELECT COUNT(*) FROM seen WHERE t > ?3)`).bind(today, new Date(now).toISOString(), now - WINDOW_MS));
+  // now and then, forget tabs that went quiet and days older than 60
+  if (Math.random() < 0.05) {
+    steps.push(db.prepare('DELETE FROM seen WHERE t < ?1').bind(now - 3600 * 1000));
+    steps.push(db.prepare('DELETE FROM days WHERE day < ?1').bind(pacificDay(now - 60 * 86400 * 1000)));
   }
+  await db.batch(steps);
+  return Response.json({ ok: true });
+}
+async function viewerStats(db) {
+  await viewerTables(db);
+  const now = Date.now();
+  const [live, days] = await db.batch([
+    db.prepare('SELECT kind, COUNT(*) AS n FROM seen WHERE t > ?1 GROUP BY kind').bind(now - WINDOW_MS),
+    db.prepare('SELECT day, opens, peak, peak_at AS peakAt, tv, phone, desktop FROM days ORDER BY day DESC LIMIT 30')
+  ]);
+  const byKind = Object.fromEntries(KINDS.map((x) => [x, 0]));
+  for (const r of live.results) byKind[r.kind] = r.n;
+  return Response.json({ now: Object.values(byKind).reduce((a, b) => a + b, 0), byKind, days: days.results, at: new Date(now).toISOString() });
 }
 
 export default {
@@ -175,14 +189,17 @@ export default {
       return json(bus.body || '{"routes":[],"buses":[]}');
     }
     if (path === '/hello' || path === '/viewers') {
-      if (!env.VIEWERS) return new Response('viewer count not set up (no VIEWERS binding)', { status: 503, headers: cors });
+      if (!env.DB) return new Response('viewer count not set up (no DB binding)', { status: 503, headers: cors });
       if (path === '/viewers' && (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY))
         return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
       // only the dashboard's own pages check in
       if (path === '/hello' && !ALLOWED.includes(origin)) return new Response('', { status: 403, headers: cors });
-      const counter = env.VIEWERS.get(env.VIEWERS.idFromName('all'));
-      const r = await counter.fetch(new URL((path === '/hello' ? '/hello' : '/stats') + new URL(request.url).search, 'https://viewers').toString());
-      return new Response(r.body, { status: r.status, headers: { ...cors, 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
+      try {
+        const r = path === '/hello' ? await hello(env.DB, new URL(request.url)) : await viewerStats(env.DB);
+        return new Response(r.body, { status: r.status, headers: { ...cors, 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
+      } catch (e) {
+        return new Response(`database: ${e.message}`, { status: 500, headers: cors });
+      }
     }
     return new Response('Harbor Traffic relay. Try /aircraft or /buses', { status: 404, headers: cors });
   }
