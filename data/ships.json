@@ -1,7 +1,17 @@
 {
-  "updated": "2026-10-01T00:23:02.5813349+00:00",
+  "updated": "2026-10-01T00:49:22.2679990+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367463820,
+      "name": "TRINITY",
+      "lat": 46.90846,
+      "lon": -124.11061,
+      "sog": 0,
+      "cog": 136.5,
+      "classB": true,
+      "seen": "2026-09-30T23:25:40.4991287+00:00"
+    },
     {
       "mmsi": 367310520,
       "name": "JAMES T",
@@ -13,18 +23,6 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-01T00:23:02.5813349+00:00"
-    },
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.92023,
-      "lon": -124.11567,
-      "sog": 0.1,
-      "cog": 177.4,
-      "heading": 273,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-09-30T21:58:49.496214+00:00"
     },
     {
       "mmsi": 366765940,
@@ -39,39 +37,6 @@
       "seen": "2026-09-30T23:25:40.4991287+00:00"
     },
     {
-      "mmsi": 567017000,
-      "name": "SARITA NAREE",
-      "lat": 46.91432,
-      "lon": -124.13098,
-      "sog": 5.8,
-      "cog": 60.3,
-      "heading": 64,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T00:23:02.5813349+00:00"
-    },
-    {
-      "mmsi": 367463820,
-      "name": "TRINITY",
-      "lat": 46.90846,
-      "lon": -124.11061,
-      "sog": 0,
-      "cog": 136.5,
-      "classB": true,
-      "seen": "2026-09-30T23:25:40.4991287+00:00"
-    },
-    {
-      "mmsi": 367417230,
-      "name": "DREDGE PATRIOT",
-      "lat": 46.96731,
-      "lon": -123.77983,
-      "sog": 0,
-      "cog": 0,
-      "heading": 170,
-      "classB": true,
-      "seen": "2026-09-30T21:58:49.496214+00:00"
-    },
-    {
       "mmsi": 538012030,
       "name": "GLBS OLYMPIA",
       "lat": 46.96404,
@@ -80,6 +45,18 @@
       "cog": 180,
       "heading": 299,
       "status": 5,
+      "classB": false,
+      "seen": "2026-10-01T00:23:02.5813349+00:00"
+    },
+    {
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.91432,
+      "lon": -124.13098,
+      "sog": 5.8,
+      "cog": 60.3,
+      "heading": 64,
+      "status": 0,
       "classB": false,
       "seen": "2026-10-01T00:23:02.5813349+00:00"
     },
@@ -93,6 +70,29 @@
       "status": 0,
       "classB": false,
       "seen": "2026-09-30T23:40:50.638092+00:00"
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.92023,
+      "lon": -124.11567,
+      "sog": 0.1,
+      "cog": 177.4,
+      "heading": 273,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-09-30T21:58:49.496214+00:00"
+    },
+    {
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96731,
+      "lon": -123.77983,
+      "sog": 0,
+      "cog": 0,
+      "heading": 170,
+      "classB": true,
+      "seen": "2026-09-30T21:58:49.496214+00:00"
     }
   ]
 }
