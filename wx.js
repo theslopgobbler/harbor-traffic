@@ -565,6 +565,7 @@
       const d = j.data?.[0];
       if (!d) throw new Error('no wind');
       const kt = Math.round(+d.s), gust = Math.round(+d.g), deg = +d.d;
+      windKt = kt; // the harbor chop uses this
       $('#windDial').innerHTML = dialSvg(kt < 1 ? null : deg, kt);
       $('#windDir').textContent = kt < 1 ? 'CALM' : `${d.dr} ${String(Math.round(deg)).padStart(3, '0')}°`;
       $('#windSpd').textContent = kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`;
@@ -883,6 +884,7 @@
   // on the flood, as fast as the tide is changing. The map's own water shapes are the mask, so nothing
   // draws on land.
   let sea = null, tideInfo = null;
+  var windKt = 0; // set by the wind gauge (var: the gauge's code above runs first)
   const BAYS = [
     // reaches out to the jetty tips, so swell stops at the harbor mouth
     { id: 'gh', name: 'GRAYS HARBOR', box: [-124.135, 46.84, -123.76, 47.1], label: [-123.97, 46.93] },
@@ -920,6 +922,11 @@
 
   // bay current streaks
   let currents = [];
+  let chop = []; // wind chop flecks on the bays (drawn in drawOcean)
+  function spawnChop() {
+    const b = bayPx[Math.floor(Math.random() * bayPx.length)];
+    return { x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), r: rnd(2, 3.5 + windKt / 8), life: 0, max: rnd(20, 50) };
+  }
   function resetCurrents() {
     currents = [];
     if (!tideInfo) return;
@@ -1032,6 +1039,22 @@
       ctx.beginPath();
       for (const k of [0, 6]) { ctx.moveTo(p.x - s * (k + 4), p.y - 3.5); ctx.lineTo(p.x - s * k, p.y); ctx.lineTo(p.x - s * (k + 4), p.y + 3.5); }
       ctx.stroke();
+    }
+    // --- wind chop on the bays: little wave crests that flicker in and out, more of them the windier it is ---
+    if (windKt >= 5 && bayPx.length) {
+      const area = bayPx.reduce((n, b) => n + Math.max(0, b.x1 - b.x0) * Math.max(0, b.y1 - b.y0), 0);
+      const want = Math.min(220, Math.round(area / 1e4 * Math.min(6, (windKt - 4) / 3)));
+      while (chop.length < want) chop.push(spawnChop());
+      chop.length = want;
+      ctx.lineWidth = 1;
+      for (let i = 0; i < chop.length; i++) {
+        const p = chop[i];
+        p.life++;
+        if (p.life > p.max) { chop[i] = spawnChop(); continue; }
+        const a = Math.sin(Math.PI * p.life / p.max) * Math.min(0.55, 0.2 + windKt / 50);
+        ctx.strokeStyle = `rgba(191,244,255,${a})`;
+        ctx.beginPath(); ctx.arc(p.x, p.y + 2, p.r, Math.PI * 1.15, Math.PI * 1.85); ctx.stroke(); // a small crest
+      }
     }
     ctx.restore();
   }

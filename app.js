@@ -265,9 +265,14 @@
 
   // the label (and button) follow wherever you pan: zoomed out it's FULL, otherwise the smallest region
   // containing the middle of the view, or the nearest one if you're between them
-  map.on('moveend', () => {
+  map.on('moveend', (ev) => {
     if (cycleTimer) return; // the TV's cycle sets its own label
-    const c = map.getCenter();
+    if (!ev.originalEvent) return; // only when you pan or zoom yourself; a region you pick keeps its name
+    // the middle of what you can actually see (on phones the sheet and buttons cover the bottom of the map)
+    const box = map.getContainer().getBoundingClientRect();
+    const cover = phone() ? Math.max(0, box.bottom - Math.min(document.querySelector('#panel').getBoundingClientRect().top,
+      document.querySelector('.map-tools').getBoundingClientRect().top || box.bottom)) : 0;
+    const c = map.unproject([box.width / 2, (box.height - cover) / 2]);
     let id = 'all';
     if (map.getZoom() >= OVERVIEW_Z) {
       const withB = C.regions.filter((r) => r.bounds);
