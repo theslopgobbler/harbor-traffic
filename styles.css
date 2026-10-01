@@ -145,6 +145,11 @@ button.go { background: var(--cyan) !important; border: 1px solid var(--cyan); c
 .stop-row { display: flex; align-items: center; gap: 4px; padding: 3px 0; font-size: 11px; }
 .stop-row > span:not(.bus-no) { flex: 1; }
 .stop-row b { color: var(--text); }
+.stop-rts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 3px; }
+.stop-rts .m { margin-right: 2px; }
+button.stop-rt { border: 1px solid transparent; font: 700 11px/18px var(--mono); cursor: pointer; margin: 0; }
+button.stop-rt.on { outline: 2px solid #fff; outline-offset: 1px; }
+button.stop-all { background: none; border: 1px solid var(--line-2); color: var(--cyan); font: inherit; font-size: 9px; padding: 1px 5px; cursor: pointer; }
 body.no-buses .bus-bar, body.tv .bus-bar { display: none; }
 #busBox li[data-route] { cursor: pointer; }
 .bus-no { display: inline-block; min-width: 20px; padding: 0 4px; margin-right: 4px; text-align: center; color: #000; font-weight: 700; } /* list rows keep the solid route-color chip */

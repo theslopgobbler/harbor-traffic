@@ -2,9 +2,10 @@
   Uploads the site to GitHub (theslopgobbler/harbor-traffic) as one commit through the Git Data API,
   then makes sure GitHub Pages serves it at traffic.harborevents.org.
   Token: ..\events-watch\github-token.txt (fine-grained: Contents, Pages, Workflows = read/write on harbor-traffic).
-  data\ is only uploaded the first time; after that the collector owns it.
+  data\ is only uploaded the first time; after that the collector owns it. -Data names data files to upload
+  anyway (e.g. -Data data/bus-times.json after rebuilding the bus schedule by hand).
 #>
-param([string]$Message = 'Update site')
+param([string]$Message = 'Update site', [string[]]$Data = @())
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
 $repo = 'theslopgobbler/harbor-traffic'
@@ -42,7 +43,7 @@ try { $head = (GH Get '/git/ref/heads/main').object.sha } catch {
 $baseTree = (GH Get "/git/commits/$head").tree.sha
 $remote = (GH Get "/git/trees/$($baseTree)?recursive=1").tree | ForEach-Object { $_.path }
 # the collector owns data/: only seed files GitHub doesn't have yet, and never local test history
-$files = $files | Where-Object { $_ -notmatch '^data/history/' -and -not ($_ -match '^data/' -and $remote -contains $_) }
+$files = $files | Where-Object { $_ -notmatch '^data/history/' -and -not ($_ -match '^data/' -and $remote -contains $_ -and $Data -notcontains $_) }
 
 $tree = foreach ($f in $files) {
     $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Join-Path $root $f)))

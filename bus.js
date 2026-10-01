@@ -316,34 +316,100 @@
     }
     return null;
   }
+  // A bus finishing a trip (say, heading into the transit center) reaches this stop on its next trip: carry on
+  // from the end of its route line onto the line that starts there and passes the stop. null if none does.
+  function etaNextTrip(b, stop) {
+    if (!b._snap) return null;
+    const sh = b._snap.sh, here = b._along ?? sh.d[b._snap.i], end = sh.c[sh.c.length - 1];
+    const rest = Math.max(0, sh.d[sh.d.length - 1] - here) / sh.mps;
+    let best = null;
+    for (const rt of [busRoute(b), busRoute(b) + 'P']) for (const nx of shapesByRoute[rt] || []) {
+      if (mx(end, nx.c[0]) > 300) continue;
+      const j = nx.c.findIndex((p) => mx(stop.at, p) < 45);
+      if (j < 0) continue;
+      const m = (rest + nx.d[j] / nx.mps) / 60;
+      if (best == null || m < best) best = m;
+    }
+    return best == null ? null : Math.round(best);
+  }
   let times = null; // the timetable, read the first time someone opens a stop
   const loadTimes = () => times ||= fetch('data/bus-times.json').then((x) => x.json()).catch(() => null);
-  function scheduled(t, stopId, rts) {
+  const nowMin = () => { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); };
+  // the rest of today's scheduled departures from a stop: [route, minutes after midnight, headed-to, days]
+  function scheduled(t, stopId) {
     if (!t?.stops?.[stopId]) return [];
-    const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
+    const now = new Date(), m = nowMin();
     const ymd = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
     const dow = (now.getDay() + 6) % 7; // Monday first, like the schedule's day list
     const runs = (svc) => { const s = t.svc[svc]; return s && s.d[dow] === '1' && !(s.x || []).includes(ymd); };
-    return t.stops[stopId].filter(([rt, min, , svc]) => min >= nowMin - 1 && runs(svc) && (!rts || rts.includes(rt))).slice(0, 6);
+    // the same departure can be listed under two day-sets (weekdays and every day): keep one
+    const seen = new Set();
+    return t.stops[stopId].filter(([rt, min, h, svc]) => {
+      const k = `${rt}|${min}|${h}`;
+      if (min < m - 1 || !runs(svc) || seen.has(k)) return false;
+      seen.add(k); return true;
+    });
   }
   const clock = (min) => { const h = Math.floor(min / 60) % 24, m = min % 60; return `${(h % 12) || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`; };
+  const baseRt = (rt) => rt.replace(/P$/, '');
+
+  // live arrivals: buses already on their way here, then buses that will come by on their next trip. Those wait at
+  // the end of the line until their scheduled run, so each is matched to the next timetable departure it can make.
+  function liveArrivals(stop, sched) {
+    const out = [];
+    for (const b of buses) {
+      if (!serves(stop.routes, busRoute(b))) continue;
+      const eta = etaTo(b, stop);
+      if (eta != null) { out.push({ b, eta }); continue; }
+      const nx = etaNextTrip(b, stop);
+      if (nx != null) out.push({ b, eta: nx, next: true });
+    }
+    const m = nowMin(), taken = new Set();
+    for (const x of out.filter((x) => x.next).sort((a, b) => a.eta - b.eta)) {
+      const k = sched.findIndex(([rt, min], i) => !taken.has(i) && baseRt(rt) === busRoute(x.b) && min - m >= x.eta - 3);
+      if (k >= 0) { taken.add(k); x.eta = Math.max(x.eta, sched[k][1] - m); }
+    }
+    return out.filter((x) => x.eta <= 90).sort((a, b) => a.eta - b.eta);
+  }
 
   let stopPop = null, stopFocus = null;
   async function stopHtml(stop) {
     const t = await loadTimes();
-    const live = buses.filter((b) => serves(stop.routes, busRoute(b))).map((b) => ({ b, eta: etaTo(b, stop) }))
-      .filter((x) => x.eta != null && x.eta <= 90).sort((a, b) => a.eta - b.eta);
     const sched = scheduled(t, stop.id);
-    const chip = (rt) => `<span class="bus-no" style="background:${esc(routeColor(rt.replace(/P$/, '')))}">${esc(rt)}</span>`;
-    return `<h3>BUS STOP · ${esc(stop.name.toUpperCase())}</h3><div class="m">ROUTES ${stop.routes.map(chip).join('')}</div>
+    const live = liveArrivals(stop, sched);
+    const color = (rt) => esc(routeColor(baseRt(rt)));
+    const chip = (rt) => `<span class="bus-no" style="background:${color(rt)}">${esc(rt)}</span>`;
+    // route chips up top are buttons: tap one for that route's full timetable here, tap again for all routes
+    const only = stop.only;
+    const chips = stop.routes.map((rt) => `<button type="button" class="bus-no stop-rt${only === rt ? ' on' : ''}" data-stop-route="${esc(rt)}"
+      style="background:${color(rt)}" aria-pressed="${only === rt}">${esc(rt)}</button>`).join('');
+    let table;
+    if (!t) table = '<div class="m">TIMETABLE UNAVAILABLE</div>';
+    else if (only) {
+      const rows = sched.filter(([rt]) => rt === only).slice(0, 14);
+      table = rows.length ? rows.map(([rt, min, h]) => `<div class="stop-row">${chip(rt)}<span><b>${clock(min)}</b> → ${esc((t.heads[h] || '').toUpperCase())}</span></div>`).join('')
+        : `<div class="m">NO MORE ROUTE ${esc(only)} BUSES HERE TODAY</div>`;
+    } else {
+      // every route here, each with its next few times (so a route that runs twice a day isn't buried)
+      table = stop.routes.map((rt) => {
+        const rows = sched.filter(([r]) => r === rt);
+        const byHead = {};
+        for (const [, min, h] of rows) (byHead[h] ||= []).push(min);
+        const heads = Object.entries(byHead).sort((a, b) => a[1][0] - b[1][0]);
+        return heads.length ? heads.map(([h, mins]) => `<div class="stop-row">${chip(rt)}<span><b>${mins.slice(0, 3).map(clock).join(' · ')}</b><br>
+            <span class="m">→ ${esc((t.heads[h] || '').toUpperCase())}${mins.length > 3 ? ` · ${mins.length - 3} MORE TODAY` : ''}</span></span></div>`).join('')
+          : `<div class="stop-row">${chip(rt)}<span class="m">NO MORE TODAY</span></div>`;
+      }).join('');
+    }
+    return `<h3>BUS STOP · ${esc(stop.name.toUpperCase())}</h3>
+      <div class="stop-rts"><span class="m">ROUTES</span>${chips}</div>
       <div class="stop-sec">COMING UP · LIVE</div>
-      ${live.length ? live.map(({ b, eta }) => `<div class="stop-row">${chip(busRoute(b))}<span>BUS ${esc(b.id)} · <b>~${eta < 1 ? '<1' : eta} MIN</b></span>
+      ${live.length ? live.map(({ b, eta, next }) => `<div class="stop-row">${chip(busRoute(b))}<span>BUS ${esc(b.id)} · <b>~${eta < 1 ? '<1' : eta} MIN</b>${next ? '<br><span class="m">AFTER ITS CURRENT TRIP</span>' : ''}</span>
         <button type="button" class="go" data-follow="${esc(b.id)}">FOLLOW</button></div>`).join('')
-        : `<div class="m">NO BUS HEADED HERE RIGHT NOW${buses.length ? '' : ' (NONE REPORTING)'}</div>`}
-      <div class="stop-sec">TIMETABLE</div>
-      ${sched.length ? sched.map(([rt, min, h]) => `<div class="stop-row">${chip(rt)}<span><b>${clock(min)}</b> → ${esc((t.heads[h] || '').toUpperCase())}</span></div>`).join('')
-        : `<div class="m">${t ? 'NO MORE SCHEDULED BUSES TODAY' : 'TIMETABLE UNAVAILABLE'}</div>`}
-      <div class="m">LIVE TIMES ARE ESTIMATES FROM GPS AND THE ROUTE'S USUAL PACE</div>`;
+        : `<div class="m">NO BUS ON THE WAY RIGHT NOW${buses.length ? '' : ' (NONE REPORTING)'}</div>`}
+      <div class="stop-sec">${only ? `ROUTE ${esc(only)} TIMETABLE · <button type="button" class="stop-all" data-stop-route="">ALL ROUTES</button>` : 'TIMETABLE · TAP A ROUTE FOR ALL ITS TIMES'}</div>
+      ${table}
+      <div class="m" style="margin-top:6px">LIVE TIMES ARE ESTIMATES FROM GPS AND THE ROUTE'S USUAL PACE</div>`;
   }
   async function focusStop(id) {
     const f = stopsGeo?.features.find((x) => x.properties.id === id); if (!f) return;
@@ -364,6 +430,12 @@
   // refresh the open stop when new bus reports come in
   async function refreshStop() { if (stopPop && stopFocus) { const s = stopFocus; const h = await stopHtml(s); if (stopFocus === s) stopPop.setHTML(h); } }
   document.addEventListener('click', (e) => {
+    // a route chip in a stop's popup: that route's timetable (again, or ALL ROUTES, for every route)
+    const sr = e.target.closest('[data-stop-route]');
+    if (sr && stopFocus) {
+      stopFocus.only = sr.dataset.stopRoute && stopFocus.only !== sr.dataset.stopRoute ? sr.dataset.stopRoute : null;
+      refreshStop(); return;
+    }
     const f = e.target.closest('[data-follow]');
     if (f) { const s = stopFocus; startFollow(f.dataset.follow, s ? { id: s.id, name: s.name, at: s.at } : null); return; }
     // in a group's list, tapping a bus brings up that bus's route

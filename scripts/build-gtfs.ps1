@@ -30,14 +30,37 @@ if (Test-Path (Join-Path $tmp 'calendar_dates.txt')) {
 }
 $heads = New-Object System.Collections.Generic.List[string]; $headIndex = @{}
 $stopRoutes = @{}; $stopTimes = @{}; $tripSpan = @{}
+# Some stops have no time of their own (only the main stops do); those get one in between the stops around
+# them on the same trip, in proportion to the distance along the route
+$byTrip = @{}
 foreach ($st in & $csv 'stop_times') {
+    if (-not $byTrip[$st.trip_id]) { $byTrip[$st.trip_id] = New-Object System.Collections.Generic.List[object] }
+    $byTrip[$st.trip_id].Add($st)
+}
+$toMin = { param($t) if (-not $t) { return $null }; $p = $t.Split(':'); [double]([int]$p[0] * 60 + [int]$p[1] + [int]$p[2] / 60) }
+$filled = foreach ($tid in $byTrip.Keys) {
+    $rows = @($byTrip[$tid] | Sort-Object { [int]$_.stop_sequence })
+    $mins = @($rows | ForEach-Object { & $toMin $(if ($_.departure_time) { $_.departure_time } else { $_.arrival_time }) })
+    $dist = @($rows | ForEach-Object { if ($_.shape_dist_traveled) { [double]$_.shape_dist_traveled } else { $null } })
+    for ($i = 0; $i -lt $rows.Count; $i++) {
+        if ($null -eq $mins[$i]) {
+            $a = $i - 1; while ($a -ge 0 -and $null -eq $mins[$a]) { $a-- }
+            $b = $i + 1; while ($b -lt $rows.Count -and $null -eq $mins[$b]) { $b++ }
+            if ($a -ge 0 -and $b -lt $rows.Count) {
+                $f = if ($null -ne $dist[$a] -and $null -ne $dist[$b] -and $null -ne $dist[$i] -and $dist[$b] -gt $dist[$a]) { ($dist[$i] - $dist[$a]) / ($dist[$b] - $dist[$a]) } else { ($i - $a) / ($b - $a) }
+                $rows[$i] | Add-Member -NotePropertyName est -NotePropertyValue ($mins[$a] + ($mins[$b] - $mins[$a]) * $f) -Force
+            }
+        } else { $rows[$i] | Add-Member -NotePropertyName est -NotePropertyValue $mins[$i] -Force }
+        $rows[$i]
+    }
+}
+foreach ($st in $filled) {
     $rid = $tripRoute[$st.trip_id]; if (-not $rid) { continue }
     if (-not $stopRoutes[$st.stop_id]) { $stopRoutes[$st.stop_id] = New-Object System.Collections.Generic.HashSet[string] }
     [void]$stopRoutes[$st.stop_id].Add($routes[$rid].route_short_name)
     # each departure from each stop: route, minutes after midnight, where it's headed, which days
-    $tm = if ($st.departure_time) { $st.departure_time } else { $st.arrival_time }
-    if (-not $tm) { continue }
-    $hm = $tm.Split(':'); $min = [int]$hm[0] * 60 + [int]$hm[1]
+    if ($null -eq $st.est) { continue }
+    $min = [int][math]::Round($st.est)
     $trip = $trips[$st.trip_id]
     $h = if ($st.stop_headsign) { $st.stop_headsign } else { $trip.trip_headsign }
     if ($null -eq $headIndex[$h]) { $headIndex[$h] = $heads.Count; $heads.Add($h) }
