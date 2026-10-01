@@ -55,15 +55,25 @@ a { color: var(--cyan); }
 .sea-row { display: flex; justify-content: space-between; color: var(--text); white-space: nowrap; font-size: 10px; }
 
 /* clock: LIVE and the 12/24-hour switch on the left, a big sky picture in the middle, SYNC and the time on the right */
-.inst-clock { flex-direction: row; align-items: stretch; gap: 4px; }
+/* three columns: the sky sits centered in the space between the LIVE side and the SYNC side */
+.inst-clock { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: stretch; gap: 2px; }
 .clock-col { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; white-space: nowrap; padding: 0 3px; }
-.clock-right { flex: 1; min-width: 0; align-items: flex-end; }
-.inst-clock .sky { flex: none; align-self: center; width: 58px; height: 54px; }
-.clock-fmt { background: none; border: 1px solid var(--line-2); color: var(--dim); font: 10px/1 var(--mono); letter-spacing: .1em; padding: 3px 5px; cursor: pointer; }
+.clock-right { align-items: flex-end; }
+/* the sky sits centered between the LIVE side and the SYNC side, as big as that gap allows */
+.inst-clock .sky { justify-self: center; align-self: center; width: min(62px, 100%); height: 56px; }
+/* wide screens and the TV give the clock a double-width slot, so the sky can sit dead center, bigger */
+@media (min-width: 1400px) { .inst-clock { grid-column: span 2; } }
+body.tv .inst-clock { grid-column: span 2; }
+@media (min-width: 1400px) {
+  .inst-clock .sky { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70px; height: 62px; pointer-events: none; }
+}
+body.tv .inst-clock .sky { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+/* the 12/24-hour switch: the same size of text as LIVE, in a thin outline */
+.clock-fmt { background: none; border: 1px solid var(--line-2); color: var(--dim); font: inherit; line-height: 1.25; letter-spacing: inherit; padding: 0 4px; cursor: pointer; }
 .clock-fmt:hover { color: var(--cyan); border-color: var(--cyan); }
 .clock small { font-size: .42em; margin-left: 3px; letter-spacing: .08em; }
 body.tv .clock-fmt { visibility: hidden; }
-body.tv .inst-clock .sky { width: 72px; height: 68px; }
+body.tv .inst-clock .sky { width: 86px; height: 76px; }
 .clock { font: 600 34px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
 .sky { display: inline-block; width: 40px; height: 34px; }
 .sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
@@ -376,8 +386,8 @@ body.tv .list .m { font-size: 14px; }
   .tide-foot span:first-child, .tide-foot span:last-child { display: none; }
   .tide-foot { justify-content: center; }
   .sea-row span:last-child { display: none; }
-  .inst-clock .clock { font-size: 24px; }
-  .inst-clock .sky { width: 42px; height: 40px; }
+  .inst-clock .clock { font-size: 21px; letter-spacing: .02em; }
+  .inst-clock .sky { width: min(54px, 100%); height: 48px; }
   .regions { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 5px 8px; }
   .regions button { flex: none; font-size: 12px; padding: 6px 9px; }
   .layout { display: block; }
