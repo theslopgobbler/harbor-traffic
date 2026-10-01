@@ -243,9 +243,10 @@
   }
   function stopFollow() {
     if (!follow) return;
-    setChase(false);
+    // back to north-up (and flat) for the rest of the map, in one camera move so neither cancels the other
+    if (chase) setChase(false, true);
+    else if (map.getBearing()) map.easeTo({ bearing: 0, duration: 600 });
     follow = null;
-    if (map.getBearing()) map.easeTo({ bearing: 0, duration: 600 }); // back to north-up for the rest of the map
     renderBar();
   }
   map.on('dragstart', (e) => { if (e.originalEvent && follow) stopFollow(); });
@@ -261,11 +262,14 @@
   // tilted like a driving game, and the bus becomes a pixel sprite seen from behind. Zoom out or press 2D to leave.
   let chase = false, chaseBrg = 0;
   const CHASE_PITCH = 58, CHASE_ZOOM = 17;
-  function setChase(v) {
+  function setChase(v, northUp) {
     if (v === chase || (v && !follow)) return;
     chase = v;
     document.body.classList.toggle('chase', v);
     const mk = follow && markers.get(follow.id);
+    // the camera rides with the bus, so dragging is off in chase view (on a phone, a pinch counts as a drag, and a
+    // drag ends following); pinching to zoom still works
+    if (!TV) v ? map.dragPan.disable() : map.dragPan.enable();
     if (v) {
       if (phone()) $('#panel').classList.add('min'); // more road on screen
       map.setMaxZoom(18);
@@ -273,7 +277,8 @@
       map.easeTo({ center: mk ? mk.getLngLat() : map.getCenter(), zoom: CHASE_ZOOM, pitch: CHASE_PITCH, bearing: chaseBrg,
         padding: chasePad(), duration: 1400 });
     } else {
-      map.easeTo({ pitch: 0, zoom: Math.min(map.getZoom(), 15.5), padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 800 });
+      map.easeTo({ pitch: 0, zoom: Math.min(map.getZoom(), 15.5), padding: { top: 0, bottom: 0, left: 0, right: 0 },
+        ...(northUp ? { bearing: 0 } : {}), duration: 800 });
       map.once('moveend', () => { if (!chase) map.setMaxZoom(16); });
     }
     if (mk) drawBus(mk);
@@ -409,6 +414,16 @@
     if (h != null) chaseBrg += (((h - chaseBrg + 540) % 360) - 180) * Math.min(1, dt * 2);
     map.jumpTo({ center: mk.getLngLat(), bearing: chaseBrg, padding: chasePad() });
   }
+  // outside chase view the map is always flat and unpadded: if a pinch interrupted the camera on its way back,
+  // straighten it once the map settles
+  map.on('moveend', () => {
+    if (chase || map.isEasing()) return;
+    const p = map.getPadding();
+    if (map.getPitch() > 0.5 || p.top || p.bottom) {
+      map.easeTo({ pitch: 0, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 400 });
+      if (map.getMaxZoom() > 16) map.once('moveend', () => { if (!chase) map.setMaxZoom(16); });
+    }
+  });
   // zooming all the way in while following starts it; zooming well out ends it
   map.on('zoomend', (e) => {
     if (follow && !chase && e.originalEvent && map.getZoom() >= 15.95) setChase(true);
