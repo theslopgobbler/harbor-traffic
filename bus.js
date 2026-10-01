@@ -285,13 +285,28 @@
     <rect x="1.5" y="0.5" width="5" height="10" fill="none" stroke="#1d6358" stroke-width=".5"/>
     <rect class="l-r" x="2.5" y="1.5" width="3" height="2.5"/><rect class="l-y" x="2.5" y="4.25" width="3" height="2.5"/>
     <rect class="l-g" x="2.5" y="7" width="3" height="2.5"/></svg>`;
+  // Pretend timing that at least behaves like real lights: signals within 45 m of each other are one
+  // intersection on one 90 s cycle (north-south green 40 s, yellow 4, then east-west the same, a second of
+  // all-red between), each intersection starting at its own point in the cycle. The lights you see are the
+  // ones for the way the camera (and the bus) is facing.
+  let sigCluster = null, sigOffset = null;
+  function clusterSignals() {
+    const n = signals.length, parent = signals.map((_, i) => i);
+    const find = (i) => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+    for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) if (mx(signals[i], signals[j]) < 45) parent[find(i)] = find(j);
+    sigCluster = signals.map((_, i) => find(i));
+    // a steady offset per intersection, from where it is (the same on every phone and every visit)
+    sigOffset = sigCluster.map((c) => Math.abs(Math.round(signals[c][0] * 1e4 * 7 + signals[c][1] * 1e4 * 13)) % 90);
+  }
   function signalPhase(i, now) {
-    const t = (now / 1000 + i * 7.3) % 32; // 32 s cycle: 15 green, 3 yellow, 14 red, each corner out of step
-    return t < 15 ? 'go' : t < 18 ? 'slow' : 'stop';
+    const t = (now / 1000 + sigOffset[i]) % 90;
+    const northSouth = Math.abs(((chaseBrg % 180) + 180) % 180 - 90) > 45; // facing roughly north or south
+    const s = northSouth ? t : (t + 45) % 90;
+    return s < 40 ? 'go' : s < 44 ? 'slow' : 'stop';
   }
   async function updateSignals() {
     if (!chase || !follow) { sigMarkers.forEach((m) => m.remove()); sigMarkers.clear(); return; }
-    if (!signals) { try { signals = (await (await fetch('data/signals.json')).json()).signals || []; } catch { signals = []; } }
+    if (!signals) { try { signals = (await (await fetch('data/signals.json')).json()).signals || []; } catch { signals = []; } clusterSignals(); }
     const mk = markers.get(follow.id); if (!mk) return;
     const at = mk.getLngLat(), here = [at.lng, at.lat], now = Date.now();
     const near = new Set();
