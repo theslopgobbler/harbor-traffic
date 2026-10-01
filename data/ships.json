@@ -1,19 +1,7 @@
 {
-  "updated": "2026-10-01T20:36:49.9471619+00:00",
+  "updated": "2026-10-01T20:52:11.6249745+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.90623,
-      "lon": -124.10738,
-      "sog": 0,
-      "cog": 318.7,
-      "heading": 316,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T19:20:34.2221493+00:00"
-    },
     {
       "mmsi": 367310520,
       "name": "JAMES T",
@@ -25,6 +13,18 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-01T20:36:49.9471619+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.90605,
+      "lon": -124.10759,
+      "sog": 0,
+      "cog": 295.4,
+      "heading": 125,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T20:52:11.6249745+00:00"
     }
   ]
 }
