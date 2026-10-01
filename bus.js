@@ -26,32 +26,28 @@
   async function loadRoutes() {
     try {
       const [r, s] = await Promise.all([fetch('data/bus-routes.json').then((x) => x.json()), fetch('data/bus-stops.json').then((x) => x.json())]);
-      // each route gets its own lane: a small sideways offset, so routes sharing a road run side by side
-      // like a subway map instead of drawing on top of each other
-      const order = [...new Set((r.features || []).map((f) => f.properties.route))].sort((a, b) => parseInt(a) - parseInt(b) || a.localeCompare(b));
       for (const f of r.features || []) {
         const c = f.geometry.coordinates, d = [0];
         for (let i = 1; i < c.length; i++) d.push(d[i - 1] + mx(c[i - 1], c[i]));
         (shapesByRoute[f.properties.route] ||= []).push({ c, d });
-        f.properties.lane = order.indexOf(f.properties.route) - (order.length - 1) / 2;
       }
-      const lane = (k) => ['*', ['get', 'lane'], k];
       const add = () => {
         if (map.getSource('bus-routes')) return;
         map.addSource('bus-routes', { type: 'geojson', data: r });
         map.addSource('bus-stops', { type: 'geojson', data: s });
-        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, layout: { 'line-join': 'round', 'line-cap': 'butt' },
+        map.addLayer({ id: 'bus-route-lines', type: 'line', source: 'bus-routes', minzoom: 9, layout: { 'line-join': 'round', 'line-cap': 'round' },
           paint: { 'line-color': ['get', 'color'], 'line-opacity': routeOpacity(),
-            'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 2.2],
-            'line-offset': ['interpolate', ['linear'], ['zoom'], 9, lane(0.7), 12, lane(1.6), 15, lane(2.4)] } }, 'flow-glow');
-        // tap a route line to pick out that route; tap anywhere else to clear
+            'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1.2, 14, 3] } }, 'flow-glow');
+        // the picked route, drawn again on top of all the others (brighter and a bit wider)
+        map.addLayer({ id: 'bus-route-picked', type: 'line', source: 'bus-routes', minzoom: 9, filter: ['==', ['get', 'route'], '__none__'],
+          layout: { 'line-join': 'round', 'line-cap': 'round' },
+          paint: { 'line-color': ['get', 'color'], 'line-opacity': 1, 'line-width': ['interpolate', ['linear'], ['zoom'], 9, 2.2, 14, 5] } }, 'flow-glow');
+        // tap a route line to bring that route to the top; tap anywhere else to clear
         map.on('click', (e) => {
-          const hit = map.queryRenderedFeatures([[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]], { layers: ['bus-route-lines'] })[0];
           if (e.originalEvent?.target?.closest?.('.maplibregl-marker')) return;
-          const next = hit ? hit.properties.route : null;
-          if (next === picked) return;
-          picked = next;
-          map.setPaintProperty('bus-route-lines', 'line-opacity', routeOpacity());
+          const box = [[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]];
+          const hit = map.queryRenderedFeatures(box, { layers: ['bus-route-picked'] })[0] || map.queryRenderedFeatures(box, { layers: ['bus-route-lines'] })[0];
+          pickRoute(hit ? hit.properties.route : null);
           if (hit) new maplibregl.Popup({ offset: 6, maxWidth: '240px', closeButton: false }).setLngLat(e.lngLat)
             .setHTML(`<h3>ROUTE ${esc(hit.properties.route)}</h3><p>${esc((hit.properties.name || '').toUpperCase())}</p>`).addTo(map);
         });
@@ -70,8 +66,15 @@
       if (map.isStyleLoaded()) add(); else map.once('load', add);
     } catch (e) { console.warn('bus routes', e); }
   }
-  let picked = null; // the route picked out by tapping its line
-  const routeOpacity = () => picked ? ['case', ['==', ['get', 'route'], picked], 0.95, 0.12] : 0.7;
+  let picked = null; // the route brought to the top (tap its line or one of its buses)
+  const routeOpacity = () => picked ? 0.35 : 0.6;
+  function pickRoute(route) {
+    if (route === picked) return;
+    picked = route;
+    if (!map.getLayer('bus-route-lines')) return;
+    map.setPaintProperty('bus-route-lines', 'line-opacity', routeOpacity());
+    map.setFilter('bus-route-picked', ['==', ['get', 'route'], picked || '__none__']);
+  }
   const showLayers = () => ['bus-route-lines', 'bus-stops'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
 
   // ---- estimated positions between GPS reports ----
@@ -145,6 +148,9 @@
         const el = document.createElement('div');
         el.className = 'bus-mk';
         mk = new maplibregl.Marker({ element: el }).setLngLat([b.lon, b.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '280px' })).addTo(map);
+        // tapping a bus also brings its route to the top
+        const theMk = mk;
+        el.addEventListener('click', () => pickRoute(short(routes[theMk._bus?.route]?.name) || null));
         markers.set(b.id, mk);
       } else {
         // already on the map: remember where it's drawn and let glide() ease it to the new report
