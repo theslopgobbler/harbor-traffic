@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T19:20:34.2221493+00:00",
+  "updated": "2026-10-01T19:41:12.7898941+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1367,6 +1367,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 717410,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 133.78 near Boulder Creek beginning at 12:30 pm on October 1, 2026 until about 5:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 133.78,
+      "lat": 47.473695605,
+      "lon": -124.022412021,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-10-01T19:30:00.0000000+00:00",
+      "end": "2026-10-02T00:00:00.0000000+00:00",
+      "updated": "2026-10-01T19:32:03.1030000+00:00"
     },
     {
       "id": 717354,
