@@ -751,7 +751,7 @@
     el.classList.remove('anchored');
     const len = Math.max(minLen(s), Math.min(260, s.lengthM ? metersToPx(s.lengthM, s.lat) : 0));
     el.style.width = el.style.height = len + 'px';
-    el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(${s.heading ?? s.cog ?? 0}deg)">${shipOutline(s.type, color)}</svg>`;
+    el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(calc(${s.heading ?? s.cog ?? 0}deg - var(--brg, 0deg)))">${shipOutline(s.type, color)}</svg>`;
   }
   map.on('zoomend', () => { shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)); groupShips(); });
 

@@ -2,6 +2,8 @@
 //   GET /aircraft  aircraft around Grays Harbor as {"ac": [...], "source", "at"} (live ADS-B)
 //   GET /buses     Grays Harbor Transit buses as {"routes": [...], "buses": [...], "at"} (from GHT's public GPS tracker)
 //   GET /debug     which feeds answered last and why any didn't
+//   GET /hello     an open dashboard page checking in (count.js), for the viewer count
+//   GET /viewers   the viewer count and daily totals (stats.html; needs the X-Stats-Key header to match STATS_KEY)
 // It only ever fetches those fixed lists (it's not an open proxy), answers only the dashboard's own site, and
 // shares one fetch among everyone watching: aircraft at most every 15 s, buses at most every 20 s.
 
@@ -110,12 +112,48 @@ async function refreshBuses() {
   } catch (e) { busReport = `buses: ${e.message}`; }
 }
 
+// ---- viewers: one Durable Object (binding VIEWERS, class Viewers) keeps the tally for everyone.
+// It remembers only random tab IDs and when each last checked in (in memory, gone in 3 minutes), plus
+// per-day totals (stored): page opens, the most at once, and opens by kind (TV, phone, desktop).
+const WINDOW_MS = 3 * 60 * 1000;
+const KINDS = ['tv', 'phone', 'desktop'];
+const pacificDay = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(t); // YYYY-MM-DD
+export class Viewers {
+  constructor(state) { this.state = state; this.seen = new Map(); this.days = null; }
+  async fetch(request) {
+    const u = new URL(request.url), now = Date.now();
+    for (const [k, v] of this.seen) if (now - v.t > WINDOW_MS) this.seen.delete(k);
+    this.days ||= (await this.state.storage.get('days')) || {};
+    const today = pacificDay(now);
+    const d = this.days[today] ||= { opens: 0, peak: 0, peakAt: null, tv: 0, phone: 0, desktop: 0 };
+    if (u.pathname === '/hello') {
+      const id = u.searchParams.get('id') || '', k = KINDS.includes(u.searchParams.get('k')) ? u.searchParams.get('k') : 'desktop';
+      if (!/^[a-z0-9]{8,32}$/.test(id)) return new Response('bad id', { status: 400 });
+      let dirty = false;
+      if (u.searchParams.get('first') === '1' && !this.seen.has(id)) { d.opens++; d[k]++; dirty = true; }
+      this.seen.set(id, { t: now, k });
+      if (this.seen.size > d.peak) { d.peak = this.seen.size; d.peakAt = new Date(now).toISOString(); dirty = true; }
+      if (dirty) {
+        for (const day of Object.keys(this.days).sort().slice(0, -60)) delete this.days[day]; // keep 60 days
+        await this.state.storage.put('days', this.days);
+      }
+      return Response.json({ ok: true });
+    }
+    // /stats
+    const byKind = Object.fromEntries(KINDS.map((x) => [x, 0]));
+    for (const v of this.seen.values()) byKind[v.k]++;
+    const days = Object.keys(this.days).sort().reverse().slice(0, 30).map((day) => ({ day, ...this.days[day] }));
+    return Response.json({ now: this.seen.size, byKind, days, at: new Date(now).toISOString() });
+  }
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
     const cors = {
       'Access-Control-Allow-Origin': ALLOWED.includes(origin) ? origin : ALLOWED[0],
       'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers': 'X-Stats-Key',
       'Vary': 'Origin'
     };
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors });
@@ -135,6 +173,16 @@ export default {
     if (path === '/buses') {
       if (!bus.body || Date.now() - bus.at > 20000) await refreshBuses();
       return json(bus.body || '{"routes":[],"buses":[]}');
+    }
+    if (path === '/hello' || path === '/viewers') {
+      if (!env.VIEWERS) return new Response('viewer count not set up (no VIEWERS binding)', { status: 503, headers: cors });
+      if (path === '/viewers' && (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY))
+        return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
+      // only the dashboard's own pages check in
+      if (path === '/hello' && !ALLOWED.includes(origin)) return new Response('', { status: 403, headers: cors });
+      const counter = env.VIEWERS.get(env.VIEWERS.idFromName('all'));
+      const r = await counter.fetch(new URL((path === '/hello' ? '/hello' : '/stats') + new URL(request.url).search, 'https://viewers').toString());
+      return new Response(r.body, { status: r.status, headers: { ...cors, 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
     }
     return new Response('Harbor Traffic relay. Try /aircraft or /buses', { status: 404, headers: cors });
   }

@@ -54,11 +54,16 @@ a { color: var(--cyan); }
 .inst-sea svg { display: block; width: 100%; height: 26px; }
 .sea-row { display: flex; justify-content: space-between; color: var(--text); white-space: nowrap; font-size: 10px; }
 
-/* clock: LIVE with the sky icon under it on the left, SYNC with a big time under it on the right */
-.inst-clock { flex-direction: row; gap: 6px; }
+/* clock: LIVE and the 12/24-hour switch on the left, a big sky picture in the middle, SYNC and the time on the right */
+.inst-clock { flex-direction: row; align-items: stretch; gap: 4px; }
 .clock-col { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; white-space: nowrap; padding: 0 3px; }
 .clock-right { flex: 1; min-width: 0; align-items: flex-end; }
-.inst-clock .sky { margin-bottom: 1px; }
+.inst-clock .sky { flex: none; align-self: center; width: 58px; height: 54px; }
+.clock-fmt { background: none; border: 1px solid var(--line-2); color: var(--dim); font: 10px/1 var(--mono); letter-spacing: .1em; padding: 3px 5px; cursor: pointer; }
+.clock-fmt:hover { color: var(--cyan); border-color: var(--cyan); }
+.clock small { font-size: .42em; margin-left: 3px; letter-spacing: .08em; }
+body.tv .clock-fmt { visibility: hidden; }
+body.tv .inst-clock .sky { width: 72px; height: 68px; }
 .clock { font: 600 34px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
 .sky { display: inline-block; width: 40px; height: 34px; }
 .sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
@@ -120,6 +125,28 @@ body.no-buses .bus-mk { display: none !important; }
 body.no-roads .x-mk, body.no-roads .inc-mk { display: none !important; }
 .bus-grp { width: 34px; height: 38px; }
 .bus-grp b.n { left: 50%; top: 50%; transform: translate(-50%, -50%); min-width: 14px; text-align: center; background: #020807; color: #fff; border: 1px solid #bff4ff; }
+/* the bus bar: route ◀ ▶, bus ‹ ›, follow */
+.bus-bar { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 3; width: min(440px, calc(100% - 140px));
+  display: flex; flex-direction: column; gap: 4px; padding: 5px 6px; background: rgba(2,8,7,.92); border: 1px solid var(--cyan); box-shadow: var(--glow-c);
+  font: 11px/1.3 var(--mono); letter-spacing: .08em; color: var(--text); }
+.bus-bar[hidden] { display: none; }
+.bus-bar .row { display: flex; align-items: center; gap: 6px; }
+.bus-bar .row + .row { border-top: 1px solid var(--line-2); padding-top: 4px; }
+.bus-bar .what { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bus-bar .what b { color: var(--cyan); font-weight: 400; }
+.bus-bar .bus-no { margin: 0; }
+.bus-bar button { flex: none; min-width: 32px; height: 30px; padding: 0 6px; background: rgba(0,229,255,.06); border: 1px solid var(--line-2); color: var(--cyan); font: inherit; font-size: 14px; cursor: pointer; }
+.bus-bar button:hover { border-color: var(--cyan); }
+button.go { background: var(--cyan) !important; border: 1px solid var(--cyan); color: #020807 !important; font: 700 11px/1 var(--mono); letter-spacing: .1em; padding: 0 8px; cursor: pointer; }
+.maplibregl-popup button.go { height: 26px; margin-top: 6px; }
+.stop-row button.go { height: 22px; margin: 0; font-size: 10px; }
+.bus-mk.sel .ic { filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px #00e5ff); }
+.stop-sec { margin-top: 7px; padding-bottom: 2px; font-size: 10px; color: var(--cyan); letter-spacing: .15em; border-bottom: 1px solid var(--line-2); }
+.stop-row { display: flex; align-items: center; gap: 4px; padding: 3px 0; font-size: 11px; }
+.stop-row > span:not(.bus-no) { flex: 1; }
+.stop-row b { color: var(--text); }
+body.no-buses .bus-bar, body.tv .bus-bar { display: none; }
+#busBox li[data-route] { cursor: pointer; }
 .bus-no { display: inline-block; min-width: 20px; padding: 0 4px; margin-right: 4px; text-align: center; color: #000; font-weight: 700; } /* list rows keep the solid route-color chip */
 .pill.st-INBOUND { color: var(--orange); border-color: var(--orange); }
 .pill.st-OUTBOUND { color: var(--cyan); border-color: var(--cyan); }
@@ -342,8 +369,8 @@ body.tv .list .m { font-size: 14px; }
   .tide-foot span:first-child, .tide-foot span:last-child { display: none; }
   .tide-foot { justify-content: center; }
   .sea-row span:last-child { display: none; }
-  .inst-clock .clock { font-size: 26px; }
-  .sky { width: 28px; height: 28px; }
+  .inst-clock .clock { font-size: 24px; }
+  .inst-clock .sky { width: 42px; height: 40px; }
   .regions { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 5px 8px; }
   .regions button { flex: none; font-size: 12px; padding: 6px 9px; }
   .layout { display: block; }
@@ -375,4 +402,8 @@ body.tv .list .m { font-size: 14px; }
   .tool.toggle.on .off { position: absolute; top: -3px; right: -3px; width: 16px; height: 16px; margin: 0; display: grid; place-items: center;
     font-size: 10px; border-radius: 50%; background: #020807; border: 1px solid var(--red); }
   .hud .bl, .hud .br { display: none; }
+  /* phones: the bus bar rides just above the row of map buttons */
+  .bus-bar { top: auto; left: 8px; right: 8px; width: auto; transform: none; bottom: calc(38% + 66px); transition: bottom .2s ease; }
+  .layout:has(.panel.min) .bus-bar { bottom: 180px; }
+  .layout:has(.panel.max) .bus-bar, body.stop-open .bus-bar { display: none; }
 }
