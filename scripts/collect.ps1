@@ -376,6 +376,22 @@ if ($crossOld) {
     }
 }
 
+# ---------- traffic signals from OpenStreetMap, for the bus chase view: once a week ----------
+# (judged by the date inside the file: a fresh checkout makes every file look new)
+$sigFile = Join-Path $dataDir 'signals.json'
+$sigOld = $true
+if (Test-Path $sigFile) { try { $sigOld = ((Get-Date) - [datetime](Get-Content $sigFile -Raw | ConvertFrom-Json).updated).TotalDays -gt 7 } catch {} }
+if ($sigOld) {
+    $q = '[out:json][timeout:90];node["highway"="traffic_signals"](46.6,-124.45,47.92,-122.8);out skel;'
+    foreach ($server in 'https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter') {
+        try {
+            $r = Invoke-RestMethod -Method Post -Uri $server -Body @{ data = $q } -UserAgent 'harbor-traffic/1.0 (traffic.harborevents.org)' -Headers @{ Accept = 'application/json' } -TimeoutSec 120
+            $sg = @($r.elements | Where-Object type -eq 'node' | ForEach-Object { , @([math]::Round($_.lon, 5), [math]::Round($_.lat, 5)) })
+            if ($sg.Count) { Save 'signals.json' ([ordered]@{ source = 'OpenStreetMap contributors (ODbL)'; updated = $now.ToString('o'); signals = $sg }); "$($sg.Count) traffic signals"; break }
+        } catch { "signals from $server failed: $($_.Exception.Message.Split("`n")[0])" }
+    }
+}
+
 # compact history line for the "worst times" report:
 # a = active alerts, f = I-5 sensors per level [open, moderate, heavy, stop-and-go] by direction, tt = travel minutes by route id
 $line = [ordered]@{

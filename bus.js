@@ -274,7 +274,43 @@
     }
     if (mk) drawBus(mk);
     renderBar();
+    updateSignals();
   }
+  // traffic signals near the chased bus (where OpenStreetMap has them: data/signals.json), as little pixel
+  // signals standing at the corners. They're decoration: they cycle on their own, not in step with the real ones.
+  let signals = null;
+  const sigMarkers = new Map();
+  const SIG_SVG = `<svg viewBox="0 0 8 23" shape-rendering="crispEdges" aria-hidden="true">
+    <rect x="3" y="10" width="2" height="13" fill="#3b4b49"/><rect x="1" y="0" width="6" height="11" fill="#020807"/>
+    <rect x="1.5" y="0.5" width="5" height="10" fill="none" stroke="#1d6358" stroke-width=".5"/>
+    <rect class="l-r" x="2.5" y="1.5" width="3" height="2.5"/><rect class="l-y" x="2.5" y="4.25" width="3" height="2.5"/>
+    <rect class="l-g" x="2.5" y="7" width="3" height="2.5"/></svg>`;
+  function signalPhase(i, now) {
+    const t = (now / 1000 + i * 7.3) % 32; // 32 s cycle: 15 green, 3 yellow, 14 red, each corner out of step
+    return t < 15 ? 'go' : t < 18 ? 'slow' : 'stop';
+  }
+  async function updateSignals() {
+    if (!chase || !follow) { sigMarkers.forEach((m) => m.remove()); sigMarkers.clear(); return; }
+    if (!signals) { try { signals = (await (await fetch('data/signals.json')).json()).signals || []; } catch { signals = []; } }
+    const mk = markers.get(follow.id); if (!mk) return;
+    const at = mk.getLngLat(), here = [at.lng, at.lat], now = Date.now();
+    const near = new Set();
+    signals.forEach((p, i) => {
+      if (mx(here, p) > 700) return;
+      near.add(i);
+      let m = sigMarkers.get(i);
+      if (!m) {
+        const el = document.createElement('div');
+        el.className = 'sig-mk';
+        el.innerHTML = SIG_SVG;
+        m = new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat(p).addTo(map);
+        sigMarkers.set(i, m);
+      }
+      m.getElement().dataset.phase = signalPhase(i, now);
+    });
+    for (const [i, m] of sigMarkers) if (!near.has(i)) { m.remove(); sigMarkers.delete(i); }
+  }
+  setInterval(updateSignals, 1000);
   // the camera centers on the bus but lower on the screen, so you see the road ahead of it
   const chasePad = () => { const seen = map.getContainer().clientHeight - covered(); return { top: seen * 0.3, bottom: covered(), left: 0, right: 0 }; };
   // every frame in chase view: stay on the bus and turn smoothly with the road
