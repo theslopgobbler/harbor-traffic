@@ -5,7 +5,7 @@
 //   GET /hello     an open dashboard page checking in (count.js), for the viewer count
 //   GET /viewers   the viewer count and daily totals (stats.html; needs the X-Stats-Key header to match STATS_KEY)
 // It only ever fetches those fixed lists (it's not an open proxy), answers only the dashboard's own site, and
-// shares one fetch among everyone watching: aircraft at most every 15 s, buses at most every 20 s.
+// shares one fetch among everyone watching: aircraft at most every 15 s, buses at most every 9 s.
 
 const ALLOWED = ['https://traffic.harborevents.org', 'http://localhost:8765'];
 const UA = { 'User-Agent': 'harbor-traffic relay (traffic.harborevents.org)', Accept: 'application/json' };
@@ -171,7 +171,7 @@ export default {
       return json(air.body || '{"ac":[]}');
     }
     if (path === '/buses') {
-      if (!bus.body || Date.now() - bus.at > 20000) await refreshBuses();
+      if (!bus.body || Date.now() - bus.at > 9000) await refreshBuses(); // GHT's GPS updates about every 8 s
       return json(bus.body || '{"routes":[],"buses":[]}');
     }
     if (path === '/hello' || path === '/viewers') {

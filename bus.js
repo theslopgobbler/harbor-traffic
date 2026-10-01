@@ -144,6 +144,29 @@
 
   // ---- the bar: step through routes and buses, follow a bus ----
   const bar = $('#busBar');
+  // heading-up button: a pixel arrow (an arrow character turns into a color emoji on phones)
+  const UP_SVG = '<svg class="px" viewBox="0 0 9 10" width="14" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 0h1v1h-1zM3 1h3v1h-3zM2 2h5v1h-5zM1 3h7v1h-7zM0 4h9v1h-9zM3 5h3v5h-3z"/></svg>';
+  // the next stop ahead of a bus along its route line (its stops are found once per line, then cached)
+  function lineStops(sh, rt) {
+    if (sh.stops) return sh.stops;
+    sh.stops = [];
+    for (const f of stopsGeo?.features || []) {
+      if (!serves(String(f.properties.routes || '').split(' '), rt)) continue;
+      const p = f.geometry.coordinates;
+      // every pass by the stop (a line can go by the same corner more than once)
+      let last = -1e9;
+      for (let i = 0; i < sh.c.length; i++) {
+        if (mx(p, sh.c[i]) < 30 && sh.d[i] - last > 100) { sh.stops.push({ d: sh.d[i], name: f.properties.name }); last = sh.d[i]; }
+      }
+    }
+    sh.stops.sort((a, b) => a.d - b.d);
+    return sh.stops;
+  }
+  function nextStopOf(b) {
+    if (!b._snap || !stopsGeo) return null;
+    const here = b._along ?? b._obs ?? 0;
+    return lineStops(b._snap.sh, busRoute(b)).find((s) => s.d > here + 15)?.name || null;
+  }
   function renderBar() {
     if (!bar) return;
     bar.hidden = TV || (!picked && !follow);
@@ -153,11 +176,12 @@
       const b = buses.find((x) => x.id === follow.id);
       const rt = b ? busRoute(b) : follow.route;
       const eta = b && follow.stop ? etaTo(b, follow.stop) : null;
+      const nx = b ? nextStopOf(b) : null;
       bar.innerHTML = `<div class="row"><span class="bus-no" style="background:${esc(routeColor(rt))}">${esc(rt)}</span>
-        <span class="what"><b>FOLLOWING BUS ${esc(follow.id)}</b>${b ? ` · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}` : ' · LOST SIGNAL'}
+        <span class="what follow"><b>BUS ${esc(follow.id)}</b>${b ? ` · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}` : ' · LOST SIGNAL'}${nx ? ` · NEXT STOP <b>${esc(nx.toUpperCase())}</b>` : ''}
         ${follow.stop ? `<br><span class="m">${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}</span>`
-          : b?.nextStop ? `<br><span class="m">NEXT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</span>` : ''}</span>
-        <button type="button" data-act="turn" aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? '⬆' : 'N'}</button>
+          : b?.nextStop ? `<br><span class="m">DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</span>` : ''}</span>
+        <button type="button" data-act="turn" aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
         <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>`;
       return;
     }
@@ -224,6 +248,9 @@
     if (!follow || (!now && map.isMoving())) return;
     const mk = markers.get(follow.id); if (!mk) return;
     const b = mk._bus, box = map.getContainer();
+    // passed a stop since the bar was drawn: show the new next stop
+    const nx = nextStopOf(b);
+    if (nx !== follow.nx) { follow.nx = nx; renderBar(); }
     const seen = box.clientHeight - covered(); // the part of the map not under the sheet
     // heading-up: the bus sits low on the screen so you can see where it's going; north-up: in the middle
     const want = [box.clientWidth / 2, followUp ? seen * 0.6 : seen / 2];
@@ -261,31 +288,53 @@
     const f = (meters - d[i - 1]) / ((d[i] - d[i - 1]) || 1);
     return [c[i - 1][0] + (c[i][0] - c[i - 1][0]) * f, c[i - 1][1] + (c[i][1] - c[i - 1][1]) * f];
   }
-  // Estimates are deliberately cautious (70% of the last speed, at most 45 s) so a bus rarely gets ahead of
-  // reality, and when a new report arrives the bus glides there over 1.5 s from wherever it's drawn,
-  // instead of jumping (forward or back).
-  const PACE = 0.7, MAX_S = 45, BLEND_MS = 1500;
-  function glide() {
-    if (document.hidden || !on) return;
+  // A bus on a route line moves like a car, never backwards: it's drawn at a distance along the line and driven
+  // toward where the reports say it should be (the last report, slid forward at its speed). Behind, it speeds up
+  // to close the gap over a few seconds; ahead (the real bus slowed or stopped), it eases off and waits for the
+  // reports to catch up, instead of snapping back. A bus with no line (or a new one) glides straight to its report.
+  const PACE = 0.9, MAX_S = 30, CATCH_S = 8, BLEND_MS = 1500;
+  // where along a line a reported position is: the closest point near where the bus is drawn now
+  function onLine(sh, p, near, heading) {
+    let best = null;
+    for (let i = 0; i < sh.c.length; i++) {
+      if (near != null && Math.abs(sh.d[i] - near) > 800) continue;
+      // moving: only the part of the line going its way (not the other side of an out-and-back street)
+      if (heading != null && i < sh.c.length - 1 && diff(bearing(sh.c[i], sh.c[i + 1]), heading) > 90) continue;
+      const dist = mx(p, sh.c[i]);
+      if (dist < 120 && (!best || dist < best.dist)) best = { i, dist };
+    }
+    return best;
+  }
+  let lastFrame = 0, lastFollow = 0;
+  function glide(t) {
+    requestAnimationFrame(glide);
+    if (document.hidden || !on || t - lastFrame < 33) return; // about 30 frames a second
+    const dt = Math.min(0.25, (t - (lastFrame || t)) / 1000);
+    lastFrame = t;
     const now = Date.now();
     for (const mk of markers.values()) {
       const b = mk._bus;
       if (!b) continue;
       // the route lines may arrive after the buses: match each bus to its line once they're in
-      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); }
-      // where the bus should be now: its report, slid along its route if it's moving
-      let target = [b.lon, b.lat];
-      if (b._snap) b._along = b._snap.sh.d[b._snap.i];
-      if (b.mph >= 2 && b._snap) {
-        const secs = Math.min(MAX_S, (now - b._at) / 1000);
-        b._along += b.mph * 0.44704 * PACE * secs;
-        target = along(b._snap.sh, b._along);
-      }
-      // ease from where it was drawn when the report arrived
+      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); if (b._snap) b._obs = b._snap.sh.d[b._snap.i]; }
+      let pos;
+      if (b._snap) {
+        const sh = b._snap.sh, end = sh.d[sh.d.length - 1];
+        if (mk._sh !== sh || mk._s == null) { mk._sh = sh; mk._s = b._obs; } // a new line: start at the report
+        const v = b.mph >= 2 ? b.mph * 0.44704 : 0; // meters a second
+        const target = Math.min(end, b._obs + v * PACE * Math.min(MAX_S, (now - b._at) / 1000));
+        const gap = target - mk._s;
+        if (gap > 400 || gap < -200) mk._s = target; // far off (a missed turn, a stale report): just go there
+        // never faster than a bit over the bus's own speed, so catching up looks like driving, not a lurch
+        else mk._s = Math.min(end, mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
+        b._along = mk._s;
+        pos = along(sh, mk._s);
+      } else pos = [b.lon, b.lat];
+      // a bus that jumped to a new line, or has none, eases over from where it was drawn
       const k = b._from ? Math.min(1, (now - b._at) / BLEND_MS) : 1;
-      const e = k < 1 ? k * k * (3 - 2 * k) : 1; // smooth start and stop
-      const pos = k < 1 ? [b._from[0] + (target[0] - b._from[0]) * e, b._from[1] + (target[1] - b._from[1]) * e] : target;
-      if (k < 1 || (b.mph >= 2 && b._snap)) mk.setLngLat(pos);
+      if (k < 1) { const e = k * k * (3 - 2 * k); pos = [b._from[0] + (pos[0] - b._from[0]) * e, b._from[1] + (pos[1] - b._from[1]) * e]; }
+      const ll = mk.getLngLat();
+      if (Math.abs(ll.lng - pos[0]) > 1e-7 || Math.abs(ll.lat - pos[1]) > 1e-7) mk.setLngLat(pos);
       // point the icon along the street it's on (the GPS heading is only as fresh as the last report,
       // so a bus that just turned a corner would otherwise sit sideways)
       const h = b._snap ? headingOf(b) : null;
@@ -295,9 +344,9 @@
         if (ic) ic.style.transform = `rotate(calc(${Math.round(h)}deg - var(--brg, 0deg)))`;
       }
     }
-    keepFollowing();
+    if (t - lastFollow > 250) { lastFollow = t; keepFollowing(); }
   }
-  setInterval(glide, 250);
+  requestAnimationFrame(glide);
   // for checking from the browser console: how many moving buses are matched to a route line
   window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
     return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden }; };
@@ -473,19 +522,30 @@
         });
         markers.set(b.id, mk);
       } else {
-        // already on the map: remember where it's drawn and let glide() ease it to the new report
+        // already on the map: remember where it's drawn and let glide() carry it on from there
         const ll = mk.getLngLat();
         b._from = [ll.lng, ll.lat];
       }
+      // where the report is on its route line: on the line it's already drawn on when it's still on it
+      // (so it carries on smoothly), otherwise the best match among its route's lines
+      const prev = mk._bus, rt = short(r.name);
+      let sn = null;
+      if (mk._sh && prev && prev.route === b.route) {
+        const o = onLine(mk._sh, [b.lon, b.lat], mk._s, b.mph >= 2 ? b.heading : null);
+        if (o) sn = { sh: mk._sh, i: o.i, dist: o.dist };
+      }
+      b._snap = sn || snap(b, rt);
+      b._obs = b._snap ? b._snap.sh.d[b._snap.i] : undefined;
+      if (window.htTrace && follow?.id === b.id) window.htTrace.push({ t: Date.now(), same: !!sn, newLine: b._snap?.sh !== mk._sh, obs: Math.round(b._obs), drawn: Math.round(mk._s), mph: Math.round(b.mph) });
+      b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
+      b._at = Date.now();
+      mk._bus = b;
       const el = mk.getElement();
       el.classList.toggle('stopped', b.mph < 2);
-      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${b.heading || 0}deg - var(--brg, 0deg)))">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</b>`;
-      el.title = `Route ${short(r.name)} · bus ${b.id}`;
-      mk._bus = b;
-      mk._h = null; // the icon was redrawn at the GPS heading; glide() lines it up with the street again
-      b._at = Date.now();
-      b._snap = snap(b, short(r.name));
-      b._along = b._snap ? b._snap.sh.d[b._snap.i] : undefined;
+      const h = Math.round((b._snap ? headingOf(b) : null) ?? b.heading ?? 0);
+      mk._h = h;
+      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(rt)}</b>`;
+      el.title = `Route ${rt} · bus ${b.id}`;
       mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + esc(b.nextTime) : ''}</div>` : ''}
@@ -563,10 +623,14 @@
     window.htTickerRefresh?.();
   }
 
+  let lastAt = null;
   async function loadBuses() {
     if (!RELAY) return renderList();
     try {
       const j = await (await fetch(`${RELAY}/buses?t=${Date.now()}`, { cache: 'no-store' })).json();
+      // the relay shares one reading among everyone; the same reading again has nothing new
+      if (j.at && j.at === lastAt) return;
+      lastAt = j.at;
       routes = Object.fromEntries((j.routes || []).map((r) => [r.id, r]));
       buses = (j.buses || []).filter((b) => b.lat && b.lon);
       notices = j.notices || [];
@@ -592,7 +656,12 @@
   $('#btnBus').addEventListener('click', () => setOn(!on));
   setOn(on);
 
-  loadRoutes(); loadBuses(); loadAlerts();
-  setInterval(loadBuses, 20000);
+  loadRoutes(); loadAlerts();
+  // GHT's GPS updates about every 8 s: check every 10 s while someone's watching buses closely
+  // (following one, a stop open, a route picked), every 20 s otherwise
+  (async function poll() {
+    await loadBuses();
+    setTimeout(poll, follow || stopPop || picked ? 10000 : 20000);
+  })();
   setInterval(loadAlerts, 10 * 60 * 1000);
 })();

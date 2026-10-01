@@ -134,6 +134,8 @@ body.no-roads .x-mk, body.no-roads .inc-mk { display: none !important; }
 .bus-bar .row + .row { border-top: 1px solid var(--line-2); padding-top: 4px; }
 .bus-bar .what { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bus-bar .what b { color: var(--cyan); font-weight: 400; }
+.bus-bar .what.follow { white-space: normal; } /* next stop can wrap onto a second line */
+.bus-bar button svg.px { display: block; margin: 0 auto; }
 .bus-bar .bus-no { margin: 0; }
 .bus-bar button { flex: none; min-width: 32px; height: 30px; padding: 0 6px; background: rgba(0,229,255,.06); border: 1px solid var(--line-2); color: var(--cyan); font: inherit; font-size: 14px; cursor: pointer; }
 .bus-bar button:hover { border-color: var(--cyan); }
