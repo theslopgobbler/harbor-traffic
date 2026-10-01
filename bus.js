@@ -286,6 +286,14 @@
       const e = k < 1 ? k * k * (3 - 2 * k) : 1; // smooth start and stop
       const pos = k < 1 ? [b._from[0] + (target[0] - b._from[0]) * e, b._from[1] + (target[1] - b._from[1]) * e] : target;
       if (k < 1 || (b.mph >= 2 && b._snap)) mk.setLngLat(pos);
+      // point the icon along the street it's on (the GPS heading is only as fresh as the last report,
+      // so a bus that just turned a corner would otherwise sit sideways)
+      const h = b._snap ? headingOf(b) : null;
+      if (h != null && (mk._h == null || Math.abs(((h - mk._h + 540) % 360) - 180) > 2)) {
+        mk._h = h;
+        const ic = mk.getElement().querySelector('.ic');
+        if (ic) ic.style.transform = `rotate(calc(${Math.round(h)}deg - var(--brg, 0deg)))`;
+      }
     }
     keepFollowing();
   }
@@ -402,6 +410,7 @@
       el.innerHTML = `<div class="ic" style="transform:rotate(calc(${b.heading || 0}deg - var(--brg, 0deg)))">${busSvg(r.color || '#bff4ff')}</div><b style="color:${esc(r.color || '#bff4ff')};border-color:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</b>`;
       el.title = `Route ${short(r.name)} · bus ${b.id}`;
       mk._bus = b;
+      mk._h = null; // the icon was redrawn at the GPS heading; glide() lines it up with the street again
       b._at = Date.now();
       b._snap = snap(b, short(r.name));
       b._along = b._snap ? b._snap.sh.d[b._snap.i] : undefined;
