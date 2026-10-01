@@ -1,33 +1,18 @@
 {
-  "updated": "2026-10-01T03:11:34.9740492+00:00",
+  "updated": "2026-10-01T03:35:06.2911682+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
       "mmsi": 303636000,
       "name": "MARK I",
-      "lat": 46.65013,
-      "lon": -124.2988,
-      "sog": 9.1,
-      "cog": 8.5,
-      "heading": 6,
+      "lat": 46.75199,
+      "lon": -124.27716,
+      "sog": 8.6,
+      "cog": 7.6,
+      "heading": 11,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "lat": 46.9068,
-      "lon": -124.10617,
-      "sog": 0,
-      "cog": 290.5,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00",
-      "name": "ELLIS BRUSCO",
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
     },
     {
       "mmsi": 538012030,
@@ -37,13 +22,13 @@
       "lengthM": 199,
       "name": "GLBS OLYMPIA",
       "lat": 46.96407,
-      "lon": -123.85305,
+      "lon": -123.85306,
       "sog": 0,
       "cog": 180,
       "heading": 300,
       "status": 5,
       "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
     },
     {
       "mmsi": 367324840,
@@ -69,18 +54,6 @@
       "seen": "2026-10-01T02:52:02.1821386+00:00"
     },
     {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.90663,
-      "lon": -124.10773,
-      "sog": 0,
-      "cog": 260.7,
-      "heading": 226,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
-    },
-    {
       "mmsi": 367310520,
       "name": "JAMES T",
       "lat": 46.7075,
@@ -91,6 +64,33 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-01T02:52:02.1821386+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.91671,
+      "lon": -124.11381,
+      "sog": 8.3,
+      "cog": 295,
+      "heading": 311,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "lengthM": 22,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.9068,
+      "lon": -124.10617,
+      "sog": 0,
+      "cog": 278,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
     }
   ]
 }

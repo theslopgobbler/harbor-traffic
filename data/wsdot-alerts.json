@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T03:11:34.9740492+00:00",
+  "updated": "2026-10-01T03:35:06.2911682+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -42,37 +42,6 @@
         [
           -124.24706,
           47.29942
-        ]
-      ]
-    },
-    {
-      "id": 712873,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Overnight southbound I-5 lane and ramp closures resume the week of Sept. 28 between Maytown Rd and Old Hwy 99 for a paving project.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 88.9,
-      "lat": 46.809909341,
-      "lon": -123.002876849,
-      "lat2": 46.903168672,
-      "lon2": -122.957832023,
-      "county": null,
-      "start": "2026-09-10T21:00:00.0000000+00:00",
-      "end": "2026-10-02T23:00:00.0000000+00:00",
-      "updated": "2026-09-24T19:06:16.7830000+00:00",
-      "path": [
-        [
-          -123.002876849,
-          46.809909341
-        ],
-        [
-          -122.957832023,
-          46.903168672
         ]
       ]
     },
@@ -1332,6 +1301,109 @@
         [
           -124.41027,
           47.6917
+        ]
+      ]
+    },
+    {
+      "id": 717340,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on I-5 southbound from milepost 91 near Scatter Creek Rest Area to milepost 88 near Wsdot SB Grand Mound Park & Ride beginning at 8:11 pm on September 30, 2026 until about 5:00 am on October 1, 2026.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 91.0,
+      "lat": 46.838147133,
+      "lon": -122.985974727,
+      "lat2": 46.798027317,
+      "lon2": -123.009970867,
+      "county": "Thurston",
+      "start": "2026-10-01T03:11:00.0000000+00:00",
+      "end": "2026-10-01T12:00:00.0000000+00:00",
+      "updated": "2026-10-01T03:12:31.6400000+00:00",
+      "path": [
+        [
+          -122.98599,
+          46.8381
+        ],
+        [
+          -122.98846,
+          46.83396
+        ],
+        [
+          -122.98885,
+          46.83333
+        ],
+        [
+          -122.99084,
+          46.83002
+        ],
+        [
+          -122.99104,
+          46.82968
+        ],
+        [
+          -122.99234,
+          46.82751
+        ],
+        [
+          -122.9952,
+          46.82271
+        ],
+        [
+          -122.9954,
+          46.82237
+        ],
+        [
+          -122.9998,
+          46.81501
+        ],
+        [
+          -123.00189,
+          46.81154
+        ],
+        [
+          -123.00385,
+          46.80821
+        ],
+        [
+          -123.00657,
+          46.80369
+        ],
+        [
+          -123.00693,
+          46.80309
+        ],
+        [
+          -123.00784,
+          46.80158
+        ],
+        [
+          -123.00889,
+          46.79981
+        ],
+        [
+          -123.00952,
+          46.79874
+        ],
+        [
+          -123.00965,
+          46.79854
+        ],
+        [
+          -123.0098,
+          46.7983
+        ],
+        [
+          -123.00998,
+          46.798
+        ],
+        [
+          -123.00998,
+          46.798
         ]
       ]
     },
