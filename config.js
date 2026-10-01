@@ -42,6 +42,20 @@ window.HT = {
   ],
 
   // Routes people pick to see alerts along the way. roads = [ref, OpenMapTiles network]
+  // spots the corner label names when you're zoomed in on them (the map's own data has towns and neighborhoods,
+  // but not these). box: [west, south, east, north]; or a point with a radius r in meters. The port's box is a
+  // best guess at the terminals along the north shore between Hoquiam and Aberdeen.
+  landmarks: [
+    { name: 'Port', box: [-123.905, 46.955, -123.835, 46.9705] },
+    { name: 'Downtown', lon: -123.8153, lat: 46.9763, r: 600 },          // Aberdeen
+    { name: 'Downtown', lon: -123.8866, lat: 46.9776, r: 500 },          // Hoquiam
+    { name: 'Bowerman Airport', lon: -123.9357, lat: 46.972, r: 1000 },
+    { name: 'Hospital', lon: -123.847, lat: 46.9795, r: 300 },
+    { name: 'Grays Harbor College', lon: -123.8012, lat: 46.9552, r: 500 },
+    { name: 'Marina', lon: -124.1079, lat: 46.9074, r: 600 },            // Westport
+    { name: 'Lighthouse', lon: -124.1169, lat: 46.8875, r: 450 },        // Westport
+    { name: 'Westport Airport', lon: -124.1017, lat: 46.8973, r: 500 }
+  ],
   corridors: [
     { id: 'olympia',  name: 'Aberdeen ↔ Olympia',  // a = which side of the town its weather label sits on (keeps close towns apart); minor = hidden in the zoomed-out view
   towns: ['aberdeen','montesano','elma','mccleary','olympia'],

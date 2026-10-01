@@ -358,11 +358,51 @@
       const mid = (r) => [(r.bounds[0] + r.bounds[2]) / 2, (r.bounds[1] + r.bounds[3]) / 2];
       id = (inside[0] || withB.sort((a, b) => Math.hypot(mid(a)[0] - c.lng, mid(a)[1] - c.lat) - Math.hypot(mid(b)[0] - c.lng, mid(b)[1] - c.lat))[0]).id;
     }
-    if (id === region) return;
-    region = id;
-    regionBar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.r === id));
-    $('#regionName').textContent = `▸ ${regionById[id].name.toUpperCase()}`;
+    if (id !== region) {
+      region = id;
+      regionBar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.r === id));
+    }
+    placeLabel(c, id);
   });
+
+  // The corner label gets more specific as you zoom in: the region; then the town; then the neighborhood or a
+  // landmark (the port, downtown, the airport...), or the water if you're looking at the bay. The most specific
+  // name is big, with what it's part of in small type under it.
+  const mDist = (a, b) => Math.hypot((b[0] - a[0]) * 76000, (b[1] - a[1]) * 111000);
+  function placeLabel(c, id) {
+    const z = map.getZoom(), here = [c.lng, c.lat], regionText = regionById[id].name.toUpperCase();
+    let town = null, spot = null;
+    if (z >= 11.5) {
+      let places = [];
+      try { places = map.querySourceFeatures('omt', { sourceLayer: 'place' }); } catch {}
+      const nearest = (classes, maxM) => places.filter((f) => classes.includes(f.properties.class) && f.properties.name)
+        .map((f) => [mDist(here, f.geometry.coordinates), f.properties.name]).filter(([d]) => d < maxM).sort((a, b) => a[0] - b[0])[0]?.[1];
+      // the town: from our own town list (the map only has a town's name in the tile its label sits in)
+      town = C.towns.map((t) => [mDist(here, [t.lon, t.lat]), t.name]).filter(([d]) => d < 6000).sort((a, b) => a[0] - b[0])[0]?.[1]
+        || nearest(['city', 'town', 'village'], 5000);
+      if (z >= 13.5) {
+        const lm = (C.landmarks || []).find((l) => l.box ? c.lng >= l.box[0] && c.lng <= l.box[2] && c.lat >= l.box[1] && c.lat <= l.box[3]
+          : mDist(here, [l.lon, l.lat]) <= l.r);
+        spot = lm?.name || nearest(['suburb', 'neighbourhood', 'quarter', 'hamlet'], 1200) || null;
+        // looking at the water: the bay's name
+        if (!spot) {
+          const p = map.project(c);
+          if (map.queryRenderedFeatures([p.x, p.y], { layers: ['water'] }).length) {
+            let names = [];
+            try { names = map.querySourceFeatures('omt', { sourceLayer: 'water_name' }); } catch {}
+            spot = names.filter((f) => f.properties.name && f.geometry.type === 'Point')
+              .map((f) => [mDist(here, f.geometry.coordinates), f.properties.name]).filter(([d]) => d < 15000).sort((a, b) => a[0] - b[0])[0]?.[1] || null;
+          }
+        }
+        if (spot && town && spot.toLowerCase() === town.toLowerCase()) spot = null;
+      }
+    }
+    const big = (spot || town || regionText).toUpperCase();
+    // (without repeating a name: in Olympia the region is already called Olympia)
+    const reg = town && regionText.startsWith(town.toUpperCase()) ? '' : regionText;
+    const under = spot ? [town, reg].filter(Boolean).join(' · ') : town ? reg : '';
+    $('#regionName').innerHTML = `▸ ${esc(big)}${under ? `<small>${esc(under.toUpperCase())}</small>` : ''}`;
+  }
 
   // ---------------- weather ----------------
   // short readout codes instead of pictures, like an old nav unit
