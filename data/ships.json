@@ -1,7 +1,47 @@
 {
-  "updated": "2026-10-01T05:52:14.2914934+00:00",
+  "updated": "2026-10-01T06:15:50.9738106+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 303636000,
+      "name": "MARK I",
+      "lat": 46.75199,
+      "lon": -124.27716,
+      "sog": 8.6,
+      "cog": 7.6,
+      "heading": 11,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
+    },
+    {
+      "mmsi": 367156340,
+      "type": 30,
+      "dest": "WARRENTON,OREGON",
+      "callsign": "WDD5300",
+      "lengthM": 22,
+      "name": "GRANADA",
+      "lat": 46.40877,
+      "lon": -124.38311,
+      "sog": 8.4,
+      "cog": 340.7,
+      "heading": 342,
+      "status": 15,
+      "classB": false,
+      "seen": "2026-10-01T06:15:50.9738106+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.91569,
+      "lon": -124.17248,
+      "sog": 7.3,
+      "cog": 267.9,
+      "heading": 278,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T03:52:39.9036579+00:00"
+    },
     {
       "mmsi": 367317770,
       "type": 31,
@@ -18,16 +58,19 @@
       "seen": "2026-10-01T03:35:06.2911682+00:00"
     },
     {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.91569,
-      "lon": -124.17248,
-      "sog": 7.3,
-      "cog": 267.9,
-      "heading": 278,
+      "mmsi": 367324840,
+      "lat": 46.97849,
+      "lon": -123.88359,
+      "sog": 0.1,
+      "cog": 233.3,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-01T03:52:39.9036579+00:00"
+      "seen": "2026-10-01T05:11:13.7959416+00:00",
+      "name": "MARY ROSE BRUSCO",
+      "type": 31,
+      "dest": "GRAYS HARBOR",
+      "callsign": "WDE2412",
+      "lengthM": 20
     },
     {
       "mmsi": 538012030,
@@ -42,29 +85,6 @@
       "cog": 180,
       "heading": 300,
       "status": 5,
-      "classB": false,
-      "seen": "2026-10-01T03:35:06.2911682+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97849,
-      "lon": -123.88359,
-      "sog": 0.1,
-      "cog": 233.3,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T05:11:13.7959416+00:00"
-    },
-    {
-      "mmsi": 303636000,
-      "name": "MARK I",
-      "lat": 46.75199,
-      "lon": -124.27716,
-      "sog": 8.6,
-      "cog": 7.6,
-      "heading": 11,
-      "status": 0,
       "classB": false,
       "seen": "2026-10-01T03:35:06.2911682+00:00"
     }
