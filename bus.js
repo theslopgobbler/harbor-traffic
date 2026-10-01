@@ -24,6 +24,11 @@
   const short = (name) => parts(name)[1].trim();
   const long = (name) => parts(name)[2].trim();
   const busRoute = (b) => short(routes[b.route]?.name);
+  // One color per route for both its line and its buses. GHT's tracker and its schedule data use different
+  // colors, and some vanish on this dark map (50 is black, 60 and the WAVE are the map's own cyan), so these are
+  // GHT's schedule colors, brightened where too dark and swapped where they clash.
+  const COLORS = { '5': '#c6ff3d', '10N': '#3373ff', '10S': '#c4672f', '20': '#e8202a', '20P': '#e8202a', '25': '#ff7e5e',
+    '30': '#e08a14', '40': '#fff700', '45': '#ffc60a', '50': '#a678ff', '60': '#ff5ac8', '70': '#3fae1a', '161': '#ff5ac8', '171': '#3fae1a' };
   const natural = (a, b) => parseInt(a, 10) - parseInt(b, 10) || a.localeCompare(b);
 
   // ---- route lines and stops (from GHT's published schedule data; data/bus-routes.json and bus-stops.json) ----
@@ -41,7 +46,8 @@
       const order = [...new Set(r.features.map((f) => base(f.properties.route)))].sort(natural);
       for (const f of r.features || []) {
         const p = f.properties;
-        p.lane = (order.indexOf(base(p.route)) % 4) + 1;
+        p.color = COLORS[p.route] || p.color;
+        p.lane =(order.indexOf(base(p.route)) % 4) + 1;
         const c = f.geometry.coordinates, d = [0];
         for (let i = 1; i < c.length; i++) d.push(d[i - 1] + mx(c[i - 1], c[i]));
         (shapesByRoute[p.route] ||= []).push({ c, d, mps: p.mps || 7 });
@@ -631,7 +637,7 @@
       // the relay shares one reading among everyone; the same reading again has nothing new
       if (j.at && j.at === lastAt) return;
       lastAt = j.at;
-      routes = Object.fromEntries((j.routes || []).map((r) => [r.id, r]));
+      routes = Object.fromEntries((j.routes || []).map((r) => [r.id, { ...r, color: COLORS[short(r.name)] || r.color }]));
       buses = (j.buses || []).filter((b) => b.lat && b.lon);
       notices = j.notices || [];
     } catch (e) { console.warn('buses', e); }
