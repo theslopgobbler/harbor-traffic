@@ -515,7 +515,10 @@ body.tv .list .m { font-size: 14px; }
   .layout:has(.panel.min) .bus-bar { bottom: 180px; }
   .layout:has(.panel.max) .bus-bar, body.stop-open .bus-bar { display: none; }
   /* the sheet tucked away: just its handle (chevron up) along the bottom edge */
-  .panel.gone { height: calc(30px + env(safe-area-inset-bottom)); overflow: hidden; padding-bottom: 0; }
+  /* (the iPhone's home-bar strip goes under the handle as padding, not into the panel, or the tabs peek out) */
+  .panel.gone { box-sizing: border-box; height: calc(30px + env(safe-area-inset-bottom)); overflow: hidden;
+    padding-top: 4px; padding-bottom: env(safe-area-inset-bottom); }
+  .panel.gone > :not(.sheet-handle) { visibility: hidden; }
   .layout:has(.panel.gone) .map-tools { bottom: calc(40px + env(safe-area-inset-bottom)); }
   .layout:has(.panel.gone) .bus-bar { bottom: calc(96px + env(safe-area-inset-bottom)); }
   .sheet-hide { display: grid; place-items: center; position: absolute; top: 0; right: 6px; width: 40px; height: 26px; padding: 0;
