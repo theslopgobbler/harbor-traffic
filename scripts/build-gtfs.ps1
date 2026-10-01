@@ -84,6 +84,33 @@ foreach ($p in & $csv 'shapes') {
     if (-not $pts[$p.shape_id]) { $pts[$p.shape_id] = New-Object System.Collections.Generic.List[object] }
     $pts[$p.shape_id].Add(@([int]$p.shape_pt_sequence, [double]$p.shape_pt_lon, [double]$p.shape_pt_lat))
 }
+# Clean a route line: GHT's shapes have little out-and-back jabs and tiny loops (pulling into a stop bay or a
+# parking lot and back out) that look like scribbles on the map and make the predicted bus jerk around. Those go,
+# so the line follows the road.
+function Get-M($a, $b) { $dx = ($b[0] - $a[0]) * 76000; $dy = ($b[1] - $a[1]) * 111000; [math]::Sqrt($dx * $dx + $dy * $dy) }
+function Get-Brg($a, $b) { ([math]::Atan2(($b[0] - $a[0]) * 0.68, $b[1] - $a[1]) * 180 / [math]::PI + 360) % 360 }
+function Get-Turn($a, $b, $c) { $t = [math]::Abs(((Get-Brg $b $c) - (Get-Brg $a $b) + 540) % 360 - 180); $t }
+function Get-CleanLine($line) {
+    $changed = $true; $guard = 0
+    while ($changed -and $guard -lt 50) {
+        $changed = $false; $guard++
+        # a jab: the line doubles back (turns more than 150°) after a short leg (under 80 m): drop the tip
+        for ($i = 1; $i -lt $line.Count - 1; $i++) {
+            $legA = Get-M $line[$i - 1] $line[$i]; $legB = Get-M $line[$i] $line[$i + 1]
+            if ([math]::Min($legA, $legB) -lt 80 -and (Get-Turn $line[$i - 1] $line[$i] $line[$i + 1]) -gt 150) { $line.RemoveAt($i); $changed = $true; $i-- }
+        }
+        # a small loop: the line comes back within 15 m of where it was after under 200 m: cut the loop out
+        for ($i = 0; $i -lt $line.Count - 3; $i++) {
+            $run = 0.0
+            for ($j = $i + 1; $j -lt [math]::Min($line.Count, $i + 14); $j++) {
+                $run += Get-M $line[$j - 1] $line[$j]
+                if ($run -gt 200) { break }
+                if ($j -ge $i + 3 -and (Get-M $line[$i] $line[$j]) -lt 15) { $line.RemoveRange($i + 1, $j - $i - 1); $changed = $true; break }
+            }
+        }
+    }
+    # (cleans the list in place; returns nothing, since PowerShell would unroll a returned list)
+}
 $features = foreach ($sid in $pts.Keys) {
     $rid = $shapeRoute[$sid]; if (-not $rid) { continue }
     $r = $routes[$rid]
@@ -100,7 +127,10 @@ $features = foreach ($sid in $pts.Keys) {
         $line.Add(@([math]::Round($q[1], 5), [math]::Round($q[2], 5))); $last = $q
     }
     $end = $sorted[-1]; $line.Add(@([math]::Round($end[1], 5), [math]::Round($end[2], 5)))
+    Get-CleanLine $line
     if ($line.Count -lt 2) { continue }
+    # length along the cleaned line (what the bus is drawn moving along)
+    $len = 0.0; for ($i = 1; $i -lt $line.Count; $i++) { $len += Get-M $line[$i - 1] $line[$i] }
     # typical speed along this shape, stops included (meters per second), for arrival estimates
     $mps = $null
     if ($shapeMins[$sid]) { $ms = @($shapeMins[$sid] | Sort-Object); $mps = [math]::Round($len / ($ms[[int][math]::Floor($ms.Count / 2)] * 60), 2) }
