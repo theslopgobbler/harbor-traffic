@@ -305,7 +305,7 @@
     return s < 40 ? 'go' : s < 44 ? 'slow' : 'stop';
   }
   async function updateSignals() {
-    if (!chase || !follow) { sigMarkers.forEach((m) => m.remove()); sigMarkers.clear(); return; }
+    if (!chase || !follow) { sigMarkers.forEach((m) => m.remove()); sigMarkers.clear(); updateStopSigns(null); return; }
     if (!signals) { try { signals = (await (await fetch('data/signals.json')).json()).signals || []; } catch { signals = []; } clusterSignals(); }
     const mk = markers.get(follow.id); if (!mk) return;
     const at = mk.getLngLat(), here = [at.lng, at.lat], now = Date.now();
@@ -324,6 +324,41 @@
       m.getElement().dataset.phase = signalPhase(i, now);
     });
     for (const [i, m] of sigMarkers) if (!near.has(i)) { m.remove(); sigMarkers.delete(i); }
+    updateStopSigns(here);
+  }
+
+  // bus stops near the chased bus as little pixel signs on poles: the stops on its route get their name, the
+  // other routes' stops stay small and dim, and its next stop glows
+  const stopSigns = new Map();
+  const STOP_SVG = `<svg viewBox="0 0 10 24" shape-rendering="crispEdges" aria-hidden="true">
+    <rect x="4" y="8" width="2" height="16" fill="#3b4b49"/><rect x="0" y="0" width="10" height="9" fill="#020807"/>
+    <rect x="1" y="1" width="8" height="7" fill="var(--sc)"/>
+    <rect x="3" y="2" width="4" height="4" fill="#020807"/><rect x="3" y="3" width="4" height="1" fill="var(--sc)"/>
+    <rect x="3" y="6" width="1" height="1" fill="#020807"/><rect x="6" y="6" width="1" height="1" fill="#020807"/></svg>`;
+  function updateStopSigns(here) {
+    if (!chase || !follow || !here || !stopsGeo) { stopSigns.forEach((m) => m.remove()); stopSigns.clear(); return; }
+    const b = markers.get(follow.id)?._bus, rt = b ? busRoute(b) : follow.route;
+    const next = b ? nextStopOf(b) : null, color = routeColor(rt);
+    const near = new Set();
+    for (const f of stopsGeo.features) {
+      const p = f.geometry.coordinates;
+      if (mx(here, p) > 600) continue;
+      const id = f.properties.id;
+      near.add(id);
+      let m = stopSigns.get(id);
+      if (!m) {
+        const el = document.createElement('div');
+        el.className = 'stop-sign';
+        el.innerHTML = `${STOP_SVG}<span>${esc(String(f.properties.name).toUpperCase())}</span>`;
+        m = new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat(p).addTo(map);
+        stopSigns.set(id, m);
+      }
+      const el = m.getElement(), mine = serves(String(f.properties.routes || '').split(' '), rt);
+      el.classList.toggle('mine', mine);
+      el.classList.toggle('next', mine && f.properties.name === next);
+      el.style.setProperty('--sc', mine ? color : '#5f9c8b');
+    }
+    for (const [id, m] of stopSigns) if (!near.has(id)) { m.remove(); stopSigns.delete(id); }
   }
   setInterval(updateSignals, 1000);
   // say so on the map, so nobody waits on a pretend green
