@@ -193,7 +193,7 @@
   // following: a see-through banner across the top of the map (under the instruments, clear of + and -), big
   // enough to read at a glance; the bottom bar is only for picking routes
   const followBar = $('#followBar');
-  const followTop = () => (follow && followBar && !followBar.hidden ? followBar.offsetHeight + 12 : 0);
+  const followTop = () => (follow && followBar && !followBar.hidden ? followBar.offsetTop + followBar.offsetHeight + 8 : 0);
   function renderFollow() {
     if (!followBar) return;
     followBar.hidden = TV || !follow;
@@ -302,7 +302,7 @@
     map.setPixelRatio(v ? Math.min(devicePixelRatio, 1.5) : devicePixelRatio);
     padCache = null;
     if (v) {
-      if (phone()) $('#panel').classList.add('min'); // more road on screen
+      if (phone() && !$('#panel').classList.contains('gone')) $('#panel').classList.add('min'); // more road on screen
       map.setMaxZoom(18);
       chaseBrg = (mk && headingOf(mk._bus)) ?? map.getBearing();
       map.easeTo({ center: mk ? mk.getLngLat() : map.getCenter(), zoom: CHASE_ZOOM, pitch: CHASE_PITCH, bearing: chaseBrg,
@@ -767,7 +767,7 @@
     if (row) { pickRoute(row.dataset.route, { bar: false }); return; }
     // a route in the panel's transit list: bring it up and show the whole route
     const li = e.target.closest('#busBox li[data-route]');
-    if (li) { pickRoute(li.dataset.route, { fit: true, force: true, bar: true }); if (phone()) $('#panel').classList.add('min'); }
+    if (li) { pickRoute(li.dataset.route, { fit: true, force: true, bar: true }); if (phone() && !$('#panel').classList.contains('gone')) $('#panel').classList.add('min'); }
   });
   window.htPickRoute = (r) => pickRoute(r); // for checking from the browser console
   window.htFocusStop = (id) => focusStop(id);
