@@ -112,7 +112,7 @@ body.no-buses .bus-mk { display: none !important; }
 .river-mk i { width: 9px; height: 9px; background: rgba(2,8,7,.85); border: 1.5px solid var(--c); border-radius: 0 50% 50% 50%; transform: rotate(45deg); box-shadow: 0 0 4px var(--c); }
 .river-mk span { font: 10px/1 var(--mono); color: var(--c); background: rgba(2,8,7,.75); padding: 1px 3px; text-shadow: 0 0 3px #000; }
 .river-mk.flood i { animation: pulse 1.4s ease-in-out infinite; }
-#floodAlerts:empty { display: none; }
+#floodAlerts:empty, #tideAlert:empty { display: none; }
 body.no-roads .x-mk, body.no-roads .inc-mk { display: none !important; }
 .bus-grp { width: 34px; height: 38px; }
 .bus-grp b.n { left: 50%; top: 50%; transform: translate(-50%, -50%); min-width: 14px; text-align: center; background: #020807; color: #fff; border: 1px solid #bff4ff; }

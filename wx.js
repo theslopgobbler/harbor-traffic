@@ -530,6 +530,25 @@
       const nx = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).find((p) => p.t > now);
       tick('tide', `${cur.v.toFixed(1)} ft and ${rising ? 'rising' : 'falling'} at Aberdeen` +
         (nx ? `, ${nx.type === 'H' ? 'high' : 'low'} ${nx.v.toFixed(1)} ft at ${nx.t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}` : ''));
+      // ---- low tide warning for paddlers: mudflats exposed and shallow river mouths ----
+      // on now (1.5 ft or lower) or coming soon (a low of 1.0 ft or less within 3 hours)
+      const hm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      const lows = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).filter((p) => p.type === 'L');
+      const lowNow = cur.v <= 1.5;
+      const soon = lows.find((p) => p.t > now && p.t - now < 3 * H && p.v <= 1.0);
+      const theLow = lowNow ? (lows.find((p) => Math.abs(p.t - now) < 4 * H) || { t: now, v: cur.v }) : soon;
+      let tideMsg = '';
+      if (theLow) {
+        const back = pts.find((p) => p.t > theLow.t && p.v > 1.5); // when it's back above 1.5 ft
+        const minus = theLow.v < 0;
+        tideMsg = `${minus ? 'MINUS TIDE' : 'LOW TIDE'} ${theLow.v.toFixed(1)} FT ${theLow.t > now ? 'AT' : 'WAS AT'} ${hm(theLow.t)}` +
+          `${back ? ` · ABOVE 1.5 FT AGAIN ABOUT ${hm(back.t)}` : ''}`;
+        $('#tideAlert').innerHTML = `<li class="k-work"><div class="t">〰 ${tideMsg}</div>
+          <div class="m">${lowNow ? `NOW ${cur.v.toFixed(1)} FT. ` : ''}Mudflats exposed and river mouths shallow around Grays Harbor${minus ? ', even more than usual' : ''}. Kayaks and small boats can get stranded; plan launches and returns around the tide.</div></li>`;
+      } else $('#tideAlert').innerHTML = '';
+      window.htPerilTide = theLow ? 1 : 0;
+      window.htPerilRefresh?.();
+      tick('lowtide', tideMsg.toLowerCase());
       const next = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).find((p) => p.t > now);
       const tm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).replace(' ', '').toUpperCase();
       $('#tideNext').innerHTML = next ? `<span>-6H</span><span>${next.type === 'H' ? 'HIGH' : 'LOW'} ${tm(next.t)} ${next.v.toFixed(1)}FT</span><span>+6H</span>` : '';
