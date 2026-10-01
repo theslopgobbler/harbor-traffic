@@ -204,9 +204,11 @@
       const spreadM = Math.max(...lls.map((a) => Math.max(...lls.map((b) => a.distanceTo(b)))));
       const pop = new maplibregl.Popup({ offset: 14, maxWidth: '300px' }).setHTML(`<h3>${list.length} BUSES HERE</h3>` + list.map((b) => {
         const r = routes[b.route] || {};
-        return `<div class="m"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + esc(b.nextTime) : '') : ''}</div>`;
+        return `<div class="m bus-row" data-route="${esc(short(r.name))}" style="cursor:pointer"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + esc(b.nextTime) : '') : ''}</div>`;
       }).join(''));
       const mk = new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map);
+      // tapping the group brings up its route when every bus in it is on the same route
+      el.addEventListener('click', () => { if (oneRoute) pickRoute(short(routes[list[0].route]?.name) || null); });
       if (spreadM < 60) mk.setPopup(pop);
       else el.addEventListener('click', () => {
         const bb = new maplibregl.LngLatBounds(); lls.forEach((l) => bb.extend(l));
@@ -216,6 +218,9 @@
     }
   }
   map.on('zoomend', groupBuses);
+  // in a group's list, tapping a bus brings up that bus's route
+  document.addEventListener('click', (e) => { const row = e.target.closest('.bus-row[data-route]'); if (row) pickRoute(row.dataset.route); });
+  window.htPickRoute = (r) => pickRoute(r); // for checking from the browser console
 
   function renderList() {
     const box = $('#busBox');

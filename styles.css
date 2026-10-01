@@ -54,8 +54,12 @@ a { color: var(--cyan); }
 .inst-sea svg { display: block; width: 100%; height: 26px; }
 .sea-row { display: flex; justify-content: space-between; color: var(--text); white-space: nowrap; font-size: 10px; }
 
-.inst-clock .inst-body { justify-content: flex-end; }
-.clock { font: 600 26px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
+/* clock: LIVE with the sky icon under it on the left, SYNC with a big time under it on the right */
+.inst-clock { flex-direction: row; gap: 6px; }
+.clock-col { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; white-space: nowrap; padding: 0 3px; }
+.clock-right { flex: 1; min-width: 0; align-items: flex-end; }
+.inst-clock .sky { margin-bottom: 1px; }
+.clock { font: 600 34px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
 .sky { display: inline-block; width: 40px; height: 34px; }
 .sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
 
@@ -314,9 +318,8 @@ body.tv .ticker { display: flex; align-items: center; height: 44px; flex: none; 
 
 /* TV: fixed, glanceable, nothing to press */
 body.tv { font-size: 18px; --panel-w: 460px; }
-body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 40px; } body.tv .inst-big { font-size: 22px; }
+body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 46px; } body.tv .inst-big { font-size: 22px; }
 body.tv .inst-extra { display: flex !important; } /* the TV always gets the full strip */
-body.tv .clock { font-size: 40px; }
 body.tv .map-tools, body.tv .tabs, body.tv .route-pick { display: none; }
 body.tv .tab { display: block; }
 body.tv #tab-weather { display: none; }
@@ -339,8 +342,8 @@ body.tv .list .m { font-size: 14px; }
   .tide-foot span:first-child, .tide-foot span:last-child { display: none; }
   .tide-foot { justify-content: center; }
   .sea-row span:last-child { display: none; }
-  .inst-clock .clock { font-size: 18px; }
-  .sky { width: 28px; height: 26px; }
+  .inst-clock .clock { font-size: 26px; }
+  .sky { width: 28px; height: 28px; }
   .regions { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 5px 8px; }
   .regions button { flex: none; font-size: 12px; padding: 6px 9px; }
   .layout { display: block; }
