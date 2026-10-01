@@ -1,69 +1,7 @@
 {
-  "updated": "2026-10-01T03:52:39.9036579+00:00",
+  "updated": "2026-10-01T04:11:50.9085541+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.9068,
-      "lon": -124.10617,
-      "sog": 0,
-      "cog": 278,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T03:35:06.2911682+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.7075,
-      "lon": -123.96534,
-      "sog": 0,
-      "cog": 221.1,
-      "heading": 298,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
-    },
-    {
-      "mmsi": 567017000,
-      "name": "SARITA NAREE",
-      "lat": 46.92648,
-      "lon": -124.09451,
-      "sog": 0.1,
-      "cog": 315.9,
-      "heading": 52,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-01T02:52:02.1821386+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97856,
-      "lon": -123.88363,
-      "sog": 0,
-      "cog": 295.2,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T03:52:39.9036579+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.91569,
-      "lon": -124.17248,
-      "sog": 7.3,
-      "cog": 267.9,
-      "heading": 278,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T03:52:39.9036579+00:00"
-    },
     {
       "mmsi": 538012030,
       "type": 70,
@@ -91,6 +29,68 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-01T03:35:06.2911682+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.91569,
+      "lon": -124.17248,
+      "sog": 7.3,
+      "cog": 267.9,
+      "heading": 278,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T03:52:39.9036579+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.7075,
+      "lon": -123.96534,
+      "sog": 0,
+      "cog": 221.1,
+      "heading": 298,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-01T02:52:02.1821386+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "lengthM": 22,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.9068,
+      "lon": -124.10617,
+      "sog": 0,
+      "cog": 278,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T03:35:06.2911682+00:00"
+    },
+    {
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92648,
+      "lon": -124.09451,
+      "sog": 0.1,
+      "cog": 315.9,
+      "heading": 52,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-01T02:52:02.1821386+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97854,
+      "lon": -123.88362,
+      "sog": 0,
+      "cog": 242,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T04:11:50.9085541+00:00"
     }
   ]
 }
