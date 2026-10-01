@@ -65,7 +65,11 @@
         const flush = () => { if (run.length > 1) pieces.push({ type: 'Feature', properties: f.properties,
           geometry: { type: 'LineString', coordinates: dir < 0 ? run.slice().reverse() : run } }); };
         for (let i = 1; i < c.length; i++) {
-          const dot = (c[i][0] - c[i - 1][0]) * 0.68 * REF[0] + (c[i][1] - c[i - 1][1]) * REF[1];
+          const ex = (c[i][0] - c[i - 1][0]) * 0.68, ey = c[i][1] - c[i - 1][1];
+          const dot = ex * REF[0] + ey * REF[1];
+          // running nearly crosswise to the reference way, a wiggle could flip it back and forth (each flip is a
+          // break in the drawn line): keep the way it was going until the road really turns
+          if (dir && Math.abs(dot) < 0.4 * Math.hypot(ex, ey)) { run.push(c[i]); continue; }
           const d = dot >= 0 ? 1 : -1;
           if (dir && d !== dir) { flush(); run = [c[i - 1]]; }
           dir = d; run.push(c[i]);
