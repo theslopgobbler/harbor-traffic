@@ -50,7 +50,9 @@
         p.lane =(order.indexOf(base(p.route)) % 4) + 1;
         const c = f.geometry.coordinates, d = [0];
         for (let i = 1; i < c.length; i++) d.push(d[i - 1] + mx(c[i - 1], c[i]));
-        (shapesByRoute[p.route] ||= []).push({ c, d, mps: p.mps || 7 });
+        const entry = { c, d, mps: p.mps || 7, lc: null }; // lc: the same line shifted into its lane (set below)
+        (shapesByRoute[p.route] ||= []).push(entry);
+        Object.defineProperty(f, '_entry', { value: entry });
         routeInfo[p.route] ||= { name: p.name, color: p.color };
       }
       // Up close (zoom 15+), routes that share a street sit side by side: each route's line is shifted sideways by
@@ -93,8 +95,11 @@
         }
         return out;
       }
-      const laneData = { type: 'FeatureCollection', features: (r.features || []).map((f) => ({ type: 'Feature', properties: f.properties,
-        geometry: { type: 'LineString', coordinates: laneLine(f.geometry.coordinates, f.properties.lane * 5) } })) };
+      const laneData = { type: 'FeatureCollection', features: (r.features || []).map((f) => {
+        const lc = laneLine(f.geometry.coordinates, f.properties.lane * 5);
+        if (f._entry) f._entry.lc = lc; // buses are drawn on it up close, point for point with the line they follow
+        return { type: 'Feature', properties: f.properties, geometry: { type: 'LineString', coordinates: lc } };
+      }) };
       const add = () => {
         if (map.getSource('bus-routes')) return;
         map.addSource('bus-routes', { type: 'geojson', data: r });          // the lines as they run (zoomed out)
@@ -594,8 +599,9 @@
     }
     return best;
   }
-  function along(sh, meters) {
-    const d = sh.d, c = sh.c;
+  // the point a given distance along a line; inLane: on its lane-shifted copy (what's drawn from zoom 15 in)
+  function along(sh, meters, inLane) {
+    const d = sh.d, c = inLane && sh.lc ? sh.lc : sh.c;
     if (meters >= d[d.length - 1]) return c[c.length - 1];
     let i = 1; while (d[i] < meters) i++;
     const f = (meters - d[i - 1]) / ((d[i] - d[i - 1]) || 1);
@@ -651,6 +657,7 @@
     const dt = Math.min(0.25, (t - (lastFrame || t)) / 1000);
     lastFrame = t;
     const now = Date.now();
+    const lanesShown = map.getZoom() >= 15; // (the lane-shifted route lines show from zoom 15 in)
     for (const mk of markers.values()) {
       const b = mk._bus;
       if (!b) continue;
@@ -669,7 +676,7 @@
         // (and hard-stopped at a split: up to it, or holding still if it's already there)
         else mk._s = Math.min(end, Math.max(mk._s, b._fork ?? end), mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
         b._along = mk._s;
-        pos = along(sh, mk._s);
+        pos = along(sh, mk._s, lanesShown); // up close, on its route's lane like the line it's drawn on
       } else if (b.mph >= 2) {
         // off its route line (heading out to start a route, a detour): carry on straight along its GPS heading
         // for a little while, a bit under its speed
