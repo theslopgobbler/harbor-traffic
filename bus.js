@@ -199,6 +199,9 @@
     followBar.hidden = TV || !follow;
     document.body.classList.toggle('following', !!follow && !TV);
     if (!follow) return;
+    // desktop: start just right of the column of map buttons (it widens when, say, the radar shows its time)
+    const tools = $('.map-tools');
+    followBar.style.left = !phone() && tools ? `${Math.round(tools.getBoundingClientRect().right - map.getContainer().getBoundingClientRect().left + 14)}px` : '';
     const b = buses.find((x) => x.id === follow.id);
     const rt = b ? busRoute(b) : follow.route;
     const st = b ? stopStatus(b) : null;

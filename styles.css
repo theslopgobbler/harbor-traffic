@@ -177,7 +177,8 @@ body.chase .sig-mk, body.chase .stop-sign, body.chase .bus-mk:not(.chase) .ic { 
 body.chase .bus-mk.chase .sprite { filter: none; }
 body.chase .tool { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
 /* following a bus: a see-through banner across the top of the map, left of the zoom buttons */
-.follow-bar { position: absolute; top: 20px; left: 8px; right: 8px; z-index: 3; max-width: 640px; padding: 6px 8px 7px;
+/* (desktop: starts right of the column of map buttons on the left; phones: full width, see below) */
+.follow-bar { position: absolute; top: 20px; left: 160px; right: 60px; z-index: 3; max-width: 640px; padding: 6px 8px 7px;
   background: rgba(2,8,7,.66); border: 1px solid rgba(0,229,255,.45); /* no blur: a blur over a moving map is costly for phones */
   box-shadow: 0 0 10px rgba(0,229,255,.18); font: 12px/1.3 var(--mono); letter-spacing: .08em; color: var(--text); }
 .follow-bar[hidden] { display: none; }
@@ -514,6 +515,7 @@ body.tv .list .m { font-size: 14px; }
   .bus-bar { top: auto; left: 8px; right: 8px; width: auto; transform: none; bottom: calc(38% + 66px); transition: bottom .2s ease; }
   .layout:has(.panel.min) .bus-bar { bottom: 180px; }
   .layout:has(.panel.max) .bus-bar, body.stop-open .bus-bar { display: none; }
+  .follow-bar { left: 8px; right: 8px; } /* phones: the map buttons are along the bottom, so full width */
   /* the sheet tucked away: just its handle (chevron up) along the bottom edge */
   /* (the iPhone's home-bar strip goes under the handle as padding, not into the panel, or the tabs peek out) */
   .panel.gone { box-sizing: border-box; height: calc(30px + env(safe-area-inset-bottom)); overflow: hidden;
