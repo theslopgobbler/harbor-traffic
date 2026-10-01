@@ -119,6 +119,15 @@
     const label = { rise: 'SUNRISE', set: 'SUNSET', day: 'DAY', night: 'NIGHT' }[phase];
     const t = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     $('#sky').innerHTML = `<svg viewBox="0 0 48 42" role="img" aria-label="${label}">${art}${over}</svg>`;
+    // center whatever got drawn (a clear sky only fills the top of the box; rain and lightning reach the bottom),
+    // keeping the same scale so the picture doesn't grow or shrink with the weather
+    const skySvg = $('#sky svg');
+    requestAnimationFrame(() => {
+      try {
+        const b = skySvg.getBBox();
+        if (b.width && b.height) skySvg.setAttribute('viewBox', `${(b.x + b.width / 2 - 24).toFixed(2)} ${(b.y + b.height / 2 - 21).toFixed(2)} 48 42`);
+      } catch {}
+    });
     // SUN instrument
     const tt = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M/i, '');
     const hm = (ms) => `${Math.floor(ms / 36e5)}:${String(Math.floor(ms % 36e5 / 6e4)).padStart(2, '0')}`;
