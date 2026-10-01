@@ -169,6 +169,14 @@
   window.htMap = map; // handy from the browser console
   map.on('error', (e) => console.warn('map:', e.error?.message || e));
   if (!TV) map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+  // my location, compass heading and bigger text: in a second box right under + and -
+  if (!TV) {
+    const ctl = document.createElement('div');
+    ctl.className = 'maplibregl-ctrl maplibregl-ctrl-group ht-ctl';
+    for (const id of ['btnLocate', 'btnCompass']) { const b = $('#' + id); b.classList.remove('tool'); b.classList.add('ctl-btn'); ctl.appendChild(b); }
+    ctl.insertAdjacentHTML('beforeend', '<button id="btnBig" class="ctl-btn" type="button" aria-pressed="false" aria-label="Bigger text" title="Bigger text">Aa</button>');
+    map.addControl({ onAdd: () => ctl, onRemove: () => ctl.remove() }, 'top-right');
+  }
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.ScaleControl({ unit: 'imperial' }), 'bottom-right');
   const phone = () => matchMedia('(max-width: 760px)').matches;
@@ -910,22 +918,62 @@
   document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button').forEach((x) => x.setAttribute('aria-selected', x === b));
     document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('on', t.id === 'tab-' + b.dataset.tab));
-    panel.classList.remove('min');
+    panel.classList.remove('min', 'gone');
     syncHandle();
   }));
   $('#tab-roads').classList.add('on');
   handle.innerHTML = '<svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 11 L20 3 L36 11" fill="none" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/></svg>';
+  // the handle: tucked away (only the handle showing) or small → half; half → full; full → half.
+  // The ▾ in the corner tucks it away entirely. Swiping on the handle works too (down to lower, up to raise).
+  const setSheet = (s) => { panel.classList.remove('min', 'max', 'gone'); if (s) panel.classList.add(s); syncHandle(); };
+  const sheetState = () => (['gone', 'min', 'max'].find((c) => panel.classList.contains(c)) || '');
   handle.addEventListener('click', () => {
-    if (panel.classList.contains('min')) panel.classList.remove('min');
-    else if (panel.classList.contains('max')) { panel.classList.remove('max'); panel.classList.add('min'); }
-    else panel.classList.add('max');
-    syncHandle();
+    const s = sheetState();
+    setSheet(s === 'gone' || s === 'min' ? '' : s === 'max' ? '' : 'max');
+  });
+  $('#sheetHide').addEventListener('click', () => setSheet('gone'));
+  let swipeY = null;
+  handle.addEventListener('touchstart', (e) => { swipeY = e.touches[0].clientY; }, { passive: true });
+  handle.addEventListener('touchend', (e) => {
+    if (swipeY == null) return;
+    const dy = e.changedTouches[0].clientY - swipeY; swipeY = null;
+    if (Math.abs(dy) < 30) return; // a tap: the click handles it
+    e.preventDefault(); // (no click after a swipe)
+    const s = sheetState();
+    if (dy > 0) setSheet(s === 'max' ? '' : 'gone');
+    else setSheet(s === 'gone' || s === 'min' ? '' : 'max');
   });
   syncHandle();
+
+  // the top instrument panel can be hidden for more map (the little tab at the top of the map brings it back)
+  const setTop = (hide) => {
+    document.body.classList.toggle('no-top', hide);
+    $('#topToggle').setAttribute('aria-label', hide ? 'Show the instruments' : 'Hide the instruments');
+    store.set('ht.noTop', hide);
+    setTimeout(() => map.resize(), 50);
+  };
+  $('#topToggle').addEventListener('click', () => setTop(!document.body.classList.contains('no-top')));
+  if (!TV && store.get('ht.noTop') === true) setTop(true);
+
+  // phones: tap an instrument to blow it up over the whole instrument panel (for reading it easily); tap again
+  // to put it back
+  const instruments = $('.instruments');
+  instruments?.addEventListener('click', (e) => {
+    if (!phone() || TV || e.target.closest('#clockFmt')) return;
+    const inst = e.target.closest('.inst'); if (!inst) return;
+    e.stopPropagation(); e.preventDefault(); // (instead of the instrument's own tap, like the sea opening its tab)
+    const open = instruments.querySelector('.inst.zoomed');
+    if (open) { open.classList.remove('zoomed'); open.style.width = open.style.height = ''; }
+    if (open === inst) return;
+    // the instrument is drawn at half the panel's size and doubled, so it covers the panel exactly
+    const r = instruments.getBoundingClientRect();
+    inst.style.width = r.width / 2 + 'px'; inst.style.height = r.height / 2 + 'px';
+    inst.classList.add('zoomed');
+  }, true);
   // open a tab from elsewhere (the SEA instrument): pick the tab, raise the sheet on phones, start at the top
   window.htOpenTab = (name) => {
     document.querySelector(`.tabs button[data-tab="${name}"]`)?.click();
-    if (phone()) { panel.classList.remove('min'); panel.classList.add('max'); syncHandle(); }
+    if (phone()) { panel.classList.remove('min', 'gone'); panel.classList.add('max'); syncHandle(); }
     panel.scrollTop = 0;
   };
 
@@ -977,6 +1025,36 @@
     window.addEventListener('deviceorientation', onOrient);
     if (!state.me) $('#btnLocate').click();
   });
+
+  // ---------------- bigger text (the Aa button; remembered per device) ----------------
+  // Labels and tags drawn by the page get bigger through CSS; the map's own text (road names, route numbers
+  // on the highway shields, places) is resized in the map style.
+  const BIG = 1.35;
+  const textSizes = {};
+  const scaleSize = (v, f) => {
+    if (typeof v === 'number') return v * f;
+    if (Array.isArray(v) && v[0] === 'interpolate') return v.map((x, i) => (i > 3 && i % 2 === 1 && typeof x === 'number' ? x * f : x));
+    if (Array.isArray(v) && v[0] === 'step') return v.map((x, i) => ((i === 2 || (i > 2 && i % 2 === 0)) && typeof x === 'number' ? x * f : x));
+    if (v && Array.isArray(v.stops)) return { ...v, stops: v.stops.map(([z, s]) => [z, s * f]) };
+    return v;
+  };
+  function applyBigText(on) {
+    document.body.classList.toggle('big-text', on);
+    const btn = $('#btnBig');
+    if (btn) { btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on); }
+    // (not map.isStyleLoaded(): that's false whenever tiles are still loading, which would skip this)
+    let layers = [];
+    try { layers = map.getStyle()?.layers || []; } catch { return; }
+    for (const l of layers) {
+      if (l.type !== 'symbol' || !l.layout?.['text-field']) continue;
+      if (!(l.id in textSizes)) textSizes[l.id] = map.getLayoutProperty(l.id, 'text-size') ?? 16;
+      try { map.setLayoutProperty(l.id, 'text-size', on ? scaleSize(textSizes[l.id], BIG) : textSizes[l.id]); } catch {}
+    }
+    window.htDeclutter?.();
+  }
+  let bigText = !TV && store.get('ht.bigText') === true;
+  $('#btnBig')?.addEventListener('click', () => { bigText = !bigText; store.set('ht.bigText', bigText); applyBigText(bigText); });
+  if (bigText) { document.body.classList.add('big-text'); if (map.loaded()) applyBigText(true); else map.once('load', () => applyBigText(true)); }
 
   // ---------------- clock & refresh ----------------
   // 24-hour by default; the switch under LIVE flips it to 12-hour (remembered per device; ?clock=12 for a TV)

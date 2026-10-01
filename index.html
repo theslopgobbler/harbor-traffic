@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-<link href="styles.css?v=202610011523" rel="stylesheet">
+<link href="styles.css?v=202610011527" rel="stylesheet">
 </head>
 <body>
 <header class="top">
@@ -69,7 +69,9 @@
     <div class="bus-bar" id="busBar" hidden></div>
     <!-- following a bus: its route, speed and stops, across the top of the map -->
     <div class="follow-bar" id="followBar" hidden></div>
-    <!-- my location and heading: tucked on the right edge, well below the zoom buttons -->
+    <!-- hide or show the instrument panel (a small tab at the top of the map) -->
+    <button class="top-toggle" id="topToggle" type="button" aria-label="Hide the instruments"><svg viewBox="0 0 20 8" aria-hidden="true"><path d="M3 7 L10 2 L17 7" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></button>
+    <!-- my location and heading: app.js moves these into the box under the zoom buttons -->
     <div class="nav-tools">
       <button id="btnLocate" class="tool" type="button" aria-label="Show my location"><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor"/><circle cx="10" cy="10" r="2.2" fill="currentColor"/><path d="M10 1.5 V4 M10 16 V18.5 M1.5 10 H4 M16 10 H18.5" stroke="currentColor"/></svg></button>
       <button id="btnCompass" class="tool" type="button" aria-label="Use compass heading" hidden><svg class="btn-ic" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L16 17 L10 13.5 L4 17 Z" fill="none" stroke="currentColor" stroke-linejoin="round"/></svg></button>
@@ -97,6 +99,7 @@
 
   <aside class="panel" id="panel">
     <button class="sheet-handle" id="sheetHandle" type="button" aria-label="Expand or collapse details"></button>
+    <button class="sheet-hide" id="sheetHide" type="button" aria-label="Hide the details panel"><svg viewBox="0 0 20 8" aria-hidden="true"><path d="M3 1 L10 6 L17 1" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></button>
 
     <nav class="tabs" role="tablist">
       <button role="tab" data-tab="roads" aria-selected="true">ROADS <b id="nRoads"></b></button>
@@ -130,14 +133,14 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-contour@0.1.0/dist/index.min.js"></script>
-<script src="config.js?v=202610011523"></script>
-<script src="pixel.js?v=202610011523"></script>
-<script src="app.js?v=202610011523"></script>
-<script src="air.js?v=202610011523"></script>
-<script src="wx.js?v=202610011523"></script>
-<script src="seis.js?v=202610011523"></script>
-<script src="bus.js?v=202610011523"></script>
-<script src="river.js?v=202610011523"></script>
-<script src="count.js?v=202610011523"></script>
+<script src="config.js?v=202610011527"></script>
+<script src="pixel.js?v=202610011527"></script>
+<script src="app.js?v=202610011527"></script>
+<script src="air.js?v=202610011527"></script>
+<script src="wx.js?v=202610011527"></script>
+<script src="seis.js?v=202610011527"></script>
+<script src="bus.js?v=202610011527"></script>
+<script src="river.js?v=202610011527"></script>
+<script src="count.js?v=202610011527"></script>
 </body>
 </html>

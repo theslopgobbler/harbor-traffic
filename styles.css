@@ -177,7 +177,7 @@ body.chase .sig-mk, body.chase .stop-sign, body.chase .bus-mk:not(.chase) .ic { 
 body.chase .bus-mk.chase .sprite { filter: none; }
 body.chase .tool { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
 /* following a bus: a see-through banner across the top of the map, left of the zoom buttons */
-.follow-bar { position: absolute; top: 8px; left: 8px; right: 54px; z-index: 3; max-width: 640px; padding: 6px 8px 7px;
+.follow-bar { position: absolute; top: 20px; left: 8px; right: 8px; z-index: 3; max-width: 640px; padding: 6px 8px 7px;
   background: rgba(2,8,7,.66); border: 1px solid rgba(0,229,255,.45); /* no blur: a blur over a moving map is costly for phones */
   box-shadow: 0 0 10px rgba(0,229,255,.18); font: 12px/1.3 var(--mono); letter-spacing: .08em; color: var(--text); }
 .follow-bar[hidden] { display: none; }
@@ -393,7 +393,32 @@ details summary { cursor: pointer; }
 .maplibregl-ctrl-scale { background: rgba(2,8,7,.7); color: var(--dim); border-color: var(--dim); font: 10px var(--mono); }
 .maplibregl-ctrl-attrib { background: rgba(2,8,7,.7) !important; color: var(--dim); font: 10px var(--mono); }
 .maplibregl-ctrl-attrib a { color: var(--dim); }
-.maplibregl-ctrl-top-right { top: 36px; right: 8px; }
+/* zoom, location, compass and bigger-text buttons: halfway down the right side */
+.maplibregl-ctrl-top-right { top: 50%; right: 8px; transform: translateY(-50%); }
+/* my location / compass / bigger text: a second box under + and -, same look */
+.ht-ctl .ctl-btn { display: grid; place-items: center; color: var(--cyan); font: 700 12px/1 var(--mono); letter-spacing: 0; }
+.ht-ctl .ctl-btn[hidden] { display: none; }
+.ht-ctl .ctl-btn svg.btn-ic { width: 18px; height: 18px; }
+.ht-ctl .ctl-btn.on { background: rgba(0,229,255,.18); box-shadow: inset 0 0 6px rgba(0,229,255,.5); }
+.maplibregl-ctrl-group .ctl-btn:not([hidden]) ~ .ctl-btn:not([hidden]) { border-top: 1px solid var(--line-2); }
+
+/* bigger text (the Aa button): labels on the map, bus and stop tags, popups, lists and the bus bars */
+body.big-text .wx-mk { font-size: 16px; }
+body.big-text .wx-mk .e, body.big-text .wx-mk .n { font-size: 14px; }
+body.big-text .bus-mk b { font-size: 14px; line-height: 16px; padding: 0 4px; }
+body.big-text .river-mk span { font-size: 13px; }
+body.big-text .stop-sign span { font-size: 13px; line-height: 15px; }
+body.big-text .bus-mk.chase .tag { font-size: 13px; line-height: 15px; }
+body.big-text .maplibregl-popup-content { font-size: 16px; }
+body.big-text .maplibregl-popup-content h3 { font-size: 15px; }
+body.big-text .maplibregl-popup-content .m, body.big-text .list .m { font-size: 14px; }
+body.big-text .list li { font-size: 16px; }
+body.big-text .bus-bar { font-size: 14px; }
+body.big-text .bus-no { font-size: 14px; }
+body.big-text .fb-stop { font-size: 22px; }
+body.big-text .fb-id { font-size: 19px; }
+body.big-text .fb-id small, body.big-text .fb-sub { font-size: 14px; }
+body.big-text .fb-word { font-size: 13px; }
 
 .cam img { display: block; width: 100%; min-height: 120px; background: #000; border: 1px solid var(--line-2); margin: 6px 0 4px; filter: saturate(.8) contrast(1.05); }
 .cam button, .cam-show { font: 12px/1 var(--mono); letter-spacing: .06em; padding: 5px 8px; border: 1px solid var(--line-2); background: #020807; color: var(--cyan); cursor: pointer; }
@@ -489,4 +514,30 @@ body.tv .list .m { font-size: 14px; }
   .bus-bar { top: auto; left: 8px; right: 8px; width: auto; transform: none; bottom: calc(38% + 66px); transition: bottom .2s ease; }
   .layout:has(.panel.min) .bus-bar { bottom: 180px; }
   .layout:has(.panel.max) .bus-bar, body.stop-open .bus-bar { display: none; }
+  /* the sheet tucked away: just its handle (chevron up) along the bottom edge */
+  .panel.gone { height: calc(30px + env(safe-area-inset-bottom)); overflow: hidden; padding-bottom: 0; }
+  .layout:has(.panel.gone) .map-tools { bottom: calc(40px + env(safe-area-inset-bottom)); }
+  .layout:has(.panel.gone) .bus-bar { bottom: calc(96px + env(safe-area-inset-bottom)); }
+  .sheet-hide { display: grid; place-items: center; position: absolute; top: 0; right: 6px; width: 40px; height: 26px; padding: 0;
+    background: none; border: 0; color: var(--cyan); cursor: pointer; z-index: 1; }
+  .sheet-hide svg { width: 20px; height: 8px; }
+  .panel.gone .sheet-hide { display: none; }
+  /* zoom and location buttons: halfway down the part of the map above the sheet */
+  .maplibregl-ctrl-top-right { top: calc((100% - 38%) / 2); }
+  .layout:has(.panel.min) .maplibregl-ctrl-top-right { top: calc((100% - 112px) / 2); }
+  .layout:has(.panel.gone) .maplibregl-ctrl-top-right { top: calc((100% - 30px) / 2); }
+  .layout:has(.panel.max) .maplibregl-ctrl-top-right { display: none; }
+  /* tap an instrument: it fills the instrument panel at twice the size (tap again to shrink it back) */
+  .instruments { position: relative; }
+  .inst { cursor: pointer; }
+  .inst.zoomed { position: absolute; left: 0; top: 0; zoom: 2; z-index: 6; background: #030d0c;
+    box-shadow: 0 0 0 1px var(--cyan), 0 6px 18px rgba(0,0,0,.6); }
 }
+.sheet-hide { display: none; }
+/* hide/show the instrument panel: a small tab at the top edge of the map */
+.top-toggle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 4; width: 46px; height: 16px; padding: 0;
+  display: grid; place-items: center; background: rgba(2,8,7,.8); border: 1px solid var(--line-2); border-top: 0; color: var(--cyan); cursor: pointer; }
+.top-toggle svg { width: 18px; height: 7px; }
+body.no-top .top { display: none; }
+body.no-top .top-toggle svg { transform: rotate(180deg); }
+body.tv .top-toggle { display: none; }
