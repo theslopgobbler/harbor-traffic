@@ -1,19 +1,7 @@
 {
-  "updated": "2026-10-01T09:22:16.4557193+00:00",
+  "updated": "2026-10-01T09:43:55.2696212+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.92059,
-      "lon": -124.1165,
-      "sog": 0,
-      "cog": 0.5,
-      "heading": 282,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-01T08:23:14.9304717+00:00"
-    },
     {
       "mmsi": 367599920,
       "name": "RISING SUN",
@@ -34,6 +22,18 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-01T08:44:28.2086447+00:00"
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.92059,
+      "lon": -124.1165,
+      "sog": 0,
+      "cog": 0.5,
+      "heading": 282,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-01T08:23:14.9304717+00:00"
     }
   ]
 }
