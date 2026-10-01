@@ -163,6 +163,14 @@ button.go { background: var(--cyan) !important; border: 1px solid var(--cyan); c
   font: 700 10px/12px var(--mono); letter-spacing: .1em; color: #fff; background: rgba(2,8,7,.85); border: 1px solid; }
 .bus-mk.chase { z-index: 3; }
 body.chase canvas.fx { display: none; }
+/* pixel traffic signals in chase view: unlit lamps dark, the lit one glowing */
+.sig-mk { width: 14px; height: 40px; pointer-events: none; }
+.sig-mk svg { display: block; width: 100%; height: 100%; }
+.sig-mk .l-r { fill: #3a0f14; } .sig-mk .l-y { fill: #3a2f08; } .sig-mk .l-g { fill: #0c3320; }
+.sig-mk[data-phase="stop"] .l-r { fill: #ff2a3d; } .sig-mk[data-phase="slow"] .l-y { fill: #ffc400; } .sig-mk[data-phase="go"] .l-g { fill: #39ff88; }
+.sig-mk[data-phase="stop"] { filter: drop-shadow(0 0 4px rgba(255,42,61,.8)); }
+.sig-mk[data-phase="slow"] { filter: drop-shadow(0 0 4px rgba(255,196,0,.8)); }
+.sig-mk[data-phase="go"] { filter: drop-shadow(0 0 4px rgba(57,255,136,.8)); }
 body.chase .map-wrap::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 32%; z-index: 1; pointer-events: none;
   background: linear-gradient(var(--bg) 0%, rgba(3,8,7,.6) 45%, transparent 100%); }
 .bus-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
