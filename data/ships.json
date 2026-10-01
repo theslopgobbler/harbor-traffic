@@ -1,32 +1,7 @@
 {
-  "updated": "2026-10-01T14:27:41.8127825+00:00",
+  "updated": "2026-10-01T14:48:23.5674298+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 368259990,
-      "lat": 46.44023,
-      "lon": -124.28636,
-      "sog": 6.8,
-      "cog": 165.8,
-      "heading": 167,
-      "classB": true,
-      "seen": "2026-10-01T14:27:41.8127825+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "lat": 46.97851,
-      "lon": -123.88357,
-      "sog": 0,
-      "cog": 229.7,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T13:50:36.9610168+00:00",
-      "name": "MARY ROSE BRUSCO",
-      "type": 31,
-      "dest": "GRAYS HARBOR",
-      "callsign": "WDE2412",
-      "lengthM": 20
-    },
     {
       "mmsi": 367327250,
       "name": "ENDEAVOR",
@@ -51,16 +26,14 @@
       "seen": "2026-10-01T14:27:41.8127825+00:00"
     },
     {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.92031,
-      "lon": -124.12238,
-      "sog": 0.1,
-      "cog": 179.8,
-      "heading": 101,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-01T13:29:09.3031655+00:00"
+      "mmsi": 368259990,
+      "lat": 46.44023,
+      "lon": -124.28636,
+      "sog": 6.8,
+      "cog": 165.8,
+      "heading": 167,
+      "classB": true,
+      "seen": "2026-10-01T14:27:41.8127825+00:00"
     },
     {
       "mmsi": 368396990,
@@ -71,6 +44,33 @@
       "cog": 184.5,
       "classB": true,
       "seen": "2026-10-01T14:27:41.8127825+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "lat": 46.97851,
+      "lon": -123.88357,
+      "sog": 0,
+      "cog": 229.7,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T13:50:36.9610168+00:00",
+      "name": "MARY ROSE BRUSCO",
+      "type": 31,
+      "dest": "GRAYS HARBOR",
+      "callsign": "WDE2412",
+      "lengthM": 20
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.92031,
+      "lon": -124.12238,
+      "sog": 0.1,
+      "cog": 179.8,
+      "heading": 101,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-01T13:29:09.3031655+00:00"
     }
   ]
 }
