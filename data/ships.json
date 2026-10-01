@@ -1,18 +1,21 @@
 {
-  "updated": "2026-10-01T06:15:50.9738106+00:00",
+  "updated": "2026-10-01T06:42:27.7002278+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 303636000,
-      "name": "MARK I",
-      "lat": 46.75199,
-      "lon": -124.27716,
-      "sog": 8.6,
-      "cog": 7.6,
-      "heading": 11,
+      "mmsi": 367324840,
+      "lat": 46.97849,
+      "lon": -123.88359,
+      "sog": 0.1,
+      "cog": 233.3,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-01T03:35:06.2911682+00:00"
+      "seen": "2026-10-01T05:11:13.7959416+00:00",
+      "name": "MARY ROSE BRUSCO",
+      "type": 31,
+      "dest": "GRAYS HARBOR",
+      "callsign": "WDE2412",
+      "lengthM": 20
     },
     {
       "mmsi": 367156340,
@@ -41,52 +44,6 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-01T03:52:39.9036579+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.9068,
-      "lon": -124.10617,
-      "sog": 0,
-      "cog": 278,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T03:35:06.2911682+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "lat": 46.97849,
-      "lon": -123.88359,
-      "sog": 0.1,
-      "cog": 233.3,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T05:11:13.7959416+00:00",
-      "name": "MARY ROSE BRUSCO",
-      "type": 31,
-      "dest": "GRAYS HARBOR",
-      "callsign": "WDE2412",
-      "lengthM": 20
-    },
-    {
-      "mmsi": 538012030,
-      "type": 70,
-      "dest": "US GHR",
-      "callsign": "V7A3856",
-      "lengthM": 199,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96407,
-      "lon": -123.85306,
-      "sog": 0,
-      "cog": 180,
-      "heading": 300,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-01T03:35:06.2911682+00:00"
     }
   ]
 }
