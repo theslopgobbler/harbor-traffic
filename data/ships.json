@@ -1,18 +1,7 @@
 {
-  "updated": "2026-10-01T09:00:12.4696426+00:00",
+  "updated": "2026-10-01T09:22:16.4557193+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97853,
-      "lon": -123.8836,
-      "sog": 0,
-      "cog": 302.7,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T08:44:28.2086447+00:00"
-    },
     {
       "mmsi": 636024072,
       "name": "GOLD ETERNITY",
@@ -36,20 +25,15 @@
       "seen": "2026-10-01T07:27:22.6301529+00:00"
     },
     {
-      "mmsi": 367156340,
-      "type": 30,
-      "dest": "WARRENTON,OREGON",
-      "callsign": "WDD5300",
-      "lengthM": 22,
-      "name": "GRANADA",
-      "lat": 46.40877,
-      "lon": -124.38311,
-      "sog": 8.4,
-      "cog": 340.7,
-      "heading": 342,
-      "status": 15,
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97853,
+      "lon": -123.8836,
+      "sog": 0,
+      "cog": 302.7,
+      "status": 0,
       "classB": false,
-      "seen": "2026-10-01T06:15:50.9738106+00:00"
+      "seen": "2026-10-01T08:44:28.2086447+00:00"
     }
   ]
 }
