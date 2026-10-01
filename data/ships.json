@@ -1,18 +1,31 @@
 {
-  "updated": "2026-10-01T15:26:21.4442542+00:00",
+  "updated": "2026-10-01T15:45:39.6573590+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.92031,
-      "lon": -124.12238,
-      "sog": 0.1,
-      "cog": 179.8,
-      "heading": 101,
-      "status": 1,
+      "mmsi": 368396990,
+      "name": "PAMELA",
+      "lat": 46.76234,
+      "lon": -124.22084,
+      "sog": 12.4,
+      "cog": 184.5,
+      "classB": true,
+      "seen": "2026-10-01T14:27:41.8127825+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "lat": 46.97851,
+      "lon": -123.88357,
+      "sog": 0,
+      "cog": 229.7,
+      "status": 0,
       "classB": false,
-      "seen": "2026-10-01T13:29:09.3031655+00:00"
+      "seen": "2026-10-01T13:50:36.9610168+00:00",
+      "name": "MARY ROSE BRUSCO",
+      "type": 31,
+      "dest": "GRAYS HARBOR",
+      "callsign": "WDE2412",
+      "lengthM": 20
     },
     {
       "mmsi": 366765940,
@@ -37,14 +50,16 @@
       "seen": "2026-10-01T14:27:41.8127825+00:00"
     },
     {
-      "mmsi": 368396990,
-      "name": "PAMELA",
-      "lat": 46.76234,
-      "lon": -124.22084,
-      "sog": 12.4,
-      "cog": 184.5,
-      "classB": true,
-      "seen": "2026-10-01T14:27:41.8127825+00:00"
+      "mmsi": 338142000,
+      "name": "R/V ZEPHYR",
+      "lat": 46.49544,
+      "lon": -124.21247,
+      "sog": 9.9,
+      "cog": 2.5,
+      "heading": 3,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-01T15:01:15.7754691+00:00"
     },
     {
       "mmsi": 367327250,
@@ -58,31 +73,16 @@
       "seen": "2026-10-01T15:26:21.4442542+00:00"
     },
     {
-      "mmsi": 338142000,
-      "name": "R/V ZEPHYR",
-      "lat": 46.49544,
-      "lon": -124.21247,
-      "sog": 9.9,
-      "cog": 2.5,
-      "heading": 3,
-      "status": 0,
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.92031,
+      "lon": -124.12238,
+      "sog": 0.1,
+      "cog": 179.8,
+      "heading": 101,
+      "status": 1,
       "classB": false,
-      "seen": "2026-10-01T15:01:15.7754691+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "lat": 46.97851,
-      "lon": -123.88357,
-      "sog": 0,
-      "cog": 229.7,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-01T13:50:36.9610168+00:00",
-      "name": "MARY ROSE BRUSCO",
-      "type": 31,
-      "dest": "GRAYS HARBOR",
-      "callsign": "WDE2412",
-      "lengthM": 20
+      "seen": "2026-10-01T13:29:09.3031655+00:00"
     }
   ]
 }
