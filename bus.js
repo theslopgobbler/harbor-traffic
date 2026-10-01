@@ -522,20 +522,28 @@
         // (and hard-stopped at a split: up to it, or holding still if it's already there)
         else mk._s = Math.min(end, Math.max(mk._s, b._fork ?? end), mk._s + Math.min(v * 1.5 + 5, Math.max(0, v * PACE + gap / CATCH_S)) * dt);
         b._along = mk._s;
-        // is the drawn bus actually rolling? (smoothed, so a moment's pause doesn't flicker) The chase sprite
-        // bobs only while it rolls and shows brake lights when it's standing still.
-        const moved = mk._prevS == null || dt <= 0 ? 0 : (mk._s - mk._prevS) / dt;
-        mk._prevS = mk._s;
-        mk._ds = (mk._ds || 0) * 0.85 + moved * 0.15;
-        const rolling = mk._ds > 0.6;
-        if (rolling !== mk._rolling) { mk._rolling = rolling; mk.getElement().classList.toggle('rolling', rolling); }
         pos = along(sh, mk._s);
+      } else if (b.mph >= 2) {
+        // off its route line (heading out to start a route, a detour): carry on straight along its GPS heading
+        // for a little while, a bit under its speed
+        const m = b.mph * 0.44704 * PACE * Math.min(15, (now - b._at) / 1000), h = (b.heading || 0) * Math.PI / 180;
+        pos = [b.lon + (m * Math.sin(h)) / 76000, b.lat + (m * Math.cos(h)) / 111000];
       } else pos = [b.lon, b.lat];
       // a bus that jumped to a new line, or has none, eases over from where it was drawn
       const k = b._from ? Math.min(1, (now - b._at) / BLEND_MS) : 1;
       if (k < 1) { const e = k * k * (3 - 2 * k); pos = [b._from[0] + (pos[0] - b._from[0]) * e, b._from[1] + (pos[1] - b._from[1]) * e]; }
       const ll = mk.getLngLat();
       if (Math.abs(ll.lng - pos[0]) > 1e-7 || Math.abs(ll.lat - pos[1]) > 1e-7) mk.setLngLat(pos);
+      // is the drawn bus rolling? (smoothed, so a moment's pause doesn't flicker) Standing still, the chase sprite
+      // shows brake lights; after 20 s still it also stops bobbing (parked)
+      const speed = dt > 0 ? mx([ll.lng, ll.lat], pos) / dt : 0;
+      mk._ds = (mk._ds || 0) * 0.85 + speed * 0.15;
+      const rolling = mk._ds > 0.6;
+      if (rolling || mk._stillSince == null) mk._stillSince = rolling ? null : now;
+      const parked = !rolling && now - mk._stillSince > 20000;
+      const el = mk.getElement();
+      if (rolling !== mk._rolling) { mk._rolling = rolling; el.classList.toggle('rolling', rolling); }
+      if (parked !== mk._parked) { mk._parked = parked; el.classList.toggle('parked', parked); }
       // point the icon along the street it's on (the GPS heading is only as fresh as the last report,
       // so a bus that just turned a corner would otherwise sit sideways)
       const h = b._snap ? headingOf(b) : null;
