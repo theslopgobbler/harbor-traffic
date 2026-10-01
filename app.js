@@ -67,6 +67,31 @@
 
   const font = (w) => [w === 'b' ? 'Noto Sans Bold' : 'Noto Sans Regular'];
   const up = (f) => ['upcase', ['get', f]];
+  // Street names shortened the way street signs do (East Wishkah Street → E WISHKAH ST, Simpson Avenue South →
+  // SIMPSON AVE S). The map's label rules can't search and replace, but they can check how a name starts and ends
+  // and cut pieces off, so: a direction word at the front, a direction word at the end, then the street type
+  // before it. window.htShortStreet does the same for text on the page.
+  const DIRS_W = [['Northeast', 'NE'], ['Northwest', 'NW'], ['Southeast', 'SE'], ['Southwest', 'SW'], ['North', 'N'], ['South', 'S'], ['East', 'E'], ['West', 'W']];
+  const STREET_TYPES = [[' Street', ' ST'], [' Avenue', ' AVE'], [' Boulevard', ' BLVD'], [' Road', ' RD'], [' Drive', ' DR'],
+    [' Lane', ' LN'], [' Place', ' PL'], [' Court', ' CT'], [' Highway', ' HWY'], [' Parkway', ' PKWY'], [' Circle', ' CIR'], [' Terrace', ' TER']];
+  const shortStreetExpr = (() => {
+    const v = (k) => ['var', k];
+    const ends = (s, a) => ['all', ['>', ['length', s], a.length], ['==', ['slice', s, ['-', ['length', s], a.length]], a]];
+    const cut = (s, a) => ['slice', s, 0, ['-', ['length', s], a.length]];
+    // n: the name; m: without a leading direction; d: a trailing direction's letters ('' if none); q: m without it
+    const m = ['case', ...DIRS_W.flatMap(([a, b]) => [['==', ['slice', v('n'), 0, a.length + 1], a + ' '], ['concat', b + ' ', ['slice', v('n'), a.length + 1]]]), v('n')];
+    const d = ['case', ...DIRS_W.flatMap(([a, b]) => [ends(v('m'), ' ' + a), ' ' + b]), ''];
+    const q = ['case', ...DIRS_W.flatMap(([a]) => [ends(v('m'), ' ' + a), cut(v('m'), ' ' + a)]), v('m')];
+    const r = ['case', ...STREET_TYPES.flatMap(([a, b]) => [ends(v('q'), a), ['concat', cut(v('q'), a), b]]), v('q')];
+    return ['upcase', ['let', 'n', ['to-string', ['get', 'name']], ['let', 'm', m, ['let', 'd', d, ['let', 'q', q, ['concat', r, v('d')]]]]]];
+  })();
+  window.htShortStreet = (s) => {
+    let t = String(s || ''), tail = '';
+    for (const [a, b] of DIRS_W) if (t.startsWith(a + ' ')) { t = b + ' ' + t.slice(a.length + 1); break; }
+    for (const [a, b] of DIRS_W) if (t.length > a.length + 1 && t.endsWith(' ' + a)) { t = t.slice(0, -(a.length + 1)); tail = ' ' + b; break; }
+    for (const [a, b] of STREET_TYPES) if (t.length > a.length && t.endsWith(a)) { t = t.slice(0, -a.length) + b; break; }
+    return (t + tail).toUpperCase();
+  };
   const outside = { type: 'Feature', geometry: { type: 'Polygon', coordinates: [
     [[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]],
     [[W, S], [W, N], [E, N], [E, S], [W, S]]
@@ -170,9 +195,12 @@
       // street names, only zoomed well in: small and dim, along the street (lying flat on the road in the bus
       // chase view, like road markings), well spaced, and dropped wherever they'd crowd; the highway number
       // shields below win any space they both want
+      // (an invisible copy of the named streets, wide, so the bus banner can ask which street the bus is on)
+      { id: 'street-q', type: 'line', source: 'omt', 'source-layer': 'transportation_name', minzoom: 12, filter: ['has', 'name'],
+        paint: { 'line-opacity': 0, 'line-width': 10 } },
       { id: 'street-names', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 15,
         filter: ['has', 'name'],
-        layout: { 'symbol-placement': 'line', 'symbol-spacing': 380, 'text-field': up('name'), 'text-font': font('r'),
+        layout: { 'symbol-placement': 'line', 'symbol-spacing': 380, 'text-field': shortStreetExpr, 'text-font': font('r'),
           'text-size': ['interpolate', ['linear'], ['zoom'], 15, 9, 17, 11], 'text-letter-spacing': 0.12,
           'text-max-angle': 30, 'text-padding': 6, 'text-pitch-alignment': 'map', 'text-rotation-alignment': 'map' },
         paint: { 'text-color': '#8cc7ba', 'text-opacity': 0.85, 'text-halo-color': K.bg, 'text-halo-width': 1.6 } },
