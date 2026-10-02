@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-02T06:40:56.4965383+00:00",
+  "updated": "2026-10-02T07:02:10.8971303+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ac300d",
-      "flight": "SWA1048",
-      "reg": "N8847Q",
-      "type": "B38M",
-      "cat": "A3",
-      "alt": 14500,
-      "gs": 364.1,
-      "track": 358.58,
-      "rate": -1536,
-      "lat": 46.65857,
-      "lon": -122.73437,
-      "squawk": "1751",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }

@@ -1,27 +1,15 @@
 {
-  "updated": "2026-10-02T06:40:56.4965383+00:00",
+  "updated": "2026-10-02T07:02:10.8971303+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.91966,
-      "lon": -124.12264,
-      "sog": 0,
-      "cog": 147.1,
-      "heading": 81,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-02T04:11:18.6124474+00:00"
-    },
-    {
-      "mmsi": 538012030,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96406,
-      "lon": -123.85305,
-      "sog": 0,
-      "cog": 180,
-      "heading": 299,
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.69815,
+      "lon": -123.9983,
+      "sog": 6.6,
+      "cog": 282.4,
+      "heading": 283,
       "status": 5,
       "classB": false,
       "seen": "2026-10-02T06:40:56.4965383+00:00"
@@ -37,6 +25,46 @@
       "status": 15,
       "classB": false,
       "seen": "2026-10-02T06:40:56.4965383+00:00"
+    },
+    {
+      "mmsi": 538012030,
+      "name": "GLBS OLYMPIA",
+      "lat": 46.96406,
+      "lon": -123.85305,
+      "sog": 0,
+      "cog": 180,
+      "heading": 299,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T06:40:56.4965383+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "lengthM": 26,
+      "name": "SEA CLIPPER",
+      "lat": 46.9181,
+      "lon": -124.18342,
+      "sog": 9.9,
+      "cog": 279.6,
+      "heading": 280,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T05:51:05.6218991+00:00"
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91966,
+      "lon": -124.12264,
+      "sog": 0,
+      "cog": 147.1,
+      "heading": 81,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-02T04:11:18.6124474+00:00"
     },
     {
       "mmsi": 366954430,
@@ -60,34 +88,6 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-02T06:40:56.4965383+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.69815,
-      "lon": -123.9983,
-      "sog": 6.6,
-      "cog": 282.4,
-      "heading": 283,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T06:40:56.4965383+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "type": 30,
-      "dest": "WESTPORT",
-      "callsign": "WCZ2553",
-      "lengthM": 26,
-      "name": "SEA CLIPPER",
-      "lat": 46.9181,
-      "lon": -124.18342,
-      "sog": 9.9,
-      "cog": 279.6,
-      "heading": 280,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-02T05:51:05.6218991+00:00"
     }
   ]
 }
