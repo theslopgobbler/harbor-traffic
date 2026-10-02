@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-02T05:33:12.4936339+00:00",
+  "updated": "2026-10-02T05:51:05.6218991+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 538012030,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96405,
-      "lon": -123.85307,
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91966,
+      "lon": -124.12264,
       "sog": 0,
-      "cog": 180,
-      "heading": 299,
-      "status": 5,
+      "cog": 147.1,
+      "heading": 81,
+      "status": 1,
       "classB": false,
-      "seen": "2026-10-02T05:10:58.1797216+00:00"
+      "seen": "2026-10-02T04:11:18.6124474+00:00"
     },
     {
       "mmsi": 567017000,
@@ -38,28 +38,32 @@
       "seen": "2026-10-02T05:10:58.1797216+00:00"
     },
     {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.91966,
-      "lon": -124.12264,
+      "mmsi": 538012030,
+      "name": "GLBS OLYMPIA",
+      "lat": 46.96405,
+      "lon": -123.85307,
       "sog": 0,
-      "cog": 147.1,
-      "heading": 81,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-02T04:11:18.6124474+00:00"
-    },
-    {
-      "mmsi": 366954430,
-      "name": "CAPT RYAN",
-      "lat": 46.41477,
-      "lon": -124.43486,
-      "sog": 3.8,
-      "cog": 122.4,
-      "heading": 133,
+      "cog": 180,
+      "heading": 299,
       "status": 5,
       "classB": false,
-      "seen": "2026-10-02T04:51:44.7840959+00:00"
+      "seen": "2026-10-02T05:10:58.1797216+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "lengthM": 26,
+      "name": "SEA CLIPPER",
+      "lat": 46.9181,
+      "lon": -124.18342,
+      "sog": 9.9,
+      "cog": 279.6,
+      "heading": 280,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T05:51:05.6218991+00:00"
     },
     {
       "mmsi": 311056900,
@@ -74,18 +78,14 @@
       "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
     {
-      "mmsi": 366765940,
-      "type": 30,
-      "dest": "WESTPORT",
-      "callsign": "WCZ2553",
-      "lengthM": 26,
-      "name": "SEA CLIPPER",
-      "lat": 46.9067,
-      "lon": -124.10771,
-      "sog": 0,
-      "cog": 226.2,
-      "heading": 226,
-      "status": 0,
+      "mmsi": 366954430,
+      "name": "CAPT RYAN",
+      "lat": 46.41477,
+      "lon": -124.43486,
+      "sog": 3.8,
+      "cog": 122.4,
+      "heading": 133,
+      "status": 5,
       "classB": false,
       "seen": "2026-10-02T04:51:44.7840959+00:00"
     }
