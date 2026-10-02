@@ -63,19 +63,13 @@ a { color: var(--cyan); }
 .clock-right { align-items: flex-end; }
 /* the sky sits centered between the LIVE side and the SYNC side, as big as that gap allows */
 .inst-clock .sky { justify-self: center; align-self: center; width: min(62px, 100%); height: 56px; }
-/* wide screens and the TV give the clock a double-width slot, so the sky can sit dead center, bigger */
-@media (min-width: 1400px) { .inst-clock { grid-column: span 2; } }
-body.tv .inst-clock { grid-column: span 2; }
-@media (min-width: 1400px) {
-  .inst-clock .sky { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70px; height: 62px; pointer-events: none; }
-}
-body.tv .inst-clock .sky { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+/* (every screen, the TV included: the clock is one instrument like the others, the sky in the gap) */
 /* the 12/24-hour switch: the same size of text as LIVE, in a thin outline */
 .clock-fmt { background: none; border: 1px solid var(--line-2); color: var(--dim); font: inherit; line-height: 1.25; letter-spacing: inherit; padding: 0 4px; cursor: pointer; }
 .clock-fmt:hover { color: var(--cyan); border-color: var(--cyan); }
 .clock small { font-size: .42em; margin-left: 3px; letter-spacing: .08em; }
-body.tv .clock-fmt { visibility: hidden; }
-body.tv .inst-clock .sky { width: 86px; height: 76px; }
+body.tv .clock-fmt { display: none; } /* (nothing to press on a TV: more room for the sky) */
+body.tv .inst-clock .sky { width: min(76px, 100%); height: 68px; }
 .clock { font: 600 34px/1 var(--disp); color: var(--green); text-shadow: 0 0 8px rgba(57,255,136,.6); font-variant-numeric: tabular-nums; letter-spacing: .05em; }
 .sky { display: inline-block; width: 40px; height: 34px; }
 .sky svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 3px rgba(0,229,255,.5)); }
@@ -461,7 +455,13 @@ body.tv .ticker { display: flex; align-items: center; height: 44px; flex: none; 
 
 /* TV: fixed, glanceable, nothing to press */
 body.tv { font-size: 18px; --panel-w: 460px; }
-body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 46px; } body.tv .inst-big { font-size: 22px; }
+body.tv .inst { height: 84px; } body.tv .inst-clock .clock { font-size: 40px; } body.tv .inst-big { font-size: 22px; }
+/* the TV is all map: no side panel (the ticker along the bottom carries the news) */
+body.tv .panel { display: none; }
+body.tv .layout { grid-template-columns: 1fr; }
+/* a stop on the TV's tour of current road issues: the alert's details, big enough to read across a room */
+body.tv .maplibregl-popup.tv-spot .maplibregl-popup-content { font-size: 18px; max-width: 460px; }
+body.tv .maplibregl-popup.tv-spot h3 { font-size: 16px; }
 body.tv .inst-extra { display: flex !important; } /* the TV always gets the full strip */
 body.tv .map-tools, body.tv .tabs, body.tv .route-pick { display: none; }
 body.tv .tab { display: block; }

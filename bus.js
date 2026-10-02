@@ -951,7 +951,8 @@
     groups.splice(0).forEach((m) => m.remove());
     const all = [...markers.values()];
     all.forEach((m) => (m.getElement().style.display = ''));
-    if (map.getZoom() >= 16) return;
+    // (the TV shows every bus: nobody can zoom in on a TV to pull a group apart)
+    if (map.getZoom() >= 16 || TV) return;
     const pts = all.map((m) => ({ m, p: map.project(m.getLngLat()) }));
     const used = new Set();
     for (let i = 0; i < pts.length; i++) {
