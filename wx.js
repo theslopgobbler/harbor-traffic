@@ -73,6 +73,7 @@
   const moonPhase = (d) => (((d - 947182440000) / 864e5) % 29.530588853 + 29.530588853) % 29.530588853 / 29.530588853; // 0 new, .5 full
 
   let skyCond = { kind: 'none', level: 0, wind: 0, cloud: 0 };
+  let moonName = '';
   function skySvg() {
     const now = new Date(), { rise, set } = sunTimes(now, HOME.lat, HOME.lon);
     const m = 60e3;
@@ -95,11 +96,22 @@
       }).join(' ');
       art = g(`<circle cx="17" cy="14" r="6" stroke="${A}" stroke-width="2"/><path d="${rays}" stroke="${A}" stroke-width="1.6"/>`);
     } else {
-      // crescent that fattens toward full moon
-      const p = moonPhase(now), lit = 1 - Math.abs(p - 0.5) * 2; // 0 new .. 1 full
-      const inner = (1 - lit * 2) * 9;
-      art = g(`<path d="M18 5 A9 9 0 1 1 18 23 A${Math.abs(inner).toFixed(1)} 9 0 1 ${inner > 0 ? 0 : 1} 18 5 Z" stroke="${Wt}" stroke-width="1.8"/>
-        <path d="M35 6 L35 9 M33.5 7.5 L36.5 7.5 M40 14 L40 16 M39 15 L41 15" stroke="${Cy}" stroke-width="1"/>`);
+      // tonight's moon, as it looks from here: lit on the right while it waxes (new → full), on the left while it
+      // wanes; the dark part a faint outline. The lit part is the half-disc on its lit side plus or minus the
+      // terminator, a half-ellipse whose width follows the phase.
+      const p = moonPhase(now), cx = 18, cy = 14, R = 9;
+      const rx = (R * Math.abs(Math.cos(2 * Math.PI * p))).toFixed(2);
+      const waxing = p < 0.5;
+      // the edge on the lit side (top to bottom), then the terminator back up: it bulges toward the lit side while
+      // a crescent, toward the dark side while gibbous
+      const crescent = p < 0.25 || p > 0.75;
+      const edge = waxing ? `A${R} ${R} 0 0 1 ${cx} ${cy + R}` : `A${R} ${R} 0 0 0 ${cx} ${cy + R}`;
+      const term = `A${rx} ${R} 0 0 ${waxing ? (crescent ? 0 : 1) : (crescent ? 1 : 0)} ${cx} ${cy - R}`;
+      const litPath = p < 0.02 || p > 0.98 ? '' : `<path d="M${cx} ${cy - R} ${edge} ${term} Z" fill="${Wt}" stroke="${Wt}" stroke-width=".8"/>`;
+      art = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="#020807" stroke="#5f9c8b" stroke-width="1.2" stroke-dasharray="1.5 1.5"/>${litPath}` +
+        g(`<path d="M35 6 L35 9 M33.5 7.5 L36.5 7.5 M40 14 L40 16 M39 15 L41 15" stroke="${Cy}" stroke-width="1"/>`);
+      moonName = p < 0.03 || p > 0.97 ? 'new moon' : p < 0.22 ? 'waxing crescent' : p < 0.28 ? 'first quarter' : p < 0.47 ? 'waxing gibbous'
+        : p < 0.53 ? 'full moon' : p < 0.72 ? 'waning gibbous' : p < 0.78 ? 'last quarter' : 'waning crescent';
     }
     // weather laid over the sun or moon
     const c = skyCond;
@@ -116,7 +128,7 @@
     if (c.kind === 'storm') over += `<path d="M31 29 L27 35 L31 35 L28 41" fill="none" stroke="#ff2bd6" stroke-width="1.8" stroke-linejoin="round"/>`;
     if (c.kind === 'fog') over += `<path d="M6 32 H30 M12 36 H40 M4 40 H26" stroke="#8fa8a8" stroke-width="1.6" stroke-dasharray="4 2"/>`;
     if (c.wind) over += `<path d="M2 19 H14 A3 3 0 1 0 11 16 M2 23 H18" fill="none" stroke="#39ff88" stroke-width="1.4" stroke-linecap="round"/>`;
-    const label = { rise: 'SUNRISE', set: 'SUNSET', day: 'DAY', night: 'NIGHT' }[phase];
+    const label = { rise: 'SUNRISE', set: 'SUNSET', day: 'DAY', night: `NIGHT · ${moonName.toUpperCase()}` }[phase];
     const t = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     $('#sky').innerHTML = `<svg viewBox="0 0 48 42" role="img" aria-label="${label}">${art}${over}</svg>`;
     // center whatever got drawn (a clear sky only fills the top of the box; rain and lightning reach the bottom),
