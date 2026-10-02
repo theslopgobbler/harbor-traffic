@@ -1,35 +1,7 @@
 {
-  "updated": "2026-10-02T07:59:25.7385158+00:00",
+  "updated": "2026-10-02T08:22:24.9994468+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367656470,
-      "name": "M&M",
-      "lat": 46.69781,
-      "lon": -124.37369,
-      "sog": 8.3,
-      "cog": 353.8,
-      "heading": 355,
-      "status": 15,
-      "classB": false,
-      "seen": "2026-10-02T07:44:40.9253002+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "type": 30,
-      "dest": "WESTPORT",
-      "callsign": "WCZ2553",
-      "lengthM": 26,
-      "name": "SEA CLIPPER",
-      "lat": 46.9181,
-      "lon": -124.18342,
-      "sog": 9.9,
-      "cog": 279.6,
-      "heading": 280,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-02T05:51:05.6218991+00:00"
-    },
     {
       "mmsi": 538012030,
       "name": "GLBS OLYMPIA",
@@ -55,6 +27,22 @@
       "seen": "2026-10-02T06:40:56.4965383+00:00"
     },
     {
+      "mmsi": 366765940,
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "lengthM": 26,
+      "name": "SEA CLIPPER",
+      "lat": 46.9181,
+      "lon": -124.18342,
+      "sog": 9.9,
+      "cog": 279.6,
+      "heading": 280,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T05:51:05.6218991+00:00"
+    },
+    {
       "mmsi": 367324840,
       "name": "MARY ROSE BRUSCO",
       "lat": 46.97849,
@@ -62,6 +50,18 @@
       "sog": 0,
       "cog": 245.6,
       "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T07:44:40.9253002+00:00"
+    },
+    {
+      "mmsi": 367656470,
+      "name": "M&M",
+      "lat": 46.69781,
+      "lon": -124.37369,
+      "sog": 8.3,
+      "cog": 353.8,
+      "heading": 355,
+      "status": 15,
       "classB": false,
       "seen": "2026-10-02T07:44:40.9253002+00:00"
     }
