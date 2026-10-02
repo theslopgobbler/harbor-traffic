@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-02T08:59:08.1988495+00:00",
+  "updated": "2026-10-02T09:20:21.9265735+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aaf927",
+      "flight": "N806LF",
+      "reg": "N806LF",
+      "type": "EC35",
+      "cat": "A7",
+      "alt": 3425,
+      "gs": 128.0,
+      "track": 187.18,
+      "rate": 0,
+      "lat": 46.90677,
+      "lon": -122.75924,
+      "squawk": "0307",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
