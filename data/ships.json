@@ -1,18 +1,7 @@
 {
-  "updated": "2026-10-02T10:35:16.6408048+00:00",
+  "updated": "2026-10-02T10:52:12.5851494+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97849,
-      "lon": -123.88367,
-      "sog": 0,
-      "cog": 245.6,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-02T07:44:40.9253002+00:00"
-    },
     {
       "mmsi": 367656470,
       "name": "M&M",
