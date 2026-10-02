@@ -67,6 +67,10 @@
     <section id="site">
       <h1 style="margin-top:36px">HARBOR EVENTS · <a href="https://harborevents.org/" target="_blank" rel="noopener">HARBOREVENTS.ORG</a></h1>
       <div class="msg" id="siteMsg"></div>
+      <div id="shareOut" hidden>
+        <p><a id="shareLink" href="#" target="_blank" rel="noopener noreferrer"><button type="button">OPEN FULL STATS ◂ UMAMI</button></a></p>
+        <iframe id="shareFrame" title="Harbor Events visit stats" referrerpolicy="no-referrer" style="width:100%;height:1400px;border:1px solid var(--line-2);background:#fff"></iframe>
+      </div>
       <div id="siteOut" hidden>
         <div class="grid">
           <div class="box now"><div class="l">ON THE SITE NOW</div><div class="v" id="sNow">–</div><div class="s">LAST 5 MINUTES</div></div>
@@ -131,7 +135,12 @@
       const r = await fetch(`${relay}/site-stats`, { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
       if (!r.ok) { $('#siteMsg').textContent = r.status === 404 ? 'DEPLOY THE UPDATED RELAY TO SEE THESE' : (await r.text()).toUpperCase(); $('#siteOut').hidden = true; return; }
       const j = await r.json();
-      $('#siteMsg').textContent = ''; $('#siteOut').hidden = false;
+      $('#siteMsg').textContent = '';
+      if (j.share && $('#shareLink').getAttribute('href') !== j.share) {   // set once, so the frame isn't reloaded every 30 s
+        $('#shareLink').href = j.share; $('#shareFrame').src = j.share; $('#shareOut').hidden = false;
+      }
+      if (!j.today) { $('#siteOut').hidden = true; return; }   // free plan: the share link is all there is
+      $('#siteOut').hidden = false;
       $('#sNow').textContent = j.active ?? '–';
       $('#sToday').textContent = j.today.visitors; $('#sTodayS').textContent = sub(j.today);
       $('#sWeek').textContent = j.week.visitors; $('#sWeekS').textContent = `VISITORS · ${sub(j.week)}`;

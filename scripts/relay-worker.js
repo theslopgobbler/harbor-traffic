@@ -4,8 +4,8 @@
 //   GET /debug     which feeds answered last and why any didn't
 //   GET /hello     an open dashboard page checking in (count.js), for the viewer count
 //   GET /viewers   the viewer count and daily totals (stats.html; needs the X-Stats-Key header to match STATS_KEY)
-//   GET /site-stats harborevents.org visit stats from Umami Cloud (stats.html; same X-Stats-Key; needs the
-//                  UMAMI_API_KEY secret, which never leaves the Worker)
+//   GET /site-stats harborevents.org visit stats from Umami Cloud (stats.html; same X-Stats-Key): the private
+//                  share link (UMAMI_SHARE_URL secret), plus a numbers summary if UMAMI_API_KEY (paid plan) is set
 // It only ever fetches those fixed lists (it's not an open proxy), answers only the dashboard's own site, and
 // shares one fetch among everyone watching: aircraft at most every 15 s, buses at most every 9 s.
 
@@ -231,9 +231,13 @@ export default {
     if (path === '/site-stats') {
       if (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY)
         return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
-      if (!env.UMAMI_API_KEY) return new Response('site stats not set up (add the UMAMI_API_KEY secret)', { status: 503, headers: cors });
-      try { return json(await siteStats(env)); }
-      catch (e) { return new Response(e.message, { status: 502, headers: cors }); }
+      // Free Umami plan: only the private share link (UMAMI_SHARE_URL secret), which stats.html shows after the key.
+      // The numbers summary needs an API key (UMAMI_API_KEY), which Umami only gives on its paid Pro plan.
+      const share = /^https:\/\/cloud\.umami\.is\//.test(env.UMAMI_SHARE_URL || '') ? env.UMAMI_SHARE_URL : null;
+      if (!env.UMAMI_API_KEY) return share ? json(JSON.stringify({ share }))
+        : new Response('site stats not set up (add the UMAMI_SHARE_URL secret)', { status: 503, headers: cors });
+      try { return json(JSON.stringify({ ...JSON.parse(await siteStats(env)), share })); }
+      catch (e) { return share ? json(JSON.stringify({ share, error: e.message })) : new Response(e.message, { status: 502, headers: cors }); }
     }
     if (path === '/hello' || path === '/viewers') {
       if (!env.DB) return new Response('viewer count not set up (no DB binding)', { status: 503, headers: cors });
