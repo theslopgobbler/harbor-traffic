@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T21:50:49.2291471+00:00",
+  "updated": "2026-10-02T22:09:53.0442693+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1666,27 +1666,6 @@
       "start": "2026-10-01T12:00:00.0000000+00:00",
       "end": "2026-10-06T19:00:00.0000000+00:00",
       "updated": "2026-10-01T13:29:28.7370000+00:00"
-    },
-    {
-      "id": 717533,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 8 westbound at milepost 17.56 near Wilson Rd NW beginning at 9:14 am on October 2, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "008",
-      "roadLabel": "SR 8",
-      "direction": "W",
-      "milepost": 17.56,
-      "lat": 47.041128761,
-      "lon": -123.068580419,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-02T16:14:00.0000000+00:00",
-      "end": "2026-10-02T22:00:00.0000000+00:00",
-      "updated": "2026-10-02T16:16:21.3230000+00:00"
     },
     {
       "id": 698912,
