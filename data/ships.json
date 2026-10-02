@@ -1,43 +1,7 @@
 {
-  "updated": "2026-10-02T04:34:50.2177423+00:00",
+  "updated": "2026-10-02T04:51:44.7840959+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 567017000,
-      "name": "SARITA NAREE",
-      "lat": 46.92631,
-      "lon": -124.09461,
-      "sog": 0,
-      "cog": 317.1,
-      "heading": 65,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 538012030,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96407,
-      "lon": -123.85306,
-      "sog": 0,
-      "cog": 180,
-      "heading": 299,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 366954430,
-      "name": "CAPT RYAN",
-      "lat": 46.43577,
-      "lon": -124.48542,
-      "sog": 3.4,
-      "cog": 127.4,
-      "heading": 128,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T04:11:18.6124474+00:00"
-    },
     {
       "mmsi": 311056900,
       "name": "CSL TECUMSEH",
@@ -47,6 +11,34 @@
       "cog": 331.8,
       "heading": 332,
       "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "lengthM": 26,
+      "name": "SEA CLIPPER",
+      "lat": 46.9067,
+      "lon": -124.10771,
+      "sog": 0,
+      "cog": 226.2,
+      "heading": 226,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T04:51:44.7840959+00:00"
+    },
+    {
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92631,
+      "lon": -124.09461,
+      "sog": 0,
+      "cog": 317.1,
+      "heading": 65,
+      "status": 1,
       "classB": false,
       "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
@@ -74,29 +66,28 @@
       "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
     {
-      "mmsi": 369970500,
-      "lat": 46.5013,
-      "lon": -124.02804,
-      "sog": 4.7,
-      "cog": 254.7,
-      "classB": true,
-      "seen": "2026-10-02T01:42:23.071139+00:00"
+      "mmsi": 538012030,
+      "name": "GLBS OLYMPIA",
+      "lat": 46.96407,
+      "lon": -123.85306,
+      "sog": 0,
+      "cog": 180,
+      "heading": 299,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
     {
-      "mmsi": 366765940,
-      "lat": 46.90609,
-      "lon": -124.10756,
-      "sog": 0,
-      "cog": 291.9,
-      "heading": 124,
-      "status": 0,
+      "mmsi": 366954430,
+      "name": "CAPT RYAN",
+      "lat": 46.41477,
+      "lon": -124.43486,
+      "sog": 3.8,
+      "cog": 122.4,
+      "heading": 133,
+      "status": 5,
       "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00",
-      "name": "SEA CLIPPER",
-      "type": 30,
-      "dest": "WESTPORT",
-      "callsign": "WCZ2553",
-      "lengthM": 26
+      "seen": "2026-10-02T04:51:44.7840959+00:00"
     }
   ]
 }
