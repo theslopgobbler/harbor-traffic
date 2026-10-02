@@ -36,6 +36,8 @@
   button { background: rgba(0,229,255,.08); border: 1px solid var(--cyan); color: var(--cyan); font: inherit; padding: 8px 14px; cursor: pointer; }
   .msg { color: var(--red); margin-top: 10px; min-height: 1.4em; }
   .note { color: var(--dim); font-size: 11px; margin-top: 24px; }
+  .lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 20px; }
+  .lists td.bar { width: 35%; }
   [hidden] { display: none !important; }
 </style>
 </head>
@@ -62,6 +64,21 @@
       <thead><tr><th>DAY</th><th>VISITS</th><th class="bar"></th><th>MOST AT ONCE</th><th>TV</th><th>PHONE</th><th>DESKTOP</th></tr></thead>
       <tbody id="days"></tbody>
     </table>
+    <section id="site">
+      <h1 style="margin-top:36px">HARBOR EVENTS · <a href="https://harborevents.org/" target="_blank" rel="noopener">HARBOREVENTS.ORG</a></h1>
+      <div class="msg" id="siteMsg"></div>
+      <div id="siteOut" hidden>
+        <div class="grid">
+          <div class="box now"><div class="l">ON THE SITE NOW</div><div class="v" id="sNow">–</div><div class="s">LAST 5 MINUTES</div></div>
+          <div class="box"><div class="l">VISITORS TODAY</div><div class="v" id="sToday">–</div><div class="s" id="sTodayS"></div></div>
+          <div class="box"><div class="l">LAST 7 DAYS</div><div class="v" id="sWeek">–</div><div class="s" id="sWeekS"></div></div>
+          <div class="box"><div class="l">LAST 30 DAYS</div><div class="v" id="sMonth">–</div><div class="s" id="sMonthS"></div></div>
+        </div>
+        <h2>BY DAY · LAST 30 DAYS</h2>
+        <table><thead><tr><th>DAY</th><th>VISITORS</th><th class="bar"></th><th>PAGE VIEWS</th></tr></thead><tbody id="sDays"></tbody></table>
+        <div class="lists" id="sLists"></div>
+      </div>
+    </section>
     <p class="note">Updates every 30 seconds. "Watching now" is open pages that checked in during the last 3 minutes (pages in a background tab don't count).
       A visit is a page opened in a new tab; the page's own reloads after an update don't count again. Only random tab IDs are kept, nothing about who.
       <br><button type="button" id="forget" style="margin-top:10px">FORGET KEY ON THIS DEVICE</button></p>
@@ -97,6 +114,34 @@
       $('#days').innerHTML = j.days.map((d) => `<tr><td>${day(d.day)}</td><td>${d.opens}</td><td class="bar"><i style="width:${(d.opens / max) * 100}%"></i></td>
         <td>${d.peak}</td><td>${d.tv}</td><td>${d.phone}</td><td>${d.desktop}</td></tr>`).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
+    loadSite();
+  }
+  // harborevents.org (Umami Cloud, via the relay, which caches it for 5 minutes)
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const dur = (s) => s >= 60 ? `${Math.floor(s / 60)}M ${String(s % 60).padStart(2, '0')}S` : `${s}S`;
+  const sub = (x) => `${x.views} VIEWS · AVG ${dur(x.avgSeconds)} · ${x.bounceRate}% LEFT RIGHT AWAY`;
+  const list = (title, rows, label = 'COUNT') => {
+    if (!rows || !rows.length) return '';
+    const max = Math.max(1, ...rows.map((r) => r.n));
+    return `<div><h2>${title}</h2><table><tbody>${rows.map((r) => `<tr><td>${esc(r.name).toUpperCase()}</td><td>${r.n}</td><td class="bar"><i style="width:${(r.n / max) * 100}%"></i></td></tr>`).join('')}</tbody></table></div>`;
+  };
+  async function loadSite() {
+    if (!key || $('#out').hidden) return;
+    try {
+      const r = await fetch(`${relay}/site-stats`, { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
+      if (!r.ok) { $('#siteMsg').textContent = r.status === 404 ? 'DEPLOY THE UPDATED RELAY TO SEE THESE' : (await r.text()).toUpperCase(); $('#siteOut').hidden = true; return; }
+      const j = await r.json();
+      $('#siteMsg').textContent = ''; $('#siteOut').hidden = false;
+      $('#sNow').textContent = j.active ?? '–';
+      $('#sToday').textContent = j.today.visitors; $('#sTodayS').textContent = sub(j.today);
+      $('#sWeek').textContent = j.week.visitors; $('#sWeekS').textContent = `VISITORS · ${sub(j.week)}`;
+      $('#sMonth').textContent = j.month.visitors; $('#sMonthS').textContent = `VISITORS · ${sub(j.month)}`;
+      const max = Math.max(1, ...j.days.map((d) => d.visitors));
+      $('#sDays').innerHTML = j.days.map((d) => `<tr><td>${day(d.day)}</td><td>${d.visitors}</td><td class="bar"><i style="width:${(d.visitors / max) * 100}%"></i></td><td>${d.views}</td></tr>`).join('') || '<tr><td colspan="4">NOTHING YET</td></tr>';
+      $('#sLists').innerHTML = [list('CAME FROM', j.referrers), list('CITIES', j.cities), list('STATES / REGIONS', j.regions),
+        list('DEVICES', j.devices), list('BROWSERS', j.browsers), list('BUTTONS USED', j.clicks), list('AREAS PICKED', j.areas),
+        list('LIST OR MONTH', j.views), list('FILTERS CHANGED', j.filters)].join('') || '<p class="note">NO DETAILS YET.</p>';
+    } catch (e) { $('#siteMsg').textContent = 'CAN\'T LOAD HARBOR EVENTS STATS RIGHT NOW'; }
   }
   $('#keyForm').addEventListener('submit', (e) => { e.preventDefault(); key = $('#key').value.trim(); load(); });
   $('#forget').addEventListener('click', () => { store.set(null); key = null; $('#out').hidden = true; $('#login').hidden = false; });
