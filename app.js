@@ -315,26 +315,61 @@
   // TV: steps through the regions on its own (10 s each; ?cycle=20 to change, ?cycle=0 or ?region=x to hold still),
   // with a countdown on the map and a bar that drains until the next area
   let cycleTimer = null, cycleNext = 0, cycleMs = 0;
-  const stopCycle = () => { clearInterval(cycleTimer); cycleTimer = null; $('#cycleBar').style.display = 'none'; showRegionName(); };
+  const stopCycle = () => { clearInterval(cycleTimer); cycleTimer = null; $('#cycleBar').style.display = 'none'; spotPopup?.remove(); showRegionName(); };
   const ids = C.regions.map((r) => r.id);
-  const nextId = () => ids[(ids.indexOf(region) + 1) % ids.length];
+  // The TV's tour: each region in turn, then a stop at each current road issue (closures first, then crashes,
+  // then road work; up to 6), zoomed in with the alert's details showing; then round again (rebuilt each lap, so
+  // new issues join and cleared ones drop out).
+  let tour = [], tourIdx = 0, stepMs = 0, spotPopup = null;
+  const ISSUE_ORDER = ['closure', 'collision', 'work'];
+  function buildTour() {
+    const issues = state.roads.filter((r) => r.lat && ISSUE_ORDER.includes(r.kind))
+      .sort((a, b) => ISSUE_ORDER.indexOf(a.kind) - ISSUE_ORDER.indexOf(b.kind)).slice(0, 6);
+    return [...ids.map((id) => ({ kind: 'region', id })), ...issues.map((r) => ({ kind: 'issue', r }))];
+  }
+  const stepName = (s) => !s ? '' : s.kind === 'region' ? regionById[s.id].name.toUpperCase()
+    : `${kindLabel[s.r.kind]} · ${s.r.roadLabel || s.r.road}${s.r.milepost ? ' MP ' + s.r.milepost : ''}`.toUpperCase();
+  function showStep(s) {
+    spotPopup?.remove(); spotPopup = null;
+    if (s.kind === 'region') return showRegion(s.id);
+    const r = s.r;
+    if (Array.isArray(r.path) && r.path.length > 1) {
+      const b = new maplibregl.LngLatBounds(); r.path.forEach((p) => b.extend(p));
+      map.fitBounds(b, { padding: 160, maxZoom: 13.5, duration: 1500 });
+    } else map.flyTo({ center: [r.lon, r.lat], zoom: 13, duration: 1500 });
+    const at = Array.isArray(r.path) && r.path.length > 1 ? r.path[Math.floor(r.path.length / 2)] : [r.lon, r.lat];
+    // the alert's details, once the camera has arrived
+    map.once('moveend', () => {
+      if (tour[tourIdx] !== s) return;
+      spotPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 18, maxWidth: '460px', className: 'tv-spot' })
+        .setLngLat(at).setHTML(alertHtml(r)).addTo(map);
+    });
+  }
   function showRegionName(secsLeft) {
-    const name = regionById[region].name.toUpperCase();
-    $('#regionName').textContent = secsLeft != null ? `▸ ${name} · NEXT ${regionById[nextId()].name.toUpperCase()} ${secsLeft}` : `▸ ${name}`;
+    const cur = cycleTimer ? stepName(tour[tourIdx]) : regionById[region].name.toUpperCase();
+    const next = cycleTimer ? stepName(tour[(tourIdx + 1) % tour.length]) : '';
+    $('#regionName').textContent = secsLeft != null ? `▸ ${cur} · NEXT ${next} ${secsLeft}` : `▸ ${cur}`;
   }
   map.once('load', () => {
     showRegion(region, false);
     const secs = qs.has('cycle') ? +qs.get('cycle') : 10;
     if (TV && secs > 0 && !qs.has('region')) {
       cycleMs = Math.max(5, secs) * 1000;
-      cycleNext = Date.now() + cycleMs;
+      tour = buildTour(); tourIdx = Math.max(0, ids.indexOf(region));
+      stepMs = cycleMs; cycleNext = Date.now() + stepMs;
       $('#cycleBar').style.display = 'block';
       cycleTimer = setInterval(() => {
-        const left = cycleNext - Date.now();
-        if (left <= 0) { showRegion(nextId()); cycleNext = Date.now() + cycleMs; }
+        if (cycleNext - Date.now() <= 0) {
+          tourIdx++;
+          if (tourIdx >= tour.length) { tour = buildTour(); tourIdx = 0; }
+          const s = tour[tourIdx];
+          stepMs = s.kind === 'issue' ? Math.round(cycleMs * 1.3) : cycleMs; // a little longer to read an alert
+          showStep(s);
+          cycleNext = Date.now() + stepMs;
+        }
         const l = Math.max(0, cycleNext - Date.now());
         showRegionName(Math.ceil(l / 1000));
-        $('#cycleBar').style.transform = `scaleX(${l / cycleMs})`;
+        $('#cycleBar').style.transform = `scaleX(${l / stepMs})`;
       }, 200);
     }
   });
@@ -1205,9 +1240,18 @@
     if (t.bus) add('a', '🚌 BUS', t.bus);
     if (t.rail) add('r', '⚠ RAIL', t.rail);
     if (t.sea) add('c', 'BAR', t.sea);
-    for (const r of state.travel || []) if (r.avg && r.now > r.avg * 1.25) add('a', 'SLOW', `${r.name.replace(/^\w+\s/, '')} ${r.now} min (normal ${r.avg})`);
-    const work = state.roads.filter((x) => x.kind === 'work' || x.kind === 'other').length;
-    if (work) add('w', `△ ${work}`, 'road work zones and alerts in the area');
+    // (the TV has no side panel, so the ticker carries what the panel would: every road alert, every travel
+    // time, and the weather town by town)
+    for (const r of state.roads.filter((x) => x.kind === 'work' || x.kind === 'other'))
+      add('w', r.kind === 'work' ? '△ WORK' : '△ ALERT', `${r.roadLabel || r.road}${r.milepost ? ' MP ' + r.milepost : ''}: ${r.headline.slice(0, 100)}`);
+    for (const r of state.travel || []) {
+      if (!r.now) continue;
+      const slow = r.avg && r.now > r.avg * 1.25;
+      add(slow ? 'a' : 'c', slow ? 'SLOW' : 'DRIVE', `${r.name.replace(/^\w+\s/, '')} ${r.now} min${r.avg ? ` (normal ${r.avg})` : ''}`);
+    }
+    const wx = C.towns.filter((tw) => !tw.minor && state.wx[tw.id]?.temp != null)
+      .map((tw) => `${tw.name} ${state.wx[tw.id].temp}° ${wxCode(state.wx[tw.id].f)}`);
+    if (wx.length) add('c', 'WX', wx.join(' · '));
     if (t.tide) add('c', 'TIDE', t.tide);
     if (t.wind) add('c', 'WIND', t.wind);
     if (t.sun) add('c', 'SUN', t.sun);
