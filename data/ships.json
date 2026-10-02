@@ -1,32 +1,16 @@
 {
-  "updated": "2026-10-02T04:51:44.7840959+00:00",
+  "updated": "2026-10-02T05:10:58.1797216+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 311056900,
-      "name": "CSL TECUMSEH",
-      "lat": 46.35973,
-      "lon": -124.43054,
-      "sog": 12.9,
-      "cog": 331.8,
-      "heading": 332,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "type": 30,
-      "dest": "WESTPORT",
-      "callsign": "WCZ2553",
-      "lengthM": 26,
-      "name": "SEA CLIPPER",
-      "lat": 46.9067,
-      "lon": -124.10771,
-      "sog": 0,
-      "cog": 226.2,
-      "heading": 226,
-      "status": 0,
+      "mmsi": 366954430,
+      "name": "CAPT RYAN",
+      "lat": 46.41477,
+      "lon": -124.43486,
+      "sog": 3.8,
+      "cog": 122.4,
+      "heading": 133,
+      "status": 5,
       "classB": false,
       "seen": "2026-10-02T04:51:44.7840959+00:00"
     },
@@ -55,39 +39,55 @@
       "seen": "2026-10-02T04:11:18.6124474+00:00"
     },
     {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97854,
-      "lon": -123.88363,
-      "sog": 0,
-      "cog": 292.6,
+      "mmsi": 311056900,
+      "name": "CSL TECUMSEH",
+      "lat": 46.35973,
+      "lon": -124.43054,
+      "sog": 12.9,
+      "cog": 331.8,
+      "heading": 332,
       "status": 0,
       "classB": false,
       "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
     {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97852,
+      "lon": -123.88359,
+      "sog": 0,
+      "cog": 229.8,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T05:10:58.1797216+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "lengthM": 26,
+      "name": "SEA CLIPPER",
+      "lat": 46.9067,
+      "lon": -124.10771,
+      "sog": 0,
+      "cog": 226.2,
+      "heading": 226,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T04:51:44.7840959+00:00"
+    },
+    {
       "mmsi": 538012030,
       "name": "GLBS OLYMPIA",
-      "lat": 46.96407,
-      "lon": -123.85306,
+      "lat": 46.96405,
+      "lon": -123.85307,
       "sog": 0,
       "cog": 180,
       "heading": 299,
       "status": 5,
       "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 366954430,
-      "name": "CAPT RYAN",
-      "lat": 46.41477,
-      "lon": -124.43486,
-      "sog": 3.8,
-      "cog": 122.4,
-      "heading": 133,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T04:51:44.7840959+00:00"
+      "seen": "2026-10-02T05:10:58.1797216+00:00"
     }
   ]
 }
