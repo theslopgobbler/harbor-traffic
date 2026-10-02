@@ -1,27 +1,14 @@
 {
-  "updated": "2026-10-02T03:34:46.1193838+00:00",
+  "updated": "2026-10-02T03:51:46.7731039+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 538012030,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96407,
-      "lon": -123.85306,
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97854,
+      "lon": -123.88363,
       "sog": 0,
-      "cog": 180,
-      "heading": 299,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 311056900,
-      "name": "CSL TECUMSEH",
-      "lat": 46.35973,
-      "lon": -124.43054,
-      "sog": 12.9,
-      "cog": 331.8,
-      "heading": 332,
+      "cog": 292.6,
       "status": 0,
       "classB": false,
       "seen": "2026-10-02T03:34:46.1193838+00:00"
@@ -36,13 +23,26 @@
       "seen": "2026-10-02T01:42:23.071139+00:00"
     },
     {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97854,
-      "lon": -123.88363,
-      "sog": 0,
-      "cog": 292.6,
+      "mmsi": 311056900,
+      "name": "CSL TECUMSEH",
+      "lat": 46.35973,
+      "lon": -124.43054,
+      "sog": 12.9,
+      "cog": 331.8,
+      "heading": 332,
       "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
+    },
+    {
+      "mmsi": 538012030,
+      "name": "GLBS OLYMPIA",
+      "lat": 46.96407,
+      "lon": -123.85306,
+      "sog": 0,
+      "cog": 180,
+      "heading": 299,
+      "status": 5,
       "classB": false,
       "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
