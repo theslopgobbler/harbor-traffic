@@ -1,29 +1,56 @@
 {
-  "updated": "2026-10-02T18:38:22.6895069+00:00",
+  "updated": "2026-10-02T18:55:30.9545499+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96731,
+      "lon": -123.77984,
+      "sog": 0,
+      "cog": 0,
+      "heading": 168,
+      "classB": true,
+      "seen": "2026-10-02T18:55:30.9545499+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "lat": 46.53299,
+      "lon": -123.98897,
+      "sog": 9.7,
+      "cog": 35.9,
+      "heading": 36,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T18:55:30.9545499+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27
+    },
     {
       "mmsi": 367324840,
       "name": "MARY ROSE BRUSCO",
       "lat": 46.9785,
-      "lon": -123.8836,
+      "lon": -123.88358,
       "sog": 0,
-      "cog": 171.8,
+      "cog": 353.6,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-02T17:50:32.0938099+00:00"
+      "seen": "2026-10-02T18:55:30.9545499+00:00"
     },
     {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.52385,
-      "lon": -123.99888,
-      "sog": 5.7,
-      "cog": 219.6,
-      "heading": 217,
-      "status": 5,
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92836,
+      "lon": -124.09044,
+      "sog": 0.1,
+      "cog": 341.2,
+      "heading": 220,
+      "status": 1,
       "classB": false,
-      "seen": "2026-10-02T17:50:32.0938099+00:00"
+      "seen": "2026-10-02T18:55:30.9545499+00:00"
     }
   ]
 }
