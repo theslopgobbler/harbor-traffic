@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T11:33:16.9835331+00:00",
+  "updated": "2026-10-02T11:51:28.5423006+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -42,6 +42,37 @@
         [
           -124.24706,
           47.29942
+        ]
+      ]
+    },
+    {
+      "id": 712873,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Overnight southbound I-5 lane and ramp closures resume the week of Sept. 28 between Maytown Rd and Old Hwy 99 for a paving project.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 88.9,
+      "lat": 46.809909341,
+      "lon": -123.002876849,
+      "lat2": 46.903168672,
+      "lon2": -122.957832023,
+      "county": null,
+      "start": "2026-09-10T21:00:00.0000000+00:00",
+      "end": "2026-10-02T23:00:00.0000000+00:00",
+      "updated": "2026-09-24T19:06:16.7830000+00:00",
+      "path": [
+        [
+          -123.002876849,
+          46.809909341
+        ],
+        [
+          -122.957832023,
+          46.903168672
         ]
       ]
     },
@@ -813,6 +844,27 @@
       ]
     },
     {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
       "id": 584226,
       "kind": "work",
       "category": "Construction",
@@ -864,101 +916,6 @@
         [
           -124.35296,
           47.88238
-        ]
-      ]
-    },
-    {
-      "id": 712872,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.6,
-      "lat": 46.627033568,
-      "lon": -123.082208102,
-      "lat2": 46.626966642,
-      "lon2": -123.063374325,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-12T22:30:00.0000000+00:00",
-      "updated": "2026-09-10T21:06:34.0470000+00:00",
-      "path": [
-        [
-          -123.0822,
-          46.62703
-        ],
-        [
-          -123.08176,
-          46.62703
-        ],
-        [
-          -123.08101,
-          46.62703
-        ],
-        [
-          -123.07967,
-          46.62703
-        ],
-        [
-          -123.07843,
-          46.62702
-        ],
-        [
-          -123.07691,
-          46.62702
-        ],
-        [
-          -123.07664,
-          46.62702
-        ],
-        [
-          -123.07607,
-          46.62702
-        ],
-        [
-          -123.07582,
-          46.62702
-        ],
-        [
-          -123.07474,
-          46.62702
-        ],
-        [
-          -123.07107,
-          46.62702
-        ],
-        [
-          -123.06794,
-          46.627
-        ],
-        [
-          -123.06486,
-          46.62698
-        ],
-        [
-          -123.06443,
-          46.62697
-        ],
-        [
-          -123.06424,
-          46.62697
-        ],
-        [
-          -123.06344,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
         ]
       ]
     },
@@ -1214,6 +1171,101 @@
         [
           -122.68387,
           47.07895
+        ]
+      ]
+    },
+    {
+      "id": 712872,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.6,
+      "lat": 46.627033568,
+      "lon": -123.082208102,
+      "lat2": 46.626966642,
+      "lon2": -123.063374325,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-12T22:30:00.0000000+00:00",
+      "updated": "2026-09-10T21:06:34.0470000+00:00",
+      "path": [
+        [
+          -123.0822,
+          46.62703
+        ],
+        [
+          -123.08176,
+          46.62703
+        ],
+        [
+          -123.08101,
+          46.62703
+        ],
+        [
+          -123.07967,
+          46.62703
+        ],
+        [
+          -123.07843,
+          46.62702
+        ],
+        [
+          -123.07691,
+          46.62702
+        ],
+        [
+          -123.07664,
+          46.62702
+        ],
+        [
+          -123.07607,
+          46.62702
+        ],
+        [
+          -123.07582,
+          46.62702
+        ],
+        [
+          -123.07474,
+          46.62702
+        ],
+        [
+          -123.07107,
+          46.62702
+        ],
+        [
+          -123.06794,
+          46.627
+        ],
+        [
+          -123.06486,
+          46.62698
+        ],
+        [
+          -123.06443,
+          46.62697
+        ],
+        [
+          -123.06424,
+          46.62697
+        ],
+        [
+          -123.06344,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
         ]
       ]
     },
@@ -2121,27 +2173,6 @@
       "updated": "2026-10-01T13:29:28.7370000+00:00"
     },
     {
-      "id": 717481,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on I-5 southbound at milepost 95.4 near Maytown Rd [SR 121 South-End] beginning at 9:46 pm on October 1, 2026 until about 5:00 am on October 2, 2026.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 95.4,
-      "lat": 46.899123141,
-      "lon": -122.960109795,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-02T04:46:00.0000000+00:00",
-      "end": "2026-10-02T12:00:00.0000000+00:00",
-      "updated": "2026-10-02T04:52:54.1270000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -2205,48 +2236,6 @@
       "updated": "2026-04-15T00:09:09.8670000+00:00"
     },
     {
-      "id": 717483,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 121 both directions at milepost 0 near I-5 beginning at 9:54 pm on October 1, 2026 until about 5:00 am on October 2, 2026.",
-      "description": "",
-      "link": null,
-      "road": "121",
-      "roadLabel": "SR 121",
-      "direction": "B",
-      "milepost": 0.0,
-      "lat": 46.896582432,
-      "lon": -122.960854846,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-02T04:54:00.0000000+00:00",
-      "end": "2026-10-02T12:00:00.0000000+00:00",
-      "updated": "2026-10-02T04:56:00.7370000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
       "id": 686738,
       "kind": "work",
       "category": "Construction",
@@ -2287,27 +2276,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
-    },
-    {
-      "id": 717482,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on I-5 northbound at milepost 94.8 near Maytown Rd [SR 121 South-End] beginning at 9:52 pm on October 1, 2026 until about 5:00 am on October 2, 2026.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 94.8,
-      "lat": 46.890656981,
-      "lon": -122.962618562,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-02T04:52:00.0000000+00:00",
-      "end": "2026-10-02T12:00:00.0000000+00:00",
-      "updated": "2026-10-02T04:54:00.6930000+00:00"
     }
   ]
 }
