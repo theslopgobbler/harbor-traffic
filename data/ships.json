@@ -1,17 +1,30 @@
 {
-  "updated": "2026-10-02T03:11:51.3782338+00:00",
+  "updated": "2026-10-02T03:34:46.1193838+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97853,
-      "lon": -123.88362,
+      "mmsi": 538012030,
+      "name": "GLBS OLYMPIA",
+      "lat": 46.96407,
+      "lon": -123.85306,
       "sog": 0,
-      "cog": 308.5,
+      "cog": 180,
+      "heading": 299,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
+    },
+    {
+      "mmsi": 311056900,
+      "name": "CSL TECUMSEH",
+      "lat": 46.35973,
+      "lon": -124.43054,
+      "sog": 12.9,
+      "cog": 331.8,
+      "heading": 332,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-02T00:50:13.9004349+00:00"
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
     },
     {
       "mmsi": 369970500,
@@ -21,6 +34,45 @@
       "cog": 254.7,
       "classB": true,
       "seen": "2026-10-02T01:42:23.071139+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97854,
+      "lon": -123.88363,
+      "sog": 0,
+      "cog": 292.6,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "lat": 46.90609,
+      "lon": -124.10756,
+      "sog": 0,
+      "cog": 291.9,
+      "heading": 124,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00",
+      "name": "SEA CLIPPER",
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "lengthM": 26
+    },
+    {
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92631,
+      "lon": -124.09461,
+      "sog": 0,
+      "cog": 317.1,
+      "heading": 65,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-02T03:34:46.1193838+00:00"
     }
   ]
 }
