@@ -4,6 +4,8 @@
 //   GET /debug     which feeds answered last and why any didn't
 //   GET /hello     an open dashboard page checking in (count.js), for the viewer count
 //   GET /viewers   the viewer count and daily totals (stats.html; needs the X-Stats-Key header to match STATS_KEY)
+//   GET /site-stats harborevents.org visit stats from Umami Cloud (stats.html; same X-Stats-Key; needs the
+//                  UMAMI_API_KEY secret, which never leaves the Worker)
 // It only ever fetches those fixed lists (it's not an open proxy), answers only the dashboard's own site, and
 // shares one fetch among everyone watching: aircraft at most every 15 s, buses at most every 9 s.
 
@@ -161,6 +163,44 @@ async function viewerStats(db) {
   return Response.json({ now: Object.values(byKind).reduce((a, b) => a + b, 0), byKind, days: days.results, at: new Date(now).toISOString() });
 }
 
+// ---- harborevents.org visit stats: read from Umami Cloud's API with the UMAMI_API_KEY secret and boiled down
+// for stats.html. Cached for 5 minutes so the free API allowance is never an issue.
+const UMAMI = 'https://api.umami.is/v1', UMAMI_SITE = '7268a50d-28a7-4129-849b-812cfb2ed175';
+let siteCache = { at: 0, body: null };
+async function siteStats(env) {
+  if (siteCache.body && Date.now() - siteCache.at < 300000) return siteCache.body;
+  const get = async (path, q = {}) => {
+    const r = await fetch(`${UMAMI}/websites/${UMAMI_SITE}${path}?${new URLSearchParams(q)}`, { headers: { 'x-umami-api-key': env.UMAMI_API_KEY, Accept: 'application/json' } });
+    if (!r.ok) throw new Error(`Umami ${path}: HTTP ${r.status}`);
+    return r.json();
+  };
+  const num = (v) => (v && typeof v === 'object' ? v.value : v) || 0;   // older API wraps numbers as {value, prev}
+  // midnight Pacific time today (works across daylight saving changes)
+  const now = Date.now(), wall = Date.parse(new Date(now).toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }) + ' UTC');
+  const todayStart = Date.parse(`${pacificDay(now)}T00:00:00Z`) - (wall - now);
+  const range = (days) => ({ startAt: String(now - days * 86400000), endAt: String(now) });
+  const summary = async (q) => { const s = await get('/stats', q); const visits = num(s.visits);
+    return { visitors: num(s.visitors), visits, views: num(s.pageviews), bounceRate: visits ? Math.round(num(s.bounces) / visits * 100) : 0,
+      avgSeconds: visits ? Math.round(num(s.totaltime) / visits) : 0 }; };
+  const metric = async (type, days = 30, limit = 10) => { try { return (await get('/metrics', { ...range(days), type, limit: String(limit) })).map((m) => ({ name: m.x || '(none)', n: m.y })); } catch { return []; } };
+  const eventValues = async (event, propertyName) => { try {
+    return (await get('/event-data/values', { ...range(30), event, propertyName })).map((v) => ({ name: v.value, n: v.total })).sort((a, b) => b.n - a.n).slice(0, 10);
+  } catch { return []; } };
+  const [active, today, week, month, daily, referrers, cities, regions, devices, browsers, clicks, areas, views, filters] = await Promise.all([
+    get('/active').then((a) => num(a.visitors ?? a.x ?? a)).catch(() => null),
+    summary({ startAt: String(todayStart), endAt: String(now) }), summary(range(7)), summary(range(30)),
+    get('/pageviews', { ...range(30), unit: 'day', timezone: 'America/Los_Angeles' }).catch(() => ({})),
+    metric('referrer'), metric('city'), metric('region'), metric('device'), metric('browser'), metric('event', 30, 20),
+    eventValues('area', 'area'), eventValues('view', 'view'), eventValues('filter', 'filter')
+  ]);
+  const byDay = {};
+  for (const p of daily.pageviews || []) (byDay[p.x.slice(0, 10)] ||= { views: 0, visitors: 0 }).views = p.y;
+  for (const s of daily.sessions || []) (byDay[s.x.slice(0, 10)] ||= { views: 0, visitors: 0 }).visitors = s.y;
+  const days = Object.entries(byDay).map(([day, v]) => ({ day, ...v })).sort((a, b) => b.day.localeCompare(a.day));
+  siteCache = { at: now, body: JSON.stringify({ active, today, week, month, days, referrers, cities, regions, devices, browsers, clicks, areas, views, filters, at: new Date(now).toISOString() }) };
+  return siteCache.body;
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
@@ -187,6 +227,13 @@ export default {
     if (path === '/buses') {
       if (!bus.body || Date.now() - bus.at > 9000) await refreshBuses(); // GHT's GPS updates about every 8 s
       return json(bus.body || '{"routes":[],"buses":[]}');
+    }
+    if (path === '/site-stats') {
+      if (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY)
+        return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
+      if (!env.UMAMI_API_KEY) return new Response('site stats not set up (add the UMAMI_API_KEY secret)', { status: 503, headers: cors });
+      try { return json(await siteStats(env)); }
+      catch (e) { return new Response(e.message, { status: 502, headers: cors }); }
     }
     if (path === '/hello' || path === '/viewers') {
       if (!env.DB) return new Response('viewer count not set up (no DB binding)', { status: 503, headers: cors });
