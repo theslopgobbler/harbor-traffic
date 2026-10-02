@@ -1,18 +1,7 @@
 {
-  "updated": "2026-10-02T18:55:30.9545499+00:00",
+  "updated": "2026-10-02T19:12:02.0831602+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367417230,
-      "name": "DREDGE PATRIOT",
-      "lat": 46.96731,
-      "lon": -123.77984,
-      "sog": 0,
-      "cog": 0,
-      "heading": 168,
-      "classB": true,
-      "seen": "2026-10-02T18:55:30.9545499+00:00"
-    },
     {
       "mmsi": 367310520,
       "lat": 46.53299,
@@ -30,14 +19,14 @@
       "lengthM": 27
     },
     {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.9785,
-      "lon": -123.88358,
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96731,
+      "lon": -123.77984,
       "sog": 0,
-      "cog": 353.6,
-      "status": 0,
-      "classB": false,
+      "cog": 0,
+      "heading": 168,
+      "classB": true,
       "seen": "2026-10-02T18:55:30.9545499+00:00"
     },
     {
@@ -49,6 +38,17 @@
       "cog": 341.2,
       "heading": 220,
       "status": 1,
+      "classB": false,
+      "seen": "2026-10-02T18:55:30.9545499+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.9785,
+      "lon": -123.88358,
+      "sog": 0,
+      "cog": 353.6,
+      "status": 0,
       "classB": false,
       "seen": "2026-10-02T18:55:30.9545499+00:00"
     }
