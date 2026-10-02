@@ -1,5 +1,18 @@
 {
-  "updated": "2026-10-02T12:40:40.0837231+00:00",
+  "updated": "2026-10-02T13:01:44.3335165+00:00",
   "source": "AIS via aisstream.io",
-  "ships": []
+  "ships": [
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.70678,
+      "lon": -123.96301,
+      "sog": 0.1,
+      "cog": 87,
+      "heading": 298,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T13:01:44.3335165+00:00"
+    }
+  ]
 }
