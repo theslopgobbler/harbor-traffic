@@ -1,7 +1,43 @@
 {
-  "updated": "2026-10-02T06:13:56.9974516+00:00",
+  "updated": "2026-10-02T06:40:56.4965383+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91966,
+      "lon": -124.12264,
+      "sog": 0,
+      "cog": 147.1,
+      "heading": 81,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-02T04:11:18.6124474+00:00"
+    },
+    {
+      "mmsi": 538012030,
+      "name": "GLBS OLYMPIA",
+      "lat": 46.96406,
+      "lon": -123.85305,
+      "sog": 0,
+      "cog": 180,
+      "heading": 299,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T06:40:56.4965383+00:00"
+    },
+    {
+      "mmsi": 367656470,
+      "name": "M&M",
+      "lat": 46.55467,
+      "lon": -124.34923,
+      "sog": 8.3,
+      "cog": 352.7,
+      "heading": 354,
+      "status": 15,
+      "classB": false,
+      "seen": "2026-10-02T06:40:56.4965383+00:00"
+    },
     {
       "mmsi": 366954430,
       "name": "CAPT RYAN",
@@ -17,61 +53,25 @@
     {
       "mmsi": 367324840,
       "name": "MARY ROSE BRUSCO",
-      "lat": 46.97852,
-      "lon": -123.88359,
+      "lat": 46.97853,
+      "lon": -123.8836,
       "sog": 0,
-      "cog": 229.8,
+      "cog": 282.3,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-02T05:10:58.1797216+00:00"
+      "seen": "2026-10-02T06:40:56.4965383+00:00"
     },
     {
-      "mmsi": 311056900,
-      "name": "CSL TECUMSEH",
-      "lat": 46.35973,
-      "lon": -124.43054,
-      "sog": 12.9,
-      "cog": 331.8,
-      "heading": 332,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.91966,
-      "lon": -124.12264,
-      "sog": 0,
-      "cog": 147.1,
-      "heading": 81,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-02T04:11:18.6124474+00:00"
-    },
-    {
-      "mmsi": 567017000,
-      "name": "SARITA NAREE",
-      "lat": 46.92631,
-      "lon": -124.09461,
-      "sog": 0,
-      "cog": 317.1,
-      "heading": 65,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-02T03:34:46.1193838+00:00"
-    },
-    {
-      "mmsi": 538012030,
-      "name": "GLBS OLYMPIA",
-      "lat": 46.96405,
-      "lon": -123.85307,
-      "sog": 0,
-      "cog": 180,
-      "heading": 299,
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.69815,
+      "lon": -123.9983,
+      "sog": 6.6,
+      "cog": 282.4,
+      "heading": 283,
       "status": 5,
       "classB": false,
-      "seen": "2026-10-02T05:10:58.1797216+00:00"
+      "seen": "2026-10-02T06:40:56.4965383+00:00"
     },
     {
       "mmsi": 366765940,
