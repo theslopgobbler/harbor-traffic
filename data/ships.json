@@ -1,33 +1,22 @@
 {
-  "updated": "2026-10-02T19:12:02.0831602+00:00",
+  "updated": "2026-10-02T19:34:04.2340462+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
       "mmsi": 367310520,
-      "lat": 46.53299,
-      "lon": -123.98897,
-      "sog": 9.7,
-      "cog": 35.9,
-      "heading": 36,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T18:55:30.9545499+00:00",
-      "name": "JAMES T",
       "type": 52,
       "dest": "USLOG",
       "callsign": "WDD9378",
-      "lengthM": 27
-    },
-    {
-      "mmsi": 367417230,
-      "name": "DREDGE PATRIOT",
-      "lat": 46.96731,
-      "lon": -123.77984,
-      "sog": 0,
-      "cog": 0,
-      "heading": 168,
-      "classB": true,
-      "seen": "2026-10-02T18:55:30.9545499+00:00"
+      "lengthM": 27,
+      "name": "JAMES T",
+      "lat": 46.62317,
+      "lon": -123.99581,
+      "sog": 9.3,
+      "cog": 330.8,
+      "heading": 332,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T19:34:04.2340462+00:00"
     },
     {
       "mmsi": 567017000,
@@ -43,13 +32,28 @@
     },
     {
       "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
       "lat": 46.9785,
       "lon": -123.88358,
       "sog": 0,
       "cog": 353.6,
       "status": 0,
       "classB": false,
+      "seen": "2026-10-02T18:55:30.9545499+00:00",
+      "name": "MARY ROSE BRUSCO",
+      "type": 31,
+      "dest": "GRAYS HARBOR",
+      "callsign": "WDE2412",
+      "lengthM": 20
+    },
+    {
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96731,
+      "lon": -123.77984,
+      "sog": 0,
+      "cog": 0,
+      "heading": 168,
+      "classB": true,
       "seen": "2026-10-02T18:55:30.9545499+00:00"
     }
   ]
