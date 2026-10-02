@@ -1,7 +1,18 @@
 {
-  "updated": "2026-10-02T18:14:00.7139960+00:00",
+  "updated": "2026-10-02T18:38:22.6895069+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.9785,
+      "lon": -123.8836,
+      "sog": 0,
+      "cog": 171.8,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-02T17:50:32.0938099+00:00"
+    },
     {
       "mmsi": 367310520,
       "name": "JAMES T",
@@ -11,17 +22,6 @@
       "cog": 219.6,
       "heading": 217,
       "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T17:50:32.0938099+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.9785,
-      "lon": -123.8836,
-      "sog": 0,
-      "cog": 171.8,
-      "status": 0,
       "classB": false,
       "seen": "2026-10-02T17:50:32.0938099+00:00"
     }
