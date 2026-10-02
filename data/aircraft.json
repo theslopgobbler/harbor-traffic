@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-02T13:01:44.3335165+00:00",
+  "updated": "2026-10-02T13:26:43.0514906+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a88491",
+      "flight": "N648SP",
+      "reg": "N648SP",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 6400,
+      "gs": 122.7,
+      "track": 19.03,
+      "rate": null,
+      "lat": 46.66936,
+      "lon": -122.89066,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
