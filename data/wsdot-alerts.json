@@ -1,7 +1,411 @@
 {
-  "updated": "2026-10-02T23:29:57.7855735+00:00",
+  "updated": "2026-10-02T23:44:38.0559883+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-09-16T14:09:21.4230000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
+    {
+      "id": 712873,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Friday, Oct. 2, expect overnight I-5 lane and ramp closures at the Maytown Road interchange for permanent pavement markings. Check the paving webpage for details. Work may be rescheduled if it rains.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "B",
+      "milepost": 94.94,
+      "lat": 46.892636862,
+      "lon": -122.961977635,
+      "lat2": 46.897190565,
+      "lon2": -122.960503174,
+      "county": null,
+      "start": "2026-09-10T21:00:00.0000000+00:00",
+      "end": "2026-10-03T02:00:00.0000000+00:00",
+      "updated": "2026-10-02T19:16:10.2800000+00:00",
+      "path": [
+        [
+          -122.962,
+          46.8926
+        ],
+        [
+          -122.96185,
+          46.89314
+        ],
+        [
+          -122.96177,
+          46.89339
+        ],
+        [
+          -122.96084,
+          46.89629
+        ],
+        [
+          -122.96055,
+          46.89714
+        ],
+        [
+          -122.96053,
+          46.8972
+        ],
+        [
+          -122.96053,
+          46.8972
+        ]
+      ]
+    },
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
+      "id": 715621,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect lane reductions overnight in southbound lanes of I-5 until 9:30 a.m. Saturday, Oct. 3 for concrete panel replacement. Starting Tuesday, Oct. 6, crews will work in northbound lanes nightly until 9 a.m. Saturday, Oct. 10. If it rains, work may be rescheduled.",
+      "description": "",
+      "link": "https://bit.ly/4we6ZaO",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "B",
+      "milepost": 109.2,
+      "lat": 47.049326841,
+      "lon": -122.817812592,
+      "lat2": 47.078963253,
+      "lon2": -122.68394807,
+      "county": null,
+      "start": "2026-09-25T17:49:00.0000000+00:00",
+      "end": "2026-10-10T02:00:00.0000000+00:00",
+      "updated": "2026-10-02T02:36:31.5770000+00:00",
+      "path": [
+        [
+          -122.81784,
+          47.04932
+        ],
+        [
+          -122.81495,
+          47.05132
+        ],
+        [
+          -122.8093,
+          47.05524
+        ],
+        [
+          -122.80902,
+          47.05542
+        ],
+        [
+          -122.80877,
+          47.05558
+        ],
+        [
+          -122.80848,
+          47.05573
+        ],
+        [
+          -122.80822,
+          47.05586
+        ],
+        [
+          -122.80793,
+          47.056
+        ],
+        [
+          -122.80767,
+          47.05612
+        ],
+        [
+          -122.80735,
+          47.05626
+        ],
+        [
+          -122.80705,
+          47.05637
+        ],
+        [
+          -122.80676,
+          47.05646
+        ],
+        [
+          -122.80646,
+          47.05656
+        ],
+        [
+          -122.80612,
+          47.05665
+        ],
+        [
+          -122.80583,
+          47.05673
+        ],
+        [
+          -122.80546,
+          47.05682
+        ],
+        [
+          -122.80167,
+          47.05745
+        ],
+        [
+          -122.77981,
+          47.06104
+        ],
+        [
+          -122.76746,
+          47.06308
+        ],
+        [
+          -122.7667,
+          47.06319
+        ],
+        [
+          -122.76594,
+          47.06328
+        ],
+        [
+          -122.76301,
+          47.06354
+        ],
+        [
+          -122.76,
+          47.06379
+        ],
+        [
+          -122.75858,
+          47.06391
+        ],
+        [
+          -122.75768,
+          47.06398
+        ],
+        [
+          -122.7566,
+          47.0641
+        ],
+        [
+          -122.75557,
+          47.06424
+        ],
+        [
+          -122.73852,
+          47.06678
+        ],
+        [
+          -122.73512,
+          47.06728
+        ],
+        [
+          -122.73465,
+          47.06734
+        ],
+        [
+          -122.73376,
+          47.06742
+        ],
+        [
+          -122.733,
+          47.06748
+        ],
+        [
+          -122.72732,
+          47.06782
+        ],
+        [
+          -122.72603,
+          47.06789
+        ],
+        [
+          -122.72474,
+          47.06793
+        ],
+        [
+          -122.72357,
+          47.06794
+        ],
+        [
+          -122.72205,
+          47.06793
+        ],
+        [
+          -122.72037,
+          47.06791
+        ],
+        [
+          -122.71925,
+          47.0679
+        ],
+        [
+          -122.71607,
+          47.06788
+        ],
+        [
+          -122.71556,
+          47.06789
+        ],
+        [
+          -122.71501,
+          47.06792
+        ],
+        [
+          -122.71461,
+          47.06796
+        ],
+        [
+          -122.71426,
+          47.068
+        ],
+        [
+          -122.71364,
+          47.06811
+        ],
+        [
+          -122.71303,
+          47.06826
+        ],
+        [
+          -122.71242,
+          47.06842
+        ],
+        [
+          -122.71121,
+          47.06887
+        ],
+        [
+          -122.71034,
+          47.0692
+        ],
+        [
+          -122.70486,
+          47.07136
+        ],
+        [
+          -122.70318,
+          47.072
+        ],
+        [
+          -122.69505,
+          47.07506
+        ],
+        [
+          -122.69353,
+          47.07564
+        ],
+        [
+          -122.68976,
+          47.07712
+        ],
+        [
+          -122.6887,
+          47.07751
+        ],
+        [
+          -122.68744,
+          47.07792
+        ],
+        [
+          -122.68387,
+          47.07895
+        ],
+        [
+          -122.68387,
+          47.07895
+        ]
+      ]
+    },
     {
       "id": 712872,
       "kind": "work",
@@ -1367,410 +1771,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-06-16T21:13:03.4200000+00:00"
-    },
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-09-16T14:09:21.4230000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
-    {
-      "id": 712873,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Friday, Oct. 2, expect overnight I-5 lane and ramp closures at the Maytown Road interchange for permanent pavement markings. Check the paving webpage for details. Work may be rescheduled if it rains.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/i-5-old-highway-99-maytown-road-paving",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "B",
-      "milepost": 94.94,
-      "lat": 46.892636862,
-      "lon": -122.961977635,
-      "lat2": 46.897190565,
-      "lon2": -122.960503174,
-      "county": null,
-      "start": "2026-09-10T21:00:00.0000000+00:00",
-      "end": "2026-10-03T02:00:00.0000000+00:00",
-      "updated": "2026-10-02T19:16:10.2800000+00:00",
-      "path": [
-        [
-          -122.962,
-          46.8926
-        ],
-        [
-          -122.96185,
-          46.89314
-        ],
-        [
-          -122.96177,
-          46.89339
-        ],
-        [
-          -122.96084,
-          46.89629
-        ],
-        [
-          -122.96055,
-          46.89714
-        ],
-        [
-          -122.96053,
-          46.8972
-        ],
-        [
-          -122.96053,
-          46.8972
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
-      "id": 715621,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect lane reductions overnight in southbound lanes of I-5 until 9:30 a.m. Saturday, Oct. 3 for concrete panel replacement. Starting Tuesday, Oct. 6, crews will work in northbound lanes nightly until 9 a.m. Saturday, Oct. 10. If it rains, work may be rescheduled.",
-      "description": "",
-      "link": "https://bit.ly/4we6ZaO",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "B",
-      "milepost": 109.2,
-      "lat": 47.049326841,
-      "lon": -122.817812592,
-      "lat2": 47.078963253,
-      "lon2": -122.68394807,
-      "county": null,
-      "start": "2026-09-25T17:49:00.0000000+00:00",
-      "end": "2026-10-10T02:00:00.0000000+00:00",
-      "updated": "2026-10-02T02:36:31.5770000+00:00",
-      "path": [
-        [
-          -122.81784,
-          47.04932
-        ],
-        [
-          -122.81495,
-          47.05132
-        ],
-        [
-          -122.8093,
-          47.05524
-        ],
-        [
-          -122.80902,
-          47.05542
-        ],
-        [
-          -122.80877,
-          47.05558
-        ],
-        [
-          -122.80848,
-          47.05573
-        ],
-        [
-          -122.80822,
-          47.05586
-        ],
-        [
-          -122.80793,
-          47.056
-        ],
-        [
-          -122.80767,
-          47.05612
-        ],
-        [
-          -122.80735,
-          47.05626
-        ],
-        [
-          -122.80705,
-          47.05637
-        ],
-        [
-          -122.80676,
-          47.05646
-        ],
-        [
-          -122.80646,
-          47.05656
-        ],
-        [
-          -122.80612,
-          47.05665
-        ],
-        [
-          -122.80583,
-          47.05673
-        ],
-        [
-          -122.80546,
-          47.05682
-        ],
-        [
-          -122.80167,
-          47.05745
-        ],
-        [
-          -122.77981,
-          47.06104
-        ],
-        [
-          -122.76746,
-          47.06308
-        ],
-        [
-          -122.7667,
-          47.06319
-        ],
-        [
-          -122.76594,
-          47.06328
-        ],
-        [
-          -122.76301,
-          47.06354
-        ],
-        [
-          -122.76,
-          47.06379
-        ],
-        [
-          -122.75858,
-          47.06391
-        ],
-        [
-          -122.75768,
-          47.06398
-        ],
-        [
-          -122.7566,
-          47.0641
-        ],
-        [
-          -122.75557,
-          47.06424
-        ],
-        [
-          -122.73852,
-          47.06678
-        ],
-        [
-          -122.73512,
-          47.06728
-        ],
-        [
-          -122.73465,
-          47.06734
-        ],
-        [
-          -122.73376,
-          47.06742
-        ],
-        [
-          -122.733,
-          47.06748
-        ],
-        [
-          -122.72732,
-          47.06782
-        ],
-        [
-          -122.72603,
-          47.06789
-        ],
-        [
-          -122.72474,
-          47.06793
-        ],
-        [
-          -122.72357,
-          47.06794
-        ],
-        [
-          -122.72205,
-          47.06793
-        ],
-        [
-          -122.72037,
-          47.06791
-        ],
-        [
-          -122.71925,
-          47.0679
-        ],
-        [
-          -122.71607,
-          47.06788
-        ],
-        [
-          -122.71556,
-          47.06789
-        ],
-        [
-          -122.71501,
-          47.06792
-        ],
-        [
-          -122.71461,
-          47.06796
-        ],
-        [
-          -122.71426,
-          47.068
-        ],
-        [
-          -122.71364,
-          47.06811
-        ],
-        [
-          -122.71303,
-          47.06826
-        ],
-        [
-          -122.71242,
-          47.06842
-        ],
-        [
-          -122.71121,
-          47.06887
-        ],
-        [
-          -122.71034,
-          47.0692
-        ],
-        [
-          -122.70486,
-          47.07136
-        ],
-        [
-          -122.70318,
-          47.072
-        ],
-        [
-          -122.69505,
-          47.07506
-        ],
-        [
-          -122.69353,
-          47.07564
-        ],
-        [
-          -122.68976,
-          47.07712
-        ],
-        [
-          -122.6887,
-          47.07751
-        ],
-        [
-          -122.68744,
-          47.07792
-        ],
-        [
-          -122.68387,
-          47.07895
-        ],
-        [
-          -122.68387,
-          47.07895
-        ]
-      ]
     },
     {
       "id": 698910,
