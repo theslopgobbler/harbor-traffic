@@ -209,6 +209,88 @@
     }
     return best ? 'ON ' + (window.htShortStreet ? window.htShortStreet(best.name) : best.name.toUpperCase()) : null;
   }
+  // ---- the route ahead of the followed bus: road alerts along the rest of its line, and a change in the weather
+  // at a town it's heading for (rechecked every 10 s)
+  const MI = 1609.34;
+  function routeAhead(b) {
+    if (!b?._snap) return null;
+    const sh = b._snap.sh, s0 = b._along ?? b._obs ?? 0;
+    // the rest of the line, a point every 120 m or so, each with how far ahead it is
+    const pts = [];
+    for (let i = 0; i < sh.c.length; i++) {
+      if (sh.d[i] < s0) continue;
+      if (!pts.length || sh.d[i] - pts[pts.length - 1][1] - s0 >= 120) pts.push([sh.c[i], sh.d[i] - s0]);
+    }
+    if (!pts.length) return null;
+    // road alerts within about 150 m of it, nearest first
+    const order = ['closure', 'collision', 'work', 'other'];
+    const alerts = [];
+    for (const r of window.htRoads?.() || []) {
+      if (!r.lat && !(r.path?.length)) continue;
+      const ap = Array.isArray(r.path) && r.path.length > 1 ? r.path.filter((_, k) => k % 3 === 0 || k === r.path.length - 1) : [[r.lon, r.lat]];
+      let ahead = null;
+      for (const [p, dist] of pts) { for (const q of ap) if (mx(p, q) < 150) { ahead = dist; break; } if (ahead != null) break; }
+      if (ahead != null) alerts.push({ r, ahead });
+    }
+    alerts.sort((x, y) => order.indexOf(x.r.kind) - order.indexOf(y.r.kind) || x.ahead - y.ahead);
+    // weather: the town nearest the bus now, against towns the rest of its line passes (within 3 km)
+    const towns = window.htTownWx?.() || [];
+    const nearTown = (p, max) => towns.map((t) => [mx(p, [t.lon, t.lat]), t]).filter(([d]) => d < max).sort((x, y) => x[0] - y[0])[0]?.[1];
+    const here = nearTown(pts[0][0], 15000);
+    let wx = null;
+    if (here) for (const [p, dist] of pts) {
+      const t = nearTown(p, 3000);
+      if (t && t.name !== here.name && t.code !== here.code && t.code !== '---') { wx = { t, ahead: dist, from: here }; break; }
+    }
+    return { alerts, wx };
+  }
+  const aheadText = (a) => {
+    if (!a) return '';
+    const mi = (m) => (m < 0.15 * MI ? 'just ahead' : `${(m / MI).toFixed(1)} mi ahead`);
+    const lines = [];
+    const word = { closure: '✕ CLOSED', collision: '! CRASH', work: '△ WORK', other: '△ ALERT' };
+    if (a.alerts.length) {
+      const x = a.alerts[0];
+      lines.push(`ROUTE AHEAD: ${word[x.r.kind] || '△'} ${x.r.roadLabel || x.r.road || ''}${x.r.milepost ? ' MP ' + x.r.milepost : ''} · ${mi(x.ahead).toUpperCase()}` +
+        (a.alerts.length > 1 ? ` · +${a.alerts.length - 1} MORE` : ''));
+    } else lines.push('ROUTE AHEAD: NO ROAD ALERTS');
+    if (a.wx) lines.push(`WEATHER AHEAD: ${a.wx.t.code} AT ${a.wx.t.name.toUpperCase()} (${a.wx.t.temp}°) · ${mi(a.wx.ahead).toUpperCase()} · NOW ${a.wx.from.code}`);
+    return lines.join('\n');
+  };
+
+  // ---- riding a bus: with your location on (the ◎ button), if you move along with a bus for a few checks in a
+  // row (within about 60 m of it, both moving), you're on it: the map follows it, and it glows
+  let ridingId = null;
+  const rideHits = {};
+  let rideMiss = 0;
+  function checkRiding() {
+    const me = window.htMe;
+    if (!me || Date.now() - me.t > 20000 || TV) return;
+    const p = [me.lon, me.lat];
+    let near = null;
+    for (const mk of markers.values()) {
+      const b = mk._bus; if (!b || b.mph < 4) continue;
+      const ll = mk.getLngLat();
+      const d = Math.min(mx(p, [ll.lng, ll.lat]), mx(p, [b.lon, b.lat]));
+      if (d < 60 + Math.min(60, me.acc || 0) && (!near || d < near.d)) near = { id: b.id, d };
+    }
+    for (const k of Object.keys(rideHits)) if (k !== near?.id) rideHits[k] = 0;
+    if (near) rideHits[near.id] = (rideHits[near.id] || 0) + 1;
+    if (ridingId) {
+      if (near?.id === ridingId) rideMiss = 0; else if (++rideMiss >= 4) setRiding(null);
+    } else if (near && rideHits[near.id] >= 3) setRiding(near.id);
+  }
+  function setRiding(id) {
+    if (ridingId) markers.get(ridingId)?.getElement().classList.remove('riding');
+    ridingId = id; rideMiss = 0;
+    if (id) {
+      markers.get(id)?.getElement().classList.add('riding');
+      if (!follow || follow.id !== id) startFollow(id, null);
+    }
+    renderFollow();
+  }
+  setInterval(checkRiding, 2500);
+
   // the banner's big line: where it is with its stops, or that it's off its route (moving, but not along any
   // of its route's lines: a detour or a shortcut)
   const followStatus = (b) => (!b._snap && b.mph >= 2 ? { word: 'OFF ROUTE', name: 'Detour or shortcut' } : stopStatus(b));
@@ -234,10 +316,19 @@
         <button type="button" data-act="turn" ${chase ? 'hidden' : ''} aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
         <button type="button" data-act="chase" class="${chase ? 'on' : ''}" aria-label="${chase ? 'Leave the chase view' : 'Chase view: ride behind the bus'}">${chase ? '2D' : '3D'}</button>
         <button type="button" data-act="unfollow" aria-label="Stop following">✕</button></div>
+      ${ridingId === follow.id ? '<div class="fb-ride">◉ YOU\'RE ON THIS BUS</div>' : ''}
       ${st ? `<div class="fb-stop"><span class="fb-word">${st.word}</span>${esc(st.name.toUpperCase())}</div>` : ''}
       <div class="fb-sub">${follow.stop ? `${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}`
-        : b?.nextStop ? `DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}` : ''}${chase ? '<span class="fb-note">TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE</span>' : ''}</div>`;
+        : b?.nextStop ? `DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}` : ''}${chase ? '<span class="fb-note">TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE</span>' : ''}</div>
+      ${follow.ahead ? `<div class="fb-ahead">${follow.ahead.split('\n').map((l) => `<span class="${/^ROUTE AHEAD: NO/.test(l) ? 'ok' : /WEATHER/.test(l) ? 'wx' : 'warn'}">${esc(l)}</span>`).join('')}</div>` : ''}`;
   }
+  // recheck the route ahead every 10 s while following; redraw the banner only when it changes
+  setInterval(() => {
+    if (!follow) return;
+    const b = buses.find((x) => x.id === follow.id);
+    const text = aheadText(routeAhead(b));
+    if (text !== follow.ahead) { follow.ahead = text; renderFollow(); }
+  }, 10000);
   function renderBar() {
     if (!bar) return;
     markers.forEach((mk) => mk.getElement().classList.toggle('sel', !!mk._bus && (follow ? mk._bus.id === follow.id : busIdx >= 0 && mk._bus.id === routeBuses(picked)[busIdx]?.id)));
@@ -293,6 +384,7 @@
   function startFollow(id, stop) {
     const b = buses.find((x) => x.id === id); if (!b) return;
     follow = { id, route: busRoute(b), stop };
+    follow.ahead = aheadText(routeAhead(b));
     document.querySelectorAll('.maplibregl-popup').forEach((p) => p.remove());
     pickRoute(busRoute(b), { force: true });
     renderBar();
@@ -700,7 +792,8 @@
     }
   }
   requestAnimationFrame(glide);
-  window.htBusInternals = { markers, shapesByRoute, lineStops: (sh, rt) => lineStops(sh, rt) }; // for checking from the browser console
+  // for checking from the browser console
+  window.htBusInternals = { markers, shapesByRoute, lineStops: (sh, rt) => lineStops(sh, rt), nextDeparture: (id, rts) => nextDeparture(timesValue, id, rts) };
   // for checking from the browser console: how many moving buses are matched to a route line
   window.htBusDebug = () => { const bs = [...markers.values()].map((m) => m._bus).filter(Boolean);
     return { buses: bs.length, moving: bs.filter((b) => b.mph >= 2).length, onRoute: bs.filter((b) => b.mph >= 2 && b._snap).length, hidden: document.hidden,
@@ -737,7 +830,8 @@
     return best == null ? null : Math.round(best);
   }
   let times = null; // the timetable, read the first time someone opens a stop
-  const loadTimes = () => times ||= fetch('data/bus-times.json').then((x) => x.json()).catch(() => null);
+  let timesValue = null; // the same timetable once it's here, for code that can't wait for it
+  const loadTimes = () => times ||= fetch('data/bus-times.json').then((x) => x.json()).then((v) => (timesValue = v)).catch(() => null);
   const nowMin = () => { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); };
   // the rest of today's scheduled departures from a stop: [route, minutes after midnight, headed-to, days]
   function scheduled(t, stopId) {
@@ -754,6 +848,28 @@
       seen.add(k); return true;
     });
   }
+  // The next scheduled departure from a stop (or from anywhere, stopId null) after now, looking up to a week
+  // ahead (weekends and holidays have less or no service): { rt, min, h, days (0 today, 1 tomorrow...), date }
+  function nextDeparture(t, stopId, routes) {
+    if (!t?.stops) return null;
+    const now = new Date(), lists = stopId ? [t.stops[stopId] || []] : Object.values(t.stops);
+    for (let k = 0; k < 8; k++) {
+      const d = new Date(now); d.setDate(d.getDate() + k);
+      const ymd = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+      const dow = (d.getDay() + 6) % 7, after = k ? -1 : nowMin();
+      let best = null;
+      for (const list of lists) for (const [rt, min, h, svc] of list) {
+        if (min <= after || (best && min >= best.min) || (routes && !routes.includes(rt))) continue;
+        const s = t.svc[svc];
+        if (s && s.d[dow] === '1' && !(s.x || []).includes(ymd)) best = { rt, min, h, days: k, date: d };
+      }
+      if (best) return best;
+    }
+    return null;
+  }
+  const whenDay = (n) => n.days === 0 ? 'TODAY' : n.days === 1 ? 'TOMORROW' : n.date.toLocaleDateString([], { weekday: 'long' }).toUpperCase();
+  // "over for tonight" late in the day or when no buses are out; otherwise just "none left here today"
+  const overText = (allBuses) => (new Date().getHours() >= 18 || new Date().getHours() < 4 || !allBuses ? 'SERVICE IS OVER FOR TONIGHT' : 'NO MORE BUSES HERE TODAY');
   const clock = (min) => {
     const h = Math.floor(min / 60) % 24, m = String(min % 60).padStart(2, '0');
     return window.htClock24 ? `${String(h).padStart(2, '0')}:${m}` : `${(h % 12) || 12}:${m} ${h < 12 ? 'AM' : 'PM'}`;
@@ -798,8 +914,14 @@
     if (!t) table = '<div class="m">TIMETABLE UNAVAILABLE</div>';
     else if (only) {
       const rows = sched.filter(([rt]) => rt === only).slice(0, 14);
+      const n = rows.length ? null : nextDeparture(t, stop.id, [only]);
       table = rows.length ? rows.map(([rt, min, h]) => `<div class="stop-row">${chip(rt)}<span><b>${clock(min)}</b> → ${esc((t.heads[h] || '').toUpperCase())}</span></div>`).join('')
-        : `<div class="m">NO MORE ROUTE ${esc(only)} BUSES HERE TODAY</div>`;
+        : `<div class="m">NO MORE ROUTE ${esc(only)} BUSES HERE TODAY${n ? ` · NEXT ONE ${clock(n.min)} ${whenDay(n)}` : ''}</div>`;
+    } else if (!sched.length) {
+      // nothing more here today: say so, and when the next bus comes
+      const n = nextDeparture(t, stop.id);
+      table = `<div class="stop-over">${overText(buses.length)}</div>` + (n ? `<div class="stop-row">${chip(n.rt)}<span>NEXT BUS <b>${clock(n.min)} ${whenDay(n)}</b><br>
+        <span class="m">→ ${esc((t.heads[n.h] || '').toUpperCase())}</span></span></div>` : '');
     } else {
       // every route here, each with its next few times (so a route that runs twice a day isn't buried)
       table = stop.routes.map((rt) => {
@@ -825,7 +947,7 @@
   async function focusStop(id) {
     const f = stopsGeo?.features.find((x) => x.properties.id === id); if (!f) return;
     stopFocus = { id, name: f.properties.name, routes: String(f.properties.routes || '').split(' ').filter(Boolean), at: f.geometry.coordinates };
-    map.setFilter('bus-stop-focus', ['==', ['get', 'id'], id]);
+    try { map.setFilter('bus-stop-focus', ['==', ['get', 'id'], id]); } catch {} // (the map may still be loading)
     // one route at this stop: bring it up too
     const rts = [...new Set(stopFocus.routes.map((r) => r.replace(/P$/, '')))];
     if (rts.length === 1) pickRoute(rts[0], { bar: false });
@@ -999,6 +1121,13 @@
   }
   map.on('zoomend', groupBuses);
 
+  // no buses out: when the first ones come back (from the timetable; it loads the first time it's needed)
+  function serviceOverItem() {
+    if (!times) { loadTimes().then(() => renderList()); return '<li class="empty">NO BUSES REPORTING RIGHT NOW</li>'; }
+    const n = timesValue && nextDeparture(timesValue, null);
+    const late = new Date().getHours() >= 18 || new Date().getHours() < 4;
+    return `<li class="empty">${late ? 'SERVICE IS OVER FOR TONIGHT' : 'NO BUSES REPORTING RIGHT NOW'}${n ? `<br>FIRST BUSES ${clock(n.min)} ${whenDay(n)}` : ''}</li>`;
+  }
   function renderList() {
     const box = $('#busBox');
     if (!box) return;
@@ -1013,7 +1142,7 @@
     box.innerHTML = items.join('') + (active.length ? active.map((r) => `<li class="clickable" data-route="${esc(short(r.name))}" style="border-left-color:${esc(r.color)}">
         <div class="t"><span class="bus-no" style="background:${esc(r.color)}">${esc(short(r.name))}</span> ${esc(long(r.name).toUpperCase())}</div>
         <div class="m">${counts[r.id] || 0} BUS${(counts[r.id] || 0) === 1 ? '' : 'ES'} OUT · TAP TO SHOW</div></li>`).join('')
-      : `<li class="empty">${RELAY ? 'NO BUSES REPORTING RIGHT NOW' : 'LIVE BUSES NEED THE RELAY'}</li>`);
+      : !RELAY ? '<li class="empty">LIVE BUSES NEED THE RELAY</li>' : serviceOverItem());
     window.htTicker = window.htTicker || {};
     window.htTicker.bus = [...(siteAlerts?.alerts || []).map((a) => `${a.route ? 'Route ' + a.route + ': ' : ''}${a.text}`), ...notices].join(' · ');
     window.htTickerRefresh?.();
