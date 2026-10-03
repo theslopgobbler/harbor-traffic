@@ -209,6 +209,9 @@
     }
     return best ? 'ON ' + (window.htShortStreet ? window.htShortStreet(best.name) : best.name.toUpperCase()) : null;
   }
+  // the banner's big line: where it is with its stops, or that it's off its route (moving, but not along any
+  // of its route's lines: a detour or a shortcut)
+  const followStatus = (b) => (!b._snap && b.mph >= 2 ? { word: 'OFF ROUTE', name: 'Detour or shortcut' } : stopStatus(b));
   // following: a see-through banner across the top of the map (under the instruments, clear of + and -), big
   // enough to read at a glance; the bottom bar is only for picking routes
   const followBar = $('#followBar');
@@ -223,7 +226,7 @@
     followBar.style.left = !phone() && tools ? `${Math.round(tools.getBoundingClientRect().right - map.getContainer().getBoundingClientRect().left + 14)}px` : '';
     const b = buses.find((x) => x.id === follow.id);
     const rt = b ? busRoute(b) : follow.route;
-    const st = b ? stopStatus(b) : null;
+    const st = b ? followStatus(b) : null;
     follow.status = st ? st.word + st.name : '';
     const eta = b && follow.stop ? etaTo(b, follow.stop) : null;
     followBar.innerHTML = `<div class="fb-top"><span class="bus-no big" style="background:${esc(routeColor(rt))}">${esc(rt)}</span>
@@ -562,12 +565,14 @@
   // its route line at its last speed, four times a second, for a little while. A stopped bus stays put.
   const bearing = (a, b) => (Math.atan2((b[0] - a[0]) * 0.68, b[1] - a[1]) * 180 / Math.PI + 360) % 360;
   const diff = (a, b) => Math.abs(((a - b + 540) % 360) - 180);
-  function snap(b, routeNo) {
+  // a bus counts as on its route line within 60 m of it (radius). Farther than that it's on a detour or a
+  // shortcut, and is drawn going its own way (its GPS heading) until it's back.
+  function snap(b, routeNo, radius = 60) {
     let best = null;
     for (const sh of shapesByRoute[routeNo] || []) {
       for (let i = 0; i < sh.c.length - 1; i++) {
         const dist = mx([b.lon, b.lat], sh.c[i]);
-        if (dist > 250 || (best && dist >= best.dist)) continue;
+        if (dist > radius || (best && dist >= best.dist)) continue;
         if (diff(bearing(sh.c[i], sh.c[i + 1]), b.heading || 0) > 90) continue; // going the right way along it
         best = { sh, i, dist };
       }
@@ -686,7 +691,7 @@
       lastFollow = t; signalTurn();
       // the banner's stop line changes as the bus reaches, stops at and leaves each stop
       if (follow) {
-        const mk = markers.get(follow.id), b = mk?._bus, st = b ? stopStatus(b) : null;
+        const mk = markers.get(follow.id), b = mk?._bus, st = b ? followStatus(b) : null;
         // and the street it's on, once a second (keeping the last one through a gap, like an intersection)
         let street = follow.street;
         if (mk && t - (follow.streetAt || 0) > 1000) { follow.streetAt = t; street = streetOf(mk) || follow.street; }
@@ -918,12 +923,16 @@
       // where the report is on its route line: on the line it's already drawn on when it's still on it
       // (so it carries on smoothly), otherwise the best match among its route's lines
       const prev = mk._bus, rt = short(r.name);
+      // off its route last time: it has to come back within 40 m to count as on it again (not just 60), so a
+      // bus running along a street next to its route doesn't flicker on and off the line
+      const wasOff = prev && prev.route === b.route && !prev._snap && prev.mph >= 2;
+      const reach = wasOff ? 40 : 60;
       let sn = null;
       if (mk._sh && prev && prev.route === b.route) {
-        const o = onLine(mk._sh, [b.lon, b.lat], mk._s, b.mph >= 2 ? b.heading : null);
+        const o = onLine(mk._sh, [b.lon, b.lat], mk._s, b.mph >= 2 ? b.heading : null, reach);
         if (o) sn = { sh: mk._sh, i: o.i, dist: o.dist };
       }
-      b._snap = sn || snap(b, rt);
+      b._snap = sn || snap(b, rt, reach);
       b._obs = b._snap ? b._snap.sh.d[b._snap.i] : undefined;
       b._fork = b._snap ? forkAhead(b, rt) : undefined;
       if (window.htTrace && follow?.id === b.id) window.htTrace.push({ t: Date.now(), same: !!sn, newLine: b._snap?.sh !== mk._sh, obs: Math.round(b._obs), drawn: Math.round(mk._s), mph: Math.round(b.mph) });
