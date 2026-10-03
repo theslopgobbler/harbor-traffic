@@ -1,7 +1,19 @@
 {
-  "updated": "2026-10-03T01:22:34.5142581+00:00",
+  "updated": "2026-10-03T01:41:56.4534065+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 366954430,
+      "name": "CAPT RYAN",
+      "lat": 46.69071,
+      "lon": -124.31425,
+      "sog": 8.3,
+      "cog": 346.8,
+      "heading": 340,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T22:57:53.4653283+00:00"
+    },
     {
       "mmsi": 368481650,
       "name": "RED BLUFF",
@@ -11,6 +23,31 @@
       "cog": 341.7,
       "status": 11,
       "classB": false,
+      "seen": "2026-10-03T01:22:34.5142581+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "lat": 46.4165,
+      "lon": -124.14587,
+      "sog": 9.9,
+      "cog": 172.9,
+      "heading": 175,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T23:44:38.0559883+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27
+    },
+    {
+      "mmsi": 368143540,
+      "lat": 46.90624,
+      "lon": -124.10555,
+      "sog": 0,
+      "cog": 118.3,
+      "classB": true,
       "seen": "2026-10-03T01:22:34.5142581+00:00"
     },
     {
@@ -28,43 +65,6 @@
       "dest": "GRAYS HARBOR",
       "callsign": "WDE2412",
       "lengthM": 20
-    },
-    {
-      "mmsi": 368143540,
-      "lat": 46.90624,
-      "lon": -124.10555,
-      "sog": 0,
-      "cog": 118.3,
-      "classB": true,
-      "seen": "2026-10-03T01:22:34.5142581+00:00"
-    },
-    {
-      "mmsi": 366954430,
-      "name": "CAPT RYAN",
-      "lat": 46.69071,
-      "lon": -124.31425,
-      "sog": 8.3,
-      "cog": 346.8,
-      "heading": 340,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T22:57:53.4653283+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "lat": 46.4165,
-      "lon": -124.14587,
-      "sog": 9.9,
-      "cog": 172.9,
-      "heading": 175,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T23:44:38.0559883+00:00",
-      "name": "JAMES T",
-      "type": 52,
-      "dest": "USLOG",
-      "callsign": "WDD9378",
-      "lengthM": 27
     }
   ]
 }
