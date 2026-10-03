@@ -1,22 +1,7 @@
 {
-  "updated": "2026-10-03T08:55:26.7964645+00:00",
+  "updated": "2026-10-03T09:12:47.8935033+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367324840,
-      "type": 31,
-      "dest": "GRAYS HARBOR",
-      "callsign": "WDE2412",
-      "lengthM": 20,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97853,
-      "lon": -123.88362,
-      "sog": 0,
-      "cog": 279.3,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-03T06:04:26.7620178+00:00"
-    },
     {
       "mmsi": 367999310,
       "lat": 46.68329,
@@ -25,6 +10,18 @@
       "cog": 35.9,
       "classB": true,
       "seen": "2026-10-03T08:19:26.4524723+00:00"
+    },
+    {
+      "mmsi": 366887950,
+      "name": "TITAN",
+      "lat": 46.48838,
+      "lon": -124.395,
+      "sog": 13.7,
+      "cog": 155,
+      "heading": 154,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-03T09:12:47.8935033+00:00"
     }
   ]
 }

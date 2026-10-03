@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-03T08:55:26.7964645+00:00",
+  "updated": "2026-10-03T09:12:47.8935033+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ac7cba",
-      "flight": "SWA3046",
-      "reg": "N9030S",
-      "type": null,
-      "cat": "A3",
-      "alt": 14600,
-      "gs": 369.1,
-      "track": 358.6,
-      "rate": -2240,
-      "lat": 46.69995,
-      "lon": -122.73596,
-      "squawk": "0756",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
