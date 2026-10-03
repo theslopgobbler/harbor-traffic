@@ -159,7 +159,12 @@
       const r = await fetch(`${relay}/bus-stats?days=${busDays}`, { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
       if (!r.ok) { $('#busMsg').textContent = r.status === 404 ? 'DEPLOY THE UPDATED RELAY TO SEE THESE' : (await r.text()).toUpperCase(); $('#busOut').hidden = true; return; }
       const j = await r.json();
-      $('#busMsg').textContent = j.first?.n ? '' : 'NOTHING LOGGED YET: THE RELAY LOGS ONCE A MINUTE ONCE ITS CRON TRIGGER IS ON.';
+      // two kinds of records: position checks (every minute for each moving bus) show the timer is running;
+      // lateness records only come when a bus passes one of its timed stops, which takes a while
+      const checks = j.off.reduce((a, x) => a + (x.samples || 0), 0);
+      $('#busMsg').textContent = j.first?.n ? ''
+        : checks ? `LOGGING: ${checks} BUS POSITION CHECKS SO FAR. LATENESS SHOWS UP ONCE BUSES START PASSING THEIR TIMED STOPS (USUALLY WITHIN AN HOUR WHILE BUSES ARE RUNNING).`
+        : 'NOTHING LOGGED YET. THE RELAY CHECKS ONCE A MINUTE WHILE BUSES ARE RUNNING; IF BUSES ARE OUT AND THIS STAYS EMPTY FOR 10 MINUTES, THE CRON TRIGGER ISN\'T FIRING.';
       $('#busOut').hidden = false;
       const sum = (k) => j.byRoute.reduce((a, x) => a + (x[k] || 0), 0);
       const n = sum('n'), on = sum('ontime');
