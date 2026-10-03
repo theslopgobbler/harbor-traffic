@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T05:41:36.1878702+00:00",
+  "updated": "2026-10-03T06:04:26.7620178+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -813,6 +813,27 @@
       ]
     },
     {
+      "id": 717607,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on I-5 southbound from milepost 114 near Mccallister Creek to milepost 109 near Martin Way E beginning at 7:02 pm on October 2, 2026 until about 7:00 am on October 3, 2026.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 114.0,
+      "lat": 47.047539731,
+      "lon": -122.82110125,
+      "lat2": 47.047539731,
+      "lon2": -122.82110125,
+      "county": "Thurston",
+      "start": "2026-10-03T02:02:00.0000000+00:00",
+      "end": "2026-10-03T14:00:00.0000000+00:00",
+      "updated": "2026-10-03T02:03:56.0970000+00:00"
+    },
+    {
       "id": 584226,
       "kind": "work",
       "category": "Construction",
@@ -866,27 +887,6 @@
           47.88238
         ]
       ]
-    },
-    {
-      "id": 717607,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on I-5 southbound from milepost 114 near Mccallister Creek to milepost 109 near Martin Way E beginning at 7:02 pm on October 2, 2026 until about 7:00 am on October 3, 2026.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 114.0,
-      "lat": 47.047539731,
-      "lon": -122.82110125,
-      "lat2": 47.047539731,
-      "lon2": -122.82110125,
-      "county": "Thurston",
-      "start": "2026-10-03T02:02:00.0000000+00:00",
-      "end": "2026-10-03T14:00:00.0000000+00:00",
-      "updated": "2026-10-03T02:03:56.0970000+00:00"
     },
     {
       "id": 712872,
