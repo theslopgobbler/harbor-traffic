@@ -1,5 +1,38 @@
 {
-  "updated": "2026-10-03T11:00:12.6610371+00:00",
+  "updated": "2026-10-03T14:32:05.0908516+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ada0fc",
+      "flight": "N9777J",
+      "reg": "N9777J",
+      "type": "P28A",
+      "cat": "A1",
+      "alt": 3800,
+      "gs": 104.1,
+      "track": 193.9,
+      "rate": null,
+      "lat": 47.28329,
+      "lon": -122.85405,
+      "squawk": "0213",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a29908",
+      "flight": "ASA427",
+      "reg": "N267AK",
+      "type": "B739",
+      "cat": "A3",
+      "alt": 13325,
+      "gs": 350.1,
+      "track": 358.53,
+      "rate": -1920,
+      "lat": 46.73346,
+      "lon": -122.73738,
+      "squawk": "4644",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
