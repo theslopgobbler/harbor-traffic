@@ -64,6 +64,34 @@
       <thead><tr><th>DAY</th><th>VISITS</th><th class="bar"></th><th>MOST AT ONCE</th><th>TV</th><th>PHONE</th><th>DESKTOP</th></tr></thead>
       <tbody id="days"></tbody>
     </table>
+    <!-- Grays Harbor Transit, as logged by the relay once a minute -->
+    <section id="busSec">
+      <h1 style="margin-top:36px">BUSES · GRAYS HARBOR TRANSIT</h1>
+      <form id="busDaysForm" style="margin-bottom:8px">
+        <span class="l" style="align-self:center;color:var(--dim);font-size:11px">LAST</span>
+        <button type="button" data-days="1">1 DAY</button><button type="button" data-days="7">7 DAYS</button><button type="button" data-days="30">30 DAYS</button>
+      </form>
+      <div class="msg" id="busMsg"></div>
+      <div id="busOut" hidden>
+        <div class="grid">
+          <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s">0 TO 5 MIN LATE</div></div>
+          <div class="box"><div class="l">AVERAGE</div><div class="v" id="bAvg">–</div><div class="s">MIN LATE AT TIMED STOPS</div></div>
+          <div class="box"><div class="l">STOPS LOGGED</div><div class="v" id="bN">–</div><div class="s" id="bSince"></div></div>
+        </div>
+        <h2>BY ROUTE</h2>
+        <table><thead><tr><th>ROUTE</th><th>STOPS</th><th>ON TIME</th><th>LATE 5+</th><th>EARLY</th><th>AVG MIN</th><th>OFF ROUTE</th></tr></thead><tbody id="bRoutes"></tbody></table>
+        <h2>HOW LATE, BY HOUR OF DAY</h2>
+        <table><tbody id="bHours"></tbody></table>
+        <h2>LATEST STOPS</h2>
+        <table><thead><tr><th>STOP</th><th>ROUTE</th><th>TIMES</th><th>AVG MIN LATE</th></tr></thead><tbody id="bStops"></tbody></table>
+        <h2>WHERE BUSES LEAVE THEIR ROUTES</h2>
+        <table><thead><tr><th>ROUTE</th><th>TIMES SEEN</th><th>DAYS</th><th>BUSES</th><th>MAP</th></tr></thead><tbody id="bSpots"></tbody></table>
+        <p class="note">On time = passing a timed stop 0 to 5 minutes after its scheduled time (the tracker's "next stop" switching to the
+          stop after). Off route = a moving bus more than about a block from its route's line, checked once a minute. Off-route spots
+          seen on several days are shortcuts or standing detours; one-day spots are usually a one-off detour or the tracker
+          listing a bus on the wrong route.</p>
+      </div>
+    </section>
     <section id="site">
       <h1 style="margin-top:36px">HARBOR EVENTS · <a href="https://harborevents.org/" target="_blank" rel="noopener">HARBOREVENTS.ORG</a></h1>
       <div class="msg" id="siteMsg"></div>
@@ -118,8 +146,44 @@
       $('#days').innerHTML = j.days.map((d) => `<tr><td>${day(d.day)}</td><td>${d.opens}</td><td class="bar"><i style="width:${(d.opens / max) * 100}%"></i></td>
         <td>${d.peak}</td><td>${d.tv}</td><td>${d.phone}</td><td>${d.desktop}</td></tr>`).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
+    loadBuses();
     loadSite();
   }
+  // buses: on time and off route (logged by the relay)
+  let busDays = 7;
+  const hr = (h) => `${(h % 12) || 12} ${h < 12 ? 'AM' : 'PM'}`;
+  async function loadBuses() {
+    if (!key || $('#out').hidden) return;
+    document.querySelectorAll('#busDaysForm button').forEach((b) => b.style.background = +b.dataset.days === busDays ? 'rgba(0,229,255,.3)' : '');
+    try {
+      const r = await fetch(`${relay}/bus-stats?days=${busDays}`, { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
+      if (!r.ok) { $('#busMsg').textContent = r.status === 404 ? 'DEPLOY THE UPDATED RELAY TO SEE THESE' : (await r.text()).toUpperCase(); $('#busOut').hidden = true; return; }
+      const j = await r.json();
+      $('#busMsg').textContent = j.first?.n ? '' : 'NOTHING LOGGED YET: THE RELAY LOGS ONCE A MINUTE ONCE ITS CRON TRIGGER IS ON.';
+      $('#busOut').hidden = false;
+      const sum = (k) => j.byRoute.reduce((a, x) => a + (x[k] || 0), 0);
+      const n = sum('n'), on = sum('ontime');
+      $('#bOn').textContent = n ? `${Math.round(on / n * 100)}%` : '–';
+      $('#bAvg').textContent = n ? (j.byRoute.reduce((a, x) => a + x.avg * x.n, 0) / n).toFixed(1) : '–';
+      $('#bN').textContent = n;
+      $('#bSince').textContent = j.first?.first ? `LOGGING SINCE ${day(j.first.first)}` : '';
+      const off = Object.fromEntries(j.off.map((x) => [x.route, x]));
+      const routes = [...new Set([...j.byRoute.map((x) => x.route), ...j.off.map((x) => x.route)])].sort((a, b) => parseInt(a) - parseInt(b) || a.localeCompare(b));
+      const pct = (a, b) => b ? `${Math.round(a / b * 100)}%` : '–';
+      $('#bRoutes').innerHTML = routes.map((rt) => { const x = j.byRoute.find((y) => y.route === rt) || {}, o = off[rt];
+        return `<tr><td>${esc(rt)}</td><td>${x.n || 0}</td><td>${pct(x.ontime, x.n)}</td><td>${pct(x.late, x.n)}</td><td>${pct(x.early, x.n)}</td>
+          <td>${x.avg ?? '–'}</td><td>${o ? pct(o.off, o.samples) : '–'}</td></tr>`; }).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
+      const hmax = Math.max(1, ...j.byHour.map((h) => Math.max(0, h.avg)));
+      $('#bHours').innerHTML = j.byHour.map((h) => `<tr><td>${hr(h.h)}</td><td>${h.avg} MIN</td><td class="bar"><i style="width:${Math.max(0, h.avg) / hmax * 100}%"></i></td><td>${h.n} STOPS</td></tr>`).join('')
+        || '<tr><td>NOTHING YET</td></tr>';
+      $('#bStops').innerHTML = j.stops.map((s) => `<tr><td>${esc(s.stop).toUpperCase()}</td><td>${esc(s.route)}</td><td>${s.n}</td><td>${s.avg}</td></tr>`).join('')
+        || '<tr><td colspan="4">NEEDS A FEW DAYS OF LOGGING</td></tr>';
+      $('#bSpots').innerHTML = j.spots.map((s) => `<tr><td>${esc(s.route)}</td><td>${s.n}</td><td>${s.days}</td><td>${s.buses}</td>
+        <td><a href="./?at=${s.lon.toFixed(4)},${s.lat.toFixed(4)},16" target="_blank" rel="noopener">SEE IT ▸</a></td></tr>`).join('')
+        || '<tr><td colspan="5">NONE YET</td></tr>';
+    } catch (e) { $('#busMsg').textContent = 'CAN\'T LOAD BUS STATS RIGHT NOW'; }
+  }
+  $('#busDaysForm').addEventListener('click', (e) => { const b = e.target.closest('button[data-days]'); if (b) { busDays = +b.dataset.days; loadBuses(); } });
   // harborevents.org (Umami Cloud, via the relay, which caches it for 5 minutes)
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const dur = (s) => s >= 60 ? `${Math.floor(s / 60)}M ${String(s % 60).padStart(2, '0')}S` : `${s}S`;

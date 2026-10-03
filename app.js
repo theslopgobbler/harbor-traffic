@@ -249,6 +249,10 @@
     return { top: p, left: p, right: p, bottom: Math.min(mapBox.height * 0.6, covered + p) };
   };
   window.htFitPad = fitPad;
+  // for the bus banner's "route ahead": current road alerts, and the weather town by town
+  window.htRoads = () => state.roads;
+  window.htTownWx = () => C.towns.filter((t) => state.wx[t.id]?.f).map((t) => ({ name: t.name, lon: t.lon, lat: t.lat,
+    code: wxCode(state.wx[t.id].f), temp: state.wx[t.id].temp, f: state.wx[t.id].f }));
   const popup = (html) => new maplibregl.Popup({ offset: 16, maxWidth: '320px' }).setHTML(html);
   // if an open popup runs off the map (or under the phone's bottom sheet and buttons), slide the map so it all shows
   function keepInView(p) {
@@ -352,6 +356,9 @@
   }
   map.once('load', () => {
     showRegion(region, false);
+    // ?at=lon,lat,zoom (the stats page links to off-route spots this way)
+    const at = (qs.get('at') || '').split(',').map(Number);
+    if (at.length >= 2 && at.every((v) => !isNaN(v))) map.jumpTo({ center: [at[0], at[1]], zoom: at[2] || 16 });
     const secs = qs.has('cycle') ? +qs.get('cycle') : 10;
     if (TV && secs > 0 && !qs.has('region')) {
       cycleMs = Math.max(5, secs) * 1000;
@@ -1138,6 +1145,8 @@
     let first = true;
     navigator.geolocation.watchPosition((p) => {
       state.me = { lat: p.coords.latitude, lon: p.coords.longitude };
+      // for bus.js: am I riding a bus? (position, speed in m/s if the phone knows it, and when)
+      window.htMe = { lat: p.coords.latitude, lon: p.coords.longitude, speed: p.coords.speed, acc: p.coords.accuracy, t: Date.now() };
       if (!meMarker) meMarker = new maplibregl.Marker({ element: meEl }).setLngLat([state.me.lon, state.me.lat]).addTo(map);
       else meMarker.setLngLat([state.me.lon, state.me.lat]);
       // while driving, GPS course is steadier than the compass

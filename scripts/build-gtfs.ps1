@@ -222,6 +222,26 @@ $utf8 = New-Object System.Text.UTF8Encoding($false)
 [IO.File]::WriteAllText((Join-Path $dataDir 'bus-routes.json'), ([ordered]@{ type = 'FeatureCollection'; updated = [DateTimeOffset]::UtcNow.ToString('o'); features = @($features) } | ConvertTo-Json -Depth 8 -Compress), $utf8)
 # the street paths, kept for next time (only the ones still in use)
 Save-Snaps $snapUsed
+# data/route-cells.json: which ~55 m squares each route's lines pass through, so the relay can tell cheaply when
+# a bus is off its route (it logs those spots for the stats page). Square = floor(lat / 0.0005), floor(lon / 0.00073).
+$cellsByRoute = @{}
+foreach ($f in @($features)) {
+    $rt = $f.properties.route -replace 'P$', ''
+    if (-not $cellsByRoute[$rt]) { $cellsByRoute[$rt] = New-Object System.Collections.Generic.HashSet[string] }
+    $set = $cellsByRoute[$rt]; $cs = $f.geometry.coordinates
+    for ($i = 0; $i -lt $cs.Count; $i++) {
+        $a = $cs[$i]; [void]$set.Add("$([math]::Floor($a[1] / 0.0005)),$([math]::Floor($a[0] / 0.00073))")
+        if ($i -lt $cs.Count - 1) {
+            $b = $cs[$i + 1]; $steps = [math]::Ceiling((Get-M $a $b) / 20)
+            for ($k = 1; $k -lt $steps; $k++) {
+                $lon = $a[0] + ($b[0] - $a[0]) * $k / $steps; $lat = $a[1] + ($b[1] - $a[1]) * $k / $steps
+                [void]$set.Add("$([math]::Floor($lat / 0.0005)),$([math]::Floor($lon / 0.00073))")
+            }
+        }
+    }
+}
+$cellJson = foreach ($rt in $cellsByRoute.Keys) { "`"$rt`":[" + ((@($cellsByRoute[$rt]) | ForEach-Object { "`"$_`"" }) -join ',') + ']' }
+[IO.File]::WriteAllText((Join-Path $dataDir 'route-cells.json'), "{`"lat`":0.0005,`"lon`":0.00073,`"routes`":{$($cellJson -join ',')}}", $utf8)
 [IO.File]::WriteAllText((Join-Path $dataDir 'bus-stops.json'), ([ordered]@{ type = 'FeatureCollection'; features = @($stops) } | ConvertTo-Json -Depth 6 -Compress), $utf8)
 # data/bus-times.json: every scheduled departure from every stop, read when someone opens a stop
 # (written by hand: ConvertTo-Json in Windows PowerShell wraps sorted arrays as {"value":...,"Count":...})

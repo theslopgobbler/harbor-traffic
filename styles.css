@@ -175,7 +175,7 @@ body.chase .tool { -webkit-backdrop-filter: none !important; backdrop-filter: no
 body.chase .hud { background: none; } /* the scanlines and grid over the whole map: one less full-screen layer */
 /* following a bus: a see-through banner across the top of the map, left of the zoom buttons */
 /* (desktop: starts right of the column of map buttons on the left; phones: full width, see below) */
-.follow-bar { position: absolute; top: 20px; left: 160px; right: 60px; z-index: 3; max-width: 640px; padding: 6px 8px 7px;
+.follow-bar { position: absolute; top: 20px; left: 160px; right: 60px; z-index: 3; padding: 6px 8px 7px;
   background: rgba(2,8,7,.66); border: 1px solid rgba(0,229,255,.45); /* no blur: a blur over a moving map is costly for phones */
   box-shadow: 0 0 10px rgba(0,229,255,.18); font: 12px/1.3 var(--mono); letter-spacing: .08em; color: var(--text); }
 .follow-bar[hidden] { display: none; }
@@ -193,6 +193,17 @@ body.chase .hud { background: none; } /* the scanlines and grid over the whole m
 .fb-sub { margin-top: 3px; font-size: 11px; color: var(--dim); }
 .fb-sub:empty { display: none; }
 .fb-note { display: block; font-size: 9px; margin-top: 2px; }
+/* riding: a line saying so, and the bus itself glowing and pulsing on the map */
+.fb-ride { margin-top: 5px; font: 600 12px/1.2 var(--disp); color: var(--green); letter-spacing: .14em; text-shadow: 0 0 6px rgba(57,255,136,.6); }
+.bus-mk.riding .ic, .bus-mk.riding .sprite { filter: drop-shadow(0 0 4px #39ff88) drop-shadow(0 0 10px #39ff88) !important; }
+.bus-mk.riding::before { content: ""; position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%;
+  border: 2px solid #39ff88; box-shadow: 0 0 10px #39ff88; animation: ridepulse 1.6s ease-out infinite; pointer-events: none; }
+@keyframes ridepulse { from { transform: scale(.6); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
+/* what's ahead on its route: road alerts and a weather change */
+.fb-ahead { margin-top: 5px; display: flex; flex-direction: column; gap: 1px; font-size: 11px; letter-spacing: .08em; }
+.fb-ahead .ok { color: var(--dim); }
+.fb-ahead .warn { color: var(--amber); }
+.fb-ahead .wx { color: var(--cyan); }
 body.following .region-name { display: none; }
 /* the route bar at the bottom is see-through too */
 .bus-bar { background: rgba(2,8,7,.66) !important; }
@@ -223,6 +234,7 @@ body.chase .map-wrap::after { content: ""; position: absolute; left: 0; right: 0
 .stop-row { display: flex; align-items: center; gap: 4px; padding: 3px 0; font-size: 11px; }
 .stop-row > span:not(.bus-no) { flex: 1; }
 .stop-row b { color: var(--text); }
+.stop-over { margin: 2px 0 4px; font: 600 12px/1.3 var(--disp); color: #c28bff; letter-spacing: .12em; }
 .stop-rts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 3px; }
 .stop-rts .m { margin-right: 2px; }
 button.stop-rt { border: 1px solid transparent; font: 700 11px/18px var(--mono); cursor: pointer; margin: 0; }
