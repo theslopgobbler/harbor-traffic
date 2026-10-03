@@ -1,23 +1,7 @@
 {
-  "updated": "2026-10-02T23:56:31.3411523+00:00",
+  "updated": "2026-10-03T00:18:53.2269884+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367310520,
-      "lat": 46.4165,
-      "lon": -124.14587,
-      "sog": 9.9,
-      "cog": 172.9,
-      "heading": 175,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-02T23:44:38.0559883+00:00",
-      "name": "JAMES T",
-      "type": 52,
-      "dest": "USLOG",
-      "callsign": "WDD9378",
-      "lengthM": 27
-    },
     {
       "mmsi": 367324840,
       "type": 31,
@@ -45,6 +29,22 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-02T22:57:53.4653283+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "lat": 46.4165,
+      "lon": -124.14587,
+      "sog": 9.9,
+      "cog": 172.9,
+      "heading": 175,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-02T23:44:38.0559883+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27
     },
     {
       "mmsi": 368481650,
