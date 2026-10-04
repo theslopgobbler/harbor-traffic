@@ -1,5 +1,18 @@
 {
-  "updated": "2026-10-04T22:32:05.2215624+00:00",
+  "updated": "2026-10-04T22:49:40.2639394+00:00",
   "source": "AIS via aisstream.io",
-  "ships": []
+  "ships": [
+    {
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92612,
+      "lon": -124.08898,
+      "sog": 0.1,
+      "cog": 40.7,
+      "heading": 295,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-04T22:49:40.2639394+00:00"
+    }
+  ]
 }
