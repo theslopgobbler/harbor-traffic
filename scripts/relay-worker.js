@@ -4,7 +4,9 @@
 //   GET /debug     which feeds answered last and why any didn't
 //   GET /hello     an open dashboard page checking in (count.js), for the viewer count
 //   GET /viewers   the viewer count and daily totals (stats.html; needs the X-Stats-Key header to match STATS_KEY)
-//   GET /bus-stats bus on-time and off-route stats (stats.html; same key). Logged once a minute by a Cron Trigger.
+//   GET /bus-stats bus on-time and off-route stats (stats.html; same key). Logged once a minute by a Cron Trigger,
+//                  every 20 s while someone's watching
+//   GET /bus-export the raw bus logs as CSV (same key): ?table=positions|departures|weather_obs|road_alerts&days=30
 //   GET /site-stats harborevents.org visit stats from Umami Cloud (stats.html; same X-Stats-Key): the private
 //                  share link (UMAMI_SHARE_URL secret), plus a numbers summary if UMAMI_API_KEY (paid plan) is set
 // It only ever fetches those fixed lists (it's not an open proxy), answers only the dashboard's own site, and
@@ -111,29 +113,45 @@ async function refreshBuses() {
     } catch { /* no notices this time */ }
     const at = Date.now();
     bus = { at, body: JSON.stringify({ routes: routes.map(({ id, color, name, next }) => ({ id, color, name, active: next.length })), buses, notices, at: new Date(at).toISOString() }) };
-    lastBus = { buses, routeName: Object.fromEntries(routes.map((r) => [r.id, r.name])) };
+    lastBus = { buses, routeName: Object.fromEntries(routes.map((r) => [r.id, r.name])), routeIds: routes.map((r) => r.id) };
     busReport = `buses: OK, ${routes.length} routes, ${buses.length} buses`;
   } catch (e) { busReport = `buses: ${e.message}`; }
 }
 
-// ---- bus log, for the stats page (same D1 database). Once a minute (a Cron Trigger on this Worker) the relay
-// reads the buses and notes:
-//   * lateness: the tracker lists each bus's next scheduled stop and time; when that switches to a later stop,
-//     the bus has just passed the earlier one, so how late it was = now minus that stop's scheduled time
-//   * how often each route's buses are off their route lines, and where (data/route-cells.json says which
-//     ~55 m squares each route uses; a moving bus more than about one square from them is off route)
-// It's the same public information the tracker shows; nothing about riders.
-let lastBus = null;
+// ---- bus log, for the stats page and for rebuilding the routes from where buses really drive (same D1 database).
+// Every bus position is kept: every 20 s while someone has the map open, once a minute otherwise (a Cron Trigger on
+// this Worker), with whether it was on its route's line (data/route-cells.json says which ~55 m squares each route
+// uses; a moving bus more than about one square away is off route).
+// Lateness comes from GPS: GHT's tracker publishes each route's timed stops (where, and when buses leave them). When
+// a bus's track passes within 80 m of one, the last moment it's there is when it left; minus the scheduled time =
+// how late. Each one also notes the conditions then: the weather at the nearest weather station (NWS), and any
+// WSDOT road alert within 1.5 km of the stop. Weather and road alerts are logged on their own too, every 10 minutes.
+// It's the same public information the tracker, NWS and WSDOT show; nothing about riders. Nothing is deleted
+// (except once: version 2 wiped the first day's numbers, from a method that could make late buses look on time).
+let lastBus = null, lastLogAt = 0;
+const prevPos = {}; // bus -> { lat, lon, t, route }: its last logged position, to see which stops it passed since
+const BUS_SCHEMA = '2';
 let busTablesReady = false;
 async function busTables(db) {
   if (busTablesReady) return;
+  await db.prepare('CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)').run();
+  const ver = (await db.prepare("SELECT v FROM meta WHERE k = 'bus_schema'").first())?.v;
+  if (ver !== BUS_SCHEMA) {
+    // a fresh start: the earlier lateness method followed the tracker's schedule, not the buses
+    await db.batch(['arrivals', 'bus_seen', 'offroute', 'route_day', 'departures', 'positions', 'weather_obs', 'road_alerts']
+      .map((t) => db.prepare(`DROP TABLE IF EXISTS ${t}`)));
+  }
   await db.batch([
-    db.prepare('CREATE TABLE IF NOT EXISTS bus_seen (bus TEXT PRIMARY KEY, route TEXT, stop TEXT, sched TEXT, t INTEGER)'),
-    db.prepare('CREATE TABLE IF NOT EXISTS arrivals (day TEXT, t INTEGER, route TEXT, bus TEXT, stop TEXT, sched_min INTEGER, actual_min INTEGER, delay INTEGER)'),
-    db.prepare('CREATE INDEX IF NOT EXISTS arrivals_day ON arrivals(day)'),
-    db.prepare('CREATE TABLE IF NOT EXISTS offroute (day TEXT, t INTEGER, route TEXT, bus TEXT, lat REAL, lon REAL, heading INTEGER, mph INTEGER)'),
-    db.prepare('CREATE INDEX IF NOT EXISTS offroute_day ON offroute(day)'),
-    db.prepare('CREATE TABLE IF NOT EXISTS route_day (day TEXT, route TEXT, samples INTEGER DEFAULT 0, off INTEGER DEFAULT 0, PRIMARY KEY (day, route))')
+    db.prepare(`CREATE TABLE IF NOT EXISTS departures (day TEXT, t INTEGER, route TEXT, bus TEXT, stop TEXT, sched_min INTEGER, actual_min INTEGER,
+      delay INTEGER, wx TEXT, temp INTEGER, wind INTEGER, precip REAL, alert TEXT, alert_road TEXT, PRIMARY KEY (day, bus, stop, sched_min))`),
+    db.prepare('CREATE INDEX IF NOT EXISTS departures_day ON departures(day)'),
+    db.prepare('CREATE TABLE IF NOT EXISTS positions (t INTEGER, day TEXT, route TEXT, bus TEXT, lat REAL, lon REAL, heading INTEGER, mph INTEGER, off INTEGER)'),
+    db.prepare('CREATE INDEX IF NOT EXISTS positions_day ON positions(day, route)'),
+    db.prepare(`CREATE TABLE IF NOT EXISTS weather_obs (t INTEGER, day TEXT, station TEXT, wx TEXT, temp INTEGER, wind INTEGER, gust INTEGER, precip REAL,
+      PRIMARY KEY (station, t))`),
+    db.prepare(`CREATE TABLE IF NOT EXISTS road_alerts (id TEXT PRIMARY KEY, kind TEXT, road TEXT, milepost REAL, lat REAL, lon REAL, headline TEXT,
+      first_seen INTEGER, last_seen INTEGER)`),
+    db.prepare(`INSERT INTO meta (k, v) VALUES ('bus_schema', ?1) ON CONFLICT(k) DO UPDATE SET v = ?1`).bind(BUS_SCHEMA)
   ]);
   busTablesReady = true;
 }
@@ -148,6 +166,64 @@ async function routeCells() {
   }
   return cells;
 }
+// each route's timed stops from the tracker: where, and the minutes after midnight buses leave them today
+let timepoints = {}, tpAt = 0;
+async function routeTimepoints(routeIds) {
+  if (Date.now() - tpAt < 6 * 3600 * 1000 && Object.keys(timepoints).length) return timepoints;
+  const out = {};
+  await Promise.all(routeIds.map(async (id) => {
+    try {
+      const list = await (await fetch(`${GHT}/public_transit.php?command=busstops_transit&route_id=${id}`, { headers: UA })).json();
+      out[id] = (list || []).map((s) => {
+        const p = JSON.parse(s.BusStop_Point || '{}');
+        const mins = String(s.BusStop_Name2 || '').split('\n').map(clockMin).filter((m) => m != null).sort((a, b) => a - b);
+        return { name: String(s.Custom_BusStop_Name || s.BusStop_Name || '').trim(), lat: +p.lat, lon: +p.lng, mins };
+      }).filter((s) => s.lat && s.lon && s.mins.length);
+    } catch { /* this route next time */ }
+  }));
+  if (Object.keys(out).length) { timepoints = out; tpAt = Date.now(); }
+  return timepoints;
+}
+// conditions, refreshed every 10 minutes: the latest observation at each nearby NWS station, and WSDOT's road alerts
+// (from the file the site's collector keeps)
+const WX_STATIONS = [['KHQM', 46.9712, -123.9366], ['KOLM', 46.9733, -122.9026], ['KSHN', 47.2336, -123.1475], ['KCLS', 46.677, -122.9828], ['KUIL', 47.9375, -124.555]];
+let wxNow = {}, alertsNow = [], condAt = 0;
+async function conditions(db) {
+  if (Date.now() - condAt < 600000) return;
+  condAt = Date.now();
+  const steps = [];
+  await Promise.all(WX_STATIONS.map(async ([id, lat, lon]) => {
+    try {
+      const p = (await (await fetch(`https://api.weather.gov/stations/${id}/observations/latest`, { headers: { ...UA, Accept: 'application/geo+json' } })).json()).properties;
+      if (!p?.timestamp) return;
+      const v = (o, f) => (o?.value != null ? f(o.value) : null);
+      const w = { id, lat, lon, t: Date.parse(p.timestamp), wx: p.textDescription || '', temp: v(p.temperature, (c) => Math.round(c * 9 / 5 + 32)),
+        wind: v(p.windSpeed, (k) => Math.round(k / 1.609)), gust: v(p.windGust, (k) => Math.round(k / 1.609)),
+        precip: v(p.precipitationLastHour, (mm) => Math.round(mm / 25.4 * 100) / 100) };
+      wxNow[id] = w;
+      steps.push(db.prepare('INSERT OR IGNORE INTO weather_obs (t, day, station, wx, temp, wind, gust, precip) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)')
+        .bind(w.t, pacificDay(w.t), id, w.wx, w.temp, w.wind, w.gust, w.precip));
+    } catch { /* that station next time */ }
+  }));
+  try {
+    const j = await (await fetch(`https://traffic.harborevents.org/data/wsdot-alerts.json?t=${Date.now()}`)).json();
+    alertsNow = (j.alerts || []).filter((a) => a.lat && a.lon);
+    const now = Date.now();
+    for (const a of alertsNow) steps.push(db.prepare(`INSERT INTO road_alerts (id, kind, road, milepost, lat, lon, headline, first_seen, last_seen)
+      VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?8) ON CONFLICT(id) DO UPDATE SET kind = ?2, headline = ?7, last_seen = ?8`)
+      .bind(String(a.id), a.kind, a.roadLabel || a.road || '', a.milepost ?? null, a.lat, a.lon, String(a.headline || '').slice(0, 300), now));
+  } catch { /* next time */ }
+  if (steps.length) await db.batch(steps);
+}
+const mDist = (a, b) => Math.hypot((b.lon - a.lon) * 76000, (b.lat - a.lat) * 111000);
+// the conditions at a stop right now: nearest station's weather, and the most serious road alert within 1.5 km
+function conditionsAt(p) {
+  const w = Object.values(wxNow).sort((a, b) => mDist(p, a) - mDist(p, b))[0] || null;
+  const order = ['closure', 'collision', 'work', 'other'];
+  const near = alertsNow.filter((a) => mDist(p, a) < 1500 || (a.lat2 && mDist(p, { lat: a.lat2, lon: a.lon2 }) < 1500))
+    .sort((a, b) => order.indexOf(a.kind) - order.indexOf(b.kind))[0] || null;
+  return { wx: w?.wx ?? null, temp: w?.temp ?? null, wind: w?.wind ?? null, precip: w?.precip ?? null, alert: near?.kind ?? null, alertRoad: near ? (near.roadLabel || near.road || '') : null };
+}
 const pacificMin = (t) => {
   const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
     .formatToParts(t).map((x) => [x.type, x.value]));
@@ -155,62 +231,98 @@ const pacificMin = (t) => {
 };
 const clockMin = (s) => { const m = String(s || '').match(/(\d{1,2}):(\d{2})\s*([AP])M/i); return m ? ((+m[1] % 12) + (/p/i.test(m[3]) ? 12 : 0)) * 60 + +m[2] : null; };
 const shortRoute = (name) => (String(name || '').match(/^\s*([0-9]+[A-Z]?)/) || [])[1] || '';
-async function logBuses(env) {
+// how close the stretch a bus drove between two positions came to a point, and where along it (0..1)
+function passBy(a, b, p) {
+  const ax = (a.lon - p.lon) * 76000, ay = (a.lat - p.lat) * 111000, bx = (b.lon - p.lon) * 76000, by = (b.lat - p.lat) * 111000;
+  const dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy;
+  const f = L ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L)) : 0;
+  return { d: Math.hypot(ax + f * dx, ay + f * dy), f };
+}
+async function logBuses(env, minGapMs = 20000) {
   if (!env.DB || !lastBus) return;
+  const now = Date.now();
+  if (now - lastLogAt < minGapMs) return; // (at most every 20 s, however many people are watching)
+  lastLogAt = now;
   const db = env.DB;
   await busTables(db);
-  const now = Date.now(), day = pacificDay(now), nowMin = pacificMin(now);
-  const seen = Object.fromEntries((await db.prepare('SELECT bus, route, stop, sched FROM bus_seen').all()).results.map((r) => [r.bus, r]));
-  const c = await routeCells();
+  const day = pacificDay(now);
+  const [c, tps] = await Promise.all([routeCells(), routeTimepoints(lastBus.routeIds), conditions(db)]);
   const steps = [];
   for (const b of lastBus.buses) {
     const rt = shortRoute(lastBus.routeName[b.route]);
-    const prev = seen[b.id];
-    // passed a scheduled stop: how late
-    if (prev && prev.stop && b.nextStop && prev.stop !== b.nextStop && prev.route === rt) {
-      const sched = clockMin(prev.sched);
-      if (sched != null) {
-        let delay = nowMin - sched;
-        if (delay < -720) delay += 1440; else if (delay > 720) delay -= 1440;
-        if (delay > -30 && delay < 120) steps.push(db.prepare('INSERT INTO arrivals (day, t, route, bus, stop, sched_min, actual_min, delay) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)')
-          .bind(day, now, rt, b.id, prev.stop, sched, nowMin, delay));
+    if (!rt || !b.lat || !b.lon) continue;
+    // where it is, and whether that's on its route's line
+    const set = c?.routes[rt];
+    let off = null;
+    if (set) {
+      const i = Math.floor(b.lat / c.lat), j = Math.floor(b.lon / c.lon);
+      off = 1;
+      for (let di = -1; di <= 1 && off; di++) for (let dj = -1; dj <= 1; dj++) if (set.has(`${i + di},${j + dj}`)) { off = 0; break; }
+    }
+    steps.push(db.prepare('INSERT INTO positions (t, day, route, bus, lat, lon, heading, mph, off) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)')
+      .bind(now, day, rt, b.id, b.lat, b.lon, Math.round(b.heading || 0), Math.round(b.mph || 0), off));
+    // lateness: timed stops its track passed since last time (while it's there, the time keeps moving up, so what's
+    // left is when it pulled away)
+    const prev = prevPos[b.id];
+    if (prev && prev.route === b.route && now - prev.t < 150000) {
+      for (const tp of tps[b.route] || []) {
+        const { d, f } = passBy(prev, b, tp);
+        if (d > 80) continue;
+        const at = prev.t + f * (now - prev.t), aMin = pacificMin(at);
+        // its scheduled time: the latest one no more than 3 minutes after it was there, within the last 90 minutes
+        let sched = null;
+        for (const m of tp.mins) if (m <= aMin + 3 && aMin - m <= 90) sched = m;
+        if (sched == null) continue;
+        const k = conditionsAt(tp);
+        steps.push(db.prepare(`INSERT INTO departures (day, t, route, bus, stop, sched_min, actual_min, delay, wx, temp, wind, precip, alert, alert_road)
+          VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14)
+          ON CONFLICT(day, bus, stop, sched_min) DO UPDATE SET t = ?2, actual_min = ?7, delay = ?8`)
+          .bind(day, Math.round(at), rt, b.id, tp.name, sched, aMin, aMin - sched, k.wx, k.temp, k.wind, k.precip, k.alert, k.alertRoad));
       }
     }
-    if (!prev || prev.stop !== b.nextStop || prev.route !== rt)
-      steps.push(db.prepare('INSERT INTO bus_seen (bus, route, stop, sched, t) VALUES (?1, ?2, ?3, ?4, ?5) ON CONFLICT(bus) DO UPDATE SET route = ?2, stop = ?3, sched = ?4, t = ?5')
-        .bind(b.id, rt, b.nextStop, b.nextTime, now));
-    // on or off its route (moving buses only)
-    const set = c?.routes[rt];
-    if (set && b.mph >= 3) {
-      const i = Math.floor(b.lat / c.lat), j = Math.floor(b.lon / c.lon);
-      let on = false;
-      for (let di = -1; di <= 1 && !on; di++) for (let dj = -1; dj <= 1; dj++) if (set.has(`${i + di},${j + dj}`)) { on = true; break; }
-      steps.push(db.prepare('INSERT INTO route_day (day, route, samples, off) VALUES (?1, ?2, 1, ?3) ON CONFLICT(day, route) DO UPDATE SET samples = samples + 1, off = off + ?3')
-        .bind(day, rt, on ? 0 : 1));
-      if (!on) steps.push(db.prepare('INSERT INTO offroute (day, t, route, bus, lat, lon, heading, mph) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)')
-        .bind(day, now, rt, b.id, b.lat, b.lon, Math.round(b.heading || 0), Math.round(b.mph)));
-    }
+    prevPos[b.id] = { lat: b.lat, lon: b.lon, t: now, route: b.route };
   }
-  // once a day around 3 AM: off-route spots older than 60 days go (lateness records are kept)
-  if (nowMin === 180) steps.push(db.prepare('DELETE FROM offroute WHERE day < ?1').bind(pacificDay(now - 60 * 86400 * 1000)));
   if (steps.length) await db.batch(steps);
 }
 async function busStats(db, days) {
   await busTables(db);
   const since = pacificDay(Date.now() - (days - 1) * 86400 * 1000);
   const q = (sql) => db.prepare(sql).bind(since);
-  const [byRoute, byHour, stops, off, spots, span] = await db.batch([
-    q(`SELECT route, COUNT(*) AS n, ROUND(AVG(delay), 1) AS avg, SUM(delay BETWEEN -1 AND 5) AS ontime, SUM(delay > 5) AS late, SUM(delay < -1) AS early
-       FROM arrivals WHERE day >= ?1 GROUP BY route`),
-    q('SELECT actual_min / 60 AS h, COUNT(*) AS n, ROUND(AVG(delay), 1) AS avg FROM arrivals WHERE day >= ?1 GROUP BY h ORDER BY h'),
-    q(`SELECT route, stop, COUNT(*) AS n, ROUND(AVG(delay), 1) AS avg FROM arrivals WHERE day >= ?1 GROUP BY route, stop HAVING n >= 3
+  // on time = left 0 to 5 minutes after the scheduled time (early: before it; late: more than 5 after)
+  const sums = 'COUNT(*) AS n, ROUND(AVG(delay), 1) AS avg, SUM(delay BETWEEN 0 AND 5) AS ontime, SUM(delay > 5) AS late, SUM(delay < 0) AS early';
+  const weather = `CASE WHEN precip > 0 OR wx LIKE '%rain%' OR wx LIKE '%shower%' OR wx LIKE '%drizzle%' THEN 'rain'
+    WHEN wx LIKE '%snow%' OR wx LIKE '%ice%' THEN 'snow or ice' WHEN wx LIKE '%fog%' THEN 'fog' WHEN wind >= 20 THEN 'windy'
+    WHEN wx IS NULL THEN 'unknown' ELSE 'dry' END`;
+  const [byRoute, byHour, stops, off, spots, daily, dist, byWx, byAlert, span] = await db.batch([
+    q(`SELECT route, ${sums} FROM departures WHERE day >= ?1 GROUP BY route`),
+    q(`SELECT actual_min / 60 AS h, ${sums} FROM departures WHERE day >= ?1 GROUP BY h ORDER BY h`),
+    q(`SELECT route, stop, COUNT(*) AS n, ROUND(AVG(delay), 1) AS avg FROM departures WHERE day >= ?1 GROUP BY route, stop HAVING n >= 3
        ORDER BY avg DESC LIMIT 10`),
-    q('SELECT route, SUM(samples) AS samples, SUM(off) AS off FROM route_day WHERE day >= ?1 GROUP BY route'),
+    q('SELECT route, COUNT(*) AS samples, SUM(off) AS off FROM positions WHERE day >= ?1 AND mph >= 3 AND off IS NOT NULL GROUP BY route'),
     q(`SELECT route, ROUND(lat * 500) / 500 AS lat, ROUND(lon * 350) / 350 AS lon, COUNT(*) AS n, COUNT(DISTINCT day) AS days, COUNT(DISTINCT bus) AS buses
-       FROM offroute WHERE day >= ?1 GROUP BY route, ROUND(lat * 500), ROUND(lon * 350) HAVING n >= 3 ORDER BY n DESC LIMIT 12`),
-    db.prepare('SELECT MIN(day) AS first, COUNT(*) AS n FROM arrivals')
+       FROM positions WHERE day >= ?1 AND off = 1 AND mph >= 3 GROUP BY route, ROUND(lat * 500), ROUND(lon * 350) HAVING n >= 3 ORDER BY n DESC LIMIT 12`),
+    q(`SELECT day, ${sums} FROM departures WHERE day >= ?1 GROUP BY day ORDER BY day`),
+    q('SELECT MAX(-5, MIN(30, delay)) AS m, COUNT(*) AS n FROM departures WHERE day >= ?1 GROUP BY m ORDER BY m'),
+    q(`SELECT ${weather} AS cond, ${sums} FROM departures WHERE day >= ?1 GROUP BY cond`),
+    q(`SELECT COALESCE(alert, 'none') AS alert, ${sums} FROM departures WHERE day >= ?1 GROUP BY alert`),
+    db.prepare('SELECT (SELECT MIN(day) FROM positions) AS first, (SELECT COUNT(*) FROM positions) AS positions, (SELECT COUNT(*) FROM departures) AS n')
   ]);
-  return { days, since, byRoute: byRoute.results, byHour: byHour.results, stops: stops.results, off: off.results, spots: spots.results, first: span.results[0] };
+  return { days, since, byRoute: byRoute.results, byHour: byHour.results, stops: stops.results, off: off.results, spots: spots.results,
+    daily: daily.results, dist: dist.results, byWx: byWx.results, byAlert: byAlert.results, first: span.results[0] };
+}
+// the raw logs as CSV, for backups or your own graphs
+async function busExport(db, table, days) {
+  await busTables(db);
+  const cols = { positions: 't, day, route, bus, lat, lon, heading, mph, off',
+    departures: 'day, t, route, bus, stop, sched_min, actual_min, delay, wx, temp, wind, precip, alert, alert_road',
+    weather_obs: 't, day, station, wx, temp, wind, gust, precip', road_alerts: 'id, kind, road, milepost, lat, lon, headline, first_seen, last_seen' }[table];
+  if (!cols) return null;
+  const since = pacificDay(Date.now() - (days - 1) * 86400 * 1000);
+  const alerts = table === 'road_alerts';
+  const rows = (await db.prepare(`SELECT ${cols} FROM ${table} WHERE ${alerts ? 'last_seen >= ?1' : 'day >= ?1'} ORDER BY ${alerts ? 'first_seen' : 't'}`)
+    .bind(alerts ? Date.now() - days * 86400 * 1000 : since).all()).results;
+  const csvCell = (v) => (v == null ? '' : /[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
+  return [cols.replace(/ /g, ''), ...rows.map((r) => Object.values(r).map(csvCell).join(','))].join('\n');
 }
 
 // ---- viewers: a small D1 database (binding DB) keeps the tally for everyone, so it can be set up entirely in
@@ -301,7 +413,7 @@ async function siteStats(env) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const origin = request.headers.get('Origin') || '';
     const cors = {
       'Access-Control-Allow-Origin': ALLOWED.includes(origin) ? origin : ALLOWED[0],
@@ -325,6 +437,8 @@ export default {
     }
     if (path === '/buses') {
       if (!bus.body || Date.now() - bus.at > 9000) await refreshBuses(); // GHT's GPS updates about every 8 s
+      // while people are watching, the log gets a position every 20 s (finer tracks than the once-a-minute timer)
+      ctx?.waitUntil(logBuses(env).catch(() => {}));
       return json(bus.body || '{"routes":[],"buses":[]}');
     }
     if (path === '/site-stats') {
@@ -347,6 +461,19 @@ export default {
       try { return json(JSON.stringify(await busStats(env.DB, days))); }
       catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
     }
+    // the raw logs as a CSV download (?table=positions|departures|weather_obs|road_alerts&days=30); key in the header
+    if (path === '/bus-export') {
+      if (!env.DB) return new Response('not set up (no DB binding)', { status: 503, headers: cors });
+      if (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY)
+        return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
+      const u = new URL(request.url), table = u.searchParams.get('table') || 'positions';
+      const days = Math.max(1, Math.min(366, +u.searchParams.get('days') || 30));
+      try {
+        const csv = await busExport(env.DB, table, days);
+        if (csv == null) return new Response('unknown table', { status: 400, headers: cors });
+        return new Response(csv, { headers: { ...cors, 'Content-Type': 'text/csv', 'Content-Disposition': `attachment; filename="ght-${table}-${pacificDay(Date.now())}.csv"` } });
+      } catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
+    }
     if (path === '/hello' || path === '/viewers') {
       if (!env.DB) return new Response('viewer count not set up (no DB binding)', { status: 503, headers: cors });
       if (path === '/viewers' && (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY))
@@ -366,8 +493,11 @@ export default {
   // when nobody has the map open
   async scheduled(event, env, ctx) {
     ctx.waitUntil((async () => {
+      // no buses out last time (overnight, between runs): only look every 10 minutes until they're back, to go
+      // easy on GHT's server; the first bus of the morning is still picked up within 10 minutes
+      if (lastBus && !lastBus.buses.length && new Date(event.scheduledTime).getUTCMinutes() % 10 !== 0) return;
       if (!bus.body || Date.now() - bus.at > 30000) await refreshBuses();
-      try { await logBuses(env); } catch (e) { console.log('bus log', e.message); }
+      try { await logBuses(env, 45000); } catch (e) { console.log('bus log', e.message); }
     })());
   }
 };
