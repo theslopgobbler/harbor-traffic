@@ -39,6 +39,18 @@
   .lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 20px; }
   .lists td.bar { width: 35%; }
   [hidden] { display: none !important; }
+  /* charts: thin marks in two validated hues (cyan for the main series, amber for the comparison), hairline grid,
+     text in the page's text colors, a hover readout on every chart */
+  .chart { position: relative; border: 1px solid var(--line); background: #030d0c; padding: 6px 4px 2px; }
+  .chart svg { display: block; width: 100%; overflow: visible; font: 10px var(--mono); }
+  .chart .empty { color: var(--dim); font-size: 11px; padding: 18px 10px; }
+  .legend { display: flex; gap: 14px; font-size: 10px; color: var(--dim); padding: 2px 8px 6px; letter-spacing: .12em; }
+  .legend i { display: inline-block; width: 14px; height: 2px; vertical-align: middle; margin-right: 5px; }
+  .tip { position: fixed; z-index: 10; pointer-events: none; background: #020706; border: 1px solid var(--line-2); padding: 6px 8px; font-size: 11px;
+    color: var(--text); box-shadow: 0 4px 14px rgba(0,0,0,.6); min-width: 120px; }
+  .tip .tt { color: var(--dim); font-size: 10px; letter-spacing: .12em; margin-bottom: 3px; }
+  .tip .tr { display: flex; align-items: center; gap: 6px; } .tip .tr b { font-weight: 400; color: #fff; font-size: 13px; }
+  .tip .tr i { display: inline-block; width: 12px; height: 2px; } .tip .tr span { color: var(--dim); font-size: 10px; }
 </style>
 </head>
 <body>
@@ -74,22 +86,39 @@
       <div class="msg" id="busMsg"></div>
       <div id="busOut" hidden>
         <div class="grid">
-          <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s">0 TO 5 MIN LATE</div></div>
-          <div class="box"><div class="l">AVERAGE</div><div class="v" id="bAvg">–</div><div class="s">MIN LATE AT TIMED STOPS</div></div>
-          <div class="box"><div class="l">STOPS LOGGED</div><div class="v" id="bN">–</div><div class="s" id="bSince"></div></div>
+          <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s" id="bOnS">LEFT 0 TO 5 MIN AFTER SCHEDULE</div></div>
+          <div class="box"><div class="l">AVERAGE</div><div class="v" id="bAvg">–</div><div class="s">MIN AFTER SCHEDULE</div></div>
+          <div class="box"><div class="l">TIMED STOPS LOGGED</div><div class="v" id="bN">–</div><div class="s" id="bSince"></div></div>
         </div>
+        <h2>ON TIME BY DAY</h2>
+        <div class="chart" id="cDaily"></div>
+        <h2>HOW LATE · MINUTES AFTER THE SCHEDULED TIME</h2>
+        <div class="chart" id="cDist"></div>
+        <h2>BY HOUR OF DAY · AVERAGE MINUTES AFTER SCHEDULE</h2>
+        <div class="chart" id="cHour"></div>
+        <div class="lists">
+          <div><h2>ON TIME BY ROUTE</h2><div class="chart" id="cRoute"></div></div>
+          <div><h2>OFF ROUTE BY ROUTE · SHARE OF POSITIONS</h2><div class="chart" id="cOff"></div></div>
+          <div><h2>BY WEATHER · AVERAGE MINUTES AFTER SCHEDULE</h2><div class="chart" id="cWx"></div></div>
+          <div><h2>NEAR A ROAD ALERT · AVERAGE MINUTES AFTER</h2><div class="chart" id="cAlert"></div></div>
+        </div>
+        <h2>DOWNLOAD THE LOGS (CSV)</h2>
+        <p><button type="button" data-export="positions">BUS POSITIONS</button> <button type="button" data-export="departures">LATENESS</button>
+          <button type="button" data-export="weather_obs">WEATHER</button> <button type="button" data-export="road_alerts">ROAD ALERTS</button></p>
         <h2>BY ROUTE</h2>
         <table><thead><tr><th>ROUTE</th><th>STOPS</th><th>ON TIME</th><th>LATE 5+</th><th>EARLY</th><th>AVG MIN</th><th>OFF ROUTE</th></tr></thead><tbody id="bRoutes"></tbody></table>
-        <h2>HOW LATE, BY HOUR OF DAY</h2>
+        <h2>BY HOUR OF DAY</h2>
         <table><tbody id="bHours"></tbody></table>
         <h2>LATEST STOPS</h2>
         <table><thead><tr><th>STOP</th><th>ROUTE</th><th>TIMES</th><th>AVG MIN LATE</th></tr></thead><tbody id="bStops"></tbody></table>
         <h2>WHERE BUSES LEAVE THEIR ROUTES</h2>
         <table><thead><tr><th>ROUTE</th><th>TIMES SEEN</th><th>DAYS</th><th>BUSES</th><th>MAP</th></tr></thead><tbody id="bSpots"></tbody></table>
-        <p class="note">On time = passing a timed stop 0 to 5 minutes after its scheduled time (the tracker's "next stop" switching to the
-          stop after). Off route = a moving bus more than about a block from its route's line, checked once a minute. Off-route spots
-          seen on several days are shortcuts or standing detours; one-day spots are usually a one-off detour or the tracker
-          listing a bus on the wrong route.</p>
+        <p class="note">On time = leaving a timed stop 0 to 5 minutes after its scheduled time, measured from the bus's GPS track passing
+          the stop (early = before the scheduled time; late = more than 5 minutes after). Each one notes the weather at the nearest
+          weather station and any WSDOT road alert within 1.5 km of the stop at that moment. Off route = a moving bus more than about
+          a block from its route's line. Off-route spots seen on several days are shortcuts or standing detours; one-day spots are
+          usually a one-off detour or the tracker listing a bus on the wrong route. Every position is kept, for rebuilding the
+          routes from where buses actually drive.</p>
       </div>
     </section>
     <section id="site">
@@ -149,45 +178,197 @@
     loadBuses();
     loadSite();
   }
-  // buses: on time and off route (logged by the relay)
-  let busDays = 7;
+  // ---- buses: on time, how late, off route; charts drawn here in plain SVG ----
+  // Marks: one validated hue (cyan) for single-series charts, amber reserved for a second series; 2px lines, columns
+  // and bars no wider than 24px with 4px rounded ends at the data end, hairline grid, text in the page's text colors.
+  const C1 = '#00a3b8', GRID = '#12403a', INK = '#c4ffe9', DIM = '#5f9c8b', SURF = '#030d0c';
+  const NS = 'http://www.w3.org/2000/svg';
+  const sv = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (parent) parent.appendChild(e); return e; };
+  const txt = (parent, x, y, s, attrs = {}) => { const t = sv('text', { x, y, fill: DIM, ...attrs }, parent); t.textContent = s; return t; };
+  // one tooltip for the page: the value leads, the label follows (set with textContent: names come from data)
+  const tip = document.createElement('div'); tip.className = 'tip'; tip.hidden = true; document.body.appendChild(tip);
+  function showTip(e, title, rows) {
+    tip.replaceChildren();
+    const h = document.createElement('div'); h.className = 'tt'; h.textContent = title; tip.appendChild(h);
+    for (const r of rows) {
+      const row = document.createElement('div'); row.className = 'tr';
+      if (r.color) { const k = document.createElement('i'); k.style.background = r.color; row.appendChild(k); }
+      const b = document.createElement('b'); b.textContent = r.value; row.appendChild(b);
+      if (r.label) { const s = document.createElement('span'); s.textContent = r.label; row.appendChild(s); }
+      tip.appendChild(row);
+    }
+    tip.hidden = false;
+    const x = Math.min(window.innerWidth - tip.offsetWidth - 8, e.clientX + 14), y = Math.min(window.innerHeight - tip.offsetHeight - 8, e.clientY + 14);
+    tip.style.left = `${x}px`; tip.style.top = `${y}px`;
+  }
+  const hideTip = () => { tip.hidden = true; };
+  const niceMax = (v) => { if (v <= 0) return 1; const p = 10 ** Math.floor(Math.log10(v)); return Math.ceil(v / p * 2) / 2 * p; };
+  const emptyChart = (box, msg) => { box.replaceChildren(); const d = document.createElement('div'); d.className = 'empty'; d.textContent = msg; box.appendChild(d); };
+  // a rounded data end: 4px corners at the value end, square at the baseline (works up or down)
+  function barPath(x, y0, y1, w) {
+    const r = Math.min(4, w / 2, Math.abs(y1 - y0)), up = y1 < y0;
+    if (Math.abs(y1 - y0) < 0.5) return '';
+    return up ? `M${x},${y0} V${y1 + r} Q${x},${y1} ${x + r},${y1} H${x + w - r} Q${x + w},${y1} ${x + w},${y1 + r} V${y0} Z`
+      : `M${x},${y0} V${y1 - r} Q${x},${y1} ${x + r},${y1} H${x + w - r} Q${x + w},${y1} ${x + w},${y1 - r} V${y0} Z`;
+  }
+  // columns: items [{ label, value, title, rows }], with a zero line; negative values go below it
+  function columns(box, items, { height = 170, fmt = (v) => String(v), band } = {}) {
+    if (!items.length) return emptyChart(box, 'NOTHING LOGGED YET');
+    box.replaceChildren();
+    const W = Math.max(300, box.clientWidth - 8), padL = 34, padB = 22, padT = 10, plotW = W - padL - 6, plotH = height - padB - padT;
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${height}`, height }, box);
+    const maxV = niceMax(Math.max(0, ...items.map((d) => d.value))), minV = Math.min(0, ...items.map((d) => d.value));
+    const lo = minV < 0 ? -niceMax(-minV) : 0, y = (v) => padT + (maxV - v) / (maxV - lo) * plotH;
+    for (const v of [lo, lo + (maxV - lo) / 2, maxV]) {
+      sv('line', { x1: padL, x2: W - 6, y1: y(v), y2: y(v), stroke: GRID, 'stroke-width': 1 }, svg);
+      txt(svg, padL - 5, y(v) + 3, fmt(Math.round(v * 10) / 10), { 'text-anchor': 'end' });
+    }
+    const slot = plotW / items.length, bw = Math.min(24, slot - 2);
+    // the shaded "on time" stretch, when the x axis is minutes
+    if (band) { const [a, b] = band; const i0 = items.findIndex((d) => d.key === a), i1 = items.findIndex((d) => d.key === b);
+      if (i0 >= 0 && i1 >= 0) { sv('rect', { x: padL + i0 * slot, y: padT, width: (i1 - i0 + 1) * slot, height: plotH, fill: C1, opacity: 0.08 }, svg);
+        txt(svg, padL + (i0 + (i1 - i0 + 1) / 2) * slot, padT + 9, 'ON TIME', { 'text-anchor': 'middle', fill: INK }); } }
+    sv('line', { x1: padL, x2: W - 6, y1: y(0), y2: y(0), stroke: DIM, 'stroke-width': 1 }, svg);
+    const every = Math.ceil(items.length / Math.floor(plotW / 34));
+    items.forEach((d, i) => {
+      const x = padL + i * slot + (slot - bw) / 2;
+      const p = sv('path', { d: barPath(x, y(0), y(d.value), bw), fill: C1 }, svg);
+      if (i % every === 0) txt(svg, padL + i * slot + slot / 2, height - 6, d.label, { 'text-anchor': 'middle' });
+      // the whole column slot is the hover target, bigger than the bar
+      const hit = sv('rect', { x: padL + i * slot, y: padT, width: slot, height: plotH, fill: 'transparent', tabindex: 0 }, svg);
+      const on = (e) => { p.setAttribute('fill', '#2bc6da'); showTip(e, d.title, d.rows); };
+      hit.addEventListener('pointermove', on); hit.addEventListener('focus', (e) => on({ clientX: hit.getBoundingClientRect().right, clientY: hit.getBoundingClientRect().top }));
+      hit.addEventListener('pointerleave', () => { p.setAttribute('fill', C1); hideTip(); }); hit.addEventListener('blur', () => { p.setAttribute('fill', C1); hideTip(); });
+    });
+  }
+  // horizontal bars: items [{ label, value, valueText, title, rows }]
+  function hbars(box, items, { max } = {}) {
+    if (!items.length) return emptyChart(box, 'NOTHING LOGGED YET');
+    box.replaceChildren();
+    const W = Math.max(260, box.clientWidth - 8), rowH = 26, padL = 92, padR = 54, H = items.length * rowH + 6;
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, height: H }, box);
+    const top = max ?? niceMax(Math.max(...items.map((d) => Math.abs(d.value))));
+    const x = (v) => padL + Math.max(0, v) / top * (W - padL - padR);
+    sv('line', { x1: padL, x2: padL, y1: 0, y2: H, stroke: DIM, 'stroke-width': 1 }, svg);
+    items.forEach((d, i) => {
+      const yy = 4 + i * rowH, bh = 14;
+      txt(svg, padL - 8, yy + 11, d.label, { 'text-anchor': 'end', fill: INK });
+      const w = x(d.value) - padL;
+      const p = sv('path', { d: w > 0.5 ? `M${padL},${yy} H${padL + w - Math.min(4, w)} Q${padL + w},${yy} ${padL + w},${yy + Math.min(4, w)} V${yy + bh - Math.min(4, w)} Q${padL + w},${yy + bh} ${padL + w - Math.min(4, w)},${yy + bh} H${padL} Z` : '', fill: C1 }, svg);
+      txt(svg, padL + Math.max(w, 0) + 6, yy + 11, d.valueText, { fill: INK });
+      const hit = sv('rect', { x: 0, y: yy - 5, width: W, height: rowH, fill: 'transparent', tabindex: 0 }, svg);
+      const on = (e) => { p.setAttribute('fill', '#2bc6da'); showTip(e, d.title, d.rows); };
+      hit.addEventListener('pointermove', on); hit.addEventListener('focus', (e) => on({ clientX: hit.getBoundingClientRect().left + 120, clientY: hit.getBoundingClientRect().top }));
+      hit.addEventListener('pointerleave', () => { p.setAttribute('fill', C1); hideTip(); }); hit.addEventListener('blur', () => { p.setAttribute('fill', C1); hideTip(); });
+    });
+  }
+  // a line over days with a crosshair: points [{ label, value, rows }], y from 0 to 100 (%)
+  function line(box, points, { fmt = (v) => `${v}%` } = {}) {
+    if (!points.length) return emptyChart(box, 'NOTHING LOGGED YET');
+    box.replaceChildren();
+    const W = Math.max(300, box.clientWidth - 8), H = 170, padL = 34, padR = 40, padT = 10, padB = 22, plotW = W - padL - padR, plotH = H - padT - padB;
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, height: H }, box);
+    const y = (v) => padT + (100 - v) / 100 * plotH, x = (i) => padL + (points.length === 1 ? plotW / 2 : i / (points.length - 1) * plotW);
+    for (const v of [0, 50, 100]) { sv('line', { x1: padL, x2: W - padR, y1: y(v), y2: y(v), stroke: GRID, 'stroke-width': 1 }, svg); txt(svg, padL - 5, y(v) + 3, `${v}%`, { 'text-anchor': 'end' }); }
+    const every = Math.ceil(points.length / Math.floor(plotW / 60));
+    points.forEach((p, i) => { if (i % every === 0 || i === points.length - 1) txt(svg, x(i), H - 6, p.label, { 'text-anchor': 'middle' }); });
+    sv('path', { d: points.map((p, i) => `${i ? 'L' : 'M'}${x(i)},${y(p.value)}`).join(' '), fill: 'none', stroke: C1, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+    points.forEach((p, i) => sv('circle', { cx: x(i), cy: y(p.value), r: 4, fill: C1, stroke: SURF, 'stroke-width': 2 }, svg));
+    // the latest value, labeled at the end of the line
+    const last = points[points.length - 1];
+    txt(svg, x(points.length - 1) + 8, y(last.value) + 4, fmt(last.value), { fill: INK });
+    // crosshair: snaps to the nearest day
+    const cross = sv('line', { y1: padT, y2: padT + plotH, stroke: DIM, 'stroke-width': 1, visibility: 'hidden' }, svg);
+    const hit = sv('rect', { x: padL - 10, y: padT, width: plotW + 20, height: plotH, fill: 'transparent' }, svg);
+    hit.addEventListener('pointermove', (e) => {
+      const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) / r.width * W;
+      const i = Math.max(0, Math.min(points.length - 1, Math.round((px - padL) / (plotW / Math.max(1, points.length - 1)))));
+      cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.setAttribute('visibility', 'visible');
+      showTip(e, points[i].title, points[i].rows);
+    });
+    hit.addEventListener('pointerleave', () => { cross.setAttribute('visibility', 'hidden'); hideTip(); });
+  }
+
+  let busDays = 7, busData = null;
   const hr = (h) => `${(h % 12) || 12} ${h < 12 ? 'AM' : 'PM'}`;
+  const pct = (a, b) => (b ? Math.round(a / b * 100) : 0);
+  const sumRows = (x) => [{ value: `${pct(x.ontime, x.n)}%`, label: 'on time', color: C1 }, { value: `${x.avg} min`, label: 'average after schedule' },
+    { value: `${x.late} late · ${x.early} early`, label: `of ${x.n}` }];
   async function loadBuses() {
     if (!key || $('#out').hidden) return;
     document.querySelectorAll('#busDaysForm button').forEach((b) => b.style.background = +b.dataset.days === busDays ? 'rgba(0,229,255,.3)' : '');
+    $('#busOut').style.opacity = busData ? 0.55 : 1; // (refetching keeps the last charts, dimmed)
     try {
       const r = await fetch(`${relay}/bus-stats?days=${busDays}`, { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
       if (!r.ok) { $('#busMsg').textContent = r.status === 404 ? 'DEPLOY THE UPDATED RELAY TO SEE THESE' : (await r.text()).toUpperCase(); $('#busOut').hidden = true; return; }
-      const j = await r.json();
-      // two kinds of records: position checks (every minute for each moving bus) show the timer is running;
-      // lateness records only come when a bus passes one of its timed stops, which takes a while
-      const checks = j.off.reduce((a, x) => a + (x.samples || 0), 0);
-      $('#busMsg').textContent = j.first?.n ? ''
-        : checks ? `LOGGING: ${checks} BUS POSITION CHECKS SO FAR. LATENESS SHOWS UP ONCE BUSES START PASSING THEIR TIMED STOPS (USUALLY WITHIN AN HOUR WHILE BUSES ARE RUNNING).`
-        : 'NOTHING LOGGED YET. THE RELAY CHECKS ONCE A MINUTE WHILE BUSES ARE RUNNING; IF BUSES ARE OUT AND THIS STAYS EMPTY FOR 10 MINUTES, THE CRON TRIGGER ISN\'T FIRING.';
-      $('#busOut').hidden = false;
-      const sum = (k) => j.byRoute.reduce((a, x) => a + (x[k] || 0), 0);
-      const n = sum('n'), on = sum('ontime');
-      $('#bOn').textContent = n ? `${Math.round(on / n * 100)}%` : '–';
-      $('#bAvg').textContent = n ? (j.byRoute.reduce((a, x) => a + x.avg * x.n, 0) / n).toFixed(1) : '–';
-      $('#bN').textContent = n;
-      $('#bSince').textContent = j.first?.first ? `LOGGING SINCE ${day(j.first.first)}` : '';
-      const off = Object.fromEntries(j.off.map((x) => [x.route, x]));
-      const routes = [...new Set([...j.byRoute.map((x) => x.route), ...j.off.map((x) => x.route)])].sort((a, b) => parseInt(a) - parseInt(b) || a.localeCompare(b));
-      const pct = (a, b) => b ? `${Math.round(a / b * 100)}%` : '–';
-      $('#bRoutes').innerHTML = routes.map((rt) => { const x = j.byRoute.find((y) => y.route === rt) || {}, o = off[rt];
-        return `<tr><td>${esc(rt)}</td><td>${x.n || 0}</td><td>${pct(x.ontime, x.n)}</td><td>${pct(x.late, x.n)}</td><td>${pct(x.early, x.n)}</td>
-          <td>${x.avg ?? '–'}</td><td>${o ? pct(o.off, o.samples) : '–'}</td></tr>`; }).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
-      const hmax = Math.max(1, ...j.byHour.map((h) => Math.max(0, h.avg)));
-      $('#bHours').innerHTML = j.byHour.map((h) => `<tr><td>${hr(h.h)}</td><td>${h.avg} MIN</td><td class="bar"><i style="width:${Math.max(0, h.avg) / hmax * 100}%"></i></td><td>${h.n} STOPS</td></tr>`).join('')
-        || '<tr><td>NOTHING YET</td></tr>';
-      $('#bStops').innerHTML = j.stops.map((s) => `<tr><td>${esc(s.stop).toUpperCase()}</td><td>${esc(s.route)}</td><td>${s.n}</td><td>${s.avg}</td></tr>`).join('')
-        || '<tr><td colspan="4">NEEDS A FEW DAYS OF LOGGING</td></tr>';
-      $('#bSpots').innerHTML = j.spots.map((s) => `<tr><td>${esc(s.route)}</td><td>${s.n}</td><td>${s.days}</td><td>${s.buses}</td>
-        <td><a href="./?at=${s.lon.toFixed(4)},${s.lat.toFixed(4)},16" target="_blank" rel="noopener">SEE IT ▸</a></td></tr>`).join('')
-        || '<tr><td colspan="5">NONE YET</td></tr>';
+      busData = await r.json();
+      renderBuses();
     } catch (e) { $('#busMsg').textContent = 'CAN\'T LOAD BUS STATS RIGHT NOW'; }
+    $('#busOut').style.opacity = 1;
   }
+  function renderBuses() {
+    const j = busData; if (!j) return;
+    const positions = j.first?.positions || 0, n = j.first?.n || 0;
+    $('#busMsg').textContent = n ? ''
+      : positions ? `LOGGING: ${positions} BUS POSITIONS SO FAR. LATENESS SHOWS UP AS BUSES PASS THEIR TIMED STOPS (USUALLY WITHIN THE HOUR WHILE BUSES ARE RUNNING).`
+      : 'NOTHING LOGGED YET. THE RELAY CHECKS ONCE A MINUTE WHILE BUSES ARE RUNNING; IF BUSES ARE OUT AND THIS STAYS EMPTY FOR 10 MINUTES, THE CRON TRIGGER ISN\'T FIRING.';
+    $('#busOut').hidden = false;
+    // the headline numbers: exactly the same definition as the tables and charts below
+    const tot = j.byRoute.reduce((a, x) => ({ n: a.n + x.n, ontime: a.ontime + x.ontime, late: a.late + x.late, early: a.early + x.early, sum: a.sum + x.avg * x.n }),
+      { n: 0, ontime: 0, late: 0, early: 0, sum: 0 });
+    $('#bOn').textContent = tot.n ? `${pct(tot.ontime, tot.n)}%` : '–';
+    $('#bOnS').textContent = tot.n ? `LEFT 0–5 MIN AFTER SCHEDULE · ${tot.late} LATE · ${tot.early} EARLY` : 'LEFT 0 TO 5 MIN AFTER SCHEDULE';
+    $('#bAvg').textContent = tot.n ? (tot.sum / tot.n).toFixed(1) : '–';
+    $('#bN').textContent = tot.n;
+    $('#bSince').textContent = j.first?.first ? `LOGGING SINCE ${day(j.first.first)} · ${positions} POSITIONS` : '';
+    // charts
+    line($('#cDaily'), j.daily.map((d) => ({ label: day(d.day).replace(/^\w+, /, ''), value: pct(d.ontime, d.n), title: day(d.day), rows: sumRows(d) })));
+    const byMin = Object.fromEntries(j.dist.map((d) => [d.m, d.n]));
+    const mins = []; for (let m = -5; m <= 30; m++) mins.push(m);
+    const totDist = j.dist.reduce((a, d) => a + d.n, 0);
+    columns($('#cDist'), totDist ? mins.map((m) => ({ key: m, label: m === -5 ? '≤-5' : m === 30 ? '30+' : String(m), value: byMin[m] || 0,
+      title: m === -5 ? '5+ MIN EARLY' : m === 30 ? '30+ MIN LATE' : m < 0 ? `${-m} MIN EARLY` : `${m} MIN AFTER`,
+      rows: [{ value: String(byMin[m] || 0), label: 'departures', color: C1 }, { value: `${pct(byMin[m] || 0, totDist)}%`, label: 'of all' }] })) : [],
+    { band: [0, 5], fmt: (v) => String(Math.round(v)) });
+    columns($('#cHour'), j.byHour.map((h) => ({ label: hr(h.h).replace(' ', ''), value: h.avg, title: hr(h.h), rows: sumRows(h) })), { fmt: (v) => `${v}` });
+    const routeSort = (a, b) => parseInt(a.route) - parseInt(b.route) || a.route.localeCompare(b.route);
+    hbars($('#cRoute'), [...j.byRoute].sort(routeSort).map((x) => ({ label: `ROUTE ${x.route}`, value: pct(x.ontime, x.n), valueText: `${pct(x.ontime, x.n)}%`,
+      title: `ROUTE ${x.route}`, rows: sumRows(x) })), { max: 100 });
+    hbars($('#cOff'), [...j.off].sort(routeSort).map((x) => ({ label: `ROUTE ${x.route}`, value: pct(x.off, x.samples), valueText: `${pct(x.off, x.samples)}%`,
+      title: `ROUTE ${x.route}`, rows: [{ value: `${pct(x.off, x.samples)}%`, label: 'of moving positions off its line', color: C1 }, { value: String(x.samples), label: 'positions' }] })), { max: 100 });
+    const cmp = (rows, nameOf) => rows.filter((x) => x.n).sort((a, b) => b.avg - a.avg).map((x) => ({ label: nameOf(x).toUpperCase(), value: Math.max(0, x.avg),
+      valueText: `${x.avg} min`, title: nameOf(x).toUpperCase(), rows: sumRows(x) }));
+    hbars($('#cWx'), cmp(j.byWx, (x) => x.cond));
+    hbars($('#cAlert'), cmp(j.byAlert, (x) => ({ none: 'no alert near', closure: 'closure', collision: 'crash', work: 'road work', other: 'other alert' }[x.alert] || x.alert)));
+    // tables (the same numbers, readable without hovering)
+    const off = Object.fromEntries(j.off.map((x) => [x.route, x]));
+    const routes = [...new Set([...j.byRoute.map((x) => x.route), ...j.off.map((x) => x.route)])].sort((a, b) => parseInt(a) - parseInt(b) || a.localeCompare(b));
+    const p = (a, b) => (b ? `${Math.round(a / b * 100)}%` : '–');
+    $('#bRoutes').innerHTML = routes.map((rt) => { const x = j.byRoute.find((y) => y.route === rt) || {}, o = off[rt];
+      return `<tr><td>${esc(rt)}</td><td>${x.n || 0}</td><td>${p(x.ontime, x.n)}</td><td>${p(x.late, x.n)}</td><td>${p(x.early, x.n)}</td>
+        <td>${x.avg ?? '–'}</td><td>${o ? p(o.off, o.samples) : '–'}</td></tr>`; }).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
+    $('#bHours').innerHTML = j.byHour.map((h) => `<tr><td>${hr(h.h)}</td><td>${h.avg} MIN</td><td>${p(h.ontime, h.n)} ON TIME</td><td>${h.n} DEPARTURES</td></tr>`).join('')
+      || '<tr><td>NOTHING YET</td></tr>';
+    $('#bStops').innerHTML = j.stops.map((s) => `<tr><td>${esc(s.stop).toUpperCase()}</td><td>${esc(s.route)}</td><td>${s.n}</td><td>${s.avg}</td></tr>`).join('')
+      || '<tr><td colspan="4">NEEDS A FEW DAYS OF LOGGING</td></tr>';
+    $('#bSpots').innerHTML = j.spots.map((s) => `<tr><td>${esc(s.route)}</td><td>${s.n}</td><td>${s.days}</td><td>${s.buses}</td>
+      <td><a href="./?at=${s.lon.toFixed(4)},${s.lat.toFixed(4)},16" target="_blank" rel="noopener">SEE IT ▸</a></td></tr>`).join('')
+      || '<tr><td colspan="5">NONE YET</td></tr>';
+  }
+  window.addEventListener('resize', () => { clearTimeout(window._rz); window._rz = setTimeout(renderBuses, 200); });
+  // CSV downloads (the key goes in a header, so it's fetched here and handed over as a file)
+  document.addEventListener('click', async (e) => {
+    const b = e.target.closest('button[data-export]'); if (!b || !key) return;
+    b.disabled = true; const was = b.textContent; b.textContent = 'PREPARING…';
+    try {
+      const r = await fetch(`${relay}/bus-export?table=${b.dataset.export}&days=366`, { headers: { 'X-Stats-Key': key } });
+      if (!r.ok) throw new Error(await r.text());
+      const url = URL.createObjectURL(await r.blob());
+      const a = document.createElement('a'); a.href = url; a.download = `ght-${b.dataset.export}-${new Date().toISOString().slice(0, 10)}.csv`; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+    } catch (err) { $('#busMsg').textContent = `DOWNLOAD FAILED: ${String(err.message || err).toUpperCase()}`; }
+    b.disabled = false; b.textContent = was;
+  });
   $('#busDaysForm').addEventListener('click', (e) => { const b = e.target.closest('button[data-days]'); if (b) { busDays = +b.dataset.days; loadBuses(); } });
   // harborevents.org (Umami Cloud, via the relay, which caches it for 5 minutes)
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
