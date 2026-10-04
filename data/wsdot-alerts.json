@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T23:33:40.6108035+00:00",
+  "updated": "2026-10-04T23:49:16.9124814+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -42,61 +42,6 @@
         [
           -124.24706,
           47.29942
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
         ]
       ]
     },
@@ -864,6 +809,61 @@
         [
           -123.9627,
           47.2291
+        ]
+      ]
+    },
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
         ]
       ]
     },
@@ -2205,27 +2205,6 @@
       "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
-      "id": 717736,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on SR 3 southbound at milepost 5 near N Meridian beginning at 4:12 pm on October 4, 2026 until further notice. The roadway is fully blocked.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "S",
-      "milepost": 5.0,
-      "lat": 47.229431549,
-      "lon": -123.063816489,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-04T23:12:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-04T23:14:15.0330000+00:00"
-    },
-    {
       "id": 686738,
       "kind": "work",
       "category": "Construction",
@@ -2266,6 +2245,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
+      "id": 717736,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on SR 3 southbound at milepost 5 near N Meridian beginning at 4:12 pm on October 4, 2026 until further notice. The roadway is partially blocked.",
+      "description": "",
+      "link": null,
+      "road": "003",
+      "roadLabel": "SR 3",
+      "direction": "S",
+      "milepost": 5.0,
+      "lat": 47.229431549,
+      "lon": -123.063816489,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-10-04T23:12:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-04T23:46:36.7700000+00:00"
     }
   ]
 }
