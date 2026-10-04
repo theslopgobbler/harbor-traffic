@@ -1,29 +1,5 @@
 {
-  "updated": "2026-10-04T04:10:56.9338501+00:00",
+  "updated": "2026-10-04T07:16:46.0382691+00:00",
   "source": "AIS via aisstream.io",
-  "ships": [
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97853,
-      "lon": -123.88358,
-      "sog": 0,
-      "cog": 290.3,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-04T02:15:21.3627462+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.90625,
-      "lon": -124.10736,
-      "sog": 0,
-      "cog": 283,
-      "heading": 313,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-04T02:15:21.3627462+00:00"
-    }
-  ]
+  "ships": []
 }

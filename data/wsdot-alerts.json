@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T04:10:56.9338501+00:00",
+  "updated": "2026-10-04T07:16:46.0382691+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -868,6 +868,101 @@
       ]
     },
     {
+      "id": 712872,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.6,
+      "lat": 46.627033568,
+      "lon": -123.082208102,
+      "lat2": 46.626966642,
+      "lon2": -123.063374325,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-12T22:30:00.0000000+00:00",
+      "updated": "2026-09-10T21:06:34.0470000+00:00",
+      "path": [
+        [
+          -123.0822,
+          46.62703
+        ],
+        [
+          -123.08176,
+          46.62703
+        ],
+        [
+          -123.08101,
+          46.62703
+        ],
+        [
+          -123.07967,
+          46.62703
+        ],
+        [
+          -123.07843,
+          46.62702
+        ],
+        [
+          -123.07691,
+          46.62702
+        ],
+        [
+          -123.07664,
+          46.62702
+        ],
+        [
+          -123.07607,
+          46.62702
+        ],
+        [
+          -123.07582,
+          46.62702
+        ],
+        [
+          -123.07474,
+          46.62702
+        ],
+        [
+          -123.07107,
+          46.62702
+        ],
+        [
+          -123.06794,
+          46.627
+        ],
+        [
+          -123.06486,
+          46.62698
+        ],
+        [
+          -123.06443,
+          46.62697
+        ],
+        [
+          -123.06424,
+          46.62697
+        ],
+        [
+          -123.06344,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ]
+      ]
+    },
+    {
       "id": 715621,
       "kind": "work",
       "category": "Construction",
@@ -1119,101 +1214,6 @@
         [
           -122.68387,
           47.07895
-        ]
-      ]
-    },
-    {
-      "id": 712872,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.6,
-      "lat": 46.627033568,
-      "lon": -123.082208102,
-      "lat2": 46.626966642,
-      "lon2": -123.063374325,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-12T22:30:00.0000000+00:00",
-      "updated": "2026-09-10T21:06:34.0470000+00:00",
-      "path": [
-        [
-          -123.0822,
-          46.62703
-        ],
-        [
-          -123.08176,
-          46.62703
-        ],
-        [
-          -123.08101,
-          46.62703
-        ],
-        [
-          -123.07967,
-          46.62703
-        ],
-        [
-          -123.07843,
-          46.62702
-        ],
-        [
-          -123.07691,
-          46.62702
-        ],
-        [
-          -123.07664,
-          46.62702
-        ],
-        [
-          -123.07607,
-          46.62702
-        ],
-        [
-          -123.07582,
-          46.62702
-        ],
-        [
-          -123.07474,
-          46.62702
-        ],
-        [
-          -123.07107,
-          46.62702
-        ],
-        [
-          -123.06794,
-          46.627
-        ],
-        [
-          -123.06486,
-          46.62698
-        ],
-        [
-          -123.06443,
-          46.62697
-        ],
-        [
-          -123.06424,
-          46.62697
-        ],
-        [
-          -123.06344,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
         ]
       ]
     },
@@ -2119,27 +2119,6 @@
       "start": "2026-10-01T12:00:00.0000000+00:00",
       "end": "2026-10-06T19:00:00.0000000+00:00",
       "updated": "2026-10-01T13:29:28.7370000+00:00"
-    },
-    {
-      "id": 717687,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 northbound at milepost 104.32 near US 101 beginning at 8:13 pm on October 3, 2026 until further notice. The two right lanes are blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 104.32,
-      "lat": 47.021386205,
-      "lon": -122.906057864,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-04T03:13:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-04T04:05:14.6470000+00:00"
     },
     {
       "id": 698912,

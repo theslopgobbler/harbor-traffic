@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-04T04:10:56.9338501+00:00",
+  "updated": "2026-10-04T07:16:46.0382691+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a22c76",
-      "flight": "N2391M",
-      "reg": "N2391M",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 1375,
-      "gs": 94.9,
-      "track": 336.41,
-      "rate": 0,
-      "lat": 47.19246,
-      "lon": -123.1417,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
