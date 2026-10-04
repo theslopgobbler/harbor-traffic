@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T23:00:02.0919502+00:00",
+  "updated": "2026-10-04T23:16:54.6571743+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2203,6 +2203,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 717736,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on SR 3 southbound at milepost 5 near N Meridian beginning at 4:12 pm on October 4, 2026 until further notice. The roadway is fully blocked.",
+      "description": "",
+      "link": null,
+      "road": "003",
+      "roadLabel": "SR 3",
+      "direction": "S",
+      "milepost": 5.0,
+      "lat": 47.229431549,
+      "lon": -123.063816489,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-10-04T23:12:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-04T23:14:15.0330000+00:00"
     },
     {
       "id": 686738,
