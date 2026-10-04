@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T23:49:16.9124814+00:00",
+  "updated": "2026-10-04T23:59:24.3829897+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2121,6 +2121,27 @@
       "updated": "2026-10-01T13:29:28.7370000+00:00"
     },
     {
+      "id": 717736,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on SR 3 southbound at milepost 5 near N Meridian beginning at 4:12 pm on October 4, 2026 until further notice. Alternating traffic is in effect.",
+      "description": "",
+      "link": null,
+      "road": "003",
+      "roadLabel": "SR 3",
+      "direction": "S",
+      "milepost": 5.0,
+      "lat": 47.229431549,
+      "lon": -123.063816489,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-10-04T23:12:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-04T23:52:04.7070000+00:00"
+    },
+    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -2245,27 +2266,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
-    },
-    {
-      "id": 717736,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on SR 3 southbound at milepost 5 near N Meridian beginning at 4:12 pm on October 4, 2026 until further notice. The roadway is partially blocked.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "S",
-      "milepost": 5.0,
-      "lat": 47.229431549,
-      "lon": -123.063816489,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-04T23:12:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-04T23:46:36.7700000+00:00"
     }
   ]
 }
