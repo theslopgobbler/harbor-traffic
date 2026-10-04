@@ -104,7 +104,8 @@
         </div>
         <h2>DOWNLOAD THE LOGS (CSV)</h2>
         <p><button type="button" data-export="positions">BUS POSITIONS</button> <button type="button" data-export="departures">LATENESS</button>
-          <button type="button" data-export="weather_obs">WEATHER</button> <button type="button" data-export="road_alerts">ROAD ALERTS</button></p>
+          <button type="button" data-export="weather_obs">WEATHER</button> <button type="button" data-export="road_alerts">ROAD ALERTS</button>
+          <button type="button" data-export="positions_v2">FIRST POSITIONS (OCT 3–4)</button></p>
         <h2>BY ROUTE</h2>
         <table><thead><tr><th>ROUTE</th><th>STOPS</th><th>ON TIME</th><th>LATE 5+</th><th>EARLY</th><th>AVG MIN</th><th>OFF ROUTE</th></tr></thead><tbody id="bRoutes"></tbody></table>
         <h2>BY HOUR OF DAY</h2>
@@ -175,9 +176,11 @@
       $('#days').innerHTML = j.days.map((d) => `<tr><td>${day(d.day)}</td><td>${d.opens}</td><td class="bar"><i style="width:${(d.opens / max) * 100}%"></i></td>
         <td>${d.peak}</td><td>${d.tv}</td><td>${d.phone}</td><td>${d.desktop}</td></tr>`).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
-    loadBuses();
+    // bus numbers only change once a minute and are added up from daily totals; every 5 minutes is plenty
+    if (Date.now() - busLoadedAt > 5 * 60 * 1000) loadBuses();
     loadSite();
   }
+  let busLoadedAt = 0;
   // ---- buses: on time, how late, off route; charts drawn here in plain SVG ----
   // Marks: one validated hue (cyan) for single-series charts, amber reserved for a second series; 2px lines, columns
   // and bars no wider than 24px with 4px rounded ends at the data end, hairline grid, text in the page's text colors.
@@ -296,6 +299,7 @@
     { value: `${x.late} late · ${x.early} early`, label: `of ${x.n}` }];
   async function loadBuses() {
     if (!key || $('#out').hidden) return;
+    busLoadedAt = Date.now();
     document.querySelectorAll('#busDaysForm button').forEach((b) => b.style.background = +b.dataset.days === busDays ? 'rgba(0,229,255,.3)' : '');
     $('#busOut').style.opacity = busData ? 0.55 : 1; // (refetching keeps the last charts, dimmed)
     try {
@@ -361,9 +365,17 @@
     const b = e.target.closest('button[data-export]'); if (!b || !key) return;
     b.disabled = true; const was = b.textContent; b.textContent = 'PREPARING…';
     try {
-      const r = await fetch(`${relay}/bus-export?table=${b.dataset.export}&days=366`, { headers: { 'X-Stats-Key': key } });
-      if (!r.ok) throw new Error(await r.text());
-      const url = URL.createObjectURL(await r.blob());
+      // it comes in pages (the relay says where the next one starts), so a big log never overloads it
+      const parts = []; let after = '', page = 0;
+      do {
+        const r = await fetch(`${relay}/bus-export?table=${b.dataset.export}&days=366&after=${after}`, { headers: { 'X-Stats-Key': key } });
+        if (!r.ok) throw new Error(await r.text());
+        const t = await r.text();
+        parts.push(page ? t.slice(t.indexOf('\n') + 1) : t);
+        after = r.headers.get('X-Next') || ''; page++;
+        if (after) b.textContent = `PREPARING… ${page}`;
+      } while (after && page < 500);
+      const url = URL.createObjectURL(new Blob(parts.map((p) => (p.endsWith('\n') ? p : p + '\n')), { type: 'text/csv' }));
       const a = document.createElement('a'); a.href = url; a.download = `ght-${b.dataset.export}-${new Date().toISOString().slice(0, 10)}.csv`; a.click();
       setTimeout(() => URL.revokeObjectURL(url), 5000);
     } catch (err) { $('#busMsg').textContent = `DOWNLOAD FAILED: ${String(err.message || err).toUpperCase()}`; }
