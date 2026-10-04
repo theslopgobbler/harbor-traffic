@@ -1,27 +1,20 @@
 {
-  "updated": "2026-10-03T18:37:43.6879724+00:00",
+  "updated": "2026-10-04T02:15:21.3627462+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-03T17:56:00.0000000+00:00",
-    "waveFt": 3.3,
+    "time": "2026-10-04T01:26:00.0000000+00:00",
+    "waveFt": 3.6,
     "periodS": 8.0,
-    "dirDeg": 274.0,
-    "waterF": 57.9
+    "dirDeg": 270.0,
+    "waterF": 58.6
   },
   "bar": {
-    "issued": "2026-10-03T08:29:00+00:00",
-    "text": "Combined seas 3 to 5 ft. Bar conditions light. Maximum ebb currents will occur around 1030 AM Saturday, 1100 PM Saturday, and 1200 PM Sunday.",
+    "issued": "2026-10-03T21:04:00+00:00",
+    "text": "Combined seas 3 to 5 ft. Bar conditions light. Maximum ebb currents will occur around 1100 PM Saturday, 1200 PM Sunday and 1215 AM Monday.",
     "conditions": "light",
     "seas": "3 to 5 ft",
     "ebb": null
   },
-  "alerts": [
-    {
-      "event": "Dense Fog Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-10-03T19:00:00+00:00",
-      "headline": "Dense Fog Advisory issued October 2 at 11:01PM PDT until October 3 at 12:00PM PDT by NWS Portland OR"
-    }
-  ]
+  "alerts": []
 }
