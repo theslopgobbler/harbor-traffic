@@ -1,7 +1,48 @@
 {
-  "updated": "2026-10-05T14:15:52.7055321+00:00",
+  "updated": "2026-10-05T14:39:59.9793383+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97852,
+      "lon": -123.88357,
+      "sog": 0.2,
+      "cog": 32.9,
+      "heading": 147,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T13:55:31.1996377+00:00"
+    },
+    {
+      "mmsi": 367417230,
+      "name": "DREDGE PATRIOT",
+      "lat": 46.96731,
+      "lon": -123.77983,
+      "sog": 0,
+      "cog": 0,
+      "heading": 169,
+      "classB": true,
+      "seen": "2026-10-05T13:55:31.1996377+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90683,
+      "lon": -124.1062,
+      "sog": 0,
+      "cog": 327.3,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T12:15:13.5107545+00:00"
+    },
     {
       "mmsi": 303636000,
       "name": "MARK I",
@@ -25,47 +66,6 @@
       "status": 7,
       "classB": false,
       "seen": "2026-10-05T13:55:31.1996377+00:00"
-    },
-    {
-      "mmsi": 367417230,
-      "name": "DREDGE PATRIOT",
-      "lat": 46.96731,
-      "lon": -123.77983,
-      "sog": 0,
-      "cog": 0,
-      "heading": 169,
-      "classB": true,
-      "seen": "2026-10-05T13:55:31.1996377+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97852,
-      "lon": -123.88357,
-      "sog": 0.2,
-      "cog": 32.9,
-      "heading": 147,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T13:55:31.1996377+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90683,
-      "lon": -124.1062,
-      "sog": 0,
-      "cog": 327.3,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T12:15:13.5107545+00:00"
     }
   ]
 }
