@@ -292,7 +292,10 @@ if ($aisKey) {
             if ($m.MessageType -eq 'ShipStaticData') {
                 $d = $m.Message.ShipStaticData
                 & $set 'type' $d.Type; & $set 'dest' ("$($d.Destination)".Trim()); & $set 'callsign' ("$($d.CallSign)".Trim())
-                if ($d.Dimension) { & $set 'lengthM' ([int]$d.Dimension.A + [int]$d.Dimension.B) }
+                if ([int64]$d.ImoNumber -ge 1000000) { & $set 'imo' ([int64]$d.ImoNumber) }
+                if ($d.Dimension) { & $set 'lengthM' ([int]$d.Dimension.A + [int]$d.Dimension.B); if ([int]$d.Dimension.C + [int]$d.Dimension.D -gt 0) { & $set 'beamM' ([int]$d.Dimension.C + [int]$d.Dimension.D) } }
+                # how deep it sits (deeper = loaded): with size, a way to learn which ships here mean trains
+                if ([double]$d.MaximumStaticDraught -gt 0) { & $set 'draughtM' ([double]$d.MaximumStaticDraught) }
             } else {
                 $p = if ($m.MessageType -eq 'PositionReport') { $m.Message.PositionReport } else { $m.Message.StandardClassBPositionReport }
                 & $set 'lat' ([math]::Round([double]$meta.latitude, 5)); & $set 'lon' ([math]::Round([double]$meta.longitude, 5))
@@ -309,6 +312,76 @@ if ($aisKey) {
     $keep = @($ships.Values | Where-Object { $_.lat -and $_.seen -and [DateTimeOffset]::Parse($_.seen) -gt $cutoff })
     Save 'ships.json' ([ordered]@{ updated = $now.ToString('o'); source = 'AIS via aisstream.io'; ships = $keep })
     "ships: $($keep.Count) on the map ($heard messages this run)"
+
+    # every boat ever heard here, kept for good (for naming your own photos, and finding free photos of each)
+    $regFile = Join-Path $dataDir 'ship-registry.json'
+    $reg = [ordered]@{}
+    if (Test-Path $regFile) { try { foreach ($p in (Get-Content $regFile -Raw | ConvertFrom-Json).ships.PSObject.Properties) { $reg[$p.Name] = $p.Value } } catch {} }
+    foreach ($s in $ships.Values) {
+        if (-not $s.name) { continue }
+        $id = "$($s.mmsi)"; $r = $reg[$id]
+        if (-not $r) { $r = [pscustomobject]@{ name = $s.name; first = $now.ToString('o') }; $reg[$id] = $r }
+        foreach ($k in 'name', 'type', 'callsign', 'imo', 'lengthM', 'beamM', 'draughtM') { if ($null -ne $s.$k -and "$($s.$k)" -ne '') { $r | Add-Member -NotePropertyName $k -NotePropertyValue $s.$k -Force } }
+        if ($s.seen) { $r | Add-Member -NotePropertyName 'last' -NotePropertyValue $s.seen -Force }
+    }
+    Save 'ship-registry.json' ([ordered]@{ updated = $now.ToString('o'); source = 'AIS via aisstream.io'; ships = $reg })
+
+    # free photos of those boats from Wikimedia Commons, a few boats a run, each looked up again monthly. Commons
+    # files ships under "IMO 1234567" (big ships) and "Name (tugboat, 1966)" style categories, which are reliable;
+    # a plain name search finds too much else. Nothing shows on the map until it's approved on the stats page.
+    $candFile = Join-Path $dataDir 'ship-photo-candidates.json'
+    $cand = [ordered]@{ looked = [ordered]@{}; candidates = @() }
+    if (Test-Path $candFile) { try { $c = Get-Content $candFile -Raw | ConvertFrom-Json
+        foreach ($p in $c.looked.PSObject.Properties) { $cand.looked[$p.Name] = $p.Value }; $cand.candidates = @($c.candidates) } catch {} }
+    $wm = @{ 'User-Agent' = 'harbor-traffic/1.0 (traffic.harborevents.org; ship photos)' }
+    $wmApi = 'https://commons.wikimedia.org/w/api.php?format=json&'
+    $due = @($reg.Keys | Where-Object { $l = $cand.looked[$_]; -not $l -or ($now - [DateTimeOffset]::Parse($l)).TotalDays -gt 30 } |
+        Sort-Object { $r = $reg[$_]; if ($r.last) { [DateTimeOffset]::Parse($r.last).UtcTicks } else { 0 } } -Descending | Select-Object -First 3)
+    foreach ($id in $due) {
+        $r = $reg[$id]
+        try {
+            $cats = @()
+            # "IMO 1234567" usually holds the ship's own category ("Emma Mærsk (ship, 2006)", spelled properly), sometimes files
+            if ($r.imo) { $imoCat = "Category:IMO $($r.imo)"
+                $q = Invoke-RestMethod "$($wmApi)action=query&list=categorymembers&cmtype=subcat|file&cmlimit=20&cmtitle=$([uri]::EscapeDataString($imoCat))" -Headers $wm -TimeoutSec 20
+                $mem = @($q.query.categorymembers)
+                if ($mem | Where-Object { $_.ns -eq 6 }) { $cats += $imoCat }
+                $cats += @($mem | Where-Object { $_.ns -eq 14 -and $_.title -match '\((ship|tugboat|tug|towboat|boat|vessel)\b' } | ForEach-Object { $_.title }) }
+            # a name category for a vessel: exactly its name, then "(ship, ...)", "(tugboat, ...)" and so on
+            $nm = ("$($r.name)" -replace '\s+', ' ').Trim()
+            if (($nm -replace '[^A-Za-z]', '').Length -ge 5) {
+                $srch = [uri]::EscapeDataString('intitle:"' + $nm + '"')
+                $q = Invoke-RestMethod "$($wmApi)action=query&list=search&srnamespace=14&srlimit=10&srsearch=$srch" -Headers $wm -TimeoutSec 20
+                $pat = '^Category:' + [regex]::Escape($nm) + ' \((ship|tugboat|tug|towboat|boat|vessel|fishing vessel|trawler|ferry|barge|dredger|research vessel|yacht)\b[^)]*\)$'
+                $cats += @($q.query.search | ForEach-Object { $_.title } | Where-Object { $_ -match $pat })
+            }
+            $titles = @()
+            foreach ($cat in ($cats | Select-Object -Unique)) {
+                $q = Invoke-RestMethod "$($wmApi)action=query&list=categorymembers&cmtype=file&cmlimit=12&cmtitle=$([uri]::EscapeDataString($cat))" -Headers $wm -TimeoutSec 20
+                $titles += @($q.query.categorymembers | ForEach-Object { $_.title })
+            }
+            $titles = @($titles | Select-Object -Unique | Where-Object { $t = $_; -not ($cand.candidates | Where-Object { $_.file -eq $t -and "$($_.mmsi)" -eq $id }) } | Select-Object -First 8)
+            if ($titles.Count) {
+                $q = Invoke-RestMethod "$($wmApi)action=query&prop=imageinfo&iiprop=url|extmetadata|mime&iiurlwidth=1280&titles=$([uri]::EscapeDataString($titles -join '|'))" -Headers $wm -TimeoutSec 30
+                foreach ($p in $q.query.pages.PSObject.Properties.Value) {
+                    $i = $p.imageinfo[0]; if (-not $i -or $i.mime -notmatch '^image/(jpeg|png|webp)$') { continue }
+                    $m = $i.extmetadata; $strip = { param($v) (("$v" -replace '<[^>]+>', ' ') -replace '\s+', ' ').Trim() }
+                    $desc = & $strip $m.ImageDescription.value; if ($desc.Length -gt 220) { $desc = $desc.Substring(0, 217) + '...' }
+                    $cand.candidates += [pscustomobject]@{ mmsi = $id; ship = $r.name; file = $p.title; page = $i.descriptionurl; thumb = $i.thumburl
+                        w = [int]$i.thumbwidth; h = [int]$i.thumbheight; author = (& $strip $m.Artist.value); license = "$($m.LicenseShortName.value)"
+                        licenseUrl = "$($m.LicenseUrl.value)"; date = (& $strip $m.DateTimeOriginal.value) -replace 'date QS:.*$', ''; caption = $desc; found = $now.ToString('o') }
+                }
+            }
+            $cand.looked[$id] = $now.ToString('o')
+        } catch {
+            "ship photos for $($r.name): $($_.Exception.Message.Split("`n")[0])"
+            if ("$($_.Exception.Message)" -match '429|Too Many') { break } # Commons asked us to slow down: try again next run
+        }
+        Start-Sleep -Milliseconds 400 # (gentle on Commons)
+    }
+    $cand.updated = $now.ToString('o')
+    Save 'ship-photo-candidates.json' $cand
+    if ($due.Count) { "ship photos: looked up $($due.Count) boat(s); $(@($cand.candidates).Count) photo(s) found so far" }
 }
 
 # ---------- Grays Harbor Transit service alerts (their Service Alerts page, via its WordPress API) ----------

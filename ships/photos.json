@@ -1,0 +1,43 @@
+{
+    "updated":  "2026-10-05T05:23:30.4764453+00:00",
+    "photos":  {
+                   "367324840":  [
+                                     {
+                                         "src":  "ships/367324840-commons-1.jpg",
+                                         "w":  1280,
+                                         "h":  850,
+                                         "caption":  "Tied up on the Hoquiam River in 2009 (right, beside the Capt Bob Campbell), the Simpson Avenue Bridge behind",
+                                         "credit":  "Joe Mabel",
+                                         "license":  "CC BY-SA 3.0",
+                                         "licenseUrl":  "https://creativecommons.org/licenses/by-sa/3.0",
+                                         "page":  "https://commons.wikimedia.org/wiki/File:Hoquiam,_WA_-_river_03.jpg",
+                                         "file":  "File:Hoquiam, WA - river 03.jpg",
+                                         "source":  "commons"
+                                     },
+                                     {
+                                         "src":  "ships/367324840-commons-2.jpg",
+                                         "w":  1280,
+                                         "h":  850,
+                                         "caption":  "On the Hoquiam waterfront in 2009, seen from the Polson Museum (the Capt Bob Campbell behind it)",
+                                         "credit":  "Joe Mabel",
+                                         "license":  "CC BY-SA 3.0",
+                                         "licenseUrl":  "https://creativecommons.org/licenses/by-sa/3.0",
+                                         "page":  "https://commons.wikimedia.org/wiki/File:Hoquiam,_WA_-_waterfront_01.jpg",
+                                         "file":  "File:Hoquiam, WA - waterfront 01.jpg",
+                                         "source":  "commons"
+                                     },
+                                     {
+                                         "src":  "ships/367324840-commons-3.jpg",
+                                         "w":  1280,
+                                         "h":  874,
+                                         "caption":  "Working the log rafts on the Columbia River near the Weyerhaeuser pulp mill, September 1972",
+                                         "credit":  "Gene Daniels, U.S. National Archives",
+                                         "license":  "Public domain",
+                                         "licenseUrl":  "",
+                                         "page":  "https://commons.wikimedia.org/wiki/File:FISHING_ON_THE_COLUMBIA_RIVER_NEAR_WEYERHAUSER_PULP_MILL_OUTFALL_-_NARA_-_545073.jpg",
+                                         "file":  "File:FISHING ON THE COLUMBIA RIVER NEAR WEYERHAUSER PULP MILL OUTFALL - NARA - 545073.jpg",
+                                         "source":  "commons"
+                                     }
+                                 ]
+               }
+}

@@ -553,6 +553,9 @@
         <circle cx="80" cy="${Y(cur.v).toFixed(1)}" r="2.2" fill="#ff2a3d"/>`;
       $('#tideNow').textContent = `${cur.v.toFixed(1)} FT ${rising ? '▲' : '▼'}`;
       const nx = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).find((p) => p.t > now);
+      // (the rail note: big ships waiting off Westport come in on the high tide)
+      nextHigh = (hilo.predictions || []).map((p) => ({ t: fromPacific(p.t), v: +p.v, type: p.type })).find((p) => p.type === 'H' && p.t > now) || null;
+      renderRail();
       tick('tide', `${cur.v.toFixed(1)} ft and ${rising ? 'rising' : 'falling'} at Aberdeen` +
         (nx ? `, ${nx.type === 'H' ? 'high' : 'low'} ${nx.v.toFixed(1)} ft at ${nx.t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}` : ''));
       // ---- low tide warning for paddlers: mudflats exposed and shallow river mouths ----
@@ -889,7 +892,49 @@
     }
   }
 
+  // ---- boat photos: your own (ships/photos.json, made by scripts/ship-photos.ps1, plus a few from Wikimedia Commons
+  // added by hand) and Commons photos the collector found that you approved on the stats page (the relay keeps
+  // the yes/no list). Shown in the boat's popup with the photographer's credit and license.
+  let shipPhotos = {}, photosAt = 0;
+  const safeUrl = (u) => (/^(ships\/[\w.-]+|https:\/\/(upload|thumb)\.wikimedia\.org\/[^\s"'<>]+)$/.test(u || '') ? u : null);
+  async function loadShipPhotos() {
+    if (Date.now() - photosAt < 600000) return;
+    photosAt = Date.now();
+    const relay = (window.HT?.airRelay || '').replace(/\/aircraft$/, '');
+    const get = (u) => fetch(u, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const [own, cand, dec] = await Promise.all([get(`ships/photos.json?t=${Date.now()}`), get(`data/ship-photo-candidates.json?t=${Date.now()}`),
+      relay ? fetch(`${relay}/ship-photos`).then((r) => (r.ok ? r.json() : {})).catch(() => ({})) : {}]);
+    const out = {};
+    for (const [mmsi, list] of Object.entries(own.photos || {})) out[mmsi] = [...list];
+    const yes = new Set((dec.decisions || []).filter((d) => d.ok).map((d) => `${d.mmsi}|${d.file}`));
+    for (const c of cand.candidates || []) {
+      if (!yes.has(`${c.mmsi}|${c.file}`)) continue;
+      const have = (out[c.mmsi] ||= []);
+      if (!have.some((p) => p.file === c.file)) have.push({ src: c.thumb, w: c.w, h: c.h, caption: c.caption, credit: c.author, license: c.license,
+        licenseUrl: c.licenseUrl, page: c.page, file: c.file, source: 'commons' });
+    }
+    shipPhotos = out;
+  }
+  function photoHtml(s) {
+    const list = (shipPhotos[String(s.mmsi)] || []).filter((p) => safeUrl(p.src));
+    if (!list.length) return '';
+    const i = (s._pi || 0) % list.length, p = list[i];
+    const link = (u, t) => (/^https:\/\/[^\s"'<>]+$/.test(u || '') ? `<a href="${escS(u)}" target="_blank" rel="noopener">${escS(t)}</a>` : escS(t));
+    const credit = `PHOTO: ${escS(p.credit || 'unknown')}` + (p.source === 'own' ? '' : `${p.license ? ' · ' + link(p.licenseUrl, p.license) : ''}${p.page ? ' · ' + link(p.page, 'COMMONS') : ''}`);
+    return `<figure class="ship-photo"><img src="${escS(p.src)}" width="${+p.w || 4}" height="${+p.h || 3}" alt="${escS(s.name || 'vessel')}" loading="lazy">
+      <figcaption>${p.caption ? `<span class="cap">${escS(p.caption)}</span>` : ''}<span class="cr">${credit}</span>
+      ${list.length > 1 ? `<button type="button" class="ph-next" data-mmsi="${escS(s.mmsi)}" aria-label="Next photo">${i + 1}/${list.length} ›</button>` : ''}</figcaption></figure>`;
+  }
+  // stepping through a boat's photos
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.ph-next'); if (!b) return;
+    const mk = shipMarkers.find((m) => String(m._ship.mmsi) === b.dataset.mmsi); if (!mk) return;
+    mk._ship._pi = (mk._ship._pi || 0) + 1;
+    mk.getPopup().setHTML(mk._html(mk._ship));
+  });
+
   async function loadShips() {
+    loadShipPhotos();
     try {
       const j = await (await fetch(`data/ships.json?t=${Date.now()}`, { cache: 'no-store' })).json();
       shipList = (j.ships || []).filter((s) => s.lat && s.lon);
@@ -907,18 +952,20 @@
     shipList = shipList.filter((s) => s._sit.inside || s._sit.dist <= MAX_NM);
     shipMarkers.splice(0).forEach((m) => m.remove());
     for (const s of shipList) {
-      const [kind] = SHIP_KIND(s.type), sit = s._sit, color = shipColor(s, sit);
+      const kind = isCarCarrier(s) ? 'VEHICLE CARRIER' : SHIP_KIND(s.type)[0], sit = s._sit, color = shipColor(s, sit);
       const el = document.createElement('div');
       el.className = 'ship-mk' + (s.classB ? ' small' : '') + (isCargo(s.type) ? ' cargo' : '');
       drawShip(el, s);
       const dir = s.heading ?? s.cog ?? 0;
       el.title = s.name || 'Vessel';
       const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
-      const html = `<h3>${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
-        <p><span style="color:${color}">${kind}</span> · <b>${sit.state}</b>${stopped(s) ? '' : ` · ${(s.sog ?? 0).toFixed(1)} KT ${compass(dir)}`}</p>
-        <div class="m">${sit.inside ? 'IN ' + sit.bay : `${sit.dist.toFixed(1)} NM FROM THE ${sit.bay} ENTRANCE`}${s.dest ? ' · BOUND FOR ' + escS(s.dest.toUpperCase()) : ''}${s.lengthM ? ' · ' + s.lengthM + ' M' : ''}${ago != null ? ` · SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
-      const mk = new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).setPopup(new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html)).addTo(map);
-      mk._ship = s;
+      const html = (x) => `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
+        <p><span style="color:${color}">${kind}</span> · <b>${sit.state}</b>${stopped(x) ? '' : ` · ${(x.sog ?? 0).toFixed(1)} KT ${compass(dir)}`}</p>
+        <div class="m">${sit.inside ? 'IN ' + sit.bay : `${sit.dist.toFixed(1)} NM FROM THE ${sit.bay} ENTRANCE`}${x.dest ? ' · BOUND FOR ' + escS(x.dest.toUpperCase()) : ''}${x.lengthM ? ' · ' + x.lengthM + ' M' : ''}${ago != null ? ` · SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
+      const pop = new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html(s));
+      pop.on('open', () => pop.setHTML(html(s))); // (photos may have loaded since)
+      const mk = new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).setPopup(pop).addTo(map);
+      mk._ship = s; mk._html = html;
       shipMarkers.push(mk);
     }
     groupShips();
@@ -950,20 +997,46 @@
   const railChip = document.createElement('div');
   railChip.className = 'rail-chip';
   new maplibregl.Marker({ element: railChip, anchor: 'top' }).setLngLat([-123.84, 46.962]).addTo(map);
+  // Per the port: the big vehicle carriers all but guarantee trains (the cars come and go by rail); the smaller
+  // bulk ships (soy meal) often don't. Car carriers are told apart by name: nearly all belong to a few lines that
+  // name them in a set pattern (NYK "... LEADER", K Line "... HIGHWAY", MOL "... ACE", EUKOR "MORNING ...",
+  // Hyundai Glovis, Höegh, Toyofuji "TRANS FUTURE"). Size alone overlaps too much with bulk ships to go by.
+  function isCarCarrier(x) { return /(\bLEADER|\bHIGHWAY|\bACE)$|^(MORNING|GLOVIS|HOEGH|HÖEGH|TRANS FUTURE)\b/i.test(String(x.name || '').trim()); }
+  // Also per the port: the biggest ships wait outside, off Westport, for the tide before coming in to load. So a car
+  // carrier (or a 190 m+ ship) sitting or creeping within about 12 nm outside the Grays Harbor entrance is a heads-up.
+  let nextHigh = null;
   function renderRail() {
     const [w, s, e, n] = IN_HARBOR;
     const big = shipList.filter((x) => x.lon > w && x.lon < e && x.lat > s && x.lat < n &&
       ((x.lengthM || 0) >= 100 || (x.type >= 70 && x.type <= 89)));
-    const atBerth = big.filter(stopped), moving = big.filter((x) => !stopped(x));
-    const level = atBerth.length ? 2 : moving.length ? 1 : 0;
+    // at berth = stopped at the Aberdeen/Hoquiam terminals. Stopped anywhere else (just inside the entrance by
+    // Westport, or outside it) counts as waiting for the tide
+    const atBerth = big.filter((x) => stopped(x) && inBox(x, PORT_BOX)), moving = big.filter((x) => !stopped(x));
+    const cars = atBerth.filter(isCarCarrier);
+    const waiting = shipList.filter((x) => x._sit && x._sit.bay === 'GRAYS HARBOR' && (x.sog ?? 0) < 3 && !atBerth.includes(x) &&
+      (x._sit.inside ? stopped(x) : x._sit.dist <= 12) && (isCarCarrier(x) || (x.lengthM || 0) >= 190));
+    // likely: a car carrier at berth. Possible: any other big ship at berth or moving in the harbor, or a big one
+    // waiting outside for the tide
+    const level = cars.length ? 2 : atBerth.length || moving.length || waiting.length ? 1 : 0;
     const names = (list) => list.map((x) => (x.name || 'a large vessel').toUpperCase()).join(', ');
-    railChip.innerHTML = level ? `<b>⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'}</b><span>${escS(level === 2 ? names(atBerth) + ' AT BERTH' : names(moving) + ' UNDER WAY')}</span>` : '';
+    const hm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    const tide = nextHigh && nextHigh.t - Date.now() < 14 * 3600e3 ? `, high tide ${hm(nextHigh.t)}` : '';
+    const who = level === 2 ? names(cars) : atBerth.length ? names(atBerth) : moving.length ? names(moving) : names(waiting);
+    const carWaiting = waiting.some(isCarCarrier);
+    const where = level === 2 ? ' (vehicle carrier) at berth' : atBerth.length ? ' at berth' : moving.length ? ' under way'
+      : `${carWaiting ? ' (vehicle carrier)' : ''} waiting by Westport for the tide${tide}`;
+    const why = (who + where).toUpperCase();
+    railChip.innerHTML = level ? `<b>⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'}</b><span>${escS(why)}</span>` : '';
     railChip.classList.toggle('likely', level === 2);
     const box = $('#railNote');
+    const more = level === 2 ? 'Vehicle carriers are loaded and unloaded by train, so expect trains at crossings.'
+      : atBerth.length ? 'Bulk ships (like soy meal) don\'t always bring trains; vehicle carriers almost always do.'
+      : moving.length ? 'Trains often follow a vehicle carrier\'s arrival.'
+      : `The biggest ships wait by Westport for the tide before coming up to load${carWaiting ? '; vehicle carriers almost always mean trains once they dock.' : '.'}`;
     if (box) box.innerHTML = level ? `<li class="${level === 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'} · ABERDEEN / HOQUIAM</div>
-      <div class="m">${escS(level === 2 ? `${names(atBerth)} at berth in the harbor. Ships at the port are loaded and unloaded by train, so expect trains at crossings.` : `${names(moving)} moving in the harbor; trains often follow a ship's arrival.`)}</div></li>` : '';
+      <div class="m">${escS(`${who}${where}${atBerth.length || moving.length || level === 2 ? ' in the harbor' : ''}. ${more}`)}</div></li>` : '';
     window.htRailLevel = level;
-    tick('rail', level ? `activity ${level === 2 ? 'likely' : 'possible'} in Aberdeen/Hoquiam: ${level === 2 ? names(atBerth) + ' at berth' : names(moving) + ' under way'}` : '');
+    tick('rail', level ? `activity ${level === 2 ? 'likely' : 'possible'} in Aberdeen/Hoquiam: ${who}${where}` : '');
     window.htDeclutter?.();
   }
   function renderShipList() {
@@ -982,7 +1055,7 @@
     if (!box) return;
     const sorted = shipList.slice().sort((a, b) => a._sit.dist - b._sit.dist || (b.lengthM || 0) - (a.lengthM || 0));
     box.innerHTML = sorted.length ? sorted.map((s) => {
-      const [kind] = SHIP_KIND(s.type), sit = s._sit, color = shipColor(s, sit);
+      const kind = isCarCarrier(s) ? 'VEHICLE CARRIER' : SHIP_KIND(s.type)[0], sit = s._sit, color = shipColor(s, sit);
       const where = sit.inside ? `IN ${sit.bay}` : `${sit.dist.toFixed(1)} NM OUT`;
       return `<li class="clickable ship-row" data-lon="${s.lon}" data-lat="${s.lat}" style="border-left-color:${color}">
         <div class="t">${escS((s.name || 'UNKNOWN VESSEL').toUpperCase())} <span class="pill st-${sit.state.replace(/\s/g, '')}">${sit.state}</span></div>

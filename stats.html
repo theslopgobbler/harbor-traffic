@@ -45,6 +45,12 @@
   /* charts: thin marks in two validated hues (cyan for the main series, amber for the comparison), hairline grid,
      text in the page's text colors, a hover readout on every chart */
   .chart { position: relative; border: 1px solid var(--line); background: #030d0c; padding: 6px 4px 2px; }
+  /* ship photos to review: a card each */
+  .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 8px 0; }
+  .shot { border: 1px solid var(--line); background: #030d0c; padding: 8px; font-size: 11px; display: flex; flex-direction: column; gap: 5px; }
+  .shot img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #041412; }
+  .shot b { color: #fff; font-weight: 400; letter-spacing: .06em; } .shot .d { color: var(--dim); }
+  .shot .btns { display: flex; gap: 6px; margin-top: auto; } .shot .btns button { flex: 1; }
   .chart svg { display: block; width: 100%; overflow: visible; font: 10px var(--mono); }
   .chart .empty { color: var(--dim); font-size: 11px; padding: 18px 10px; }
   .legend { display: flex; gap: 14px; font-size: 10px; color: var(--dim); padding: 2px 8px 6px; letter-spacing: .12em; }
@@ -141,6 +147,17 @@
           routes from where buses actually drive.</p>
       </div>
     </section>
+    <section id="shipSec">
+      <h1 style="margin-top:36px">SHIP PHOTOS · FROM WIKIMEDIA COMMONS</h1>
+      <p class="note">Free photos the collector found for boats it has heard (filed on Commons under the boat's name or IMO number).
+        Nothing shows on the map until you say USE. Check that it's really this boat (names get reused) and that the photo is any good.
+        Your own photos go in harbor-traffic\photos\ instead (see scripts\ship-photos.ps1).</p>
+      <div class="msg" id="shipMsg"></div>
+      <div id="shipPending" class="shots"></div>
+      <h2>ON THE MAP</h2>
+      <div id="shipUsed" class="shots"></div>
+      <p class="note" id="shipNo"></p>
+    </section>
     <section id="site">
       <h1 style="margin-top:36px">HARBOR EVENTS · <a href="https://harborevents.org/" target="_blank" rel="noopener">HARBOREVENTS.ORG</a></h1>
       <div class="msg" id="siteMsg"></div>
@@ -197,9 +214,52 @@
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
     // bus numbers only change once a minute and are added up from daily totals; every 5 minutes is plenty
     if (Date.now() - busLoadedAt > 5 * 60 * 1000) loadBuses();
+    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) loadShipReview();
     loadSite();
   }
-  let busLoadedAt = 0;
+  let busLoadedAt = 0, shipLoadedAt = 0;
+  // ---- ship photos to review: what the collector found on Commons, minus what's already decided or on the map
+  let shipData = null;
+  async function loadShipReview() {
+    if (!key || $('#out').hidden) return;
+    shipLoadedAt = Date.now();
+    const get = (u, o) => fetch(u, { cache: 'no-store', ...o }).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    try {
+      const [cand, own, dec] = await Promise.all([get(`data/ship-photo-candidates.json?t=${Date.now()}`).catch(() => ({ candidates: [] })),
+        get(`ships/photos.json?t=${Date.now()}`).catch(() => ({ photos: {} })), get(`${relay}/ship-photos`)]);
+      shipData = { cand: cand.candidates || [], own: own.photos || {}, dec: Object.fromEntries((dec.decisions || []).map((d) => [`${d.mmsi}|${d.file}`, d.ok])) };
+      $('#shipMsg').textContent = '';
+      renderShipReview();
+    } catch (e) { $('#shipMsg').textContent = /404/.test(e.message) ? 'DEPLOY THE UPDATED RELAY TO REVIEW SHIP PHOTOS' : 'CAN\'T LOAD SHIP PHOTOS RIGHT NOW'; }
+  }
+  function renderShipReview() {
+    const d = shipData; if (!d) return;
+    const onMap = (c) => (d.own[c.mmsi] || []).some((p) => p.file === c.file);
+    const card = (c, buttons) => `<div class="shot"><a href="${esc(c.page)}" target="_blank" rel="noopener"><img src="${esc(c.thumb)}" alt="" loading="lazy"></a>
+      <b>${esc(c.ship)}</b><span class="d">MMSI ${esc(c.mmsi)} · ${esc(c.author || 'unknown')} · ${esc(c.license)}${c.date ? ' · ' + esc(c.date) : ''}</span>
+      ${c.caption ? `<span class="d">${esc(c.caption)}</span>` : ''}<div class="btns">${buttons}</div></div>`;
+    const btn = (c, ok, label) => `<button type="button" data-ship-photo="${esc(c.file)}" data-mmsi="${esc(c.mmsi)}" data-ok="${ok}">${label}</button>`;
+    const pending = d.cand.filter((c) => !onMap(c) && !(`${c.mmsi}|${c.file}` in d.dec));
+    const used = d.cand.filter((c) => d.dec[`${c.mmsi}|${c.file}`] === 1);
+    const no = d.cand.filter((c) => d.dec[`${c.mmsi}|${c.file}`] === 0);
+    $('#shipPending').innerHTML = pending.map((c) => card(c, btn(c, 1, 'USE') + btn(c, 0, 'DON\'T USE'))).join('')
+      || '<p class="note">NOTHING NEW TO REVIEW. THE COLLECTOR LOOKS UP A FEW BOATS EACH RUN, AND EACH ONE AGAIN MONTHLY.</p>';
+    $('#shipUsed').innerHTML = used.map((c) => card(c, btn(c, 'null', 'TAKE OFF THE MAP'))).join('') || '<p class="note">NONE YET (BESIDES ONES ADDED BY HAND).</p>';
+    $('#shipNo').textContent = no.length ? `${no.length} TURNED DOWN.` : '';
+  }
+  document.addEventListener('click', async (e) => {
+    const b = e.target.closest('button[data-ship-photo]'); if (!b || !key) return;
+    b.disabled = true;
+    const ok = b.dataset.ok === 'null' ? null : b.dataset.ok === '1';
+    try {
+      const r = await fetch(`${relay}/ship-photos`, { method: 'POST', headers: { 'X-Stats-Key': key, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file: b.dataset.shipPhoto, mmsi: b.dataset.mmsi, ok }) });
+      if (!r.ok) throw new Error(await r.text());
+      const k = `${b.dataset.mmsi}|${b.dataset.shipPhoto}`;
+      if (ok == null) delete shipData.dec[k]; else shipData.dec[k] = ok ? 1 : 0;
+      renderShipReview();
+    } catch (err) { $('#shipMsg').textContent = `COULDN'T SAVE THAT: ${String(err.message || err).toUpperCase()}`; b.disabled = false; }
+  });
   // ---- buses: on time, how late, off route; charts drawn here in plain SVG ----
   // Marks: one validated hue (cyan) for single-series charts, amber reserved for a second series; 2px lines, columns
   // and bars no wider than 24px with 4px rounded ends at the data end, hairline grid, text in the page's text colors.
