@@ -1,19 +1,7 @@
 {
-  "updated": "2026-10-05T17:01:07.6383694+00:00",
+  "updated": "2026-10-05T17:24:16.7815904+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 303636000,
-      "name": "MARK I",
-      "lat": 46.62311,
-      "lon": -124.29128,
-      "sog": 9,
-      "cog": 8.6,
-      "heading": 8,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T14:15:52.7055321+00:00"
-    },
     {
       "mmsi": 367310520,
       "name": "JAMES T",
