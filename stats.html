@@ -84,6 +84,7 @@
         <button type="button" data-days="1">1 DAY</button><button type="button" data-days="7">7 DAYS</button><button type="button" data-days="30">30 DAYS</button>
       </form>
       <div class="msg" id="busMsg"></div>
+      <p class="note" id="bUse"></p>
       <div id="busOut" hidden>
         <div class="grid">
           <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s" id="bOnS">LEFT 0 TO 5 MIN AFTER SCHEDULE</div></div>
@@ -317,6 +318,12 @@
       : positions ? `LOGGING: ${positions} BUS POSITIONS SO FAR. LATENESS SHOWS UP AS BUSES PASS THEIR TIMED STOPS (USUALLY WITHIN THE HOUR WHILE BUSES ARE RUNNING).`
       : 'NOTHING LOGGED YET. THE RELAY CHECKS ONCE A MINUTE WHILE BUSES ARE RUNNING; IF BUSES ARE OUT AND THIS STAYS EMPTY FOR 10 MINUTES, THE CRON TRIGGER ISN\'T FIRING.';
     $('#busOut').hidden = false;
+    // Cloudflare's free database allowance (resets midnight UTC); the relay stops logging for the day at half of it
+    const u = j.usage, p1 = (a, b) => (Math.round(a / b * 1000) / 10).toFixed(1);
+    $('#bUse').textContent = u ? `DATABASE USE TODAY (UTC): ${u.reads.toLocaleString()} ROWS READ (${p1(u.reads, u.limitReads)}% OF FREE) · `
+      + `${u.writes.toLocaleString()} WRITTEN (${p1(u.writes, u.limitWrites)}% OF FREE)`
+      + (u.paused ? ' · LOGGING PAUSED UNTIL 5 PM PACIFIC (OVER HALF THE ALLOWANCE)' : ' · LOGGING PAUSES AT 50%') : '';
+    $('#bUse').style.color = u?.paused ? '#ffb300' : '';
     // the headline numbers: exactly the same definition as the tables and charts below
     const tot = j.byRoute.reduce((a, x) => ({ n: a.n + x.n, ontime: a.ontime + x.ontime, late: a.late + x.late, early: a.early + x.early, sum: a.sum + x.avg * x.n }),
       { n: 0, ontime: 0, late: 0, early: 0, sum: 0 });

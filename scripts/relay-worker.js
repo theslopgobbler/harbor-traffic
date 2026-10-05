@@ -456,6 +456,44 @@ async function busExport(db, table, days, after) {
   return { csv: cols.replace(/ /g, '') + '\n' + body + (body ? '\n' : ''), next: rows.length === PAGE ? rows[rows.length - 1]._r : null };
 }
 
+// ---- database use meter. D1's free plan allows 5,000,000 rows read and 100,000 written a day (reset at midnight
+// UTC); going over locks the database until then. Every query here goes through counted(), which adds up the rows
+// D1 says it read and wrote; each copy of the Worker adds its share to the usage table every 5 minutes. At half
+// of either allowance the bus log and viewer count pause for the rest of the UTC day (the map itself never
+// touches the database, so it keeps working).
+const FREE_READS = 5000000, FREE_WRITES = 100000;
+const usage = { reads: 0, writes: 0, flushedAt: Date.now(), day: null, total: null, over: false };
+const utcDay = (t) => new Date(t).toISOString().slice(0, 10);
+function counted(db) {
+  const tally = (m) => { if (m) { usage.reads += m.rows_read || 0; usage.writes += m.rows_written || 0; } };
+  const wrap = (s) => ({ _s: s, bind: (...a) => wrap(s.bind(...a)),
+    all: async () => { const r = await s.all(); tally(r.meta); return r; },
+    run: async () => { const r = await s.run(); tally(r.meta); return r; },
+    first: async () => { const r = await s.all(); tally(r.meta); return r.results[0] ?? null; } });
+  return { prepare: (q) => wrap(db.prepare(q)), batch: async (list) => { const rs = await db.batch(list.map((x) => x._s)); rs.forEach((r) => tally(r?.meta)); return rs; } };
+}
+let usageReady = false;
+async function flushUsage(raw, force = false) {
+  const now = Date.now(), day = utcDay(now);
+  if (usage.day !== day) { usage.day = day; usage.over = false; usage.total = null; }
+  if (!force && usage.total && now - usage.flushedAt < 300000) return usage.over; // (a new copy checks in right away)
+  const r = usage.reads, w = usage.writes;
+  usage.reads = 0; usage.writes = 0; usage.flushedAt = now;
+  try {
+    if (!usageReady) { await raw.prepare('CREATE TABLE IF NOT EXISTS usage (day TEXT PRIMARY KEY, reads INTEGER, writes INTEGER)').run(); usageReady = true; }
+    const row = await raw.prepare(`INSERT INTO usage (day, reads, writes) VALUES (?1, ?2, ?3)
+      ON CONFLICT(day) DO UPDATE SET reads = reads + ?2, writes = writes + ?3 RETURNING reads, writes`).bind(day, r + 1, w + 2).first();
+    usage.total = row;
+    usage.over = row.reads > FREE_READS / 2 || row.writes > FREE_WRITES / 2;
+  } catch (e) { usage.reads += r; usage.writes += w; if (/limit/i.test(e.message)) usage.over = true; }
+  return usage.over;
+}
+async function usageReport(raw) {
+  await flushUsage(raw, true);
+  const t = usage.total || { reads: 0, writes: 0 };
+  return { day: usage.day, reads: t.reads, writes: t.writes, limitReads: FREE_READS, limitWrites: FREE_WRITES, paused: usage.over };
+}
+
 // ---- viewers: a small D1 database (binding DB) keeps the tally for everyone, so it can be set up entirely in
 // the Cloudflare dashboard. It holds only random tab IDs with when each last checked in (cleared after an
 // hour), plus per-day totals: page opens, the most at once, and opens by kind (TV, phone, desktop).
@@ -555,6 +593,12 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors });
     const json = (body) => new Response(body, { headers: { ...cors, 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
     const path = new URL(request.url).pathname;
+    // every database query is counted (the meter above); only these paths use the database
+    const raw = env.DB;
+    if (raw && ['/hello', '/viewers', '/bus-stats', '/bus-export'].includes(path)) {
+      env = { ...env, DB: counted(raw) };
+      ctx?.waitUntil(flushUsage(raw).catch(() => {}));
+    }
 
     if (path === '/debug') {
       await Promise.all([refreshAir(env), refreshBuses()]);
@@ -587,7 +631,7 @@ export default {
       if (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY)
         return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
       const days = Math.max(1, Math.min(60, +new URL(request.url).searchParams.get('days') || 7));
-      try { return json(JSON.stringify(await busStats(env.DB, days))); }
+      try { return json(JSON.stringify({ ...(await busStats(env.DB, days)), usage: await usageReport(raw) })); }
       catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
     }
     // the raw logs as a CSV download (?table=positions|departures|weather_obs|road_alerts&days=30); key in the header
@@ -611,6 +655,8 @@ export default {
         return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
       // only the dashboard's own pages check in
       if (path === '/hello' && !ALLOWED.includes(origin)) return new Response('', { status: 403, headers: cors });
+      // over half the free database allowance today: don't count (the page doesn't mind)
+      if (path === '/hello' && usage.over) return json('{"ok":true,"paused":true}');
       try {
         const r = path === '/hello' ? await hello(env.DB, new URL(request.url)) : await viewerStats(env.DB);
         return new Response(r.body, { status: r.status, headers: { ...cors, 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
@@ -622,6 +668,11 @@ export default {
   },
   // once a minute (a Cron Trigger "* * * * *" on this Worker): the only thing that writes the bus log
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(busMinute(env, event.scheduledTime).catch((e) => console.log('bus log', e.message)));
+    if (!env.DB) return;
+    const raw = env.DB;
+    ctx.waitUntil((async () => {
+      if (await flushUsage(raw)) return; // over half the free database allowance today: wait for midnight UTC
+      await busMinute({ ...env, DB: counted(raw) }, event.scheduledTime);
+    })().catch((e) => console.log('bus log', e.message)));
   }
 };
