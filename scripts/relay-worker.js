@@ -109,6 +109,10 @@ async function refreshBuses(withNotices = true) {
         }
       } catch { /* skip this route this time */ }
     }));
+    // a bus can come back in several routes' feeds: keep it once, under the route the route list names it on
+    const byId = new Map();
+    for (const b of buses) { const had = byId.get(b.id); if (!had || (b.listed && !had.listed)) byId.set(b.id, b); }
+    buses.splice(0, buses.length, ...byId.values());
     // route notices GHT posts to the tracker (detours, delays); shape varies, so keep any text they contain
     let notices = [];
     try { notices = JSON.parse(bus.body || '{}').notices || []; } catch { /* none kept */ }

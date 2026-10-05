@@ -118,6 +118,10 @@ body.no-aircraft .air-mk { display: none !important; }
 .bus-mk { width: 34px; height: 36px; cursor: pointer; display: grid; place-items: center; }
 .bus-mk .ic { width: 14px; height: 30px; filter: drop-shadow(0 0 3px rgba(191,244,255,.45)); }
 .bus-mk .ic svg { display: block; width: 100%; height: 100%; }
+/* not in service (parked at the base, driving to or from a route): dimmed, with a gray tag */
+.bus-mk.oos { opacity: .38; }
+.bus-mk.oos .ic { filter: grayscale(1); }
+.bus-mk.oos b { color: #8fb3aa !important; border-color: #3d5a53 !important; }
 .bus-mk b { position: absolute; left: 100%; top: 0; transform: translate(-6px, -2px); padding: 0 3px; font: 700 10px/12px var(--mono); background: rgba(2,8,7,.88); border: 1px solid; letter-spacing: .04em; }
 .bus-grp.parked { opacity: .4; }
 .bus-grp.parked:hover { opacity: 1; }
