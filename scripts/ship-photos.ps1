@@ -92,4 +92,31 @@ Get-ChildItem $outDir -File | Where-Object { $_.Name -match '^\d{9}-[0-9a-f]{8}\
 
 $json = [ordered]@{ updated = [DateTimeOffset]::UtcNow.ToString('o'); photos = $photos } | ConvertTo-Json -Depth 6
 [IO.File]::WriteAllText($listFile, $json, $utf8)
+
+# landmark photos: photos\landmarks\<landmark id>.jpg (a second one: "<id> 2.jpg"; captions in a matching .txt the same
+# way) -> clean copies in landmarks\, listed on that landmark in landmarks\landmarks.json
+$lmIn = Join-Path $inDir 'landmarks'; $lmOut = Join-Path $root 'landmarks'; $lmFile = Join-Path $lmOut 'landmarks.json'
+New-Item -ItemType Directory -Force $lmIn, $lmOut | Out-Null
+if (Test-Path $lmFile) {
+    $lm = Get-Content $lmFile -Raw | ConvertFrom-Json
+    $lmUsed = @{}
+    foreach ($l in $lm.landmarks) {
+        $list = [System.Collections.ArrayList]@()
+        foreach ($f in (Get-ChildItem $lmIn -File | Where-Object { $_.Extension -match '^\.(jpe?g|png)$' -and ($_.BaseName -replace '\s*(\(\d+\)|[-_ ]\d{1,2})$', '') -eq $l.id })) {
+            $hash = (Get-FileHash $f.FullName -Algorithm SHA1).Hash.Substring(0, 8).ToLower()
+            $name = "$($l.id)-$hash.jpg"; $dest = Join-Path $lmOut $name
+            $wh = if (Test-Path $dest) { $i = [System.Drawing.Image]::FromFile($dest); $r = @($i.Width, $i.Height); $i.Dispose(); $r } else { Save-Clean $f.FullName $dest }
+            $caption = ''; $credit = $defaultCredit; $side = Join-Path $lmIn "$($f.BaseName).txt"
+            if (Test-Path $side) { foreach ($t in Get-Content $side) { if ($t -match '^\s*caption\s*:\s*(.+)$') { $caption = $Matches[1].Trim() } elseif ($t -match '^\s*credit\s*:\s*(.+)$') { $credit = $Matches[1].Trim() } } }
+            [void]$list.Add([ordered]@{ src = "landmarks/$name"; w = $wh[0]; h = $wh[1]; caption = $caption; credit = $credit })
+            $lmUsed[$name] = $true; "ok landmark $($f.Name) -> $($l.id)"
+        }
+        $l.photos = @($list)
+    }
+    Get-ChildItem $lmOut -File -Filter '*.jpg' | Where-Object { -not $lmUsed[$_.Name] } | ForEach-Object { Remove-Item $_.FullName; "removed $($_.Name)" }
+    [IO.File]::WriteAllText($lmFile, ($lm | ConvertTo-Json -Depth 6), $utf8)
+    foreach ($f in (Get-ChildItem $lmIn -File | Where-Object { $_.Extension -match '^\.(jpe?g|png)$' })) {
+        if (-not ($lm.landmarks | Where-Object { $_.id -eq ($f.BaseName -replace '\s*(\(\d+\)|[-_ ]\d{1,2})$', '') })) { "?? $($f.Name): no landmark with that id in landmarks\landmarks.json" }
+    }
+}
 "$($files.Count) photo(s) in the folder; $(@($photos.Keys).Count) boat(s) with photos. Now run publish.ps1."

@@ -1,0 +1,18 @@
+{
+    "landmarks":  [
+                      {
+                          "id":  "kurt-cobain-landing",
+                          "name":  "Kurt Cobain Landing",
+                          "lon":  -123.8054,
+                          "lat":  46.9841,
+                          "caption":  "",
+                          "fact":  "",
+                          "secret":  "",
+                          "night":  "",
+                          "hidden":  false,
+                          "photos":  [
+
+                                     ]
+                      }
+                  ]
+}

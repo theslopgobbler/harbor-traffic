@@ -423,6 +423,12 @@ details summary { cursor: pointer; }
 .maplibregl-popup-content { background: #020a09; color: var(--text); border: 1px solid var(--cyan); border-radius: 0; box-shadow: var(--glow-c);
   font: 13px/1.4 var(--mono); padding: 10px 12px; max-width: 320px; }
 .maplibregl-popup-content h3 { font: 600 12px/1.3 var(--disp); letter-spacing: .1em; color: var(--cyan); margin: 0 0 6px; }
+/* landmarks: a small amber pixel diamond (landmarks.js); a secret line found by tapping three times */
+.lm-mk { width: 14px; height: 14px; cursor: pointer; filter: drop-shadow(0 0 3px rgba(255,196,0,.6)); }
+.lm-mk svg { display: block; width: 100%; height: 100%; }
+.lm-tap { cursor: pointer; }
+.lm-secret { color: #ffc400 !important; margin-top: 4px; }
+.lm-night { color: #bff4ff !important; margin-top: 4px; }
 /* a boat's photo at the top of its popup, with the photographer's credit (and license, for Commons photos) */
 .ship-photo { margin: 0 0 8px; }
 .ship-photo img { display: block; width: 100%; height: auto; border: 1px solid #12403a; background: #041412; }
