@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T02:11:21.7175612+00:00",
+  "updated": "2026-10-05T02:34:52.0643749+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,28 +8,12 @@
       "reg": "N582TT",
       "type": "SR20",
       "cat": "A1",
-      "alt": 0,
-      "gs": 12.8,
-      "track": null,
-      "rate": null,
-      "lat": 46.97172,
-      "lon": -122.8952,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a358a9",
-      "flight": "N3144Z",
-      "reg": "N3144Z",
-      "type": "PA22",
-      "cat": "A1",
-      "alt": 5350,
-      "gs": 49.0,
-      "track": 9.0,
-      "rate": -11,
-      "lat": 46.7579,
-      "lon": -122.72778,
+      "alt": 2400,
+      "gs": 102.0,
+      "track": 11.31,
+      "rate": 320,
+      "lat": 47.03149,
+      "lon": -122.88609,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
