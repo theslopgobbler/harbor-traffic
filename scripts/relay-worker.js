@@ -102,8 +102,10 @@ async function refreshBuses(withNotices = true) {
         const list = await (await fetch(`${GHT}/public_transit.php?command=fetchbus&route_id=${r.id}&asset_id=`, { headers: UA })).json();
         for (const b of list || []) {
           const nx = r.next.find((n) => n.bus === String(b.Asset_Id));
+          // listed: the tracker's route list names this bus as running the route. Its position feed also returns
+          // buses that aren't (parked at GHT's base, for one), which the bus log must not count
           buses.push({ id: String(b.Asset_Id), route: r.id, lat: +b.lat1, lon: +b.lng1, heading: +b.Heading, mph: +b.Speed,
-            nextStop: nx?.stop || null, nextTime: nx?.time || null });
+            nextStop: nx?.stop || null, nextTime: nx?.time || null, listed: !!nx });
         }
       } catch { /* skip this route this time */ }
     }));
@@ -139,20 +141,28 @@ async function refreshBuses(withNotices = true) {
 // Version 3 keeps version 2's positions as positions_v2 (stats from them are folded into the day totals).
 // Free-plan budget: about 3 writes a minute while buses run, plus one per timed stop passed; well under 100,000 a day.
 let lastBus = null;
-const BUS_SCHEMA = '3';
+const BUS_SCHEMA = '4';
 let busTablesReady = false;
 async function busTables(db) {
   if (busTablesReady) return;
   await db.prepare('CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)').run();
   const ver = (await db.prepare("SELECT v FROM meta WHERE k = 'bus_schema'").first())?.v;
-  if (ver !== BUS_SCHEMA && ver !== '2') {
+  if (ver !== BUS_SCHEMA && ver !== '2' && ver !== '3') {
     // first run, or the first version (its lateness followed the tracker's schedule, not the buses): start fresh
     await db.batch(['arrivals', 'bus_seen', 'offroute', 'route_day', 'departures', 'positions', 'weather_obs', 'road_alerts']
       .map((t) => db.prepare(`DROP TABLE IF EXISTS ${t}`)));
   }
+  if (ver === '3') {
+    // version 3's lateness counted parked, out-of-service buses at GHT's base (next to a route 20 timed stop) as
+    // buses leaving hours late. Start lateness over; the GPS tracks and off-route totals stay
+    await db.batch([db.prepare('DROP TABLE IF EXISTS departures'), db.prepare("UPDATE day_sum SET data = json_remove(data, '$.dep')"),
+      db.prepare("DELETE FROM meta WHERE k = 'bus_state'")]);
+  }
   await db.batch([
     db.prepare(`CREATE TABLE IF NOT EXISTS departures (day TEXT, t INTEGER, route TEXT, bus TEXT, stop TEXT, sched_min INTEGER, actual_min INTEGER,
-      delay INTEGER, wx TEXT, temp INTEGER, wind INTEGER, precip REAL, alert TEXT, alert_road TEXT, PRIMARY KEY (day, bus, stop, sched_min))`),
+      delay INTEGER, wx TEXT, temp INTEGER, wind INTEGER, precip REAL, alert TEXT, alert_road TEXT, arrive_min INTEGER, how TEXT,
+      PRIMARY KEY (day, bus, stop, sched_min))`),
+    db.prepare('CREATE TABLE IF NOT EXISTS missed (day TEXT, route TEXT, stop TEXT, sched_min INTEGER, PRIMARY KEY (day, route, stop, sched_min))'),
     db.prepare('CREATE INDEX IF NOT EXISTS departures_day ON departures(day)'),
     db.prepare('CREATE TABLE IF NOT EXISTS tracks (minute INTEGER PRIMARY KEY, day TEXT, data TEXT)'),
     db.prepare('CREATE TABLE IF NOT EXISTS day_sum (day TEXT PRIMARY KEY, data TEXT)'),
@@ -189,8 +199,10 @@ async function migrateV2(db) {
   if (steps.length) await db.batch(steps);
 }
 
-// running totals for one day. s = [count, total minutes late, on time, late, early]
-const newSum = () => ({ pos: 0, off: {}, spots: {}, dep: { all: [0, 0, 0, 0, 0], route: {}, hour: {}, stop: {}, wx: {}, alert: {}, dist: {} } });
+// running totals for one day. s = [count, total minutes late, on time, late, early]. worst: departures 10+ minutes
+// late, with what's needed to judge them; missed: scheduled times no bus was seen at
+const newDep = () => ({ all: [0, 0, 0, 0, 0], route: {}, hour: {}, stop: {}, wx: {}, alert: {}, dist: {}, worst: [], missed: {}, missedList: [] });
+const newSum = () => ({ pos: 0, off: {}, spots: {}, dep: newDep() });
 const wxCond = (r) => (r.precip > 0 || /rain|shower|drizzle/i.test(r.wx || '') ? 'rain' : /snow|ice/i.test(r.wx || '') ? 'snow or ice'
   : /fog/i.test(r.wx || '') ? 'fog' : r.wind >= 20 ? 'windy' : r.wx == null ? 'unknown' : 'dry');
 function addDeparture(sum, r) {
@@ -199,7 +211,19 @@ function addDeparture(sum, r) {
   const d = sum.dep;
   add(d, 'all'); add(d.route, r.route); add(d.hour, Math.floor(r.actual_min / 60)); add(d.wx, wxCond(r)); add(d.alert, r.alert || 'none');
   const st = (d.stop[`${r.route}|${r.stop}`] ||= [0, 0]); st[0]++; st[1] += r.delay;
-  const m = Math.max(-5, Math.min(30, r.delay)); d.dist[m] = (d.dist[m] || 0) + 1;
+  const m = Math.max(-5, Math.min(31, r.delay)); d.dist[m] = (d.dist[m] || 0) + 1; // (31 = more than 30)
+  if (r.delay >= 10) {
+    d.worst ||= [];
+    d.worst.push({ t: r.t, route: r.route, bus: r.bus, stop: r.stop, sched: r.sched_min, dep: r.actual_min, arr: r.arrive_min, how: r.how,
+      delay: r.delay, wx: r.wx, temp: r.temp, alert: r.alert, alertRoad: r.alertRoad, lat: r.lat, lon: r.lon });
+    d.worst.sort((a, b) => b.delay - a.delay); d.worst.length = Math.min(d.worst.length, 40);
+  }
+}
+function addMissed(sum, x) {
+  const d = sum.dep;
+  d.missed ||= {}; d.missedList ||= [];
+  d.missed[x.route] = (d.missed[x.route] || 0) + 1;
+  if (d.missedList.length < 80) d.missedList.push(x);
 }
 
 let cells = null, cellsAt = 0;
@@ -294,9 +318,12 @@ function passBy(a, b, p) {
   const f = L ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L)) : 0;
   return { d: Math.hypot(ax + f * dx, ay + f * dy), f };
 }
-// one look at the buses: a CSV line each for the track, the day's off-route totals, and timed stops passed
+// one look at the buses: a CSV line each for the track, the day's off-route totals, and timed stops passed.
+// Only buses the tracker's route list names as running a route count (it also reports parked ones)
 function busSample(st, sum, c, tps, now, lines, done) {
+  const nowMin = pacificMin(now);
   for (const b of lastBus.buses) {
+    if (!b.listed) continue;
     const rt = shortRoute(lastBus.routeName[b.route]);
     if (!rt || !b.lat || !b.lon) continue;
     const set = c?.routes[rt];
@@ -316,24 +343,42 @@ function busSample(st, sum, c, tps, now, lines, done) {
         s[0]++; if (!s[1].split(',').includes(b.id)) s[1] = s[1] ? `${s[1]},${b.id}` : b.id;
       }
     }
-    // timed stops its track passed since last time; while it's still there the time keeps moving up
+    st.seen[b.route] ??= nowMin; // the route's first bus in service today (for "no bus seen")
+    // what the tracker says this bus is headed for: its next timed stop's scheduled time (the last 20 minutes of it)
+    const nm = clockMin(b.nextTime);
+    const hist = (st.nx[b.id] || []).filter((h) => now - h.t < 1200000 && h.route === b.route);
+    if (nm != null && !hist.some((h) => h.m === nm)) hist.push({ m: nm, t: now, route: b.route });
+    st.nx[b.id] = hist.slice(-6);
+    // timed stops its track passed since last time. While it's still there, the time keeps moving up, so what's
+    // left when it goes is when it left. Which scheduled time that was is decided then (see settle)
     const prev = st.prev[b.id];
     if (prev && prev.route === b.route && now - prev.t < 150000) {
       for (const tp of tps[b.route] || []) {
         const { d, f } = passBy(prev, b, tp);
         if (d > 80) continue;
-        const at = Math.round(prev.t + f * (now - prev.t)), aMin = pacificMin(at);
-        // its scheduled time: the latest one no more than 3 minutes after it was there, within the last 90 minutes
-        let sched = null;
-        for (const m of tp.mins) if (m <= aMin + 3 && aMin - m <= 90) sched = m;
-        if (sched == null) continue;
-        st.pend[`${b.id}|${tp.name}|${sched}`] = { at, aMin, sched, rt, bus: b.id, stop: tp.name, lat: tp.lat, lon: tp.lon, seen: now };
+        const at = Math.round(prev.t + f * (now - prev.t));
+        const p = (st.pend[`${b.id}|${b.route}|${tp.name}`] ||= { arr: at, rid: b.route, rt, bus: b.id, stop: tp.name, lat: tp.lat, lon: tp.lon, hints: [] });
+        p.at = at; p.seen = now;
+        for (const h of st.nx[b.id]) if (tp.mins.some((m) => Math.abs(m - h.m) <= 1) && !p.hints.includes(h.m)) p.hints.push(h.m);
       }
     }
     st.prev[b.id] = { lat: b.lat, lon: b.lon, t: now, route: b.route };
   }
-  // the ones it has left (not near it this time): that last moment there is when it departed
-  for (const [k, p] of Object.entries(st.pend)) if (p.seen < now) { done.push(p); delete st.pend[k]; }
+  // the ones it has left (not near it this time)
+  for (const [k, p] of Object.entries(st.pend)) if (p.seen < now) { delete st.pend[k]; const r = settle(p, tps); if (r) done.push(r); }
+}
+// which scheduled time a departure was for. First choice: a time the tracker said this bus was headed for (it knows
+// the bus's trip). Otherwise the stop's nearest time, leaning late: leaving 4 minutes before one time reads as 4
+// early, not as most of a headway late; a layover bus waiting for its next trip matches that trip, not the last one
+function settle(p, tps) {
+  const tp = (tps[p.rid] || []).find((t) => t.name === p.stop);
+  if (!tp) return null;
+  const dep = pacificMin(p.at);
+  const cost = (m) => (dep - m >= 0 ? dep - m : 2 * (m - dep));
+  const pick = (list) => list.filter((m) => dep - m <= 90 && m - dep <= 15).sort((a, b) => cost(a) - cost(b))[0];
+  let sched = pick(p.hints), how = 'tracker';
+  if (sched == null) { sched = pick(tp.mins); how = 'nearest'; }
+  return sched == null ? null : { ...p, sched, how, dep, arrMin: pacificMin(p.arr) };
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // the once-a-minute run
@@ -343,14 +388,22 @@ async function busMinute(env, t0) {
   await busTables(db);
   let st = {};
   try { st = JSON.parse((await db.prepare("SELECT v FROM meta WHERE k = 'bus_state'").first())?.v || '{}'); } catch { /* start over */ }
-  st.prev ||= {}; st.pend ||= {};
-  // no buses out last time (overnight): only look every 10 minutes until they're back, to go easy on GHT's server
-  if (st.empty && new Date(t0).getUTCMinutes() % 10 !== 0) return;
-  const day = pacificDay(t0);
+  st.prev ||= {}; st.pend ||= {}; st.nx ||= {};
+  const day = pacificDay(t0), nowMin = pacificMin(t0);
+  if (st.day !== day) Object.assign(st, { day, seen: {}, served: {}, missFrom: null, span: null });
+  // every minute from 10 minutes before the day's first scheduled bus to 45 after its last (known once today's
+  // timetable is loaded); outside that, while no buses are out, every 10 minutes to go easy on GHT's server
+  const inService = !!st.span && nowMin >= st.span[0] - 10 && nowMin <= st.span[1] + 45;
+  if (st.empty && !inService && new Date(t0).getUTCMinutes() % 10 !== 0) return;
+  // a gap in the log (paused, or runs skipped): don't call buses missing that we couldn't have seen
+  if (inService && st.lastRun && t0 - st.lastRun > 180000) st.missFrom = nowMin - 45;
+  st.lastRun = t0;
   let sum = newSum();
   try { const v = (await db.prepare('SELECT data FROM day_sum WHERE day = ?1').bind(day).first())?.data; if (v) sum = { ...newSum(), ...JSON.parse(v) }; } catch { /* new day */ }
+  sum.dep ||= newDep();
   const lines = [], done = [];
   let used = 0, c = null, tps = {};
+  const inServiceNow = () => lastBus.buses.filter((b) => b.listed);
   // free plan: at most 50 outside requests per run. Each look is 1 + one per route with buses out
   for (let i = 0; i < 3; i++) {
     const wait = t0 + i * 20000 - Date.now();
@@ -362,29 +415,61 @@ async function busMinute(env, t0) {
     used += await refreshBuses(false);
     if (bus.at === before || !lastBus) break; // the tracker didn't answer
     if (i === 0) {
-      if (!lastBus.buses.length) break;
-      const needTp = timepoints.day !== day ? lastBus.routeIds.length : 0, needWx = Date.now() - (st.condAt || 0) >= 600000 ? 6 : 0;
-      [c, tps] = await Promise.all([routeCells(), routeTimepoints(db, lastBus.routeIds, day), conditions(db, st)]);
-      used += 1 + needTp + needWx;
+      // today's timetable, even with no buses out (it says when service starts and ends, and what to expect)
+      const any = inServiceNow().length > 0;
+      const needTp = timepoints.day !== day ? lastBus.routeIds.length : 0, needWx = any && Date.now() - (st.condAt || 0) >= 600000 ? 6 : 0;
+      [c, tps] = await Promise.all([any ? routeCells() : null, routeTimepoints(db, lastBus.routeIds, day), any ? conditions(db, st) : null]);
+      used += (any ? 1 : 0) + needTp + needWx;
+      const all = Object.values(tps).flat().flatMap((t) => t.mins);
+      if (all.length) st.span = [Math.min(...all), Math.max(...all)];
+      if (!any) break;
     }
     busSample(st, sum, c, tps, Date.now(), lines, done);
   }
-  const empty = !lastBus || !lastBus.buses.length;
-  if (empty && st.empty && !Object.keys(st.pend).length) return; // still nothing out: nothing to save
-  if (empty) for (const [k, p] of Object.entries(st.pend)) { done.push(p); delete st.pend[k]; }
+  const empty = !lastBus || !inServiceNow().length;
+  if (empty) for (const [k, p] of Object.entries(st.pend)) { delete st.pend[k]; const r = settle(p, tps); if (r) done.push(r); }
+  for (const r of done) (st.served[`${r.rid}|${r.stop}`] ||= []).push(r.sched);
+  // no bus seen: 45 minutes after each scheduled time, on routes that have had a bus in service today, was a bus
+  // there? (an arrive/leave pair a few minutes apart is one visit)
+  const missed = [], upto = nowMin - 45;
+  if (st.missFrom == null) st.missFrom = upto;
+  if (upto > st.missFrom && Object.keys(tps).length) {
+    for (const [rid, list] of Object.entries(tps)) {
+      const first = st.seen[rid];
+      if (first == null) continue;
+      for (const tp of list) {
+        const served = st.served[`${rid}|${tp.name}`] || [];
+        let lastM = -99;
+        for (const m of tp.mins) {
+          const pair = m - lastM <= 3; lastM = m;
+          if (pair || m <= st.missFrom || m > upto || m < first) continue;
+          if (served.some((s) => Math.abs(s - m) <= 3)) continue;
+          missed.push({ route: shortRoute(lastBus?.routeName[rid]), stop: tp.name, sched: m, lat: tp.lat, lon: tp.lon });
+        }
+      }
+    }
+    st.missFrom = upto;
+  }
+  const quiet = empty && st.empty && !done.length && !missed.length && !inService;
   st.empty = empty;
-  for (const [id, p] of Object.entries(st.prev)) if (t0 - p.t > 600000) delete st.prev[id];
+  if (quiet) return; // nothing out and nothing expected: nothing to save
+  for (const [id, p] of Object.entries(st.prev)) if (t0 - p.t > 600000) { delete st.prev[id]; delete st.nx[id]; }
   const steps = [];
   if (lines.length) steps.push(db.prepare('INSERT OR REPLACE INTO tracks (minute, day, data) VALUES (?1, ?2, ?3)').bind(Math.floor(t0 / 60000), day, lines.join('')));
   for (const p of done) {
     const k = conditionsAt(st, p);
-    const r = { day: pacificDay(p.at), route: p.rt, stop: p.stop, actual_min: p.aMin, delay: p.aMin - p.sched, ...k };
-    steps.push(db.prepare(`INSERT OR IGNORE INTO departures (day, t, route, bus, stop, sched_min, actual_min, delay, wx, temp, wind, precip, alert, alert_road)
-      VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14)`)
-      .bind(r.day, p.at, p.rt, p.bus, p.stop, p.sched, p.aMin, r.delay, k.wx, k.temp, k.wind, k.precip, k.alert, k.alertRoad));
+    const r = { t: p.at, day: pacificDay(p.at), route: p.rt, bus: p.bus, stop: p.stop, sched_min: p.sched, actual_min: p.dep, arrive_min: p.arrMin, how: p.how,
+      delay: p.dep - p.sched, lat: p.lat, lon: p.lon, ...k };
+    steps.push(db.prepare(`INSERT OR IGNORE INTO departures (day, t, route, bus, stop, sched_min, actual_min, delay, wx, temp, wind, precip, alert, alert_road, arrive_min, how)
+      VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16)`)
+      .bind(r.day, r.t, r.route, r.bus, r.stop, r.sched_min, r.actual_min, r.delay, k.wx, k.temp, k.wind, k.precip, k.alert, k.alertRoad, r.arrive_min, r.how));
     addDeparture(sum, r);
   }
-  if (lines.length || done.length) steps.push(db.prepare('INSERT INTO day_sum (day, data) VALUES (?1, ?2) ON CONFLICT(day) DO UPDATE SET data = ?2').bind(day, JSON.stringify(sum)));
+  for (const x of missed) {
+    steps.push(db.prepare('INSERT OR IGNORE INTO missed (day, route, stop, sched_min) VALUES (?1, ?2, ?3, ?4)').bind(day, x.route, x.stop, x.sched));
+    addMissed(sum, x);
+  }
+  if (lines.length || done.length || missed.length) steps.push(db.prepare('INSERT INTO day_sum (day, data) VALUES (?1, ?2) ON CONFLICT(day) DO UPDATE SET data = ?2').bind(day, JSON.stringify(sum)));
   steps.push(db.prepare("INSERT INTO meta (k, v) VALUES ('bus_state', ?1) ON CONFLICT(k) DO UPDATE SET v = ?1").bind(JSON.stringify(st)));
   await db.batch(steps);
 }
@@ -401,16 +486,21 @@ async function busStats(db, days) {
   ]);
   const S = (s) => ({ n: s[0], avg: s[0] ? Math.round(s[1] / s[0] * 10) / 10 : null, ontime: s[2], late: s[3], early: s[4] });
   const merge = (into, from) => { for (const [k, s] of Object.entries(from || {})) { const t = (into[k] ||= s.map(() => 0)); s.forEach((v, i) => { t[i] += v; }); } };
-  const m = { route: {}, hour: {}, stop: {}, wx: {}, alert: {}, dist: {}, off: {} }, spots = {}, daily = [];
+  const m = { route: {}, hour: {}, stop: {}, wx: {}, alert: {}, dist: {}, off: {}, missed: {} }, spots = {}, daily = [], worst = [], missedList = [];
   for (const row of rows.results) {
     const d = JSON.parse(row.data), dep = d.dep || {};
+    for (const [k, n] of Object.entries(dep.missed || {})) m.missed[k] = (m.missed[k] || 0) + n;
+    for (const w of dep.worst || []) worst.push({ day: row.day, ...w });
+    for (const x of dep.missedList || []) missedList.push({ day: row.day, ...x });
     for (const k of ['route', 'hour', 'stop', 'wx', 'alert']) merge(m[k], dep[k]);
     for (const [k, n] of Object.entries(dep.dist || {})) m.dist[k] = (m.dist[k] || 0) + n;
     merge(m.off, d.off);
     for (const [k, [n, buses]] of Object.entries(d.spots || {})) {
       const s = (spots[k] ||= { n: 0, days: 0, buses: new Set() }); s.n += n; s.days++; String(buses).split(',').filter(Boolean).forEach((b) => s.buses.add(b));
     }
-    if (dep.all?.[0]) daily.push({ day: row.day, ...S(dep.all) });
+    const dd = dep.dist || {}, over = (from) => Object.entries(dd).reduce((a, [k, n]) => a + (+k > from ? n : 0), 0);
+    const missedN = Object.values(dep.missed || {}).reduce((a, n) => a + n, 0);
+    if (dep.all?.[0] || missedN) daily.push({ day: row.day, ...S(dep.all || [0, 0, 0, 0, 0]), over10: over(10), over30: over(30), missed: missedN });
   }
   const body = {
     days, since,
@@ -425,6 +515,9 @@ async function busStats(db, days) {
     dist: Object.entries(m.dist).map(([k, n]) => ({ m: +k, n })).sort((a, b) => a.m - b.m),
     byWx: Object.entries(m.wx).map(([cond, s]) => ({ cond, ...S(s) })),
     byAlert: Object.entries(m.alert).map(([alert, s]) => ({ alert, ...S(s) })),
+    missed: Object.entries(m.missed).map(([route, n]) => ({ route, n })),
+    worst: worst.sort((a, b) => b.delay - a.delay).slice(0, 25),
+    missedList: missedList.sort((a, b) => (b.day + String(b.sched).padStart(4, '0')).localeCompare(a.day + String(a.sched).padStart(4, '0'))).slice(0, 40),
     first: all.results[0]
   };
   statsCache = { key: since, at: Date.now(), body };
@@ -441,7 +534,8 @@ async function busExport(db, table, days, after) {
     return { csv: 't,route,bus,lat,lon,heading,mph,off\n' + rows.map((r) => r.data).join(''), next: rows.length === 1440 ? rows[rows.length - 1].minute : null };
   }
   const cols = { positions_v2: 't, day, route, bus, lat, lon, heading, mph, off',
-    departures: 'day, t, route, bus, stop, sched_min, actual_min, delay, wx, temp, wind, precip, alert, alert_road',
+    departures: 'day, t, route, bus, stop, sched_min, arrive_min, actual_min, delay, how, wx, temp, wind, precip, alert, alert_road',
+    missed: 'day, route, stop, sched_min',
     weather_obs: 't, day, station, wx, temp, wind, gust, precip', road_alerts: 'id, kind, road, milepost, lat, lon, headline, first_seen, last_seen' }[table];
   if (!cols) return null;
   const where = table === 'road_alerts' ? 'last_seen >= ?1' : table === 'positions_v2' ? '1' : 'day >= ?1';
