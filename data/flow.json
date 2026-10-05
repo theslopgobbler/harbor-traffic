@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T00:29:00.1457555+00:00",
+  "updated": "2026-10-05T00:54:18.1872831+00:00",
   "source": "WSDOT Traffic Flow",
   "fields": "lat,lon,level,milepost,direction,road",
   "stations": [
@@ -390,7 +390,7 @@
     [
       47.02567,
       -122.91846,
-      2,
+      1,
       366.64,
       "NB",
       "US 101"

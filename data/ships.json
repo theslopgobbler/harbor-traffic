@@ -1,22 +1,7 @@
 {
-  "updated": "2026-10-05T00:29:00.1457555+00:00",
+  "updated": "2026-10-05T00:54:18.1872831+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.9068,
-      "lon": -124.10616,
-      "sog": 0,
-      "cog": 307.8,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-04T23:33:40.6108035+00:00"
-    },
     {
       "mmsi": 367352000,
       "name": "MAJESTY",
@@ -28,6 +13,22 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-05T00:29:00.1457555+00:00"
+    },
+    {
+      "mmsi": 567017000,
+      "lat": 46.92612,
+      "lon": -124.08898,
+      "sog": 0.1,
+      "cog": 40.7,
+      "heading": 295,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-04T22:49:40.2639394+00:00",
+      "name": "SARITA NAREE",
+      "type": 70,
+      "dest": "GRARY HARBOR",
+      "callsign": "HSDA",
+      "lengthM": 199
     },
     {
       "mmsi": 367324840,
@@ -54,20 +55,19 @@
       "seen": "2026-10-05T00:29:00.1457555+00:00"
     },
     {
-      "mmsi": 567017000,
-      "lat": 46.92612,
-      "lon": -124.08898,
-      "sog": 0.1,
-      "cog": 40.7,
-      "heading": 295,
-      "status": 1,
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "lengthM": 22,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.9068,
+      "lon": -124.10616,
+      "sog": 0,
+      "cog": 307.8,
+      "status": 0,
       "classB": false,
-      "seen": "2026-10-04T22:49:40.2639394+00:00",
-      "name": "SARITA NAREE",
-      "type": 70,
-      "dest": "GRARY HARBOR",
-      "callsign": "HSDA",
-      "lengthM": 199
+      "seen": "2026-10-04T23:33:40.6108035+00:00"
     }
   ]
 }
