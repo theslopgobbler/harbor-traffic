@@ -3,7 +3,8 @@
     "367364340": "2026-10-05T05:40:58.2497843+00:00",
     "368143540": "2026-10-05T05:40:58.2497843+00:00",
     "367324840": "2026-10-05T05:40:58.2497843+00:00",
-    "367317770": "2026-10-05T06:01:36.7019677+00:00"
+    "367317770": "2026-10-05T06:01:36.7019677+00:00",
+    "369702000": "2026-10-05T07:27:53.1965376+00:00"
   },
   "candidates": [
     {
@@ -50,7 +51,22 @@
       "date": "Taken on 27 August 2009",
       "caption": "Downtown waterfront, Hoquiam, Washington, USA, seen from across Riverside Avenue from the Polson Museum. Tugboats; pier over the bridge abutment of the former 8th Street Bridge.",
       "found": "2026-10-05T05:40:58.2497843+00:00"
+    },
+    {
+      "mmsi": "369702000",
+      "ship": "COASTAL RELIANCE",
+      "file": "File:Flickr - Official U.S. Navy Imagery - USS Bonhomme Richard pulls into Elliott Bay during Seattle Seafair Navy Week..jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_Official_U.S._Navy_Imagery_-_USS_Bonhomme_Richard_pulls_into_Elliott_Bay_during_Seattle_Seafair_Navy_Week..jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Flickr_-_Official_U.S._Navy_Imagery_-_USS_Bonhomme_Richard_pulls_into_Elliott_Bay_during_Seattle_Seafair_Navy_Week..jpg/1280px-Flickr_-_Official_U.S._Navy_Imagery_-_USS_Bonhomme_Richard_pulls_into_Elliott_Bay_during_Seattle_Seafair_Navy_Week..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 852,
+      "author": "Official Navy Page from United States of America MC2 Nathan Lockwood/U.S. Navy",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2011-08-02 13:15",
+      "caption": "SEATTLE (Aug. 2, 2011) The amphibious assault ship USS Bonhomme Richard (LHD 6) pulls into Elliott Bay during the 62nd annual Seattle Seafair Navy Week. Seafair activities allow U.S. and Canadian sailors and Coast Gua...",
+      "found": "2026-10-05T07:27:53.1965376+00:00"
     }
   ],
-  "updated": "2026-10-05T07:01:12.2281294+00:00"
+  "updated": "2026-10-05T07:27:53.1965376+00:00"
 }
