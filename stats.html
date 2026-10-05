@@ -18,6 +18,9 @@
   main { max-width: 720px; margin: 0 auto; padding: 20px 16px 40px; }
   h1 { font: 800 16px/1 var(--disp); letter-spacing: .25em; color: var(--cyan); margin: 0 0 18px; }
   h1 a { color: inherit; text-decoration: none; }
+  td a { color: #00e5ff; text-decoration: none; }
+  .scroll { overflow-x: auto; }
+  .scroll table { min-width: 860px; }
   h2 { font: 600 11px/1 var(--disp); letter-spacing: .2em; color: var(--dim); margin: 26px 0 8px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
   .box { border: 1px solid var(--line-2); background: #030d0c; padding: 10px 12px; }
@@ -90,7 +93,12 @@
           <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s" id="bOnS">LEFT 0 TO 5 MIN AFTER SCHEDULE</div></div>
           <div class="box"><div class="l">AVERAGE</div><div class="v" id="bAvg">–</div><div class="s">MIN AFTER SCHEDULE</div></div>
           <div class="box"><div class="l">TIMED STOPS LOGGED</div><div class="v" id="bN">–</div><div class="s" id="bSince"></div></div>
+          <div class="box"><div class="l">OVER 10 MIN LATE</div><div class="v" id="bO10">–</div><div class="s" id="bO10S">OF TIMED STOPS</div></div>
+          <div class="box"><div class="l">OVER 30 MIN LATE</div><div class="v" id="bO30">–</div><div class="s" id="bO30S">OF TIMED STOPS</div></div>
+          <div class="box"><div class="l">NO BUS SEEN</div><div class="v" id="bMiss">–</div><div class="s" id="bMissS">SCHEDULED STOPS WITH NO BUS</div></div>
         </div>
+        <h2>EVERY SCHEDULED TIMED STOP · HOW IT WENT</h2>
+        <div class="chart" id="cSum"></div>
         <h2>ON TIME BY DAY</h2>
         <div class="chart" id="cDaily"></div>
         <h2>HOW LATE · MINUTES AFTER THE SCHEDULED TIME</h2>
@@ -104,9 +112,13 @@
           <div><h2>NEAR A ROAD ALERT · AVERAGE MINUTES AFTER</h2><div class="chart" id="cAlert"></div></div>
         </div>
         <h2>DOWNLOAD THE LOGS (CSV)</h2>
-        <p><button type="button" data-export="positions">BUS POSITIONS</button> <button type="button" data-export="departures">LATENESS</button>
+        <p><button type="button" data-export="positions">BUS POSITIONS</button> <button type="button" data-export="departures">LATENESS</button> <button type="button" data-export="missed">NO BUS SEEN</button>
           <button type="button" data-export="weather_obs">WEATHER</button> <button type="button" data-export="road_alerts">ROAD ALERTS</button>
           <button type="button" data-export="positions_v2">FIRST POSITIONS (OCT 3–4)</button></p>
+        <h2>THE LATEST ONES · 10+ MINUTES LATE</h2>
+        <div class="scroll"><table><thead><tr><th>DAY</th><th>ROUTE</th><th>BUS</th><th>STOP</th><th>SCHEDULED</th><th>GOT THERE</th><th>LEFT</th><th>LATE</th><th>MATCHED BY</th><th>CONDITIONS</th><th>MAP</th></tr></thead><tbody id="bWorst"></tbody></table></div>
+        <h2>NO BUS SEEN</h2>
+        <table><thead><tr><th>DAY</th><th>ROUTE</th><th>STOP</th><th>SCHEDULED</th><th>MAP</th></tr></thead><tbody id="bMissed"></tbody></table>
         <h2>BY ROUTE</h2>
         <table><thead><tr><th>ROUTE</th><th>STOPS</th><th>ON TIME</th><th>LATE 5+</th><th>EARLY</th><th>AVG MIN</th><th>OFF ROUTE</th></tr></thead><tbody id="bRoutes"></tbody></table>
         <h2>BY HOUR OF DAY</h2>
@@ -116,7 +128,13 @@
         <h2>WHERE BUSES LEAVE THEIR ROUTES</h2>
         <table><thead><tr><th>ROUTE</th><th>TIMES SEEN</th><th>DAYS</th><th>BUSES</th><th>MAP</th></tr></thead><tbody id="bSpots"></tbody></table>
         <p class="note">On time = leaving a timed stop 0 to 5 minutes after its scheduled time, measured from the bus's GPS track passing
-          the stop (early = before the scheduled time; late = more than 5 minutes after). Each one notes the weather at the nearest
+          the stop (early = before the scheduled time; late = more than 5 minutes after). Only buses GHT's tracker lists as running a
+          route count; parked and out-of-service buses are left out. Which scheduled time a bus was leaving for: "trip" = the time the
+          tracker said that bus was headed for (it knows the bus's trip); "nearest" = the stop's closest scheduled time, used when the
+          tracker didn't say. No bus seen = 45 minutes after a scheduled time, no in-service bus had passed within 80 m of that stop,
+          on a route that had a bus out that day (it can also mean the bus's GPS was off, so treat one-offs with care; a stop that
+          shows up every day probably has its location wrong in the tracker). Times come from the tracker's timetable for that
+          day. Each one notes the weather at the nearest
           weather station and any WSDOT road alert within 1.5 km of the stop at that moment. Off route = a moving bus more than about
           a block from its route's line. Off-route spots seen on several days are shortcuts or standing detours; one-day spots are
           usually a one-off detour or the tracker listing a bus on the wrong route. Every position is kept, for rebuilding the
@@ -332,13 +350,34 @@
     $('#bAvg').textContent = tot.n ? (tot.sum / tot.n).toFixed(1) : '–';
     $('#bN').textContent = tot.n;
     $('#bSince').textContent = j.first?.first ? `LOGGING SINCE ${day(j.first.first)} · ${positions} POSITIONS` : '';
+    // the bad ones: from the minutes-late counts (31 = more than 30), and scheduled stops no bus showed up for
+    const nAt = (f) => j.dist.reduce((a, d) => a + (f(d.m) ? d.n : 0), 0);
+    const o10 = nAt((m) => m > 10), o30 = nAt((m) => m > 30), early = nAt((m) => m < 0), onT = nAt((m) => m >= 0 && m <= 5), l6 = nAt((m) => m > 5 && m <= 10), l11 = nAt((m) => m > 10 && m <= 30);
+    const missedN = (j.missed || []).reduce((a, x) => a + x.n, 0), all = tot.n + missedN;
+    $('#bO10').textContent = tot.n ? `${pct(o10, tot.n)}%` : '–'; $('#bO10S').textContent = tot.n ? `${o10} OF ${tot.n} TIMED STOPS` : 'OF TIMED STOPS';
+    $('#bO30').textContent = tot.n ? `${pct(o30, tot.n)}%` : '–'; $('#bO30S').textContent = tot.n ? `${o30} OF ${tot.n} TIMED STOPS` : 'OF TIMED STOPS';
+    $('#bMiss').textContent = all ? String(missedN) : '–';
+    $('#bMissS').textContent = all ? `${pct(missedN, all)}% OF SCHEDULED TIMED STOPS` : 'SCHEDULED STOPS WITH NO BUS';
+    const sumItem = (label, n, what) => ({ label, value: n, valueText: `${n} · ${pct(n, all)}%`, title: label,
+      rows: [{ value: String(n), label: what, color: C1 }, { value: `${pct(n, all)}%`, label: 'of scheduled timed stops' }] });
+    hbars($('#cSum'), all ? [sumItem('EARLY', early, 'left before the scheduled time'), sumItem('ON TIME', onT, 'left 0–5 min after'),
+      sumItem('6–10 LATE', l6, 'left 6–10 min after'), sumItem('11–30 LATE', l11, 'left 11–30 min after'), sumItem('OVER 30 LATE', o30, 'left more than 30 min after'),
+      sumItem('NO BUS SEEN', missedN, 'no bus came by')] : []);
+    const clock = (m) => (m == null ? '–' : `${(Math.floor(m / 60) % 12) || 12}:${String(m % 60).padStart(2, '0')} ${m < 720 ? 'AM' : 'PM'}`);
+    const mapLink = (x) => (x.lat ? `<a href="./?at=${(+x.lon).toFixed(4)},${(+x.lat).toFixed(4)},17" target="_blank" rel="noopener">SEE IT ▸</a>` : '');
+    $('#bWorst').innerHTML = (j.worst || []).map((w) => `<tr><td>${day(w.day)}</td><td>${esc(w.route)}</td><td>${esc(w.bus)}</td><td>${esc(w.stop).toUpperCase()}</td>
+      <td>${clock(w.sched)}</td><td>${clock(w.arr)}</td><td>${clock(w.dep)}</td><td>${w.delay} MIN</td><td>${w.how === 'tracker' ? 'TRIP' : 'NEAREST'}</td>
+      <td>${esc([w.wx, w.temp != null ? `${w.temp}°` : '', w.alert ? `${w.alert} ${w.alertRoad || ''}` : ''].filter(Boolean).join(' · ')).toUpperCase() || '–'}</td>
+      <td>${mapLink(w)}</td></tr>`).join('') || '<tr><td colspan="11">NONE</td></tr>';
+    $('#bMissed').innerHTML = (j.missedList || []).map((x) => `<tr><td>${day(x.day)}</td><td>${esc(x.route)}</td><td>${esc(x.stop).toUpperCase()}</td>
+      <td>${clock(x.sched)}</td><td>${mapLink(x)}</td></tr>`).join('') || '<tr><td colspan="5">NONE</td></tr>';
     // charts
     line($('#cDaily'), j.daily.map((d) => ({ label: day(d.day).replace(/^\w+, /, ''), value: pct(d.ontime, d.n), title: day(d.day), rows: sumRows(d) })));
     const byMin = Object.fromEntries(j.dist.map((d) => [d.m, d.n]));
-    const mins = []; for (let m = -5; m <= 30; m++) mins.push(m);
+    const mins = []; for (let m = -5; m <= 31; m++) mins.push(m);
     const totDist = j.dist.reduce((a, d) => a + d.n, 0);
-    columns($('#cDist'), totDist ? mins.map((m) => ({ key: m, label: m === -5 ? '≤-5' : m === 30 ? '30+' : String(m), value: byMin[m] || 0,
-      title: m === -5 ? '5+ MIN EARLY' : m === 30 ? '30+ MIN LATE' : m < 0 ? `${-m} MIN EARLY` : `${m} MIN AFTER`,
+    columns($('#cDist'), totDist ? mins.map((m) => ({ key: m, label: m === -5 ? '≤-5' : m === 31 ? '>30' : String(m), value: byMin[m] || 0,
+      title: m === -5 ? '5+ MIN EARLY' : m === 31 ? 'MORE THAN 30 MIN LATE' : m < 0 ? `${-m} MIN EARLY` : `${m} MIN AFTER`,
       rows: [{ value: String(byMin[m] || 0), label: 'departures', color: C1 }, { value: `${pct(byMin[m] || 0, totDist)}%`, label: 'of all' }] })) : [],
     { band: [0, 5], fmt: (v) => String(Math.round(v)) });
     columns($('#cHour'), j.byHour.map((h) => ({ label: hr(h.h).replace(' ', ''), value: h.avg, title: hr(h.h), rows: sumRows(h) })), { fmt: (v) => `${v}` });
