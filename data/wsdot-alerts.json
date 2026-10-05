@@ -1,50 +1,7 @@
 {
-  "updated": "2026-10-05T17:24:16.7815904+00:00",
+  "updated": "2026-10-05T17:43:35.4923128+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-09-16T14:09:21.4230000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
     {
       "id": 713576,
       "kind": "work",
@@ -1717,6 +1674,49 @@
       ]
     },
     {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-09-16T14:09:21.4230000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
+    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -2119,6 +2119,27 @@
       "start": "2026-10-01T12:00:00.0000000+00:00",
       "end": "2026-10-06T19:00:00.0000000+00:00",
       "updated": "2026-10-01T13:29:28.7370000+00:00"
+    },
+    {
+      "id": 717831,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 105 southbound at milepost 45.2 near Newskah Creek beginning at 10:32 am on October 5, 2026 until about 12:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "S",
+      "milepost": 45.2,
+      "lat": 46.943444068,
+      "lon": -123.853176402,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-10-05T17:32:00.0000000+00:00",
+      "end": "2026-10-05T19:30:00.0000000+00:00",
+      "updated": "2026-10-05T17:34:53.4170000+00:00"
     },
     {
       "id": 698912,
