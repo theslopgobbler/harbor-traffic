@@ -1,17 +1,29 @@
 {
-  "updated": "2026-10-05T00:54:18.1872831+00:00",
+  "updated": "2026-10-05T01:12:19.6108028+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367352000,
-      "name": "MAJESTY",
-      "lat": 46.39148,
-      "lon": -124.48695,
-      "sog": 6.2,
-      "cog": 197.9,
-      "heading": 189,
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "lengthM": 22,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.9068,
+      "lon": -124.10616,
+      "sog": 0,
+      "cog": 307.8,
       "status": 0,
       "classB": false,
+      "seen": "2026-10-04T23:33:40.6108035+00:00"
+    },
+    {
+      "mmsi": 316033161,
+      "lat": 46.35593,
+      "lon": -124.43446,
+      "sog": 6.1,
+      "cog": 215,
+      "classB": true,
       "seen": "2026-10-05T00:29:00.1457555+00:00"
     },
     {
@@ -31,43 +43,31 @@
       "lengthM": 199
     },
     {
+      "mmsi": 367352000,
+      "name": "MAJESTY",
+      "lat": 46.39148,
+      "lon": -124.48695,
+      "sog": 6.2,
+      "cog": 197.9,
+      "heading": 189,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T00:29:00.1457555+00:00"
+    },
+    {
       "mmsi": 367324840,
       "type": 31,
       "dest": "GRAYS HARBOR",
       "callsign": "WDE2412",
       "lengthM": 20,
       "name": "MARY ROSE BRUSCO",
-      "lat": 46.97853,
-      "lon": -123.88364,
+      "lat": 46.97851,
+      "lon": -123.88357,
       "sog": 0,
-      "cog": 283.1,
+      "cog": 197.9,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-04T23:49:16.9124814+00:00"
-    },
-    {
-      "mmsi": 316033161,
-      "lat": 46.35593,
-      "lon": -124.43446,
-      "sog": 6.1,
-      "cog": 215,
-      "classB": true,
-      "seen": "2026-10-05T00:29:00.1457555+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.9068,
-      "lon": -124.10616,
-      "sog": 0,
-      "cog": 307.8,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-04T23:33:40.6108035+00:00"
+      "seen": "2026-10-05T01:12:19.6108028+00:00"
     }
   ]
 }
