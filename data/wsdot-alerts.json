@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T22:10:59.8417038+00:00",
+  "updated": "2026-10-05T22:32:17.6027382+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2098,27 +2098,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 717840,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 8 westbound at milepost 16 near Summit Lk Rd NW [East-End] beginning at 11:39 am on October 5, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "008",
-      "roadLabel": "SR 8",
-      "direction": "W",
-      "milepost": 16.0,
-      "lat": 47.03348925,
-      "lon": -123.099126338,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-05T18:39:00.0000000+00:00",
-      "end": "2026-10-05T22:00:00.0000000+00:00",
-      "updated": "2026-10-05T18:42:47.5970000+00:00"
     },
     {
       "id": 717354,
