@@ -130,6 +130,17 @@
       { id: 'town', type: 'fill', source: 'omt', 'source-layer': 'landuse', minzoom: 9,
         filter: ['in', ['get', 'class'], ['literal', ['residential', 'commercial', 'industrial', 'retail']]],
         paint: { 'fill-color': '#0a1b1f' } },
+      // parks (OpenStreetMap's park shapes), from town zoom in: a barely-there tint and a faint dashed green edge,
+      // like a zone marked on an old nav display rather than a green blob. State and national parks and reserves
+      // get just the dashed edge, a little farther out
+      { id: 'park-fill', type: 'fill', source: 'omt', 'source-layer': 'landcover', minzoom: 12,
+        filter: ['in', ['get', 'subclass'], ['literal', ['park', 'recreation_ground']]],
+        paint: { 'fill-color': '#0a2a1c', 'fill-opacity': 0.45 } },
+      { id: 'park-edge', type: 'line', source: 'omt', 'source-layer': 'landcover', minzoom: 12,
+        filter: ['in', ['get', 'subclass'], ['literal', ['park', 'recreation_ground']]],
+        paint: { 'line-color': '#2f9a6c', 'line-opacity': ['interpolate', ['linear'], ['zoom'], 12, 0.25, 15, 0.55], 'line-width': 1, 'line-dasharray': [3, 2] } },
+      { id: 'park-area-edge', type: 'line', source: 'omt', 'source-layer': 'park', minzoom: 9,
+        paint: { 'line-color': '#2f9a6c', 'line-opacity': 0.3, 'line-width': 1, 'line-dasharray': [4, 3] } },
       { id: 'hillshade', type: 'hillshade', source: 'dem', paint: {
         'hillshade-shadow-color': '#000000', 'hillshade-highlight-color': '#0d3a30',
         'hillshade-accent-color': '#000000', 'hillshade-exaggeration': 0.35 } },
@@ -195,6 +206,15 @@
       // street names, only zoomed well in: small and dim, along the street (lying flat on the road in the bus
       // chase view, like road markings), well spaced, and dropped wherever they'd crowd; the highway number
       // shields below win any space they both want
+      // park names: small and dim green, only zoomed in, and the first thing dropped when space is tight (listed
+      // before the street names, which win)
+      { id: 'park-names', type: 'symbol', source: 'omt', 'source-layer': 'poi', minzoom: 14.5, filter: ['==', ['get', 'class'], 'park'],
+        layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': ['interpolate', ['linear'], ['zoom'], 14.5, 9, 17, 11],
+          'text-letter-spacing': 0.15, 'text-max-width': 8, 'text-padding': 4 },
+        paint: { 'text-color': '#4fae86', 'text-opacity': 0.85, 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
+      { id: 'park-area-names', type: 'symbol', source: 'omt', 'source-layer': 'park', minzoom: 10, filter: ['has', 'name'],
+        layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': 10, 'text-letter-spacing': 0.15, 'text-max-width': 9 },
+        paint: { 'text-color': '#3f8f6c', 'text-opacity': 0.8, 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
       // (an invisible copy of the named streets, wide, so the bus banner can ask which street the bus is on)
       { id: 'street-q', type: 'line', source: 'omt', 'source-layer': 'transportation_name', minzoom: 12, filter: ['has', 'name'],
         paint: { 'line-opacity': 0, 'line-width': 10 } },

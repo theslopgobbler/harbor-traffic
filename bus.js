@@ -430,7 +430,9 @@
     // keep the phone cool: the tilted view looks far down the road, so it draws a lot more map. While chasing,
     // draw at a lower resolution and leave out the contour lines and hill shading (computed on the phone itself
     // from elevation tiles), then put both back after
-    for (const id of ['hillshade', 'contours', 'contour-label']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', v ? 'none' : 'visible');
+    // (parks too: the chase view keeps to the road)
+    for (const id of ['hillshade', 'contours', 'contour-label', 'park-fill', 'park-edge', 'park-area-edge', 'park-names', 'park-area-names'])
+      if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', v ? 'none' : 'visible');
     // the radar overlay too, if it's on (put back the way it was)
     if (map.getLayer('radar')) {
       if (v) { radarWas = map.getLayoutProperty('radar', 'visibility'); map.setLayoutProperty('radar', 'visibility', 'none'); }
