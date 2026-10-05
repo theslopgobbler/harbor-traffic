@@ -1,20 +1,15 @@
 {
-  "updated": "2026-10-05T05:16:20.0918150+00:00",
+  "updated": "2026-10-05T05:40:58.2497843+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.9068,
-      "lon": -124.10618,
+      "mmsi": 368143540,
+      "name": "DAKOTA",
+      "lat": 46.90625,
+      "lon": -124.10556,
       "sog": 0,
-      "cog": 293.6,
-      "status": 0,
-      "classB": false,
+      "cog": 253.5,
+      "classB": true,
       "seen": "2026-10-05T02:52:39.4144595+00:00"
     },
     {
@@ -33,6 +28,21 @@
       "lengthM": 20
     },
     {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "lengthM": 22,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.9068,
+      "lon": -124.10618,
+      "sog": 0,
+      "cog": 293.6,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T02:52:39.4144595+00:00"
+    },
+    {
       "mmsi": 367364340,
       "name": "DAYNA S",
       "lat": 46.90871,
@@ -41,16 +51,6 @@
       "cog": 338.3,
       "classB": true,
       "seen": "2026-10-05T03:37:03.2611491+00:00"
-    },
-    {
-      "mmsi": 368143540,
-      "name": "DAKOTA",
-      "lat": 46.90625,
-      "lon": -124.10556,
-      "sog": 0,
-      "cog": 253.5,
-      "classB": true,
-      "seen": "2026-10-05T02:52:39.4144595+00:00"
     }
   ]
 }
