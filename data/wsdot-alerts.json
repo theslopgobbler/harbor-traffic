@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T23:59:24.3829897+00:00",
+  "updated": "2026-10-05T00:29:00.1457555+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2161,6 +2161,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-09-14T14:42:15.5130000+00:00"
+    },
+    {
+      "id": 717739,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 northbound at milepost 365.42 near Black Lk Blvd beginning at 4:59 pm on October 4, 2026 until further notice. The left lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 365.42,
+      "lat": 47.032564813,
+      "lon": -122.941209311,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-04T23:59:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-05T00:00:17.8670000+00:00"
     },
     {
       "id": 712735,

@@ -1,23 +1,7 @@
 {
-  "updated": "2026-10-04T23:59:24.3829897+00:00",
+  "updated": "2026-10-05T00:29:00.1457555+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 567017000,
-      "lat": 46.92612,
-      "lon": -124.08898,
-      "sog": 0.1,
-      "cog": 40.7,
-      "heading": 295,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-04T22:49:40.2639394+00:00",
-      "name": "SARITA NAREE",
-      "type": 70,
-      "dest": "GRARY HARBOR",
-      "callsign": "HSDA",
-      "lengthM": 199
-    },
     {
       "mmsi": 367317770,
       "type": 31,
@@ -36,14 +20,14 @@
     {
       "mmsi": 367352000,
       "name": "MAJESTY",
-      "lat": 46.45501,
-      "lon": -124.45971,
-      "sog": 6,
-      "cog": 196.9,
-      "heading": 193,
+      "lat": 46.39148,
+      "lon": -124.48695,
+      "sog": 6.2,
+      "cog": 197.9,
+      "heading": 189,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-04T23:49:16.9124814+00:00"
+      "seen": "2026-10-05T00:29:00.1457555+00:00"
     },
     {
       "mmsi": 367324840,
@@ -59,6 +43,31 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-04T23:49:16.9124814+00:00"
+    },
+    {
+      "mmsi": 316033161,
+      "lat": 46.35593,
+      "lon": -124.43446,
+      "sog": 6.1,
+      "cog": 215,
+      "classB": true,
+      "seen": "2026-10-05T00:29:00.1457555+00:00"
+    },
+    {
+      "mmsi": 567017000,
+      "lat": 46.92612,
+      "lon": -124.08898,
+      "sog": 0.1,
+      "cog": 40.7,
+      "heading": 295,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-04T22:49:40.2639394+00:00",
+      "name": "SARITA NAREE",
+      "type": 70,
+      "dest": "GRARY HARBOR",
+      "callsign": "HSDA",
+      "lengthM": 199
     }
   ]
 }
