@@ -145,22 +145,23 @@ async function refreshBuses(withNotices = true) {
 // Version 3 keeps version 2's positions as positions_v2 (stats from them are folded into the day totals).
 // Free-plan budget: about 3 writes a minute while buses run, plus one per timed stop passed; well under 100,000 a day.
 let lastBus = null;
-const BUS_SCHEMA = '4';
+const BUS_SCHEMA = '5';
 let busTablesReady = false;
 async function busTables(db) {
   if (busTablesReady) return;
   await db.prepare('CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)').run();
   const ver = (await db.prepare("SELECT v FROM meta WHERE k = 'bus_schema'").first())?.v;
-  if (ver !== BUS_SCHEMA && ver !== '2' && ver !== '3') {
+  if (ver !== BUS_SCHEMA && ver !== '2' && ver !== '3' && ver !== '4') {
     // first run, or the first version (its lateness followed the tracker's schedule, not the buses): start fresh
     await db.batch(['arrivals', 'bus_seen', 'offroute', 'route_day', 'departures', 'positions', 'weather_obs', 'road_alerts']
       .map((t) => db.prepare(`DROP TABLE IF EXISTS ${t}`)));
   }
-  if (ver === '3') {
+  if (ver === '3' || ver === '4') {
     // version 3's lateness counted parked, out-of-service buses at GHT's base (next to a route 20 timed stop) as
-    // buses leaving hours late. Start lateness over; the GPS tracks and off-route totals stay
-    await db.batch([db.prepare('DROP TABLE IF EXISTS departures'), db.prepare("UPDATE day_sum SET data = json_remove(data, '$.dep')"),
-      db.prepare("DELETE FROM meta WHERE k = 'bus_state'")]);
+    // buses leaving hours late; version 4 could count a very late bus as "no bus seen" too, or put it on the next
+    // trip. Start lateness over; the GPS tracks and off-route totals stay
+    await db.batch([db.prepare('DROP TABLE IF EXISTS departures'), db.prepare('DROP TABLE IF EXISTS missed'),
+      db.prepare("UPDATE day_sum SET data = json_remove(data, '$.dep')"), db.prepare("DELETE FROM meta WHERE k = 'bus_state'")]);
   }
   await db.batch([
     db.prepare(`CREATE TABLE IF NOT EXISTS departures (day TEXT, t INTEGER, route TEXT, bus TEXT, stop TEXT, sched_min INTEGER, actual_min INTEGER,
@@ -369,17 +370,27 @@ function busSample(st, sum, c, tps, now, lines, done) {
     st.prev[b.id] = { lat: b.lat, lon: b.lon, t: now, route: b.route };
   }
   // the ones it has left (not near it this time)
-  for (const [k, p] of Object.entries(st.pend)) if (p.seen < now) { delete st.pend[k]; const r = settle(p, tps); if (r) done.push(r); }
+  for (const [k, p] of Object.entries(st.pend)) if (p.seen < now) { delete st.pend[k]; settleInto(st, p, tps, done); }
+}
+// settle one, and mark its trip as served right away (the next one settled must not take the same trip)
+function settleInto(st, p, tps, done) {
+  st.served ||= {};
+  const key = `${p.rid}|${p.stop}`, r = settle(p, tps, st.served[key] || []);
+  if (r) { done.push(r); (st.served[key] ||= []).push(r.sched); }
 }
 // which scheduled time a departure was for. First choice: a time the tracker said this bus was headed for (it knows
 // the bus's trip). Otherwise the stop's nearest time, leaning late: leaving 4 minutes before one time reads as 4
-// early, not as most of a headway late; a layover bus waiting for its next trip matches that trip, not the last one
-function settle(p, tps) {
+// early, not as most of a headway late; a layover bus waiting for its next trip matches that trip, not the last one.
+// A trip another bus already left on is ruled out (each scheduled trip leaves once), so a very late bus isn't
+// taken for the next trip while its own trip shows up as "no bus seen"
+function settle(p, tps, served = []) {
   const tp = (tps[p.rid] || []).find((t) => t.name === p.stop);
   if (!tp) return null;
   const dep = pacificMin(p.at);
   const cost = (m) => (dep - m >= 0 ? dep - m : 2 * (m - dep));
-  const pick = (list) => list.filter((m) => dep - m <= 90 && m - dep <= 15).sort((a, b) => cost(a) - cost(b))[0];
+  const open = (m) => !served.some((s) => Math.abs(s - m) <= 3);
+  const pick = (list) => { const ok = list.filter((m) => dep - m <= 90 && m - dep <= 15).sort((a, b) => cost(a) - cost(b));
+    return ok.find(open) ?? ok[0]; };
   let sched = pick(p.hints), how = 'tracker';
   if (sched == null) { sched = pick(tp.mins); how = 'nearest'; }
   return sched == null ? null : { ...p, sched, how, dep, arrMin: pacificMin(p.arr) };
@@ -394,13 +405,16 @@ async function busMinute(env, t0) {
   try { st = JSON.parse((await db.prepare("SELECT v FROM meta WHERE k = 'bus_state'").first())?.v || '{}'); } catch { /* start over */ }
   st.prev ||= {}; st.pend ||= {}; st.nx ||= {};
   const day = pacificDay(t0), nowMin = pacificMin(t0);
-  if (st.day !== day) Object.assign(st, { day, seen: {}, served: {}, missFrom: null, span: null });
-  // every minute from 10 minutes before the day's first scheduled bus to 45 after its last (known once today's
-  // timetable is loaded); outside that, while no buses are out, every 10 minutes to go easy on GHT's server
-  const inService = !!st.span && nowMin >= st.span[0] - 10 && nowMin <= st.span[1] + 45;
+  if (st.day !== day) Object.assign(st, { day, seen: {}, served: {}, missFrom: null, span: null, gaps: [] });
+  st.gaps ||= [];
+  // every minute from 10 minutes before the day's first scheduled bus to 95 after its last (known once today's
+  // timetable is loaded; the last "no bus seen" check is then); outside that, while no buses are out, every 10
+  // minutes to go easy on GHT's server
+  const inService = !!st.span && nowMin >= st.span[0] - 10 && nowMin <= st.span[1] + 95;
   if (st.empty && !inService && new Date(t0).getUTCMinutes() % 10 !== 0) return;
-  // a gap in the log (paused, or runs skipped): don't call buses missing that we couldn't have seen
-  if (inService && st.lastRun && t0 - st.lastRun > 180000) st.missFrom = nowMin - 45;
+  // a gap in the log (paused, or runs skipped): a bus could have come by unseen, so don't call any scheduled time
+  // missing whose 90 minutes overlap it
+  if (inService && st.lastRun && t0 - st.lastRun > 180000 && pacificDay(st.lastRun) === day) st.gaps.push([pacificMin(st.lastRun), nowMin]);
   st.lastRun = t0;
   let sum = newSum();
   try { const v = (await db.prepare('SELECT data FROM day_sum WHERE day = ?1').bind(day).first())?.data; if (v) sum = { ...newSum(), ...JSON.parse(v) }; } catch { /* new day */ }
@@ -431,11 +445,11 @@ async function busMinute(env, t0) {
     busSample(st, sum, c, tps, Date.now(), lines, done);
   }
   const empty = !lastBus || !inServiceNow().length;
-  if (empty) for (const [k, p] of Object.entries(st.pend)) { delete st.pend[k]; const r = settle(p, tps); if (r) done.push(r); }
-  for (const r of done) (st.served[`${r.rid}|${r.stop}`] ||= []).push(r.sched);
-  // no bus seen: 45 minutes after each scheduled time, on routes that have had a bus in service today, was a bus
-  // there? (an arrive/leave pair a few minutes apart is one visit)
-  const missed = [], upto = nowMin - 45;
+  if (empty) for (const [k, p] of Object.entries(st.pend)) { delete st.pend[k]; settleInto(st, p, tps, done); }
+  // no bus seen: 95 minutes after each scheduled time, on routes that have had a bus in service today, was a bus
+  // there? (95: a departure up to 90 minutes late still counts as late, so it mustn't be called missing first. An
+  // arrive/leave pair a few minutes apart is one visit)
+  const missed = [], upto = nowMin - 95;
   if (st.missFrom == null) st.missFrom = upto;
   if (upto > st.missFrom && Object.keys(tps).length) {
     for (const [rid, list] of Object.entries(tps)) {
@@ -447,6 +461,7 @@ async function busMinute(env, t0) {
         for (const m of tp.mins) {
           const pair = m - lastM <= 3; lastM = m;
           if (pair || m <= st.missFrom || m > upto || m < first) continue;
+          if (st.gaps.some(([a, b]) => m >= a - 90 && m <= b)) continue;
           if (served.some((s) => Math.abs(s - m) <= 3)) continue;
           missed.push({ route: shortRoute(lastBus?.routeName[rid]), stop: tp.name, sched: m, lat: tp.lat, lon: tp.lon });
         }
