@@ -1,29 +1,34 @@
 {
-  "updated": "2026-10-05T09:03:49.1282654+00:00",
+  "updated": "2026-10-05T09:29:23.6098720+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 369702000,
-      "name": "COASTAL RELIANCE",
-      "lat": 46.40458,
-      "lon": -124.38327,
-      "sog": 5.2,
-      "cog": 331.6,
-      "heading": 332,
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.9068,
+      "lon": -124.10618,
+      "sog": 0,
+      "cog": 177.7,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-05T09:03:49.1282654+00:00"
+      "seen": "2026-10-05T09:29:23.6098720+00:00"
     },
     {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97856,
-      "lon": -123.88359,
+      "mmsi": 367364340,
+      "name": "DAYNA S",
+      "lat": 46.9087,
+      "lon": -124.10891,
       "sog": 0,
-      "cog": 313.8,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T08:50:06.6996673+00:00"
+      "cog": 338.3,
+      "classB": true,
+      "seen": "2026-10-05T07:01:12.2281294+00:00"
     },
     {
       "mmsi": 567017000,
@@ -38,6 +43,39 @@
       "seen": "2026-10-05T08:28:45.5402793+00:00"
     },
     {
+      "mmsi": 369702000,
+      "name": "COASTAL RELIANCE",
+      "lat": 46.43783,
+      "lon": -124.40676,
+      "sog": 5.1,
+      "cog": 336.2,
+      "heading": 332,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T09:29:23.6098720+00:00"
+    },
+    {
+      "mmsi": 367512180,
+      "name": "CONNIE S",
+      "lat": 46.90558,
+      "lon": -124.10459,
+      "sog": 0,
+      "cog": 230.7,
+      "classB": true,
+      "seen": "2026-10-05T09:29:23.6098720+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97852,
+      "lon": -123.88358,
+      "sog": 0,
+      "cog": 264.1,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T09:29:23.6098720+00:00"
+    },
+    {
       "mmsi": 367463820,
       "name": "TRINITY",
       "lat": 46.90844,
@@ -46,34 +84,6 @@
       "cog": 30,
       "classB": true,
       "seen": "2026-10-05T08:02:56.6846041+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90678,
-      "lon": -124.10617,
-      "sog": 0,
-      "cog": 343.2,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T09:03:49.1282654+00:00"
-    },
-    {
-      "mmsi": 367364340,
-      "name": "DAYNA S",
-      "lat": 46.9087,
-      "lon": -124.10891,
-      "sog": 0,
-      "cog": 338.3,
-      "classB": true,
-      "seen": "2026-10-05T07:01:12.2281294+00:00"
     }
   ]
 }
