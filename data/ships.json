@@ -1,18 +1,17 @@
 {
-  "updated": "2026-10-05T22:49:50.0453736+00:00",
+  "updated": "2026-10-05T23:00:52.9485076+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367171980,
-      "name": "PACIFIC DOVE",
-      "lat": 46.90855,
-      "lon": -124.1106,
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97852,
+      "lon": -123.88359,
       "sog": 0,
-      "cog": 341.6,
-      "heading": 130,
-      "status": 7,
+      "cog": 276.9,
+      "status": 0,
       "classB": false,
-      "seen": "2026-10-05T21:52:19.7453522+00:00"
+      "seen": "2026-10-05T23:00:52.9485076+00:00"
     },
     {
       "mmsi": 366999892,
@@ -40,6 +39,29 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-05T22:10:59.8417038+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90682,
+      "lon": -124.10615,
+      "sog": 0,
+      "cog": 301.1,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T23:00:52.9485076+00:00"
+    },
+    {
+      "mmsi": 367171980,
+      "name": "PACIFIC DOVE",
+      "lat": 46.90857,
+      "lon": -124.11058,
+      "sog": 0,
+      "cog": 303.9,
+      "heading": 131,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-05T23:00:52.9485076+00:00"
     }
   ]
 }
