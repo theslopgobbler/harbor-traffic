@@ -93,7 +93,10 @@
   const routeOpacity = () => picked ? 0.2 : 0.6;
   // routes to step through (20P is part of 20: the same buses)
   const allRoutes = () => Object.keys(routeInfo).filter((r) => !(/P$/.test(r) && routeInfo[r.slice(0, -1)])).sort(natural);
-  const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt).sort((a, b) => a.id.localeCompare(b.id));
+  // not in service: GHT's tracker reports the bus's position under a route, but its route list doesn't name it as
+  // running (parked at the base, deadheading). Shown dimmed; left out of counts and stepping through a route
+  const oos = (b) => b.listed === false;
+  const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt && !oos(b)).sort((a, b) => a.id.localeCompare(b.id));
   const routeColor = (rt) => Object.values(routes).find((r) => short(r.name) === rt)?.color || routeInfo[rt]?.color || '#bff4ff';
   const routeName = (rt) => long(Object.values(routes).find((r) => short(r.name) === rt)?.name) || routeInfo[rt]?.name || '';
   // the bar (step through routes and buses) opens when you pick a route itself: its line or its row in the panel.
@@ -888,7 +891,7 @@
   function liveArrivals(stop, sched) {
     const out = [];
     for (const b of buses) {
-      if (!serves(stop.routes, busRoute(b))) continue;
+      if (oos(b) || !serves(stop.routes, busRoute(b))) continue;
       const eta = etaTo(b, stop);
       if (eta != null) { out.push({ b, eta }); continue; }
       const nx = etaNextTrip(b, stop);
@@ -1009,6 +1012,7 @@
     const b = mk._bus, r = routes[b.route] || {}, rt = short(r.name), color = r.color || '#bff4ff';
     const el = mk.getElement();
     el.classList.toggle('stopped', b.mph < 2);
+    el.classList.toggle('oos', oos(b));
     const chased = chase && follow?.id === b.id;
     el.classList.toggle('chase', chased);
     if (chased) {
@@ -1016,9 +1020,9 @@
     } else {
       const h = Math.round((b._snap ? headingOf(b) : null) ?? b.heading ?? 0);
       mk._h = h;
-      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(color)}</div><b style="color:${esc(color)};border-color:${esc(color)}">${esc(rt)}</b>`;
+      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(color)}</div><b style="color:${esc(color)};border-color:${esc(color)}">${oos(b) ? 'OUT' : esc(rt)}</b>`;
     }
-    el.title = `Route ${rt} · bus ${b.id}`;
+    el.title = oos(b) ? `Bus ${b.id} · not in service` : `Route ${rt} · bus ${b.id}`;
   }
 
   function render() {
@@ -1066,7 +1070,10 @@
       mk._bus = b;
       drawBus(mk);
       const el = mk.getElement();
-      mk.getPopup().setHTML(`<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
+      mk.getPopup().setHTML(oos(b) ? `<h3>BUS ${esc(b.id)} · NOT IN SERVICE</h3>
+        <p>${b.mph < 2 ? 'PARKED' : Math.round(b.mph) + ' MPH'} · LAST ON ROUTE ${esc(short(r.name))}</p>
+        <div class="m">GHT'S TRACKER ISN'T LISTING THIS BUS ON A ROUTE RIGHT NOW (PARKED, OR DRIVING TO OR FROM A ROUTE).</div>`
+        : `<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}</div>` : ''}
         ${TV ? '' : `<button type="button" class="go" data-follow="${esc(b.id)}">FOLLOW THIS BUS</button>`}`);
@@ -1098,17 +1105,18 @@
       const list = grp.map((k) => pts[k].m._bus);
       const lls = grp.map((k) => pts[k].m.getLngLat());
       const at = [lls.reduce((s, l) => s + l.lng, 0) / lls.length, lls.reduce((s, l) => s + l.lat, 0) / lls.length];
-      const oneRoute = list.every((b) => b.route === list[0].route);
+      const oneRoute = list.every((b) => b.route === list[0].route && !oos(b));
       const color = oneRoute ? (routes[list[0].route]?.color || '#bff4ff') : '#bff4ff';
       const el = document.createElement('div');
       // a pile of parked buses (all stopped, e.g. at a transit center) is drawn faint so it doesn't hog the map
-      el.className = 'bus-mk bus-grp' + (list.every((b) => b.mph < 2) ? ' parked' : '');
+      el.className = 'bus-mk bus-grp' + (list.every((b) => b.mph < 2 || oos(b)) ? ' parked' : '');
       el.innerHTML = `<div class="ic">${busSvg(color)}</div><b class="n">${list.length}</b>`;
       el.title = `${list.length} buses here: click for details`;
       // parked together (a transit center): list them; spread out: zoom in until they separate
       const spreadM = Math.max(...lls.map((a) => Math.max(...lls.map((b) => a.distanceTo(b)))));
       const pop = new maplibregl.Popup({ offset: 14, maxWidth: '300px' }).setHTML(`<h3>${list.length} BUSES HERE</h3>` + list.map((b) => {
         const r = routes[b.route] || {};
+        if (oos(b)) return `<div class="m bus-row" style="opacity:.55"><span class="bus-no" style="background:#3d5a53">OUT</span>BUS ${esc(b.id)} · NOT IN SERVICE${b.mph < 2 ? '' : ' · ' + Math.round(b.mph) + ' MPH'}</div>`;
         return `<div class="m bus-row" data-route="${esc(short(r.name))}" style="cursor:pointer"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + tt(b.nextTime) : '') : ''}</div>`;
       }).join(''));
       const mk = new maplibregl.Marker({ element: el }).setLngLat(at).addTo(map);
@@ -1140,7 +1148,7 @@
     if (!items.length && siteAlerts?.status) items.push(`<li class="empty">${esc(siteAlerts.status.toUpperCase())}</li>`);
     const active = Object.values(routes).filter((r) => r.active);
     const counts = {};
-    for (const b of buses) counts[b.route] = (counts[b.route] || 0) + 1;
+    for (const b of buses) if (!oos(b)) counts[b.route] = (counts[b.route] || 0) + 1;
     // every row brings its route up on the map (and the bar for stepping through its buses)
     box.innerHTML = items.join('') + (active.length ? active.map((r) => `<li class="clickable" data-route="${esc(short(r.name))}" style="border-left-color:${esc(r.color)}">
         <div class="t"><span class="bus-no" style="background:${esc(r.color)}">${esc(short(r.name))}</span> ${esc(long(r.name).toUpperCase())}</div>
