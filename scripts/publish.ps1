@@ -28,7 +28,9 @@ $utf8 = New-Object System.Text.UTF8Encoding($false)
 [IO.File]::WriteAllText((Join-Path $root 'version.txt'), $stamp, $utf8)
 
 # files to publish: everything except secrets, local-only bits and anything .gitignore names
-$skip = '^(notes/|wsdot-key\.txt|aisstream-key\.txt|github-token\.txt|\.git/|.*\.local\..*)'
+# (photos/ holds your original ship photos, which can carry the GPS spot they were taken from: scripts/ship-photos.ps1
+# makes clean copies in ships/, and only those go up)
+$skip = '^(notes/|photos/|wsdot-key\.txt|aisstream-key\.txt|github-token\.txt|\.git/|.*\.local\..*)'
 $files = Get-ChildItem $root -Recurse -File -Force | ForEach-Object {
     $_.FullName.Substring($root.Length + 1).Replace('\', '/')
 } | Where-Object { $_ -notmatch $skip }

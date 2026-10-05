@@ -7,6 +7,7 @@
 //   GET /bus-stats bus on-time and off-route stats (stats.html; same key). Logged by a once-a-minute Cron Trigger
 //   GET /bus-export the raw bus logs as CSV (same key): ?table=positions|departures|weather_obs|road_alerts|positions_v2
 //                  &days=30, in pages: when the X-Next header is set, ask again with &after=<it> for the rest
+//   GET /ship-photos which Commons ship photos are approved for the map; POST (stats page, same key) approves one
 //   GET /site-stats harborevents.org visit stats from Umami Cloud (stats.html; same X-Stats-Key): the private
 //                  share link (UMAMI_SHARE_URL secret), plus a numbers summary if UMAMI_API_KEY (paid plan) is set
 // It only ever fetches those fixed lists (it's not an open proxy), answers only the dashboard's own site, and
@@ -607,6 +608,14 @@ async function usageReport(raw) {
   return { day: usage.day, reads: t.reads, writes: t.writes, limitReads: FREE_READS, limitWrites: FREE_WRITES, paused: usage.over };
 }
 
+// ---- ship photos: your yes or no on each Commons photo the collector found (data/ship-photo-candidates.json)
+let shipPhotoReady = false, shipPhotoCache = { at: 0, body: null };
+async function shipPhotoTable(db) {
+  if (shipPhotoReady) return;
+  await db.prepare('CREATE TABLE IF NOT EXISTS ship_photos (file TEXT, mmsi TEXT, ok INTEGER, t INTEGER, PRIMARY KEY (file, mmsi))').run();
+  shipPhotoReady = true;
+}
+
 // ---- viewers: a small D1 database (binding DB) keeps the tally for everyone, so it can be set up entirely in
 // the Cloudflare dashboard. It holds only random tab IDs with when each last checked in (cleared after an
 // hour), plus per-day totals: page opens, the most at once, and opens by kind (TV, phone, desktop).
@@ -699,8 +708,8 @@ export default {
     const origin = request.headers.get('Origin') || '';
     const cors = {
       'Access-Control-Allow-Origin': ALLOWED.includes(origin) ? origin : ALLOWED[0],
-      'Access-Control-Allow-Methods': 'GET',
-      'Access-Control-Allow-Headers': 'X-Stats-Key',
+      'Access-Control-Allow-Methods': 'GET, POST',
+      'Access-Control-Allow-Headers': 'X-Stats-Key, Content-Type',
       'Vary': 'Origin'
     };
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors });
@@ -708,7 +717,7 @@ export default {
     const path = new URL(request.url).pathname;
     // every database query is counted (the meter above); only these paths use the database
     const raw = env.DB;
-    if (raw && ['/hello', '/viewers', '/bus-stats', '/bus-export'].includes(path)) {
+    if (raw && ['/hello', '/viewers', '/bus-stats', '/bus-export', '/ship-photos'].includes(path)) {
       env = { ...env, DB: counted(raw) };
       ctx?.waitUntil(flushUsage(raw).catch(() => {}));
     }
@@ -760,6 +769,31 @@ export default {
         return new Response(out.csv, { headers: { ...cors, 'Content-Type': 'text/csv', 'Access-Control-Expose-Headers': 'X-Next',
           ...(out.next != null ? { 'X-Next': String(out.next) } : {}),
           'Content-Disposition': `attachment; filename="ght-${table}-${pacificDay(Date.now())}.csv"` } });
+      } catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
+    }
+    // ship photos from Wikimedia Commons that the collector found: which ones you approved for the map (GET, for
+    // everyone, cached 5 minutes) and approving or rejecting one (POST from the stats page, with the key)
+    if (path === '/ship-photos') {
+      if (!env.DB) return new Response('not set up (no DB binding)', { status: 503, headers: cors });
+      try {
+        if (request.method === 'POST') {
+          if (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY)
+            return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
+          const b = await request.json();
+          const file = String(b.file || ''), mmsi = String(b.mmsi || '');
+          if (!/^File:/.test(file) || file.length > 300 || !/^\d{6,9}$/.test(mmsi)) return new Response('bad request', { status: 400, headers: cors });
+          await shipPhotoTable(env.DB);
+          await (b.ok == null ? env.DB.prepare('DELETE FROM ship_photos WHERE file = ?1 AND mmsi = ?2').bind(file, mmsi)
+            : env.DB.prepare('INSERT INTO ship_photos (file, mmsi, ok, t) VALUES (?1, ?2, ?3, ?4) ON CONFLICT(file, mmsi) DO UPDATE SET ok = ?3, t = ?4')
+              .bind(file, mmsi, b.ok ? 1 : 0, Date.now())).run();
+          shipPhotoCache = { at: 0, body: null };
+        }
+        if (!shipPhotoCache.body || Date.now() - shipPhotoCache.at > 300000) {
+          await shipPhotoTable(env.DB);
+          const rows = (await env.DB.prepare('SELECT file, mmsi, ok FROM ship_photos').all()).results;
+          shipPhotoCache = { at: Date.now(), body: JSON.stringify({ decisions: rows }) };
+        }
+        return new Response(shipPhotoCache.body, { headers: { ...cors, 'Content-Type': 'application/json', 'Cache-Control': request.method === 'POST' ? 'no-store' : 'public, max-age=300' } });
       } catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
     }
     if (path === '/hello' || path === '/viewers') {
