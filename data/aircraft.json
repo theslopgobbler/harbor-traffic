@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T14:39:59.9793383+00:00",
+  "updated": "2026-10-05T14:59:02.5841660+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N210AA",
       "type": "T210",
       "cat": "A1",
-      "alt": 7800,
-      "gs": 141.9,
-      "track": 15.11,
+      "alt": 5825,
+      "gs": 150.0,
+      "track": 11.53,
       "rate": 0,
-      "lat": 46.65465,
-      "lon": -123.02518,
+      "lat": 47.43333,
+      "lon": -122.74003,
       "squawk": "4734",
       "emergency": "none",
       "mil": false
