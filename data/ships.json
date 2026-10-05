@@ -1,23 +1,7 @@
 {
-  "updated": "2026-10-05T01:51:10.3669820+00:00",
+  "updated": "2026-10-05T02:11:21.7175612+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 567017000,
-      "type": 70,
-      "dest": "GRARY HARBOR",
-      "callsign": "HSDA",
-      "lengthM": 199,
-      "name": "SARITA NAREE",
-      "lat": 46.92641,
-      "lon": -124.08884,
-      "sog": 0,
-      "cog": 356.6,
-      "heading": 279,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-05T01:34:04.3418248+00:00"
-    },
     {
       "mmsi": 367352000,
       "name": "MAJESTY",
@@ -31,19 +15,27 @@
       "seen": "2026-10-05T00:29:00.1457555+00:00"
     },
     {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "lengthM": 22,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90678,
-      "lon": -124.10613,
+      "mmsi": 338527000,
+      "name": "LYDOREIN",
+      "lat": 46.90904,
+      "lon": -124.10962,
       "sog": 0,
-      "cog": 216.4,
-      "status": 0,
-      "classB": false,
+      "cog": 95.1,
+      "heading": 312,
+      "classB": true,
       "seen": "2026-10-05T01:34:04.3418248+00:00"
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91881,
+      "lon": -124.11676,
+      "sog": 0.1,
+      "cog": 225.1,
+      "heading": 306,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-05T02:11:21.7175612+00:00"
     },
     {
       "mmsi": 369702000,
@@ -77,14 +69,46 @@
       "lengthM": 20
     },
     {
-      "mmsi": 338527000,
-      "name": "LYDOREIN",
-      "lat": 46.90904,
-      "lon": -124.10962,
+      "mmsi": 567017000,
+      "type": 70,
+      "dest": "GRARY HARBOR",
+      "callsign": "HSDA",
+      "lengthM": 199,
+      "name": "SARITA NAREE",
+      "lat": 46.92641,
+      "lon": -124.08884,
       "sog": 0,
-      "cog": 95.1,
-      "heading": 312,
-      "classB": true,
+      "cog": 356.6,
+      "heading": 279,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-05T01:34:04.3418248+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.50041,
+      "lon": -124.02362,
+      "sog": 0,
+      "cog": 308.2,
+      "heading": 185,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-05T02:11:21.7175612+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "lengthM": 22,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90678,
+      "lon": -124.10613,
+      "sog": 0,
+      "cog": 216.4,
+      "status": 0,
+      "classB": false,
       "seen": "2026-10-05T01:34:04.3418248+00:00"
     },
     {
@@ -95,6 +119,25 @@
       "cog": 215,
       "classB": true,
       "seen": "2026-10-05T00:29:00.1457555+00:00"
+    },
+    {
+      "mmsi": 368370610,
+      "lat": 46.60958,
+      "lon": -124.4514,
+      "sog": 10.6,
+      "cog": 152.4,
+      "classB": true,
+      "seen": "2026-10-05T02:11:21.7175612+00:00"
+    },
+    {
+      "mmsi": 367512180,
+      "name": "CONNIE S",
+      "lat": 46.90556,
+      "lon": -124.10458,
+      "sog": 0,
+      "cog": 298.6,
+      "classB": true,
+      "seen": "2026-10-05T02:11:21.7175612+00:00"
     }
   ]
 }
