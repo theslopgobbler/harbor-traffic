@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T08:02:56.6846041+00:00",
+  "updated": "2026-10-05T08:28:45.5402793+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
@@ -13,6 +13,36 @@
       "seen": "2026-10-05T07:01:12.2281294+00:00"
     },
     {
+      "mmsi": 367317770,
+      "lat": 46.90679,
+      "lon": -124.1062,
+      "sog": 0,
+      "cog": 256.2,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T08:02:56.6846041+00:00",
+      "name": "ELLIS BRUSCO",
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4
+    },
+    {
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92612,
+      "lon": -124.0939,
+      "sog": 0,
+      "cog": 108.9,
+      "heading": 57,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-05T08:28:45.5402793+00:00"
+    },
+    {
       "mmsi": 367463820,
       "name": "TRINITY",
       "lat": 46.90844,
@@ -20,17 +50,6 @@
       "sog": 0,
       "cog": 30,
       "classB": true,
-      "seen": "2026-10-05T08:02:56.6846041+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90679,
-      "lon": -124.1062,
-      "sog": 0,
-      "cog": 256.2,
-      "status": 0,
-      "classB": false,
       "seen": "2026-10-05T08:02:56.6846041+00:00"
     }
   ]
