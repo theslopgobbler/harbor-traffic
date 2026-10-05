@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T04:19:14.6766187+00:00",
+  "updated": "2026-10-05T04:49:22.5935028+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -16,5 +16,12 @@
     "seas": "3 to 5 ft",
     "ebb": null
   },
-  "alerts": []
+  "alerts": [
+    {
+      "event": "Dense Fog Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-10-05T19:00:00+00:00",
+      "headline": "Dense Fog Advisory issued October 4 at 9:20PM PDT until October 5 at 12:00PM PDT by NWS Portland OR"
+    }
+  ]
 }
