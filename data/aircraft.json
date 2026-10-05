@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-05T16:00:18.0341770+00:00",
+  "updated": "2026-10-05T16:26:48.8046942+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "aa30c3",
-      "flight": "N756EM",
-      "reg": "N756EM",
-      "type": "C82R",
+      "hex": "aa8f8b",
+      "flight": "N78Q",
+      "reg": "N78Q",
+      "type": "PC12",
       "cat": "A1",
-      "alt": 6850,
-      "gs": 145.8,
-      "track": 194.7,
-      "rate": 0,
-      "lat": 46.88022,
-      "lon": -122.9355,
-      "squawk": "4620",
+      "alt": 13375,
+      "gs": 257.1,
+      "track": 349.7,
+      "rate": -512,
+      "lat": 46.73384,
+      "lon": -122.84054,
+      "squawk": "7214",
       "emergency": "none",
       "mil": false
     }
