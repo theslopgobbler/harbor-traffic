@@ -391,6 +391,8 @@
     const b = buses.find((x) => x.id === id); if (!b) return;
     follow = { id, route: busRoute(b), stop };
     follow.ahead = aheadText(routeAhead(b));
+    // switching buses in chase view: the old one becomes an "other bus" sprite and the new one the chase sprite
+    if (chase) for (const m of markers.values()) if (m._bus) { m._c3 = null; drawBus(m); }
     document.querySelectorAll('.maplibregl-popup').forEach((p) => p.remove());
     pickRoute(busRoute(b), { force: true });
     renderBar();
@@ -452,10 +454,13 @@
         ...(northUp ? { bearing: 0 } : followUp ? {} : { bearing: 0 }), duration: 800 });
       map.once('moveend', () => { if (!chase) map.setMaxZoom(16); });
     }
-    if (mk) drawBus(mk);
+    // every bus changes look: the chased one to its sprite, the others to theirs (or back to map icons)
+    for (const m of markers.values()) if (m._bus) { m._c3 = null; drawBus(m); }
+    if (v) headlights();
     renderBar();
     updateSignals();
   }
+  setInterval(() => { if (chase) headlights(); }, 60000);
   // traffic signals near the chased bus (where OpenStreetMap has them: data/signals.json), as little pixel
   // signals standing at the corners. They're decoration: they cycle on their own, not in step with the real ones.
   let signals = null;
@@ -785,6 +790,11 @@
       }
     }
     chaseCamera(dt);
+    // chase view: the other buses face the right way and shrink with distance (measured after the camera moved)
+    if (chase) {
+      const fm = follow && markers.get(follow.id), nearPx = fm ? pxPerMeter(fm.getLngLat()) : 0;
+      for (const mk of markers.values()) if (mk !== fm && mk._bus) place3d(mk, nearPx, fm?.getLngLat());
+    }
     if (t - lastFollow > 250) {
       lastFollow = t; signalTurn();
       // the banner's stop line changes as the bus reaches, stops at and leaves each stop
@@ -1007,7 +1017,129 @@
     <rect x="9" y="15" width="6" height="2" fill="#020807" opacity=".6"/>
     <rect x="3" y="19" width="18" height="2" fill="#2b3b39"/>
     <rect x="4" y="21" width="4" height="2" fill="#000"/><rect x="16" y="21" width="4" height="2" fill="#000"/></svg>`;
-  // draw a bus marker: the top-down icon pointed along its street, or the chase sprite for the bus being chased
+  // ---- the other buses in chase view: pixel sprites seen from whichever way each faces compared with the camera
+  // (from behind, behind diagonal, side, front diagonal, front; the in-between ones mirrored for the other side),
+  // sized by how far away each is. Approved on the sprite sheet (notes/bus-sprites.html).
+  const DK = '#020807', GL = '#0b2b2a', GT = '#bff4ff', TRIM = '#2b3b39';
+  let mirrorText = false; // (while drawing a mirrored sprite: its route number still reads the right way)
+  const sign = (x, y, w, rt, fs = 3.6) => `<rect x="${x}" y="${y}" width="${w}" height="${fs + 0.4}" fill="${DK}"/>
+    <text x="${x + w / 2}" y="${y + fs - 0.2}" ${mirrorText ? `transform="translate(${2 * (x + w / 2)} 0) scale(-1 1)"` : ''} text-anchor="middle"
+      font-family="Share Tech Mono, monospace" font-size="${fs}" fill="#ffc400">${esc(rt)}</text>`;
+  // the diagonal views: a face (back or front) on the left, its side going away to the right, a little smaller as it goes
+  const diagBody = (c) => `<polygon points="2,21 15,23 34,20 34,22 15,25 2,24" fill="rgba(0,0,0,.45)"/>
+    <polygon points="3,1 15,1 33,3.5 33,5 15,3 3,3" fill="${c}" opacity=".55"/>
+    <polygon points="15,3 34,5 34,19.5 15,21.5" fill="${DK}"/><polygon points="15.5,4 33,6 33,18.5 15.5,20.5" fill="${c}"/>
+    <polygon points="15.5,4 33,6 33,18.5 15.5,20.5" fill="#000" opacity=".28"/>`;
+  const diagWheels = `<polygon points="15.5,17.5 33,16.3 33,18.5 15.5,20.5" fill="${TRIM}"/>`;
+  const diagFeet = `<rect x="2" y="19" width="13" height="2" fill="${TRIM}"/><rect x="3" y="21" width="3.5" height="2" fill="#000"/><rect x="11" y="21" width="3.5" height="2" fill="#000"/>
+    <polygon points="18,19.6 22,19.2 22,22.8 18,23.2" fill="#000"/><polygon points="27.5,18.4 31,18.1 31,21.4 27.5,21.7" fill="#000"/>`;
+  const VIEWS = {
+    rear: { w: 24, h: 25, svg: (c, rt) => spriteSvg(c, rt).replace(/^<svg[^>]*>|<\/svg>$/g, '') },
+    front: { w: 24, h: 25, svg: (c, rt) => `<rect x="2" y="22" width="20" height="3" fill="rgba(0,0,0,.5)"/>
+      <rect x="4" y="0" width="16" height="3" fill="${c}" opacity=".55"/>
+      <rect x="0.5" y="5" width="2.5" height="1" fill="${DK}"/><rect x="0.5" y="5" width="1.5" height="4" fill="${DK}"/>
+      <rect x="21" y="5" width="2.5" height="1" fill="${DK}"/><rect x="22" y="5" width="1.5" height="4" fill="${DK}"/>
+      <rect x="3" y="2" width="18" height="18" fill="${DK}"/><rect x="4" y="3" width="16" height="16" fill="${c}"/>
+      ${sign(5, 3.6, 14, rt, 3.2)}
+      <rect x="5" y="8" width="14" height="7" fill="${GL}"/><rect x="11.5" y="8" width="1" height="7" fill="${DK}" opacity=".7"/>
+      <rect x="6" y="9" width="3" height="1" fill="${GT}" opacity=".7"/><rect x="6" y="10" width="1" height="2" fill="${GT}" opacity=".7"/>
+      <rect class="hl" x="4" y="16" width="3" height="2"/><rect class="hl" x="17" y="16" width="3" height="2"/>
+      <rect x="9" y="16" width="6" height="2" fill="${DK}" opacity=".6"/>
+      <rect x="3" y="19" width="18" height="2" fill="${TRIM}"/>
+      <rect x="4" y="21" width="4" height="2" fill="#000"/><rect x="16" y="21" width="4" height="2" fill="#000"/>` },
+    side: { w: 44, h: 21, svg: (c, rt) => `<rect x="3" y="18" width="38" height="3" fill="rgba(0,0,0,.5)"/>
+      <rect x="4" y="0" width="37" height="2" fill="${c}" opacity=".55"/>
+      <rect x="2" y="1" width="40" height="16" fill="${DK}"/><rect x="3" y="2" width="38" height="13" fill="${c}"/>
+      <rect x="3" y="3" width="3" height="7" fill="${GL}"/><rect x="3" y="3" width="1" height="2" fill="${GT}" opacity=".6"/>
+      <rect x="7" y="3" width="4" height="12" fill="${DK}"/><rect x="7.5" y="3.5" width="1.5" height="6" fill="${GL}"/><rect x="9.5" y="3.5" width="1.5" height="6" fill="${GL}"/>
+      <rect x="7.5" y="10" width="1.5" height="4.5" fill="${GL}" opacity=".75"/><rect x="9.5" y="10" width="1.5" height="4.5" fill="${GL}" opacity=".75"/>
+      ${[12, 17.5, 23, 28.5, 34].map((x) => `<rect x="${x}" y="3.5" width="4.5" height="5" fill="${GL}"/><rect x="${x + 0.5}" y="4" width="1.5" height="1" fill="${GT}" opacity=".55"/>`).join('')}
+      ${sign(20, 10.2, 8, rt, 3.4)}
+      <rect class="hl" x="2" y="11" width="1" height="2"/><rect class="tl" x="41" y="11" width="1" height="2"/>
+      <rect x="3" y="14" width="38" height="2" fill="${TRIM}"/>
+      <rect x="13" y="14.5" width="6" height="4.5" fill="#000"/><rect x="14.5" y="15.5" width="3" height="2" fill="${TRIM}"/>
+      <rect x="31" y="14.5" width="6" height="4.5" fill="#000"/><rect x="32.5" y="15.5" width="3" height="2" fill="${TRIM}"/>` },
+    rearDiag: { w: 36, h: 25, svg: (c, rt) => `${diagBody(c)}
+      <polygon points="16.5,7 32,8.7 32,12.4 16.5,11.7" fill="${GL}"/>
+      ${[20, 24, 28].map((x) => `<rect x="${x}" y="${7 + (x - 16.5) * 0.11}" width=".8" height="4.8" fill="${DK}" opacity=".8"/>`).join('')}
+      <polygon points="29.5,9 31.8,9.2 31.8,17.2 29.5,17.6" fill="${DK}" opacity=".7"/>${diagWheels}
+      <rect x="2" y="3" width="13" height="18" fill="${DK}"/><rect x="3" y="4" width="12" height="16" fill="${c}"/>
+      ${sign(4, 4.6, 10, rt, 3.2)}
+      <rect x="4" y="9" width="10" height="5" fill="${GL}"/><rect x="5" y="10" width="2" height="1" fill="${GT}" opacity=".7"/>
+      <rect class="tl" x="3" y="15" width="2.5" height="2"/><rect class="tl" x="12.5" y="15" width="2.5" height="2"/>${diagFeet}` },
+    frontDiag: { w: 36, h: 25, svg: (c, rt) => `${diagBody(c)}
+      <polygon points="16,5.2 19,5.5 19,18 16,18.4" fill="${DK}"/>
+      <polygon points="16.5,6 18.5,6.2 18.5,11.4 16.5,11.3" fill="${GL}"/><polygon points="16.5,12 18.5,12 18.5,17.4 16.5,17.6" fill="${GL}" opacity=".75"/>
+      <polygon points="20,7.4 32,8.7 32,12.4 20,12" fill="${GL}"/>
+      ${[23.5, 27.5].map((x) => `<rect x="${x}" y="${7.3 + (x - 20) * 0.11}" width=".8" height="4.7" fill="${DK}" opacity=".8"/>`).join('')}
+      <rect class="tl" x="32.5" y="13" width=".8" height="1.8"/>${diagWheels}
+      <rect x="0" y="5" width="2.5" height="1" fill="${DK}"/><rect x="0" y="5" width="1.5" height="4" fill="${DK}"/>
+      <rect x="2" y="3" width="13" height="18" fill="${DK}"/><rect x="3" y="4" width="12" height="16" fill="${c}"/>
+      ${sign(4, 4.4, 10, rt, 3)}
+      <rect x="4" y="8.5" width="10" height="6.5" fill="${GL}"/><rect x="8.6" y="8.5" width=".8" height="6.5" fill="${DK}" opacity=".7"/>
+      <rect x="5" y="9.5" width="2" height="1" fill="${GT}" opacity=".7"/>
+      <rect class="hl" x="3" y="16" width="2.5" height="2"/><rect class="hl" x="12.5" y="16" width="2.5" height="2"/>
+      <rect x="7" y="16" width="4" height="2" fill="${DK}" opacity=".6"/>${diagFeet}` }
+  };
+  // which view for a bus heading `rel` degrees clockwise of the way the camera looks, and whether it's mirrored
+  function viewFor(rel) {
+    rel = ((rel % 360) + 540) % 360 - 180;
+    const a = Math.abs(rel), right = rel > 0;
+    if (a < 22.5) return ['rear', false];
+    if (a < 67.5) return ['rearDiag', !right];
+    if (a < 112.5) return ['side', right];
+    if (a < 157.5) return ['frontDiag', right];
+    return ['front', false];
+  }
+  const viewSvg = (view, mirror, c, rt) => {
+    const v = VIEWS[view];
+    mirrorText = mirror;
+    return `<svg viewBox="0 0 ${v.w} ${v.h}" shape-rendering="crispEdges" aria-hidden="true"${mirror ? ' style="transform:scaleX(-1)"' : ''}>${v.svg(c, rt)}</svg>`;
+  };
+  // how many screen pixels a meter of road is (side to side) at a spot: the tilted camera makes far spots smaller
+  function pxPerMeter(ll) {
+    const t = (map.getBearing() + 90) * Math.PI / 180;
+    const a = map.project(ll), b = map.project([ll.lng + 10 * Math.sin(t) / 76000, ll.lat + 10 * Math.cos(t) / 111000]);
+    return Math.hypot(b.x - a.x, b.y - a.y) / 10;
+  }
+  const CHASE_H = 69; // the followed bus's sprite height (styles.css), the size of a bus right where it is
+  // every frame in chase view: each other bus's view and size (far ones under 14 px tall aren't drawn: just specks)
+  function place3d(mk, nearPx, nearLL) {
+    const el = mk.getElement(), b = mk._bus, box = el.querySelector('.s3');
+    if (!box || !nearPx) return;
+    // only buses on screen and within 2 km of the chased one (like the signals): past the top of the tilted view,
+    // perspective sizes stop meaning anything
+    const ll = mk.getLngLat(), p = map.project(ll), c = map.getContainer();
+    if (ll.distanceTo(nearLL) > 2000 || p.y < -10 || p.x < -80 || p.x > c.clientWidth + 80) {
+      if (mk._far !== true) { mk._far = true; el.classList.add('far'); }
+      return;
+    }
+    const h = (b._snap ? headingOf(b) : null) ?? mk._h3 ?? b.heading ?? 0;
+    mk._h3 = h;
+    const [view, mirror] = viewFor(h - map.getBearing());
+    const r = routes[b.route] || {}, key = `${view}${mirror ? '-m' : ''}`;
+    if (key !== mk._view) { mk._view = key; box.innerHTML = viewSvg(view, mirror, r.color || '#bff4ff', short(r.name)); }
+    const px = Math.min(CHASE_H * 1.6, CHASE_H * pxPerMeter(ll) / nearPx), v = VIEWS[view];
+    const far = !(px >= 14);
+    if (far !== mk._far) { mk._far = far; el.classList.toggle('far', far); }
+    if (far || Math.abs(px - (mk._px || 0)) < 0.5) return;
+    mk._px = px;
+    el.style.zIndex = String(Math.round(px)); // nearer (bigger) buses in front of farther ones and of the chased bus
+    box.style.height = `${px.toFixed(1)}px`; box.style.width = `${(px * v.w / v.h).toFixed(1)}px`;
+    el.classList.toggle('tagged', px >= 30);
+  }
+  // headlights on (front views) after sunset, before sunrise, or in rain, showers, drizzle, fog or snow near the bus
+  function headlights() {
+    const mk = follow && markers.get(follow.id), at = mk ? mk.getLngLat() : map.getCenter();
+    const sun = window.htSunTimes?.(new Date(), at.lat, at.lng), now = new Date();
+    const dark = sun ? now < sun.rise || now > sun.set : false;
+    const town = (window.htTownWx?.() || []).sort((a, b) => Math.hypot(a.lon - at.lng, a.lat - at.lat) - Math.hypot(b.lon - at.lng, b.lat - at.lat))[0];
+    const murky = /rain|shower|drizzle|fog|mist|haze|smoke|snow|sleet|thunder/i.test(town?.f || '');
+    document.body.classList.toggle('headlights', dark || murky);
+  }
+
+  // draw a bus marker: the top-down icon pointed along its street, the chase sprite for the bus being chased, or
+  // (in chase view) a sprite from whichever side the camera sees it
   function drawBus(mk) {
     const b = mk._bus, r = routes[b.route] || {}, rt = short(r.name), color = r.color || '#bff4ff';
     const el = mk.getElement();
@@ -1015,8 +1147,16 @@
     el.classList.toggle('oos', oos(b));
     const chased = chase && follow?.id === b.id;
     el.classList.toggle('chase', chased);
+    el.classList.toggle('c3', chase && !chased);
+    if (!chase || chased) { el.style.zIndex = ''; el.classList.remove('far', 'tagged'); mk._c3 = null; }
     if (chased) {
       el.innerHTML = `<div class="sprite" style="--c:${esc(color)}">${spriteSvg(color, rt, b.mph < 2)}</div><span class="tag" style="border-color:${esc(color)}">BUS ${esc(b.id)}</span>`;
+    } else if (chase) {
+      // (the view and size are set every frame by place3d; rebuilt only when the route or service changes)
+      const key = `${color}|${rt}|${oos(b)}`;
+      if (mk._c3 === key && el.querySelector('.s3')) { el.title = oos(b) ? `Bus ${b.id} · not in service` : `Route ${rt} · bus ${b.id}`; return; }
+      mk._c3 = key; mk._view = null; mk._px = null; mk._far = null;
+      el.innerHTML = `<div class="s3"></div><b style="color:${esc(color)};border-color:${esc(color)}">${oos(b) ? 'OUT' : esc(rt)}</b>`;
     } else {
       const h = Math.round((b._snap ? headingOf(b) : null) ?? b.heading ?? 0);
       mk._h = h;

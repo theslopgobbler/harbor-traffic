@@ -70,6 +70,7 @@
     const Jset = J2000 + J0 + (w + lw) / (2 * Math.PI) + n + 0.0053 * Math.sin(M) - 0.0069 * Math.sin(2 * L);
     return { rise: fromJ(Jnoon - (Jset - Jnoon)), set: fromJ(Jset) };
   }
+  window.htSunTimes = sunTimes; // (the chase view turns bus headlights on after sunset)
   const moonPhase = (d) => (((d - 947182440000) / 864e5) % 29.530588853 + 29.530588853) % 29.530588853 / 29.530588853; // 0 new, .5 full
 
   let skyCond = { kind: 'none', level: 0, wind: 0, cloud: 0 };
