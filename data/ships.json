@@ -1,30 +1,27 @@
 {
-  "updated": "2026-10-05T11:36:54.1084230+00:00",
+  "updated": "2026-10-05T11:54:32.3522506+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.50043,
-      "lon": -124.02362,
+      "mmsi": 367364340,
+      "name": "DAYNA S",
+      "lat": 46.90871,
+      "lon": -124.10895,
       "sog": 0,
-      "cog": 308.2,
-      "heading": 185,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-05T11:11:52.6939135+00:00"
+      "cog": 338.3,
+      "classB": true,
+      "seen": "2026-10-05T10:37:00.6187888+00:00"
     },
     {
-      "mmsi": 369702000,
-      "name": "COASTAL RELIANCE",
-      "lat": 46.43783,
-      "lon": -124.40676,
-      "sog": 5.1,
-      "cog": 336.2,
-      "heading": 332,
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97853,
+      "lon": -123.88358,
+      "sog": 0,
+      "cog": 312.9,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-05T09:29:23.609872+00:00"
+      "seen": "2026-10-05T11:54:32.3522506+00:00"
     },
     {
       "mmsi": 367317770,
@@ -45,27 +42,6 @@
       "seen": "2026-10-05T09:29:23.609872+00:00"
     },
     {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97856,
-      "lon": -123.88357,
-      "sog": 0,
-      "cog": 204.5,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T10:54:20.5829986+00:00"
-    },
-    {
-      "mmsi": 367364340,
-      "name": "DAYNA S",
-      "lat": 46.90871,
-      "lon": -124.10895,
-      "sog": 0,
-      "cog": 338.3,
-      "classB": true,
-      "seen": "2026-10-05T10:37:00.6187888+00:00"
-    },
-    {
       "mmsi": 367512180,
       "name": "CONNIE S",
       "lat": 46.90558,
@@ -73,6 +49,36 @@
       "sog": 0,
       "cog": 230.7,
       "classB": true,
+      "seen": "2026-10-05T09:29:23.609872+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "lat": 46.50043,
+      "lon": -124.02362,
+      "sog": 0,
+      "cog": 308.2,
+      "heading": 185,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-05T11:11:52.6939135+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27,
+      "beamM": 10,
+      "draughtM": 3.5
+    },
+    {
+      "mmsi": 369702000,
+      "name": "COASTAL RELIANCE",
+      "lat": 46.43783,
+      "lon": -124.40676,
+      "sog": 5.1,
+      "cog": 336.2,
+      "heading": 332,
+      "status": 0,
+      "classB": false,
       "seen": "2026-10-05T09:29:23.609872+00:00"
     }
   ]
