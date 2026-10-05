@@ -1,45 +1,7 @@
 {
-  "updated": "2026-10-05T23:21:39.2389354+00:00",
+  "updated": "2026-10-05T23:39:34.6740775+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367317770,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90682,
-      "lon": -124.10615,
-      "sog": 0,
-      "cog": 301.1,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T23:00:52.9485076+00:00"
-    },
-    {
-      "mmsi": 366999892,
-      "lat": 46.628,
-      "lon": -124.17897,
-      "sog": 20.5,
-      "cog": 350.2,
-      "heading": 355,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-05T21:34:59.5830318+00:00",
-      "type": 51,
-      "callsign": "CG47267",
-      "lengthM": 14,
-      "beamM": 4
-    },
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.5494,
-      "lon": -123.97861,
-      "sog": 6.7,
-      "cog": 195.1,
-      "heading": 197,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-05T22:10:59.8417038+00:00"
-    },
     {
       "mmsi": 367171980,
       "name": "PACIFIC DOVE",
@@ -62,6 +24,44 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-05T23:00:52.9485076+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90682,
+      "lon": -124.10615,
+      "sog": 0,
+      "cog": 301.1,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T23:00:52.9485076+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.5494,
+      "lon": -123.97861,
+      "sog": 6.7,
+      "cog": 195.1,
+      "heading": 197,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-05T22:10:59.8417038+00:00"
+    },
+    {
+      "mmsi": 366999892,
+      "lat": 46.628,
+      "lon": -124.17897,
+      "sog": 20.5,
+      "cog": 350.2,
+      "heading": 355,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-05T21:34:59.5830318+00:00",
+      "type": 51,
+      "callsign": "CG47267",
+      "lengthM": 14,
+      "beamM": 4
     }
   ]
 }
