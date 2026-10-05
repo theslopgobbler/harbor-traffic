@@ -1,7 +1,19 @@
 {
-  "updated": "2026-10-05T21:34:59.5830318+00:00",
+  "updated": "2026-10-05T21:52:19.7453522+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367171980,
+      "name": "PACIFIC DOVE",
+      "lat": 46.90855,
+      "lon": -124.1106,
+      "sog": 0,
+      "cog": 341.6,
+      "heading": 130,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-05T21:52:19.7453522+00:00"
+    },
     {
       "mmsi": 366999892,
       "lat": 46.628,
