@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-06T03:35:05.3050070+00:00",
+  "updated": "2026-10-06T03:52:57.4545854+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-06T02:26:00.0000000+00:00",
-    "waveFt": 4.3,
+    "time": "2026-10-06T03:26:00.0000000+00:00",
+    "waveFt": 4.9,
     "periodS": 11.0,
-    "dirDeg": 286.0,
-    "waterF": 57.7
+    "dirDeg": 281.0,
+    "waterF": 57.6
   },
   "bar": {
     "issued": "2026-10-05T20:33:00+00:00",
@@ -16,5 +16,30 @@
     "seas": "3 to 5 ft",
     "ebb": null
   },
-  "alerts": []
+  "alerts": [
+    {
+      "event": "Small Craft Advisory",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-10-07T12:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 5 at 8:41PM PDT until October 7 at 5:00AM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-10-07T09:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 5 at 8:41PM PDT until October 7 at 2:00AM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Dense Fog Advisory",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-10-06T19:00:00+00:00",
+      "headline": "Dense Fog Advisory issued October 5 at 8:41PM PDT until October 6 at 12:00PM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Dense Fog Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-10-06T19:00:00+00:00",
+      "headline": "Dense Fog Advisory issued October 5 at 8:41PM PDT until October 6 at 12:00PM PDT by NWS Portland OR"
+    }
+  ]
 }
