@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T17:01:19.8349473+00:00",
+  "updated": "2026-10-06T17:23:08.1544942+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -299,27 +299,6 @@
           47.07895
         ]
       ]
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 717912,
@@ -1695,6 +1674,27 @@
       "updated": "2026-06-16T21:13:03.4200000+00:00"
     },
     {
+      "id": 717905,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 178 near Upper Hoh Rd beginning at 7:26 am on October 6, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 178.0,
+      "lat": 47.818883369,
+      "lon": -124.263157853,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-10-06T14:26:00.0000000+00:00",
+      "end": "2026-10-06T22:00:00.0000000+00:00",
+      "updated": "2026-10-06T14:30:57.1500000+00:00"
+    },
+    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -2142,6 +2142,27 @@
       "updated": "2026-09-14T14:42:15.5130000+00:00"
     },
     {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
       "id": 712735,
       "kind": "work",
       "category": "Road work",
@@ -2182,27 +2203,6 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
-    },
-    {
-      "id": 717905,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 178 near Upper Hoh Rd beginning at 7:26 am on October 6, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 178.0,
-      "lat": 47.818883369,
-      "lon": -124.263157853,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-10-06T14:26:00.0000000+00:00",
-      "end": "2026-10-06T22:00:00.0000000+00:00",
-      "updated": "2026-10-06T14:30:57.1500000+00:00"
     }
   ]
 }
