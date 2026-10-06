@@ -1,25 +1,7 @@
 {
-  "updated": "2026-10-06T17:43:24.7065876+00:00",
+  "updated": "2026-10-06T17:59:06.7544661+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367310520,
-      "type": 52,
-      "dest": "USLOG",
-      "callsign": "WDD9378",
-      "lengthM": 27,
-      "beamM": 10,
-      "draughtM": 3.5,
-      "name": "JAMES T",
-      "lat": 46.61548,
-      "lon": -123.99092,
-      "sog": 6.2,
-      "cog": 325.6,
-      "heading": 325,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-06T14:46:29.7064795+00:00"
-    },
     {
       "mmsi": 303648000,
       "name": "OCEAN THUNDER",
@@ -33,46 +15,23 @@
       "seen": "2026-10-06T13:46:41.9930472+00:00"
     },
     {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90681,
-      "lon": -124.10621,
+      "mmsi": 366765940,
+      "lat": 46.90608,
+      "lon": -124.10758,
       "sog": 0,
-      "cog": 230.2,
+      "cog": 154.2,
+      "heading": 126,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-06T16:44:57.774354+00:00"
-    },
-    {
-      "mmsi": 367171980,
-      "name": "PACIFIC DOVE",
-      "lat": 46.90856,
-      "lon": -124.11061,
-      "sog": 0,
-      "cog": 343.9,
-      "heading": 130,
-      "status": 7,
-      "classB": false,
-      "seen": "2026-10-06T10:43:42.0359144+00:00"
-    },
-    {
-      "mmsi": 367450580,
-      "name": "GRUMPY J",
-      "lat": 46.60954,
-      "lon": -124.39003,
-      "sog": 8.1,
-      "cog": 335.6,
-      "heading": 330,
-      "status": 7,
-      "classB": false,
-      "seen": "2026-10-06T11:36:30.9730013+00:00"
+      "seen": "2026-10-06T17:23:08.1544942+00:00",
+      "name": "SEA CLIPPER",
+      "type": 30,
+      "dest": "WESTPORT",
+      "callsign": "WCZ2553",
+      "imo": 7520633,
+      "lengthM": 26,
+      "beamM": 9,
+      "draughtM": 3.0
     },
     {
       "mmsi": 367324840,
@@ -92,28 +51,41 @@
       "draughtM": 2.7
     },
     {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.90608,
-      "lon": -124.10758,
-      "sog": 0,
-      "cog": 154.2,
-      "heading": 126,
-      "status": 0,
+      "mmsi": 367310520,
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27,
+      "beamM": 10,
+      "draughtM": 3.5,
+      "name": "JAMES T",
+      "lat": 46.64177,
+      "lon": -124.0179,
+      "sog": 6.5,
+      "cog": 167.7,
+      "heading": 147,
+      "status": 5,
       "classB": false,
-      "seen": "2026-10-06T17:23:08.1544942+00:00"
+      "seen": "2026-10-06T17:59:06.7544661+00:00"
     },
     {
-      "mmsi": 567017000,
-      "name": "SARITA NAREE",
-      "lat": 46.92743,
-      "lon": -124.09006,
-      "sog": 0.2,
-      "cog": 328,
-      "heading": 267,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-06T13:46:41.9930472+00:00"
+      "mmsi": 367512180,
+      "name": "CONNIE S",
+      "lat": 46.90555,
+      "lon": -124.10459,
+      "sog": 0,
+      "cog": 185,
+      "classB": true,
+      "seen": "2026-10-06T12:41:22.6796791+00:00"
+    },
+    {
+      "mmsi": 368444690,
+      "lat": 46.4191,
+      "lon": -124.49914,
+      "sog": 0.7,
+      "cog": 200.7,
+      "classB": true,
+      "seen": "2026-10-06T12:41:22.6796791+00:00"
     },
     {
       "mmsi": 366425240,
@@ -125,6 +97,18 @@
       "status": 15,
       "classB": false,
       "seen": "2026-10-06T15:02:33.9425082+00:00"
+    },
+    {
+      "mmsi": 367171980,
+      "name": "PACIFIC DOVE",
+      "lat": 46.90856,
+      "lon": -124.11061,
+      "sog": 0,
+      "cog": 343.9,
+      "heading": 130,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-06T10:43:42.0359144+00:00"
     },
     {
       "mmsi": 636024072,
@@ -139,14 +123,16 @@
       "seen": "2026-10-06T12:41:22.6796791+00:00"
     },
     {
-      "mmsi": 367161340,
-      "name": "LADY ADELYNN",
-      "lat": 46.90777,
-      "lon": -124.10777,
-      "sog": 0,
-      "cog": 313.6,
-      "classB": true,
-      "seen": "2026-10-06T11:19:31.2566764+00:00"
+      "mmsi": 367450580,
+      "name": "GRUMPY J",
+      "lat": 46.60954,
+      "lon": -124.39003,
+      "sog": 8.1,
+      "cog": 335.6,
+      "heading": 330,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-06T11:36:30.9730013+00:00"
     },
     {
       "mmsi": 367050280,
@@ -159,23 +145,44 @@
       "seen": "2026-10-06T06:14:15.5718955+00:00"
     },
     {
-      "mmsi": 368444690,
-      "lat": 46.4191,
-      "lon": -124.49914,
-      "sog": 0.7,
-      "cog": 200.7,
-      "classB": true,
-      "seen": "2026-10-06T12:41:22.6796791+00:00"
+      "mmsi": 567017000,
+      "name": "SARITA NAREE",
+      "lat": 46.92743,
+      "lon": -124.09006,
+      "sog": 0.2,
+      "cog": 328,
+      "heading": 267,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-06T13:46:41.9930472+00:00"
     },
     {
-      "mmsi": 367512180,
-      "name": "CONNIE S",
-      "lat": 46.90555,
-      "lon": -124.10459,
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90679,
+      "lon": -124.1062,
       "sog": 0,
-      "cog": 185,
+      "cog": 162.2,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T17:59:06.7544661+00:00"
+    },
+    {
+      "mmsi": 367161340,
+      "name": "LADY ADELYNN",
+      "lat": 46.90777,
+      "lon": -124.10777,
+      "sog": 0,
+      "cog": 313.6,
       "classB": true,
-      "seen": "2026-10-06T12:41:22.6796791+00:00"
+      "seen": "2026-10-06T11:19:31.2566764+00:00"
     }
   ]
 }
