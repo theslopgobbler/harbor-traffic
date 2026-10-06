@@ -261,27 +261,47 @@
     return lines.join('\n');
   };
 
-  // ---- riding a bus: with your location on (the ◎ button), if you move along with a bus for a few checks in a
-  // row (within about 60 m of it, both moving), you're on it: the map follows it, and it glows
+  // ---- riding a bus: with your location on (the ◎ button), you're on a bus when YOU are moving at bus speed, in
+  // the same direction as a moving bus, close to it, for about 20 s straight (8 checks). Just being near one (at a
+  // stop, walking past, driving beside it for a moment) doesn't count. Then the map follows it, and it glows
   let ridingId = null;
   const rideHits = {};
   let rideMiss = 0;
+  const myTrack = []; // my recent positions, for my own speed and direction (the phone's own speed is often missing)
+  function myMotion(me) {
+    const last = myTrack[myTrack.length - 1];
+    if (!last || last.t !== me.t) myTrack.push({ t: me.t, p: [me.lon, me.lat] });
+    while (myTrack.length && me.t - myTrack[0].t > 30000) myTrack.shift();
+    const old = myTrack.find((x) => me.t - x.t >= 8000); // compare with about 8+ s ago
+    if (!old) return null;
+    const d = mx(old.p, [me.lon, me.lat]), s = d / ((me.t - old.t) / 1000);
+    return { speed: me.speed != null && me.speed >= 0 ? Math.max(me.speed, s * 0.8) : s, heading: d > 25 ? bearing(old.p, [me.lon, me.lat]) : null };
+  }
   function checkRiding() {
     const me = window.htMe;
     if (!me || Date.now() - me.t > 20000 || TV) return;
-    const p = [me.lon, me.lat];
+    const p = [me.lon, me.lat], mine = myMotion(me);
+    const moving = mine && mine.speed >= 3; // about 7 mph: faster than walking
     let near = null;
-    for (const mk of markers.values()) {
-      const b = mk._bus; if (!b || b.mph < 4) continue;
+    if (moving) for (const mk of markers.values()) {
+      const b = mk._bus; if (!b || b.mph < 4 || b.listed === false) continue;
       const ll = mk.getLngLat();
-      const d = Math.min(mx(p, [ll.lng, ll.lat]), mx(p, [b.lon, b.lat]));
-      if (d < 60 + Math.min(60, me.acc || 0) && (!near || d < near.d)) near = { id: b.id, d };
+      const bh = (b._snap ? headingOf(b) : null) ?? b.heading;
+      // (its last report is up to 10 s old, 90 m behind at 20 mph: also compare with where it should be by now)
+      const run = b.mph * 0.44704 * Math.min(15, (Date.now() - (b._at || Date.now())) / 1000), hr = (bh ?? 0) * Math.PI / 180;
+      const ahead = [b.lon + (run * Math.sin(hr)) / 76000, b.lat + (run * Math.cos(hr)) / 111000];
+      const d = Math.min(mx(p, [ll.lng, ll.lat]), mx(p, [b.lon, b.lat]), mx(p, ahead));
+      const sameWay = mine.heading == null || bh == null || Math.abs(((mine.heading - bh + 540) % 360) - 180) < 50;
+      if (sameWay && d < 40 + Math.min(40, me.acc || 0) && (!near || d < near.d)) near = { id: b.id, d };
     }
     for (const k of Object.keys(rideHits)) if (k !== near?.id) rideHits[k] = 0;
     if (near) rideHits[near.id] = (rideHits[near.id] || 0) + 1;
     if (ridingId) {
-      if (near?.id === ridingId) rideMiss = 0; else if (++rideMiss >= 4) setRiding(null);
-    } else if (near && rideHits[near.id] >= 3) setRiding(near.id);
+      // (a bus stopped at a stop with you on it: still riding; you walked off and it left: not)
+      const b = markers.get(ridingId)?._bus;
+      const still = b && b.mph < 4 && mx(p, [b.lon, b.lat]) < 50;
+      if (near?.id === ridingId || still) rideMiss = 0; else if (++rideMiss >= 6) setRiding(null);
+    } else if (near && rideHits[near.id] >= 8) setRiding(near.id);
   }
   function setRiding(id) {
     if (ridingId) markers.get(ridingId)?.getElement().classList.remove('riding');
@@ -386,6 +406,7 @@
   // following: the map keeps the bus in view until you drag the map or press ✕. Like a car GPS, the map turns
   // so the bus points up (the road ahead fills the screen); the N button switches to north-up.
   let follow = null; // { id, route, stop: { id, name, at } | null, up: true for heading-up }
+  window.htBusFollowing = () => !!follow; // (compass mode follows you, except while you follow a bus)
   let followUp = store.get('ht.followUp') !== false;
   function startFollow(id, stop) {
     const b = buses.find((x) => x.id === id); if (!b) return;
