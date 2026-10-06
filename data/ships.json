@@ -1,24 +1,18 @@
 {
-  "updated": "2026-10-06T09:00:37.9018658+00:00",
+  "updated": "2026-10-06T09:26:32.4000620+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367317770,
-      "lat": 46.9068,
-      "lon": -124.1062,
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91956,
+      "lon": -124.12243,
       "sog": 0,
-      "cog": 259.1,
-      "status": 0,
+      "cog": 175.6,
+      "heading": 64,
+      "status": 1,
       "classB": false,
-      "seen": "2026-10-06T05:34:38.7087417+00:00",
-      "name": "ELLIS BRUSCO",
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4
+      "seen": "2026-10-06T07:26:36.7312644+00:00"
     },
     {
       "mmsi": 367171980,
@@ -31,28 +25,6 @@
       "status": 7,
       "classB": false,
       "seen": "2026-10-06T09:00:37.9018658+00:00"
-    },
-    {
-      "mmsi": 367050280,
-      "name": "ROCKY B",
-      "lat": 46.63354,
-      "lon": -124.21753,
-      "sog": 8,
-      "cog": 174.2,
-      "classB": true,
-      "seen": "2026-10-06T06:14:15.5718955+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.91607,
-      "lon": -124.18077,
-      "sog": 6.9,
-      "cog": 91.5,
-      "heading": 90,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T08:46:00.9330843+00:00"
     },
     {
       "mmsi": 367310520,
@@ -73,27 +45,6 @@
       "seen": "2026-10-06T07:03:16.0581347+00:00"
     },
     {
-      "mmsi": 367512180,
-      "lat": 46.90556,
-      "lon": -124.10457,
-      "sog": 0,
-      "cog": 242.4,
-      "classB": true,
-      "seen": "2026-10-06T07:26:36.7312644+00:00"
-    },
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.91956,
-      "lon": -124.12243,
-      "sog": 0,
-      "cog": 175.6,
-      "heading": 64,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-06T07:26:36.7312644+00:00"
-    },
-    {
       "mmsi": 367324840,
       "type": 31,
       "dest": "GRAYS HARBOR",
@@ -109,6 +60,56 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-06T09:00:37.9018658+00:00"
+    },
+    {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90681,
+      "lon": -124.10619,
+      "sog": 0,
+      "cog": 231.9,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T09:26:32.4000620+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.91607,
+      "lon": -124.18077,
+      "sog": 6.9,
+      "cog": 91.5,
+      "heading": 90,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T08:46:00.9330843+00:00"
+    },
+    {
+      "mmsi": 367050280,
+      "name": "ROCKY B",
+      "lat": 46.63354,
+      "lon": -124.21753,
+      "sog": 8,
+      "cog": 174.2,
+      "classB": true,
+      "seen": "2026-10-06T06:14:15.5718955+00:00"
+    },
+    {
+      "mmsi": 367512180,
+      "name": "CONNIE S",
+      "lat": 46.90557,
+      "lon": -124.10457,
+      "sog": 0,
+      "cog": 209.7,
+      "classB": true,
+      "seen": "2026-10-06T09:26:32.4000620+00:00"
     }
   ]
 }
