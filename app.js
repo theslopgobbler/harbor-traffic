@@ -1210,21 +1210,45 @@
 
   const hasCompass = 'DeviceOrientationEvent' in window && matchMedia('(pointer: coarse)').matches;
   if (hasCompass && !TV) $('#btnCompass').hidden = false;
+  // compass mode: the map stays centered on you and turns with the way you're facing, like a navigation app.
+  // Following a bus takes over (the map follows the bus); stop following and it's back on you. Dragging the map
+  // lets you look around; tap the compass again to turn it off, or ◎ to come back to yourself.
+  let compassOn = false, compassLock = false, compassListening = false, lockBrg = null;
+  const onOrient = (e) => {
+    if (e.webkitCompassHeading != null) setHeading(e.webkitCompassHeading);         // iPhone
+    else if (e.absolute && e.alpha != null) setHeading((360 - e.alpha) % 360);      // Android
+  };
   $('#btnCompass').addEventListener('click', async () => {
+    if (compassOn) { // off: back to north up, where you are
+      compassOn = compassLock = false;
+      $('#btnCompass').classList.remove('on');
+      if (!window.htBusFollowing?.()) map.easeTo({ bearing: 0, duration: 500 });
+      return;
+    }
     try {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
         if (await DeviceOrientationEvent.requestPermission() !== 'granted') return;
       }
     } catch { return; }
+    compassOn = compassLock = true; lockBrg = null;
     $('#btnCompass').classList.add('on');
-    const onOrient = (e) => {
-      if (e.webkitCompassHeading != null) setHeading(e.webkitCompassHeading);         // iPhone
-      else if (e.absolute && e.alpha != null) setHeading((360 - e.alpha) % 360);      // Android
-    };
-    window.addEventListener('deviceorientationabsolute', onOrient);
-    window.addEventListener('deviceorientation', onOrient);
+    if (!compassListening) {
+      compassListening = true;
+      window.addEventListener('deviceorientationabsolute', onOrient);
+      window.addEventListener('deviceorientation', onOrient);
+    }
     if (!state.me) $('#btnLocate').click();
+    else map.easeTo({ center: [state.me.lon, state.me.lat], zoom: Math.max(map.getZoom(), 15), duration: 600 });
   });
+  map.on('dragstart', (e) => { if (e.originalEvent && compassLock && !window.htBusFollowing?.()) compassLock = false; });
+  $('#btnLocate').addEventListener('click', () => { if (compassOn) { compassLock = true; lockBrg = null; } });
+  // ten times a second: keep you centered, turning smoothly toward your heading
+  setInterval(() => {
+    if (!compassOn || !compassLock || !state.me || window.htBusFollowing?.() || map.isEasing() || document.hidden) return;
+    const h = state.heading;
+    if (h != null) lockBrg = lockBrg == null ? h : lockBrg + ((((h - lockBrg) % 360) + 540) % 360 - 180) * 0.25;
+    map.jumpTo({ center: [state.me.lon, state.me.lat], ...(lockBrg != null ? { bearing: lockBrg } : {}) });
+  }, 100);
 
   // ---------------- bigger text (the Aa button; remembered per device) ----------------
   // Labels and tags drawn by the page get bigger through CSS; the map's own text (road names, route numbers

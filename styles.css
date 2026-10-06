@@ -184,7 +184,8 @@ body.headlights .bus-mk.c3 .hl { fill: #fff6c8; }
 body.chase canvas.fx { display: none; }
 /* chase view keeps only what's on the road: buses, signals and stops (every other icon would be moved by the
    browser on every frame for nothing), and no glow effects, which phones redraw expensively */
-body.chase .maplibregl-marker:not(.bus-mk):not(.sig-mk):not(.stop-sign) { display: none !important; }
+/* (your own location stays: on the bus, or waiting for it, you can see yourself) */
+body.chase .maplibregl-marker:not(.bus-mk):not(.sig-mk):not(.stop-sign):not(.me) { display: none !important; }
 body.chase .sig-mk, body.chase .stop-sign, body.chase .bus-mk:not(.chase) .ic { filter: none !important; }
 body.chase .bus-mk.chase .sprite { filter: none; }
 body.chase .tool { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
@@ -413,7 +414,8 @@ details summary { cursor: pointer; }
 .cam-mk { width: 24px; height: 24px; border: 2px solid var(--text); border-radius: 50%; background: rgba(0,0,0,.6); box-shadow: 0 0 5px rgba(196,255,233,.5); cursor: pointer; }
 .cam-mk::after { content: ""; position: absolute; left: 5px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--text); }
 
-.me { width: 64px; height: 64px; pointer-events: none; }
+/* (on top of the buses, so you can see yourself even on the one you're riding; taps go through to what's under it) */
+.me { width: 64px; height: 64px; pointer-events: none; z-index: 200; }
 .me .cone { position: absolute; inset: 0; transition: transform .25s linear; }
 .me .dot { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; background: var(--cyan);
   box-shadow: 0 0 0 3px rgba(0,229,255,.3), 0 0 12px var(--cyan); transform: rotate(45deg); }
