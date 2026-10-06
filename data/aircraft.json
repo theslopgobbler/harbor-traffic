@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T07:03:16.0581347+00:00",
+  "updated": "2026-10-06T07:26:36.7312644+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N8488M",
       "type": "C182",
       "cat": "A1",
-      "alt": 11400,
-      "gs": 111.7,
-      "track": 225.0,
+      "alt": 11350,
+      "gs": 125.3,
+      "track": 184.12,
       "rate": null,
-      "lat": 47.83317,
-      "lon": -122.75905,
+      "lat": 47.03993,
+      "lon": -122.79158,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
