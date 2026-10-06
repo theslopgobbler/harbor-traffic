@@ -1,24 +1,17 @@
 {
-  "updated": "2026-10-06T03:52:57.4545854+00:00",
+  "updated": "2026-10-06T04:12:23.5279939+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367317770,
-      "lat": 46.90681,
-      "lon": -124.1062,
+      "mmsi": 367324840,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97855,
+      "lon": -123.88359,
       "sog": 0,
-      "cog": 209.9,
+      "cog": 298.6,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-06T01:03:05.6048444+00:00",
-      "name": "ELLIS BRUSCO",
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4
+      "seen": "2026-10-06T03:35:05.305007+00:00"
     },
     {
       "mmsi": 367171980,
@@ -43,17 +36,6 @@
       "status": 5,
       "classB": false,
       "seen": "2026-10-06T02:53:14.1757291+00:00"
-    },
-    {
-      "mmsi": 367324840,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97855,
-      "lon": -123.88359,
-      "sog": 0,
-      "cog": 298.6,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T03:35:05.305007+00:00"
     }
   ]
 }
