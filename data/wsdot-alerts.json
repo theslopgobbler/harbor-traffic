@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T19:23:19.7536589+00:00",
+  "updated": "2026-10-06T19:42:35.3498856+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2079,6 +2079,27 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
+      "id": 717966,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 southbound at milepost 353.52 near SR 108 beginning at 12:20 pm on October 6, 2026 until further notice. The southbound lanes are blocked.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 353.52,
+      "lat": 47.130260819,
+      "lon": -123.099017338,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-10-06T19:20:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-06T19:28:56.3900000+00:00"
+    },
+    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -2140,6 +2161,27 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 717967,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 146.98 near Clearwater Rd beginning at 12:32 pm on October 6, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 146.98,
+      "lat": 47.540776655,
+      "lon": -124.273118164,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-10-06T19:32:00.0000000+00:00",
+      "end": "2026-10-07T01:00:00.0000000+00:00",
+      "updated": "2026-10-06T19:35:52.2970000+00:00"
     },
     {
       "id": 631745,
