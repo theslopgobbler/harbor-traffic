@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T19:42:35.3498856+00:00",
+  "updated": "2026-10-06T19:58:04.3462291+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2079,27 +2079,6 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 717966,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 southbound at milepost 353.52 near SR 108 beginning at 12:20 pm on October 6, 2026 until further notice. The southbound lanes are blocked.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 353.52,
-      "lat": 47.130260819,
-      "lon": -123.099017338,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-06T19:20:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-06T19:28:56.3900000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -2119,6 +2098,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-09-14T14:42:15.5130000+00:00"
+    },
+    {
+      "id": 717966,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 southbound at milepost 353.52 near SR 108 beginning at 12:49 pm on October 6, 2026 until further notice. The roadway is partially blocked.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 353.52,
+      "lat": 47.130260819,
+      "lon": -123.099017338,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-10-06T19:49:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-06T19:50:29.2470000+00:00"
     },
     {
       "id": 712735,
