@@ -337,7 +337,7 @@ if ($aisKey) {
         if (-not $s.name) { continue }
         $id = "$($s.mmsi)"; $r = $reg[$id]
         if (-not $r) { $r = [pscustomobject]@{ name = $s.name; first = $now.ToString('o') }; $reg[$id] = $r }
-        foreach ($k in 'name', 'type', 'callsign', 'imo', 'lengthM', 'beamM', 'draughtM') { if ($null -ne $s.$k -and "$($s.$k)" -ne '') { $r | Add-Member -NotePropertyName $k -NotePropertyValue $s.$k -Force } }
+        foreach ($k in 'name', 'type', 'callsign', 'imo', 'lengthM', 'beamM', 'draughtM', 'lat', 'lon') { if ($null -ne $s.$k -and "$($s.$k)" -ne '') { $r | Add-Member -NotePropertyName $k -NotePropertyValue $s.$k -Force } }
         if ($s.seen) { $r | Add-Member -NotePropertyName 'last' -NotePropertyValue $s.seen -Force }
     }
     Save 'ship-registry.json' ([ordered]@{ updated = $now.ToString('o'); source = 'AIS via aisstream.io'; ships = $reg })

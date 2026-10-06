@@ -147,6 +147,15 @@
           routes from where buses actually drive.</p>
       </div>
     </section>
+    <section id="goneSec">
+      <h1 style="margin-top:36px">GONE QUIET</h1>
+      <p class="note">Buses and boats not heard from for over 3 days (long enough that a quiet weekend doesn't count): when and
+        where they were last heard. (Boats come from AIS, which is public; this list is just yours.)</p>
+      <details><summary id="goneBusSum">BUSES</summary>
+        <table><thead><tr><th>BUS</th><th>LAST ROUTE</th><th>LAST HEARD</th><th>HEARD AGAIN</th><th>MAP</th></tr></thead><tbody id="goneBuses"></tbody></table></details>
+      <details><summary id="goneBoatSum">BOATS</summary>
+        <table><thead><tr><th>BOAT</th><th>KIND</th><th>LAST HEARD</th><th>MAP</th></tr></thead><tbody id="goneBoats"></tbody></table></details>
+    </section>
     <section id="shipSec">
       <h1 style="margin-top:36px">SHIP PHOTOS · FROM WIKIMEDIA COMMONS</h1>
       <p class="note">Free photos the collector found for boats it has heard (filed on Commons under the boat's name or IMO number).
@@ -214,10 +223,31 @@
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
     // bus numbers only change once a minute and are added up from daily totals; every 5 minutes is plenty
     if (Date.now() - busLoadedAt > 5 * 60 * 1000) loadBuses();
-    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) loadShipReview();
+    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) { loadShipReview(); loadGone(); }
     loadSite();
   }
   let busLoadedAt = 0, shipLoadedAt = 0;
+  // ---- gone quiet: buses (the relay's log) and boats (the collector's list of every boat heard) silent 3 days+
+  async function loadGone() {
+    const when = (t) => (t ? new Date(t).toLocaleString([], { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).toUpperCase() : '–');
+    const map = (lat, lon) => (lat && lon ? `<a href="./?at=${(+lon).toFixed(4)},${(+lat).toFixed(4)},16" target="_blank" rel="noopener">SEE IT ▸</a>` : '');
+    try {
+      const r = await fetch(`${relay}/gone`, { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
+      const j = r.ok ? await r.json() : { buses: [] };
+      $('#goneBusSum').textContent = r.ok ? `BUSES (${j.buses.length})` : 'BUSES (DEPLOY THE UPDATED RELAY)';
+      $('#goneBuses').innerHTML = j.buses.map((b) => `<tr><td>${esc(b.id)}</td><td>${esc(b.route || '–')}</td><td>${when(b.last_seen)}</td>
+        <td>${b.back ? when(b.back) : 'NOT YET'}</td><td>${map(b.lat, b.lon)}</td></tr>`).join('') || '<tr><td colspan="5">NONE</td></tr>';
+    } catch { $('#goneBusSum').textContent = 'BUSES (CAN\'T LOAD RIGHT NOW)'; }
+    try {
+      const reg = await (await fetch(`data/ship-registry.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      const kind = (t) => (t >= 70 && t <= 79 ? 'CARGO' : t >= 80 && t <= 89 ? 'TANKER' : [31, 32, 52].includes(t) ? 'TUG' : t === 30 ? 'FISHING' : t === 37 ? 'PLEASURE' : t >= 60 && t <= 69 ? 'PASSENGER' : 'VESSEL');
+      const quiet = Object.entries(reg.ships || {}).filter(([, s]) => s.last && Date.now() - Date.parse(s.last) > 3 * 86400000)
+        .sort((a, b) => Date.parse(b[1].last) - Date.parse(a[1].last)).slice(0, 60);
+      $('#goneBoatSum').textContent = `BOATS (${quiet.length}${quiet.length === 60 ? '+' : ''})`;
+      $('#goneBoats').innerHTML = quiet.map(([, s]) => `<tr><td>${esc(s.name || '?')}</td><td>${kind(s.type)}</td><td>${when(Date.parse(s.last))}</td>
+        <td>${map(s.lat, s.lon)}</td></tr>`).join('') || '<tr><td colspan="4">NONE YET (THE LIST OF BOATS STARTED OCT 4)</td></tr>';
+    } catch { $('#goneBoatSum').textContent = 'BOATS (NOT AVAILABLE YET)'; }
+  }
   // ---- ship photos to review: what the collector found on Commons, minus what's already decided or on the map
   let shipData = null;
   async function loadShipReview() {
