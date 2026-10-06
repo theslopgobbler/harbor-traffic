@@ -7,6 +7,7 @@
 //   GET /bus-stats bus on-time and off-route stats (stats.html; same key). Logged by a once-a-minute Cron Trigger
 //   GET /bus-export the raw bus logs as CSV (same key): ?table=positions|departures|weather_obs|road_alerts|positions_v2
 //                  &days=30, in pages: when the X-Next header is set, ask again with &after=<it> for the rest
+//   GET /gone      buses not heard from for 3 days or more (stats.html; same key)
 //   GET /ship-photos which Commons ship photos are approved for the map; POST (stats page, same key) approves one
 //   GET /site-stats harborevents.org visit stats from Umami Cloud (stats.html; same X-Stats-Key): the private
 //                  share link (UMAMI_SHARE_URL secret), plus a numbers summary if UMAMI_API_KEY (paid plan) is set
@@ -175,6 +176,9 @@ async function busTables(db) {
       delay INTEGER, wx TEXT, temp INTEGER, wind INTEGER, precip REAL, alert TEXT, alert_road TEXT, arrive_min INTEGER, how TEXT,
       PRIMARY KEY (day, bus, stop, sched_min))`),
     db.prepare('CREATE TABLE IF NOT EXISTS missed (day TEXT, route TEXT, stop TEXT, sched_min INTEGER, PRIMARY KEY (day, route, stop, sched_min))'),
+    // buses not heard from for a day: when and where last heard, and when (if ever) heard again (stats page only)
+    // (3 days, in fact)
+    db.prepare('CREATE TABLE IF NOT EXISTS gone (id TEXT, route TEXT, last_seen INTEGER, lat REAL, lon REAL, back INTEGER, PRIMARY KEY (id, last_seen))'),
     db.prepare('CREATE INDEX IF NOT EXISTS departures_day ON departures(day)'),
     db.prepare('CREATE TABLE IF NOT EXISTS tracks (minute INTEGER PRIMARY KEY, day TEXT, data TEXT)'),
     db.prepare('CREATE TABLE IF NOT EXISTS day_sum (day TEXT PRIMARY KEY, data TEXT)'),
@@ -482,11 +486,23 @@ async function busMinute(env, t0) {
     }
     st.missFrom = upto;
   }
-  const quiet = empty && st.empty && !done.length && !missed.length && !inService;
+  // gone quiet: when and where each bus was last heard; 3 days without a word (so a quiet weekend doesn't count) goes
+  // in the "gone" log (once), and a bus heard again after that gets its return noted
+  st.heard ||= {}; st.gone ||= [];
+  const goneSteps = [];
+  if (lastBus && bus.at >= t0) for (const b of lastBus.buses) {
+    if (st.gone.includes(b.id)) { goneSteps.push(db.prepare('UPDATE gone SET back = ?2 WHERE id = ?1 AND back IS NULL').bind(b.id, t0)); st.gone = st.gone.filter((x) => x !== b.id); }
+    st.heard[b.id] = { t: t0, lat: +b.lat.toFixed(5), lon: +b.lon.toFixed(5), rt: shortRoute(lastBus.routeName[b.route]) };
+  }
+  for (const [id, h] of Object.entries(st.heard)) if (t0 - h.t > 3 * 86400000) {
+    goneSteps.push(db.prepare('INSERT OR IGNORE INTO gone (id, route, last_seen, lat, lon) VALUES (?1, ?2, ?3, ?4, ?5)').bind(id, h.rt, h.t, h.lat, h.lon));
+    delete st.heard[id]; st.gone.push(id);
+  }
+  const quiet = empty && st.empty && !done.length && !missed.length && !inService && !goneSteps.length;
   st.empty = empty;
   if (quiet) return; // nothing out and nothing expected: nothing to save
   for (const [id, p] of Object.entries(st.prev)) if (t0 - p.t > 600000) { delete st.prev[id]; delete st.nx[id]; }
-  const steps = [];
+  const steps = [...goneSteps];
   if (lines.length) steps.push(db.prepare('INSERT OR REPLACE INTO tracks (minute, day, data) VALUES (?1, ?2, ?3)').bind(Math.floor(t0 / 60000), day, lines.join('')));
   for (const p of done) {
     const k = conditionsAt(st, p);
@@ -729,7 +745,7 @@ export default {
     const path = new URL(request.url).pathname;
     // every database query is counted (the meter above); only these paths use the database
     const raw = env.DB;
-    if (raw && ['/hello', '/viewers', '/bus-stats', '/bus-export', '/ship-photos'].includes(path)) {
+    if (raw && ['/hello', '/viewers', '/bus-stats', '/bus-export', '/ship-photos', '/gone'].includes(path)) {
       env = { ...env, DB: counted(raw) };
       ctx?.waitUntil(flushUsage(raw).catch(() => {}));
     }
@@ -781,6 +797,18 @@ export default {
         return new Response(out.csv, { headers: { ...cors, 'Content-Type': 'text/csv', 'Access-Control-Expose-Headers': 'X-Next',
           ...(out.next != null ? { 'X-Next': String(out.next) } : {}),
           'Content-Disposition': `attachment; filename="ght-${table}-${pacificDay(Date.now())}.csv"` } });
+      } catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
+    }
+    // buses not heard from for 3 days or more (stats page, with the key): the last 90 days, newest first
+    if (path === '/gone') {
+      if (!env.DB) return new Response('not set up (no DB binding)', { status: 503, headers: cors });
+      if (!env.STATS_KEY || request.headers.get('X-Stats-Key') !== env.STATS_KEY)
+        return new Response(env.STATS_KEY ? 'wrong key' : 'set the STATS_KEY secret first', { status: 403, headers: cors });
+      try {
+        await busTables(env.DB);
+        const rows = (await env.DB.prepare('SELECT id, route, last_seen, lat, lon, back FROM gone WHERE last_seen > ?1 ORDER BY last_seen DESC LIMIT 100')
+          .bind(Date.now() - 90 * 86400000).all()).results;
+        return json(JSON.stringify({ buses: rows }));
       } catch (e) { return new Response(`database: ${e.message}`, { status: 500, headers: cors }); }
     }
     // ship photos from Wikimedia Commons that the collector found: which ones you approved for the map (GET, for
