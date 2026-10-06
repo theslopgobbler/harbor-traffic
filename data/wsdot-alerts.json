@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T05:11:03.2985613+00:00",
+  "updated": "2026-10-06T05:34:38.7087417+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2227,7 +2227,7 @@
     },
     {
       "id": 717820,
-      "kind": "closure",
+      "kind": "other",
       "category": "Simpson Ave Bridge",
       "priority": "Medium",
       "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
@@ -2244,7 +2244,8 @@
       "county": null,
       "start": "2026-10-05T15:57:00.0000000+00:00",
       "end": "2026-10-19T16:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:00:10.5430000+00:00"
+      "updated": "2026-10-05T16:00:10.5430000+00:00",
+      "upcoming": "MON OCT 19"
     },
     {
       "id": 698910,

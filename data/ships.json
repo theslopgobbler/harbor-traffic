@@ -1,7 +1,19 @@
 {
-  "updated": "2026-10-06T05:11:03.2985613+00:00",
+  "updated": "2026-10-06T05:34:38.7087417+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.60819,
+      "lon": -123.98416,
+      "sog": 6.7,
+      "cog": 317.1,
+      "heading": 327,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-06T05:34:38.7087417+00:00"
+    },
     {
       "mmsi": 367324840,
       "name": "MARY ROSE BRUSCO",
@@ -14,28 +26,34 @@
       "seen": "2026-10-06T03:35:05.305007+00:00"
     },
     {
+      "mmsi": 367317770,
+      "lat": 46.9068,
+      "lon": -124.1062,
+      "sog": 0,
+      "cog": 259.1,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T05:34:38.7087417+00:00",
+      "name": "ELLIS BRUSCO",
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4
+    },
+    {
       "mmsi": 367171980,
       "name": "PACIFIC DOVE",
       "lat": 46.90856,
-      "lon": -124.1106,
+      "lon": -124.11061,
       "sog": 0,
-      "cog": 217.3,
-      "heading": 130,
+      "cog": 308.8,
+      "heading": 132,
       "status": 7,
       "classB": false,
-      "seen": "2026-10-06T03:52:57.4545854+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.50083,
-      "lon": -124.02438,
-      "sog": 0,
-      "cog": 272,
-      "heading": 276,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-06T02:53:14.1757291+00:00"
+      "seen": "2026-10-06T05:34:38.7087417+00:00"
     }
   ]
 }
