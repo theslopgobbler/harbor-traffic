@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T13:46:41.9930472+00:00",
+  "updated": "2026-10-06T14:02:50.8205571+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
@@ -18,6 +18,86 @@
       "status": 0,
       "classB": false,
       "seen": "2026-10-06T10:25:07.3009684+00:00"
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.96182,
+      "lon": -123.85108,
+      "sog": 1.2,
+      "cog": 288.3,
+      "heading": 306,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T12:41:22.6796791+00:00"
+    },
+    {
+      "mmsi": 367161340,
+      "name": "LADY ADELYNN",
+      "lat": 46.90777,
+      "lon": -124.10777,
+      "sog": 0,
+      "cog": 313.6,
+      "classB": true,
+      "seen": "2026-10-06T11:19:31.2566764+00:00"
+    },
+    {
+      "mmsi": 303648000,
+      "name": "OCEAN THUNDER",
+      "lat": 46.90854,
+      "lon": -124.10687,
+      "sog": 2.2,
+      "cog": 260.5,
+      "heading": 283,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T13:46:41.9930472+00:00"
+    },
+    {
+      "mmsi": 367050280,
+      "name": "ROCKY B",
+      "lat": 46.63354,
+      "lon": -124.21753,
+      "sog": 8,
+      "cog": 174.2,
+      "classB": true,
+      "seen": "2026-10-06T06:14:15.5718955+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "lat": 46.57953,
+      "lon": -123.96926,
+      "sog": 6.8,
+      "cog": 173.8,
+      "heading": 176,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-06T10:00:16.3618548+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27,
+      "beamM": 10,
+      "draughtM": 3.5
+    },
+    {
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90679,
+      "lon": -124.10619,
+      "sog": 0,
+      "cog": 315.4,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T14:02:50.8205571+00:00"
     },
     {
       "mmsi": 366765940,
@@ -53,28 +133,6 @@
       "seen": "2026-10-06T11:36:30.9730013+00:00"
     },
     {
-      "mmsi": 367050280,
-      "name": "ROCKY B",
-      "lat": 46.63354,
-      "lon": -124.21753,
-      "sog": 8,
-      "cog": 174.2,
-      "classB": true,
-      "seen": "2026-10-06T06:14:15.5718955+00:00"
-    },
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.96182,
-      "lon": -123.85108,
-      "sog": 1.2,
-      "cog": 288.3,
-      "heading": 306,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T12:41:22.6796791+00:00"
-    },
-    {
       "mmsi": 367171980,
       "name": "PACIFIC DOVE",
       "lat": 46.90856,
@@ -97,46 +155,6 @@
       "seen": "2026-10-06T12:41:22.6796791+00:00"
     },
     {
-      "mmsi": 367317770,
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4,
-      "name": "ELLIS BRUSCO",
-      "lat": 46.90683,
-      "lon": -124.10618,
-      "sog": 0,
-      "cog": 176.5,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T12:41:22.6796791+00:00"
-    },
-    {
-      "mmsi": 367161340,
-      "name": "LADY ADELYNN",
-      "lat": 46.90777,
-      "lon": -124.10777,
-      "sog": 0,
-      "cog": 313.6,
-      "classB": true,
-      "seen": "2026-10-06T11:19:31.2566764+00:00"
-    },
-    {
-      "mmsi": 303648000,
-      "name": "OCEAN THUNDER",
-      "lat": 46.90854,
-      "lon": -124.10687,
-      "sog": 2.2,
-      "cog": 260.5,
-      "heading": 283,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T13:46:41.9930472+00:00"
-    },
-    {
       "mmsi": 567017000,
       "name": "SARITA NAREE",
       "lat": 46.92743,
@@ -147,24 +165,6 @@
       "status": 1,
       "classB": false,
       "seen": "2026-10-06T13:46:41.9930472+00:00"
-    },
-    {
-      "mmsi": 367310520,
-      "lat": 46.57953,
-      "lon": -123.96926,
-      "sog": 6.8,
-      "cog": 173.8,
-      "heading": 176,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-06T10:00:16.3618548+00:00",
-      "name": "JAMES T",
-      "type": 52,
-      "dest": "USLOG",
-      "callsign": "WDD9378",
-      "lengthM": 27,
-      "beamM": 10,
-      "draughtM": 3.5
     }
   ]
 }
