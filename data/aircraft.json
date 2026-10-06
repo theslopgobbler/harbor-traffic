@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-06T06:14:15.5718955+00:00",
+  "updated": "2026-10-06T06:42:27.8676216+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ae5363",
-      "flight": "R20462",
-      "reg": "12-20462",
-      "type": "H60",
-      "cat": "A7",
-      "alt": 425,
-      "gs": 100.9,
-      "track": 219.37,
-      "rate": 128,
-      "lat": 46.92961,
-      "lon": -122.7396,
-      "squawk": null,
-      "emergency": null,
-      "mil": true
-    }
-  ]
+  "aircraft": []
 }
