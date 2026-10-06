@@ -1,36 +1,28 @@
 {
-  "updated": "2026-10-06T09:45:46.9203978+00:00",
+  "updated": "2026-10-06T10:00:16.3618548+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367310520,
-      "type": 52,
-      "dest": "USLOG",
-      "callsign": "WDD9378",
-      "lengthM": 27,
-      "beamM": 10,
-      "draughtM": 3.5,
-      "name": "JAMES T",
-      "lat": 46.54986,
-      "lon": -123.97721,
-      "sog": 6.3,
-      "cog": 197.2,
-      "heading": 201,
-      "status": 5,
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.91607,
+      "lon": -124.18077,
+      "sog": 6.9,
+      "cog": 91.5,
+      "heading": 90,
+      "status": 0,
       "classB": false,
-      "seen": "2026-10-06T07:03:16.0581347+00:00"
+      "seen": "2026-10-06T08:46:00.9330843+00:00"
     },
     {
-      "mmsi": 367171980,
-      "name": "PACIFIC DOVE",
-      "lat": 46.90857,
-      "lon": -124.1106,
+      "mmsi": 367512180,
+      "name": "CONNIE S",
+      "lat": 46.90557,
+      "lon": -124.10457,
       "sog": 0,
-      "cog": 356.7,
-      "heading": 132,
-      "status": 7,
-      "classB": false,
-      "seen": "2026-10-06T09:00:37.9018658+00:00"
+      "cog": 209.7,
+      "classB": true,
+      "seen": "2026-10-06T09:26:32.400062+00:00"
     },
     {
       "mmsi": 367317770,
@@ -61,16 +53,34 @@
       "seen": "2026-10-06T06:14:15.5718955+00:00"
     },
     {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.91956,
-      "lon": -124.12243,
+      "mmsi": 367171980,
+      "name": "PACIFIC DOVE",
+      "lat": 46.90857,
+      "lon": -124.1106,
       "sog": 0,
-      "cog": 175.6,
-      "heading": 64,
-      "status": 1,
+      "cog": 356.7,
+      "heading": 132,
+      "status": 7,
       "classB": false,
-      "seen": "2026-10-06T07:26:36.7312644+00:00"
+      "seen": "2026-10-06T09:00:37.9018658+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "lat": 46.57953,
+      "lon": -123.96926,
+      "sog": 6.8,
+      "cog": 173.8,
+      "heading": 176,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-06T10:00:16.3618548+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27,
+      "beamM": 10,
+      "draughtM": 3.5
     },
     {
       "mmsi": 367324840,
@@ -90,26 +100,16 @@
       "seen": "2026-10-06T09:00:37.9018658+00:00"
     },
     {
-      "mmsi": 367512180,
-      "name": "CONNIE S",
-      "lat": 46.90557,
-      "lon": -124.10457,
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91956,
+      "lon": -124.12243,
       "sog": 0,
-      "cog": 209.7,
-      "classB": true,
-      "seen": "2026-10-06T09:26:32.400062+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.91607,
-      "lon": -124.18077,
-      "sog": 6.9,
-      "cog": 91.5,
-      "heading": 90,
-      "status": 0,
+      "cog": 175.6,
+      "heading": 64,
+      "status": 1,
       "classB": false,
-      "seen": "2026-10-06T08:46:00.9330843+00:00"
+      "seen": "2026-10-06T07:26:36.7312644+00:00"
     }
   ]
 }
