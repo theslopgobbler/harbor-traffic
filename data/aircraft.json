@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T04:35:30.8912388+00:00",
+  "updated": "2026-10-06T04:52:27.2342915+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N8374W",
       "type": "P28A",
       "cat": "A1",
-      "alt": 500,
-      "gs": 104.0,
-      "track": 178.35,
-      "rate": -448,
-      "lat": 46.70915,
-      "lon": -122.98457,
+      "alt": 2100,
+      "gs": 97.9,
+      "track": 11.2,
+      "rate": -128,
+      "lat": 46.99695,
+      "lon": -122.86347,
       "squawk": "1200",
       "emergency": "none",
       "mil": false

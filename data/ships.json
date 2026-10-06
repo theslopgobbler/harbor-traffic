@@ -1,19 +1,7 @@
 {
-  "updated": "2026-10-06T04:35:30.8912388+00:00",
+  "updated": "2026-10-06T04:52:27.2342915+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 367310520,
-      "name": "JAMES T",
-      "lat": 46.50083,
-      "lon": -124.02438,
-      "sog": 0,
-      "cog": 272,
-      "heading": 276,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-06T02:53:14.1757291+00:00"
-    },
     {
       "mmsi": 367171980,
       "name": "PACIFIC DOVE",
@@ -25,6 +13,18 @@
       "status": 7,
       "classB": false,
       "seen": "2026-10-06T03:52:57.4545854+00:00"
+    },
+    {
+      "mmsi": 367310520,
+      "name": "JAMES T",
+      "lat": 46.50083,
+      "lon": -124.02438,
+      "sog": 0,
+      "cog": 272,
+      "heading": 276,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-06T02:53:14.1757291+00:00"
     },
     {
       "mmsi": 367324840,
