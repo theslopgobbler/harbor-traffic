@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T20:37:06.3173118+00:00",
+  "updated": "2026-10-06T20:52:55.8676669+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1004,6 +1004,61 @@
       ]
     },
     {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
       "id": 717167,
       "kind": "work",
       "category": "Maintenance",
@@ -1503,61 +1558,6 @@
       ]
     },
     {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
       "id": 712872,
       "kind": "work",
       "category": "Maintenance",
@@ -1649,6 +1649,165 @@
         [
           -123.0634,
           46.62696
+        ]
+      ]
+    },
+    {
+      "id": 705229,
+      "kind": "closure",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Travelers will need to prepare for around-the-clock closures at the US 101 Hoh River Bridge. From 5 a.m. Thursday, Oct. 1 to noon Tuesday, Oct. 6, the US 101 Hoh River Bridge will close to all traffic for emergency repairs.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-hoh-river-bridge-emergency-repair",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 176.5,
+      "lat": 47.805355101,
+      "lon": -124.249873622,
+      "lat2": 47.809930027,
+      "lon2": -124.250110678,
+      "county": null,
+      "start": "2026-09-02T21:26:00.0000000+00:00",
+      "end": "2027-07-14T21:45:00.0000000+00:00",
+      "updated": "2026-09-29T21:45:26.8800000+00:00",
+      "path": [
+        [
+          -124.24989,
+          47.8054
+        ],
+        [
+          -124.24988,
+          47.8054
+        ],
+        [
+          -124.24983,
+          47.80554
+        ],
+        [
+          -124.2498,
+          47.80563
+        ],
+        [
+          -124.24977,
+          47.80577
+        ],
+        [
+          -124.24974,
+          47.80591
+        ],
+        [
+          -124.24973,
+          47.80605
+        ],
+        [
+          -124.24973,
+          47.80614
+        ],
+        [
+          -124.24974,
+          47.80638
+        ],
+        [
+          -124.24979,
+          47.80661
+        ],
+        [
+          -124.24983,
+          47.80675
+        ],
+        [
+          -124.24992,
+          47.8069
+        ],
+        [
+          -124.25001,
+          47.80705
+        ],
+        [
+          -124.2503,
+          47.80738
+        ],
+        [
+          -124.25056,
+          47.80773
+        ],
+        [
+          -124.25088,
+          47.80821
+        ],
+        [
+          -124.25092,
+          47.80829
+        ],
+        [
+          -124.25095,
+          47.8084
+        ],
+        [
+          -124.25097,
+          47.80847
+        ],
+        [
+          -124.25097,
+          47.80855
+        ],
+        [
+          -124.25097,
+          47.80865
+        ],
+        [
+          -124.25095,
+          47.80874
+        ],
+        [
+          -124.25092,
+          47.80883
+        ],
+        [
+          -124.25088,
+          47.80893
+        ],
+        [
+          -124.25084,
+          47.80901
+        ],
+        [
+          -124.25077,
+          47.80909
+        ],
+        [
+          -124.2507,
+          47.80915
+        ],
+        [
+          -124.25052,
+          47.80933
+        ],
+        [
+          -124.25035,
+          47.80953
+        ],
+        [
+          -124.2502,
+          47.80972
+        ],
+        [
+          -124.25015,
+          47.8098
+        ],
+        [
+          -124.25012,
+          47.80988
+        ],
+        [
+          -124.25011,
+          47.8099
+        ],
+        [
+          -124.25011,
+          47.8099
         ]
       ]
     },
@@ -1856,187 +2015,6 @@
       ]
     },
     {
-      "id": 705229,
-      "kind": "closure",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Travelers will need to prepare for around-the-clock closures at the US 101 Hoh River Bridge. From 5 a.m. Thursday, Oct. 1 to noon Tuesday, Oct. 6, the US 101 Hoh River Bridge will close to all traffic for emergency repairs.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-hoh-river-bridge-emergency-repair",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 176.5,
-      "lat": 47.805355101,
-      "lon": -124.249873622,
-      "lat2": 47.809930027,
-      "lon2": -124.250110678,
-      "county": null,
-      "start": "2026-09-02T21:26:00.0000000+00:00",
-      "end": "2027-07-14T21:45:00.0000000+00:00",
-      "updated": "2026-09-29T21:45:26.8800000+00:00",
-      "path": [
-        [
-          -124.24989,
-          47.8054
-        ],
-        [
-          -124.24988,
-          47.8054
-        ],
-        [
-          -124.24983,
-          47.80554
-        ],
-        [
-          -124.2498,
-          47.80563
-        ],
-        [
-          -124.24977,
-          47.80577
-        ],
-        [
-          -124.24974,
-          47.80591
-        ],
-        [
-          -124.24973,
-          47.80605
-        ],
-        [
-          -124.24973,
-          47.80614
-        ],
-        [
-          -124.24974,
-          47.80638
-        ],
-        [
-          -124.24979,
-          47.80661
-        ],
-        [
-          -124.24983,
-          47.80675
-        ],
-        [
-          -124.24992,
-          47.8069
-        ],
-        [
-          -124.25001,
-          47.80705
-        ],
-        [
-          -124.2503,
-          47.80738
-        ],
-        [
-          -124.25056,
-          47.80773
-        ],
-        [
-          -124.25088,
-          47.80821
-        ],
-        [
-          -124.25092,
-          47.80829
-        ],
-        [
-          -124.25095,
-          47.8084
-        ],
-        [
-          -124.25097,
-          47.80847
-        ],
-        [
-          -124.25097,
-          47.80855
-        ],
-        [
-          -124.25097,
-          47.80865
-        ],
-        [
-          -124.25095,
-          47.80874
-        ],
-        [
-          -124.25092,
-          47.80883
-        ],
-        [
-          -124.25088,
-          47.80893
-        ],
-        [
-          -124.25084,
-          47.80901
-        ],
-        [
-          -124.25077,
-          47.80909
-        ],
-        [
-          -124.2507,
-          47.80915
-        ],
-        [
-          -124.25052,
-          47.80933
-        ],
-        [
-          -124.25035,
-          47.80953
-        ],
-        [
-          -124.2502,
-          47.80972
-        ],
-        [
-          -124.25015,
-          47.8098
-        ],
-        [
-          -124.25012,
-          47.80988
-        ],
-        [
-          -124.25011,
-          47.8099
-        ],
-        [
-          -124.25011,
-          47.8099
-        ]
-      ]
-    },
-    {
-      "id": 717820,
-      "kind": "other",
-      "category": "Simpson Ave Bridge",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
-      "road": "101COABERDN",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 88.2,
-      "lat": 46.975395635,
-      "lon": -123.876840412,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-10-05T15:57:00.0000000+00:00",
-      "end": "2026-10-19T16:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:00:10.5430000+00:00",
-      "upcoming": "MON OCT 19"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -2077,6 +2055,28 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 717820,
+      "kind": "other",
+      "category": "Simpson Ave Bridge",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 88.2,
+      "lat": 46.975395635,
+      "lon": -123.876840412,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-05T15:57:00.0000000+00:00",
+      "end": "2026-10-19T16:00:00.0000000+00:00",
+      "updated": "2026-10-05T16:00:10.5430000+00:00",
+      "upcoming": "MON OCT 19"
     },
     {
       "id": 698912,
