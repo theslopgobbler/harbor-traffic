@@ -773,7 +773,7 @@
   const isTug = (t) => [31, 32, 52].includes(t);
   const isCargo = (t) => t >= 70 && t <= 79;
   const shipMarkers = [];
-  let shipList = [];
+  let shipList = [], ghostList = []; // (ghostList: boats not heard for over an hour, shown faded where last heard)
   const escS = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const stopped = (s) => s.status === 1 || s.status === 5 || (s.sog ?? 0) < 0.5; // at anchor, moored, or not moving
 
@@ -950,16 +950,26 @@
     }
     for (const s of shipList) s._sit = situation(s);
     shipList = shipList.filter((s) => s._sit.inside || s._sit.dist <= MAX_NM);
+    // ghosts: not heard for over an hour (AIS switched off, or out of range), shown faded where last heard, for a
+    // day (the collector keeps them that long); gone as soon as they're heard again. They don't count for the rail
+    // or bridge alerts or the vessel list, since where they are now is unknown
+    for (const s of shipList) s._ghost = !!s.seen && Date.now() - Date.parse(s.seen) > 3600e3;
+    ghostList = shipList.filter((s) => s._ghost);
+    shipList = shipList.filter((s) => !s._ghost);
     shipMarkers.splice(0).forEach((m) => m.remove());
-    for (const s of shipList) {
+    for (const s of [...shipList, ...ghostList]) {
       const kind = isCarCarrier(s) ? 'VEHICLE CARRIER' : SHIP_KIND(s.type)[0], sit = s._sit, color = shipColor(s, sit);
       const el = document.createElement('div');
-      el.className = 'ship-mk' + (s.classB ? ' small' : '') + (isCargo(s.type) ? ' cargo' : '');
+      el.className = 'ship-mk' + (s.classB ? ' small' : '') + (isCargo(s.type) ? ' cargo' : '') + (s._ghost ? ' ghost' : '');
       drawShip(el, s);
       const dir = s.heading ?? s.cog ?? 0;
       el.title = s.name || 'Vessel';
       const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
-      const html = (x) => `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
+      const lastHeard = s.seen ? new Date(s.seen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase() : '';
+      const html = (x) => x._ghost ? `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())} · NOT HEARD</h3>
+        <p><span style="color:${color}">${kind}</span> · <b>LAST HEARD ${escS(lastHeard)}</b> (${Math.round(ago / 60)} H AGO)</p>
+        <div class="m">THIS IS WHERE ITS AIS WAS LAST HEARD. IT MAY HAVE SWITCHED IT OFF (TIED UP) OR GONE OUT OF RANGE. SHOWN FOR UP TO A DAY, OR UNTIL IT'S HEARD AGAIN.</div>`
+        : `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
         <p><span style="color:${color}">${kind}</span> · <b>${sit.state}</b>${stopped(x) ? '' : ` · ${(x.sog ?? 0).toFixed(1)} KT ${compass(dir)}`}</p>
         <div class="m">${sit.inside ? 'IN ' + sit.bay : `${sit.dist.toFixed(1)} NM FROM THE ${sit.bay} ENTRANCE`}${x.dest ? ' · BOUND FOR ' + escS(x.dest.toUpperCase()) : ''}${x.lengthM ? ' · ' + x.lengthM + ' M' : ''}${ago != null ? ` · SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>`;
       const pop = new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setHTML(html(s));

@@ -102,6 +102,9 @@ body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.over
 .ship-mk svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .ship-mk .rot { width: 100%; height: 100%; }
 .ship-mk.small { opacity: .7; }
+/* a ghost: not heard for over an hour, faded where it was last heard (MapLibre sets the marker's own opacity) */
+.ship-mk.ghost > * { opacity: .3; }
+.ship-mk.ghost { filter: grayscale(.8) !important; }
 body.no-vessels .ship-mk { display: none !important; }
 
 /* aircraft */
@@ -122,6 +125,11 @@ body.no-aircraft .air-mk { display: none !important; }
 .bus-mk.oos > * { opacity: .38; } /* (on what's inside: MapLibre sets the marker's own opacity on a tilted map) */
 .bus-mk.oos .ic { filter: grayscale(1); }
 .bus-mk.oos b { color: #8fb3aa !important; border-color: #3d5a53 !important; }
+/* a ghost: stopped transmitting, shown faded where it was last heard (and not in the chase view) */
+.bus-mk.lost > * { opacity: .3; }
+.bus-mk.lost .ic { filter: grayscale(.7); }
+.bus-mk.lost b { color: #8fb3aa !important; border-color: #3d5a53 !important; border-style: dashed; }
+body.chase .bus-mk.lost { display: none; }
 .bus-mk b { position: absolute; left: 100%; top: 0; transform: translate(-6px, -2px); padding: 0 3px; font: 700 10px/12px var(--mono); background: rgba(2,8,7,.88); border: 1px solid; letter-spacing: .04em; }
 .bus-grp.parked { opacity: .4; }
 .bus-grp.parked:hover { opacity: 1; }

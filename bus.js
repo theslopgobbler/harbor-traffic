@@ -95,7 +95,8 @@
   const allRoutes = () => Object.keys(routeInfo).filter((r) => !(/P$/.test(r) && routeInfo[r.slice(0, -1)])).sort(natural);
   // not in service: GHT's tracker reports the bus's position under a route, but its route list doesn't name it as
   // running (parked at the base, deadheading). Shown dimmed; left out of counts and stepping through a route
-  const oos = (b) => b.listed === false;
+  // (the relay decides: not on the route list AND parked at GHT's base; older relays only sent "listed")
+  const oos = (b) => (b.oos != null ? b.oos : b.listed === false);
   const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt && !oos(b)).sort((a, b) => a.id.localeCompare(b.id));
   const routeColor = (rt) => Object.values(routes).find((r) => short(r.name) === rt)?.color || routeInfo[rt]?.color || '#bff4ff';
   const routeName = (rt) => long(Object.values(routes).find((r) => short(r.name) === rt)?.name) || routeInfo[rt]?.name || '';
@@ -284,7 +285,7 @@
     const moving = mine && mine.speed >= 3; // about 7 mph: faster than walking
     let near = null;
     if (moving) for (const mk of markers.values()) {
-      const b = mk._bus; if (!b || b.mph < 4 || b.listed === false) continue;
+      const b = mk._bus; if (!b || b._lost || b.mph < 4 || oos(b)) continue;
       const ll = mk.getLngLat();
       const bh = (b._snap ? headingOf(b) : null) ?? b.heading;
       // (its last report is up to 10 s old, 90 m behind at 20 mph: also compare with where it should be by now)
@@ -765,7 +766,7 @@
     const now = Date.now();
     for (const mk of markers.values()) {
       const b = mk._bus;
-      if (!b) continue;
+      if (!b || mk._lostAt) continue; // (a ghost stays where it was last heard)
       // the route lines may arrive after the buses: match each bus to its line once they're in
       if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); if (b._snap) { b._obs = b._snap.sh.d[b._snap.i]; b._fork = forkAhead(b, busRoute(b)); } }
       let pos;
@@ -816,7 +817,7 @@
     // chase view: the other buses face the right way and shrink with distance (measured after the camera moved)
     if (chase) {
       const fm = follow && markers.get(follow.id), nearPx = fm ? pxPerMeter(fm.getLngLat()) : 0;
-      for (const mk of markers.values()) if (mk !== fm && mk._bus) place3d(mk, nearPx, fm?.getLngLat());
+      for (const mk of markers.values()) if (mk !== fm && mk._bus && !mk._lostAt) place3d(mk, nearPx, fm?.getLngLat());
     }
     if (t - lastFollow > 250) {
       lastFollow = t; signalTurn();
@@ -1183,9 +1184,42 @@
     } else {
       const h = Math.round((b._snap ? headingOf(b) : null) ?? b.heading ?? 0);
       mk._h = h;
-      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(color)}</div><b style="color:${esc(color)};border-color:${esc(color)}">${oos(b) ? 'OUT' : esc(rt)}</b>`;
+      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${h}deg - var(--brg, 0deg)))">${busSvg(color)}</div><b style="color:${esc(color)};border-color:${esc(color)}">${b._lost ? 'NO SIGNAL' : oos(b) ? 'OUT' : esc(rt)}</b>`;
     }
-    el.title = oos(b) ? `Bus ${b.id} · not in service` : `Route ${rt} · bus ${b.id}`;
+    el.title = b._lost ? `Bus ${b.id} · not transmitting` : oos(b) ? `Bus ${b.id} · not in service` : `Route ${rt} · bus ${b.id}`;
+  }
+
+  // ---- ghosts: buses that stopped transmitting ----
+  const GHOST_MS = 24 * 3600 * 1000;
+  const loadGhosts = () => { try { return JSON.parse(localStorage.getItem('ht.busGhosts') || '{}'); } catch { return {}; } };
+  function saveGhost(id, g) {
+    try { const all = loadGhosts(); if (g) all[id] = g; else delete all[id]; localStorage.setItem('ht.busGhosts', JSON.stringify(all)); } catch { /* fine without */ }
+  }
+  function ghostBus(mk, at) {
+    const b = mk._bus; if (!b) return;
+    mk._lostAt = at; b._lost = true; b.mph = 0;
+    const ll = mk.getLngLat(), r = routes[b.route] || {};
+    mk.getElement().classList.add('lost');
+    drawBus(mk);
+    const when = new Date(at).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase();
+    mk.getPopup().setHTML(`<h3>BUS ${esc(b.id)} · NOT TRANSMITTING</h3>
+      <p>LAST HEARD ${esc(when)}${r.name ? ' ON ROUTE ' + esc(short(r.name)) : ''}</p>
+      <div class="m">ITS TRACKER STOPPED REPORTING HERE: SWITCHED OFF (PARKED FOR THE NIGHT?) OR NO SIGNAL. SHOWN FOR UP TO A DAY, OR UNTIL IT REPORTS AGAIN.</div>`);
+    saveGhost(b.id, { id: b.id, route: b.route, lat: ll.lat, lon: ll.lng, heading: b.heading || 0, at });
+  }
+  let ghostsRestored = false;
+  function restoreGhosts(seen, now) {
+    if (ghostsRestored) return;
+    ghostsRestored = true;
+    for (const g of Object.values(loadGhosts())) {
+      if (seen.has(g.id) || markers.has(g.id)) { saveGhost(g.id, null); continue; }
+      if (now - g.at > GHOST_MS) { saveGhost(g.id, null); continue; }
+      const el = document.createElement('div'); el.className = 'bus-mk';
+      const mk = new maplibregl.Marker({ element: el }).setLngLat([g.lon, g.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '280px' })).addTo(map);
+      mk._bus = { id: g.id, route: g.route, lat: g.lat, lon: g.lon, heading: g.heading, mph: 0 };
+      markers.set(g.id, mk);
+      ghostBus(mk, g.at);
+    }
   }
 
   function render() {
@@ -1231,6 +1265,7 @@
       b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
       b._at = Date.now();
       mk._bus = b;
+      if (mk._lostAt) { mk._lostAt = null; mk.getElement().classList.remove('lost'); saveGhost(b.id, null); } // back on the air
       drawBus(mk);
       const el = mk.getElement();
       mk.getPopup().setHTML(oos(b) ? `<h3>BUS ${esc(b.id)} · NOT IN SERVICE</h3>
@@ -1241,7 +1276,14 @@
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}</div>` : ''}
         ${TV ? '' : `<button type="button" class="go" data-follow="${esc(b.id)}">FOLLOW THIS BUS</button>`}`);
     }
-    for (const [id, mk] of markers) if (!seen.has(id)) { mk.remove(); markers.delete(id); }
+    // a bus that dropped out of the tracker's feed (tracker switched off, or no signal): left faded where it was last
+    // heard, saying so, for up to a day, or until it reports again. Remembered on this device, so a reload keeps it
+    const now = Date.now();
+    restoreGhosts(seen, now);
+    for (const [id, mk] of markers) if (!seen.has(id)) {
+      if (!mk._lostAt) ghostBus(mk, now);
+      else if (now - mk._lostAt > GHOST_MS) { mk.remove(); markers.delete(id); saveGhost(id, null); }
+    }
     groupBuses();
     renderList();
     renderBar();
@@ -1279,6 +1321,7 @@
       const spreadM = Math.max(...lls.map((a) => Math.max(...lls.map((b) => a.distanceTo(b)))));
       const pop = new maplibregl.Popup({ offset: 14, maxWidth: '300px' }).setHTML(`<h3>${list.length} BUSES HERE</h3>` + list.map((b) => {
         const r = routes[b.route] || {};
+        if (b._lost) return `<div class="m bus-row" style="opacity:.55"><span class="bus-no" style="background:#3d5a53">?</span>BUS ${esc(b.id)} · NOT TRANSMITTING</div>`;
         if (oos(b)) return `<div class="m bus-row" style="opacity:.55"><span class="bus-no" style="background:#3d5a53">OUT</span>BUS ${esc(b.id)} · NOT IN SERVICE${b.mph < 2 ? '' : ' · ' + Math.round(b.mph) + ' MPH'}</div>`;
         return `<div class="m bus-row" data-route="${esc(short(r.name))}" style="cursor:pointer"><span class="bus-no" style="background:${esc(r.color || '#bff4ff')}">${esc(short(r.name))}</span>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}${b.nextStop ? ' · NEXT ' + esc(b.nextStop.toUpperCase()) + (b.nextTime ? ' ' + tt(b.nextTime) : '') : ''}</div>`;
       }).join(''));
