@@ -323,7 +323,8 @@ if ($aisKey) {
         }
     } catch { if ("$_" -notmatch 'quiet') { "ships: $($_.Exception.Message.Split("`n")[0])" } }
     finally { try { $ws.Dispose() } catch {} }
-    $cutoff = $now.AddHours(-3)
+    # kept a day: the map shows boats not heard for over an hour as faded "ghosts" where they were last heard
+    $cutoff = $now.AddHours(-24)
     $keep = @($ships.Values | Where-Object { $_.lat -and $_.seen -and [DateTimeOffset]::Parse($_.seen) -gt $cutoff })
     Save 'ships.json' ([ordered]@{ updated = $now.ToString('o'); source = 'AIS via aisstream.io'; ships = $keep })
     "ships: $($keep.Count) on the map ($heard messages this run)"
