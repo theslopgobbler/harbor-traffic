@@ -1,31 +1,7 @@
 {
-  "updated": "2026-10-06T09:26:32.4000620+00:00",
+  "updated": "2026-10-06T09:45:46.9203978+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.91956,
-      "lon": -124.12243,
-      "sog": 0,
-      "cog": 175.6,
-      "heading": 64,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-06T07:26:36.7312644+00:00"
-    },
-    {
-      "mmsi": 367171980,
-      "name": "PACIFIC DOVE",
-      "lat": 46.90857,
-      "lon": -124.1106,
-      "sog": 0,
-      "cog": 356.7,
-      "heading": 132,
-      "status": 7,
-      "classB": false,
-      "seen": "2026-10-06T09:00:37.9018658+00:00"
-    },
     {
       "mmsi": 367310520,
       "type": 52,
@@ -45,19 +21,14 @@
       "seen": "2026-10-06T07:03:16.0581347+00:00"
     },
     {
-      "mmsi": 367324840,
-      "type": 31,
-      "dest": "GRAYS HARBOR",
-      "callsign": "WDE2412",
-      "lengthM": 20,
-      "beamM": 5,
-      "draughtM": 2.7,
-      "name": "MARY ROSE BRUSCO",
-      "lat": 46.97856,
-      "lon": -123.88359,
+      "mmsi": 367171980,
+      "name": "PACIFIC DOVE",
+      "lat": 46.90857,
+      "lon": -124.1106,
       "sog": 0,
-      "cog": 342.2,
-      "status": 0,
+      "cog": 356.7,
+      "heading": 132,
+      "status": 7,
       "classB": false,
       "seen": "2026-10-06T09:00:37.9018658+00:00"
     },
@@ -77,19 +48,7 @@
       "cog": 231.9,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-06T09:26:32.4000620+00:00"
-    },
-    {
-      "mmsi": 366765940,
-      "name": "SEA CLIPPER",
-      "lat": 46.91607,
-      "lon": -124.18077,
-      "sog": 6.9,
-      "cog": 91.5,
-      "heading": 90,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T08:46:00.9330843+00:00"
+      "seen": "2026-10-06T09:26:32.400062+00:00"
     },
     {
       "mmsi": 367050280,
@@ -102,6 +61,35 @@
       "seen": "2026-10-06T06:14:15.5718955+00:00"
     },
     {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.91956,
+      "lon": -124.12243,
+      "sog": 0,
+      "cog": 175.6,
+      "heading": 64,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-06T07:26:36.7312644+00:00"
+    },
+    {
+      "mmsi": 367324840,
+      "type": 31,
+      "dest": "GRAYS HARBOR",
+      "callsign": "WDE2412",
+      "lengthM": 20,
+      "beamM": 5,
+      "draughtM": 2.7,
+      "name": "MARY ROSE BRUSCO",
+      "lat": 46.97856,
+      "lon": -123.88359,
+      "sog": 0,
+      "cog": 342.2,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T09:00:37.9018658+00:00"
+    },
+    {
       "mmsi": 367512180,
       "name": "CONNIE S",
       "lat": 46.90557,
@@ -109,7 +97,19 @@
       "sog": 0,
       "cog": 209.7,
       "classB": true,
-      "seen": "2026-10-06T09:26:32.4000620+00:00"
+      "seen": "2026-10-06T09:26:32.400062+00:00"
+    },
+    {
+      "mmsi": 366765940,
+      "name": "SEA CLIPPER",
+      "lat": 46.91607,
+      "lon": -124.18077,
+      "sog": 6.9,
+      "cog": 91.5,
+      "heading": 90,
+      "status": 0,
+      "classB": false,
+      "seen": "2026-10-06T08:46:00.9330843+00:00"
     }
   ]
 }
