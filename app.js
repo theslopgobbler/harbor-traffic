@@ -557,10 +557,32 @@
 
   // ---------------- WSDOT alerts (written by the collector) ----------------
   const roadMarkers = [];
+  // WSDOT posts closures ahead of time, and an advance notice's start and end times are often just when it was
+  // posted and when the closure begins (the Simpson Avenue Bridge: posted Oct 5, "closed" from then until 9 a.m.
+  // Oct 19, the day it actually closes). So when a closure's own words say it starts on a later day, it's shown
+  // as a warning ("UPCOMING CLOSURE MON OCT 19"), not a red X, until that day comes.
+  const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  function upcomingClosure(r) {
+    // (the collector does the same; this also catches it between its runs, and the day it starts)
+    if (r.upcoming && r.kind !== 'closure') return { ...r, headline: `UPCOMING CLOSURE ${r.upcoming}: ${r.headline}` };
+    if (r.kind !== 'closure') return r;
+    const m = String(r.headline || '').match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?\b(?:,?\s*(\d{4}))?/i);
+    if (!m) return r;
+    const today = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+    today.setHours(0, 0, 0, 0);
+    const mon = MONTHS.indexOf(m[1].slice(0, 3).toLowerCase());
+    let year = m[3] ? +m[3] : today.getFullYear();
+    let day = new Date(year, mon, +m[2]);
+    // no year given: a date more than about 6 months back means next year (a December notice for January)
+    if (!m[3] && today - day > 180 * 864e5) day = new Date(++year, mon, +m[2]);
+    if (day <= today) return r; // it's started (or starts today): a real closure
+    const label = day.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase().replace(',', '');
+    return { ...r, kind: 'other', upcoming: label, headline: `UPCOMING CLOSURE ${label}: ${r.headline}` };
+  }
   async function loadRoads() {
     try {
       const j = await getJson('data/wsdot-alerts.json');
-      state.roads = j.alerts || [];
+      state.roads = (j.alerts || []).map(upcomingClosure);
       state.roadsUpdated = j.updated;
     } catch (e) { console.warn('road data', e); }
     renderRoads();
