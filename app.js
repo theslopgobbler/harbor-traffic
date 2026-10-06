@@ -133,12 +133,13 @@
       // parks (OpenStreetMap's park shapes), from town zoom in: a barely-there tint and a faint dashed green edge,
       // like a zone marked on an old nav display rather than a green blob. State and national parks and reserves
       // get just the dashed edge, a little farther out
+      // (the fill is thin diagonal hatching, like a marked zone on an old radar screen: the "park-hatch" image below)
       { id: 'park-fill', type: 'fill', source: 'omt', 'source-layer': 'landcover', minzoom: 12,
         filter: ['in', ['get', 'subclass'], ['literal', ['park', 'recreation_ground']]],
-        paint: { 'fill-color': '#0a2a1c', 'fill-opacity': 0.45 } },
+        paint: { 'fill-pattern': 'park-hatch', 'fill-opacity': 0.75 } },
       { id: 'park-edge', type: 'line', source: 'omt', 'source-layer': 'landcover', minzoom: 12,
         filter: ['in', ['get', 'subclass'], ['literal', ['park', 'recreation_ground']]],
-        paint: { 'line-color': '#2f9a6c', 'line-opacity': ['interpolate', ['linear'], ['zoom'], 12, 0.25, 15, 0.55], 'line-width': 1, 'line-dasharray': [3, 2] } },
+        paint: { 'line-color': '#2f9a6c', 'line-opacity': ['interpolate', ['linear'], ['zoom'], 12, 0.35, 15, 0.7], 'line-width': 1, 'line-dasharray': [3, 2] } },
       { id: 'park-area-edge', type: 'line', source: 'omt', 'source-layer': 'park', minzoom: 9,
         paint: { 'line-color': '#2f9a6c', 'line-opacity': 0.3, 'line-width': 1, 'line-dasharray': [4, 3] } },
       { id: 'hillshade', type: 'hillshade', source: 'dem', paint: {
@@ -212,8 +213,10 @@
         layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': ['interpolate', ['linear'], ['zoom'], 14.5, 9, 17, 11],
           'text-letter-spacing': 0.15, 'text-max-width': 8, 'text-padding': 4 },
         paint: { 'text-color': '#4fae86', 'text-opacity': 0.85, 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
-      { id: 'park-area-names', type: 'symbol', source: 'omt', 'source-layer': 'park', minzoom: 10, filter: ['has', 'name'],
-        layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': 10, 'text-letter-spacing': 0.15, 'text-max-width': 9 },
+      // (labeled at each area's one label point: labeling the shapes repeats the name in every map tile they cross)
+      { id: 'park-area-names', type: 'symbol', source: 'omt', 'source-layer': 'park', minzoom: 11,
+        filter: ['all', ['has', 'name'], ['==', ['geometry-type'], 'Point']],
+        layout: { 'text-field': up('name'), 'text-font': font('r'), 'text-size': 9, 'text-letter-spacing': 0.15, 'text-max-width': 7, 'text-padding': 8 },
         paint: { 'text-color': '#3f8f6c', 'text-opacity': 0.8, 'text-halo-color': K.bg, 'text-halo-width': 1.5 } },
       // (an invisible copy of the named streets, wide, so the bus banner can ask which street the bus is on)
       { id: 'street-q', type: 'line', source: 'omt', 'source-layer': 'transportation_name', minzoom: 12, filter: ['has', 'name'],
@@ -245,6 +248,13 @@
     interactive: !TV
   });
   window.htMap = map; // handy from the browser console
+  // the park hatch: an 8 px tile with one thin green diagonal, made here rather than shipped as an image file
+  map.on('styleimagemissing', (e) => {
+    if (e.id !== 'park-hatch' || map.hasImage('park-hatch')) return;
+    const n = 8, d = new Uint8Array(n * n * 4);
+    for (let i = 0; i < n; i++) { const o = ((n - 1 - i) * n + i) * 4; d[o] = 47; d[o + 1] = 170; d[o + 2] = 118; d[o + 3] = 170; }
+    map.addImage('park-hatch', { width: n, height: n, data: d });
+  });
   map.on('error', (e) => console.warn('map:', e.error?.message || e));
   if (!TV) map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
   // my location, compass heading and bigger text: in a second box right under + and -
