@@ -466,6 +466,8 @@ details summary { cursor: pointer; }
 .menu-news { display: grid; grid-template-columns: 74px 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line-2, #12403a); }
 .menu-news b { color: var(--cyan); font-weight: 400; letter-spacing: .08em; }
 body.chase .menu-btn, body.chase .menu-panel { display: none; }
+/* "layer buttons on the map: hidden" (menu): the layers are still in the menu */
+body.hide-tools .map-tools { display: none !important; }
 body.big-text .menu-panel, body.big-text .menu-row { font-size: 15px; }
 /* coordinates in popups, with a COPY button (app.js htCoordLine) */
 .coord { display: flex; align-items: center; gap: 8px; margin-top: 6px; font: 11px/1.3 var(--mono); color: #8fb3aa; letter-spacing: .03em; }
