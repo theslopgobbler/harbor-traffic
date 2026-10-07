@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T08:02:08.7020839+00:00",
+  "updated": "2026-10-07T08:28:17.0135719+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N23859",
       "type": "BE19",
       "cat": "A1",
-      "alt": 4200,
-      "gs": 80.2,
-      "track": 4.29,
+      "alt": 3000,
+      "gs": 73.1,
+      "track": 30.43,
       "rate": null,
-      "lat": 46.53937,
-      "lon": -122.9488,
+      "lat": 47.04942,
+      "lon": -122.85898,
       "squawk": "3535",
       "emergency": "none",
       "mil": false
