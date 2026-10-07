@@ -41,7 +41,9 @@
       'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': ['get', 'color'], 'circle-stroke-width': 1.6, 'circle-stroke-opacity': ['get', 'op'] } }, 'outside');
     // the newest ones get a ring that keeps expanding outward
     map.addLayer({ id: 'quake-pulse', type: 'circle', source: 'quakes', filter: ['==', ['get', 'fresh'], 1], paint: {
-      'circle-radius': 10, 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': '#ff2a3d', 'circle-stroke-width': 1.4, 'circle-stroke-opacity': 0.8 } }, 'outside');
+      'circle-radius': 10, 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': '#ff2a3d', 'circle-stroke-width': 1.4, 'circle-stroke-opacity': 0.8,
+      // (no fade between pulse steps: with one, the map never stopped redrawing, 60 times a second)
+      'circle-radius-transition': { duration: 0 }, 'circle-stroke-opacity-transition': { duration: 0 } } }, 'outside');
     map.on('click', 'quake-ring', (e) => {
       const q = quakes.find((x) => x.id === e.features[0].properties.id);
       if (q) new maplibregl.Popup({ offset: 8, maxWidth: '300px' }).setLngLat([q.lon, q.lat]).setHTML(popupHtml(q)).addTo(map);
@@ -53,7 +55,8 @@
   let pulseLast = 0;
   (function pulse(t) {
     requestAnimationFrame(pulse);
-    if (t - pulseLast < 50 || document.hidden || !map.getLayer('quake-pulse')) return;
+    // (only with a quake in the last hour to pulse, and 15 steps a second: each one redraws the whole map)
+    if (t - pulseLast < 66 || document.hidden || !map.getLayer('quake-pulse') || !quakes.some((q) => Date.now() - q.time < 36e5)) return;
     pulseLast = t;
     const p = (t % 2000) / 2000;
     map.setPaintProperty('quake-pulse', 'circle-radius', 8 + p * 40);
