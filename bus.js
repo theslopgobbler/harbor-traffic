@@ -820,7 +820,9 @@
     // chase view: the other buses face the right way and shrink with distance (measured after the camera moved)
     if (chase) {
       const fm = follow && markers.get(follow.id), nearPx = fm ? pxPerMeter(fm.getLngLat()) : 0;
-      for (const mk of markers.values()) if (mk !== fm && mk._bus && !mk._lostAt) place3d(mk, nearPx, fm?.getLngLat());
+      // (ghosts too: they don't move, but the camera does, and a ghost left at its old size looked nearer or farther
+      // than it was)
+      for (const mk of markers.values()) if (mk !== fm && mk._bus) place3d(mk, nearPx, fm?.getLngLat());
     }
     if (t - lastFollow > 250) {
       lastFollow = t; signalTurn();
