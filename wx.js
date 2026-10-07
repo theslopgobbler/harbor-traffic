@@ -792,7 +792,9 @@
     sea = { waveFt: b?.waveFt ?? null, periodS: b?.periodS || 10, dirDeg: b?.dirDeg ?? 270, color: waveColor, bar: bar?.conditions || null };
     updateBar();
     const water = waterWestport ?? b?.waterF;
-    $('#seaBar').textContent = bar?.conditions ? `BAR ${bar.conditions.toUpperCase().replace(', BECOMING', ' →')}` : 'BAR --';
+    // (short words, so it fits a laptop-width box: "BAR MOD → ROUGH"; the whole wording is on hover)
+    $('#seaBar').textContent = bar?.conditions ? `BAR ${bar.conditions.toUpperCase().replace(', BECOMING', ' →').replace(/MODERATE/g, 'MOD').replace(/SEVERE/g, 'SEV')}` : 'BAR --';
+    $('#seaBar').title = bar?.conditions ? `Grays Harbor bar: ${bar.conditions}` : '';
     $('#seaBar').style.color = waveColor;
     $('#seaWaves').textContent = b?.waveFt != null ? `WAVES ${b.waveFt}FT @${b.periodS}S ${compass(b.dirDeg)}` : 'WAVES --';
     const alerts = m?.alerts || [];

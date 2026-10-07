@@ -243,7 +243,8 @@
     container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 30 },
     // extra room to the south: on phones the view centers below the area so it clears the bottom sheet
     // a pan limit with extra room to the south: on phones the view sits south of the area to clear the bottom sheet
-    maxBounds: [W - pad * 2, S - pad * 3.5, E + pad * 2, N + pad * 1.5], minZoom: 5.5, maxZoom: 16,
+    // west only as far as boats get heard (the collector listens out to 125.4° W, ~60 mi off the coast)
+    maxBounds: [-125.6, S - pad * 1.6, E + pad * 0.6, N + pad * 0.5], minZoom: 6.5, maxZoom: 16,
     dragRotate: false, pitchWithRotate: false, touchPitch: false, attributionControl: { compact: true },
     interactive: !TV
   });
