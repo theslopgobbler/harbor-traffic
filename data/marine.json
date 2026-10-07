@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-07T08:49:30.1480901+00:00",
+  "updated": "2026-10-07T09:02:45.9196783+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-07T07:56:00.0000000+00:00",
+    "time": "2026-10-07T08:26:00.0000000+00:00",
     "waveFt": 5.2,
-    "periodS": 10.0,
-    "dirDeg": 285.0,
+    "periodS": 11.0,
+    "dirDeg": 274.0,
     "waterF": 56.5
   },
   "bar": {
@@ -22,12 +22,6 @@
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-10-07T19:00:00+00:00",
       "headline": "Dense Fog Advisory issued October 7 at 1:42AM PDT until October 7 at 12:00PM PDT by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
-      "ends": "2026-10-07T09:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 7 at 1:34AM PDT until October 7 at 2:00AM PDT by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
