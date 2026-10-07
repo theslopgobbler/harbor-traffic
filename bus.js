@@ -471,6 +471,9 @@
     if (v) {
       if (phone() && !$('#panel').classList.contains('gone')) $('#panel').classList.add('min'); // more road on screen
       map.setMaxZoom(18);
+      // and no further out than street level: tilted, each step out shows far more map toward the horizon, and that
+      // was what made laptops struggle (Oct 7)
+      map.setMinZoom(15.5);
       chaseBrg = (mk && headingOf(mk._bus)) ?? map.getBearing();
       map.easeTo({ center: mk ? mk.getLngLat() : map.getCenter(), zoom: CHASE_ZOOM, pitch: CHASE_PITCH, bearing: chaseBrg,
         padding: chasePad(), duration: 1400 });
@@ -479,6 +482,7 @@
       const pad = northUp ? { top: 0, bottom: 0, left: 0, right: 0 } : chasePad();
       map.easeTo({ pitch: 0, zoom: Math.min(map.getZoom(), 15.5), padding: pad,
         ...(northUp ? { bearing: 0 } : followUp ? {} : { bearing: 0 }), duration: 800 });
+      map.setMinZoom(6.5); // (the map's usual limit, app.js)
       map.once('moveend', () => { if (!chase) map.setMaxZoom(16); });
     }
     // every bus changes look: the chased one to its sprite, the others to theirs (or back to map icons)
@@ -761,9 +765,22 @@
     return best;
   }
   let lastFrame = 0, lastFollow = 0;
+  // frame rate that steps down when the computer can't keep up: 30 a second normally, then 20, then 15. Judged by
+  // how far apart the browser's own frames really are (over ~2 s); back up a step after ~10 s of easy going
+  const RATES = [33, 50, 66];
+  let rate = 0, rafPrev = 0, rafAvg = 16, calmSince = 0;
+  window.htFrameMs = () => RATES[rate];
+  function pace(t) {
+    if (rafPrev && t - rafPrev < 1000) rafAvg = rafAvg * 0.97 + (t - rafPrev) * 0.03; // (a tab coming back: skip)
+    rafPrev = t;
+    if (rafAvg > RATES[rate] * 1.35 && rate < RATES.length - 1) { rate++; rafAvg = RATES[rate]; calmSince = t; }
+    else if (rafAvg > RATES[rate] * 0.75) calmSince = t; // (still busy at this rate)
+    else if (rate > 0 && t - calmSince > 10000) { rate--; calmSince = t; }
+  }
   function glide(t) {
     requestAnimationFrame(glide);
-    if (document.hidden || !on || t - lastFrame < 33) return; // about 30 frames a second
+    pace(t);
+    if (document.hidden || !on || t - lastFrame < RATES[rate] - 2) return; // about 30 frames a second, fewer if struggling
     const dt = Math.min(0.25, (t - (lastFrame || t)) / 1000);
     lastFrame = t;
     const now = Date.now();

@@ -267,8 +267,8 @@
     // one record (a crash, or the map open right now): about the device, graphics and script notes, the last minute
     const table = (c) => `${c.about ? `<p class="note">BUILD ${e(c.about.build)} · SCREEN ${e(c.about.screen)} @${e(c.about.dpr)}x · ${e(c.about.cores ?? '?')} CORES · ${e(c.about.memGB ?? '?')} GB · ${e(c.about.ua)}</p>` : ''}
       ${notes('GRAPHICS', c.events)}${notes('SCRIPT ERRORS', c.errors)}
-      <table><thead><tr><th>TIME</th><th>VIEW</th><th>FPS</th><th>SLOWEST FRAME MS</th><th>MEMORY MB</th><th>MAP TILES</th><th>ICONS</th><th>BUSES</th><th>3D BUSES</th><th>PAGE PARTS</th><th>WX FX</th><th>3D FOG</th><th>ZOOM</th><th>TILT</th></tr></thead><tbody>
-      ${c.snaps.map((s) => `<tr><td>${hm(s.t)}</td><td>${s.view}</td><td>${s.fps}</td><td>${s.worstMs ?? ''}</td><td>${s.heapMB ?? '?'}</td><td>${s.tiles ?? '?'}</td><td>${s.icons}</td><td>${s.buses}</td><td>${s.bus3d ?? ''}</td><td>${s.nodes}</td><td>${s.fx ? 'ON' : 'OFF'}</td><td>${s.fog ? 'ON' : ''}</td><td>${s.zoom ?? ''}</td><td>${s.pitch ?? ''}°</td></tr>`).join('')}
+      <table><thead><tr><th>TIME</th><th>VIEW</th><th>FPS</th><th>BUS VIEW FPS</th><th>SLOWEST FRAME MS</th><th>MEMORY MB</th><th>MAP TILES</th><th>ICONS</th><th>BUSES</th><th>3D BUSES</th><th>PAGE PARTS</th><th>WX FX</th><th>3D FOG</th><th>ZOOM</th><th>TILT</th></tr></thead><tbody>
+      ${c.snaps.map((s) => `<tr><td>${hm(s.t)}</td><td>${s.view}</td><td>${s.fps}</td><td>${s.busFps ?? ''}</td><td>${s.worstMs ?? ''}</td><td>${s.heapMB ?? '?'}</td><td>${s.tiles ?? '?'}</td><td>${s.icons}</td><td>${s.buses}</td><td>${s.bus3d ?? ''}</td><td>${s.nodes}</td><td>${s.fx ? 'ON' : 'OFF'}</td><td>${s.fog ? 'ON' : ''}</td><td>${s.zoom ?? ''}</td><td>${s.pitch ?? ''}°</td></tr>`).join('')}
       </tbody></table>`;
     const live = (() => { try { return JSON.parse(localStorage.getItem('ht.diag')); } catch { return null; } })();
     $('#liveDiag').innerHTML = live?.open && live.snaps?.length && Date.now() - live.snaps[live.snaps.length - 1].t < 30000
