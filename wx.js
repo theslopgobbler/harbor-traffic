@@ -381,12 +381,19 @@
       const b = z.box, area = Math.max(0, b.x1 - b.x0) * Math.max(0, b.y1 - b.y0);
       const c = z.cond;
       const n = (k, f) => Math.min(budget, Math.round(area / 1e4 * DENSITY[k] * f));
-      z.fall = []; z.gusts = []; z.fogs = [];
+      z.fall = []; z.gusts = []; z.fogs = []; z.haze = [];
       if (c.kind !== 'none') {
         const k = c.kind === 'fog' ? 'fog' : c.kind;
         const count = n(k, share(c)); budget -= count;
         const arr = c.kind === 'fog' ? z.fogs : z.fall;
         for (let i = 0; i < count; i++) arr.push(spawn(z, c.kind === 'fog' ? 'fog' : c.kind === 'storm' ? 'rain' : c.kind, true));
+        // fog also gets thin dashed haze lines drifting sideways, like interference on an old radar screen (more of
+        // them the thicker it is), over a faint tint
+        if (c.kind === 'fog') {
+          const lines = Math.min(budget, Math.round((b.y1 - b.y0) / 10 * share(c) * Math.max(1, (b.x1 - b.x0) / 400))); budget -= lines;
+          const dir = windVector(c.windDir).x >= 0 ? 1 : -1;
+          for (let i = 0; i < lines; i++) z.haze.push({ y: rnd(b.y0, b.y1), x: rnd(b.x0, b.x1), len: rnd(60, 200), vx: dir * rnd(0.12, 0.4), a: rnd(0.28, 0.5) });
+        }
       }
       if (c.wind) {
         const count = n('wind', c.wind / 3); budget -= count;
@@ -402,7 +409,7 @@
       case 'rain': { const s = rnd(7, 12) + z.cond.level * 2; return { kind, x, y, vx: w.x * windy * 4, vy: s, len: rnd(8, 14) + z.cond.level * 3 }; }
       case 'snow': return { kind, x, y, vx: w.x * windy * 2.5, vy: rnd(0.6, 1.4), r: rnd(0.8, 2), ph: rnd(0, 6.28) };
       case 'hail': return { kind, x, y, vx: w.x * windy * 2, vy: rnd(9, 14), r: rnd(1.2, 2.2) };
-      case 'fog': return { kind, x, y, vx: 0.15 + w.x * 0.3, vy: 0, r: rnd(30, 70), a: rnd(0.04, 0.09) };
+      case 'fog': return { kind, x, y, vx: 0.15 + w.x * 0.3, vy: 0, r: rnd(40, 90), a: rnd(0.12, 0.22) };
       // mostly sideways (east/west), like the rain's slant, with only a hint of the north/south part
       case 'wind': { const sp = 3 + z.cond.wind * 1.5; return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: (Math.abs(w.x) < 0.2 ? Math.sign(w.x || 1) * 0.6 : w.x) * sp, vy: w.y * sp * 0.15, len: rnd(18, 40), life: 0, max: rnd(40, 90) }; }
     }
@@ -431,7 +438,19 @@
       if (b.x1 <= b.x0 || b.y1 <= b.y0) continue;
       ctx.save();
       ctx.clip(z.path, 'evenodd');
-      // fog: slow soft banks
+      // fog: a faint tint, slow soft banks, and drifting dashed haze lines
+      if (z.cond.kind === 'fog') {
+        ctx.fillStyle = `rgba(140,175,175,${0.04 + 0.04 * z.cond.level})`;
+        ctx.fillRect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
+        ctx.lineWidth = 1; ctx.setLineDash([6, 4]);
+        for (const h of z.haze || []) {
+          h.x += h.vx;
+          if (h.vx > 0 && h.x > b.x1) h.x = b.x0 - h.len; else if (h.vx < 0 && h.x + h.len < b.x0) h.x = b.x1;
+          ctx.strokeStyle = `rgba(170,205,205,${h.a})`;
+          ctx.beginPath(); ctx.moveTo(h.x, h.y); ctx.lineTo(h.x + h.len, h.y); ctx.stroke();
+        }
+        ctx.setLineDash([]);
+      }
       for (const p of z.fogs) {
         p.x += p.vx; if (p.x - p.r > b.x1) p.x = b.x0 - p.r;
         const gr = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);

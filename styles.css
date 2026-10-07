@@ -563,8 +563,9 @@ body.tv .list .m { font-size: 14px; }
   .panel.min { height: 112px; overflow: hidden; }
   .panel.max { height: 82%; }
   /* the handle: a bright bar with a small chevron above it (up while tapping raises the sheet, down when it's all the way up) */
+  /* (pinned to the top of the sheet: scrolled down, then shrunk or tucked away, it must still be there to tap) */
   .sheet-handle { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; height: 24px; padding: 3px 0 0;
-    border: 0; background: none; cursor: pointer; }
+    border: 0; background: #020a09; cursor: pointer; position: sticky; top: -4px; z-index: 2; }
   .sheet-handle svg { width: 22px; height: 7px; stroke: var(--cyan); fill: none; transition: transform .2s ease; }
   .sheet-handle::after { content: ""; width: 48px; height: 4px; background: var(--cyan); box-shadow: var(--glow-c); border-radius: 2px; }
   .sheet-handle.down svg { transform: rotate(180deg); }
