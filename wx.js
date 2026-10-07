@@ -454,12 +454,20 @@
   let last = 0;
   function frame(t) {
     requestAnimationFrame(frame);
-    if (t - last < 33 || document.hidden || document.body.classList.contains('chase')) return; // ~30 fps
+    // (paused while following a bus, flat or 3D: the camera moves every frame, and redoing the weather zones for
+    // each of those frames is the kind of work that crashed laptops. They come back when the follow ends)
+    if (t - last < 33 || document.hidden || chasing()) {
+      if (chasing() && !frame.cleared) { frame.cleared = true; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); }
+      return;
+    }
+    frame.cleared = false; // ~30 fps
     last = t;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
     if (!fxOn || REDUCED) return;
     drawOcean(t);
+    drawSurge(t);
+    drawFrost(t);
     if (!zones.length) return;
     if (dirty) reproject();
     for (const z of zones) {
@@ -1340,12 +1348,76 @@
     ctx.restore();
   }
 
+  // ================= storm surge: coastal flood / surge / high surf alerts =================
+  // the water glows and swells toward the shore in a slow pulse: amber for an advisory or watch, red for a warning
+  let surge = null; // { color, event }
+  function updateSurge(d) {
+    const ours = new Set(Object.values(d.zonesByTown || {}).flat());
+    const hits = (d.nws || []).filter((a) => /Coastal Flood|Storm Surge|High Surf|Tsunami/i.test(a.event || '') && (a.affectedZones || []).some((z) => ours.has(z)));
+    const warn = hits.find((a) => /Warning/i.test(a.event));
+    surge = hits.length ? { color: warn ? '255,59,59' : '255,196,0', event: (warn || hits[0]).event } : null;
+  }
+  function drawSurge(t) {
+    if (!surge || !water || waterDirty) return;
+    // open ocean out at 124.6° W fades in to full strength at the beach (~124.1° W) and in the bays
+    const out = map.project([-124.6, 46.95]).x, shore = map.project([-124.1, 46.95]).x;
+    const pulse = 0.5 + 0.5 * Math.sin(t / 900);
+    const g = ctx.createLinearGradient(out, 0, shore, 0);
+    g.addColorStop(0, `rgba(${surge.color},0)`);
+    g.addColorStop(1, `rgba(${surge.color},${(0.10 + 0.16 * pulse).toFixed(3)})`);
+    ctx.save();
+    ctx.clip(water, 'nonzero');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+    // a surge line riding in toward the beach every few seconds
+    const k = (t / 4200) % 1, x = out + (shore - out) * k;
+    ctx.strokeStyle = `rgba(${surge.color},${(0.55 * Math.sin(Math.PI * k)).toFixed(3)})`;
+    ctx.lineWidth = 2; ctx.setLineDash([10, 6]);
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + (shore - out) * 0.08, H); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.restore();
+  }
+
+  // ================= frost: towns at or below 34°F =================
+  // a scatter of ice glints twinkling around each one (they ride along with the map, so they're placed as
+  // offsets from the town scaled to the zoom, not as screen points)
+  let frost = [];
+  function updateFrost(d) {
+    frost = (d.towns || []).filter((t) => d.wx?.[t.id]?.temp != null && d.wx[t.id].temp <= 34).map((t) => {
+      const cold = clamp((35 - d.wx[t.id].temp) / 8, 0.4, 1); // the colder, the more of them
+      const glints = Array.from({ length: Math.round(40 * cold) }, () => {
+        const a = rnd(0, 6.283), r = Math.sqrt(Math.random());
+        return { dx: Math.cos(a) * r, dy: Math.sin(a) * r, ph: rnd(0, 6.283), sp: rnd(0.6, 1.6), s: rnd(2.5, 5) };
+      });
+      return { lon: t.lon, lat: t.lat, glints };
+    });
+  }
+  function drawFrost(t) {
+    if (!frost.length) return;
+    ctx.lineWidth = 1.3;
+    for (const f of frost) {
+      const c = map.project([f.lon, f.lat]), r = Math.abs(map.project([f.lon, f.lat + 0.12]).y - c.y);
+      if (c.x < -r || c.x > W + r || c.y < -r || c.y > H + r || r < 6) continue;
+      for (const g of f.glints) {
+        const a = Math.max(0, Math.sin(t / 1000 * g.sp + g.ph)) ** 3; // mostly dark, with a quick sparkle
+        if (a < 0.05) continue;
+        const x = c.x + g.dx * r, y = c.y + g.dy * r, s = g.s * (0.6 + 0.4 * a);
+        ctx.strokeStyle = `rgba(214,240,255,${(0.85 * a).toFixed(3)})`;
+        // a little four-point star with shorter diagonal arms
+        const q = s * 0.45;
+        ctx.beginPath(); ctx.moveTo(x - s, y); ctx.lineTo(x + s, y); ctx.moveTo(x, y - s); ctx.lineTo(x, y + s);
+        ctx.moveTo(x - q, y - q); ctx.lineTo(x + q, y + q); ctx.moveTo(x - q, y + q); ctx.lineTo(x + q, y - q); ctx.stroke();
+      }
+    }
+  }
+
   // ================= wiring =================
   const ready = () => { addRadar(); addZoneLayers(); addBarLayer(); setRadar(radarOn); setFx(fxOn); };
   if (map.isStyleLoaded()) ready(); else map.once('load', ready);
   let lastWx = null;
   window.addEventListener('ht:weather', (e) => {
     lastWx = e.detail;
+    updateSurge(lastWx); updateFrost(lastWx);
     clearTimeout(updateZones._t);
     updateZones._t = setTimeout(() => updateZones(lastWx), 300); // weather and alerts arrive separately; let both land
   });
@@ -1384,6 +1456,16 @@
       previewing = true;
       updateZones({ ...lastWx, wx });
       return 'previewing; reload the page to go back to live weather';
+    },
+    // htWx.frost(28): every town at that temperature · htWx.surge('Coastal Flood Warning')
+    frost(temp = 28) {
+      if (!lastWx) return 'weather not loaded yet';
+      updateFrost({ ...lastWx, wx: Object.fromEntries(Object.entries(lastWx.wx).map(([k, v]) => [k, { ...v, temp }])) });
+      return `${frost.length} towns frosty`;
+    },
+    surge(event = 'Coastal Flood Warning') {
+      surge = { color: /Warning/i.test(event) ? '255,59,59' : '255,196,0', event };
+      return 'surge on';
     }
   };
 })();
