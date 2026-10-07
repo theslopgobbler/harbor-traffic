@@ -307,6 +307,7 @@
   function setRiding(id) {
     if (ridingId) markers.get(ridingId)?.getElement().classList.remove('riding');
     ridingId = id; rideMiss = 0;
+    document.body.classList.toggle('riding-bus', !!id); // (the 3D view hides your dot then: the glowing bus is you)
     if (id) {
       markers.get(id)?.getElement().classList.add('riding');
       if (!follow || follow.id !== id) startFollow(id, null);

@@ -194,6 +194,8 @@ body.chase canvas.fx { display: none; }
    browser on every frame for nothing), and no glow effects, which phones redraw expensively */
 /* (your own location stays: on the bus, or waiting for it, you can see yourself) */
 body.chase .maplibregl-marker:not(.bus-mk):not(.sig-mk):not(.stop-sign):not(.me) { display: none !important; }
+/* riding: the glowing bus is where you are, so no dot on top of it in 3D */
+body.chase.riding-bus .me { display: none !important; }
 body.chase .sig-mk, body.chase .stop-sign, body.chase .bus-mk:not(.chase) .ic { filter: none !important; }
 body.chase .bus-mk.chase .sprite { filter: none; }
 body.chase .tool { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }

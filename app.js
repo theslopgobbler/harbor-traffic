@@ -1177,6 +1177,18 @@
 
   // ---------------- my location & facing direction ----------------
   let meMarker = null, watching = false;
+  // your dot glides toward each new GPS fix instead of jumping (phone GPS wanders a few meters between fixes, which
+  // made the dot, and the map in compass mode, jitter); a jump of more than 300 m (a fresh fix after a gap) snaps
+  let meShown = null;
+  function smoothMe() {
+    if (!meMarker || !state.me || !meShown) return;
+    const t = [state.me.lon, state.me.lat];
+    const far = Math.hypot((t[0] - meShown[0]) * 76000, (t[1] - meShown[1]) * 111000) > 300;
+    meShown = far ? t : [meShown[0] + (t[0] - meShown[0]) * 0.18, meShown[1] + (t[1] - meShown[1]) * 0.18];
+    meMarker.setLngLat(meShown);
+  }
+  setInterval(smoothMe, 100);
+  window.htMeShown = () => meShown; // (for checking from the browser console)
   const meEl = document.createElement('div');
   meEl.className = 'me';
   meEl.innerHTML = `<svg class="cone" viewBox="0 0 64 64" style="display:none"><defs><radialGradient id="cg" cx="50%" cy="100%" r="100%">
@@ -1199,8 +1211,8 @@
       state.me = { lat: p.coords.latitude, lon: p.coords.longitude };
       // for bus.js: am I riding a bus? (position, speed in m/s if the phone knows it, and when)
       window.htMe = { lat: p.coords.latitude, lon: p.coords.longitude, speed: p.coords.speed, acc: p.coords.accuracy, t: Date.now() };
-      if (!meMarker) meMarker = new maplibregl.Marker({ element: meEl }).setLngLat([state.me.lon, state.me.lat]).addTo(map);
-      else meMarker.setLngLat([state.me.lon, state.me.lat]);
+      if (!meMarker) { meMarker = new maplibregl.Marker({ element: meEl }).setLngLat([state.me.lon, state.me.lat]).addTo(map); meShown = [state.me.lon, state.me.lat]; }
+      // (after that the dot glides toward each new fix: see smoothMe)
       // while driving, GPS course is steadier than the compass
       if (p.coords.speed > 2 && p.coords.heading != null) setHeading(p.coords.heading);
       if (first) { first = false; map.flyTo({ center: [state.me.lon, state.me.lat], zoom: 11 }); renderRoads(); }
@@ -1247,7 +1259,8 @@
     if (!compassOn || !compassLock || !state.me || window.htBusFollowing?.() || map.isEasing() || document.hidden) return;
     const h = state.heading;
     if (h != null) lockBrg = lockBrg == null ? h : lockBrg + ((((h - lockBrg) % 360) + 540) % 360 - 180) * 0.25;
-    map.jumpTo({ center: [state.me.lon, state.me.lat], ...(lockBrg != null ? { bearing: lockBrg } : {}) });
+    // (centered on the smoothed dot, not the raw fix: no jitter)
+    map.jumpTo({ center: meShown || [state.me.lon, state.me.lat], ...(lockBrg != null ? { bearing: lockBrg } : {}) });
   }, 100);
 
   // ---------------- bigger text (the Aa button; remembered per device) ----------------
