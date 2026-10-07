@@ -1435,17 +1435,19 @@
   glare.className = 'sun-glare';
   wrap.appendChild(glare);
   let sun = null;
+  let sunTest = null; // htWx.sun(bearing, height): pretend the sun is there (and the sky clear), for trying it out
   function placeGlare() {
-    // (only with ?glare=1 for now, until it's been tried out; there's been a laptop crash to track down first)
-    const on = qs.has('glare') && fxOn && !REDUCED && sun && sun.alt > -1 && sun.alt < 12 && skyCond.kind === 'none' && skyCond.cloud < 2;
+    const clear = sunTest || (skyCond.kind === 'none' && skyCond.cloud < 2);
+    const on = fxOn && !REDUCED && sun && sun.alt > -1 && sun.alt < 12 && clear;
     glare.hidden = !on;
     if (!on) return;
     const a = (sun.bearing - map.getBearing()) * Math.PI / 180;
     const x = W / 2 + Math.sin(a) * W * 0.55, y = H / 2 - Math.cos(a) * H * 0.55;
     glare.style.transform = `translate(${(x - 300).toFixed(0)}px, ${(y - 300).toFixed(0)}px)`;
-    glare.style.opacity = (clamp(1 - Math.abs(sun.alt - 3) / 9, 0.25, 1) * (skyCond.cloud ? 0.6 : 1)).toFixed(2);
+    glare.style.opacity = (clamp(1 - Math.abs(sun.alt - 3) / 9, 0.25, 1) * (!sunTest && skyCond.cloud ? 0.6 : 1)).toFixed(2);
   }
-  const sunTick = () => { sun = sunPos(new Date(), HOME.lat, HOME.lon); placeGlare(); };
+  const sunTick = () => { sun = sunTest || sunPos(new Date(), HOME.lat, HOME.lon); placeGlare(); };
+  const setSunTest = (bearing, alt) => { sunTest = bearing == null ? null : { bearing, alt }; sunTick(); return sunTest ? `sun at ${bearing}°, ${alt}° up` : 'the real sun again'; };
   sunTick();
   setInterval(sunTick, 60 * 1000);
   map.on('rotate', placeGlare);
@@ -1462,6 +1464,8 @@
       updateZones({ ...lastWx, wx });
       return 'previewing; reload the page to go back to live weather';
     },
+    // htWx.sun(250, 3): the low sun glare as if the sun were there · htWx.sun() for the real one
+    sun(bearing, alt = 4) { return setSunTest(bearing, alt); },
     // htWx.frost(28): every town at that temperature · htWx.surge('Coastal Flood Warning')
     frost(temp = 28) {
       if (!lastWx) return 'weather not loaded yet';
