@@ -922,7 +922,7 @@
     const relay = (window.HT?.airRelay || '').replace(/\/aircraft$/, '');
     const get = (u) => fetch(u, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
     const [own, cand, dec] = await Promise.all([get(`ships/photos.json?t=${Date.now()}`), get(`data/ship-photo-candidates.json?t=${Date.now()}`),
-      relay ? fetch(`${relay}/ship-photos`).then((r) => (r.ok ? r.json() : {})).catch(() => ({})) : {}]);
+      relay ? fetch(`${relay}/ship-photos`, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})) : {}]);
     const out = {};
     for (const [mmsi, list] of Object.entries(own.photos || {})) out[mmsi] = [...list];
     const yes = new Set((dec.decisions || []).filter((d) => d.ok).map((d) => `${d.mmsi}|${d.file}`));
