@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-07T08:28:17.0135719+00:00",
+  "updated": "2026-10-07T08:49:30.1480901+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a22961",
-      "flight": "N23859",
-      "reg": "N23859",
-      "type": "BE19",
-      "cat": "A1",
-      "alt": 3000,
-      "gs": 73.1,
-      "track": 30.43,
-      "rate": null,
-      "lat": 47.04942,
-      "lon": -122.85898,
-      "squawk": "3535",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
