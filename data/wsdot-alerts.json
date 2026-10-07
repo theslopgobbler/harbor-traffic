@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T22:10:07.2536188+00:00",
+  "updated": "2026-10-07T22:27:53.7825552+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2814,27 +2814,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 718053,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 178.49 near Upper Hoh Rd beginning at 8:33 am on October 7, 2026 until about 4:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 178.49,
-      "lat": 47.825802325,
-      "lon": -124.263789015,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-10-07T15:33:00.0000000+00:00",
-      "end": "2026-10-07T23:00:00.0000000+00:00",
-      "updated": "2026-10-07T15:42:06.3900000+00:00"
     },
     {
       "id": 698912,
