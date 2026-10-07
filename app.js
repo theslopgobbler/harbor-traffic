@@ -248,6 +248,24 @@
     interactive: !TV
   });
   window.htMap = map; // handy from the browser console
+  // coordinates: a line with a COPY button for popups (buses, boats, landmarks), and press-and-hold (or right-click)
+  // anywhere on the map for that spot's
+  const fmtLL = (lat, lon) => `${(+lat).toFixed(5)}, ${(+lon).toFixed(5)}`;
+  window.htCoordLine = (lat, lon) => (lat == null || lon == null || isNaN(+lat) || isNaN(+lon) ? ''
+    : `<div class="coord"><span>${fmtLL(lat, lon)}</span><button type="button" class="copy-coord" data-c="${fmtLL(lat, lon)}">COPY</button></div>`);
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.copy-coord'); if (!b) return;
+    const done = (ok) => { b.textContent = ok ? 'COPIED' : 'SELECT TO COPY'; setTimeout(() => { b.textContent = 'COPY'; }, 1500); };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(b.dataset.c).then(() => done(true), () => done(false)); else done(false);
+  });
+  const coordPopup = new maplibregl.Popup({ offset: 6, maxWidth: '240px', className: 'spot-pop' });
+  const showSpot = (ll) => coordPopup.setLngLat(ll).setHTML(`<h3>THIS SPOT</h3>${window.htCoordLine(ll.lat, ll.lng)}`).addTo(map);
+  map.on('contextmenu', (e) => showSpot(e.lngLat));
+  let hold = null;
+  map.on('touchstart', (e) => { if (e.originalEvent.touches.length !== 1) return; const p = e.point, ll = e.lngLat; clearTimeout(hold?.t); hold = { p, t: setTimeout(() => showSpot(ll), 650) }; });
+  map.on('touchmove', (e) => { if (hold && Math.hypot(e.point.x - hold.p.x, e.point.y - hold.p.y) > 10) { clearTimeout(hold.t); hold = null; } });
+  map.on('touchend', () => { clearTimeout(hold?.t); hold = null; });
+  map.on('movestart', (e) => { if (e.originalEvent) { clearTimeout(hold?.t); hold = null; } });
   // keeping phones cool: in the 3D chase view the camera moves every frame, and MapLibre repositions every icon on
   // the map each time, even the ones the chase view hides (road alerts, cameras, weather, boats and their ghosts:
   // often 100+). Those skip that work while hidden, and catch up once it ends (the camera moving out does that).
