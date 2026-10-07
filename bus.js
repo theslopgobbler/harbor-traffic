@@ -1227,6 +1227,16 @@
       ${coordLine(b.lat, b.lon)}`);
     saveGhost(b.id, { id: b.id, route: b.route, lat: b.lat, lon: b.lon, heading: b.heading || 0, at });
   }
+  // ...but not a bus that dropped out at a transit center or the depot (or already not in service): that's a run
+  // ending and the driver switching off, not a bus gone missing (Oct 7: a crowd of ghosts at Aberdeen station)
+  const DEPOT = [-123.8556, 46.9725];
+  function signedOff(b) {
+    if (!b || b.lat == null) return false;
+    if (oos(b)) return true;
+    const p = [b.lon, b.lat];
+    if (mx(p, DEPOT) < 300) return true;
+    return (stopsGeo?.features || []).some((f) => /Transit Center/i.test(f.properties.name || '') && mx(p, f.geometry.coordinates) < 250);
+  }
   let ghostsRestored = false, lastRenderAt = 0;
   function restoreGhosts(seen, now) {
     if (ghostsRestored) return;
@@ -1305,8 +1315,8 @@
     const watching = lastRenderAt && now - lastRenderAt < 90000;
     lastRenderAt = now;
     for (const [id, mk] of markers) if (!seen.has(id)) {
-      if (!mk._lostAt && watching) ghostBus(mk, mk._bus?._at || now);
-      else if (!mk._lostAt || now - mk._lostAt > GHOST_MS) { mk.remove(); markers.delete(id); saveGhost(id, null); }
+      if (!mk._lostAt && watching && !signedOff(mk._bus)) ghostBus(mk, mk._bus?._at || now);
+      else if (!mk._lostAt || now - mk._lostAt > GHOST_MS || signedOff(mk._bus)) { mk.remove(); markers.delete(id); saveGhost(id, null); }
     }
     groupBuses();
     renderList();

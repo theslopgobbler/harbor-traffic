@@ -273,14 +273,12 @@ body.chase .map-wrap::after { content: ""; position: absolute; left: 0; right: 0
   background: linear-gradient(var(--bg) 0%, rgba(3,8,7,.6) 45%, transparent 100%); }
 /* fog in the chase view (bus.js sets body.chase-fog and how far down it comes): the road ahead vanishes into it */
 body.chase.chase-fog .map-wrap::after { height: var(--chase-fog, 50%);
-  background: linear-gradient(#55706d 0%, rgba(78,104,101,.92) 35%, rgba(60,84,81,.55) 70%, transparent 100%);
-  animation: chaseFog 9s ease-in-out infinite alternate; }
-@keyframes chaseFog { to { opacity: .82; } }
+  /* (holds still: a slow breathing fade over this much of the screen made laptops redraw it every frame) */
+  background: linear-gradient(#55706d 0%, rgba(78,104,101,.92) 35%, rgba(60,84,81,.55) 70%, transparent 100%); }
 /* low sun glare (wx.js places it at the edge the sun is on) */
 .sun-glare { position: absolute; left: 0; top: 0; width: 600px; height: 600px; z-index: 1; pointer-events: none; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,214,140,.38) 0%, rgba(255,170,70,.16) 30%, rgba(255,140,40,.05) 55%, transparent 70%); }
 .sun-glare[hidden] { display: none; }
-@media (prefers-reduced-motion: reduce) { body.chase.chase-fog .map-wrap::after { animation: none; } }
 .bus-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
 .bus-mk.sel .ic { filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px #00e5ff); }
 .stop-sec { margin-top: 7px; padding-bottom: 2px; font-size: 10px; color: var(--cyan); letter-spacing: .15em; border-bottom: 1px solid var(--line-2); }
@@ -461,6 +459,11 @@ details summary { cursor: pointer; }
 .menu-btn { position: absolute; top: 8px; left: 8px; z-index: 5; width: 30px; height: 30px; padding: 4px; display: grid; place-items: center;
   background: rgba(2,8,7,.75); border: 1px solid rgba(0,229,255,.45); color: var(--cyan); cursor: pointer; }
 .menu-btn svg { width: 18px; height: 18px; }
+/* above the 3D buses: in chase view each bus is stacked by its size on screen (z-index up to a few hundred), and
+   the map doesn't box them in, so the bus banner and the map's buttons need to sit higher than any of them */
+.bus-bar, .follow-bar, .map-tools, .nav-tools { z-index: 1000 !important; }
+.menu-btn { z-index: 1001; }
+.menu-panel { z-index: 1002; }
 .menu-btn.on { background: rgba(0,229,255,.15); box-shadow: var(--glow-c); }
 .menu-panel { position: absolute; top: 44px; left: 8px; z-index: 6; width: min(320px, calc(100% - 16px)); max-height: calc(100% - 60px); overflow-y: auto;
   background: #020a09; border: 1px solid var(--cyan); box-shadow: var(--glow-c); padding: 10px 12px 12px; font: 12px/1.45 var(--mono); color: var(--text); }
