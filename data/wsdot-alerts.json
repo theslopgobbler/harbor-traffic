@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T19:25:38.1244142+00:00",
+  "updated": "2026-10-07T19:42:52.2080986+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -595,6 +595,27 @@
           46.6189
         ]
       ]
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 718070,
@@ -2588,6 +2609,27 @@
       ]
     },
     {
+      "id": 718024,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions at milepost 45.8 near Curtis Hill Road will be alternating traffic with flaggers, use caution beginning at 6:45 am on October 7, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.8,
+      "lat": 46.627023671,
+      "lon": -123.078027394,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Lewis",
+      "start": "2026-10-07T13:45:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-07T13:46:39.4930000+00:00"
+    },
+    {
       "id": 717820,
       "kind": "other",
       "category": "Simpson Ave Bridge",
@@ -2608,27 +2650,6 @@
       "end": "2026-10-19T16:00:00.0000000+00:00",
       "updated": "2026-10-05T16:00:10.5430000+00:00",
       "upcoming": "MON OCT 19"
-    },
-    {
-      "id": 718024,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Construction on SR 6 both directions at milepost 45.8 near Curtis Hill Road will be alternating traffic with flaggers, use caution beginning at 6:45 am on October 7, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.8,
-      "lat": 46.627023671,
-      "lon": -123.078027394,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Lewis",
-      "start": "2026-10-07T13:45:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-07T13:46:39.4930000+00:00"
     },
     {
       "id": 698910,
@@ -2797,27 +2818,6 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 686738,
