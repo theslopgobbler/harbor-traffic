@@ -47,7 +47,10 @@
     "109080124": "2026-10-07T07:27:58.8805519+00:00",
     "366999936": "2026-10-07T07:47:51.1778172+00:00",
     "367648240": "2026-10-07T07:47:51.1778172+00:00",
-    "368010320": "2026-10-07T07:47:51.1778172+00:00"
+    "368010320": "2026-10-07T07:47:51.1778172+00:00",
+    "941605918": "2026-10-07T08:02:08.7020839+00:00",
+    "109080120": "2026-10-07T08:02:08.7020839+00:00",
+    "368486640": "2026-10-07T08:02:08.7020839+00:00"
   },
   "candidates": [
     {
@@ -319,7 +322,37 @@
       "date": "2023-10-22 16:30:12",
       "caption": "The General cargo ship Port Phillip at the Kwinana Bulk Terminal, Western Australia, seen from the Henderson lookout.",
       "found": "2026-10-07T07:27:58.8805519+00:00"
+    },
+    {
+      "mmsi": "368486640",
+      "ship": "OCEAN JOY",
+      "file": "File:Navire OCEAN JOY au port.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_OCEAN_JOY_au_port.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Navire_OCEAN_JOY_au_port.jpg/1280px-Navire_OCEAN_JOY_au_port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-04-06 06:28:22",
+      "caption": "Navire OCEAN JOY au port de Casablanca - Morocco - IMO: 9668300 Pavillon: Hong Kong Genre du navire: Bulk Carrier Année de Construction: 2013",
+      "found": "2026-10-07T08:02:08.7020839+00:00"
+    },
+    {
+      "mmsi": "368486640",
+      "ship": "OCEAN JOY",
+      "file": "File:Navire OCEAN JOY à quai.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_OCEAN_JOY_%C3%A0_quai.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Navire_OCEAN_JOY_%C3%A0_quai.jpg/1280px-Navire_OCEAN_JOY_%C3%A0_quai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-04-03 09:27:37",
+      "caption": "Navire OCEAN JOY à quai au port de Casablanca - Morocco - IMO: 9668300 Pavillon: Hong Kong Genre du navire: Bulk Carrier Année de Construction: 2013",
+      "found": "2026-10-07T08:02:08.7020839+00:00"
     }
   ],
-  "updated": "2026-10-07T07:47:51.1778172+00:00"
+  "updated": "2026-10-07T08:02:08.7020839+00:00"
 }
