@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T07:27:58.8805519+00:00",
+  "updated": "2026-10-07T07:47:51.1778172+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1862,7 +1862,7 @@
     },
     {
       "id": 705229,
-      "kind": "closure",
+      "kind": "other",
       "category": "Construction",
       "priority": "Medium",
       "headline": "Travelers will need to prepare for around-the-clock closures at the US 101 Hoh River Bridge. From 5 a.m. Thursday, Oct. 1 to noon Tuesday, Oct. 6, the US 101 Hoh River Bridge will close to all traffic for emergency repairs.",
@@ -1880,6 +1880,7 @@
       "start": "2026-09-02T21:26:00.0000000+00:00",
       "end": "2027-07-14T21:45:00.0000000+00:00",
       "updated": "2026-09-29T21:45:26.8800000+00:00",
+      "ended": "TUE OCT 6",
       "path": [
         [
           -124.24989,
