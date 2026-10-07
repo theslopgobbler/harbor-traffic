@@ -71,6 +71,17 @@
     return { rise: fromJ(Jnoon - (Jset - Jnoon)), set: fromJ(Jset) };
   }
   window.htSunTimes = sunTimes; // (the chase view turns bus headlights on after sunset)
+  // where the sun is right now: compass bearing and height above the horizon, in degrees (SunCalc's formulas)
+  function sunPos(date, lat, lon) {
+    const rad = Math.PI / 180, e = rad * 23.4397, d = date.valueOf() / 864e5 - 0.5 + 2440588 - 2451545;
+    const lw = rad * -lon, phi = rad * lat, M = rad * (357.5291 + 0.98560028 * d);
+    const L = M + rad * (1.9148 * Math.sin(M) + 0.02 * Math.sin(2 * M) + 0.0003 * Math.sin(3 * M)) + rad * 102.9372 + Math.PI;
+    const dec = Math.asin(Math.sin(e) * Math.sin(L)), ra = Math.atan2(Math.sin(L) * Math.cos(e), Math.cos(L));
+    const H = rad * (280.16 + 360.9856235 * d) - lw - ra;
+    const alt = Math.asin(Math.sin(phi) * Math.sin(dec) + Math.cos(phi) * Math.cos(dec) * Math.cos(H));
+    const az = Math.atan2(Math.sin(H), Math.cos(H) * Math.sin(phi) - Math.tan(dec) * Math.cos(phi));
+    return { bearing: (az / rad + 180 + 360) % 360, alt: alt / rad };
+  }
   const moonPhase = (d) => (((d - 947182440000) / 864e5) % 29.530588853 + 29.530588853) % 29.530588853 / 29.530588853; // 0 new, .5 full
 
   let skyCond = { kind: 'none', level: 0, wind: 0, cloud: 0 };
@@ -1338,6 +1349,29 @@
   });
   skySvg();
   setInterval(skySvg, 60 * 1000);
+
+  // low sun glare: with the sun low (under ~12°) and the sky mostly clear, a warm glow at the edge of the map the sun
+  // is on (it turns with the map, so in the 3D bus view it's ahead when the bus drives into it)
+  const glare = document.createElement('div');
+  glare.className = 'sun-glare';
+  wrap.appendChild(glare);
+  let sun = null;
+  function placeGlare() {
+    // (only with ?glare=1 for now, until it's been tried out; there's been a laptop crash to track down first)
+    const on = qs.has('glare') && fxOn && !REDUCED && sun && sun.alt > -1 && sun.alt < 12 && skyCond.kind === 'none' && skyCond.cloud < 2;
+    glare.hidden = !on;
+    if (!on) return;
+    const a = (sun.bearing - map.getBearing()) * Math.PI / 180;
+    const x = W / 2 + Math.sin(a) * W * 0.55, y = H / 2 - Math.cos(a) * H * 0.55;
+    glare.style.transform = `translate(${(x - 300).toFixed(0)}px, ${(y - 300).toFixed(0)}px)`;
+    glare.style.opacity = (clamp(1 - Math.abs(sun.alt - 3) / 9, 0.25, 1) * (skyCond.cloud ? 0.6 : 1)).toFixed(2);
+  }
+  const sunTick = () => { sun = sunPos(new Date(), HOME.lat, HOME.lon); placeGlare(); };
+  sunTick();
+  setInterval(sunTick, 60 * 1000);
+  map.on('rotate', placeGlare);
+  new ResizeObserver(placeGlare).observe(wrap);
+  $('#btnFx').addEventListener('click', placeGlare);
 
   // for testing from the console: htWx.preview('Heavy Rain', 35, 'SW') or htWx.preview('Thunderstorms')
   window.htWx = {
