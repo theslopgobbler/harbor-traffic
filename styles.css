@@ -355,7 +355,7 @@ canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 /* what the place is part of (town · region), in small type under its name */
 .region-name small { display: block; margin-top: 4px; padding-left: 14px; font: 10px/1 var(--mono); color: var(--dim); letter-spacing: .15em; }
 
-.map-tools { position: absolute; left: 14px; top: 40px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
+.map-tools { position: absolute; left: 14px; top: 48px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
 .tool { background: rgba(3,12,11,.85); border: 1px solid var(--line-2); color: var(--text); padding: 7px 10px; cursor: pointer; letter-spacing: .08em; text-align: left; }
 .tool.on { border-color: var(--cyan); color: var(--cyan); box-shadow: var(--glow-c); }
 
@@ -462,8 +462,9 @@ details summary { cursor: pointer; }
 /* above the 3D buses: in chase view each bus is stacked by its size on screen (z-index up to a few hundred), and
    the map doesn't box them in, so the bus banner and the map's buttons need to sit higher than any of them */
 .bus-bar, .follow-bar, .map-tools, .nav-tools { z-index: 1000 !important; }
-.menu-btn { z-index: 1001; }
-.menu-panel { z-index: 1002; }
+/* ...and the menu above those (the panel opens over the layer buttons) */
+.menu-btn { z-index: 1001 !important; }
+.menu-panel { z-index: 1002 !important; }
 .menu-btn.on { background: rgba(0,229,255,.15); box-shadow: var(--glow-c); }
 .menu-panel { position: absolute; top: 44px; left: 8px; z-index: 6; width: min(320px, calc(100% - 16px)); max-height: calc(100% - 60px); overflow-y: auto;
   background: #020a09; border: 1px solid var(--cyan); box-shadow: var(--glow-c); padding: 10px 12px 12px; font: 12px/1.45 var(--mono); color: var(--text); }
@@ -482,7 +483,6 @@ details summary { cursor: pointer; }
 .menu-list { margin: 0; padding-left: 16px; } .menu-list li { margin-bottom: 4px; }
 .menu-news { display: grid; grid-template-columns: 74px 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line-2, #12403a); }
 .menu-news b { color: var(--cyan); font-weight: 400; letter-spacing: .08em; }
-body.chase .menu-btn, body.chase .menu-panel { display: none; }
 /* "layer buttons on the map: hidden" (menu): the layers are still in the menu */
 body.hide-tools .map-tools { display: none !important; }
 body.big-text .menu-panel, body.big-text .menu-row { font-size: 15px; }
