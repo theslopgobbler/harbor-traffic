@@ -1190,25 +1190,31 @@
     el.title = b._lost ? `Bus ${b.id} · not transmitting` : oos(b) ? `Bus ${b.id} · not in service` : `Route ${rt} · bus ${b.id}`;
   }
 
+  const coordLine = (lat, lon) => window.htCoordLine?.(lat, lon) || '';
   // ---- ghosts: buses that stopped transmitting ----
   const GHOST_MS = 24 * 3600 * 1000;
   const loadGhosts = () => { try { return JSON.parse(localStorage.getItem('ht.busGhosts') || '{}'); } catch { return {}; } };
   function saveGhost(id, g) {
     try { const all = loadGhosts(); if (g) all[id] = g; else delete all[id]; localStorage.setItem('ht.busGhosts', JSON.stringify(all)); } catch { /* fine without */ }
   }
+  // at: when it last reported (its last time in the feed). It's placed at that report's position, not where it was
+  // drawn: the map draws buses gliding ahead along their routes, and a page that slept would have one drawn far from
+  // where it really was (Oct 6: bus 801 drawn by Walmart at 7:45, really last heard by the depot at 7:57)
   function ghostBus(mk, at) {
     const b = mk._bus; if (!b) return;
     mk._lostAt = at; b._lost = true; b.mph = 0;
-    const ll = mk.getLngLat(), r = routes[b.route] || {};
+    if (b.lat && b.lon) mk.setLngLat([b.lon, b.lat]);
+    const r = routes[b.route] || {};
     mk.getElement().classList.add('lost');
     drawBus(mk);
     const when = new Date(at).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase();
-    mk.getPopup().setHTML(`<h3>BUS ${esc(b.id)} · NOT TRANSMITTING</h3>
-      <p>LAST HEARD ${esc(when)}${r.name ? ' ON ROUTE ' + esc(short(r.name)) : ''}</p>
-      <div class="m">ITS TRACKER STOPPED REPORTING HERE: SWITCHED OFF (PARKED FOR THE NIGHT?) OR NO SIGNAL. SHOWN FOR UP TO A DAY, OR UNTIL IT REPORTS AGAIN.</div>`);
-    saveGhost(b.id, { id: b.id, route: b.route, lat: ll.lat, lon: ll.lng, heading: b.heading || 0, at });
+    mk.getPopup().setHTML(`<h3>BUS ${esc(b.id)} · NO LONGER IN THE FEED</h3>
+      <p>LAST REPORTED ${esc(when)}${r.name ? ' ON ROUTE ' + esc(short(r.name)) : ''}</p>
+      <div class="m">THIS IS WHERE IT LAST REPORTED BEFORE DROPPING OUT OF GHT'S TRACKER: TRACKER SWITCHED OFF, NO SIGNAL, OR THE TRACKER STOPPED LISTING IT. SHOWN FOR UP TO A DAY, OR UNTIL IT REPORTS AGAIN.</div>
+      ${coordLine(b.lat, b.lon)}`);
+    saveGhost(b.id, { id: b.id, route: b.route, lat: b.lat, lon: b.lon, heading: b.heading || 0, at });
   }
-  let ghostsRestored = false;
+  let ghostsRestored = false, lastRenderAt = 0;
   function restoreGhosts(seen, now) {
     if (ghostsRestored) return;
     ghostsRestored = true;
@@ -1271,19 +1277,23 @@
       const el = mk.getElement();
       mk.getPopup().setHTML(oos(b) ? `<h3>BUS ${esc(b.id)} · NOT IN SERVICE</h3>
         <p>${b.mph < 2 ? 'PARKED' : Math.round(b.mph) + ' MPH'} · LAST ON ROUTE ${esc(short(r.name))}</p>
-        <div class="m">GHT'S TRACKER ISN'T LISTING THIS BUS ON A ROUTE RIGHT NOW (PARKED, OR DRIVING TO OR FROM A ROUTE).</div>`
+        <div class="m">GHT'S TRACKER ISN'T LISTING THIS BUS ON A ROUTE RIGHT NOW (PARKED, OR DRIVING TO OR FROM A ROUTE).</div>${coordLine(b.lat, b.lon)}`
         : `<h3>ROUTE ${esc(short(r.name))} · ${esc(long(r.name).toUpperCase())}</h3>
         <p>BUS ${esc(b.id)} · ${b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH'}</p>
         ${b.nextStop ? `<div class="m">NEXT: ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}</div>` : ''}
-        ${TV ? '' : `<button type="button" class="go" data-follow="${esc(b.id)}">FOLLOW THIS BUS</button>`}`);
+        ${TV ? '' : `<button type="button" class="go" data-follow="${esc(b.id)}">FOLLOW THIS BUS</button>`}${coordLine(b.lat, b.lon)}`);
     }
     // a bus that dropped out of the tracker's feed (tracker switched off, or no signal): left faded where it was last
     // heard, saying so, for up to a day, or until it reports again. Remembered on this device, so a reload keeps it
     const now = Date.now();
     restoreGhosts(seen, now);
+    // (a page that was asleep for a while, a phone in a pocket, doesn't know where a bus went while it wasn't
+    // looking: those are just removed, no ghost)
+    const watching = lastRenderAt && now - lastRenderAt < 90000;
+    lastRenderAt = now;
     for (const [id, mk] of markers) if (!seen.has(id)) {
-      if (!mk._lostAt) ghostBus(mk, now);
-      else if (now - mk._lostAt > GHOST_MS) { mk.remove(); markers.delete(id); saveGhost(id, null); }
+      if (!mk._lostAt && watching) ghostBus(mk, mk._bus?._at || now);
+      else if (!mk._lostAt || now - mk._lostAt > GHOST_MS) { mk.remove(); markers.delete(id); saveGhost(id, null); }
     }
     groupBuses();
     renderList();

@@ -23,7 +23,7 @@
       <h3 class="lm-tap">◆ ${esc(String(l.name).toUpperCase())}</h3>
       ${l.caption ? `<p>${esc(l.caption)}</p>` : ''}${l.fact ? `<div class="m">${esc(l.fact)}</div>` : ''}
       ${l.night && dark() ? `<div class="m lm-night">☾ ${esc(l.night)}</div>` : ''}
-      ${l.secret && taps >= 3 ? `<div class="m lm-secret">✦ ${esc(l.secret)}</div>` : ''}`;
+      ${l.secret && taps >= 3 ? `<div class="m lm-secret">✦ ${esc(l.secret)}</div>` : ''}${window.htCoordLine?.(l.lat, l.lon) || ''}`;
   }
   function show() {
     const z = map.getZoom(), chase = document.body.classList.contains('chase');
