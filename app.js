@@ -248,6 +248,20 @@
     interactive: !TV
   });
   window.htMap = map; // handy from the browser console
+  // keeping phones cool: in the 3D chase view the camera moves every frame, and MapLibre repositions every icon on
+  // the map each time, even the ones the chase view hides (road alerts, cameras, weather, boats and their ghosts:
+  // often 100+). Those skip that work while hidden, and catch up once it ends (the camera moving out does that).
+  // (each marker has its own update function, set up when it's made, so it's wrapped as the marker joins the map)
+  const KEEP = '.bus-mk, .sig-mk, .stop-sign, .me';
+  const addTo = maplibregl.Marker.prototype.addTo;
+  maplibregl.Marker.prototype.addTo = function (m) {
+    if (!this._htWrapped && typeof this._update === 'function') {
+      const update = this._update;
+      this._update = (e) => (document.body.classList.contains('chase') && this._element && !this._element.matches(KEEP) ? undefined : update(e));
+      this._htWrapped = true;
+    }
+    return addTo.call(this, m);
+  };
   // the park hatch: an 8 px tile with one thin green diagonal, made here rather than shipped as an image file
   map.on('styleimagemissing', (e) => {
     if (e.id !== 'park-hatch' || map.hasImage('park-hatch')) return;
@@ -1121,6 +1135,10 @@
     syncHandle();
   }));
   $('#tab-roads').classList.add('on');
+  // whenever the sheet shrinks or tucks away (by the handle, or by following a bus), back to its top, so the handle
+  // and the start of the list are what shows
+  new MutationObserver(() => { if (panel.classList.contains('min') || panel.classList.contains('gone')) panel.scrollTop = 0; })
+    .observe(panel, { attributes: true, attributeFilter: ['class'] });
   handle.innerHTML = '<svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 11 L20 3 L36 11" fill="none" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/></svg>';
   // the handle cycles: half → full → tucked away (only the handle showing) → half (small counts as half).
   // Swiping on the handle works too (down to lower, up to raise).
@@ -1183,8 +1201,9 @@
   function smoothMe() {
     if (!meMarker || !state.me || !meShown) return;
     const t = [state.me.lon, state.me.lat];
-    const far = Math.hypot((t[0] - meShown[0]) * 76000, (t[1] - meShown[1]) * 111000) > 300;
-    meShown = far ? t : [meShown[0] + (t[0] - meShown[0]) * 0.18, meShown[1] + (t[1] - meShown[1]) * 0.18];
+    const gap = Math.hypot((t[0] - meShown[0]) * 76000, (t[1] - meShown[1]) * 111000);
+    if (gap < 0.2) return; // caught up: nothing to move (no work while you stand still)
+    meShown = gap > 300 ? t : [meShown[0] + (t[0] - meShown[0]) * 0.18, meShown[1] + (t[1] - meShown[1]) * 0.18];
     meMarker.setLngLat(meShown);
   }
   setInterval(smoothMe, 100);
@@ -1259,8 +1278,11 @@
     if (!compassOn || !compassLock || !state.me || window.htBusFollowing?.() || map.isEasing() || document.hidden) return;
     const h = state.heading;
     if (h != null) lockBrg = lockBrg == null ? h : lockBrg + ((((h - lockBrg) % 360) + 540) % 360 - 180) * 0.25;
-    // (centered on the smoothed dot, not the raw fix: no jitter)
-    map.jumpTo({ center: meShown || [state.me.lon, state.me.lat], ...(lockBrg != null ? { bearing: lockBrg } : {}) });
+    // (centered on the smoothed dot, not the raw fix: no jitter). Nothing changed (standing still, facing the same
+    // way): leave the map alone
+    const c = map.getCenter(), to = meShown || [state.me.lon, state.me.lat];
+    if (Math.abs(c.lng - to[0]) < 2e-7 && Math.abs(c.lat - to[1]) < 2e-7 && (lockBrg == null || Math.abs(((map.getBearing() - lockBrg + 540) % 360) - 180) < 0.3)) return;
+    map.jumpTo({ center: to, ...(lockBrg != null ? { bearing: lockBrg } : {}) });
   }, 100);
 
   // ---------------- bigger text (the Aa button; remembered per device) ----------------
