@@ -205,7 +205,9 @@
     </section>
     <p class="note">Updates every 30 seconds. "Watching now" is open pages that checked in during the last 3 minutes (pages in a background tab don't count).
       A visit is a page opened in a new tab; the page's own reloads after an update don't count again. Only random tab IDs are kept, nothing about who.
-      <br><button type="button" id="forget" style="margin-top:10px">FORGET KEY ON THIS DEVICE</button></p>
+      <br><button type="button" id="forget" style="margin-top:10px">FORGET KEY ON THIS DEVICE</button>
+      <button type="button" id="noCount" style="margin-top:10px"></button></p>
+      <p class="note" id="noCountNote">Mark each of your own devices (phone, computer) once, so your own visits don't count. Visits already counted stay.</p>
   </section>
 </main>
 <script src="config.js"></script>
@@ -244,6 +246,11 @@
     loadSite();
   }
   let busLoadedAt = 0, shipLoadedAt = 0;
+  // ---- your own devices: the map skips the viewer count on a device marked here (saved in this browser)
+  const noCountOn = () => { try { return localStorage.getItem('ht.noCount') === '1'; } catch { return false; } };
+  const syncNoCount = () => { $('#noCount').textContent = noCountOn() ? '✓ THIS DEVICE ISN\'T COUNTED (TAP TO COUNT IT AGAIN)' : 'DON\'T COUNT THIS DEVICE IN THE VIEWERS'; };
+  $('#noCount').addEventListener('click', () => { try { if (noCountOn()) localStorage.removeItem('ht.noCount'); else localStorage.setItem('ht.noCount', '1'); } catch {} syncNoCount(); });
+  syncNoCount();
   // ---- trains you saw, each with a snapshot of the big ships around the harbor right then (from the map's ship data)
   const TERMINALS = [-123.875, 46.955, -123.81, 46.972], HARBOR = [-124.13, 46.84, -123.76, 47.02];
   const inB = (s, [w, so, e, n]) => s.lon > w && s.lon < e && s.lat > so && s.lat < n;
