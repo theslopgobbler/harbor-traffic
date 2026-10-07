@@ -75,6 +75,15 @@
   <div class="msg" id="msg"></div>
 
   <section id="out" hidden>
+    <section id="trainSec" style="margin-bottom:24px">
+      <form id="trainForm" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button type="submit" id="trainBtn" style="font-size:15px;padding:10px 16px">🚂 TRAIN NOW</button>
+        <input id="trainNote" placeholder="note (optional): where, which way, how long" maxlength="300" style="flex:1;min-width:200px">
+      </form>
+      <p class="note" id="trainMsg">Saves the time and which ships were in port then, to see what trains go with.</p>
+      <details><summary id="trainSum">TRAINS LOGGED</summary>
+        <table><thead><tr><th>WHEN</th><th>NOTE</th><th>SHIPS IN PORT THEN</th><th></th></tr></thead><tbody id="trainList"></tbody></table></details>
+    </section>
     <div class="grid">
       <div class="box now"><div class="l">WATCHING NOW</div><div class="v" id="now">–</div><div class="s" id="kinds"></div></div>
       <div class="box"><div class="l">VISITS TODAY</div><div class="v" id="opens">–</div><div class="s" id="todayKinds"></div></div>
@@ -224,10 +233,59 @@
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
     // bus numbers only change once a minute and are added up from daily totals; every 5 minutes is plenty
     if (Date.now() - busLoadedAt > 5 * 60 * 1000) loadBuses();
-    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) { loadShipReview(); loadGone(); }
+    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) { loadShipReview(); loadGone(); loadTrains(); }
     loadSite();
   }
   let busLoadedAt = 0, shipLoadedAt = 0;
+  // ---- trains you saw, each with a snapshot of the big ships around the harbor right then (from the map's ship data)
+  const TERMINALS = [-123.875, 46.955, -123.81, 46.972], HARBOR = [-124.13, 46.84, -123.76, 47.02];
+  const inB = (s, [w, so, e, n]) => s.lon > w && s.lon < e && s.lat > so && s.lat < n;
+  async function shipSnapshot() {
+    try {
+      const j = await (await fetch(`data/ships.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      const out = [];
+      for (const s of j.ships || []) {
+        const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
+        if (ago == null || ago > 90) continue; // (not heard lately: where it is now is unknown)
+        const big = (s.lengthM || 0) >= 100 || (s.type >= 70 && s.type <= 89);
+        const atTerm = inB(s, TERMINALS), stoppedNow = (s.sog ?? 0) < 0.5;
+        const nearMouth = Math.hypot((s.lon + 124.11) * 41, (s.lat - 46.915) * 60) <= 12; // nm from the entrance, roughly
+        if (!(big || (atTerm && s.type == null && !s.lengthM))) continue;
+        if (!(inB(s, HARBOR) || nearMouth)) continue;
+        const where = atTerm ? 'at the terminals' : inB(s, HARBOR) ? (s.lon < -124.0 ? 'by Westport' : 'in the harbor') : 'outside the entrance';
+        out.push({ name: s.name || '?', mmsi: s.mmsi, len: s.lengthM || null, type: s.type ?? null, where, stopped: stoppedNow });
+      }
+      return out;
+    } catch { return []; }
+  }
+  const shipText = (list) => list.map((s) => `${s.name}${s.len ? ` (${s.len} m)` : ''} ${s.stopped ? 'stopped' : 'moving'} ${s.where}`).join(' · ') || 'no big ships';
+  async function loadTrains(post) {
+    try {
+      const r = await fetch(`${relay}/trains`, post ? { method: 'POST', headers: { 'X-Stats-Key': key, 'Content-Type': 'application/json' }, body: JSON.stringify(post) }
+        : { headers: { 'X-Stats-Key': key }, cache: 'no-store' });
+      if (!r.ok) { $('#trainMsg').textContent = r.status === 404 ? 'DEPLOY THE UPDATED RELAY TO LOG TRAINS' : (await r.text()).toUpperCase(); return false; }
+      const j = await r.json();
+      const when = (t) => new Date(t).toLocaleString([], { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).toUpperCase();
+      $('#trainSum').textContent = `TRAINS LOGGED (${j.trains.length})`;
+      $('#trainList').innerHTML = j.trains.map((t) => `<tr><td>${when(t.t)}</td><td>${esc(t.note || '')}</td><td>${esc(shipText(t.ships)).toUpperCase()}</td>
+        <td><button type="button" data-train-del="${t.t}" title="Remove this one">✕</button></td></tr>`).join('') || '<tr><td colspan="4">NONE YET</td></tr>';
+      return true;
+    } catch { $('#trainMsg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; return false; }
+  }
+  $('#trainForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); if (!key) return;
+    const btn = $('#trainBtn'); btn.disabled = true;
+    const ships = await shipSnapshot();
+    if (await loadTrains({ t: Date.now(), note: $('#trainNote').value.trim(), ships })) {
+      $('#trainMsg').textContent = `SAVED ${new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase()} · ${shipText(ships).toUpperCase()}`;
+      $('#trainNote').value = '';
+    }
+    btn.disabled = false;
+  });
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-train-del]'); if (!b || !key) return;
+    if (confirm('Remove this train from the log?')) loadTrains({ t: +b.dataset.trainDel, delete: true });
+  });
   // ---- gone quiet: buses (the relay's log) and boats (the collector's list of every boat heard) silent 3 days+
   async function loadGone() {
     const when = (t) => (t ? new Date(t).toLocaleString([], { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).toUpperCase() : '–');

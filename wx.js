@@ -798,7 +798,7 @@
 
   // ---- where ships are and what they're doing, relative to the harbor ----
   const GH_MOUTH = { lat: 46.915, lon: -124.11 }, WB_MOUTH = { lat: 46.69, lon: -124.07 };
-  const MAX_NM = 15; // farther out than this isn't useful here
+  const MAX_NM = 40; // out to about 40 nm (what the collector listens to)
   const nmBetween = (a, b) => {
     const r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
     const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
@@ -1040,6 +1040,12 @@
       ((x.lengthM || 0) >= 100 || (x.type >= 70 && x.type <= 89)));
     // at berth = stopped at the Aberdeen/Hoquiam terminals. Stopped anywhere else (just inside the entrance by
     // Westport, or outside it) counts as waiting for the tide
+    // (a vessel that hasn't broadcast its size or type yet, stopped at the deep-water terminals along the Aberdeen
+    // side of the Chehalis, counts too: on Oct 6 GOLD ETERNITY sat there unidentified during a train. Tug and fishing
+    // docks up the Hoquiam and Wishkah rivers are outside that stretch)
+    const TERMINALS = [-123.875, 46.955, -123.81, 46.972];
+    const unknownAtTerminal = shipList.filter((x) => x.type == null && !x.lengthM && stopped(x) && inBox(x, TERMINALS) && !big.includes(x));
+    big.push(...unknownAtTerminal);
     const atBerth = big.filter((x) => stopped(x) && inBox(x, PORT_BOX)), moving = big.filter((x) => !stopped(x));
     const cars = atBerth.filter(isCarCarrier);
     const waiting = shipList.filter((x) => x._sit && x._sit.bay === 'GRAYS HARBOR' && (x.sog ?? 0) < 3 && !atBerth.includes(x) &&
@@ -1047,7 +1053,7 @@
     // likely: a car carrier at berth. Possible: any other big ship at berth or moving in the harbor, or a big one
     // waiting outside for the tide
     const level = cars.length ? 2 : atBerth.length || moving.length || waiting.length ? 1 : 0;
-    const names = (list) => list.map((x) => (x.name || 'a large vessel').toUpperCase()).join(', ');
+    const names = (list) => list.map((x) => (x.name || 'a large vessel').toUpperCase() + (unknownAtTerminal.includes(x) ? ' (size not broadcast)' : '')).join(', ');
     const hm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     const tide = nextHigh && nextHigh.t - Date.now() < 14 * 3600e3 ? `, high tide ${hm(nextHigh.t)}` : '';
     const who = level === 2 ? names(cars) : atBerth.length ? names(atBerth) : moving.length ? names(moving) : names(waiting);
