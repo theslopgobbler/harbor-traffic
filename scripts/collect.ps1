@@ -62,6 +62,20 @@ function Upcoming($headline) {
     if ($day -le $pt) { return $null }
     return $day.ToString('ddd MMM d', [Globalization.CultureInfo]::InvariantCulture).ToUpper()
 }
+# ...and the other end: a closure "from Oct. 1 to noon Oct. 6" that WSDOT left up afterwards (its end time is often
+# the whole project's). Two or more dates in its words, the last before today (Pacific) -> "TUE OCT 6" (it's over)
+function Ended($headline) {
+    $ms = [regex]::Matches("$headline", '(?i)\b(jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?\b(?:,?\s*(\d{4}))?')
+    if ($ms.Count -lt 2) { return $null }
+    $m = $ms[$ms.Count - 1]
+    $pt = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::UtcNow, $(if ($IsLinux) { 'America/Los_Angeles' } else { 'Pacific Standard Time' })).Date
+    $mon = [array]::IndexOf(@('jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'), $m.Groups[1].Value.Substring(0, 3).ToLower()) + 1
+    $year = if ($m.Groups[3].Success) { [int]$m.Groups[3].Value } else { $pt.Year }
+    try { $day = [DateTime]::new($year, $mon, [int]$m.Groups[2].Value) } catch { return $null }
+    if (-not $m.Groups[3].Success -and ($day - $pt).TotalDays -gt 180) { $day = $day.AddYears(-1) }
+    if ($day -ge $pt) { return $null }
+    return $day.ToString('ddd MMM d', [Globalization.CultureInfo]::InvariantCulture).ToUpper()
+}
 function Plain($html) {
     $t = "$html" -replace '<[^>]+>', '' -replace '&nbsp;', ' ' -replace '&amp;', '&' -replace '\s*\r?\n\s*', ' '
     return $t.Trim()
@@ -106,6 +120,7 @@ foreach ($a in $raw) {
     }
     $last = $alerts[-1]
     if ($last.kind -eq 'closure') { $up = Upcoming $last.headline; if ($up) { $last.kind = 'other'; $last.upcoming = $up } }
+    if ($last.kind -eq 'closure') { $over = Ended $last.headline; if ($over) { $last.kind = 'other'; $last.ended = $over } }
 }
 
 $now = [DateTimeOffset]::UtcNow

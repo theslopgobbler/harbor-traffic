@@ -267,6 +267,12 @@ body.following .region-name { display: none; }
 .sig-mk[data-phase="go"] { filter: drop-shadow(0 0 4px rgba(57,255,136,.8)); }
 body.chase .map-wrap::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 32%; z-index: 1; pointer-events: none;
   background: linear-gradient(var(--bg) 0%, rgba(3,8,7,.6) 45%, transparent 100%); }
+/* fog in the chase view (bus.js sets body.chase-fog and how far down it comes): the road ahead vanishes into it */
+body.chase.chase-fog .map-wrap::after { height: var(--chase-fog, 50%);
+  background: linear-gradient(#55706d 0%, rgba(78,104,101,.92) 35%, rgba(60,84,81,.55) 70%, transparent 100%);
+  animation: chaseFog 9s ease-in-out infinite alternate; }
+@keyframes chaseFog { to { opacity: .82; } }
+@media (prefers-reduced-motion: reduce) { body.chase.chase-fog .map-wrap::after { animation: none; } }
 .bus-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
 .bus-mk.sel .ic { filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px #00e5ff); }
 .stop-sec { margin-top: 7px; padding-bottom: 2px; font-size: 10px; color: var(--cyan); letter-spacing: .15em; border-bottom: 1px solid var(--line-2); }

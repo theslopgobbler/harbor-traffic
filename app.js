@@ -597,11 +597,24 @@
   function upcomingClosure(r) {
     // (the collector does the same; this also catches it between its runs, and the day it starts)
     if (r.upcoming && r.kind !== 'closure') return { ...r, headline: `UPCOMING CLOSURE ${r.upcoming}: ${r.headline}` };
+    if (r.ended && r.kind !== 'closure') return { ...r, headline: `CLOSURE ENDED ${r.ended}: ${r.headline}` };
     if (r.kind !== 'closure') return r;
     const m = String(r.headline || '').match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?\b(?:,?\s*(\d{4}))?/i);
     if (!m) return r;
     const today = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
     today.setHours(0, 0, 0, 0);
+    // left up after it's over ("from Oct. 1 to noon Oct. 6", and WSDOT's own end time is the whole project's): the
+    // last of two or more dates is before today -> no longer closed
+    const all = [...String(r.headline).matchAll(/\b(jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?\b(?:,?\s*(\d{4}))?/gi)];
+    if (all.length >= 2) {
+      const z = all[all.length - 1], zm = MONTHS.indexOf(z[1].slice(0, 3).toLowerCase());
+      let end = new Date(z[3] ? +z[3] : today.getFullYear(), zm, +z[2]);
+      if (!z[3] && end - today > 180 * 864e5) end = new Date(end.getFullYear() - 1, zm, +z[2]);
+      if (end < today) {
+        const label = end.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase().replace(',', '');
+        return { ...r, kind: 'other', ended: label, headline: `CLOSURE ENDED ${label}: ${r.headline}` };
+      }
+    }
     const mon = MONTHS.indexOf(m[1].slice(0, 3).toLowerCase());
     let year = m[3] ? +m[3] : today.getFullYear();
     let day = new Date(year, mon, +m[2]);
