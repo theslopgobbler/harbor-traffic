@@ -7,6 +7,8 @@
   if (!relay) return;
   // testing on this computer doesn't count (add ?count to try it)
   if (/^(localhost|127\.)/.test(location.hostname) && !qs.has('count')) return;
+  // a device marked "don't count me" on the stats page (the owner's own phone and computer)
+  try { if (localStorage.getItem('ht.noCount') === '1') return; } catch {}
   // one ID per tab: kept across the page's own reloads (after an update) so those don't count as new visits
   let id = null, first = false;
   try { id = sessionStorage.getItem('ht.vid'); } catch {}

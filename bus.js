@@ -392,7 +392,7 @@
     const rs = allRoutes(), list = routeBuses(picked);
     if (act === 'close') { stopFollow(); pickRoute(null); }
     else if (act === 'unfollow') stopFollow();
-    else if (act === 'chase') setChase(!chase);
+    else if (act === 'chase') { setChase(!chase); store.set('ht.follow3d', chase); } // (remembered: following starts that way next time)
     else if (act === 'turn') { followUp = !followUp; store.set('ht.followUp', followUp); renderBar(); keepFollowing(true); }
     else if (act === 'prevRoute' || act === 'nextRoute') {
       const i = rs.indexOf(picked), n = rs.length;
@@ -419,7 +419,9 @@
     document.querySelectorAll('.maplibregl-popup').forEach((p) => p.remove());
     pickRoute(busRoute(b), { force: true });
     renderBar();
-    keepFollowing(true);
+    // following starts in the 3D view unless you've picked 2D before (remembered on this device)
+    if (!chase && !TV && store.get('ht.follow3d') !== false) setChase(true);
+    else keepFollowing(true);
   }
   function stopFollow() {
     if (!follow) return;
