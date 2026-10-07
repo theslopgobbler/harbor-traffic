@@ -1,4 +1,5 @@
-// The ☰ menu, top left of the map: Themes (more coming), Settings (the same switches as the buttons on the page),
+// The ☰ menu, top left of the map: Themes (more coming), Settings (how the page behaves: clock and text size; map
+// layers stay on their buttons),
 // and About (what's new, Discord, copyright, disclaimers, data credits, privacy).
 (function () {
   const wrap = document.querySelector('.map-wrap');
@@ -38,8 +39,7 @@
       const on = (b) => (b ? 'ON' : 'OFF');
       return `${back}<div class="menu-title">SETTINGS</div>
       <button type="button" class="menu-row" data-set="clock">CLOCK<span>${window.htClock24 ? '24-HOUR' : '12-HOUR'}</span></button>
-      <button type="button" class="menu-row" data-set="big">BIGGER TEXT<span>${on(store.get('ht.bigText'))}</span></button>
-      <button type="button" class="menu-row" data-set="fx">WEATHER EFFECTS<span>${on($('#btnFx')?.classList.contains('on'))}</span></button>`;
+      <button type="button" class="menu-row" data-set="big">BIGGER TEXT<span>${on(store.get('ht.bigText'))}</span></button>`;
     },
     about: () => `${back}<div class="menu-title">ABOUT</div>
       <p class="menu-p">Roads, bridges, buses, boats and weather around Grays Harbor, live, on one map.</p>
@@ -82,7 +82,7 @@
     e.stopPropagation();
     const go = e.target.closest('[data-go]'); if (go) return show(go.dataset.go);
     const set = e.target.closest('[data-set]');
-    if (set) { ({ clock: '#clockFmt', big: '#btnBig', fx: '#btnFx' })[set.dataset.set] && $(({ clock: '#clockFmt', big: '#btnBig', fx: '#btnFx' })[set.dataset.set])?.click(); return setTimeout(() => show('settings'), 50); }
+    if (set) { $(({ clock: '#clockFmt', big: '#btnBig' })[set.dataset.set] || '#none')?.click(); return setTimeout(() => show('settings'), 50); }
     if (e.target.closest('[data-discord]') && confirm('Open the Harbor Events Discord in a new tab?')) window.open(DISCORD, '_blank', 'noopener');
   });
   // (only a real tap outside closes it: a setting works by pressing the page's own button for you, which isn't one)
