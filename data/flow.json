@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T05:35:39.5145548+00:00",
+  "updated": "2026-10-07T05:53:15.6113363+00:00",
   "source": "WSDOT Traffic Flow",
   "fields": "lat,lon,level,milepost,direction,road",
   "stations": [
