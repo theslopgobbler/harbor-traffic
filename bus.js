@@ -483,7 +483,7 @@
     }
     // every bus changes look: the chased one to its sprite, the others to theirs (or back to map icons)
     for (const m of markers.values()) if (m._bus) { m._c3 = null; drawBus(m); }
-    if (v) headlights();
+    if (v) headlights(); else setChaseFog(null);
     renderBar();
     updateSignals();
   }
@@ -1163,6 +1163,17 @@
     const town = (window.htTownWx?.() || []).sort((a, b) => Math.hypot(a.lon - at.lng, a.lat - at.lat) - Math.hypot(b.lon - at.lng, b.lat - at.lat))[0];
     const murky = /rain|shower|drizzle|fog|mist|haze|smoke|snow|sleet|thunder/i.test(town?.f || '');
     document.body.classList.toggle('headlights', dark || murky);
+    // fog in the 3D view: the road ahead fades into it, closer the worse it is (forecast fog near the bus, or the
+    // nearest station seeing under 2 miles)
+    const vis = window.htVisMi;
+    const foggy = /fog|mist|haze|smoke/i.test(town?.f || '') || (vis != null && vis < 2);
+    setChaseFog(chase && foggy ? (vis != null && vis < 0.5 ? 78 : vis != null && vis < 1 ? 64 : 50) : null);
+  }
+  // (the map's own fog only covers 3D terrain, which this flat map doesn't have, so the fog is the draw-distance
+  // fade over the top of the view, grown down toward the bus: the number is how much of the view it covers, in %)
+  function setChaseFog(depth) {
+    document.body.classList.toggle('chase-fog', depth != null);
+    if (depth != null) document.body.style.setProperty('--chase-fog', `${depth}%`);
   }
 
   // draw a bus marker: the top-down icon pointed along its street, the chase sprite for the bus being chased, or

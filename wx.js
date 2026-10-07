@@ -683,7 +683,9 @@
         if (p?.windSpeed?.value != null && age < 3 * 3600 * 1000) {
           const deg = p.windDirection?.value;
           d = { kt: Math.round(p.windSpeed.value / 1.852), gust: p.windGust?.value != null ? Math.round(p.windGust.value / 1.852) : 0,
-            deg: deg ?? 0, dr: deg != null ? compass(deg) : '', t: hhmm(new Date(p.timestamp)) };
+            deg: deg ?? 0, dr: deg != null ? compass(deg) : '', t: hhmm(new Date(p.timestamp)),
+            // how far you can see, in miles (airport stations report it; fog brings it down)
+            vis: p.visibility?.value != null ? p.visibility.value / 1609.34 : null };
         }
       } else {
         const s = st.s, age = s.time ? Date.now() - new Date(s.time) : Infinity;
@@ -700,11 +702,16 @@
     const { kt, gust, deg, dr } = d;
     $('#windDial').innerHTML = dialSvg(kt < 1 ? null : deg, kt);
     $('#windDir').textContent = kt < 1 ? 'CALM' : `${dr} ${String(Math.round(deg)).padStart(3, '0')}°`;
-    $('#windSpd').textContent = kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`;
+    // visibility under 3 miles shows too (fog, heavy rain, smoke), and is shared for the 3D bus view's fog
+    const vis = d.vis != null && d.vis < 3 ? d.vis : null;
+    window.htVisMi = d.vis ?? null;
+    const visTxt = vis != null ? `VIS ${vis < 1 ? String(Math.max(0.25, Math.round(vis * 4) / 4)) : vis.toFixed(1)}MI` : '';
+    $('#windSpd').textContent = [kt < 1 ? '' : `${String(kt).padStart(2, '0')}KT${gust > kt + 2 ? ' G' + gust : ''}`, visTxt].filter(Boolean).join(' · ');
+    $('#windSpd').style.color = vis != null && vis < 1 ? '#ffc400' : '';
     $('#windWhere').textContent = st.name;
     const place = st.name.replace(/ AIRPORT$/, '').toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
     tick('wind', kt < 1 ? `calm at ${place}` : `from the ${dr} at ${kt} kt (${Math.round(kt * 1.151)} mph)${gust > kt + 2 ? `, gusts ${gust} kt` : ''} at ${place}`);
-    $('#windGauge').title = `Wind at ${place}: from the ${dr} at ${kt} knots (${Math.round(kt * 1.151)} mph)${gust ? `, gusts ${gust} kt` : ''}. Observed ${d.t}.`;
+    $('#windGauge').title = `Wind at ${place}: from the ${dr} at ${kt} knots (${Math.round(kt * 1.151)} mph)${gust ? `, gusts ${gust} kt` : ''}.${d.vis != null ? ` Visibility ${d.vis >= 9.9 ? '10+' : d.vis.toFixed(1)} miles.` : ''} Observed ${d.t}.`;
   }
   // the nearest station to the middle of the map that has a recent reading (tries the three nearest)
   async function updateWindGauge() {
@@ -778,11 +785,19 @@
     $('#seaBar').style.color = waveColor;
     $('#seaWaves').textContent = b?.waveFt != null ? `WAVES ${b.waveFt}FT @${b.periodS}S ${compass(b.dirDeg)}` : 'WAVES --';
     const alerts = m?.alerts || [];
-    // a marine warning says what it is where the water temperature goes (the glow alone looked like a stuck button)
+    // a marine warning says what it is, in the instrument's label (the glow alone looked like a stuck button, and
+    // sharing the bottom line with the waves crowded both)
     const events = [...new Set(alerts.map((a) => String(a.event || '').toUpperCase()).filter(Boolean))];
-    $('#seaWater').textContent = events.length ? `⚠ ${events[0].replace('ADVISORY', 'ADV.')}${events.length > 1 ? ` +${events.length - 1}` : ''}`
-      : water != null ? `WATER ${Math.round(water)}°` : '';
-    $('#seaWater').style.color = events.length ? '#ff7a1a' : '';
+    const lbl = $('#sea .inst-lbl span');
+    if (lbl) {
+      // (the words are in <em>, which phones hide, like "TIDE LEVEL" → "TIDE": a phone shows just the ⚠)
+      // (just the kind: "Small Craft Advisory" in full left no room for the bar reading on the same line; the full
+      // name and area are in the hover text and the SEA tab)
+      const kind = events.some((e) => /WARNING/.test(e)) ? 'WARNING' : events.some((e) => /ADVISORY/.test(e)) ? 'ADVISORY' : 'ALERT';
+      lbl.innerHTML = events.length ? `⚠<em> ${kind}</em>` : 'SEA<em> STATE</em>';
+      lbl.style.color = events.length ? '#ff7a1a' : '';
+    }
+    $('#seaWater').textContent = water != null ? `WATER ${Math.round(water)}°` : '';
     $('#sea').classList.toggle('alert', alerts.length > 0 || lvl >= 2);
     tick('sea', [bar?.conditions ? `Grays Harbor bar ${bar.conditions}` : '', b?.waveFt != null ? `waves ${b.waveFt} ft @ ${b.periodS}s` : '',
       water != null ? `water ${Math.round(water)}°` : '', ...alerts.map((a) => a.event)].filter(Boolean).join(' · '));
