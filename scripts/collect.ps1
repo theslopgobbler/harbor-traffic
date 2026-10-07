@@ -422,11 +422,20 @@ try {
     "bus alerts: $($alerts.Count) ($($status[0]))"
 } catch { "bus alerts failed: $($_.Exception.Message.Split("`n")[0])" }
 
-# ---------- bus routes and stops from GHT's schedule data: once a week ----------
-$busRoutes = Join-Path $dataDir 'bus-routes.json'
-# (judged by the date inside the file: a fresh checkout makes every file look new, so it never ran here before)
+# ---------- bus routes and stops from GHT's schedule data: whenever GHT publishes a new file ----------
+# Each run asks their server for the file's date (a tiny request) and rebuilds when it differs from the one the map
+# was built from (data/schedule-status.json); also monthly regardless, in case that date ever goes missing
 $busOld = $true
-if (Test-Path $busRoutes) { try { $u = (Get-Content $busRoutes -Raw | ConvertFrom-Json).updated; if ($u) { $busOld = ((Get-Date) - [datetime]$u).TotalDays -gt 7 } } catch {} }
+$statusFile = Join-Path $dataDir 'schedule-status.json'
+if (Test-Path $statusFile) {
+    try {
+        $st = Get-Content $statusFile -Raw | ConvertFrom-Json
+        $head = Invoke-WebRequest -UseBasicParsing -Method Head 'http://mjcaction.com/MJC_GTFS_Public/graysharbor_google_transit.zip' -TimeoutSec 20
+        $mod = "$($head.Headers['Last-Modified'])"
+        $busOld = (-not $mod) -or $mod -ne $st.fileModified -or ((Get-Date) - [datetime]$st.built).TotalDays -gt 30
+        if ($busOld -and $mod -ne $st.fileModified) { "GHT published a new schedule file ($mod): rebuilding bus routes" }
+    } catch { $busOld = $false } # (their server didn't answer: try again next run)
+}
 if ($busOld) {
     try { & (Join-Path $PSScriptRoot 'build-gtfs.ps1') } catch { "bus routes failed: $($_.Exception.Message.Split("`n")[0])" }
 }

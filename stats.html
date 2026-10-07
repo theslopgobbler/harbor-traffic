@@ -94,6 +94,7 @@
       </form>
       <div class="msg" id="busMsg"></div>
       <p class="note" id="bUse"></p>
+      <p class="msg" id="schedWarn" hidden></p>
       <div id="busOut" hidden>
         <div class="grid">
           <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s" id="bOnS">LEFT 0 TO 5 MIN AFTER SCHEDULE</div></div>
@@ -406,8 +407,22 @@
   const pct = (a, b) => (b ? Math.round(a / b * 100) : 0);
   const sumRows = (x) => [{ value: `${pct(x.ontime, x.n)}%`, label: 'on time', color: C1 }, { value: `${x.avg} min`, label: 'average after schedule' },
     { value: `${x.late} late · ${x.early} early`, label: `of ${x.n}` }];
+  // GHT's published schedule file (route lines, stop times on the map) covers dates up to an end date: a warning
+  // from 14 days before, until they publish a new one (the collector picks it up within about 10 minutes)
+  async function checkSchedule() {
+    try {
+      const s = await (await fetch(`data/schedule-status.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      const m = String(s.feedEnd || '').match(/^(\d{4})(\d{2})(\d{2})$/); if (!m) return;
+      const end = new Date(+m[1], +m[2] - 1, +m[3]), days = Math.ceil((end - new Date()) / 864e5);
+      const box = $('#schedWarn');
+      box.hidden = days > 14;
+      box.textContent = days < 0 ? `GHT'S PUBLISHED SCHEDULE RAN OUT ON ${day(`${m[1]}-${m[2]}-${m[3]}`)}: THE MAP'S STOP TIMES MAY BE WRONG UNTIL THEY PUBLISH A NEW ONE. (LATENESS USES THEIR TRACKER'S DAILY TIMETABLE, SO IT'S FINE.)`
+        : `GHT'S PUBLISHED SCHEDULE ENDS ${day(`${m[1]}-${m[2]}-${m[3]}`)} (${days} DAY${days === 1 ? '' : 'S'}). A NEW ONE IS PICKED UP AUTOMATICALLY WHEN THEY PUBLISH IT.`;
+    } catch { /* no status yet */ }
+  }
   async function loadBuses() {
     if (!key || $('#out').hidden) return;
+    checkSchedule();
     busLoadedAt = Date.now();
     document.querySelectorAll('#busDaysForm button').forEach((b) => b.style.background = +b.dataset.days === busDays ? 'rgba(0,229,255,.3)' : '');
     $('#busOut').style.opacity = busData ? 0.55 : 1; // (refetching keeps the last charts, dimmed)
