@@ -384,15 +384,19 @@
       z.fall = []; z.gusts = []; z.fogs = []; z.haze = [];
       if (c.kind !== 'none') {
         const k = c.kind === 'fog' ? 'fog' : c.kind;
-        const count = n(k, share(c)); budget -= count;
+        // (fog: counted for the on-screen part only; it's drawn big and soft, so a few dozen cover a screen)
+        const count = c.kind === 'fog' ? Math.min(60, budget, Math.round(areaOf(onScreen(b)) / 1e4 * DENSITY.fog * share(c))) : n(k, share(c)); budget -= count;
         const arr = c.kind === 'fog' ? z.fogs : z.fall;
         for (let i = 0; i < count; i++) arr.push(spawn(z, c.kind === 'fog' ? 'fog' : c.kind === 'storm' ? 'rain' : c.kind, true));
         // fog also gets thin dashed haze lines drifting sideways, like interference on an old radar screen (more of
-        // them the thicker it is), over a faint tint
+        // them the thicker it is), over a faint tint. Only over the part of the zone that's on screen, and capped:
+        // a zone can be hundreds of screens wide when zoomed in, and drawing fog over all of it crashed a laptop's tab
         if (c.kind === 'fog') {
-          const lines = Math.min(budget, Math.round((b.y1 - b.y0) / 10 * share(c) * Math.max(1, (b.x1 - b.x0) / 400))); budget -= lines;
+          const v = onScreen(b);
+          z.fogs = z.fogs.filter((p) => p.x > v.x0 - 100 && p.x < v.x1 + 100 && p.y > v.y0 - 100 && p.y < v.y1 + 100).slice(0, 60);
+          const lines = Math.min(90, budget, Math.round((v.y1 - v.y0) / 10 * share(c) * Math.max(1, (v.x1 - v.x0) / 400))); budget -= lines;
           const dir = windVector(c.windDir).x >= 0 ? 1 : -1;
-          for (let i = 0; i < lines; i++) z.haze.push({ y: rnd(b.y0, b.y1), x: rnd(b.x0, b.x1), len: rnd(60, 200), vx: dir * rnd(0.12, 0.4), a: rnd(0.28, 0.5) });
+          for (let i = 0; i < lines; i++) z.haze.push({ y: rnd(v.y0, v.y1), x: rnd(v.x0, v.x1), len: rnd(60, 200), vx: dir * rnd(0.12, 0.4), a: rnd(0.28, 0.5) });
         }
       }
       if (c.wind) {
@@ -402,8 +406,22 @@
       z.flash = 0; z.bolt = null; z.nextBolt = performance.now() + rnd(1500, 6000);
     }
   }
+  // the part of a zone's box that's on the screen
+  const onScreen = (b) => ({ x0: Math.max(b.x0, 0), y0: Math.max(b.y0, 0), x1: Math.min(b.x1, W), y1: Math.min(b.y1, H) });
+  const areaOf = (v) => Math.max(0, v.x1 - v.x0) * Math.max(0, v.y1 - v.y0);
+  // one soft fog bank, drawn once, then stamped at each bank's size (building a fresh gradient for every bank every
+  // frame was the expensive part)
+  let fogSprite = null;
+  function fogBankImage() {
+    if (fogSprite) return fogSprite;
+    fogSprite = document.createElement('canvas'); fogSprite.width = fogSprite.height = 128;
+    const g = fogSprite.getContext('2d'), gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    gr.addColorStop(0, 'rgba(160,190,190,1)'); gr.addColorStop(1, 'rgba(160,190,190,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+    return fogSprite;
+  }
   function spawn(z, kind, anywhere) {
-    const b = z.box, w = windVector(z.cond.windDir), windy = Math.min(1, (z.cond.windMph || 0) / 30);
+    const b = kind === 'fog' ? onScreen(z.box) : z.box, w = windVector(z.cond.windDir), windy = Math.min(1, (z.cond.windMph || 0) / 30);
     const x = rnd(b.x0, b.x1), y = anywhere ? rnd(b.y0, b.y1) : b.y0 - 10;
     switch (kind) {
       case 'rain': { const s = rnd(7, 12) + z.cond.level * 2; return { kind, x, y, vx: w.x * windy * 4, vy: s, len: rnd(8, 14) + z.cond.level * 3 }; }
@@ -451,11 +469,13 @@
         }
         ctx.setLineDash([]);
       }
-      for (const p of z.fogs) {
-        p.x += p.vx; if (p.x - p.r > b.x1) p.x = b.x0 - p.r;
-        const gr = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-        gr.addColorStop(0, `rgba(160,190,190,${p.a})`); gr.addColorStop(1, 'rgba(160,190,190,0)');
-        ctx.fillStyle = gr; ctx.fillRect(p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+      if (z.fogs.length) {
+        const img = fogBankImage(), v = onScreen(b);
+        for (const p of z.fogs) {
+          p.x += p.vx; if (p.x - p.r > v.x1) p.x = v.x0 - p.r;
+          ctx.globalAlpha = p.a; ctx.drawImage(img, p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+        }
+        ctx.globalAlpha = 1;
       }
       // rain, snow, hail
       ctx.lineWidth = 1;
