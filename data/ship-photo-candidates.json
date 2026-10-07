@@ -68,7 +68,10 @@
     "367318950": "2026-10-07T09:47:14.5970579+00:00",
     "338209905": "2026-10-07T10:02:52.9800171+00:00",
     "109080130": "2026-10-07T10:02:52.9800171+00:00",
-    "583512708": "2026-10-07T10:02:52.9800171+00:00"
+    "583512708": "2026-10-07T10:02:52.9800171+00:00",
+    "338424194": "2026-10-07T10:26:30.2779552+00:00",
+    "367701130": "2026-10-07T10:26:30.2779552+00:00",
+    "366999922": "2026-10-07T10:26:30.2779552+00:00"
   },
   "candidates": [
     {
@@ -610,7 +613,22 @@
       "date": "2016-02-20 17:04:38",
       "caption": "Arthur Foss (tugboat, 1889)",
       "found": "2026-10-07T09:47:14.5970579+00:00"
+    },
+    {
+      "mmsi": "338424194",
+      "ship": "BLUEFIN",
+      "file": "File:Seattle Harbor Police 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Seattle_Harbor_Police_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Seattle_Harbor_Police_01.jpg/1280px-Seattle_Harbor_Police_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "date": "Taken on 14 March 2007",
+      "caption": "Seattle Harbor Police HQ, Lake Union, Seattle, Washington.",
+      "found": "2026-10-07T10:26:30.2779552+00:00"
     }
   ],
-  "updated": "2026-10-07T10:02:52.9800171+00:00"
+  "updated": "2026-10-07T10:26:30.2779552+00:00"
 }
