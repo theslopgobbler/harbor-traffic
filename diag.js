@@ -44,6 +44,7 @@
       t: Date.now(),
       heapMB: performance.memory ? Math.round(performance.memory.usedJSHeapSize / 1e6) : null,
       fps: Math.round(frames / secs),
+      busFps: window.htFrameMs ? Math.round(1000 / window.htFrameMs()) : null, // what the bus view stepped down to
       worstMs: Math.round(worst),
       tiles: m ? tiles(m) : null,
       icons: document.querySelectorAll('.maplibregl-marker').length,
