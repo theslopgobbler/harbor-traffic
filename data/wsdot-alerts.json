@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T19:58:26.2910865+00:00",
+  "updated": "2026-10-07T20:18:29.0709655+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -44,27 +44,6 @@
           47.29942
         ]
       ]
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 718036,
@@ -1652,6 +1631,213 @@
       ]
     },
     {
+      "id": 718087,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 133.3 near Dry Creek to milepost 131.1 near Prairie Creek Rd beginning at 1:10 pm on October 7, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 133.3,
+      "lat": 47.474595138,
+      "lon": -124.012233775,
+      "lat2": 47.480265054,
+      "lon2": -123.966632266,
+      "county": "Grays Harbor",
+      "start": "2026-10-07T20:10:00.0000000+00:00",
+      "end": "2026-10-08T01:00:00.0000000+00:00",
+      "updated": "2026-10-07T20:15:39.5500000+00:00",
+      "path": [
+        [
+          -124.0122,
+          47.47461
+        ],
+        [
+          -124.012,
+          47.47464
+        ],
+        [
+          -124.01138,
+          47.47474
+        ],
+        [
+          -124.01083,
+          47.47483
+        ],
+        [
+          -124.007,
+          47.47548
+        ],
+        [
+          -124.00582,
+          47.47567
+        ],
+        [
+          -124.00546,
+          47.47573
+        ],
+        [
+          -124.00328,
+          47.47608
+        ],
+        [
+          -124.00237,
+          47.47623
+        ],
+        [
+          -124.00103,
+          47.47645
+        ],
+        [
+          -124.00059,
+          47.47652
+        ],
+        [
+          -123.99743,
+          47.47706
+        ],
+        [
+          -123.99702,
+          47.47712
+        ],
+        [
+          -123.99548,
+          47.47738
+        ],
+        [
+          -123.99299,
+          47.47778
+        ],
+        [
+          -123.99263,
+          47.47784
+        ],
+        [
+          -123.99214,
+          47.47792
+        ],
+        [
+          -123.98868,
+          47.4785
+        ],
+        [
+          -123.98406,
+          47.47928
+        ],
+        [
+          -123.981,
+          47.47976
+        ],
+        [
+          -123.98054,
+          47.47985
+        ],
+        [
+          -123.97972,
+          47.47999
+        ],
+        [
+          -123.97869,
+          47.48016
+        ],
+        [
+          -123.9782,
+          47.48024
+        ],
+        [
+          -123.9779,
+          47.48027
+        ],
+        [
+          -123.97756,
+          47.4803
+        ],
+        [
+          -123.9772,
+          47.48031
+        ],
+        [
+          -123.97571,
+          47.48029
+        ],
+        [
+          -123.97493,
+          47.48028
+        ],
+        [
+          -123.97455,
+          47.48028
+        ],
+        [
+          -123.97421,
+          47.4803
+        ],
+        [
+          -123.97386,
+          47.48034
+        ],
+        [
+          -123.97291,
+          47.48048
+        ],
+        [
+          -123.9726,
+          47.48051
+        ],
+        [
+          -123.97229,
+          47.48051
+        ],
+        [
+          -123.97195,
+          47.48049
+        ],
+        [
+          -123.97171,
+          47.48045
+        ],
+        [
+          -123.97112,
+          47.48035
+        ],
+        [
+          -123.97079,
+          47.48031
+        ],
+        [
+          -123.97047,
+          47.48028
+        ],
+        [
+          -123.97004,
+          47.48026
+        ],
+        [
+          -123.9695,
+          47.48026
+        ],
+        [
+          -123.96812,
+          47.48026
+        ],
+        [
+          -123.96733,
+          47.48026
+        ],
+        [
+          -123.9666,
+          47.48025
+        ],
+        [
+          -123.9666,
+          47.48025
+        ]
+      ]
+    },
+    {
       "id": 712872,
       "kind": "work",
       "category": "Maintenance",
@@ -2715,27 +2901,6 @@
       "updated": "2026-10-07T15:42:06.3900000+00:00"
     },
     {
-      "id": 718046,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on US 12 westbound at milepost 18.11 near Schouweiler Rd beginning at 8:00 am on October 7, 2026 until further notice. The right lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 18.11,
-      "lat": 46.996713206,
-      "lon": -123.445431677,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-07T15:20:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-07T15:20:06.2230000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -2755,27 +2920,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-09-14T14:42:15.5130000+00:00"
-    },
-    {
-      "id": 718069,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "High",
-      "headline": "Collision on US 12 westbound at milepost 18.11 near Schouweiler Rd beginning at 9:42 am on October 7, 2026 until further notice. The right lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 18.11,
-      "lat": 46.996713206,
-      "lon": -123.445431677,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-07T16:42:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-07T16:43:22.5530000+00:00"
     },
     {
       "id": 712735,
@@ -2818,6 +2962,27 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 686738,
