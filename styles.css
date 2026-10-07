@@ -16,7 +16,11 @@ a { color: var(--cyan); }
 /* header: a strip of dashboard instruments */
 .top { display: flex; align-items: stretch; padding: 8px 12px; background: #020605; border-bottom: 1px solid var(--line-2); box-shadow: 0 1px 12px rgba(0,229,255,.12); }
 /* equal-width instruments across the whole strip; extras drop off as the screen narrows */
-.instruments { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 8px; width: 100%; }
+/* equal widths, except the clock never gets too narrow for its time and sky picture side by side (at laptop widths
+   an equal share squeezed the sky down to a sliver) */
+.instruments { display: flex; gap: 8px; width: 100%; }
+.instruments > .inst { flex: 1 1 0; min-width: 0; }
+.instruments > .inst-clock { min-width: 250px; }
 .inst { position: relative; min-width: 0; height: 70px; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 8px 3px;
   background: linear-gradient(#030d0c, #020706); border: 1px solid var(--line-2); box-shadow: inset 0 0 12px rgba(0,229,255,.06);
   font: 10px/1.25 var(--mono); letter-spacing: .12em; color: var(--dim); text-align: left; }
@@ -272,6 +276,10 @@ body.chase.chase-fog .map-wrap::after { height: var(--chase-fog, 50%);
   background: linear-gradient(#55706d 0%, rgba(78,104,101,.92) 35%, rgba(60,84,81,.55) 70%, transparent 100%);
   animation: chaseFog 9s ease-in-out infinite alternate; }
 @keyframes chaseFog { to { opacity: .82; } }
+/* low sun glare (wx.js places it at the edge the sun is on) */
+.sun-glare { position: absolute; left: 0; top: 0; width: 600px; height: 600px; z-index: 1; pointer-events: none; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,214,140,.38) 0%, rgba(255,170,70,.16) 30%, rgba(255,140,40,.05) 55%, transparent 70%); }
+.sun-glare[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) { body.chase.chase-fog .map-wrap::after { animation: none; } }
 .bus-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
 .bus-mk.sel .ic { filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px #00e5ff); }
@@ -581,7 +589,8 @@ body.tv .list .m { font-size: 14px; }
 @media (max-width: 760px) {
   .top { padding: 6px 8px; }
   /* phones: a 2×2 block of the four core instruments */
-  .instruments { grid-auto-flow: row; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .instruments { display: grid; grid-auto-flow: row; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .instruments > .inst-clock { min-width: 0; }
   .inst-extra { display: none !important; }
   .inst { height: 56px; padding: 3px 6px; }
   .inst-wind svg { width: 34px; height: 34px; }
