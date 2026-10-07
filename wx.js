@@ -1435,8 +1435,26 @@
   glare.className = 'sun-glare';
   wrap.appendChild(glare);
   let sun = null;
+  // golden hour: a warm wash over the whole map from the sun's side, from a little before sunrise or sunset to when
+  // the sun is ~8° up: rosy peach in the morning, deep orange-gold in the evening. Strongest with the sun right at
+  // the horizon; dimmer when partly cloudy, none when it's overcast or wet. Still (no animation): it's a full-map layer
+  const golden = document.createElement('div');
+  golden.className = 'golden-hour';
+  wrap.appendChild(golden);
+  function placeGolden() {
+    const partly = !sunTest && skyCond.cloud === 1;
+    const on = fxOn && sun && sun.alt > -4 && sun.alt < 8 && (sunTest || (skyCond.kind === 'none' && skyCond.cloud < 2));
+    golden.hidden = !on;
+    if (!on) return;
+    const toward = (sun.bearing - map.getBearing() + 180) % 360; // the color starts on the sun's side
+    const k = clamp(1 - Math.abs(sun.alt - 1) / 7, 0.15, 1) * (partly ? 0.6 : 1);
+    const morning = sun.bearing < 180;
+    const c = morning ? '255,150,125' : '255,128,30', c2 = morning ? '255,200,160' : '255,180,60';
+    golden.style.background = `linear-gradient(${toward.toFixed(0)}deg, rgba(${c},${(0.38 * k).toFixed(3)}) 0%, rgba(${c2},${(0.16 * k).toFixed(3)}) 45%, rgba(${c2},0) 85%)`;
+  }
   let sunTest = null; // htWx.sun(bearing, height): pretend the sun is there (and the sky clear), for trying it out
   function placeGlare() {
+    placeGolden();
     const clear = sunTest || (skyCond.kind === 'none' && skyCond.cloud < 2);
     const on = fxOn && !REDUCED && sun && sun.alt > -1 && sun.alt < 12 && clear;
     glare.hidden = !on;

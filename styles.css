@@ -279,6 +279,9 @@ body.chase.chase-fog .map-wrap::after { height: var(--chase-fog, 50%);
 .sun-glare { position: absolute; left: 0; top: 0; width: 600px; height: 600px; z-index: 1; pointer-events: none; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,214,140,.38) 0%, rgba(255,170,70,.16) 30%, rgba(255,140,40,.05) 55%, transparent 70%); }
 .sun-glare[hidden] { display: none; }
+/* golden hour (wx.js sets the gradient from the sun's side) */
+.golden-hour { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.golden-hour[hidden] { display: none; }
 .bus-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
 .bus-mk.sel .ic { filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px #00e5ff); }
 .stop-sec { margin-top: 7px; padding-bottom: 2px; font-size: 10px; color: var(--cyan); letter-spacing: .15em; border-bottom: 1px solid var(--line-2); }
