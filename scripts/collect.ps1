@@ -285,8 +285,10 @@ if ($aisKey) {
         $cts.CancelAfter([TimeSpan]::FromSeconds(80))
         $ws.ConnectAsync([Uri]'wss://stream.aisstream.io/v0/stream', $cts.Token).Wait()
         # a little offshore plus Grays Harbor and Willapa Bay (about 15 nm out from the entrances): [[lat, lon], [lat, lon]]
-        $sub = @{ APIKey = $aisKey; BoundingBoxes = @(, @(@(46.35, -124.5), @(47.2, -123.7)));
-            FilterMessageTypes = @('PositionReport', 'StandardClassBPositionReport', 'ShipStaticData') } | ConvertTo-Json -Depth 6 -Compress
+        # out to about 40 nm offshore, Cape Shoalwater to past Point Grenville; StaticDataReport is how smaller (class B)
+        # boats send their name, type and size
+        $sub = @{ APIKey = $aisKey; BoundingBoxes = @(, @(@(46.2, -125.4), @(47.6, -123.7)));
+            FilterMessageTypes = @('PositionReport', 'StandardClassBPositionReport', 'ShipStaticData', 'StaticDataReport') } | ConvertTo-Json -Depth 6 -Compress
         $bytes = [Text.Encoding]::UTF8.GetBytes($sub)
         $ws.SendAsync([ArraySegment[byte]]::new($bytes), [System.Net.WebSockets.WebSocketMessageType]::Text, $true, $cts.Token).Wait()
         $buf = New-Object byte[] 65536
@@ -311,6 +313,13 @@ if ($aisKey) {
                 if ($d.Dimension) { & $set 'lengthM' ([int]$d.Dimension.A + [int]$d.Dimension.B); if ([int]$d.Dimension.C + [int]$d.Dimension.D -gt 0) { & $set 'beamM' ([int]$d.Dimension.C + [int]$d.Dimension.D) } }
                 # how deep it sits (deeper = loaded): with size, a way to learn which ships here mean trains
                 if ([double]$d.MaximumStaticDraught -gt 0) { & $set 'draughtM' ([double]$d.MaximumStaticDraught) }
+            } elseif ($m.MessageType -eq 'StaticDataReport') {
+                $d = $m.Message.StaticDataReport
+                if ($d.ReportB -and $d.ReportB.Valid) {
+                    & $set 'type' $d.ReportB.ShipType; & $set 'callsign' ("$($d.ReportB.CallSign)".Trim())
+                    $dm = $d.ReportB.Dimension
+                    if ($dm -and ([int]$dm.A + [int]$dm.B) -gt 0) { & $set 'lengthM' ([int]$dm.A + [int]$dm.B); & $set 'beamM' ([int]$dm.C + [int]$dm.D) }
+                }
             } else {
                 $p = if ($m.MessageType -eq 'PositionReport') { $m.Message.PositionReport } else { $m.Message.StandardClassBPositionReport }
                 & $set 'lat' ([math]::Round([double]$meta.latitude, 5)); & $set 'lon' ([math]::Round([double]$meta.longitude, 5))

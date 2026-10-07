@@ -366,9 +366,11 @@ canvas.fx { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 .label { display: block; font-size: 11px; color: var(--dim); letter-spacing: .14em; margin-bottom: 4px; }
 select { width: 100%; padding: 7px 8px; border: 1px solid var(--line-2); background: #020807; color: var(--text); letter-spacing: .05em; }
 .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line-2); margin-bottom: 8px; }
-.tabs button { flex: 1; background: none; border: 0; padding: 8px 2px; font-size: 12px; letter-spacing: .08em; color: var(--dim); border-bottom: 2px solid transparent; cursor: pointer; }
+.tabs button { flex: 1; position: relative; white-space: nowrap; background: none; border: 0; padding: 8px 2px; font-size: 12px; letter-spacing: .08em; color: var(--dim); border-bottom: 2px solid transparent; cursor: pointer; }
 .tabs button[aria-selected="true"] { color: var(--cyan); border-bottom-color: var(--cyan); text-shadow: var(--glow-c); }
-.tabs b { display: inline-block; min-width: 16px; padding: 0 4px; background: var(--red); color: #fff; font-weight: 400; box-shadow: var(--glow-r); }
+/* the count: a small tag on the tab's top right corner, the same on every tab at any width (beside the word, it
+   fit next to AIR but wrapped under ROADS) */
+.tabs b { position: absolute; top: 0; right: 0; min-width: 14px; padding: 0 3px; font-size: 10px; line-height: 13px; background: var(--red); color: #fff; font-weight: 400; box-shadow: var(--glow-r); text-shadow: none; }
 .tabs b:empty { display: none; }
 .tab { display: none; }
 .tab.on { display: block; }
