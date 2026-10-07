@@ -104,6 +104,9 @@
 
   const style = {
     version: 8,
+    // no fades on style changes: each change restarted a 300 ms fade on every property of the layer, and with the
+    // road-alert pulse stepping every 200 ms the map never settled and redrew 60 times a second, nonstop (Oct 7)
+    transition: { duration: 0, delay: 0 },
     glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
     sources: {
       omt: { type: 'vector', url: 'https://tiles.openfreemap.org/planet' },
@@ -188,10 +191,21 @@
         paint: { 'line-color': ['get', 'color'], 'line-opacity': ['case', ['>=', ['get', 'level'], 2], 1, 0.55],
           'line-width': zwIf(['>=', ['get', 'level'], 2], [3, 7], [1.2, 3]), 'line-offset': zw(2, 6) } },
       // WSDOT alert stretches along the road
+      // (two pairs: the steady ones, and closures and road work, which pulse. The pulse sets a plain number on its own
+      // layers: a per-alert rule there made the map rebuild the alert tiles on every step, a CPU hog; and no fade
+      // between steps, which had kept the map redrawing 60 times a second with nothing moving)
       { id: 'inc-glow', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
+        filter: ['!', ['in', ['get', 'kind'], ['literal', ['closure', 'work']]]],
         paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.55, 'line-width': zw(10, 24), 'line-blur': 6 } },
       { id: 'inc', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
+        filter: ['!', ['in', ['get', 'kind'], ['literal', ['closure', 'work']]]],
         paint: { 'line-color': ['get', 'color'], 'line-width': zwIf(['==', ['get', 'kind'], 'closure'], [4, 9], [3, 7]) } },
+      { id: 'inc-glow-p', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
+        filter: ['in', ['get', 'kind'], ['literal', ['closure', 'work']]],
+        paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.8, 'line-width': zw(10, 24), 'line-blur': 6, 'line-opacity-transition': { duration: 0 } } },
+      { id: 'inc-p', type: 'line', source: 'incidents', layout: { 'line-cap': 'round', 'line-join': 'round' },
+        filter: ['in', ['get', 'kind'], ['literal', ['closure', 'work']]],
+        paint: { 'line-color': ['get', 'color'], 'line-width': zwIf(['==', ['get', 'kind'], 'closure'], [4, 9], [3, 7]), 'line-opacity-transition': { duration: 0 } } },
       { id: 'outside', type: 'fill', source: 'outside', paint: { 'fill-color': '#000000', 'fill-opacity': 0.6 } },
       { id: 'outside-edge', type: 'line', source: 'outside', paint: { 'line-color': K.cyan, 'line-opacity': 0.35, 'line-width': 1, 'line-dasharray': [4, 4] } },
       // the region boxes, only in the zoomed-out overview
@@ -246,6 +260,9 @@
     // west only as far as boats get heard (the collector listens out to 125.4° W, ~60 mi off the coast)
     maxBounds: [-125.6, S - pad * 1.6, E + pad * 0.6, N + pad * 0.5], minZoom: 6.5, maxZoom: 16,
     dragRotate: false, pitchWithRotate: false, touchPitch: false, attributionControl: { compact: true },
+    // labels appear and disappear at once rather than fading for 300 ms: each fade drew the map every frame, and the
+    // road-alert pulse (every 200 ms) kept one going all the time
+    fadeDuration: 0,
     interactive: !TV
   });
   window.htMap = map; // handy from the browser console
@@ -990,7 +1007,7 @@
     // a tap on a marker also reaches the map; the marker handles it, so don't open a second popup
     if (e.originalEvent?.target?.closest?.('.maplibregl-marker')) return;
     const box = [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]];
-    const inc = map.queryRenderedFeatures(box, { layers: ['inc-glow', 'inc'] });
+    const inc = map.queryRenderedFeatures(box, { layers: ['inc-glow', 'inc', 'inc-glow-p', 'inc-p'] });
     // closures first when stretches overlap
     const hit = inc.sort((a, b) => (b.properties.kind === 'closure') - (a.properties.kind === 'closure'))[0];
     if (hit) {
@@ -1013,7 +1030,7 @@
         <p style="color:${esc(p.color)}">${flowText[p.level]}</p><div class="m">LIVE WSDOT SENSOR · UPDATED ${esc(fmtWhen(state.flowUpdated))}</div>`).addTo(map);
     }
   });
-  for (const id of ['inc-glow', 'flow-glow', 'flow']) {
+  for (const id of ['inc-glow', 'inc-glow-p', 'flow-glow', 'flow']) {
     map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
   }
@@ -1036,19 +1053,17 @@
   const pulse = (t) => {
     // (paused in the bus chase view, which redraws the map every frame already)
     const strained = window.htStrain?.() > 0;
-    if (strained && !pulseHeld && map.getLayer('inc-glow')) {
+    if (strained && !pulseHeld && map.getLayer('inc-glow-p')) {
       pulseHeld = true;
-      map.setPaintProperty('inc-glow', 'line-opacity', ['match', ['get', 'kind'], ['closure', 'work'], 0.8, 0.5]);
-      map.setPaintProperty('inc', 'line-opacity', 1);
+      map.setPaintProperty('inc-glow-p', 'line-opacity', 0.8);
+      map.setPaintProperty('inc-p', 'line-opacity', 1);
     }
     if (!strained) pulseHeld = false;
-    if (!strained && t - pulseLast > 200 && map.getLayer('inc-glow') && !document.body.classList.contains('chase')) {
+    if (!strained && t - pulseLast > 200 && map.getLayer('inc-glow-p') && !document.body.classList.contains('chase')) {
       pulseLast = t;
       const s = (Math.sin(t / 1800 * Math.PI * 2) + 1) / 2; // 0..1 over 1.8 s, like the CSS pulse
-      map.setPaintProperty('inc-glow', 'line-opacity',
-        ['match', ['get', 'kind'], ['closure', 'work'], 0.2 + 0.6 * s, 0.5]);
-      map.setPaintProperty('inc', 'line-opacity',
-        ['match', ['get', 'kind'], ['closure', 'work'], 0.6 + 0.4 * s, 1]);
+      map.setPaintProperty('inc-glow-p', 'line-opacity', +(0.2 + 0.6 * s).toFixed(2));
+      map.setPaintProperty('inc-p', 'line-opacity', +(0.6 + 0.4 * s).toFixed(2));
     }
     requestAnimationFrame(pulse);
   };
@@ -1466,7 +1481,7 @@
     const btn = $('#btnRoads');
     btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on);
     document.body.classList.toggle('no-roads', !on);
-    const apply = () => ['inc', 'inc-glow'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+    const apply = () => ['inc', 'inc-glow', 'inc-p', 'inc-glow-p'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
     if (map.isStyleLoaded()) apply(); else map.once('load', apply);
     declutterSoon();
   }
