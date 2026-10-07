@@ -1,16 +1,37 @@
 {
-  "updated": "2026-10-07T04:11:46.9986004+00:00",
+  "updated": "2026-10-07T04:37:16.6526773+00:00",
   "source": "AIS via aisstream.io",
   "ships": [
     {
-      "mmsi": 367050280,
-      "name": "ROCKY B",
-      "lat": 46.63354,
-      "lon": -124.21753,
-      "sog": 8,
-      "cog": 174.2,
-      "classB": true,
-      "seen": "2026-10-06T06:14:15.5718955+00:00"
+      "mmsi": 567017000,
+      "type": 70,
+      "dest": "GRARY HARBOR",
+      "callsign": "HSDA",
+      "imo": 9726413,
+      "lengthM": 199,
+      "beamM": 32,
+      "draughtM": 6.9,
+      "name": "SARITA NAREE",
+      "lat": 46.92718,
+      "lon": -124.08999,
+      "sog": 0,
+      "cog": 154.4,
+      "heading": 258,
+      "status": 1,
+      "classB": false,
+      "seen": "2026-10-07T04:37:16.6526773+00:00"
+    },
+    {
+      "mmsi": 636024072,
+      "name": "GOLD ETERNITY",
+      "lat": 46.96409,
+      "lon": -123.85306,
+      "sog": 0,
+      "cog": 56.2,
+      "heading": 299,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-07T04:37:16.6526773+00:00"
     },
     {
       "mmsi": 367161340,
@@ -23,15 +44,22 @@
       "seen": "2026-10-06T11:19:31.2566764+00:00"
     },
     {
-      "mmsi": 366425240,
-      "name": "JAMIE MARIE",
-      "lat": 46.90638,
-      "lon": -124.10806,
+      "mmsi": 367317770,
+      "type": 31,
+      "dest": "KETCHIKAN",
+      "callsign": "WDD9897",
+      "imo": 8016366,
+      "lengthM": 22,
+      "beamM": 8,
+      "draughtM": 3.4,
+      "name": "ELLIS BRUSCO",
+      "lat": 46.90678,
+      "lon": -124.1062,
       "sog": 0,
-      "cog": 243.1,
-      "status": 15,
+      "cog": 253.3,
+      "status": 0,
       "classB": false,
-      "seen": "2026-10-07T04:11:46.9986004+00:00"
+      "seen": "2026-10-07T04:37:16.6526773+00:00"
     },
     {
       "mmsi": 338037843,
@@ -46,6 +74,28 @@
       "seen": "2026-10-06T19:01:17.8978581+00:00"
     },
     {
+      "mmsi": 367450580,
+      "name": "GRUMPY J",
+      "lat": 46.60954,
+      "lon": -124.39003,
+      "sog": 8.1,
+      "cog": 335.6,
+      "heading": 330,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-06T11:36:30.9730013+00:00"
+    },
+    {
+      "mmsi": 368143540,
+      "name": "DAKOTA",
+      "lat": 46.90624,
+      "lon": -124.10556,
+      "sog": 0,
+      "cog": 288,
+      "classB": true,
+      "seen": "2026-10-06T21:10:20.1948414+00:00"
+    },
+    {
       "mmsi": 368444690,
       "lat": 46.4191,
       "lon": -124.49914,
@@ -53,55 +103,6 @@
       "cog": 200.7,
       "classB": true,
       "seen": "2026-10-06T12:41:22.6796791+00:00"
-    },
-    {
-      "mmsi": 567017000,
-      "type": 70,
-      "dest": "GRARY HARBOR",
-      "callsign": "HSDA",
-      "imo": 9726413,
-      "lengthM": 199,
-      "beamM": 32,
-      "draughtM": 6.9,
-      "name": "SARITA NAREE",
-      "lat": 46.92675,
-      "lon": -124.08957,
-      "sog": 0.1,
-      "cog": 153.9,
-      "heading": 255,
-      "status": 1,
-      "classB": false,
-      "seen": "2026-10-07T00:52:46.7452296+00:00"
-    },
-    {
-      "mmsi": 368346750,
-      "name": "ROWDY",
-      "lat": 46.97823,
-      "lon": -123.88301,
-      "sog": 0,
-      "cog": 31,
-      "heading": 122,
-      "status": 5,
-      "classB": false,
-      "seen": "2026-10-07T01:52:00.0628237+00:00"
-    },
-    {
-      "mmsi": 367317770,
-      "lat": 46.90681,
-      "lon": -124.10617,
-      "sog": 0,
-      "cog": 263.8,
-      "status": 0,
-      "classB": false,
-      "seen": "2026-10-06T21:59:57.9297466+00:00",
-      "name": "ELLIS BRUSCO",
-      "type": 31,
-      "dest": "KETCHIKAN",
-      "callsign": "WDD9897",
-      "imo": 8016366,
-      "lengthM": 22,
-      "beamM": 8,
-      "draughtM": 3.4
     },
     {
       "mmsi": 367512180,
@@ -112,16 +113,6 @@
       "cog": 317.6,
       "classB": true,
       "seen": "2026-10-06T20:17:22.0975241+00:00"
-    },
-    {
-      "mmsi": 303671000,
-      "name": "SUMMER WIND",
-      "lat": 46.4592,
-      "lon": -124.30787,
-      "sog": 8.2,
-      "cog": 179.3,
-      "classB": true,
-      "seen": "2026-10-06T22:50:44.3720584+00:00"
     },
     {
       "mmsi": 367171980,
@@ -140,26 +131,15 @@
       "seen": "2026-10-07T01:52:00.0628237+00:00"
     },
     {
-      "mmsi": 368143540,
-      "name": "DAKOTA",
-      "lat": 46.90624,
-      "lon": -124.10556,
+      "mmsi": 366425240,
+      "name": "JAMIE MARIE",
+      "lat": 46.90637,
+      "lon": -124.10804,
       "sog": 0,
-      "cog": 288,
-      "classB": true,
-      "seen": "2026-10-06T21:10:20.1948414+00:00"
-    },
-    {
-      "mmsi": 636024072,
-      "name": "GOLD ETERNITY",
-      "lat": 46.96182,
-      "lon": -123.85108,
-      "sog": 1.2,
-      "cog": 288.3,
-      "heading": 306,
-      "status": 0,
+      "cog": 243.1,
+      "status": 15,
       "classB": false,
-      "seen": "2026-10-06T12:41:22.6796791+00:00"
+      "seen": "2026-10-07T04:37:16.6526773+00:00"
     },
     {
       "mmsi": 367463820,
@@ -172,6 +152,23 @@
       "seen": "2026-10-06T22:50:44.3720584+00:00"
     },
     {
+      "mmsi": 366245070,
+      "lat": 46.37523,
+      "lon": -124.44604,
+      "sog": 4.1,
+      "cog": 334.2,
+      "status": 7,
+      "classB": false,
+      "seen": "2026-10-07T04:37:16.6526773+00:00",
+      "name": "LAST STRAW",
+      "type": 30,
+      "callsign": "WAI7550",
+      "imo": 7223869,
+      "lengthM": 24,
+      "beamM": 10,
+      "draughtM": 3.0
+    },
+    {
       "mmsi": 563343600,
       "name": "PACIFIC ROYAL",
       "lat": 46.92005,
@@ -182,6 +179,16 @@
       "status": 1,
       "classB": false,
       "seen": "2026-10-07T00:52:46.7452296+00:00"
+    },
+    {
+      "mmsi": 303671000,
+      "name": "SUMMER WIND",
+      "lat": 46.4592,
+      "lon": -124.30787,
+      "sog": 8.2,
+      "cog": 179.3,
+      "classB": true,
+      "seen": "2026-10-06T22:50:44.3720584+00:00"
     },
     {
       "mmsi": 366765940,
@@ -221,13 +228,6 @@
     },
     {
       "mmsi": 367310520,
-      "type": 52,
-      "dest": "USLOG",
-      "callsign": "WDD9378",
-      "lengthM": 27,
-      "beamM": 10,
-      "draughtM": 3.5,
-      "name": "JAMES T",
       "lat": 46.50116,
       "lon": -124.02616,
       "sog": 0,
@@ -235,19 +235,14 @@
       "heading": 272,
       "status": 5,
       "classB": false,
-      "seen": "2026-10-07T01:52:00.0628237+00:00"
-    },
-    {
-      "mmsi": 367450580,
-      "name": "GRUMPY J",
-      "lat": 46.60954,
-      "lon": -124.39003,
-      "sog": 8.1,
-      "cog": 335.6,
-      "heading": 330,
-      "status": 7,
-      "classB": false,
-      "seen": "2026-10-06T11:36:30.9730013+00:00"
+      "seen": "2026-10-07T01:52:00.0628237+00:00",
+      "name": "JAMES T",
+      "type": 52,
+      "dest": "USLOG",
+      "callsign": "WDD9378",
+      "lengthM": 27,
+      "beamM": 10,
+      "draughtM": 3.5
     },
     {
       "mmsi": 303648000,
@@ -259,14 +254,36 @@
       "beamM": 9,
       "draughtM": 4.0,
       "name": "OCEAN THUNDER",
-      "lat": 46.90605,
+      "lat": 46.90609,
       "lon": -124.10763,
       "sog": 0,
-      "cog": 289.1,
-      "heading": 125,
+      "cog": 255.7,
+      "heading": 123,
       "status": 0,
       "classB": false,
-      "seen": "2026-10-07T02:52:12.9195688+00:00"
+      "seen": "2026-10-07T04:37:16.6526773+00:00"
+    },
+    {
+      "mmsi": 367050280,
+      "name": "ROCKY B",
+      "lat": 46.63354,
+      "lon": -124.21753,
+      "sog": 8,
+      "cog": 174.2,
+      "classB": true,
+      "seen": "2026-10-06T06:14:15.5718955+00:00"
+    },
+    {
+      "mmsi": 368346750,
+      "name": "ROWDY",
+      "lat": 46.97823,
+      "lon": -123.88301,
+      "sog": 0,
+      "cog": 31,
+      "heading": 122,
+      "status": 5,
+      "classB": false,
+      "seen": "2026-10-07T01:52:00.0628237+00:00"
     }
   ]
 }
