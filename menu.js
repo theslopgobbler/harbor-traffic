@@ -85,6 +85,7 @@
     if (set) { ({ clock: '#clockFmt', big: '#btnBig', fx: '#btnFx' })[set.dataset.set] && $(({ clock: '#clockFmt', big: '#btnBig', fx: '#btnFx' })[set.dataset.set])?.click(); return setTimeout(() => show('settings'), 50); }
     if (e.target.closest('[data-discord]') && confirm('Open the Harbor Events Discord in a new tab?')) window.open(DISCORD, '_blank', 'noopener');
   });
-  document.addEventListener('click', (e) => { if (!panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) open(false); });
+  // (only a real tap outside closes it: a setting works by pressing the page's own button for you, which isn't one)
+  document.addEventListener('click', (e) => { if (e.isTrusted && !panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) open(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
 })();
