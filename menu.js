@@ -27,10 +27,17 @@
   panel.className = 'menu-panel'; panel.hidden = true; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Menu');
   wrap.append(btn, panel);
 
+  // the map layers: the same switches as the row of layer buttons (which can be hidden, for more map on a phone)
+  const LAYERS = [['#btnRoads', 'ROADS'], ['#btnRadar', 'RADAR'], ['#btnFx', 'WEATHER EFFECTS'], ['#btnVessels', 'SHIPS'], ['#btnAir', 'AIRCRAFT'], ['#btnBus', 'BUSES']];
+  const hideTools = () => { try { return localStorage.getItem('ht.hideTools') === '1'; } catch { return false; } };
+  document.body.classList.toggle('hide-tools', hideTools());
   const row = (id, label, extra = '') => `<button type="button" class="menu-row" data-go="${id}">${label}<span>${extra || '›'}</span></button>`;
   const back = '<button type="button" class="menu-back" data-go="main">‹ BACK</button>';
   const pages = {
-    main: () => `<div class="menu-title">HARBOR TRAFFIC</div>${row('themes', 'THEMES')}${row('settings', 'SETTINGS')}${row('about', 'ABOUT')}`,
+    main: () => `<div class="menu-title">HARBOR TRAFFIC</div>${row('layers', 'MAP LAYERS')}${row('themes', 'THEMES')}${row('settings', 'SETTINGS')}${row('about', 'ABOUT')}`,
+    layers: () => `${back}<div class="menu-title">MAP LAYERS</div>
+      ${LAYERS.map(([sel, label]) => `<button type="button" class="menu-row" data-layer="${sel}">${label}<span>${$(sel)?.classList.contains('on') ? 'ON' : 'OFF'}</span></button>`).join('')}
+      <button type="button" class="menu-row" data-set="tools">LAYER BUTTONS ON THE MAP<span>${hideTools() ? 'HIDDEN' : 'SHOWN'}</span></button>`,
     themes: () => `${back}<div class="menu-title">THEMES</div>
       <div class="menu-opt on">✓ HARBOR NIGHT <small>THE CURRENT LOOK</small></div>
       <div class="menu-opt soon">NORMAL <small>COMING SOON</small></div>
@@ -82,7 +89,15 @@
     e.stopPropagation();
     const go = e.target.closest('[data-go]'); if (go) return show(go.dataset.go);
     const set = e.target.closest('[data-set]');
+    if (set && set.dataset.set === 'tools') {
+      const hide = !hideTools();
+      try { if (hide) localStorage.setItem('ht.hideTools', '1'); else localStorage.removeItem('ht.hideTools'); } catch {}
+      document.body.classList.toggle('hide-tools', hide);
+      return show(page);
+    }
     if (set) { $(({ clock: '#clockFmt', big: '#btnBig' })[set.dataset.set] || '#none')?.click(); return setTimeout(() => show('settings'), 50); }
+    const layer = e.target.closest('[data-layer]');
+    if (layer) { $(layer.dataset.layer)?.click(); return setTimeout(() => show('layers'), 50); }
     if (e.target.closest('[data-discord]') && confirm('Open the Harbor Events Discord in a new tab?')) window.open(DISCORD, '_blank', 'noopener');
   });
   // (only a real tap outside closes it: a setting works by pressing the page's own button for you, which isn't one)

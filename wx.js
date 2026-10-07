@@ -757,18 +757,25 @@
     $('#seaBar').textContent = bar?.conditions ? `BAR ${bar.conditions.toUpperCase().replace(', BECOMING', ' →')}` : 'BAR --';
     $('#seaBar').style.color = waveColor;
     $('#seaWaves').textContent = b?.waveFt != null ? `WAVES ${b.waveFt}FT @${b.periodS}S ${compass(b.dirDeg)}` : 'WAVES --';
-    $('#seaWater').textContent = water != null ? `WATER ${Math.round(water)}°` : '';
     const alerts = m?.alerts || [];
+    // a marine warning says what it is where the water temperature goes (the glow alone looked like a stuck button)
+    const events = [...new Set(alerts.map((a) => String(a.event || '').toUpperCase()).filter(Boolean))];
+    $('#seaWater').textContent = events.length ? `⚠ ${events[0].replace('ADVISORY', 'ADV.')}${events.length > 1 ? ` +${events.length - 1}` : ''}`
+      : water != null ? `WATER ${Math.round(water)}°` : '';
+    $('#seaWater').style.color = events.length ? '#ff7a1a' : '';
     $('#sea').classList.toggle('alert', alerts.length > 0 || lvl >= 2);
     tick('sea', [bar?.conditions ? `Grays Harbor bar ${bar.conditions}` : '', b?.waveFt != null ? `waves ${b.waveFt} ft @ ${b.periodS}s` : '',
       water != null ? `water ${Math.round(water)}°` : '', ...alerts.map((a) => a.event)].filter(Boolean).join(' · '));
-    $('#sea').title = [bar?.text, b ? `Buoy 46211: ${b.waveFt} ft, ${b.periodS} s, from ${compass(b.dirDeg)}` : ''].filter(Boolean).join('\n');
+    $('#sea').title = [bar?.text, b ? `Buoy 46211: ${b.waveFt} ft, ${b.periodS} s, from ${compass(b.dirDeg)}` : '',
+      water != null ? `Water ${Math.round(water)}°` : '', ...[...new Map(alerts.map((a) => [a.event + a.area, a])).values()].map((a) => `${a.event}: ${a.area}`)]
+      .filter(Boolean).join('\n') + '\n(tap for the full sea report)';
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const when = (iso) => iso ? new Date(iso).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
     $('#seaDetail').innerHTML = `
       <ul class="list" id="shipAlerts"></ul>
       <ul class="list">
-        ${alerts.map((a) => `<li class="k-closure"><div class="t">${esc(a.event.toUpperCase())}</div><div class="m">${esc(a.area)}${a.ends ? ' · UNTIL ' + esc(when(a.ends)) : ''}</div></li>`).join('')}
+        ${[...alerts.reduce((g, a) => { const k = a.event + '|' + a.area, o = g.get(k); if (!o || (a.ends && (!o.ends || a.ends > o.ends))) g.set(k, a); return g; }, new Map()).values()]
+          .map((a) => `<li class="k-closure"><div class="t">${esc(a.event.toUpperCase())}</div><div class="m">${esc(a.area)}${a.ends ? ' · UNTIL ' + esc(when(a.ends)) : ''}</div></li>`).join('')}
         <li style="border-left-color:${waveColor}"><div class="t">BAR: ${esc((bar?.conditions || 'no forecast').toUpperCase())}</div>
           <div class="m">${esc(bar?.text || '')}</div><div class="m">NWS COASTAL FORECAST · ${esc(when(bar?.issued))}</div></li>
         <li><div class="t">WAVES ${b?.waveFt ?? '--'} FT · ${b?.periodS ?? '--'} S · FROM ${b?.dirDeg != null ? compass(b.dirDeg) + ' ' + b.dirDeg + '°' : '--'}</div>
