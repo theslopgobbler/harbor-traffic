@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-07T14:36:28.4384825+00:00",
+  "updated": "2026-10-07T14:54:14.7249419+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a52844",
-      "flight": "EJA431",
-      "reg": "N431QS",
-      "type": "E55P",
-      "cat": "A2",
-      "alt": 7250,
-      "gs": 263.9,
-      "track": 14.93,
-      "rate": -2048,
-      "lat": 47.3968,
-      "lon": -122.72752,
-      "squawk": "3302",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
