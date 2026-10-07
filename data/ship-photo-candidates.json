@@ -38,7 +38,10 @@
     "368450780": "2026-10-07T06:13:11.3527852+00:00",
     "367595030": "2026-10-07T06:41:36.3211693+00:00",
     "941605934": "2026-10-07T06:41:36.3211693+00:00",
-    "366972000": "2026-10-07T06:41:36.3211693+00:00"
+    "366972000": "2026-10-07T06:41:36.3211693+00:00",
+    "368288370": "2026-10-07T07:03:44.0602567+00:00",
+    "367544180": "2026-10-07T07:03:44.0602567+00:00",
+    "367425910": "2026-10-07T07:03:44.0602567+00:00"
   },
   "candidates": [
     {
@@ -220,7 +223,52 @@
       "date": "between circa 1980 and circa 1989 ",
       "caption": "Essayons Dredge. Portland. No date given.",
       "found": "2026-10-07T06:41:36.3211693+00:00"
+    },
+    {
+      "mmsi": "367425910",
+      "ship": "SEA HORSE",
+      "file": "File:Christ Church (2) ^ Sea Horse Obelisk, Church Road, Tramore, Co. Waterford - geograph.org.uk - 3963489.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Christ_Church_(2)_%5E_Sea_Horse_Obelisk,_Church_Road,_Tramore,_Co._Waterford_-_geograph.org.uk_-_3963489.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Christ_Church_%282%29_%5E_Sea_Horse_Obelisk%2C_Church_Road%2C_Tramore%2C_Co._Waterford_-_geograph.org.uk_-_3963489.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1672,
+      "author": "P L Chadwick",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-05-11",
+      "caption": "Christ Church (2) &amp; Sea Horse Obelisk, Church Road, Tramore, Co. Waterford",
+      "found": "2026-10-07T07:03:44.0602567+00:00"
+    },
+    {
+      "mmsi": "367425910",
+      "ship": "SEA HORSE",
+      "file": "File:Sea Horse Memorial - geograph.org.uk - 544979.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sea_Horse_Memorial_-_geograph.org.uk_-_544979.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Sea_Horse_Memorial_-_geograph.org.uk_-_544979.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1923,
+      "author": "Paul O'Farrell",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2007-08-19",
+      "caption": "Sea Horse Memorial The memorial to the victims of the Sea horse tragedy.The Sea Horse was a British troop ship returning from the Crimea, it sank in Tramore Bay in 1816 with the loss of over 300 people. The memorial w...",
+      "found": "2026-10-07T07:03:44.0602567+00:00"
+    },
+    {
+      "mmsi": "367425910",
+      "ship": "SEA HORSE",
+      "file": "File:Wrecking of the Sea horse 1816 memorial Tramore.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Wrecking_of_the_Sea_horse_1816_memorial_Tramore.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Wrecking_of_the_Sea_horse_1816_memorial_Tramore.png/1280px-Wrecking_of_the_Sea_horse_1816_memorial_Tramore.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 2560,
+      "author": "A.-K. D.",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-09-04",
+      "caption": "Memorial on the Doneraile Walk in Tramore in honour of those who drowned on the Sea Horse in 1816. It mentions Wellington. It reads: BENEATH THIS TOMB ARE DEPOSITED THE REMAINS OF Major Charles Douglas 29 Capt. James ...",
+      "found": "2026-10-07T07:03:44.0602567+00:00"
     }
   ],
-  "updated": "2026-10-07T06:41:36.3211693+00:00"
+  "updated": "2026-10-07T07:03:44.0602567+00:00"
 }

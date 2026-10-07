@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-07T06:41:36.3211693+00:00",
+  "updated": "2026-10-07T07:03:44.0602567+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "758525",
-      "flight": "PAL125",
-      "reg": "RP-C3501",
-      "type": "A359",
-      "cat": "A5",
-      "alt": 10725,
-      "gs": 338.0,
-      "track": 274.41,
-      "rate": 640,
-      "lat": 47.63571,
-      "lon": -122.76343,
-      "squawk": "3503",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
