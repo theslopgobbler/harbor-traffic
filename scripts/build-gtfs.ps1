@@ -11,9 +11,16 @@ $dataDir = Join-Path $root 'data'
 $tmp = Join-Path ([IO.Path]::GetTempPath()) 'ght-gtfs'
 New-Item -ItemType Directory -Force $tmp | Out-Null
 $zip = Join-Path $tmp 'ght.zip'
-Invoke-WebRequest -UseBasicParsing 'http://mjcaction.com/MJC_GTFS_Public/graysharbor_google_transit.zip' -OutFile $zip -TimeoutSec 120
+$dl = Invoke-WebRequest -UseBasicParsing 'http://mjcaction.com/MJC_GTFS_Public/graysharbor_google_transit.zip' -OutFile $zip -TimeoutSec 120 -PassThru
 Expand-Archive $zip -DestinationPath $tmp -Force
 $csv = { param($n) Import-Csv (Join-Path $tmp "$n.txt") }
+# data/schedule-status.json: which version of GHT's file this is (its date on their server: the collector rebuilds when
+# that changes) and the last day it covers (the stats page warns as that gets close)
+$feedEnd = $null
+if (Test-Path (Join-Path $tmp 'feed_info.txt')) { $feedEnd = (& $csv 'feed_info' | Select-Object -First 1).feed_end_date }
+if (-not $feedEnd) { $feedEnd = (& $csv 'calendar' | ForEach-Object { $_.end_date } | Sort-Object | Select-Object -Last 1) }
+[IO.File]::WriteAllText((Join-Path $dataDir 'schedule-status.json'), ([ordered]@{ built = [DateTimeOffset]::UtcNow.ToString('o')
+    fileModified = "$($dl.Headers['Last-Modified'])"; feedEnd = "$feedEnd" } | ConvertTo-Json), (New-Object System.Text.UTF8Encoding($false)))
 
 $routes = @{}; foreach ($r in & $csv 'routes') { $routes[$r.route_id] = $r }
 # which shapes and which stops belong to which route
