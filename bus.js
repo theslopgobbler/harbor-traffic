@@ -767,20 +767,12 @@
   let lastFrame = 0, lastFollow = 0;
   // frame rate that steps down when the computer can't keep up: 30 a second normally, then 20, then 15. Judged by
   // how far apart the browser's own frames really are (over ~2 s); back up a step after ~10 s of easy going
+  // (by the strain meter in app.js: 30 a second normally, 20 when falling behind, 15 when struggling)
   const RATES = [33, 50, 66];
-  let rate = 0, rafPrev = 0, rafAvg = 16, calmSince = 0;
-  window.htFrameMs = () => RATES[rate];
-  function pace(t) {
-    if (rafPrev && t - rafPrev < 1000) rafAvg = rafAvg * 0.97 + (t - rafPrev) * 0.03; // (a tab coming back: skip)
-    rafPrev = t;
-    if (rafAvg > RATES[rate] * 1.35 && rate < RATES.length - 1) { rate++; rafAvg = RATES[rate]; calmSince = t; }
-    else if (rafAvg > RATES[rate] * 0.75) calmSince = t; // (still busy at this rate)
-    else if (rate > 0 && t - calmSince > 10000) { rate--; calmSince = t; }
-  }
+  window.htFrameMs = () => RATES[window.htStrain?.() || 0];
   function glide(t) {
     requestAnimationFrame(glide);
-    pace(t);
-    if (document.hidden || !on || t - lastFrame < RATES[rate] - 2) return; // about 30 frames a second, fewer if struggling
+    if (document.hidden || !on || t - lastFrame < window.htFrameMs() - 2) return; // about 30 frames a second, fewer if struggling
     const dt = Math.min(0.25, (t - (lastFrame || t)) / 1000);
     lastFrame = t;
     const now = Date.now();

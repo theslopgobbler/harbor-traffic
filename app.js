@@ -249,6 +249,22 @@
     interactive: !TV
   });
   window.htMap = map; // handy from the browser console
+  // strain meter: how far apart the browser's frames really are (smoothed over ~2 s). 0 = fine, 1 = falling behind
+  // (under ~22 frames a second), 2 = struggling (under ~12). Every animation checks it and backs off: the road-alert
+  // pulse stops, weather effects slow then pause, the bus view steps down. Back down a level after ~10 s of easy going
+  {
+    let prev = 0, avg = 16, level = 0, calm = 0;
+    const LIMIT = [45, 85];
+    (function meter(t) {
+      if (prev && t - prev < 1000 && !document.hidden) avg = avg * 0.97 + (t - prev) * 0.03; // (a tab coming back: skip)
+      prev = t;
+      if (level < 2 && avg > LIMIT[level]) { level++; calm = t; }
+      else if (level > 0 && avg > LIMIT[level - 1] * 0.6) calm = t; // still busy
+      else if (level > 0 && t - calm > 10000) { level--; calm = t; }
+      requestAnimationFrame(meter);
+    })(0);
+    window.htStrain = () => level;
+  }
   // coordinates: a line with a COPY button for popups (buses, boats, landmarks), and press-and-hold (or right-click)
   // anywhere on the map for that spot's
   const fmtLL = (lat, lon) => `${(+lat).toFixed(5)}, ${(+lon).toFixed(5)}`;
@@ -836,7 +852,10 @@
   }
   let declutterTimer = 0;
   const declutterSoon = () => { clearTimeout(declutterTimer); declutterTimer = setTimeout(declutter, 60); };
-  map.on('moveend', declutterSoon);
+  // (not while following a bus: the camera "ends a move" every frame then, and once frames were over 60 ms apart this
+  // measured every label on every frame, slowing things further)
+  const followingBus = () => document.body.classList.contains('following') || document.body.classList.contains('chase');
+  map.on('moveend', () => { if (!followingBus()) declutterSoon(); });
   window.addEventListener('resize', declutterSoon);
   window.htDeclutter = declutterSoon; // wx.js calls this when its labels change
   setInterval(declutter, 5000);        // text inside labels changes as data arrives
@@ -1011,11 +1030,19 @@
     stroke="${K.orange}" stroke-width="2.6" stroke-linejoin="miter"/>${mark ? `<text x="14" y="21" text-anchor="middle" fill="${K.orange}"
     font-family="Share Tech Mono, monospace" font-size="${mark.length > 1 ? 11 : 13}" font-weight="700">${mark}</text>` : ''}</svg>`;
 
-  // closure and road-work stretches breathe in step with the markers (about 15 frames a second is plenty)
-  let pulseLast = 0;
+  // closure and road-work stretches breathe in step with the markers. Each step makes the whole map redraw, so only
+  // 5 a second (it's a slow breath), and none while the computer is falling behind (held at full brightness)
+  let pulseLast = 0, pulseHeld = false;
   const pulse = (t) => {
     // (paused in the bus chase view, which redraws the map every frame already)
-    if (t - pulseLast > 66 && map.getLayer('inc-glow') && !document.body.classList.contains('chase')) {
+    const strained = window.htStrain?.() > 0;
+    if (strained && !pulseHeld && map.getLayer('inc-glow')) {
+      pulseHeld = true;
+      map.setPaintProperty('inc-glow', 'line-opacity', ['match', ['get', 'kind'], ['closure', 'work'], 0.8, 0.5]);
+      map.setPaintProperty('inc', 'line-opacity', 1);
+    }
+    if (!strained) pulseHeld = false;
+    if (!strained && t - pulseLast > 200 && map.getLayer('inc-glow') && !document.body.classList.contains('chase')) {
       pulseLast = t;
       const s = (Math.sin(t / 1800 * Math.PI * 2) + 1) / 2; // 0..1 over 1.8 s, like the CSS pulse
       map.setPaintProperty('inc-glow', 'line-opacity',
@@ -1149,7 +1176,7 @@
 
   // the road list follows the map: when it settles after a pan or zoom, list what's on screen
   let roadListTimer = 0;
-  map.on('moveend', () => { clearTimeout(roadListTimer); roadListTimer = setTimeout(renderRoadList, 250); });
+  map.on('moveend', () => { if (followingBus()) return; clearTimeout(roadListTimer); roadListTimer = setTimeout(renderRoadList, 250); });
 
   // ---------------- tabs & sheet ----------------
   const panel = $('#panel');

@@ -456,11 +456,16 @@
     requestAnimationFrame(frame);
     // (paused while following a bus, flat or 3D: the camera moves every frame, and redoing the weather zones for
     // each of those frames is the kind of work that crashed laptops. They come back when the follow ends)
-    if (t - last < 33 || document.hidden || chasing()) {
-      if (chasing() && !frame.cleared) { frame.cleared = true; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); }
+    // how often: 30 a second while rain, snow or hail is falling (fast streaks), 15 for slow things (fog drifting,
+    // swell, wind); half that when the computer is falling behind, and paused when it's struggling (htStrain, app.js)
+    const strain = window.htStrain?.() || 0;
+    const falling = zones.some((z) => z.fall?.length);
+    const every = (falling ? 33 : 66) * (strain ? 2 : 1);
+    if (t - last < every || document.hidden || chasing() || strain >= 2) {
+      if ((chasing() || strain >= 2) && !frame.cleared) { frame.cleared = true; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); }
       return;
     }
-    frame.cleared = false; // ~30 fps
+    frame.cleared = false;
     last = t;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
