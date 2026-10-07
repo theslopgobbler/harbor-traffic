@@ -78,6 +78,9 @@
     <section id="trainSec" style="margin-bottom:24px">
       <form id="trainForm" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
         <button type="submit" id="trainBtn" style="font-size:15px;padding:10px 16px">🚂 TRAIN NOW</button>
+        <select id="trainDir" title="The port is the end of the line: every train goes in, waits there, and comes back out">
+          <option value="">which way?</option><option value="going in, toward the port">going in (toward the port)</option>
+          <option value="coming out, from the port">coming out (from the port)</option></select>
         <input id="trainNote" placeholder="note (optional): where, which way, how long" maxlength="300" style="flex:1;min-width:200px">
       </form>
       <p class="note" id="trainMsg">Saves the time and which ships were in port then, to see what trains go with.</p>
@@ -106,15 +109,18 @@
       <p class="msg" id="schedWarn" hidden></p>
       <div id="busOut" hidden>
         <div class="grid">
-          <div class="box"><div class="l">ON TIME</div><div class="v" id="bOn">–</div><div class="s" id="bOnS">LEFT 0 TO 5 MIN AFTER SCHEDULE</div></div>
+          <div class="box"><div class="l">LEFT ON TIME</div><div class="v" id="bOn">–</div><div class="s" id="bOnS">LEFT 0 TO 5 MIN AFTER SCHEDULE</div></div>
+          <div class="box"><div class="l">GOT THERE ON TIME</div><div class="v" id="bArr">–</div><div class="s" id="bArrS">ARRIVED 0 TO 5 MIN AFTER SCHEDULE</div></div>
           <div class="box"><div class="l">AVERAGE</div><div class="v" id="bAvg">–</div><div class="s">MIN AFTER SCHEDULE</div></div>
           <div class="box"><div class="l">TIMED STOPS LOGGED</div><div class="v" id="bN">–</div><div class="s" id="bSince"></div></div>
           <div class="box"><div class="l">OVER 10 MIN LATE</div><div class="v" id="bO10">–</div><div class="s" id="bO10S">OF TIMED STOPS</div></div>
           <div class="box"><div class="l">OVER 30 MIN LATE</div><div class="v" id="bO30">–</div><div class="s" id="bO30S">OF TIMED STOPS</div></div>
           <div class="box"><div class="l">NO BUS SEEN</div><div class="v" id="bMiss">–</div><div class="s" id="bMissS">SCHEDULED STOPS WITH NO BUS</div></div>
         </div>
-        <h2>EVERY SCHEDULED TIMED STOP · HOW IT WENT</h2>
+        <h2>EVERY SCHEDULED TIMED STOP · HOW IT WENT (LEAVING)</h2>
         <div class="chart" id="cSum"></div>
+        <h2>WHEN BUSES GOT THERE · FOR PEOPLE GETTING OFF (BUSES OFTEN GET TO A TIMED STOP EARLY AND WAIT)</h2>
+        <div class="chart" id="cArr"></div>
         <h2>ON TIME BY DAY</h2>
         <div class="chart" id="cDaily"></div>
         <h2>HOW LATE · MINUTES AFTER THE SCHEDULED TIME</h2>
@@ -276,9 +282,10 @@
     e.preventDefault(); if (!key) return;
     const btn = $('#trainBtn'); btn.disabled = true;
     const ships = await shipSnapshot();
-    if (await loadTrains({ t: Date.now(), note: $('#trainNote').value.trim(), ships })) {
+    const note = [$('#trainDir').value, $('#trainNote').value.trim()].filter(Boolean).join(' · ');
+    if (await loadTrains({ t: Date.now(), note, ships })) {
       $('#trainMsg').textContent = `SAVED ${new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase()} · ${shipText(ships).toUpperCase()}`;
-      $('#trainNote').value = '';
+      $('#trainNote').value = ''; $('#trainDir').value = '';
     }
     btn.disabled = false;
   });
@@ -526,6 +533,16 @@
     hbars($('#cSum'), all ? [sumItem('EARLY', early, 'left before the scheduled time'), sumItem('ON TIME', onT, 'left 0–5 min after'),
       sumItem('6–10 LATE', l6, 'left 6–10 min after'), sumItem('11–30 LATE', l11, 'left 11–30 min after'), sumItem('OVER 30 LATE', o30, 'left more than 30 min after'),
       sumItem('NO BUS SEEN', missedN, 'no bus came by')] : []);
+    // arrivals: when it got there against the same scheduled time
+    const ar = j.arrival || { n: 0 }, ad = Object.fromEntries((j.arrDist || []).map((x) => [x.m, x.n]));
+    const aAt = (f) => Object.entries(ad).reduce((a, [k, n]) => a + (f(+k) ? n : 0), 0);
+    $('#bArr').textContent = ar.n ? `${pct(ar.ontime, ar.n)}%` : '–';
+    $('#bArrS').textContent = ar.n ? `ARRIVED 0–5 MIN AFTER · ${ar.early} EARLY · ${ar.late} LATE` : 'ARRIVED 0 TO 5 MIN AFTER SCHEDULE';
+    const arrItem = (label, n, what) => ({ label, value: n, valueText: `${n} · ${pct(n, ar.n)}%`, title: label,
+      rows: [{ value: String(n), label: what, color: C1 }, { value: `${pct(n, ar.n)}%`, label: 'of arrivals at timed stops' }] });
+    hbars($('#cArr'), ar.n ? [arrItem('EARLY', aAt((m) => m < 0), 'got there before the scheduled time'), arrItem('ON TIME', aAt((m) => m >= 0 && m <= 5), 'got there 0–5 min after'),
+      arrItem('6–10 LATE', aAt((m) => m > 5 && m <= 10), 'got there 6–10 min after'), arrItem('11–30 LATE', aAt((m) => m > 10 && m <= 30), 'got there 11–30 min after'),
+      arrItem('OVER 30 LATE', aAt((m) => m > 30), 'got there more than 30 min after')] : []);
     const clock = (m) => (m == null ? '–' : `${(Math.floor(m / 60) % 12) || 12}:${String(m % 60).padStart(2, '0')} ${m < 720 ? 'AM' : 'PM'}`);
     const mapLink = (x) => (x.lat ? `<a href="./?at=${(+x.lon).toFixed(4)},${(+x.lat).toFixed(4)},17" target="_blank" rel="noopener">SEE IT ▸</a>` : '');
     $('#bWorst').innerHTML = (j.worst || []).map((w) => `<tr><td>${day(w.day)}</td><td>${esc(w.route)}</td><td>${esc(w.bus)}</td><td>${esc(w.stop).toUpperCase()}</td>
