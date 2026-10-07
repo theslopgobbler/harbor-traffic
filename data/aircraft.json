@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T16:05:56.0020923+00:00",
+  "updated": "2026-10-07T16:29:04.0970261+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,13 +8,45 @@
       "reg": "N734FN",
       "type": "C172",
       "cat": "A1",
-      "alt": 2750,
-      "gs": 123.9,
-      "track": 194.48,
-      "rate": -64,
-      "lat": 47.17515,
-      "lon": -122.84546,
+      "alt": 2575,
+      "gs": 89.8,
+      "track": 16.82,
+      "rate": -1088,
+      "lat": 46.77232,
+      "lon": -122.97854,
       "squawk": "4657",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a5ea5c",
+      "flight": "UAL2831",
+      "reg": "N480UA",
+      "type": "A320",
+      "cat": "A3",
+      "alt": 14750,
+      "gs": 364.2,
+      "track": 225.78,
+      "rate": 2624,
+      "lat": 47.4511,
+      "lon": -122.72649,
+      "squawk": "3524",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a4463e",
+      "flight": "DAL2980",
+      "reg": "N3749D",
+      "type": "B738",
+      "cat": "A3",
+      "alt": 11950,
+      "gs": 330.0,
+      "track": 38.85,
+      "rate": -1728,
+      "lat": 46.80972,
+      "lon": -122.70939,
+      "squawk": "2042",
       "emergency": "none",
       "mil": false
     }
