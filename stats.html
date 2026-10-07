@@ -208,6 +208,10 @@
       <br><button type="button" id="forget" style="margin-top:10px">FORGET KEY ON THIS DEVICE</button>
       <button type="button" id="noCount" style="margin-top:10px"></button></p>
       <p class="note" id="noCountNote">Mark each of your own devices (phone, computer) once, so your own visits don't count. Visits already counted stay.</p>
+      <h2 style="margin-top:24px">MAP CRASHES ON THIS DEVICE</h2>
+      <p class="note">The map's last minute before each time it closed without saying goodbye (a crash, or a phone killing the tab). Kept in this browser only.
+        <button type="button" id="crashClear">CLEAR</button></p>
+      <div id="crashes" class="scroll"></div>
   </section>
 </main>
 <script src="config.js"></script>
@@ -251,6 +255,21 @@
   const syncNoCount = () => { $('#noCount').textContent = noCountOn() ? '✓ THIS DEVICE ISN\'T COUNTED (TAP TO COUNT IT AGAIN)' : 'DON\'T COUNT THIS DEVICE IN THE VIEWERS'; };
   $('#noCount').addEventListener('click', () => { try { if (noCountOn()) localStorage.removeItem('ht.noCount'); else localStorage.setItem('ht.noCount', '1'); } catch {} syncNoCount(); });
   syncNoCount();
+  // ---- crash notes from diag.js (same browser)
+  function showCrashes() {
+    let list = []; try { list = JSON.parse(localStorage.getItem('ht.diagCrash')) || []; } catch {}
+    const hm = (t) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' }).toUpperCase();
+    const e = (s) => String(s ?? '').replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+    const notes = (title, l) => l?.length ? `<p class="note"><b>${title}:</b><br>${l.map((x) => `${hm(x.t)} · ${e(x.text)}`).join('<br>')}</p>` : '';
+    $('#crashes').innerHTML = list.length ? list.slice().reverse().map((c) => `<h2>${new Date(c.at).toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase()} · LAST HEARD ${hm(c.at)}</h2>
+      ${c.about ? `<p class="note">BUILD ${e(c.about.build)} · SCREEN ${e(c.about.screen)} @${e(c.about.dpr)}x · ${e(c.about.cores ?? '?')} CORES · ${e(c.about.memGB ?? '?')} GB · ${e(c.about.ua)}</p>` : ''}
+      ${notes('GRAPHICS', c.events)}${notes('SCRIPT ERRORS', c.errors)}
+      <table><thead><tr><th>TIME</th><th>VIEW</th><th>FPS</th><th>SLOWEST FRAME MS</th><th>MEMORY MB</th><th>MAP TILES</th><th>ICONS</th><th>BUSES</th><th>3D BUSES</th><th>PAGE PARTS</th><th>WX FX</th><th>3D FOG</th><th>ZOOM</th><th>TILT</th></tr></thead><tbody>
+      ${c.snaps.map((s) => `<tr><td>${hm(s.t)}</td><td>${s.view}</td><td>${s.fps}</td><td>${s.worstMs ?? ''}</td><td>${s.heapMB ?? '?'}</td><td>${s.tiles ?? '?'}</td><td>${s.icons}</td><td>${s.buses}</td><td>${s.bus3d ?? ''}</td><td>${s.nodes}</td><td>${s.fx ? 'ON' : 'OFF'}</td><td>${s.fog ? 'ON' : ''}</td><td>${s.zoom ?? ''}</td><td>${s.pitch ?? ''}°</td></tr>`).join('')}
+      </tbody></table>`).join('') : '<p class="note">NONE SO FAR.</p>';
+  }
+  $('#crashClear').addEventListener('click', () => { try { localStorage.removeItem('ht.diagCrash'); } catch {} showCrashes(); });
+  showCrashes();
   // ---- trains you saw, each with a snapshot of the big ships around the harbor right then (from the map's ship data)
   const TERMINALS = [-123.875, 46.955, -123.81, 46.972], HARBOR = [-124.13, 46.84, -123.76, 47.02];
   const inB = (s, [w, so, e, n]) => s.lon > w && s.lon < e && s.lat > so && s.lat < n;

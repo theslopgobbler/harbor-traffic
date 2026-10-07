@@ -822,7 +822,15 @@
       const fm = follow && markers.get(follow.id), nearPx = fm ? pxPerMeter(fm.getLngLat()) : 0;
       // (ghosts too: they don't move, but the camera does, and a ghost left at its old size looked nearer or farther
       // than it was)
-      for (const mk of markers.values()) if (mk !== fm && mk._bus) place3d(mk, nearPx, fm?.getLngLat());
+      // only the 8 nearest within 1.2 km get drawn in 3D (a crowd at a transit center was a lot to redraw every
+      // frame); the rest are hidden like far ones
+      const at = fm?.getLngLat(), others = [];
+      for (const mk of markers.values()) if (mk !== fm && mk._bus) others.push([at ? mk.getLngLat().distanceTo(at) : 0, mk]);
+      others.sort((a, b) => a[0] - b[0]);
+      others.forEach(([d, mk], i) => {
+        if (i < 8 && d <= 1200) return place3d(mk, nearPx, at);
+        if (mk._far !== true) { mk._far = true; mk.getElement().classList.add('far'); }
+      });
     }
     if (t - lastFollow > 250) {
       lastFollow = t; signalTurn();
@@ -833,6 +841,14 @@
         let street = follow.street;
         if (mk && t - (follow.streetAt || 0) > 1000) { follow.streetAt = t; street = streetOf(mk) || follow.street; }
         if ((st ? st.word + st.name : '') !== follow.status || street !== follow.street) { follow.street = street; renderFollow(); }
+        // its popup's coordinates keep up with the bus as drawn (between reports it's carried along its route), not
+        // just its last report, which only changes every 10 s or more
+        const pop = mk?.getPopup();
+        if (pop?.isOpen() && !mk._lostAt) {
+          const span = pop.getElement()?.querySelector('.coord span'), btn = pop.getElement()?.querySelector('.copy-coord');
+          const ll = mk.getLngLat(), txt = `${ll.lat.toFixed(5)}, ${ll.lng.toFixed(5)}`;
+          if (span && span.textContent !== txt) { span.textContent = txt; if (btn) btn.dataset.c = txt; }
+        }
       }
     }
   }
