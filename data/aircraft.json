@@ -1,22 +1,38 @@
 {
-  "updated": "2026-10-08T16:02:50.7994123+00:00",
+  "updated": "2026-10-08T16:29:26.4146938+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "ae03fd",
-      "flight": "PAT710",
-      "reg": "84-00144",
-      "type": "BE20",
+      "hex": "a1f197",
+      "flight": "N224TS",
+      "reg": "N224TS",
+      "type": "FDCT",
       "cat": "A1",
-      "alt": 14850,
-      "gs": 260.7,
-      "track": 214.06,
-      "rate": 0,
-      "lat": 46.53464,
-      "lon": -123.34618,
-      "squawk": "4647",
+      "alt": 3500,
+      "gs": 101.1,
+      "track": 357.73,
+      "rate": null,
+      "lat": 47.05565,
+      "lon": -123.78824,
+      "squawk": "1200",
       "emergency": "none",
-      "mil": true
+      "mil": false
+    },
+    {
+      "hex": "a6fe31",
+      "flight": "N55MM",
+      "reg": "N55MM",
+      "type": "S22T",
+      "cat": "A1",
+      "alt": 8350,
+      "gs": 176.7,
+      "track": 191.76,
+      "rate": 0,
+      "lat": 46.78146,
+      "lon": -122.89307,
+      "squawk": "4760",
+      "emergency": "none",
+      "mil": false
     }
   ]
 }
