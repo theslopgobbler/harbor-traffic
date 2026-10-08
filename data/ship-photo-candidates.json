@@ -117,7 +117,9 @@
     "245066000": "2026-10-08T01:44:03.9811357+00:00",
     "371441000": "2026-10-08T03:21:01.0565519+00:00",
     "368082970": "2026-10-08T04:26:40.0928998+00:00",
-    "218562000": "2026-10-08T04:46:05.0928153+00:00"
+    "218562000": "2026-10-08T04:46:05.0928153+00:00",
+    "366207650": "2026-10-08T06:27:30.0621822+00:00",
+    "303673000": "2026-10-08T06:27:30.0621822+00:00"
   },
   "candidates": [
     {
@@ -944,7 +946,22 @@
       "date": "Taken on 8 April 2013",
       "caption": "Vallejo",
       "found": "2026-10-07T14:36:28.4384825+00:00"
+    },
+    {
+      "mmsi": "303673000",
+      "ship": "MIKE OLEARY",
+      "file": "File:JS Amagiri arrives at San Diego, -1 Jul. 1994 a.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:JS_Amagiri_arrives_at_San_Diego,_-1_Jul._1994_a.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/JS_Amagiri_arrives_at_San_Diego%2C_-1_Jul._1994_a.jpg/1280px-JS_Amagiri_arrives_at_San_Diego%2C_-1_Jul._1994_a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 856,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1994-07-01",
+      "caption": "San Diego Harbor -- Starboard side view of the fore section of the Japanese Maritime Self Defense Force destroyer Amagiri (DD-154) (Sky Mist) being assisted in docking by the commercial tugboat Mister Marshall D. upon...",
+      "found": "2026-10-08T06:27:30.0621822+00:00"
     }
   ],
-  "updated": "2026-10-08T05:59:54.9642815+00:00"
+  "updated": "2026-10-08T06:27:30.0621822+00:00"
 }

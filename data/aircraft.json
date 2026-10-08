@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-08T05:59:54.9642815+00:00",
+  "updated": "2026-10-08T06:27:30.0621822+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a4a95b",
-      "flight": "RFS718",
-      "reg": "N4QP",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 5825,
-      "gs": 101.0,
-      "track": 56.31,
-      "rate": -64,
-      "lat": 46.81298,
-      "lon": -122.93372,
-      "squawk": "4736",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
