@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T15:19:21.0436325+00:00",
+  "updated": "2026-10-08T15:40:47.9361334+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -17,6 +17,12 @@
     "ebb": "The ebb on Friday afternoon will be strong"
   },
   "alerts": [
+    {
+      "event": "Dense Fog Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-10-08T19:00:00+00:00",
+      "headline": "Dense Fog Advisory issued October 8 at 8:24AM PDT until October 8 at 12:00PM PDT by NWS Portland OR"
+    },
     {
       "event": "Dense Fog Advisory",
       "area": "Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
@@ -40,12 +46,6 @@
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
       "ends": "2026-10-08T17:00:00+00:00",
       "headline": "Dense Fog Advisory issued October 8 at 5:30AM PDT until October 8 at 10:00AM PDT by NWS Seattle WA"
-    },
-    {
-      "event": "Dense Fog Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-10-08T19:00:00+00:00",
-      "headline": "Dense Fog Advisory issued October 8 at 5:27AM PDT until October 8 at 12:00PM PDT by NWS Portland OR"
     }
   ]
 }
