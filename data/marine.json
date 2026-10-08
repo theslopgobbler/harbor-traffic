@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T08:56:28.6782050+00:00",
+  "updated": "2026-10-08T09:15:33.7099480+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,18 +10,18 @@
     "waterF": 55.4
   },
   "bar": {
-    "issued": "2026-10-07T21:46:00+00:00",
-    "text": "Combined seas 3 to 5 ft building to 6 to 8 ft tonight. Bar conditions light, becoming moderate. Maximum ebb currents will occur around 300 PM Wednesday, 315 AM Thursday, and 345 PM Thursday.",
-    "conditions": "light, becoming moderate",
-    "seas": "3 to 5 ft building to 6 to 8 ft tonight",
+    "issued": "2026-10-08T09:03:00+00:00",
+    "text": "Combined seas 6 to 8 ft. Bar conditions moderate. Maximum ebb currents will occur around 315 AM Thursday, 345 PM Thursday, and 400 AM Friday.",
+    "conditions": "moderate",
+    "seas": "6 to 8 ft",
     "ebb": null
   },
   "alerts": [
     {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-10-08T09:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 8 at 1:35AM PDT until October 8 at 2:00AM PDT by NWS Portland OR"
+      "event": "Gale Watch",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "ends": "2026-10-10T03:00:00+00:00",
+      "headline": "Gale Watch issued October 8 at 2:09AM PDT until October 9 at 8:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
