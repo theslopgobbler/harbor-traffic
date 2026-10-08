@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-08T11:11:44.9714879+00:00",
+  "updated": "2026-10-08T11:35:52.7579758+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ae07f5",
+      "flight": "RCH231",
+      "reg": "97-0043",
+      "type": "C17",
+      "cat": "A5",
+      "alt": 5600,
+      "gs": 280.9,
+      "track": 81.81,
+      "rate": -1344,
+      "lat": 46.91772,
+      "lon": -122.86088,
+      "squawk": "3721",
+      "emergency": "none",
+      "mil": true
+    }
+  ]
 }
