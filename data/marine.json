@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-08T15:40:47.9361334+00:00",
+  "updated": "2026-10-08T16:02:50.7994123+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-08T14:56:00.0000000+00:00",
+    "time": "2026-10-08T15:26:00.0000000+00:00",
     "waveFt": 5.6,
     "periodS": 13.0,
-    "dirDeg": 288.0,
-    "waterF": 54.1
+    "dirDeg": 289.0,
+    "waterF": 54.3
   },
   "bar": {
     "issued": "2026-10-08T12:43:00+00:00",
@@ -24,8 +24,14 @@
       "headline": "Dense Fog Advisory issued October 8 at 8:24AM PDT until October 8 at 12:00PM PDT by NWS Portland OR"
     },
     {
+      "event": "Gale Watch",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
+      "ends": "2026-10-10T03:00:00+00:00",
+      "headline": "Gale Watch issued October 8 at 5:30AM PDT until October 9 at 8:00PM PDT by NWS Seattle WA"
+    },
+    {
       "event": "Dense Fog Advisory",
-      "area": "Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
       "ends": "2026-10-08T17:00:00+00:00",
       "headline": "Dense Fog Advisory issued October 8 at 5:30AM PDT until October 8 at 10:00AM PDT by NWS Seattle WA"
     },
@@ -36,14 +42,8 @@
       "headline": "Gale Watch issued October 8 at 5:30AM PDT until October 9 at 8:00PM PDT by NWS Seattle WA"
     },
     {
-      "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
-      "ends": "2026-10-10T03:00:00+00:00",
-      "headline": "Gale Watch issued October 8 at 5:30AM PDT until October 9 at 8:00PM PDT by NWS Seattle WA"
-    },
-    {
       "event": "Dense Fog Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-10-08T17:00:00+00:00",
       "headline": "Dense Fog Advisory issued October 8 at 5:30AM PDT until October 8 at 10:00AM PDT by NWS Seattle WA"
     }
