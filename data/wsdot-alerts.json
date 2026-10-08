@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T14:58:15.1427746+00:00",
+  "updated": "2026-10-08T15:19:21.0436325+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1321,411 +1321,6 @@
       "updated": "2026-10-07T16:46:13.0600000+00:00"
     },
     {
-      "id": 715621,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Starting Tuesday, Oct. 6, expect overnight northbound I-5 lane reductions and ramp closures from 6 p.m. to 6 a.m. Monday through Thursday and from 6:30 p.m. Friday to 9 a.m. Saturday for concrete panel replacement. If it rains, work may be rescheduled. Work switches back to southbound lanes as early as Oct. 12.",
-      "description": "",
-      "link": "https://bit.ly/4we6ZaO",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "B",
-      "milepost": 109.2,
-      "lat": 47.049326841,
-      "lon": -122.817812592,
-      "lat2": 47.078963253,
-      "lon2": -122.68394807,
-      "county": null,
-      "start": "2026-09-25T17:49:00.0000000+00:00",
-      "end": "2026-10-13T02:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:39:17.5470000+00:00",
-      "path": [
-        [
-          -122.81784,
-          47.04932
-        ],
-        [
-          -122.81495,
-          47.05132
-        ],
-        [
-          -122.8093,
-          47.05524
-        ],
-        [
-          -122.80902,
-          47.05542
-        ],
-        [
-          -122.80877,
-          47.05558
-        ],
-        [
-          -122.80848,
-          47.05573
-        ],
-        [
-          -122.80822,
-          47.05586
-        ],
-        [
-          -122.80793,
-          47.056
-        ],
-        [
-          -122.80767,
-          47.05612
-        ],
-        [
-          -122.80735,
-          47.05626
-        ],
-        [
-          -122.80705,
-          47.05637
-        ],
-        [
-          -122.80676,
-          47.05646
-        ],
-        [
-          -122.80646,
-          47.05656
-        ],
-        [
-          -122.80612,
-          47.05665
-        ],
-        [
-          -122.80583,
-          47.05673
-        ],
-        [
-          -122.80546,
-          47.05682
-        ],
-        [
-          -122.80167,
-          47.05745
-        ],
-        [
-          -122.77981,
-          47.06104
-        ],
-        [
-          -122.76746,
-          47.06308
-        ],
-        [
-          -122.7667,
-          47.06319
-        ],
-        [
-          -122.76594,
-          47.06328
-        ],
-        [
-          -122.76301,
-          47.06354
-        ],
-        [
-          -122.76,
-          47.06379
-        ],
-        [
-          -122.75858,
-          47.06391
-        ],
-        [
-          -122.75768,
-          47.06398
-        ],
-        [
-          -122.7566,
-          47.0641
-        ],
-        [
-          -122.75557,
-          47.06424
-        ],
-        [
-          -122.73852,
-          47.06678
-        ],
-        [
-          -122.73512,
-          47.06728
-        ],
-        [
-          -122.73465,
-          47.06734
-        ],
-        [
-          -122.73376,
-          47.06742
-        ],
-        [
-          -122.733,
-          47.06748
-        ],
-        [
-          -122.72732,
-          47.06782
-        ],
-        [
-          -122.72603,
-          47.06789
-        ],
-        [
-          -122.72474,
-          47.06793
-        ],
-        [
-          -122.72357,
-          47.06794
-        ],
-        [
-          -122.72205,
-          47.06793
-        ],
-        [
-          -122.72037,
-          47.06791
-        ],
-        [
-          -122.71925,
-          47.0679
-        ],
-        [
-          -122.71607,
-          47.06788
-        ],
-        [
-          -122.71556,
-          47.06789
-        ],
-        [
-          -122.71501,
-          47.06792
-        ],
-        [
-          -122.71461,
-          47.06796
-        ],
-        [
-          -122.71426,
-          47.068
-        ],
-        [
-          -122.71364,
-          47.06811
-        ],
-        [
-          -122.71303,
-          47.06826
-        ],
-        [
-          -122.71242,
-          47.06842
-        ],
-        [
-          -122.71121,
-          47.06887
-        ],
-        [
-          -122.71034,
-          47.0692
-        ],
-        [
-          -122.70486,
-          47.07136
-        ],
-        [
-          -122.70318,
-          47.072
-        ],
-        [
-          -122.69505,
-          47.07506
-        ],
-        [
-          -122.69353,
-          47.07564
-        ],
-        [
-          -122.68976,
-          47.07712
-        ],
-        [
-          -122.6887,
-          47.07751
-        ],
-        [
-          -122.68744,
-          47.07792
-        ],
-        [
-          -122.68387,
-          47.07895
-        ],
-        [
-          -122.68387,
-          47.07895
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
-      "id": 712872,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.6,
-      "lat": 46.627033568,
-      "lon": -123.082208102,
-      "lat2": 46.626966642,
-      "lon2": -123.063374325,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-12T22:30:00.0000000+00:00",
-      "updated": "2026-09-10T21:06:34.0470000+00:00",
-      "path": [
-        [
-          -123.0822,
-          46.62703
-        ],
-        [
-          -123.08176,
-          46.62703
-        ],
-        [
-          -123.08101,
-          46.62703
-        ],
-        [
-          -123.07967,
-          46.62703
-        ],
-        [
-          -123.07843,
-          46.62702
-        ],
-        [
-          -123.07691,
-          46.62702
-        ],
-        [
-          -123.07664,
-          46.62702
-        ],
-        [
-          -123.07607,
-          46.62702
-        ],
-        [
-          -123.07582,
-          46.62702
-        ],
-        [
-          -123.07474,
-          46.62702
-        ],
-        [
-          -123.07107,
-          46.62702
-        ],
-        [
-          -123.06794,
-          46.627
-        ],
-        [
-          -123.06486,
-          46.62698
-        ],
-        [
-          -123.06443,
-          46.62697
-        ],
-        [
-          -123.06424,
-          46.62697
-        ],
-        [
-          -123.06344,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ]
-      ]
-    },
-    {
       "id": 717167,
       "kind": "work",
       "category": "Maintenance",
@@ -2223,6 +1818,454 @@
           46.63026
         ]
       ]
+    },
+    {
+      "id": 715621,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Starting Tuesday, Oct. 6, expect overnight northbound I-5 lane reductions and ramp closures from 6 p.m. to 6 a.m. Monday through Thursday and from 6:30 p.m. Friday to 9 a.m. Saturday for concrete panel replacement. If it rains, work may be rescheduled. Work switches back to southbound lanes as early as Oct. 12.",
+      "description": "",
+      "link": "https://bit.ly/4we6ZaO",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "B",
+      "milepost": 109.2,
+      "lat": 47.049326841,
+      "lon": -122.817812592,
+      "lat2": 47.078963253,
+      "lon2": -122.68394807,
+      "county": null,
+      "start": "2026-09-25T17:49:00.0000000+00:00",
+      "end": "2026-10-13T02:00:00.0000000+00:00",
+      "updated": "2026-10-05T16:39:17.5470000+00:00",
+      "path": [
+        [
+          -122.81784,
+          47.04932
+        ],
+        [
+          -122.81495,
+          47.05132
+        ],
+        [
+          -122.8093,
+          47.05524
+        ],
+        [
+          -122.80902,
+          47.05542
+        ],
+        [
+          -122.80877,
+          47.05558
+        ],
+        [
+          -122.80848,
+          47.05573
+        ],
+        [
+          -122.80822,
+          47.05586
+        ],
+        [
+          -122.80793,
+          47.056
+        ],
+        [
+          -122.80767,
+          47.05612
+        ],
+        [
+          -122.80735,
+          47.05626
+        ],
+        [
+          -122.80705,
+          47.05637
+        ],
+        [
+          -122.80676,
+          47.05646
+        ],
+        [
+          -122.80646,
+          47.05656
+        ],
+        [
+          -122.80612,
+          47.05665
+        ],
+        [
+          -122.80583,
+          47.05673
+        ],
+        [
+          -122.80546,
+          47.05682
+        ],
+        [
+          -122.80167,
+          47.05745
+        ],
+        [
+          -122.77981,
+          47.06104
+        ],
+        [
+          -122.76746,
+          47.06308
+        ],
+        [
+          -122.7667,
+          47.06319
+        ],
+        [
+          -122.76594,
+          47.06328
+        ],
+        [
+          -122.76301,
+          47.06354
+        ],
+        [
+          -122.76,
+          47.06379
+        ],
+        [
+          -122.75858,
+          47.06391
+        ],
+        [
+          -122.75768,
+          47.06398
+        ],
+        [
+          -122.7566,
+          47.0641
+        ],
+        [
+          -122.75557,
+          47.06424
+        ],
+        [
+          -122.73852,
+          47.06678
+        ],
+        [
+          -122.73512,
+          47.06728
+        ],
+        [
+          -122.73465,
+          47.06734
+        ],
+        [
+          -122.73376,
+          47.06742
+        ],
+        [
+          -122.733,
+          47.06748
+        ],
+        [
+          -122.72732,
+          47.06782
+        ],
+        [
+          -122.72603,
+          47.06789
+        ],
+        [
+          -122.72474,
+          47.06793
+        ],
+        [
+          -122.72357,
+          47.06794
+        ],
+        [
+          -122.72205,
+          47.06793
+        ],
+        [
+          -122.72037,
+          47.06791
+        ],
+        [
+          -122.71925,
+          47.0679
+        ],
+        [
+          -122.71607,
+          47.06788
+        ],
+        [
+          -122.71556,
+          47.06789
+        ],
+        [
+          -122.71501,
+          47.06792
+        ],
+        [
+          -122.71461,
+          47.06796
+        ],
+        [
+          -122.71426,
+          47.068
+        ],
+        [
+          -122.71364,
+          47.06811
+        ],
+        [
+          -122.71303,
+          47.06826
+        ],
+        [
+          -122.71242,
+          47.06842
+        ],
+        [
+          -122.71121,
+          47.06887
+        ],
+        [
+          -122.71034,
+          47.0692
+        ],
+        [
+          -122.70486,
+          47.07136
+        ],
+        [
+          -122.70318,
+          47.072
+        ],
+        [
+          -122.69505,
+          47.07506
+        ],
+        [
+          -122.69353,
+          47.07564
+        ],
+        [
+          -122.68976,
+          47.07712
+        ],
+        [
+          -122.6887,
+          47.07751
+        ],
+        [
+          -122.68744,
+          47.07792
+        ],
+        [
+          -122.68387,
+          47.07895
+        ],
+        [
+          -122.68387,
+          47.07895
+        ]
+      ]
+    },
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
+      "id": 712872,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Monday, Oct. 12: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.6,
+      "lat": 46.627033568,
+      "lon": -123.082208102,
+      "lat2": 46.626966642,
+      "lon2": -123.063374325,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-12T22:30:00.0000000+00:00",
+      "updated": "2026-09-10T21:06:34.0470000+00:00",
+      "path": [
+        [
+          -123.0822,
+          46.62703
+        ],
+        [
+          -123.08176,
+          46.62703
+        ],
+        [
+          -123.08101,
+          46.62703
+        ],
+        [
+          -123.07967,
+          46.62703
+        ],
+        [
+          -123.07843,
+          46.62702
+        ],
+        [
+          -123.07691,
+          46.62702
+        ],
+        [
+          -123.07664,
+          46.62702
+        ],
+        [
+          -123.07607,
+          46.62702
+        ],
+        [
+          -123.07582,
+          46.62702
+        ],
+        [
+          -123.07474,
+          46.62702
+        ],
+        [
+          -123.07107,
+          46.62702
+        ],
+        [
+          -123.06794,
+          46.627
+        ],
+        [
+          -123.06486,
+          46.62698
+        ],
+        [
+          -123.06443,
+          46.62697
+        ],
+        [
+          -123.06424,
+          46.62697
+        ],
+        [
+          -123.06344,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ]
+      ]
+    },
+    {
+      "id": 717820,
+      "kind": "other",
+      "category": "Simpson Ave Bridge",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 88.2,
+      "lat": 46.975395635,
+      "lon": -123.876840412,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-05T15:57:00.0000000+00:00",
+      "end": "2026-10-19T16:00:00.0000000+00:00",
+      "updated": "2026-10-05T16:00:10.5430000+00:00",
+      "upcoming": "MON OCT 19"
+    },
+    {
+      "id": 698910,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.87,
+      "lat": 47.266481174,
+      "lon": -124.2255995,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:40:00.0000000+00:00",
+      "end": "2026-12-31T21:40:00.0000000+00:00",
+      "updated": "2026-09-14T17:09:14.3170000+00:00"
     },
     {
       "id": 640018,
@@ -2753,49 +2796,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-06-16T21:13:03.4200000+00:00"
-    },
-    {
-      "id": 717820,
-      "kind": "other",
-      "category": "Simpson Ave Bridge",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
-      "road": "101COABERDN",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 88.2,
-      "lat": 46.975395635,
-      "lon": -123.876840412,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-10-05T15:57:00.0000000+00:00",
-      "end": "2026-10-19T16:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:00:10.5430000+00:00",
-      "upcoming": "MON OCT 19"
-    },
-    {
-      "id": 698910,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.87,
-      "lat": 47.266481174,
-      "lon": -124.2255995,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:40:00.0000000+00:00",
-      "end": "2026-12-31T21:40:00.0000000+00:00",
-      "updated": "2026-09-14T17:09:14.3170000+00:00"
     }
   ]
 }
