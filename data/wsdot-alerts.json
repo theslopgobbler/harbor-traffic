@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T14:39:21.0606287+00:00",
+  "updated": "2026-10-08T14:58:15.1427746+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2606,27 +2606,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 718138,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on SR 3 southbound at milepost 0.93 near Mill Creek beginning at 7:03 am on October 8, 2026 until further notice. Traffic is alternating.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "S",
-      "milepost": 0.93,
-      "lat": 47.193148332,
-      "lon": -123.098905497,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-08T14:29:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-08T14:29:28.8170000+00:00"
     },
     {
       "id": 718127,

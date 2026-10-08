@@ -1,12 +1,6 @@
 {
-  "updated": "2026-10-08T14:39:21.0606287+00:00",
-  "status": "All routes are currently operating normally.",
-  "alerts": [
-    {
-      "route": "50",
-      "name": "Quinault",
-      "text": "Emergency repairs on the Hoh River Bridge are causing extended closures of US 101. Jefferson Transit will not serve the Route 50 connection at Amanda Park during the closure dates below. GHT's Route 50 continues to operate normally during this time. September 24 at 5 a.m. through September 29 at 5 p.m. October 1 at 5 a.m. through October 6 at noon October 8 at 5 a.m. through October 13 at noon Outside of the scheduled closures, travelers should also expect one-lane alternating traffic and a reduced speed limit at the bridge"
-    }
-  ],
+  "updated": "2026-10-08T14:58:15.1427746+00:00",
+  "status": "",
+  "alerts": [],
   "source": "https://ghtransit.com/alerts/"
 }
