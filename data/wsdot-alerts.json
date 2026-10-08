@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T02:23:40.1630991+00:00",
+  "updated": "2026-10-08T02:42:38.4254313+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -46,32 +46,11 @@
       ]
     },
     {
-      "id": 718070,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Lowest",
-      "headline": "Wednesday, Oct. 7 and Thursday, Oct. 8: Travelers in both directions of US 101 between the SR 4 interchange (milepost 28) and Fowler Street (milepost 58) will encounter slowdowns and delays each day from 6:30 a.m. to 3:30 p.m., for mowing along the highway. Travelers are reminded to slow down, stay focused and have patience through the work zone.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 28.8,
-      "lat": 46.68028466,
-      "lon": -123.739962026,
-      "lat2": 46.68028466,
-      "lon2": -123.739962026,
-      "county": null,
-      "start": "2026-10-07T12:00:00.0000000+00:00",
-      "end": "2026-10-08T22:30:00.0000000+00:00",
-      "updated": "2026-10-07T16:46:13.0600000+00:00"
-    },
-    {
       "id": 718087,
       "kind": "work",
       "category": "Road work",
       "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 133.4 near Boulder Creek to milepost 136 beginning at 4:25 pm on October 7, 2026 until about 9:00 pm.",
+      "headline": "Road work on US 101 both directions from milepost 133.4 near Boulder Creek to milepost 136 beginning at 4:25 pm on October 7, 2026 until about 10:00 pm.",
       "description": "",
       "link": null,
       "road": "101",
@@ -84,8 +63,8 @@
       "lon2": -124.066613374,
       "county": "Grays Harbor",
       "start": "2026-10-07T23:25:00.0000000+00:00",
-      "end": "2026-10-08T04:00:00.0000000+00:00",
-      "updated": "2026-10-07T23:25:27.5530000+00:00",
+      "end": "2026-10-08T05:00:00.0000000+00:00",
+      "updated": "2026-10-08T02:39:24.0230000+00:00",
       "path": [
         [
           -124.01432,
@@ -272,6 +251,27 @@
           47.48008
         ]
       ]
+    },
+    {
+      "id": 718070,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Lowest",
+      "headline": "Wednesday, Oct. 7 and Thursday, Oct. 8: Travelers in both directions of US 101 between the SR 4 interchange (milepost 28) and Fowler Street (milepost 58) will encounter slowdowns and delays each day from 6:30 a.m. to 3:30 p.m., for mowing along the highway. Travelers are reminded to slow down, stay focused and have patience through the work zone.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 28.8,
+      "lat": 46.68028466,
+      "lon": -123.739962026,
+      "lat2": 46.68028466,
+      "lon2": -123.739962026,
+      "county": null,
+      "start": "2026-10-07T12:00:00.0000000+00:00",
+      "end": "2026-10-08T22:30:00.0000000+00:00",
+      "updated": "2026-10-07T16:46:13.0600000+00:00"
     },
     {
       "id": 715621,
