@@ -121,7 +121,9 @@
     "366207650": "2026-10-08T06:27:30.0621822+00:00",
     "303673000": "2026-10-08T06:27:30.0621822+00:00",
     "352004278": "2026-10-08T06:53:27.7099642+00:00",
-    "636020148": "2026-10-08T07:56:10.199557+00:00"
+    "636020148": "2026-10-08T07:56:10.199557+00:00",
+    "367472000": "2026-10-08T08:37:51.4484418+00:00",
+    "636021352": "2026-10-08T08:37:51.4484418+00:00"
   },
   "candidates": [
     {
@@ -963,7 +965,82 @@
       "date": "1994-07-01",
       "caption": "San Diego Harbor -- Starboard side view of the fore section of the Japanese Maritime Self Defense Force destroyer Amagiri (DD-154) (Sky Mist) being assisted in docking by the commercial tugboat Mister Marshall D. upon...",
       "found": "2026-10-08T06:27:30.0621822+00:00"
+    },
+    {
+      "mmsi": "367472000",
+      "ship": "GENE DUNLAP",
+      "file": "File:Tugboat Gene Dunlop 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tugboat_Gene_Dunlop_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Tugboat_Gene_Dunlop_01.jpg/1280px-Tugboat_Gene_Dunlop_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-03-15",
+      "caption": "The tugboat Gene Dunlop pulling a barge (not visible), with the Seattle, Washington skyline in the background.",
+      "found": "2026-10-08T08:37:51.4484418+00:00"
+    },
+    {
+      "mmsi": "367472000",
+      "ship": "GENE DUNLAP",
+      "file": "File:Tugboat Gene Dunlop 01 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tugboat_Gene_Dunlop_01_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Tugboat_Gene_Dunlop_01_%28cropped%29.jpg/1280px-Tugboat_Gene_Dunlop_01_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-03-15",
+      "caption": "The tugboat Gene Dunlop pulling a barge (not visible), with the Seattle, Washington skyline in the background.",
+      "found": "2026-10-08T08:37:51.4484418+00:00"
+    },
+    {
+      "mmsi": "367472000",
+      "ship": "GENE DUNLAP",
+      "file": "File:Tugboat Gene Dunlop pulling barge 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tugboat_Gene_Dunlop_pulling_barge_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Tugboat_Gene_Dunlop_pulling_barge_01.jpg/1280px-Tugboat_Gene_Dunlop_pulling_barge_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-03-15",
+      "caption": "The tugboat Gene Dunlop pulling a barge with the Seattle, Washington skyline in the background.",
+      "found": "2026-10-08T08:37:51.4484418+00:00"
+    },
+    {
+      "mmsi": "367472000",
+      "ship": "GENE DUNLAP",
+      "file": "File:Tugboat Gene Dunlop pulling barge 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tugboat_Gene_Dunlop_pulling_barge_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Tugboat_Gene_Dunlop_pulling_barge_02.jpg/1280px-Tugboat_Gene_Dunlop_pulling_barge_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-03-15",
+      "caption": "The tugboat Gene Dunlop pulling a barge with the Seattle, Washington skyline in the background.",
+      "found": "2026-10-08T08:37:51.4484418+00:00"
+    },
+    {
+      "mmsi": "636021352",
+      "ship": "HSL VEGAS",
+      "file": "File:Porto di Carrara, coils, marmo e HSL Vegas.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Porto_di_Carrara,_coils,_marmo_e_HSL_Vegas.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Porto_di_Carrara%2C_coils%2C_marmo_e_HSL_Vegas.jpg/1280px-Porto_di_Carrara%2C_coils%2C_marmo_e_HSL_Vegas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 964,
+      "author": "Basilicofresco",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "30 March 2025 (according to Exif data)",
+      "caption": "porto di Carrara (porto italiano)",
+      "found": "2026-10-08T08:37:51.4484418+00:00"
     }
   ],
-  "updated": "2026-10-08T08:15:07.1567287+00:00"
+  "updated": "2026-10-08T08:37:51.4484418+00:00"
 }

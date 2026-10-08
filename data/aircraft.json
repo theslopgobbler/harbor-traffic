@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T08:15:07.1567287+00:00",
+  "updated": "2026-10-08T08:37:51.4484418+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N432LF",
       "type": "B429",
       "cat": "A7",
-      "alt": 5825,
-      "gs": 138.8,
-      "track": 260.88,
+      "alt": 2225,
+      "gs": 126.0,
+      "track": 91.36,
       "rate": null,
-      "lat": 47.16422,
-      "lon": -123.18338,
+      "lat": 46.9868,
+      "lon": -123.73662,
       "squawk": "4772",
       "emergency": "none",
       "mil": false
