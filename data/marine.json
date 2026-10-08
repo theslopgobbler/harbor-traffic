@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-08T19:45:15.0072153+00:00",
+  "updated": "2026-10-08T20:00:59.2431343+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-08T18:56:00.0000000+00:00",
-    "waveFt": 6.9,
+    "time": "2026-10-08T19:26:00.0000000+00:00",
+    "waveFt": 6.2,
     "periodS": 11.0,
-    "dirDeg": 292.0,
-    "waterF": 54.1
+    "dirDeg": 289.0,
+    "waterF": 54.5
   },
   "bar": {
     "issued": "2026-10-08T12:43:00+00:00",
@@ -17,6 +17,18 @@
     "ebb": "The ebb on Friday afternoon will be strong"
   },
   "alerts": [
+    {
+      "event": "Small Craft Advisory",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-10-09T21:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 8 at 12:50PM PDT until October 9 at 2:00PM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-10-09T21:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 8 at 12:50PM PDT until October 9 at 2:00PM PDT by NWS Portland OR"
+    },
     {
       "event": "Gale Watch",
       "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
