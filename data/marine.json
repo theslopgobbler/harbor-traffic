@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T19:26:17.4765815+00:00",
+  "updated": "2026-10-08T19:45:15.0072153+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -19,13 +19,13 @@
   "alerts": [
     {
       "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
       "ends": "2026-10-10T03:00:00+00:00",
       "headline": "Gale Watch issued October 8 at 11:50AM PDT until October 9 at 8:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
       "ends": "2026-10-10T03:00:00+00:00",
       "headline": "Gale Watch issued October 8 at 11:50AM PDT until October 9 at 8:00PM PDT by NWS Seattle WA"
     }
