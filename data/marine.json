@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T09:48:35.1363145+00:00",
+  "updated": "2026-10-09T10:02:54.0214444+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,24 +10,60 @@
     "waterF": 57.0
   },
   "bar": {
-    "issued": "2026-10-08T20:58:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT FROM FRIDAY AFTERNOON THROUGH FRIDAY EVENING... Combined seas 6 to 8 ft rising to around 9 to 11 ft tomorrow afternoon. Bar conditions moderate becoming rough tomorrow afternoon. Maximum ebb currents will occur around 345 PM Thursday, 400 AM Friday, and 430 PM Friday. The ebb on Friday afternoon will be strong.",
-    "conditions": "moderate becoming rough tomorrow afternoon",
-    "seas": "6 to 8 ft rising to around 9 to 11 ft tomorrow afternoon",
-    "ebb": "The ebb on Friday afternoon will be strong"
+    "issued": "2026-10-09T09:46:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY NOW IN EFFECT FROM 2 PM THIS AFTERNOON TO 5 AM PDT SATURDAY... Combined seas 6 to 8 ft rising to 9 to 11 ft this afternoon. Seas easing to 7 to 9 ft Saturday morning. Bar conditions moderate becoming rough this afternoon easing back to moderate Saturday morning. Maximum ebb currents will occur around 400 AM and 430 PM today and 445 AM Saturday. The afternoon ebb will be strong.",
+    "conditions": "moderate becoming rough this afternoon easing back to moderate Saturday morning",
+    "seas": "6 to 8 ft rising to 9 to 11 ft this afternoon",
+    "ebb": "The afternoon ebb will be strong"
   },
   "alerts": [
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-10-11T01:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 9 at 2:52AM PDT until October 10 at 6:00PM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-10-10T06:00:00+00:00",
+      "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
+      "ends": "2026-10-10T06:00:00+00:00",
+      "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "ends": "2026-10-10T06:00:00+00:00",
+      "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-10-10T06:00:00+00:00",
+      "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
+      "ends": "2026-10-10T12:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 9 at 2:52AM PDT until October 10 at 5:00AM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "ends": "2026-10-11T01:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 9 at 2:52AM PDT until October 10 at 6:00PM PDT by NWS Seattle WA"
+    },
     {
       "event": "Small Craft Advisory",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-10-09T21:00:00+00:00",
       "headline": "Small Craft Advisory issued October 9 at 1:31AM PDT until October 9 at 2:00PM PDT by NWS Portland OR"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-10-10T12:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 1:31AM PDT until October 10 at 5:00AM PDT by NWS Portland OR"
     },
     {
       "event": "Hazardous Seas Warning",
@@ -37,21 +73,9 @@
     },
     {
       "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
-      "ends": "2026-10-10T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-10-10T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
-    },
-    {
-      "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
-      "ends": "2026-10-10T06:00:00+00:00",
-      "headline": "Gale Warning issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-10-10T12:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 9 at 1:31AM PDT until October 10 at 5:00AM PDT by NWS Portland OR"
     }
   ]
 }
