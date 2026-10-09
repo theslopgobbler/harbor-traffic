@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-09T13:58:01.0474730+00:00",
+  "updated": "2026-10-09T14:20:05.4513625+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-09T13:26:00.0000000+00:00",
-    "waveFt": 4.6,
-    "periodS": 12.0,
-    "dirDeg": 285.0,
-    "waterF": 55.4
+    "time": "2026-10-09T13:56:00.0000000+00:00",
+    "waveFt": 4.9,
+    "periodS": 11.0,
+    "dirDeg": 289.0,
+    "waterF": 54.9
   },
   "bar": {
     "issued": "2026-10-09T09:46:00+00:00",
@@ -25,19 +25,19 @@
     },
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
       "ends": "2026-10-11T01:00:00+00:00",
       "headline": "Small Craft Advisory issued October 9 at 2:52AM PDT until October 10 at 6:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-10-11T01:00:00+00:00",
       "headline": "Small Craft Advisory issued October 9 at 2:52AM PDT until October 10 at 6:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
       "ends": "2026-10-10T06:00:00+00:00",
       "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
     },
@@ -49,13 +49,13 @@
     },
     {
       "event": "Gale Warning",
-      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
       "ends": "2026-10-10T06:00:00+00:00",
       "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-10-10T06:00:00+00:00",
       "headline": "Gale Warning issued October 9 at 2:52AM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
     },
