@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T00:17:47.2499774+00:00",
+  "updated": "2026-10-09T00:50:21.3873474+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2118,27 +2118,6 @@
       "start": "2026-09-09T18:39:00.0000000+00:00",
       "end": null,
       "updated": "2026-09-26T00:36:13.1630000+00:00"
-    },
-    {
-      "id": 718128,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Construction on SR 6 both directions at milepost 45.8 near Curtis Hill Road will be alternating traffic with flaggers. Use caution beginning at 5:51 am on October 8, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.8,
-      "lat": 46.627023671,
-      "lon": -123.078027394,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Lewis",
-      "start": "2026-10-08T12:51:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-08T12:52:23.5670000+00:00"
     },
     {
       "id": 693774,
