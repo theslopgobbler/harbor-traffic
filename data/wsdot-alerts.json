@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T20:18:03.6604272+00:00",
+  "updated": "2026-10-09T20:37:20.5671995+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2822,27 +2822,6 @@
       "start": "2026-09-09T18:39:00.0000000+00:00",
       "end": null,
       "updated": "2026-09-26T00:36:13.1630000+00:00"
-    },
-    {
-      "id": 718306,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on US 12 westbound at milepost 18.11 near Schouweiler Rd beginning at 12:32 pm on October 9, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 18.11,
-      "lat": 46.996713206,
-      "lon": -123.445431677,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-09T19:32:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-09T19:34:11.8530000+00:00"
     },
     {
       "id": 693774,
