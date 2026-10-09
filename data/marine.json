@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-09T05:54:15.2250891+00:00",
+  "updated": "2026-10-09T06:15:22.7499382+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-09T05:26:00.0000000+00:00",
-    "waveFt": 4.9,
-    "periodS": 13.0,
-    "dirDeg": 286.0,
-    "waterF": 56.8
+    "time": "2026-10-09T05:56:00.0000000+00:00",
+    "waveFt": 5.2,
+    "periodS": 12.0,
+    "dirDeg": 291.0,
+    "waterF": 57.0
   },
   "bar": {
     "issued": "2026-10-08T20:58:00+00:00",
@@ -18,10 +18,10 @@
   },
   "alerts": [
     {
-      "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
       "ends": "2026-10-10T06:00:00+00:00",
-      "headline": "Gale Warning issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
@@ -30,10 +30,10 @@
       "headline": "Small Craft Advisory issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
     },
     {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
       "ends": "2026-10-10T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
+      "headline": "Gale Warning issued October 8 at 8:46PM PDT until October 9 at 11:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
