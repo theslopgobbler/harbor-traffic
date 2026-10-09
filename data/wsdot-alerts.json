@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T21:11:07.3450887+00:00",
+  "updated": "2026-10-09T21:34:43.2406069+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2886,27 +2886,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
-    },
-    {
-      "id": 718305,
-      "kind": "closure",
-      "category": "Trees down",
-      "priority": "Highest",
-      "headline": "Trees down on US 101 northbound at milepost 344 near Shelton Springs Rd beginning at 12:25 pm on October 9, 2026 until further notice. The northbound direction is blocked. Traffic is being diverted off to Shelton Springs Rd.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 344.0,
-      "lat": 47.244862399,
-      "lon": -123.14076813,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-09T19:25:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-09T19:29:42.1370000+00:00"
     }
   ]
 }
