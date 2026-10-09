@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T21:52:38.3268641+00:00",
+  "updated": "2026-10-09T22:11:03.9447884+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2535,6 +2535,37 @@
         [
           -124.41027,
           47.6917
+        ]
+      ]
+    },
+    {
+      "id": 718362,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 8 a.m. to 3 p.m. Friday, Oct. 16, the southbound I-5 exit to Pacific Avenue will close for tree work and ramp maintenance. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ea17b",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 107.7,
+      "lat": 47.043122288,
+      "lon": -122.847557341,
+      "lat2": 47.043808162,
+      "lon2": -122.845784477,
+      "county": null,
+      "start": "2026-10-09T21:36:00.0000000+00:00",
+      "end": "2026-10-16T15:00:00.0000000+00:00",
+      "updated": "2026-10-09T22:02:45.4000000+00:00",
+      "path": [
+        [
+          -122.847557341,
+          47.043122288
+        ],
+        [
+          -122.845784477,
+          47.043808162
         ]
       ]
     },
