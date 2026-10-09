@@ -137,7 +137,8 @@
     "338156768": "2026-10-08T19:03:19.4015036+00:00",
     "367006570": "2026-10-08T20:00:59.2431343+00:00",
     "583512703": "2026-10-08T20:48:40.9557357+00:00",
-    "368565000": "2026-10-09T01:15:29.7182393+00:00"
+    "368565000": "2026-10-09T01:15:29.7182393+00:00",
+    "366046000": "2026-10-09T01:54:33.2209395+00:00"
   },
   "candidates": [
     {
@@ -1189,7 +1190,22 @@
       "date": "2017-02-13",
       "caption": "The American fishing vessel Predator aground on Akutan Island in the Aleutian Islands near Akutan , Alaska .",
       "found": "2026-10-09T01:15:29.7182393+00:00"
+    },
+    {
+      "mmsi": "366046000",
+      "ship": "NORTHERN JAEGER",
+      "file": "File:American Seafoods' trawler \"Northern Jaeger\" off Golden Gardens - April 2021.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Seafoods%27_trawler_%22Northern_Jaeger%22_off_Golden_Gardens_-_April_2021.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/American_Seafoods%27_trawler_%22Northern_Jaeger%22_off_Golden_Gardens_-_April_2021.jpg/1280px-American_Seafoods%27_trawler_%22Northern_Jaeger%22_off_Golden_Gardens_-_April_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 12 April 2021",
+      "caption": "American Seafoods' Northern Jaeger off of Golden Gardens Park, Seattle, Washington, U.S.",
+      "found": "2026-10-09T01:54:33.2209395+00:00"
     }
   ],
-  "updated": "2026-10-09T01:37:12.7139242+00:00"
+  "updated": "2026-10-09T01:54:33.2209395+00:00"
 }
