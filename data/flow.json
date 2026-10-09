@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T02:11:23.7319732+00:00",
+  "updated": "2026-10-09T02:34:54.2156253+00:00",
   "source": "WSDOT Traffic Flow",
   "fields": "lat,lon,level,milepost,direction,road",
   "stations": [
@@ -334,7 +334,7 @@
     [
       47.04913,
       -122.81809,
-      1,
+      3,
       109.18,
       "NB",
       "I-5"
