@@ -146,7 +146,8 @@
     "367046890": "2026-10-09T08:28:04.97691+00:00",
     "367599920": "2026-10-09T09:03:39.5684891+00:00",
     "538011775": "2026-10-09T09:27:34.4479323+00:00",
-    "209721000": "2026-10-09T11:24:57.2209067+00:00"
+    "209721000": "2026-10-09T11:24:57.2209067+00:00",
+    "440189000": "2026-10-09T13:14:59.0716145+00:00"
   },
   "candidates": [
     {
@@ -1213,7 +1214,22 @@
       "date": "Taken on 12 April 2021",
       "caption": "American Seafoods' Northern Jaeger off of Golden Gardens Park, Seattle, Washington, U.S.",
       "found": "2026-10-09T01:54:33.2209395+00:00"
+    },
+    {
+      "mmsi": "440189000",
+      "ship": "SM YANTIAN",
+      "file": "File:Hanjin container ship passed through the Golden Gate.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Hanjin_container_ship_passed_through_the_Golden_Gate.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Hanjin_container_ship_passed_through_the_Golden_Gate.JPG/1280px-Hanjin_container_ship_passed_through_the_Golden_Gate.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Basil D Soufi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2012-10-08 15:56:23",
+      "caption": "Golden Gate Bridge in foreground, cargo vessel in background.",
+      "found": "2026-10-09T13:14:59.0716145+00:00"
     }
   ],
-  "updated": "2026-10-09T12:55:08.7643256+00:00"
+  "updated": "2026-10-09T13:14:59.0716145+00:00"
 }
