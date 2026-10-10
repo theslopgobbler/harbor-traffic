@@ -161,7 +161,9 @@
     "477019800": "2026-10-10T11:33:20.3358835+00:00",
     "338158000": "2026-10-10T12:40:08.8934165+00:00",
     "338205245": "2026-10-10T15:34:40.3528524+00:00",
-    "367366210": "2026-10-10T15:50:48.4550722+00:00"
+    "367366210": "2026-10-10T15:50:48.4550722+00:00",
+    "477300100": "2026-10-10T16:59:06.6860601+00:00",
+    "368396890": "2026-10-10T16:59:06.6860601+00:00"
   },
   "candidates": [
     {
@@ -1453,7 +1455,52 @@
       "date": "2011-09-03 15:22",
       "caption": "Californian (playing around with smoke in order to impress easy-to-impress tourists) and American Pride at San Diego's Festival of Sail, 2011",
       "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "477300100",
+      "ship": "IMABARI LOGGER",
+      "file": "File:'Imbari Logger' Casablanca 1605 (53226264308).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%27Imbari_Logger%27_Casablanca_1605_(53226264308).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/%27Imbari_Logger%27_Casablanca_1605_%2853226264308%29.jpg/1280px-%27Imbari_Logger%27_Casablanca_1605_%2853226264308%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Industrial Wales",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-05-13 09:31",
+      "caption": "Ships around the World",
+      "found": "2026-10-10T16:59:06.6860601+00:00"
+    },
+    {
+      "mmsi": "477300100",
+      "ship": "IMABARI LOGGER",
+      "file": "File:Poupe navire IMABARI LOGGER.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Poupe_navire_IMABARI_LOGGER.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Poupe_navire_IMABARI_LOGGER.jpg/1280px-Poupe_navire_IMABARI_LOGGER.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-11-03",
+      "caption": "Poupe du navire IMABARI LOGGER à quai à Casablanca - Morocco - IMO: 9663855 MMSI: 477300100 Indicatif d’Appel: VRNE6 Pavillon: Hong Kong Genre d'un navire: Cargo Jauge brute: 23452 Port en lourd: 37478 t Longueur Hors...",
+      "found": "2026-10-10T16:59:06.6860601+00:00"
+    },
+    {
+      "mmsi": "477300100",
+      "ship": "IMABARI LOGGER",
+      "file": "File:Superstructure du navire IMABARI LOGGER.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Superstructure_du_navire_IMABARI_LOGGER.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Superstructure_du_navire_IMABARI_LOGGER.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1239,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-12-22",
+      "caption": "Superstructure du navire_IMABARI_LOGGER à quai . Casablanca - Morocco - IMO: 9663855 MMSI: 477300100 Indicatif d’Appel: VRNE6 Pavillon: Hong Kong Genre d'un navire: Cargo Jauge brute: 23452 Port en lourd: 37478 t Long...",
+      "found": "2026-10-10T16:59:06.6860601+00:00"
     }
   ],
-  "updated": "2026-10-10T16:44:59.4512518+00:00"
+  "updated": "2026-10-10T16:59:06.6860601+00:00"
 }
