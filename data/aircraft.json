@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-10T04:10:57.4164671+00:00",
+  "updated": "2026-10-10T04:36:06.7765124+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ad28bf",
+      "flight": "N947SF",
+      "reg": "N947SF",
+      "type": "C152",
+      "cat": "A1",
+      "alt": 4750,
+      "gs": 86.5,
+      "track": 221.25,
+      "rate": null,
+      "lat": 47.79607,
+      "lon": -122.737,
+      "squawk": "0334",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }

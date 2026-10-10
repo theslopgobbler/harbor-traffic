@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-10T04:10:57.4164671+00:00",
+  "updated": "2026-10-10T04:36:06.7765124+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-10T03:26:00.0000000+00:00",
-    "waveFt": 9.8,
-    "periodS": 10.0,
-    "dirDeg": 293.0,
+    "time": "2026-10-10T03:56:00.0000000+00:00",
+    "waveFt": 8.9,
+    "periodS": 9.0,
+    "dirDeg": 291.0,
     "waterF": 51.8
   },
   "bar": {
@@ -42,10 +42,10 @@
       "headline": "Small Craft Advisory issued October 9 at 8:02PM PDT until October 10 at 5:00AM PDT by NWS Seattle WA"
     },
     {
-      "event": "Small Craft Advisory",
+      "event": "Hazardous Seas Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-10-10T21:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 12:59PM PDT until October 10 at 2:00PM PDT by NWS Portland OR"
+      "ends": "2026-10-10T12:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued October 9 at 12:59PM PDT until October 10 at 5:00AM PDT by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
@@ -54,10 +54,10 @@
       "headline": "Small Craft Advisory issued October 9 at 12:59PM PDT until October 10 at 2:00PM PDT by NWS Portland OR"
     },
     {
-      "event": "Hazardous Seas Warning",
+      "event": "Small Craft Advisory",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-10-10T12:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued October 9 at 12:59PM PDT until October 10 at 5:00AM PDT by NWS Portland OR"
+      "ends": "2026-10-10T21:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 9 at 12:59PM PDT until October 10 at 2:00PM PDT by NWS Portland OR"
     }
   ]
 }
