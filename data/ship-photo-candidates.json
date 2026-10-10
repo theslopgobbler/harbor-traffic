@@ -155,7 +155,8 @@
     "367478740": "2026-10-09T22:52:30.0137974+00:00",
     "338527000": "2026-10-09T23:10:09.5387904+00:00",
     "372346000": "2026-10-10T01:26:12.4396693+00:00",
-    "368450870": "2026-10-10T01:26:12.4396693+00:00"
+    "368450870": "2026-10-10T01:26:12.4396693+00:00",
+    "367517320": "2026-10-10T04:54:06.1259283+00:00"
   },
   "candidates": [
     {
@@ -1327,7 +1328,127 @@
       "date": "2019-04-14 14:31:41",
       "caption": "Photographed at Port of Amsterdam.",
       "found": "2026-10-09T13:38:46.9248107+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:American Pride.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Pride.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f0/American_Pride.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1913,
+      "author": "Port of San Diego https://www.flickr.com/photos/portofsandiego",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2008-08-20",
+      "caption": "La goélette à trois-mâts américaine American Pride",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:American Pride 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Pride_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/American_Pride_2.jpg/1280px-American_Pride_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 1040,
+      "author": "Ohazi at English Wikipedia",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "13 September 2006 (original upload date)",
+      "caption": "The Schooner American Pride at the 2006 Dana Point Tall Ship Festival. Ohazi 21:36, 13 September 2006 (UTC)",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:American Pride 2011 Festival of Sail San Diego Bay.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Pride_2011_Festival_of_Sail_San_Diego_Bay.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/American_Pride_2011_Festival_of_Sail_San_Diego_Bay.jpg/1280px-American_Pride_2011_Festival_of_Sail_San_Diego_Bay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 857,
+      "author": "Port of San Diego from San Diego, CA",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-09-01 13:16",
+      "caption": "American Pride at the Tall Ships Parade of the Festival of Sail in San Diego Bay.",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:American Pride Festival of Sail 2010, San Diego.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Pride_Festival_of_Sail_2010,_San_Diego.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/American_Pride_Festival_of_Sail_2010%2C_San_Diego.jpg/1280px-American_Pride_Festival_of_Sail_2010%2C_San_Diego.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 857,
+      "author": "Port of San Diego",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2010-09-02 11:38:37",
+      "caption": "Cannon fire welcomed the armada of ships parading into the San Diego Bay on the opening day of the Festival of Sail on Labor Day weekend 2010. Photo Courtesy: Dale Frost",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:American Pride vs. The Californian, San Diego, 2002.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Pride_vs._The_Californian,_San_Diego,_2002.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/American_Pride_vs._The_Californian%2C_San_Diego%2C_2002.jpg/1280px-American_Pride_vs._The_Californian%2C_San_Diego%2C_2002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Michael R Perry",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-09-03 15:23:13",
+      "caption": "Taken at the Festival of Sail, 2011 in San Diego, California. American Pride - USA Length: 130’ Beam: 22’ Draft: 10’ Sail Area: 4,900 sq. ft. Rig: Schooner, three masted Built: 1941 Brooklyn, New York Home Port: Long ...",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:American Pride vs. The Californian.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:American_Pride_vs._The_Californian.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/American_Pride_vs._The_Californian.jpg/1280px-American_Pride_vs._The_Californian.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Michael R Perry",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-09-03 15:22:35",
+      "caption": "Taken at the Festival of Sail, 2011 in San Diego, California. American Pride - USA Length: 130’ Beam: 22’ Draft: 10’ Sail Area: 4,900 sq. ft. Rig: Schooner, three masted Built: 1941 Brooklyn, New York Home Port: Long ...",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:Californian Battles American Pride.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Californian_Battles_American_Pride.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Californian_Battles_American_Pride.jpg/1280px-Californian_Battles_American_Pride.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Michael R Perry",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-09-03 15:02:15",
+      "caption": "Taken at the Festival of Sail, 2011 in San Diego, California. Californian - USA Length Overall: 145' Beam: 24' Draft: 9' 6\" Sail Area: 7,000 sq.ft. Rig: Tops'l Schooner Built: 1984 San Diego Home Port: San Diego, Cali...",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
+    },
+    {
+      "mmsi": "367517320",
+      "ship": "AMERICAN PRIDE",
+      "file": "File:Californian and American Pride 2011 Festival of Sail.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Californian_and_American_Pride_2011_Festival_of_Sail.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Californian_and_American_Pride_2011_Festival_of_Sail.jpg/1280px-Californian_and_American_Pride_2011_Festival_of_Sail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Michael R Perry",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-09-03 15:22",
+      "caption": "Californian (playing around with smoke in order to impress easy-to-impress tourists) and American Pride at San Diego's Festival of Sail, 2011",
+      "found": "2026-10-10T04:54:06.1259283+00:00"
     }
   ],
-  "updated": "2026-10-10T04:36:06.7765124+00:00"
+  "updated": "2026-10-10T04:54:06.1259283+00:00"
 }
