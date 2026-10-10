@@ -1,38 +1,5 @@
 {
-  "updated": "2026-10-10T03:53:27.9659703+00:00",
+  "updated": "2026-10-10T04:10:57.4164671+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "adb58a",
-      "flight": "N9824V",
-      "reg": "N9824V",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 300,
-      "gs": null,
-      "track": null,
-      "rate": null,
-      "lat": 46.97937,
-      "lon": -122.90151,
-      "squawk": null,
-      "emergency": null,
-      "mil": false
-    },
-    {
-      "hex": "a3182a",
-      "flight": "N299NW",
-      "reg": "N299NW",
-      "type": "RV12",
-      "cat": "A1",
-      "alt": 975,
-      "gs": 54.2,
-      "track": 275.29,
-      "rate": -384,
-      "lat": 46.99383,
-      "lon": -122.89152,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
