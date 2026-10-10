@@ -1,7 +1,50 @@
 {
-  "updated": "2026-10-10T00:16:31.6692745+00:00",
+  "updated": "2026-10-10T00:47:40.6979887+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-09-16T14:09:21.4230000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
     {
       "id": 717167,
       "kind": "work",
@@ -841,47 +884,46 @@
       "updated": "2026-10-09T20:41:34.5270000+00:00"
     },
     {
-      "id": 693084,
+      "id": 693774,
       "kind": "work",
       "category": "Construction",
       "priority": "Medium",
-      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
+      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
       "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
+      "road": "101",
+      "roadLabel": "US 101",
       "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
       "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-09-16T14:09:21.4230000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
+      "start": "2026-04-15T00:04:00.0000000+00:00",
+      "end": "2027-01-01T01:04:00.0000000+00:00",
+      "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 712872,
@@ -2673,48 +2715,6 @@
           47.03119
         ]
       ]
-    },
-    {
-      "id": 693774,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-15T00:04:00.0000000+00:00",
-      "end": "2027-01-01T01:04:00.0000000+00:00",
-      "updated": "2026-04-15T00:09:09.8670000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 717820,
