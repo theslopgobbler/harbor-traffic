@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T10:09:35.3184743+00:00",
+  "updated": "2026-10-10T10:27:28.7688260+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -44,27 +44,6 @@
           47.29942
         ]
       ]
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 712872,
@@ -2355,6 +2334,27 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 717820,
