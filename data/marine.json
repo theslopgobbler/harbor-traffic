@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-10T02:54:40.3679927+00:00",
+  "updated": "2026-10-10T03:10:58.1947584+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-10T01:56:00.0000000+00:00",
-    "waveFt": 9.5,
+    "time": "2026-10-10T02:26:00.0000000+00:00",
+    "waveFt": 10.2,
     "periodS": 9.0,
-    "dirDeg": 292.0,
+    "dirDeg": 293.0,
     "waterF": 51.8
   },
   "bar": {
@@ -19,31 +19,37 @@
   "alerts": [
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
+      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-10-10T21:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 1:01PM PDT until October 10 at 2:00PM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 9 at 8:02PM PDT until October 10 at 2:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm",
       "ends": "2026-10-10T21:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 1:01PM PDT until October 10 at 2:00PM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 9 at 8:02PM PDT until October 10 at 2:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-10-10T15:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 1:01PM PDT until October 10 at 8:00AM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 9 at 8:02PM PDT until October 10 at 8:00AM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Grays Harbor Bar",
       "ends": "2026-10-10T12:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 1:01PM PDT until October 10 at 5:00AM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 9 at 8:02PM PDT until October 10 at 5:00AM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-10-10T21:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 9 at 12:59PM PDT until October 10 at 2:00PM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
       "ends": "2026-10-10T21:00:00+00:00",
       "headline": "Small Craft Advisory issued October 9 at 12:59PM PDT until October 10 at 2:00PM PDT by NWS Portland OR"
     },
@@ -52,12 +58,6 @@
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-10-10T12:00:00+00:00",
       "headline": "Hazardous Seas Warning issued October 9 at 12:59PM PDT until October 10 at 5:00AM PDT by NWS Portland OR"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-10-10T21:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 9 at 12:59PM PDT until October 10 at 2:00PM PDT by NWS Portland OR"
     }
   ]
 }
