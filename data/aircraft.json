@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-13T12:13:35.9609895+00:00",
+  "updated": "2026-10-13T12:47:16.8652691+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aac1d4",
+      "flight": "N7920J",
+      "reg": "N7920J",
+      "type": "S22T",
+      "cat": "A1",
+      "alt": 6775,
+      "gs": 185.8,
+      "track": 170.08,
+      "rate": 0,
+      "lat": 46.63518,
+      "lon": -122.81509,
+      "squawk": "4716",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
