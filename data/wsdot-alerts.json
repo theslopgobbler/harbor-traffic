@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T14:30:41.1928447+00:00",
+  "updated": "2026-10-13T14:57:44.0246185+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1791,27 +1791,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 718652,
       "kind": "work",
       "category": "Construction",
@@ -2394,6 +2373,27 @@
       ]
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 712735,
       "kind": "work",
       "category": "Road work",
@@ -2415,27 +2415,6 @@
       "updated": "2026-10-13T14:17:22.7070000+00:00"
     },
     {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic on SR 109 at milepost 37 near Taholah. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-09-14T14:42:15.5130000+00:00"
-    },
-    {
       "id": 686738,
       "kind": "work",
       "category": "Construction",
@@ -2455,6 +2434,27 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-08T21:47:13.4300000+00:00"
+    },
+    {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic on SR 109 at milepost 37 near Taholah. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-09-14T14:42:15.5130000+00:00"
     },
     {
       "id": 718646,
