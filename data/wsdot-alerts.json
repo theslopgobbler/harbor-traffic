@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T22:33:27.1447868+00:00",
+  "updated": "2026-10-13T23:01:19.7076832+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -763,109 +763,6 @@
         [
           -123.0634,
           46.62696
-        ]
-      ]
-    },
-    {
-      "id": 718698,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 180.5 to milepost 181.5 beginning at 10:23 am on October 13, 2026 until about 4:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 180.5,
-      "lat": 47.849047605,
-      "lon": -124.287024814,
-      "lat2": 47.852557131,
-      "lon2": -124.30790225,
-      "county": "Jefferson",
-      "start": "2026-10-13T17:23:00.0000000+00:00",
-      "end": "2026-10-13T23:00:00.0000000+00:00",
-      "updated": "2026-10-13T17:26:10.1430000+00:00",
-      "path": [
-        [
-          -124.28699,
-          47.84904
-        ],
-        [
-          -124.28753,
-          47.84912
-        ],
-        [
-          -124.28782,
-          47.84918
-        ],
-        [
-          -124.28822,
-          47.84924
-        ],
-        [
-          -124.29206,
-          47.84987
-        ],
-        [
-          -124.29364,
-          47.85012
-        ],
-        [
-          -124.2942,
-          47.85021
-        ],
-        [
-          -124.29561,
-          47.85044
-        ],
-        [
-          -124.29704,
-          47.85067
-        ],
-        [
-          -124.30057,
-          47.85124
-        ],
-        [
-          -124.30142,
-          47.85138
-        ],
-        [
-          -124.30281,
-          47.85161
-        ],
-        [
-          -124.3063,
-          47.85218
-        ],
-        [
-          -124.30655,
-          47.85222
-        ],
-        [
-          -124.30683,
-          47.85228
-        ],
-        [
-          -124.30724,
-          47.85237
-        ],
-        [
-          -124.30751,
-          47.85245
-        ],
-        [
-          -124.30777,
-          47.85252
-        ],
-        [
-          -124.30792,
-          47.85257
-        ],
-        [
-          -124.30792,
-          47.85257
         ]
       ]
     },
@@ -2361,27 +2258,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 718652,
       "kind": "work",
       "category": "Construction",
@@ -2962,6 +2838,27 @@
           47.021745307
         ]
       ]
+    },
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 718750,
