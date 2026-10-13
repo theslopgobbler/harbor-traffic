@@ -7,7 +7,7 @@
   Run by build-gtfs.ps1; safe to run by hand.
 #>
 $root = Split-Path $PSScriptRoot -Parent
-$src = Join-Path $root 'data\route-cells.json'
+$src = Join-Path $root 'data/route-cells.json'
 $j = Get-Content $src -Raw | ConvertFrom-Json
 $out = foreach ($p in $j.routes.PSObject.Properties) {
     $keys = New-Object System.Collections.Generic.List[int]
@@ -17,5 +17,5 @@ $out = foreach ($p in $j.routes.PSObject.Properties) {
     for ($k = 0; $k -lt $keys.Count; $k++) { [BitConverter]::GetBytes([int]$keys[$k]).CopyTo($bytes, $k * 4) }
     "`"$($p.Name)`":`"$([Convert]::ToBase64String($bytes))`""
 }
-[IO.File]::WriteAllText((Join-Path $root 'data\route-cells-packed.json'), "{`"lat`":0.0005,`"lon`":0.00073,`"routes`":{$($out -join ',')}}", (New-Object System.Text.UTF8Encoding($false)))
-"packed route squares: $([math]::Round((Get-Item (Join-Path $root 'data\route-cells-packed.json')).Length / 1KB)) KB"
+[IO.File]::WriteAllText((Join-Path $root 'data/route-cells-packed.json'), "{`"lat`":0.0005,`"lon`":0.00073,`"routes`":{$($out -join ',')}}", (New-Object System.Text.UTF8Encoding($false)))
+"packed route squares: $([math]::Round((Get-Item (Join-Path $root 'data/route-cells-packed.json')).Length / 1KB)) KB"

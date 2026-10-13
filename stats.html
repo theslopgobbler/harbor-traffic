@@ -51,6 +51,10 @@
   .shot img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #041412; }
   .shot b { color: #fff; font-weight: 400; letter-spacing: .06em; } .shot .d { color: var(--dim); }
   .shot .btns { display: flex; gap: 6px; margin-top: auto; } .shot .btns button { flex: 1; }
+  /* photos already decided: a compact list, folded away */
+  td.thumb { width: 64px; padding: 3px 6px; } td.thumb img { display: block; width: 56px; height: 38px; object-fit: cover; background: #041412; }
+  td.left { text-align: left; white-space: normal; } td.left .d { color: var(--dim); font-size: 10px; }
+  #shipDone button { padding: 3px 8px; font-size: 10px; }
   .chart svg { display: block; width: 100%; overflow: visible; font: 10px var(--mono); }
   .chart .empty { color: var(--dim); font-size: 11px; padding: 18px 10px; }
   .legend { display: flex; gap: 14px; font-size: 10px; color: var(--dim); padding: 2px 8px 6px; letter-spacing: .12em; }
@@ -154,10 +158,14 @@
           the stop (early = before the scheduled time; late = more than 5 minutes after). Only buses GHT's tracker lists as running a
           route count; parked and out-of-service buses are left out. Which scheduled time a bus was leaving for: "trip" = the time the
           tracker said that bus was headed for (it knows the bus's trip); "nearest" = the stop's closest scheduled time, used when the
-          tracker didn't say. No bus seen = 95 minutes after a scheduled time (a bus up to 90 minutes late still counts as late), no in-service bus had passed within 80 m of that stop,
-          on a route that had a bus out that day (it can also mean the bus's GPS was off, so treat one-offs with care; a stop that
-          shows up every day probably has its location wrong in the tracker). Times come from the tracker's timetable for that
-          day. Each one notes the weather at the nearest
+          tracker didn't say. A departure the relay can't be sure of (a bus that could be one of two trips, or one passing a stop
+          on its way somewhere else) is kept in the download as "unsure" and left out of every number here; where a bus passes a
+          stop twice, the pass the timetable means is the one counted. At the transit centers, a bus counts as there anywhere in
+          its layover area (up to about 130 m from the stop's pin). No bus seen = no bus of that route came within reach of that
+          stop from 10 minutes before the scheduled time to 30 minutes after, on a route that had a bus out that day; not counted
+          while the log or GHT's tracker was down, or at a stop the route's buses never reached that day (its pin may be wrong,
+          or the route skips it). Times come from the tracker's timetable for that day. Lateness logged before Oct 13 used
+          looser rules and is kept separately (not in these numbers). Each one notes the weather at the nearest
           weather station and any WSDOT road alert within 1.5 km of the stop at that moment. Off route = a moving bus more than about
           a block from its route's line. Off-route spots seen on several days are shortcuts or standing detours; one-day spots are
           usually a one-off detour or the tracker listing a bus on the wrong route. Every position is kept, for rebuilding the
@@ -177,12 +185,15 @@
       <h1 style="margin-top:36px">SHIP PHOTOS · FROM WIKIMEDIA COMMONS</h1>
       <p class="note">Free photos the collector found for boats it has heard (filed on Commons under the boat's name or IMO number).
         Nothing shows on the map until you say USE. Check that it's really this boat (names get reused) and that the photo is any good.
-        Your own photos go in harbor-traffic\photos\ instead (see scripts\ship-photos.ps1).</p>
+        Your own photos go in harbor-traffic/photos/ instead (see scripts/ship_photos.py).</p>
       <div class="msg" id="shipMsg"></div>
       <div id="shipPending" class="shots"></div>
-      <h2>ON THE MAP</h2>
-      <div id="shipUsed" class="shots"></div>
-      <p class="note" id="shipNo"></p>
+      <div id="shipDone">
+        <details><summary id="shipUsedSum">ON THE MAP</summary>
+          <table><tbody id="shipUsed"></tbody></table></details>
+        <details><summary id="shipNoSum">TURNED DOWN</summary>
+          <table><tbody id="shipNo"></tbody></table></details>
+      </div>
     </section>
     <section id="site">
       <h1 style="margin-top:36px">HARBOR EVENTS · <a href="https://harborevents.org/" target="_blank" rel="noopener">HARBOREVENTS.ORG</a></h1>
@@ -376,8 +387,14 @@
     const no = d.cand.filter((c) => d.dec[`${c.mmsi}|${c.file}`] === 0);
     $('#shipPending').innerHTML = pending.map((c) => card(c, btn(c, 1, 'USE') + btn(c, 0, 'DON\'T USE'))).join('')
       || '<p class="note">NOTHING NEW TO REVIEW. THE COLLECTOR LOOKS UP A FEW BOATS EACH RUN, AND EACH ONE AGAIN MONTHLY.</p>';
-    $('#shipUsed').innerHTML = used.map((c) => card(c, btn(c, 'null', 'TAKE OFF THE MAP'))).join('') || '<p class="note">NONE YET (BESIDES ONES ADDED BY HAND).</p>';
-    $('#shipNo').textContent = no.length ? `${no.length} TURNED DOWN.` : '';
+    // decided ones: one short row each (small picture, boat, credit, one button), folded away until opened
+    const row = (c, button) => `<tr><td class="thumb"><a href="${esc(c.page)}" target="_blank" rel="noopener"><img src="${esc(c.thumb)}" alt="" loading="lazy"></a></td>
+      <td class="left">${esc(c.ship)}<br><span class="d">MMSI ${esc(c.mmsi)} · ${esc(c.author || 'unknown')}</span></td><td>${button}</td></tr>`;
+    $('#shipUsed').innerHTML = used.map((c) => row(c, btn(c, 'null', 'TAKE OFF'))).join('') || '<tr><td class="left d">NONE YET (BESIDES ONES ADDED BY HAND).</td></tr>';
+    $('#shipNo').innerHTML = no.map((c) => row(c, btn(c, 'null', 'REVIEW AGAIN'))).join('');
+    $('#shipUsedSum').textContent = `ON THE MAP (${used.length})`;
+    $('#shipNoSum').textContent = `TURNED DOWN (${no.length})`;
+    $('#shipNoSum').parentElement.hidden = !no.length;
   }
   document.addEventListener('click', async (e) => {
     const b = e.target.closest('button[data-ship-photo]'); if (!b || !key) return;

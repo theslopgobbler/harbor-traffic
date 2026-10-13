@@ -1021,14 +1021,28 @@
     // one route at this stop: bring it up too
     const rts = [...new Set(stopFocus.routes.map((r) => r.replace(/P$/, '')))];
     if (rts.length === 1) pickRoute(rts[0], { bar: false });
-    lookAt(stopFocus.at, Math.max(map.getZoom(), 15.5));
     stopPop?.remove();
-    const pop = stopPop = new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setLngLat(stopFocus.at).setHTML('<div class="m">LOADING…</div>').addTo(map);
+    // (always above the stop: left to choose, the popup flips sides as the map moves, which made it jump)
+    const pop = stopPop = new maplibregl.Popup({ offset: 10, maxWidth: '300px', anchor: 'bottom' }).setLngLat(stopFocus.at).setHTML('<div class="m">LOADING…</div>').addTo(map);
     document.body.classList.add('stop-open'); // phones tuck the bus bar away while a stop is open
     pop.on('close', () => { if (stopPop === pop) { document.body.classList.remove('stop-open'); stopPop = null; stopFocus = null; map.getLayer('bus-stop-focus') && map.setFilter('bus-stop-focus', ['==', ['get', 'id'], '__none__']); } });
     const stop = stopFocus;
     pop.setHTML(await stopHtml(stop));
-    map.once('moveend', () => window.htKeepInView?.(pop));
+    if (stopPop === pop) placeForPopup(pop, stop.at, Math.max(map.getZoom(), 15.5));
+  }
+  // one move that leaves room for the whole timetable above the stop (it used to center the stop first, which put
+  // the top of the timetable off screen, and then slide back down to show it: a bounce). The stop goes in the middle
+  // of what you can see when the timetable fits that way, lower when it needs the room, and never under the sheet
+  function placeForPopup(pop, at, zoom) {
+    const el = pop.getElement(); if (!el) return lookAt(at, zoom);
+    const box = map.getContainer().getBoundingClientRect();
+    const menu = document.querySelector('.menu-btn')?.getBoundingClientRect();
+    const top = Math.max(12, followTop(), menu && menu.bottom - box.top < 140 ? menu.bottom - box.top + 10 : 0);
+    const bottom = box.height - covered() - 16;
+    const need = el.getBoundingClientRect().height + 10 + 8;   // the timetable, its offset, a little air
+    const mid = (top + bottom) / 2;
+    const y = Math.max(Math.min(Math.max(mid, top + need), bottom), top);
+    map.easeTo({ center: at, zoom, offset: [0, y - box.height / 2], duration: 900 });
   }
   // refresh the open stop when new bus reports come in
   async function refreshStop() { if (stopPop && stopFocus) { const s = stopFocus; const h = await stopHtml(s); if (stopFocus === s) stopPop.setHTML(h); } }
