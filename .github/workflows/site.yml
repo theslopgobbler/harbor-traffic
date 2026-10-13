@@ -1,0 +1,66 @@
+name: Collect data and publish the site
+
+# The site is main (your changes) plus data/ from the "data" branch (the collector's). The collector commits only to
+# "data", so main's history stays just your own updates. Every run puts the two together and deploys them to Pages.
+#   every ~10 minutes: collect, save to "data", deploy
+#   on a push to main (publish.py): deploy with the latest data
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # GitHub often starts these 5-15 minutes late
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# one at a time (a collect and a publish never race each other)
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: _data
+      - name: Bring in the data
+        run: rm -rf data && cp -r _data/data data
+
+      - name: Collect
+        if: github.event_name != 'push'
+        shell: pwsh
+        env:
+          WSDOT_ACCESS_CODE: ${{ secrets.WSDOT_ACCESS_CODE }}
+          AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
+        run: ./scripts/collect.ps1
+      - name: Save the data
+        if: github.event_name != 'push'
+        run: |
+          rm -rf _data/data && cp -r data _data/data
+          cd _data
+          git config user.name "harbor-traffic-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A data
+          git diff --cached --quiet || git commit -q -m "data $(date -u +%FT%TZ)"
+          git push -q
+
+      - name: Put the site together
+        run: |
+          mkdir _site
+          tar --exclude=./.git --exclude=./.github --exclude=./_data --exclude=./_site -cf - . | tar -xf - -C _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
