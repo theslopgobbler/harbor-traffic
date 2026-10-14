@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T04:40:24.1689654+00:00",
+  "updated": "2026-10-14T05:13:05.5148877+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1398,27 +1398,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -1653,6 +1632,27 @@
       ]
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 718604,
       "kind": "work",
       "category": "Maintenance",
@@ -1831,27 +1831,6 @@
       "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
-      "id": 718775,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 103 near Trosper Rd beginning at 9:04 pm on October 13, 2026 until further notice. The two right lanes are blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 103.0,
-      "lat": 47.002816805,
-      "lon": -122.910599572,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-14T04:04:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-14T04:19:09.3370000+00:00"
-    },
-    {
       "id": 717820,
       "kind": "other",
       "category": "Simpson Ave Bridge",
@@ -1893,6 +1872,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
+      "id": 718775,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 103 near Trosper Rd beginning at 9:04 pm on October 13, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 103.0,
+      "lat": 47.002816805,
+      "lon": -122.910599572,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-14T04:04:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-14T04:55:00.6130000+00:00"
     },
     {
       "id": 718742,
