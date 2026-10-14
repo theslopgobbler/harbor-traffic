@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T03:36:04.8523328+00:00",
+  "updated": "2026-10-14T04:07:46.7338641+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1768,6 +1768,27 @@
       "updated": "2026-09-14T14:42:15.5130000+00:00"
     },
     {
+      "id": 718775,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 103 near Trosper Rd beginning at 9:04 pm on October 13, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 103.0,
+      "lat": 47.002816805,
+      "lon": -122.910599572,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-14T04:04:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-14T04:05:51.0300000+00:00"
+    },
+    {
       "id": 718765,
       "kind": "closure",
       "category": "Road work",
@@ -1829,6 +1850,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 718774,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 12 westbound at milepost 13 near Brady Truck Scales #20 beginning at 8:50 pm on October 13, 2026 until further notice. The left lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "W",
+      "milepost": 13.0,
+      "lat": 46.98517996,
+      "lon": -123.549014777,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-10-14T03:50:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-14T04:02:24.8170000+00:00"
     },
     {
       "id": 717820,
