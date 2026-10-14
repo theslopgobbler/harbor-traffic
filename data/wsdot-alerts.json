@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T23:34:23.1230653+00:00",
+  "updated": "2026-10-14T23:56:34.0929271+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2055,6 +2055,27 @@
       ]
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -2289,27 +2310,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 718604,
       "kind": "work",
       "category": "Maintenance",
@@ -2339,6 +2339,27 @@
           47.021745307
         ]
       ]
+    },
+    {
+      "id": 718886,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 northbound at milepost 365.42 near Black Lk Blvd beginning at 4:39 pm on October 14, 2026 until further notice. The right lane is blocked on the ramp to Black Lk Blvd.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 365.42,
+      "lat": 47.032564813,
+      "lon": -122.941209311,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-14T23:39:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-14T23:41:05.5470000+00:00"
     },
     {
       "id": 686738,
@@ -2444,27 +2465,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 718788,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Construction on SR 6 both directions at milepost 45.8 near Curtis Hill Road, traffic will be alternated through one lane, use caution, beginning at 6:37 am on October 14, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.8,
-      "lat": 46.627023671,
-      "lon": -123.078027394,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Lewis",
-      "start": "2026-10-14T13:37:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-14T13:39:24.0500000+00:00"
     },
     {
       "id": 717820,
