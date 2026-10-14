@@ -244,7 +244,8 @@
     "338616000": "2026-10-14T05:13:05.5148877+00:00",
     "636021663": "2026-10-14T05:47:22.6101882+00:00",
     "373897000": "2026-10-14T07:43:03.9978791+00:00",
-    "636025043": "2026-10-14T07:43:03.9978791+00:00"
+    "636025043": "2026-10-14T07:43:03.9978791+00:00",
+    "311000879": "2026-10-14T09:23:27.2045751+00:00"
   },
   "candidates": [
     {
@@ -2241,7 +2242,127 @@
       "date": "2020-04-19 14:35:04",
       "caption": "Photographed in the Port of Amsterdam.",
       "found": "2026-10-14T07:43:03.9978791+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:'Norwegian Encore' docked in Victoria, British Columbia 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%27Norwegian_Encore%27_docked_in_Victoria,_British_Columbia_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/%27Norwegian_Encore%27_docked_in_Victoria%2C_British_Columbia_01.jpg/1280px-%27Norwegian_Encore%27_docked_in_Victoria%2C_British_Columbia_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Photo by Joe Mabel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 19 August 2023",
+      "caption": "Norwegian Cruise Line ship Norwegian Encore docked in Victoria, British Columbia. Tugboat Seaspan Eagle also visible, along with Ogden Point breakwater and lighthouse.",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:2026-05-02 01 NORWEGIAN ENCORE - IMO 9751511 - Ogden Point, BC CAN.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2026-05-02_01_NORWEGIAN_ENCORE_-_IMO_9751511_-_Ogden_Point,_BC_CAN.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/2026-05-02_01_NORWEGIAN_ENCORE_-_IMO_9751511_-_Ogden_Point%2C_BC_CAN.jpg/1280px-2026-05-02_01_NORWEGIAN_ENCORE_-_IMO_9751511_-_Ogden_Point%2C_BC_CAN.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Gordon Leggett",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-05-02 18:29:13",
+      "caption": "Norwegian Cruise Lines ship, NORWEGIAN ENCORE - IMO 9751511, MMSI 311000879; leaving Victoria BC Canada at sunset on May 2, 2026.",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:2026-05-02 02 NORWEGIAN ENCORE - IMO 9751511 - Ogden Point, BC CAN.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2026-05-02_02_NORWEGIAN_ENCORE_-_IMO_9751511_-_Ogden_Point,_BC_CAN.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/2026-05-02_02_NORWEGIAN_ENCORE_-_IMO_9751511_-_Ogden_Point%2C_BC_CAN.jpg/1280px-2026-05-02_02_NORWEGIAN_ENCORE_-_IMO_9751511_-_Ogden_Point%2C_BC_CAN.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 852,
+      "author": "Gordon Leggett",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-05-02 18:23:17",
+      "caption": "Norwegian Cruise Lines ship, NORWEGIAN ENCORE - IMO 9751511, MMSI 311000879; leaving Victoria BC Canada at sunset on May 2, 2026.",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Cruise Ships early this morning (50468595593).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cruise_Ships_early_this_morning_(50468595593).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Cruise_Ships_early_this_morning_%2850468595593%29.jpg/1280px-Cruise_Ships_early_this_morning_%2850468595593%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Andrew Bone from Weymouth, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-10-13 07:09",
+      "caption": "Weymouth Bay from Preston Beach groyne. The big Cruise ship is Norwegian Encore.",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Emerald Princess (50491058726).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Emerald_Princess_(50491058726).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Emerald_Princess_%2850491058726%29.jpg/1280px-Emerald_Princess_%2850491058726%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Andrew Bone from Weymouth, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-10-15 09:29",
+      "caption": "Another new cruise ship to the area. This one is in Portland Port. &lt;a href=\" https://en.wikipedia.org/wiki/Emerald_Princess \" rel=\"noreferrer nofollow\"&gt;en.wikipedia.org/wiki/Emerald_Princess&lt;/a&gt; Also in th...",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Giant Seagull divebombs Norwegian Encore (50468594673).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Giant_Seagull_divebombs_Norwegian_Encore_(50468594673).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Giant_Seagull_divebombs_Norwegian_Encore_%2850468594673%29.jpg/1280px-Giant_Seagull_divebombs_Norwegian_Encore_%2850468594673%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 1920,
+      "author": "Andrew Bone from Weymouth, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-10-13 06:58",
+      "caption": "I was surprised to find this when I uploaded today's photos!",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Giant Seagull divebombs Norwegian Encore (50468594673) (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Giant_Seagull_divebombs_Norwegian_Encore_(50468594673)_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Giant_Seagull_divebombs_Norwegian_Encore_%2850468594673%29_%28cropped%29.jpg/1280px-Giant_Seagull_divebombs_Norwegian_Encore_%2850468594673%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 800,
+      "author": "Andrew Bone from Weymouth, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-10-13 06:58",
+      "caption": "I was surprised to find this when I uploaded today's photos!",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:NCLEncoreJuneau (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:NCLEncoreJuneau_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/NCLEncoreJuneau_%28cropped%29.jpg/1280px-NCLEncoreJuneau_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Jackhayes1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-07-05 13:37:30",
+      "caption": "Norwegian Encore approaching Juneau, Alaska",
+      "found": "2026-10-14T09:23:27.2045751+00:00"
     }
   ],
-  "updated": "2026-10-14T08:51:53.8533025+00:00"
+  "updated": "2026-10-14T09:23:27.2045751+00:00"
 }
