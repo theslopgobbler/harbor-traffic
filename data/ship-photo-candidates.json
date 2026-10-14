@@ -245,7 +245,8 @@
     "636021663": "2026-10-14T05:47:22.6101882+00:00",
     "373897000": "2026-10-14T07:43:03.9978791+00:00",
     "636025043": "2026-10-14T07:43:03.9978791+00:00",
-    "311000879": "2026-10-14T09:23:27.2045751+00:00"
+    "311000879": "2026-10-14T09:23:27.2045751+00:00",
+    "311000368": "2026-10-14T09:59:07.4511115+00:00"
   },
   "candidates": [
     {
@@ -2362,7 +2363,22 @@
       "date": "2022-07-05 13:37:30",
       "caption": "Norwegian Encore approaching Juneau, Alaska",
       "found": "2026-10-14T09:23:27.2045751+00:00"
+    },
+    {
+      "mmsi": "311000368",
+      "ship": "CSL SPIRIT",
+      "file": "File:Canso Causeway, Cape Breton, N.S. (3749448320).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Canso_Causeway,_Cape_Breton,_N.S._(3749448320).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Canso_Causeway%2C_Cape_Breton%2C_N.S._%283749448320%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 960,
+      "author": "Larry from Charlottetown, PEI, Canada",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2009-07-23 10:43",
+      "caption": "July 21, 2009",
+      "found": "2026-10-14T09:59:07.4511115+00:00"
     }
   ],
-  "updated": "2026-10-14T09:23:27.2045751+00:00"
+  "updated": "2026-10-14T09:59:07.4511115+00:00"
 }
