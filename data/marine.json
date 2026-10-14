@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T20:48:43.2276049+00:00",
+  "updated": "2026-10-14T21:14:10.8105032+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,10 +10,10 @@
     "waterF": 55.8
   },
   "bar": {
-    "issued": "2026-10-14T08:30:00+00:00",
-    "text": "Combined seas 3 to 5 ft. Bar conditions light. Maximum ebb currents will occur around 715 AM Wednesday, 715 PM Wednesday and 745 AM Thursday.",
+    "issued": "2026-10-14T20:46:00+00:00",
+    "text": "Combined seas 2 to 4 ft. Bar conditions light. Maximum ebb currents will occur around 730 PM Wednesday, 800 AM Thursday, and 800 PM Thursday.",
     "conditions": "light",
-    "seas": "3 to 5 ft",
+    "seas": "2 to 4 ft",
     "ebb": null
   },
   "alerts": []
