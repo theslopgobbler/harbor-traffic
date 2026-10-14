@@ -1,539 +1,7 @@
 {
-  "updated": "2026-10-14T19:40:56.4931062+00:00",
+  "updated": "2026-10-14T20:13:29.9518488+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 718841,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Beginning Wednesday, Oct. 14, until further notice: Travelers in both directions of SR 105 will encounter daytime intermittent single lane closures between Tokeland Road (milepost 18.6) and Panoramic Lane (milepost 20.7), from 7 a.m. to 7 p.m., for shoreline restoration work. An automated flagger will direct travelers through the area. Plan ahead and expect delays.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 18.6,
-      "lat": 46.724645087,
-      "lon": -124.020384798,
-      "lat2": 46.732478113,
-      "lon2": -124.060828677,
-      "county": null,
-      "start": "2026-10-14T12:00:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-14T17:30:12.8430000+00:00",
-      "path": [
-        [
-          -124.0204,
-          46.72462
-        ],
-        [
-          -124.02056,
-          46.72463
-        ],
-        [
-          -124.02117,
-          46.72467
-        ],
-        [
-          -124.02155,
-          46.72471
-        ],
-        [
-          -124.02193,
-          46.72476
-        ],
-        [
-          -124.02224,
-          46.72481
-        ],
-        [
-          -124.02232,
-          46.72482
-        ],
-        [
-          -124.0229,
-          46.72497
-        ],
-        [
-          -124.0231,
-          46.72502
-        ],
-        [
-          -124.02357,
-          46.72516
-        ],
-        [
-          -124.02396,
-          46.7253
-        ],
-        [
-          -124.02456,
-          46.72553
-        ],
-        [
-          -124.02712,
-          46.72651
-        ],
-        [
-          -124.02799,
-          46.72676
-        ],
-        [
-          -124.0285,
-          46.7269
-        ],
-        [
-          -124.02953,
-          46.72711
-        ],
-        [
-          -124.03166,
-          46.72745
-        ],
-        [
-          -124.03416,
-          46.72786
-        ],
-        [
-          -124.03518,
-          46.72802
-        ],
-        [
-          -124.03528,
-          46.72804
-        ],
-        [
-          -124.03652,
-          46.72823
-        ],
-        [
-          -124.03795,
-          46.72837
-        ],
-        [
-          -124.0388,
-          46.7284
-        ],
-        [
-          -124.04296,
-          46.7283
-        ],
-        [
-          -124.04413,
-          46.72826
-        ],
-        [
-          -124.0452,
-          46.72819
-        ],
-        [
-          -124.04649,
-          46.72802
-        ],
-        [
-          -124.04762,
-          46.72778
-        ],
-        [
-          -124.04908,
-          46.72751
-        ],
-        [
-          -124.04972,
-          46.72745
-        ],
-        [
-          -124.05033,
-          46.72745
-        ],
-        [
-          -124.05107,
-          46.7275
-        ],
-        [
-          -124.05202,
-          46.72763
-        ],
-        [
-          -124.05294,
-          46.72786
-        ],
-        [
-          -124.05379,
-          46.72821
-        ],
-        [
-          -124.0571,
-          46.7298
-        ],
-        [
-          -124.05838,
-          46.73047
-        ],
-        [
-          -124.05938,
-          46.73124
-        ],
-        [
-          -124.06084,
-          46.73248
-        ],
-        [
-          -124.06084,
-          46.73248
-        ]
-      ]
-    },
-    {
-      "id": 640018,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock on US 101 near Ruby Beach. The speed limit is reduced from 55 mph to 25 mph from milepost 162.93 to 163.51. Work is for a fish passage project.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 162.93,
-      "lat": 47.684279605,
-      "lon": -124.405270313,
-      "lat2": 47.691732518,
-      "lon2": -124.410303833,
-      "county": null,
-      "start": "2025-03-18T21:38:00.0000000+00:00",
-      "end": "2027-01-31T23:00:00.0000000+00:00",
-      "updated": "2026-04-27T14:26:48.6970000+00:00",
-      "path": [
-        [
-          -124.40533,
-          47.6843
-        ],
-        [
-          -124.40537,
-          47.68443
-        ],
-        [
-          -124.40541,
-          47.68459
-        ],
-        [
-          -124.40551,
-          47.68509
-        ],
-        [
-          -124.40557,
-          47.6853
-        ],
-        [
-          -124.40563,
-          47.68547
-        ],
-        [
-          -124.40564,
-          47.68548
-        ],
-        [
-          -124.40572,
-          47.68565
-        ],
-        [
-          -124.40579,
-          47.68578
-        ],
-        [
-          -124.4059,
-          47.68594
-        ],
-        [
-          -124.406,
-          47.68606
-        ],
-        [
-          -124.40614,
-          47.68622
-        ],
-        [
-          -124.40624,
-          47.68632
-        ],
-        [
-          -124.4063,
-          47.68637
-        ],
-        [
-          -124.40653,
-          47.68655
-        ],
-        [
-          -124.40674,
-          47.68669
-        ],
-        [
-          -124.40698,
-          47.68684
-        ],
-        [
-          -124.40706,
-          47.68689
-        ],
-        [
-          -124.4073,
-          47.68704
-        ],
-        [
-          -124.40753,
-          47.68721
-        ],
-        [
-          -124.40767,
-          47.68732
-        ],
-        [
-          -124.40788,
-          47.6875
-        ],
-        [
-          -124.40801,
-          47.68762
-        ],
-        [
-          -124.40813,
-          47.68775
-        ],
-        [
-          -124.40827,
-          47.6879
-        ],
-        [
-          -124.40847,
-          47.68809
-        ],
-        [
-          -124.40867,
-          47.68829
-        ],
-        [
-          -124.40885,
-          47.68849
-        ],
-        [
-          -124.40902,
-          47.68869
-        ],
-        [
-          -124.40919,
-          47.6889
-        ],
-        [
-          -124.40934,
-          47.68911
-        ],
-        [
-          -124.40948,
-          47.68932
-        ],
-        [
-          -124.40954,
-          47.68943
-        ],
-        [
-          -124.40967,
-          47.68965
-        ],
-        [
-          -124.40978,
-          47.68988
-        ],
-        [
-          -124.40989,
-          47.6901
-        ],
-        [
-          -124.41001,
-          47.69042
-        ],
-        [
-          -124.41002,
-          47.69044
-        ],
-        [
-          -124.41009,
-          47.69067
-        ],
-        [
-          -124.41015,
-          47.6909
-        ],
-        [
-          -124.4102,
-          47.69114
-        ],
-        [
-          -124.41023,
-          47.69137
-        ],
-        [
-          -124.41026,
-          47.69168
-        ],
-        [
-          -124.41027,
-          47.6917
-        ],
-        [
-          -124.41027,
-          47.6917
-        ]
-      ]
-    },
-    {
-      "id": 718362,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "From 8 a.m. to 3 p.m. Friday, Oct. 16, the southbound I-5 exit to Pacific Avenue will close for tree work and ramp maintenance. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ea17b",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 107.7,
-      "lat": 47.043122288,
-      "lon": -122.847557341,
-      "lat2": 47.043808162,
-      "lon2": -122.845784477,
-      "county": null,
-      "start": "2026-10-09T21:36:00.0000000+00:00",
-      "end": "2026-10-16T15:00:00.0000000+00:00",
-      "updated": "2026-10-09T22:02:45.4000000+00:00",
-      "path": [
-        [
-          -122.847557341,
-          47.043122288
-        ],
-        [
-          -122.845784477,
-          47.043808162
-        ]
-      ]
-    },
-    {
-      "id": 718604,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from southbound US 101 to northbound I-5 in Tumwater will close for pavement repairs. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 367.2,
-      "lat": 47.022421532,
-      "lon": -122.909441988,
-      "lat2": 47.021745307,
-      "lon2": -122.907125853,
-      "county": null,
-      "start": "2026-10-12T22:27:00.0000000+00:00",
-      "end": "2026-10-16T12:00:00.0000000+00:00",
-      "updated": "2026-10-12T23:50:41.1530000+00:00",
-      "path": [
-        [
-          -122.909441988,
-          47.022421532
-        ],
-        [
-          -122.907125853,
-          47.021745307
-        ]
-      ]
-    },
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-14T19:34:57.5600000+00:00"
-    },
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-14T17:46:21.5070000+00:00"
-    },
-    {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic on SR 109 at milepost 37 near Taholah. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-09-14T14:42:15.5130000+00:00"
-    },
     {
       "id": 693084,
       "kind": "work",
@@ -582,9 +50,9 @@
       "kind": "work",
       "category": "Construction",
       "priority": "Medium",
-      "headline": "Travelers will need to prepare for overnight closures at the US 101 Hoh River Bridge. The bridge will close at 7 p.m. each night Tuesday, Oct. 13 through Sunday, Oct. 18 and reopen at 5:30 a.m. each following morning. Crews will take down scaffolding and a work deck following completion of emergency repairs.",
+      "headline": "From 9 a.m. to noon, Thursday, Oct. 15, travelers will see traffic holds of up to 20 minutes at a time as crews put down striping on the US 101 Hoh River Bridge. Travelers will also need to prepare for overnight closures at the Hoh River Bridge. The bridge will close at 7 p.m. each night Tuesday, Oct. 13 through Sunday, Oct. 18 and reopen at 5:30 a.m. each following morning.",
       "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-hoh-river-bridge-emergency-repair",
+      "link": null,
       "road": "101",
       "roadLabel": "US 101",
       "direction": "B",
@@ -596,7 +64,7 @@
       "county": null,
       "start": "2026-09-02T21:26:00.0000000+00:00",
       "end": "2028-09-15T21:45:00.0000000+00:00",
-      "updated": "2026-10-13T03:52:18.8430000+00:00",
+      "updated": "2026-10-14T19:50:22.3400000+00:00",
       "path": [
         [
           -124.24989,
@@ -1932,6 +1400,1164 @@
       ]
     },
     {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic on SR 109 at milepost 37 near Taholah. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-09-14T14:42:15.5130000+00:00"
+    },
+    {
+      "id": 693774,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-15T00:04:00.0000000+00:00",
+      "end": "2027-01-01T01:04:00.0000000+00:00",
+      "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 718788,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions at milepost 45.8 near Curtis Hill Road, traffic will be alternated through one lane, use caution, beginning at 6:37 am on October 14, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.8,
+      "lat": 46.627023671,
+      "lon": -123.078027394,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Lewis",
+      "start": "2026-10-14T13:37:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-14T13:39:24.0500000+00:00"
+    },
+    {
+      "id": 717820,
+      "kind": "other",
+      "category": "Simpson Ave Bridge",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 88.2,
+      "lat": 46.975395635,
+      "lon": -123.876840412,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-05T15:57:00.0000000+00:00",
+      "end": "2026-10-19T16:00:00.0000000+00:00",
+      "updated": "2026-10-05T16:00:10.5430000+00:00",
+      "upcoming": "MON OCT 19"
+    },
+    {
+      "id": 718856,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 109 near Humptulips River beginning at 12:36 pm on October 14, 2026 until about 1:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 109.0,
+      "lat": 47.229073326,
+      "lon": -123.962720752,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-10-14T19:36:00.0000000+00:00",
+      "end": "2026-10-14T20:30:00.0000000+00:00",
+      "updated": "2026-10-14T19:37:32.7230000+00:00"
+    },
+    {
+      "id": 698910,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.87,
+      "lat": 47.266481174,
+      "lon": -124.2255995,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:40:00.0000000+00:00",
+      "end": "2026-12-31T21:40:00.0000000+00:00",
+      "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
+      "id": 718861,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 3 northbound from milepost 0 near US 101 to milepost 15 near E Grapeview Loop Rd [South-End] beginning at 1:01 pm on October 14, 2026 until about 2:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "003",
+      "roadLabel": "SR 3",
+      "direction": "N",
+      "milepost": 0.0,
+      "lat": 47.180700579,
+      "lon": -123.099096054,
+      "lat2": 47.319290458,
+      "lon2": -122.907674203,
+      "county": "Mason",
+      "start": "2026-10-14T20:01:00.0000000+00:00",
+      "end": "2026-10-14T21:00:00.0000000+00:00",
+      "updated": "2026-10-14T20:02:27.1500000+00:00",
+      "path": [
+        [
+          -123.0991,
+          47.1807
+        ],
+        [
+          -123.09772,
+          47.18123
+        ],
+        [
+          -123.09726,
+          47.18154
+        ],
+        [
+          -123.09714,
+          47.1819
+        ],
+        [
+          -123.09716,
+          47.1821
+        ],
+        [
+          -123.09736,
+          47.18285
+        ],
+        [
+          -123.09744,
+          47.18313
+        ],
+        [
+          -123.09752,
+          47.18345
+        ],
+        [
+          -123.09775,
+          47.18402
+        ],
+        [
+          -123.09796,
+          47.18443
+        ],
+        [
+          -123.09822,
+          47.18491
+        ],
+        [
+          -123.09858,
+          47.18548
+        ],
+        [
+          -123.09902,
+          47.18626
+        ],
+        [
+          -123.09922,
+          47.18684
+        ],
+        [
+          -123.09931,
+          47.18748
+        ],
+        [
+          -123.09914,
+          47.18829
+        ],
+        [
+          -123.09872,
+          47.1891
+        ],
+        [
+          -123.09853,
+          47.1895
+        ],
+        [
+          -123.09838,
+          47.19013
+        ],
+        [
+          -123.09836,
+          47.19068
+        ],
+        [
+          -123.09846,
+          47.19122
+        ],
+        [
+          -123.09866,
+          47.19181
+        ],
+        [
+          -123.09886,
+          47.19232
+        ],
+        [
+          -123.09891,
+          47.19256
+        ],
+        [
+          -123.0989,
+          47.193
+        ],
+        [
+          -123.09882,
+          47.19386
+        ],
+        [
+          -123.0986,
+          47.19453
+        ],
+        [
+          -123.09821,
+          47.19525
+        ],
+        [
+          -123.09766,
+          47.19599
+        ],
+        [
+          -123.09698,
+          47.19668
+        ],
+        [
+          -123.09644,
+          47.19713
+        ],
+        [
+          -123.09554,
+          47.19773
+        ],
+        [
+          -123.09467,
+          47.19818
+        ],
+        [
+          -123.09417,
+          47.19842
+        ],
+        [
+          -123.09346,
+          47.19878
+        ],
+        [
+          -123.09279,
+          47.19924
+        ],
+        [
+          -123.0925,
+          47.1995
+        ],
+        [
+          -123.09224,
+          47.19981
+        ],
+        [
+          -123.09209,
+          47.20002
+        ],
+        [
+          -123.0919,
+          47.20032
+        ],
+        [
+          -123.09169,
+          47.20076
+        ],
+        [
+          -123.09162,
+          47.20096
+        ],
+        [
+          -123.09155,
+          47.20126
+        ],
+        [
+          -123.09152,
+          47.20146
+        ],
+        [
+          -123.0915,
+          47.20164
+        ],
+        [
+          -123.09152,
+          47.20206
+        ],
+        [
+          -123.09156,
+          47.2023
+        ],
+        [
+          -123.09161,
+          47.20252
+        ],
+        [
+          -123.09168,
+          47.20273
+        ],
+        [
+          -123.09187,
+          47.20313
+        ],
+        [
+          -123.09213,
+          47.20353
+        ],
+        [
+          -123.09236,
+          47.20379
+        ],
+        [
+          -123.09258,
+          47.20398
+        ],
+        [
+          -123.09308,
+          47.20429
+        ],
+        [
+          -123.09339,
+          47.20443
+        ],
+        [
+          -123.09442,
+          47.20468
+        ],
+        [
+          -123.09496,
+          47.20474
+        ],
+        [
+          -123.09663,
+          47.20485
+        ],
+        [
+          -123.09744,
+          47.2049
+        ],
+        [
+          -123.0979,
+          47.20496
+        ],
+        [
+          -123.09837,
+          47.20508
+        ],
+        [
+          -123.09876,
+          47.20521
+        ],
+        [
+          -123.09913,
+          47.20536
+        ],
+        [
+          -123.10062,
+          47.20626
+        ],
+        [
+          -123.10103,
+          47.20672
+        ],
+        [
+          -123.10117,
+          47.20717
+        ],
+        [
+          -123.10115,
+          47.20739
+        ],
+        [
+          -123.10101,
+          47.20825
+        ],
+        [
+          -123.10085,
+          47.20906
+        ],
+        [
+          -123.10081,
+          47.2092
+        ],
+        [
+          -123.10062,
+          47.21016
+        ],
+        [
+          -123.10056,
+          47.21047
+        ],
+        [
+          -123.10054,
+          47.21058
+        ],
+        [
+          -123.10034,
+          47.21162
+        ],
+        [
+          -123.10027,
+          47.21201
+        ],
+        [
+          -123.1002,
+          47.21239
+        ],
+        [
+          -123.10012,
+          47.21282
+        ],
+        [
+          -123.10009,
+          47.21299
+        ],
+        [
+          -123.10004,
+          47.21322
+        ],
+        [
+          -123.10002,
+          47.21336
+        ],
+        [
+          -123.09996,
+          47.21365
+        ],
+        [
+          -123.09989,
+          47.21403
+        ],
+        [
+          -123.09988,
+          47.2141
+        ],
+        [
+          -123.09983,
+          47.21435
+        ],
+        [
+          -123.0998,
+          47.2145
+        ],
+        [
+          -123.09967,
+          47.21509
+        ],
+        [
+          -123.09952,
+          47.21517
+        ],
+        [
+          -123.09846,
+          47.21507
+        ],
+        [
+          -123.09772,
+          47.215
+        ],
+        [
+          -123.09718,
+          47.21495
+        ],
+        [
+          -123.09454,
+          47.21453
+        ],
+        [
+          -123.09343,
+          47.21437
+        ],
+        [
+          -123.09181,
+          47.21425
+        ],
+        [
+          -123.0893,
+          47.21413
+        ],
+        [
+          -123.08844,
+          47.21416
+        ],
+        [
+          -123.08795,
+          47.21426
+        ],
+        [
+          -123.08704,
+          47.21455
+        ],
+        [
+          -123.08625,
+          47.21491
+        ],
+        [
+          -123.08535,
+          47.21547
+        ],
+        [
+          -123.08413,
+          47.21607
+        ],
+        [
+          -123.08264,
+          47.21688
+        ],
+        [
+          -123.08167,
+          47.21795
+        ],
+        [
+          -123.07865,
+          47.22045
+        ],
+        [
+          -123.07661,
+          47.22211
+        ],
+        [
+          -123.0736,
+          47.22419
+        ],
+        [
+          -123.07266,
+          47.22503
+        ],
+        [
+          -123.07234,
+          47.22531
+        ],
+        [
+          -123.07182,
+          47.22566
+        ],
+        [
+          -123.0714,
+          47.22589
+        ],
+        [
+          -123.07092,
+          47.22607
+        ],
+        [
+          -123.07023,
+          47.22627
+        ],
+        [
+          -123.06941,
+          47.22649
+        ],
+        [
+          -123.06851,
+          47.22678
+        ],
+        [
+          -123.06777,
+          47.22712
+        ],
+        [
+          -123.06457,
+          47.22881
+        ],
+        [
+          -123.06356,
+          47.22973
+        ],
+        [
+          -123.06184,
+          47.2316
+        ],
+        [
+          -123.06134,
+          47.23203
+        ],
+        [
+          -123.06037,
+          47.23261
+        ],
+        [
+          -123.05856,
+          47.23376
+        ],
+        [
+          -123.05596,
+          47.2356
+        ],
+        [
+          -123.05447,
+          47.23658
+        ],
+        [
+          -123.05398,
+          47.23697
+        ],
+        [
+          -123.05335,
+          47.23766
+        ],
+        [
+          -123.05278,
+          47.23864
+        ],
+        [
+          -123.05243,
+          47.23915
+        ],
+        [
+          -123.05203,
+          47.23955
+        ],
+        [
+          -123.05135,
+          47.24028
+        ],
+        [
+          -123.05109,
+          47.24082
+        ],
+        [
+          -123.05086,
+          47.24223
+        ],
+        [
+          -123.05068,
+          47.2427
+        ],
+        [
+          -123.05022,
+          47.24332
+        ],
+        [
+          -123.04985,
+          47.24374
+        ],
+        [
+          -123.0496,
+          47.24417
+        ],
+        [
+          -123.04939,
+          47.24459
+        ],
+        [
+          -123.04897,
+          47.24511
+        ],
+        [
+          -123.04821,
+          47.24573
+        ],
+        [
+          -123.04638,
+          47.24723
+        ],
+        [
+          -123.04539,
+          47.24806
+        ],
+        [
+          -123.04506,
+          47.24833
+        ],
+        [
+          -123.04456,
+          47.24876
+        ],
+        [
+          -123.04404,
+          47.2492
+        ],
+        [
+          -123.04375,
+          47.24948
+        ],
+        [
+          -123.04312,
+          47.25006
+        ],
+        [
+          -123.04282,
+          47.25036
+        ],
+        [
+          -123.04216,
+          47.25099
+        ],
+        [
+          -123.04167,
+          47.25144
+        ],
+        [
+          -123.04127,
+          47.25175
+        ],
+        [
+          -123.04079,
+          47.25202
+        ],
+        [
+          -123.03957,
+          47.25265
+        ],
+        [
+          -123.03906,
+          47.25284
+        ],
+        [
+          -123.03815,
+          47.25305
+        ],
+        [
+          -123.03709,
+          47.25328
+        ],
+        [
+          -123.03653,
+          47.25341
+        ],
+        [
+          -123.03605,
+          47.25356
+        ],
+        [
+          -123.03504,
+          47.25395
+        ],
+        [
+          -123.03449,
+          47.25418
+        ],
+        [
+          -123.03401,
+          47.25439
+        ],
+        [
+          -123.03227,
+          47.25514
+        ],
+        [
+          -123.03129,
+          47.25572
+        ],
+        [
+          -123.03013,
+          47.25646
+        ],
+        [
+          -123.02884,
+          47.25717
+        ],
+        [
+          -123.02823,
+          47.2575
+        ],
+        [
+          -123.02757,
+          47.25787
+        ],
+        [
+          -123.02521,
+          47.25916
+        ],
+        [
+          -123.02434,
+          47.25962
+        ],
+        [
+          -123.02268,
+          47.26054
+        ],
+        [
+          -123.02138,
+          47.26124
+        ],
+        [
+          -123.02043,
+          47.26171
+        ],
+        [
+          -123.01811,
+          47.26294
+        ],
+        [
+          -123.01715,
+          47.26341
+        ],
+        [
+          -123.01675,
+          47.26359
+        ],
+        [
+          -123.0163,
+          47.26377
+        ],
+        [
+          -123.01564,
+          47.26395
+        ],
+        [
+          -123.01456,
+          47.26412
+        ],
+        [
+          -123.01179,
+          47.26462
+        ],
+        [
+          -123.01078,
+          47.26481
+        ],
+        [
+          -123.00761,
+          47.26538
+        ],
+        [
+          -123.00496,
+          47.26586
+        ],
+        [
+          -123.00426,
+          47.26594
+        ],
+        [
+          -123.00303,
+          47.26604
+        ],
+        [
+          -123.00197,
+          47.26612
+        ],
+        [
+          -122.99991,
+          47.2663
+        ],
+        [
+          -122.99904,
+          47.26642
+        ],
+        [
+          -122.99853,
+          47.26655
+        ],
+        [
+          -122.998,
+          47.26674
+        ],
+        [
+          -122.99428,
+          47.2683
+        ],
+        [
+          -122.98739,
+          47.27118
+        ],
+        [
+          -122.9816,
+          47.27365
+        ],
+        [
+          -122.98091,
+          47.274
+        ],
+        [
+          -122.9792,
+          47.27516
+        ],
+        [
+          -122.97841,
+          47.27558
+        ],
+        [
+          -122.97447,
+          47.27727
+        ],
+        [
+          -122.97154,
+          47.27848
+        ],
+        [
+          -122.97029,
+          47.2789
+        ],
+        [
+          -122.96589,
+          47.28009
+        ],
+        [
+          -122.96366,
+          47.28086
+        ],
+        [
+          -122.96154,
+          47.28159
+        ],
+        [
+          -122.9598,
+          47.28218
+        ],
+        [
+          -122.95835,
+          47.28253
+        ],
+        [
+          -122.95726,
+          47.2827
+        ],
+        [
+          -122.9537,
+          47.28305
+        ],
+        [
+          -122.95025,
+          47.2834
+        ],
+        [
+          -122.94897,
+          47.28368
+        ],
+        [
+          -122.94821,
+          47.28398
+        ],
+        [
+          -122.94588,
+          47.2857
+        ],
+        [
+          -122.94456,
+          47.28678
+        ],
+        [
+          -122.94288,
+          47.28811
+        ],
+        [
+          -122.93757,
+          47.29138
+        ],
+        [
+          -122.93668,
+          47.29212
+        ],
+        [
+          -122.93532,
+          47.29349
+        ],
+        [
+          -122.93182,
+          47.29707
+        ],
+        [
+          -122.92919,
+          47.29977
+        ],
+        [
+          -122.92207,
+          47.30706
+        ],
+        [
+          -122.92007,
+          47.30911
+        ],
+        [
+          -122.91774,
+          47.31147
+        ],
+        [
+          -122.91671,
+          47.3123
+        ],
+        [
+          -122.91317,
+          47.31507
+        ],
+        [
+          -122.91122,
+          47.3166
+        ],
+        [
+          -122.90913,
+          47.31816
+        ],
+        [
+          -122.90768,
+          47.31929
+        ]
+      ]
+    },
+    {
+      "id": 718596,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from Deschutes Way to northbound I-5 will close for pavement repairs. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 104.3,
+      "lat": 47.021089747,
+      "lon": -122.906156519,
+      "lat2": 47.023374881,
+      "lon2": -122.90393288,
+      "county": null,
+      "start": "2026-10-12T21:33:00.0000000+00:00",
+      "end": "2026-10-16T12:00:00.0000000+00:00",
+      "updated": "2026-10-12T22:27:17.1430000+00:00",
+      "path": [
+        [
+          -122.90615,
+          47.02109
+        ],
+        [
+          -122.90609,
+          47.02126
+        ],
+        [
+          -122.90604,
+          47.02138
+        ],
+        [
+          -122.90601,
+          47.02146
+        ],
+        [
+          -122.90591,
+          47.02161
+        ],
+        [
+          -122.90582,
+          47.02179
+        ],
+        [
+          -122.90568,
+          47.02196
+        ],
+        [
+          -122.90557,
+          47.0221
+        ],
+        [
+          -122.90543,
+          47.02226
+        ],
+        [
+          -122.90532,
+          47.02238
+        ],
+        [
+          -122.90523,
+          47.02246
+        ],
+        [
+          -122.90506,
+          47.02262
+        ],
+        [
+          -122.90492,
+          47.02273
+        ],
+        [
+          -122.90478,
+          47.02284
+        ],
+        [
+          -122.90468,
+          47.02291
+        ],
+        [
+          -122.90442,
+          47.02308
+        ],
+        [
+          -122.90417,
+          47.02323
+        ],
+        [
+          -122.90393,
+          47.02334
+        ],
+        [
+          -122.90387,
+          47.02337
+        ],
+        [
+          -122.90387,
+          47.02337
+        ]
+      ]
+    },
+    {
       "id": 717167,
       "kind": "work",
       "category": "Maintenance",
@@ -2431,234 +3057,515 @@
       ]
     },
     {
-      "id": 693774,
+      "id": 718841,
       "kind": "work",
       "category": "Construction",
       "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
+      "headline": "Beginning Wednesday, Oct. 14, until further notice: Travelers in both directions of SR 105 will encounter daytime intermittent single lane closures between Tokeland Road (milepost 18.6) and Panoramic Lane (milepost 20.7), from 7 a.m. to 7 p.m., for shoreline restoration work. An automated flagger will direct travelers through the area. Plan ahead and expect delays.",
       "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 18.6,
+      "lat": 46.724645087,
+      "lon": -124.020384798,
+      "lat2": 46.732478113,
+      "lon2": -124.060828677,
+      "county": null,
+      "start": "2026-10-14T12:00:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-14T17:30:12.8430000+00:00",
+      "path": [
+        [
+          -124.0204,
+          46.72462
+        ],
+        [
+          -124.02056,
+          46.72463
+        ],
+        [
+          -124.02117,
+          46.72467
+        ],
+        [
+          -124.02155,
+          46.72471
+        ],
+        [
+          -124.02193,
+          46.72476
+        ],
+        [
+          -124.02224,
+          46.72481
+        ],
+        [
+          -124.02232,
+          46.72482
+        ],
+        [
+          -124.0229,
+          46.72497
+        ],
+        [
+          -124.0231,
+          46.72502
+        ],
+        [
+          -124.02357,
+          46.72516
+        ],
+        [
+          -124.02396,
+          46.7253
+        ],
+        [
+          -124.02456,
+          46.72553
+        ],
+        [
+          -124.02712,
+          46.72651
+        ],
+        [
+          -124.02799,
+          46.72676
+        ],
+        [
+          -124.0285,
+          46.7269
+        ],
+        [
+          -124.02953,
+          46.72711
+        ],
+        [
+          -124.03166,
+          46.72745
+        ],
+        [
+          -124.03416,
+          46.72786
+        ],
+        [
+          -124.03518,
+          46.72802
+        ],
+        [
+          -124.03528,
+          46.72804
+        ],
+        [
+          -124.03652,
+          46.72823
+        ],
+        [
+          -124.03795,
+          46.72837
+        ],
+        [
+          -124.0388,
+          46.7284
+        ],
+        [
+          -124.04296,
+          46.7283
+        ],
+        [
+          -124.04413,
+          46.72826
+        ],
+        [
+          -124.0452,
+          46.72819
+        ],
+        [
+          -124.04649,
+          46.72802
+        ],
+        [
+          -124.04762,
+          46.72778
+        ],
+        [
+          -124.04908,
+          46.72751
+        ],
+        [
+          -124.04972,
+          46.72745
+        ],
+        [
+          -124.05033,
+          46.72745
+        ],
+        [
+          -124.05107,
+          46.7275
+        ],
+        [
+          -124.05202,
+          46.72763
+        ],
+        [
+          -124.05294,
+          46.72786
+        ],
+        [
+          -124.05379,
+          46.72821
+        ],
+        [
+          -124.0571,
+          46.7298
+        ],
+        [
+          -124.05838,
+          46.73047
+        ],
+        [
+          -124.05938,
+          46.73124
+        ],
+        [
+          -124.06084,
+          46.73248
+        ],
+        [
+          -124.06084,
+          46.73248
+        ]
+      ]
+    },
+    {
+      "id": 640018,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock on US 101 near Ruby Beach. The speed limit is reduced from 55 mph to 25 mph from milepost 162.93 to 163.51. Work is for a fish passage project.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
       "road": "101",
       "roadLabel": "US 101",
       "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
-      "lat2": 0,
-      "lon2": 0,
+      "milepost": 162.93,
+      "lat": 47.684279605,
+      "lon": -124.405270313,
+      "lat2": 47.691732518,
+      "lon2": -124.410303833,
       "county": null,
-      "start": "2026-04-15T00:04:00.0000000+00:00",
-      "end": "2027-01-01T01:04:00.0000000+00:00",
-      "updated": "2026-04-15T00:09:09.8670000+00:00"
+      "start": "2025-03-18T21:38:00.0000000+00:00",
+      "end": "2027-01-31T23:00:00.0000000+00:00",
+      "updated": "2026-04-27T14:26:48.6970000+00:00",
+      "path": [
+        [
+          -124.40533,
+          47.6843
+        ],
+        [
+          -124.40537,
+          47.68443
+        ],
+        [
+          -124.40541,
+          47.68459
+        ],
+        [
+          -124.40551,
+          47.68509
+        ],
+        [
+          -124.40557,
+          47.6853
+        ],
+        [
+          -124.40563,
+          47.68547
+        ],
+        [
+          -124.40564,
+          47.68548
+        ],
+        [
+          -124.40572,
+          47.68565
+        ],
+        [
+          -124.40579,
+          47.68578
+        ],
+        [
+          -124.4059,
+          47.68594
+        ],
+        [
+          -124.406,
+          47.68606
+        ],
+        [
+          -124.40614,
+          47.68622
+        ],
+        [
+          -124.40624,
+          47.68632
+        ],
+        [
+          -124.4063,
+          47.68637
+        ],
+        [
+          -124.40653,
+          47.68655
+        ],
+        [
+          -124.40674,
+          47.68669
+        ],
+        [
+          -124.40698,
+          47.68684
+        ],
+        [
+          -124.40706,
+          47.68689
+        ],
+        [
+          -124.4073,
+          47.68704
+        ],
+        [
+          -124.40753,
+          47.68721
+        ],
+        [
+          -124.40767,
+          47.68732
+        ],
+        [
+          -124.40788,
+          47.6875
+        ],
+        [
+          -124.40801,
+          47.68762
+        ],
+        [
+          -124.40813,
+          47.68775
+        ],
+        [
+          -124.40827,
+          47.6879
+        ],
+        [
+          -124.40847,
+          47.68809
+        ],
+        [
+          -124.40867,
+          47.68829
+        ],
+        [
+          -124.40885,
+          47.68849
+        ],
+        [
+          -124.40902,
+          47.68869
+        ],
+        [
+          -124.40919,
+          47.6889
+        ],
+        [
+          -124.40934,
+          47.68911
+        ],
+        [
+          -124.40948,
+          47.68932
+        ],
+        [
+          -124.40954,
+          47.68943
+        ],
+        [
+          -124.40967,
+          47.68965
+        ],
+        [
+          -124.40978,
+          47.68988
+        ],
+        [
+          -124.40989,
+          47.6901
+        ],
+        [
+          -124.41001,
+          47.69042
+        ],
+        [
+          -124.41002,
+          47.69044
+        ],
+        [
+          -124.41009,
+          47.69067
+        ],
+        [
+          -124.41015,
+          47.6909
+        ],
+        [
+          -124.4102,
+          47.69114
+        ],
+        [
+          -124.41023,
+          47.69137
+        ],
+        [
+          -124.41026,
+          47.69168
+        ],
+        [
+          -124.41027,
+          47.6917
+        ],
+        [
+          -124.41027,
+          47.6917
+        ]
+      ]
     },
     {
-      "id": 631745,
+      "id": 718362,
       "kind": "work",
       "category": "Maintenance",
       "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "headline": "From 8 a.m. to 3 p.m. Friday, Oct. 16, the southbound I-5 exit to Pacific Avenue will close for tree work and ramp maintenance. Read the travel advisory.",
       "description": "",
-      "link": null,
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ea17b",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 107.7,
+      "lat": 47.043122288,
+      "lon": -122.847557341,
+      "lat2": 47.043808162,
+      "lon2": -122.845784477,
+      "county": null,
+      "start": "2026-10-09T21:36:00.0000000+00:00",
+      "end": "2026-10-16T15:00:00.0000000+00:00",
+      "updated": "2026-10-09T22:02:45.4000000+00:00",
+      "path": [
+        [
+          -122.847557341,
+          47.043122288
+        ],
+        [
+          -122.845784477,
+          47.043808162
+        ]
+      ]
+    },
+    {
+      "id": 718604,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from southbound US 101 to northbound I-5 in Tumwater will close for pavement repairs. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
       "road": "101",
       "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
+      "direction": "S",
+      "milepost": 367.2,
+      "lat": 47.022421532,
+      "lon": -122.909441988,
+      "lat2": 47.021745307,
+      "lon2": -122.907125853,
       "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
+      "start": "2026-10-12T22:27:00.0000000+00:00",
+      "end": "2026-10-16T12:00:00.0000000+00:00",
+      "updated": "2026-10-12T23:50:41.1530000+00:00",
+      "path": [
+        [
+          -122.909441988,
+          47.022421532
+        ],
+        [
+          -122.907125853,
+          47.021745307
+        ]
+      ]
     },
     {
-      "id": 718788,
+      "id": 692593,
       "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Construction on SR 6 both directions at milepost 45.8 near Curtis Hill Road, traffic will be alternated through one lane, use caution, beginning at 6:37 am on October 14, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.8,
-      "lat": 46.627023671,
-      "lon": -123.078027394,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Lewis",
-      "start": "2026-10-14T13:37:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-14T13:39:24.0500000+00:00"
-    },
-    {
-      "id": 718856,
-      "kind": "work",
-      "category": "Road work",
+      "category": "Maintenance",
       "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 109 near Humptulips River beginning at 12:36 pm on October 14, 2026 until about 1:30 pm.",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
       "description": "",
       "link": null,
       "road": "101",
       "roadLabel": "US 101",
       "direction": "B",
-      "milepost": 109.0,
-      "lat": 47.229073326,
-      "lon": -123.962720752,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-14T19:36:00.0000000+00:00",
-      "end": "2026-10-14T20:30:00.0000000+00:00",
-      "updated": "2026-10-14T19:37:32.7230000+00:00"
-    },
-    {
-      "id": 717820,
-      "kind": "other",
-      "category": "Simpson Ave Bridge",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
-      "road": "101COABERDN",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 88.2,
-      "lat": 46.975395635,
-      "lon": -123.876840412,
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
       "lat2": 0,
       "lon2": 0,
       "county": null,
-      "start": "2026-10-05T15:57:00.0000000+00:00",
-      "end": "2026-10-19T16:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:00:10.5430000+00:00",
-      "upcoming": "MON OCT 19"
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 698910,
+      "id": 686738,
       "kind": "work",
       "category": "Construction",
       "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
       "description": "",
       "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
       "road": "109",
       "roadLabel": "SR 109",
       "direction": "B",
-      "milepost": 33.87,
-      "lat": 47.266481174,
-      "lon": -124.2255995,
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
       "lat2": 0,
       "lon2": 0,
       "county": null,
-      "start": "2026-05-20T20:40:00.0000000+00:00",
-      "end": "2026-12-31T21:40:00.0000000+00:00",
-      "updated": "2026-09-14T17:09:14.3170000+00:00"
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-14T19:34:57.5600000+00:00"
     },
     {
-      "id": 718596,
+      "id": 640019,
       "kind": "work",
-      "category": "Maintenance",
+      "category": "Construction",
       "priority": "Medium",
-      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from Deschutes Way to northbound I-5 will close for pavement repairs. Read the travel advisory.",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
       "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 104.3,
-      "lat": 47.021089747,
-      "lon": -122.906156519,
-      "lat2": 47.023374881,
-      "lon2": -122.90393288,
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
       "county": null,
-      "start": "2026-10-12T21:33:00.0000000+00:00",
-      "end": "2026-10-16T12:00:00.0000000+00:00",
-      "updated": "2026-10-12T22:27:17.1430000+00:00",
-      "path": [
-        [
-          -122.90615,
-          47.02109
-        ],
-        [
-          -122.90609,
-          47.02126
-        ],
-        [
-          -122.90604,
-          47.02138
-        ],
-        [
-          -122.90601,
-          47.02146
-        ],
-        [
-          -122.90591,
-          47.02161
-        ],
-        [
-          -122.90582,
-          47.02179
-        ],
-        [
-          -122.90568,
-          47.02196
-        ],
-        [
-          -122.90557,
-          47.0221
-        ],
-        [
-          -122.90543,
-          47.02226
-        ],
-        [
-          -122.90532,
-          47.02238
-        ],
-        [
-          -122.90523,
-          47.02246
-        ],
-        [
-          -122.90506,
-          47.02262
-        ],
-        [
-          -122.90492,
-          47.02273
-        ],
-        [
-          -122.90478,
-          47.02284
-        ],
-        [
-          -122.90468,
-          47.02291
-        ],
-        [
-          -122.90442,
-          47.02308
-        ],
-        [
-          -122.90417,
-          47.02323
-        ],
-        [
-          -122.90393,
-          47.02334
-        ],
-        [
-          -122.90387,
-          47.02337
-        ],
-        [
-          -122.90387,
-          47.02337
-        ]
-      ]
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2027-01-01T02:00:00.0000000+00:00",
+      "updated": "2026-10-14T17:46:21.5070000+00:00"
     }
   ]
 }
