@@ -241,7 +241,8 @@
     "305865000": "2026-10-13T21:34:15.1509038+00:00",
     "374553000": "2026-10-14T01:44:33.9436839+00:00",
     "538009583": "2026-10-14T02:38:48.2529907+00:00",
-    "338616000": "2026-10-14T05:13:05.5148877+00:00"
+    "338616000": "2026-10-14T05:13:05.5148877+00:00",
+    "636021663": "2026-10-14T05:47:22.6101882+00:00"
   },
   "candidates": [
     {
@@ -2163,7 +2164,22 @@
       "date": "2023-06-29 12:53:56",
       "caption": "American Song (ship, 2018) tied up to American Harmony (ship, 2019) at Hayden Island dock.",
       "found": "2026-10-13T05:27:36.5552625+00:00"
+    },
+    {
+      "mmsi": "636021663",
+      "ship": "MSC BIANCA SILVIA",
+      "file": "File:Salvador - BA (Sep 2024) 0052.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Salvador_-_BA_(Sep_2024)_0052.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Salvador_-_BA_%28Sep_2024%29_0052.jpg/1280px-Salvador_-_BA_%28Sep_2024%29_0052.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Sturm",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-09-15 13:29:25",
+      "caption": "Salvador - BA (Sep 2024)",
+      "found": "2026-10-14T05:47:22.6101882+00:00"
     }
   ],
-  "updated": "2026-10-14T05:13:05.5148877+00:00"
+  "updated": "2026-10-14T05:47:22.6101882+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T05:13:05.5148877+00:00",
+  "updated": "2026-10-14T05:47:22.6101882+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1872,27 +1872,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
-    },
-    {
-      "id": 718775,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 103 near Trosper Rd beginning at 9:04 pm on October 13, 2026 until further notice. The right lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 103.0,
-      "lat": 47.002816805,
-      "lon": -122.910599572,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-14T04:04:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-14T04:55:00.6130000+00:00"
     },
     {
       "id": 718742,
