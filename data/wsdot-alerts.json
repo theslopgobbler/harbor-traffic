@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T09:49:38.7874476+00:00",
+  "updated": "2026-10-15T10:16:02.9609267+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1815,6 +1815,37 @@
       ]
     },
     {
+      "id": 718604,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from southbound US 101 to northbound I-5 in Tumwater will close for pavement repairs. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 367.2,
+      "lat": 47.022421532,
+      "lon": -122.909441988,
+      "lat2": 47.021745307,
+      "lon2": -122.907125853,
+      "county": null,
+      "start": "2026-10-12T22:27:00.0000000+00:00",
+      "end": "2026-10-16T12:00:00.0000000+00:00",
+      "updated": "2026-10-12T23:50:41.1530000+00:00",
+      "path": [
+        [
+          -122.909441988,
+          47.022421532
+        ],
+        [
+          -122.907125853,
+          47.021745307
+        ]
+      ]
+    },
+    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -1855,37 +1886,6 @@
       "start": "2026-10-15T02:12:00.0000000+00:00",
       "end": "2026-10-15T12:30:00.0000000+00:00",
       "updated": "2026-10-15T02:13:37.1400000+00:00"
-    },
-    {
-      "id": 718604,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from southbound US 101 to northbound I-5 in Tumwater will close for pavement repairs. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 367.2,
-      "lat": 47.022421532,
-      "lon": -122.909441988,
-      "lat2": 47.021745307,
-      "lon2": -122.907125853,
-      "county": null,
-      "start": "2026-10-12T22:27:00.0000000+00:00",
-      "end": "2026-10-16T12:00:00.0000000+00:00",
-      "updated": "2026-10-12T23:50:41.1530000+00:00",
-      "path": [
-        [
-          -122.909441988,
-          47.022421532
-        ],
-        [
-          -122.907125853,
-          47.021745307
-        ]
-      ]
     },
     {
       "id": 686738,
