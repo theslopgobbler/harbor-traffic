@@ -661,7 +661,11 @@
   async function loadRoads() {
     try {
       const j = await getJson('data/wsdot-alerts.json');
-      state.roads = (j.alerts || []).map(upcomingClosure);
+      // an alert whose own end time is more than 10 minutes past is over, even while WSDOT still lists it: each
+      // drawbridge opening is posted as a 30-minute closure, and WSDOT often leaves those up for hours (Oct 13:
+      // Simpson Ave and Riverside Ave, opened 2:26 PM, still listed at 7:45 PM)
+      const over = (r) => r.end && Date.parse(r.end) < Date.now() - 10 * 60000;
+      state.roads = (j.alerts || []).filter((r) => !over(r)).map(upcomingClosure);
       state.roadsUpdated = j.updated;
     } catch (e) { console.warn('road data', e); }
     renderRoads();
