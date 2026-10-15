@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T02:34:41.7582271+00:00",
+  "updated": "2026-10-15T03:04:20.7048532+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1581,6 +1581,27 @@
       ]
     },
     {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -1857,6 +1878,27 @@
       "updated": "2026-10-15T02:13:37.1400000+00:00"
     },
     {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-14T19:34:57.5600000+00:00"
+    },
+    {
       "id": 718604,
       "kind": "work",
       "category": "Maintenance",
@@ -1886,27 +1928,6 @@
           47.021745307
         ]
       ]
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-14T19:34:57.5600000+00:00"
     },
     {
       "id": 640019,
@@ -1970,27 +1991,6 @@
       "start": "2026-04-15T00:04:00.0000000+00:00",
       "end": "2027-01-01T01:04:00.0000000+00:00",
       "updated": "2026-04-15T00:09:09.8670000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 717820,
