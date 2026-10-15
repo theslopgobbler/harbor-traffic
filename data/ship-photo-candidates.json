@@ -267,7 +267,10 @@
     "368449610": "2026-10-15T20:03:41.3071303+00:00",
     "366744320": "2026-10-15T20:03:41.3071303+00:00",
     "440533000": "2026-10-15T20:03:41.3071303+00:00",
-    "368487710": "2026-10-15T21:37:11.5498876+00:00"
+    "368487710": "2026-10-15T21:37:11.5498876+00:00",
+    "352004974": "2026-10-15T22:03:29.6130175+00:00",
+    "338499479": "2026-10-15T22:03:29.6130175+00:00",
+    "413376000": "2026-10-15T22:03:29.6130175+00:00"
   },
   "candidates": [
     {
@@ -2504,7 +2507,52 @@
       "date": "2012-04-22",
       "caption": "The Portland Spirit , a 1987 river cruise ship, docked at the Willamette River \"seawall\", just south of the Morrison Bridge, in Tom McCall Waterfront Park (Portland, Oregon).",
       "found": "2026-10-15T04:36:11.0685742+00:00"
+    },
+    {
+      "mmsi": "413376000",
+      "ship": "WEN ZHU HAI",
+      "file": "File:Anglo Alexandria (ship, 2011), KSL Stockholm (ship, 2015) & Wen Zhu Hai (ship, 2008) in the Mississippihaven pic1.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Anglo_Alexandria_(ship,_2011),_KSL_Stockholm_(ship,_2015)_%26_Wen_Zhu_Hai_(ship,_2008)_in_the_Mississippihaven_pic1.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Anglo_Alexandria_%28ship%2C_2011%29%2C_KSL_Stockholm_%28ship%2C_2015%29_%26_Wen_Zhu_Hai_%28ship%2C_2008%29_in_the_Mississippihaven_pic1.JPG/1280px-Anglo_Alexandria_%28ship%2C_2011%29%2C_KSL_Stockholm_%28ship%2C_2015%29_%26_Wen_Zhu_Hai_%28ship%2C_2008%29_in_the_Mississippihaven_pic1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alf van Beem",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2021-01-02 13:49:30",
+      "caption": "Photographed in the Port of Rotterdam.",
+      "found": "2026-10-15T22:03:29.6130175+00:00"
+    },
+    {
+      "mmsi": "413376000",
+      "ship": "WEN ZHU HAI",
+      "file": "File:Anglo Alexandria (ship, 2011), KSL Stockholm (ship, 2015) & Wen Zhu Hai (ship, 2008) in the Mississippihaven pic2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Anglo_Alexandria_(ship,_2011),_KSL_Stockholm_(ship,_2015)_%26_Wen_Zhu_Hai_(ship,_2008)_in_the_Mississippihaven_pic2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Anglo_Alexandria_%28ship%2C_2011%29%2C_KSL_Stockholm_%28ship%2C_2015%29_%26_Wen_Zhu_Hai_%28ship%2C_2008%29_in_the_Mississippihaven_pic2.jpg/1280px-Anglo_Alexandria_%28ship%2C_2011%29%2C_KSL_Stockholm_%28ship%2C_2015%29_%26_Wen_Zhu_Hai_%28ship%2C_2008%29_in_the_Mississippihaven_pic2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alf van Beem",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2021-01-02 13:53:51",
+      "caption": "Photographed in the Port of Rotterdam.",
+      "found": "2026-10-15T22:03:29.6130175+00:00"
+    },
+    {
+      "mmsi": "413376000",
+      "ship": "WEN ZHU HAI",
+      "file": "File:Wen Zhu Hai (ship, 2008) IMO 9488475, Mississippihaven, Port of Rotterdam pic1.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Wen_Zhu_Hai_(ship,_2008)_IMO_9488475,_Mississippihaven,_Port_of_Rotterdam_pic1.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Wen_Zhu_Hai_%28ship%2C_2008%29_IMO_9488475%2C_Mississippihaven%2C_Port_of_Rotterdam_pic1.JPG/1280px-Wen_Zhu_Hai_%28ship%2C_2008%29_IMO_9488475%2C_Mississippihaven%2C_Port_of_Rotterdam_pic1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alf van Beem",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2021-01-02 13:40:06",
+      "caption": "Photographed in the Port of Rotterdam.",
+      "found": "2026-10-15T22:03:29.6130175+00:00"
     }
   ],
-  "updated": "2026-10-15T21:37:11.5498876+00:00"
+  "updated": "2026-10-15T22:03:29.6130175+00:00"
 }
