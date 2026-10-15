@@ -1,304 +1,7 @@
 {
-  "updated": "2026-10-15T17:55:18.1940907+00:00",
+  "updated": "2026-10-15T18:21:59.8117008+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-09-16T14:09:21.4230000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
-    {
-      "id": 705229,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to noon, Thursday, Oct. 15, travelers will see traffic holds of up to 20 minutes at a time as crews put down striping on the US 101 Hoh River Bridge. Travelers will also need to prepare for overnight closures at the Hoh River Bridge. The bridge will close at 7 p.m. each night Tuesday, Oct. 13 through Sunday, Oct. 18 and reopen at 5:30 a.m. each following morning.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 176.5,
-      "lat": 47.805355101,
-      "lon": -124.249873622,
-      "lat2": 47.809930027,
-      "lon2": -124.250110678,
-      "county": null,
-      "start": "2026-09-02T21:26:00.0000000+00:00",
-      "end": "2028-09-15T21:45:00.0000000+00:00",
-      "updated": "2026-10-14T19:50:22.3400000+00:00",
-      "path": [
-        [
-          -124.24989,
-          47.8054
-        ],
-        [
-          -124.24988,
-          47.8054
-        ],
-        [
-          -124.24983,
-          47.80554
-        ],
-        [
-          -124.2498,
-          47.80563
-        ],
-        [
-          -124.24977,
-          47.80577
-        ],
-        [
-          -124.24974,
-          47.80591
-        ],
-        [
-          -124.24973,
-          47.80605
-        ],
-        [
-          -124.24973,
-          47.80614
-        ],
-        [
-          -124.24974,
-          47.80638
-        ],
-        [
-          -124.24979,
-          47.80661
-        ],
-        [
-          -124.24983,
-          47.80675
-        ],
-        [
-          -124.24992,
-          47.8069
-        ],
-        [
-          -124.25001,
-          47.80705
-        ],
-        [
-          -124.2503,
-          47.80738
-        ],
-        [
-          -124.25056,
-          47.80773
-        ],
-        [
-          -124.25088,
-          47.80821
-        ],
-        [
-          -124.25092,
-          47.80829
-        ],
-        [
-          -124.25095,
-          47.8084
-        ],
-        [
-          -124.25097,
-          47.80847
-        ],
-        [
-          -124.25097,
-          47.80855
-        ],
-        [
-          -124.25097,
-          47.80865
-        ],
-        [
-          -124.25095,
-          47.80874
-        ],
-        [
-          -124.25092,
-          47.80883
-        ],
-        [
-          -124.25088,
-          47.80893
-        ],
-        [
-          -124.25084,
-          47.80901
-        ],
-        [
-          -124.25077,
-          47.80909
-        ],
-        [
-          -124.2507,
-          47.80915
-        ],
-        [
-          -124.25052,
-          47.80933
-        ],
-        [
-          -124.25035,
-          47.80953
-        ],
-        [
-          -124.2502,
-          47.80972
-        ],
-        [
-          -124.25015,
-          47.8098
-        ],
-        [
-          -124.25012,
-          47.80988
-        ],
-        [
-          -124.25011,
-          47.8099
-        ],
-        [
-          -124.25011,
-          47.8099
-        ]
-      ]
-    },
-    {
-      "id": 712872,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Sept. 14 through Friday, Oct. 16: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 45.6,
-      "lat": 46.627033568,
-      "lon": -123.082208102,
-      "lat2": 46.626966642,
-      "lon2": -123.063374325,
-      "county": null,
-      "start": "2026-09-14T12:00:00.0000000+00:00",
-      "end": "2026-10-16T22:30:00.0000000+00:00",
-      "updated": "2026-10-08T22:41:33.6300000+00:00",
-      "path": [
-        [
-          -123.0822,
-          46.62703
-        ],
-        [
-          -123.08176,
-          46.62703
-        ],
-        [
-          -123.08101,
-          46.62703
-        ],
-        [
-          -123.07967,
-          46.62703
-        ],
-        [
-          -123.07843,
-          46.62702
-        ],
-        [
-          -123.07691,
-          46.62702
-        ],
-        [
-          -123.07664,
-          46.62702
-        ],
-        [
-          -123.07607,
-          46.62702
-        ],
-        [
-          -123.07582,
-          46.62702
-        ],
-        [
-          -123.07474,
-          46.62702
-        ],
-        [
-          -123.07107,
-          46.62702
-        ],
-        [
-          -123.06794,
-          46.627
-        ],
-        [
-          -123.06486,
-          46.62698
-        ],
-        [
-          -123.06443,
-          46.62697
-        ],
-        [
-          -123.06424,
-          46.62697
-        ],
-        [
-          -123.06344,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ],
-        [
-          -123.0634,
-          46.62696
-        ]
-      ]
-    },
     {
       "id": 717912,
       "kind": "work",
@@ -999,6 +702,303 @@
         [
           -123.92215,
           47.03119
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 4 p.m., Tuesday, Sept. 22, expect several closures of SR 109 lasting up to 45 minutes each. Crews will deliver and install five support beams on the new bridge. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-09-16T14:09:21.4230000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
+    {
+      "id": 705229,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to noon, Thursday, Oct. 15, travelers will see traffic holds of up to 20 minutes at a time as crews put down striping on the US 101 Hoh River Bridge. Travelers will also need to prepare for overnight closures at the Hoh River Bridge. The bridge will close at 7 p.m. each night Tuesday, Oct. 13 through Sunday, Oct. 18 and reopen at 5:30 a.m. each following morning.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 176.5,
+      "lat": 47.805355101,
+      "lon": -124.249873622,
+      "lat2": 47.809930027,
+      "lon2": -124.250110678,
+      "county": null,
+      "start": "2026-09-02T21:26:00.0000000+00:00",
+      "end": "2028-09-15T21:45:00.0000000+00:00",
+      "updated": "2026-10-14T19:50:22.3400000+00:00",
+      "path": [
+        [
+          -124.24989,
+          47.8054
+        ],
+        [
+          -124.24988,
+          47.8054
+        ],
+        [
+          -124.24983,
+          47.80554
+        ],
+        [
+          -124.2498,
+          47.80563
+        ],
+        [
+          -124.24977,
+          47.80577
+        ],
+        [
+          -124.24974,
+          47.80591
+        ],
+        [
+          -124.24973,
+          47.80605
+        ],
+        [
+          -124.24973,
+          47.80614
+        ],
+        [
+          -124.24974,
+          47.80638
+        ],
+        [
+          -124.24979,
+          47.80661
+        ],
+        [
+          -124.24983,
+          47.80675
+        ],
+        [
+          -124.24992,
+          47.8069
+        ],
+        [
+          -124.25001,
+          47.80705
+        ],
+        [
+          -124.2503,
+          47.80738
+        ],
+        [
+          -124.25056,
+          47.80773
+        ],
+        [
+          -124.25088,
+          47.80821
+        ],
+        [
+          -124.25092,
+          47.80829
+        ],
+        [
+          -124.25095,
+          47.8084
+        ],
+        [
+          -124.25097,
+          47.80847
+        ],
+        [
+          -124.25097,
+          47.80855
+        ],
+        [
+          -124.25097,
+          47.80865
+        ],
+        [
+          -124.25095,
+          47.80874
+        ],
+        [
+          -124.25092,
+          47.80883
+        ],
+        [
+          -124.25088,
+          47.80893
+        ],
+        [
+          -124.25084,
+          47.80901
+        ],
+        [
+          -124.25077,
+          47.80909
+        ],
+        [
+          -124.2507,
+          47.80915
+        ],
+        [
+          -124.25052,
+          47.80933
+        ],
+        [
+          -124.25035,
+          47.80953
+        ],
+        [
+          -124.2502,
+          47.80972
+        ],
+        [
+          -124.25015,
+          47.8098
+        ],
+        [
+          -124.25012,
+          47.80988
+        ],
+        [
+          -124.25011,
+          47.8099
+        ],
+        [
+          -124.25011,
+          47.8099
+        ]
+      ]
+    },
+    {
+      "id": 712872,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Sept. 14 through Friday, Oct. 16: Travelers in both directions of SR 6 will take turns moving through a single lane between Clinton Road (milepost 45.6) and Twin Oaks Road (milepost 46.5), weekdays from 7 a.m. to 3:30 p.m., for work to replace a buried water main line. Flaggers will direct travelers through the work zone. Plan ahead and expect delays. This work is being done by Boistfort Valley Water Corporation.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 45.6,
+      "lat": 46.627033568,
+      "lon": -123.082208102,
+      "lat2": 46.626966642,
+      "lon2": -123.063374325,
+      "county": null,
+      "start": "2026-09-14T12:00:00.0000000+00:00",
+      "end": "2026-10-16T22:30:00.0000000+00:00",
+      "updated": "2026-10-08T22:41:33.6300000+00:00",
+      "path": [
+        [
+          -123.0822,
+          46.62703
+        ],
+        [
+          -123.08176,
+          46.62703
+        ],
+        [
+          -123.08101,
+          46.62703
+        ],
+        [
+          -123.07967,
+          46.62703
+        ],
+        [
+          -123.07843,
+          46.62702
+        ],
+        [
+          -123.07691,
+          46.62702
+        ],
+        [
+          -123.07664,
+          46.62702
+        ],
+        [
+          -123.07607,
+          46.62702
+        ],
+        [
+          -123.07582,
+          46.62702
+        ],
+        [
+          -123.07474,
+          46.62702
+        ],
+        [
+          -123.07107,
+          46.62702
+        ],
+        [
+          -123.06794,
+          46.627
+        ],
+        [
+          -123.06486,
+          46.62698
+        ],
+        [
+          -123.06443,
+          46.62697
+        ],
+        [
+          -123.06424,
+          46.62697
+        ],
+        [
+          -123.06344,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
+        ],
+        [
+          -123.0634,
+          46.62696
         ]
       ]
     },
