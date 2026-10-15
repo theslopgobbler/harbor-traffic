@@ -12,7 +12,8 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
-    ['Oct 13', 'Tapping a bus stop moves the map once, leaving room for the whole timetable (no more bounce). Drawbridge closures clear on their own once WSDOT's posted time is up. Behind the scenes: buses are logged every 20 seconds for more accurate on-time records.'],
+    ['Oct 15', 'Buses stay on their route line on long straight roads and through a moment of weak GPS signal, instead of flashing "off route".'],
+    ['Oct 13', 'Tapping a bus stop moves the map once, leaving room for the whole timetable (no more bounce). Drawbridge closures clear on their own once WSDOT’s posted time is up. Behind the scenes: buses are logged every 20 seconds for more accurate on-time records.'],
     ['Oct 7', 'A menu, and handy little extras around the map.'],
     ['Oct 6', 'Weather effects, buses, boats and your location look and behave better.'],
     ['Oct 5', 'More to see in the 3D bus view, and parks and landmarks on the map.'],

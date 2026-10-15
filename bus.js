@@ -701,14 +701,23 @@
   const diff = (a, b) => Math.abs(((a - b + 540) % 360) - 180);
   // a bus counts as on its route line within 60 m of it (radius). Farther than that it's on a detour or a
   // shortcut, and is drawn going its own way (its GPS heading) until it's back.
+  // (measured to the line itself, not to its points: on a long straight stretch the points can be a few hundred
+  // meters apart, and a bus halfway between two of them was more than 60 m from both, so it showed as OFF ROUTE
+  // while driving right down its route. Oct 12-14: two thirds of the "off route" reports were that)
+  function segDist(p, a, c) {
+    const ax = (a[0] - p[0]) * 76000, ay = (a[1] - p[1]) * 111000, cx = (c[0] - p[0]) * 76000, cy = (c[1] - p[1]) * 111000;
+    const dx = cx - ax, dy = cy - ay, L = dx * dx + dy * dy;
+    const f = L ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L)) : 0;
+    return { dist: Math.hypot(ax + f * dx, ay + f * dy), f };
+  }
   function snap(b, routeNo, radius = 60) {
     let best = null;
     for (const sh of shapesByRoute[routeNo] || []) {
       for (let i = 0; i < sh.c.length - 1; i++) {
-        const dist = mx([b.lon, b.lat], sh.c[i]);
+        const { dist, f } = segDist([b.lon, b.lat], sh.c[i], sh.c[i + 1]);
         if (dist > radius || (best && dist >= best.dist)) continue;
         if (diff(bearing(sh.c[i], sh.c[i + 1]), b.heading || 0) > 90) continue; // going the right way along it
-        best = { sh, i, dist };
+        best = { sh, i, dist, at: sh.d[i] + f * (sh.d[i + 1] - sh.d[i]) };
       }
     }
     return best;
@@ -755,12 +764,12 @@
   }
   function onLine(sh, p, near, heading, radius) {
     let best = null;
-    for (let i = 0; i < sh.c.length; i++) {
-      if (near != null && Math.abs(sh.d[i] - near) > 800) continue;
+    for (let i = 0; i < sh.c.length - 1; i++) {
+      if (near != null && Math.abs(sh.d[i] - near) > 800 && Math.abs(sh.d[i + 1] - near) > 800) continue;
       // moving: only the part of the line going its way (not the other side of an out-and-back street)
-      if (heading != null && i < sh.c.length - 1 && diff(bearing(sh.c[i], sh.c[i + 1]), heading) > 90) continue;
-      const dist = mx(p, sh.c[i]);
-      if (dist < (radius || 60) && (!best || dist < best.dist)) best = { i, dist };
+      if (heading != null && diff(bearing(sh.c[i], sh.c[i + 1]), heading) > 90) continue;
+      const { dist, f } = segDist(p, sh.c[i], sh.c[i + 1]); // (to the line, not its points: see snap)
+      if (dist < (radius || 60) && (!best || dist < best.dist)) best = { i, dist, at: sh.d[i] + f * (sh.d[i + 1] - sh.d[i]) };
     }
     return best;
   }
@@ -780,7 +789,7 @@
       const b = mk._bus;
       if (!b || mk._lostAt) continue; // (a ghost stays where it was last heard)
       // the route lines may arrive after the buses: match each bus to its line once they're in
-      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); if (b._snap) { b._obs = b._snap.sh.d[b._snap.i]; b._fork = forkAhead(b, busRoute(b)); } }
+      if (!b._snap && !b._tried && Object.keys(shapesByRoute).length) { b._tried = true; b._snap = snap(b, busRoute(b)); if (b._snap) { b._obs = b._snap.at ?? b._snap.sh.d[b._snap.i]; b._fork = forkAhead(b, busRoute(b)); } }
       let pos;
       if (b._snap) {
         const sh = b._snap.sh, end = sh.d[sh.d.length - 1];
@@ -1327,10 +1336,18 @@
       let sn = null;
       if (mk._sh && prev && prev.route === b.route) {
         const o = onLine(mk._sh, [b.lon, b.lat], mk._s, b.mph >= 2 ? b.heading : null, reach);
-        if (o) sn = { sh: mk._sh, i: o.i, dist: o.dist };
+        if (o) sn = { sh: mk._sh, i: o.i, dist: o.dist, at: o.at };
       }
       b._snap = sn || snap(b, rt, reach);
-      b._obs = b._snap ? b._snap.sh.d[b._snap.i] : undefined;
+      // a weak GPS signal (trees, hills, the tracker reconnecting) can put a report 100-200 m off, or give it a
+      // stale heading. A bus that was on its line within the last 45 s stays on it unless it's more than 250 m away:
+      // a real detour shows up over the next reports. (Oct 12-14 replay: about a third fewer brief "off route" flips)
+      if (!b._snap && mk._sh && prev && prev.route === b.route && Date.now() - (mk._onAt || 0) < 45000) {
+        const o = onLine(mk._sh, [b.lon, b.lat], mk._s, null, 250);
+        if (o) b._snap = { sh: mk._sh, i: o.i, dist: o.dist, at: o.at, held: true };
+      }
+      if (b._snap && !b._snap.held) mk._onAt = Date.now();
+      b._obs = b._snap ? b._snap.at ?? b._snap.sh.d[b._snap.i] : undefined;
       b._fork = b._snap ? forkAhead(b, rt) : undefined;
       if (window.htTrace && follow?.id === b.id) window.htTrace.push({ t: Date.now(), same: !!sn, newLine: b._snap?.sh !== mk._sh, obs: Math.round(b._obs), drawn: Math.round(mk._s), mph: Math.round(b.mph) });
       b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
