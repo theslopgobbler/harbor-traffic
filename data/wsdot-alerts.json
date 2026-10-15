@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T23:20:25.8576636+00:00",
+  "updated": "2026-10-15T23:48:59.0524087+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2294,7 +2294,7 @@
       "kind": "work",
       "category": "Construction",
       "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
+      "headline": "Expect occasional single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. Crews are putting final touches on a fish passage project. Get more details on the project webpage.",
       "description": "",
       "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
       "road": "101",
@@ -2308,7 +2308,7 @@
       "county": null,
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-14T17:46:21.5070000+00:00"
+      "updated": "2026-10-15T23:32:37.6470000+00:00"
     },
     {
       "id": 698912,
