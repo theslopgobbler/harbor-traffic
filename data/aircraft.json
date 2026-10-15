@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-15T13:57:54.9820251+00:00",
+  "updated": "2026-10-15T14:29:14.2043610+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ab9639",
+      "flight": "OAE2542",
+      "reg": "N846AX",
+      "type": "B772",
+      "cat": "A5",
+      "alt": 9825,
+      "gs": 287.1,
+      "track": 133.87,
+      "rate": -448,
+      "lat": 47.46295,
+      "lon": -123.23769,
+      "squawk": "5727",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
