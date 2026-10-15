@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-15T15:39:51.4157730+00:00",
+  "updated": "2026-10-15T16:11:08.0138441+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "aa9001",
-      "flight": "N78UT",
-      "reg": "N78UT",
-      "type": "B429",
-      "cat": "A7",
-      "alt": 5575,
-      "gs": 149.9,
-      "track": 9.21,
-      "rate": null,
-      "lat": 46.95149,
-      "lon": -122.90652,
-      "squawk": "4670",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
