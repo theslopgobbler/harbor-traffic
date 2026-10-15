@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T20:34:04.9651840+00:00",
+  "updated": "2026-10-15T21:06:13.8711510+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -253,6 +253,104 @@
         [
           -123.0634,
           46.62696
+        ]
+      ]
+    },
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865594,
+      "lon": -124.35087107,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2025-06-25T17:20:31.6500000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
         ]
       ]
     },
@@ -956,104 +1054,6 @@
         [
           -123.92215,
           47.03119
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
         ]
       ]
     },
@@ -2248,6 +2248,70 @@
       ]
     },
     {
+      "id": 717820,
+      "kind": "other",
+      "category": "Simpson Ave Bridge",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 88.2,
+      "lat": 46.975395635,
+      "lon": -123.876840412,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-05T15:57:00.0000000+00:00",
+      "end": "2026-10-19T16:00:00.0000000+00:00",
+      "updated": "2026-10-05T16:00:10.5430000+00:00",
+      "upcoming": "MON OCT 19"
+    },
+    {
+      "id": 718967,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 507 both directions at milepost 15.71 near Tenino North City Limits beginning at 10:19 am on October 15, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "507",
+      "roadLabel": "SR 507",
+      "direction": "B",
+      "milepost": 15.71,
+      "lat": 46.857516243,
+      "lon": -122.825827802,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-15T17:19:00.0000000+00:00",
+      "end": "2026-10-15T22:00:00.0000000+00:00",
+      "updated": "2026-10-15T17:20:31.1230000+00:00"
+    },
+    {
+      "id": 698910,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.87,
+      "lat": 47.266481174,
+      "lon": -124.2255995,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:40:00.0000000+00:00",
+      "end": "2026-12-31T21:40:00.0000000+00:00",
+      "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -2267,6 +2331,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 718994,
+      "kind": "closure",
+      "category": "Chehalis River Bridge",
+      "priority": "Highest",
+      "headline": "Chehalis River Bridge is closed to vehicle traffic at 1:49 PM Thursday, October 15. A maintenance opening is in progress. Travelers can expect delays for up to 15 minutes on US 101 both directions at 83.22 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 83.22,
+      "lat": 46.970542365,
+      "lon": -123.805207969,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-15T20:49:03.2000000+00:00",
+      "end": "2026-10-15T21:04:03.2000000+00:00",
+      "updated": "2026-10-15T20:49:03.4970000+00:00"
     },
     {
       "id": 686738,
@@ -2372,753 +2457,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 717820,
-      "kind": "other",
-      "category": "Simpson Ave Bridge",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
-      "road": "101COABERDN",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 88.2,
-      "lat": 46.975395635,
-      "lon": -123.876840412,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-10-05T15:57:00.0000000+00:00",
-      "end": "2026-10-19T16:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:00:10.5430000+00:00",
-      "upcoming": "MON OCT 19"
-    },
-    {
-      "id": 698910,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.87,
-      "lat": 47.266481174,
-      "lon": -124.2255995,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:40:00.0000000+00:00",
-      "end": "2026-12-31T21:40:00.0000000+00:00",
-      "updated": "2026-09-14T17:09:14.3170000+00:00"
-    },
-    {
-      "id": 718967,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 507 both directions at milepost 15.71 near Tenino North City Limits beginning at 10:19 am on October 15, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "507",
-      "roadLabel": "SR 507",
-      "direction": "B",
-      "milepost": 15.71,
-      "lat": 46.857516243,
-      "lon": -122.825827802,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-15T17:19:00.0000000+00:00",
-      "end": "2026-10-15T22:00:00.0000000+00:00",
-      "updated": "2026-10-15T17:20:31.1230000+00:00"
-    },
-    {
-      "id": 718932,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 3 both directions from milepost 3 near Pear Orchard Park & Ride to milepost 25 near Belfair South City Limits beginning at 7:27 am on October 15, 2026 until about 1:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "B",
-      "milepost": 3.0,
-      "lat": 47.214930526,
-      "lon": -123.09696346,
-      "lat2": 47.43375255,
-      "lon2": -122.839956843,
-      "county": "Mason",
-      "start": "2026-10-15T14:27:00.0000000+00:00",
-      "end": "2026-10-15T20:00:00.0000000+00:00",
-      "updated": "2026-10-15T14:28:44.0570000+00:00",
-      "path": [
-        [
-          -123.09699,
-          47.21493
-        ],
-        [
-          -123.09387,
-          47.21442
-        ],
-        [
-          -123.09181,
-          47.21425
-        ],
-        [
-          -123.08889,
-          47.21413
-        ],
-        [
-          -123.08795,
-          47.21426
-        ],
-        [
-          -123.08662,
-          47.21472
-        ],
-        [
-          -123.08535,
-          47.21547
-        ],
-        [
-          -123.08289,
-          47.21669
-        ],
-        [
-          -123.08167,
-          47.21795
-        ],
-        [
-          -123.07806,
-          47.22092
-        ],
-        [
-          -123.0736,
-          47.22419
-        ],
-        [
-          -123.0725,
-          47.22518
-        ],
-        [
-          -123.07182,
-          47.22566
-        ],
-        [
-          -123.07115,
-          47.22599
-        ],
-        [
-          -123.07023,
-          47.22627
-        ],
-        [
-          -123.06889,
-          47.22665
-        ],
-        [
-          -123.06777,
-          47.22712
-        ],
-        [
-          -123.0641,
-          47.22917
-        ],
-        [
-          -123.06184,
-          47.2316
-        ],
-        [
-          -123.06094,
-          47.23229
-        ],
-        [
-          -123.05856,
-          47.23376
-        ],
-        [
-          -123.05522,
-          47.23609
-        ],
-        [
-          -123.05398,
-          47.23697
-        ],
-        [
-          -123.05318,
-          47.23792
-        ],
-        [
-          -123.05243,
-          47.23915
-        ],
-        [
-          -123.05164,
-          47.2399
-        ],
-        [
-          -123.05109,
-          47.24082
-        ],
-        [
-          -123.05078,
-          47.24246
-        ],
-        [
-          -123.05022,
-          47.24332
-        ],
-        [
-          -123.0497,
-          47.24396
-        ],
-        [
-          -123.04939,
-          47.24459
-        ],
-        [
-          -123.04871,
-          47.24534
-        ],
-        [
-          -123.04638,
-          47.24723
-        ],
-        [
-          -123.04516,
-          47.24825
-        ],
-        [
-          -123.04456,
-          47.24876
-        ],
-        [
-          -123.044,
-          47.24924
-        ],
-        [
-          -123.04312,
-          47.25006
-        ],
-        [
-          -123.04252,
-          47.25064
-        ],
-        [
-          -123.04167,
-          47.25144
-        ],
-        [
-          -123.0411,
-          47.25185
-        ],
-        [
-          -123.03957,
-          47.25265
-        ],
-        [
-          -123.0388,
-          47.25292
-        ],
-        [
-          -123.03709,
-          47.25328
-        ],
-        [
-          -123.03631,
-          47.25347
-        ],
-        [
-          -123.03504,
-          47.25395
-        ],
-        [
-          -123.03406,
-          47.25437
-        ],
-        [
-          -123.03227,
-          47.25514
-        ],
-        [
-          -123.03064,
-          47.25617
-        ],
-        [
-          -123.02884,
-          47.25717
-        ],
-        [
-          -123.02768,
-          47.2578
-        ],
-        [
-          -123.02521,
-          47.25916
-        ],
-        [
-          -123.02387,
-          47.25987
-        ],
-        [
-          -123.02138,
-          47.26124
-        ],
-        [
-          -123.01995,
-          47.26195
-        ],
-        [
-          -123.01715,
-          47.26341
-        ],
-        [
-          -123.01651,
-          47.2637
-        ],
-        [
-          -123.01564,
-          47.26395
-        ],
-        [
-          -123.01264,
-          47.26447
-        ],
-        [
-          -123.01078,
-          47.26481
-        ],
-        [
-          -123.00601,
-          47.26567
-        ],
-        [
-          -123.00426,
-          47.26594
-        ],
-        [
-          -123.00216,
-          47.26611
-        ],
-        [
-          -122.99991,
-          47.2663
-        ],
-        [
-          -122.99875,
-          47.26649
-        ],
-        [
-          -122.998,
-          47.26674
-        ],
-        [
-          -122.98875,
-          47.27061
-        ],
-        [
-          -122.9816,
-          47.27365
-        ],
-        [
-          -122.98029,
-          47.27438
-        ],
-        [
-          -122.97841,
-          47.27558
-        ],
-        [
-          -122.97275,
-          47.27798
-        ],
-        [
-          -122.97029,
-          47.2789
-        ],
-        [
-          -122.96513,
-          47.28034
-        ],
-        [
-          -122.96154,
-          47.28159
-        ],
-        [
-          -122.95914,
-          47.28235
-        ],
-        [
-          -122.95726,
-          47.2827
-        ],
-        [
-          -122.9516,
-          47.28325
-        ],
-        [
-          -122.94897,
-          47.28368
-        ],
-        [
-          -122.94755,
-          47.28432
-        ],
-        [
-          -122.94456,
-          47.28678
-        ],
-        [
-          -122.93918,
-          47.29038
-        ],
-        [
-          -122.93668,
-          47.29212
-        ],
-        [
-          -122.93262,
-          47.29625
-        ],
-        [
-          -122.92919,
-          47.29977
-        ],
-        [
-          -122.92085,
-          47.30825
-        ],
-        [
-          -122.91774,
-          47.31147
-        ],
-        [
-          -122.91348,
-          47.31482
-        ],
-        [
-          -122.91122,
-          47.3166
-        ],
-        [
-          -122.9073,
-          47.31957
-        ],
-        [
-          -122.906,
-          47.32039
-        ],
-        [
-          -122.89936,
-          47.32299
-        ],
-        [
-          -122.89647,
-          47.32378
-        ],
-        [
-          -122.89455,
-          47.32475
-        ],
-        [
-          -122.8891,
-          47.32775
-        ],
-        [
-          -122.88664,
-          47.32969
-        ],
-        [
-          -122.88472,
-          47.33127
-        ],
-        [
-          -122.88367,
-          47.33166
-        ],
-        [
-          -122.88199,
-          47.33176
-        ],
-        [
-          -122.87817,
-          47.3323
-        ],
-        [
-          -122.8748,
-          47.33311
-        ],
-        [
-          -122.87299,
-          47.33371
-        ],
-        [
-          -122.87144,
-          47.33465
-        ],
-        [
-          -122.86748,
-          47.33828
-        ],
-        [
-          -122.85542,
-          47.34703
-        ],
-        [
-          -122.85152,
-          47.3497
-        ],
-        [
-          -122.84857,
-          47.35396
-        ],
-        [
-          -122.84649,
-          47.3573
-        ],
-        [
-          -122.84595,
-          47.35923
-        ],
-        [
-          -122.84505,
-          47.36204
-        ],
-        [
-          -122.84371,
-          47.36478
-        ],
-        [
-          -122.84238,
-          47.36728
-        ],
-        [
-          -122.84121,
-          47.36868
-        ],
-        [
-          -122.83969,
-          47.37048
-        ],
-        [
-          -122.83699,
-          47.37369
-        ],
-        [
-          -122.83567,
-          47.3752
-        ],
-        [
-          -122.83418,
-          47.37667
-        ],
-        [
-          -122.83246,
-          47.37765
-        ],
-        [
-          -122.83148,
-          47.37842
-        ],
-        [
-          -122.83099,
-          47.37928
-        ],
-        [
-          -122.83014,
-          47.38111
-        ],
-        [
-          -122.82962,
-          47.38216
-        ],
-        [
-          -122.82866,
-          47.38417
-        ],
-        [
-          -122.82785,
-          47.38588
-        ],
-        [
-          -122.82779,
-          47.38624
-        ],
-        [
-          -122.8278,
-          47.38731
-        ],
-        [
-          -122.82742,
-          47.38833
-        ],
-        [
-          -122.82662,
-          47.39017
-        ],
-        [
-          -122.82739,
-          47.39239
-        ],
-        [
-          -122.82788,
-          47.39339
-        ],
-        [
-          -122.82836,
-          47.39459
-        ],
-        [
-          -122.82858,
-          47.39549
-        ],
-        [
-          -122.82873,
-          47.39622
-        ],
-        [
-          -122.82912,
-          47.39685
-        ],
-        [
-          -122.83039,
-          47.39783
-        ],
-        [
-          -122.83182,
-          47.3989
-        ],
-        [
-          -122.83282,
-          47.39989
-        ],
-        [
-          -122.83384,
-          47.40078
-        ],
-        [
-          -122.83621,
-          47.4017
-        ],
-        [
-          -122.83677,
-          47.40194
-        ],
-        [
-          -122.83728,
-          47.40229
-        ],
-        [
-          -122.83772,
-          47.40283
-        ],
-        [
-          -122.83926,
-          47.40534
-        ],
-        [
-          -122.83965,
-          47.40605
-        ],
-        [
-          -122.83961,
-          47.40711
-        ],
-        [
-          -122.83942,
-          47.40797
-        ],
-        [
-          -122.83941,
-          47.40913
-        ],
-        [
-          -122.84042,
-          47.41015
-        ],
-        [
-          -122.84289,
-          47.41176
-        ],
-        [
-          -122.84416,
-          47.41284
-        ],
-        [
-          -122.84539,
-          47.41524
-        ],
-        [
-          -122.84655,
-          47.41763
-        ],
-        [
-          -122.84688,
-          47.41835
-        ],
-        [
-          -122.84705,
-          47.41895
-        ],
-        [
-          -122.84712,
-          47.42049
-        ],
-        [
-          -122.84716,
-          47.42126
-        ],
-        [
-          -122.84724,
-          47.42243
-        ],
-        [
-          -122.84707,
-          47.42381
-        ],
-        [
-          -122.84641,
-          47.42464
-        ],
-        [
-          -122.8461,
-          47.42502
-        ],
-        [
-          -122.84545,
-          47.42646
-        ],
-        [
-          -122.84494,
-          47.42755
-        ],
-        [
-          -122.84374,
-          47.42892
-        ],
-        [
-          -122.84139,
-          47.43152
-        ],
-        [
-          -122.84093,
-          47.43214
-        ],
-        [
-          -122.83994,
-          47.43378
-        ],
-        [
-          -122.83994,
-          47.43378
-        ]
-      ]
     },
     {
       "id": 718596,
