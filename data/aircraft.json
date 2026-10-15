@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-15T14:29:14.2043610+00:00",
+  "updated": "2026-10-15T15:05:02.4612870+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "ab9639",
-      "flight": "OAE2542",
-      "reg": "N846AX",
-      "type": "B772",
-      "cat": "A5",
-      "alt": 9825,
-      "gs": 287.1,
-      "track": 133.87,
-      "rate": -448,
-      "lat": 47.46295,
-      "lon": -123.23769,
-      "squawk": "5727",
+      "hex": "ada0fc",
+      "flight": "N9777J",
+      "reg": "N9777J",
+      "type": "P28A",
+      "cat": "A1",
+      "alt": 1600,
+      "gs": 101.5,
+      "track": 219.81,
+      "rate": null,
+      "lat": 47.47957,
+      "lon": -122.74331,
+      "squawk": "4770",
       "emergency": "none",
       "mil": false
     }
