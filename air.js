@@ -1,5 +1,6 @@
 // Aircraft: ADS-B positions, low and local only (15,000 ft and below, inside the area).
-// Source: a live relay if HT.airRelay is set in config.js (refreshed every 15 s), otherwise the collector's
+// Source: a live relay if HT.airRelay is set in config.js (refreshed every 15 s; it merges a second feed's
+// aircraft, flagged mine, with OpenSky's), otherwise the collector's
 // data/aircraft.json (refreshed each collector run, so positions can be several minutes old).
 (() => {
   const map = window.htMap;
@@ -83,12 +84,18 @@
 
   // ---- markers ----
   let planes = [], updated = null, live = false, liveSource = '';
+  // check mode, only on a device that opened the map with ?rx=1 (?rx=0 turns it off): aircraft flagged mine are drawn
+  // magenta and shown at any altitude. Everyone else sees no difference
+  if (qs.has('rx')) store.set('ht.rx', qs.get('rx') === '1');
+  const rx = store.get('ht.rx') === true;
+  const RX = '#ff4fd8';
+  const tint = (a) => rx && a.mine ? RX : colorOf(a);
   const markers = new Map(); // hex -> marker
   function render() {
     const seen = new Set();
     for (const a of planes) {
       seen.add(a.hex);
-      const c = colorOf(a);
+      const c = tint(a);
       let mk = markers.get(a.hex);
       if (!mk) {
         const el = document.createElement('div');
@@ -121,7 +128,7 @@
       <div class="m">${esc(a.type || 'UNKNOWN TYPE')} · ${altTxt(a.alt)} FT · ${a._sit.state} · ${a._sit.homeNm.toFixed(1)} NM FROM ABERDEEN</div></li>`).join('');
     // helicopters first, then nearest first
     const sorted = planes.slice().sort((a, b) => (isHeli(b) - isHeli(a)) || a._sit.homeNm - b._sit.homeNm);
-    list.innerHTML = sorted.length ? sorted.map((a) => `<li class="clickable" data-hex="${esc(a.hex)}" style="border-left-color:${colorOf(a)}">
+    list.innerHTML = sorted.length ? sorted.map((a) => `<li class="clickable" data-hex="${esc(a.hex)}" style="border-left-color:${tint(a)}">
       <div class="t">${esc(a.flight || a.reg || a.hex)} <span class="pill st-${a._sit.state.replace(/\s/g, '')}">${a._sit.state}</span></div>
       <div class="m">${kindOf(a)} · ${esc(a.type || '?')} · ${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT · ${a._sit.homeNm.toFixed(1)} NM AWAY
         ${a._sit.state === 'INBOUND' ? ' · TO ' + esc(a._sit.field.id) : a._sit.state === 'OUTBOUND' ? ' · FROM ' + esc(a._sit.field.id) : ''}</div></li>`).join('')
@@ -151,7 +158,7 @@
           if (Array.isArray(r.ac) && r.ac.length && (!r.at || Date.now() - Date.parse(r.at) < 180000)) {
             live = true; liveSource = r.source || 'adsb.lol';
             j = { updated: new Date().toISOString(), aircraft: r.ac.map((a) => ({ hex: a.hex, flight: (a.flight || '').trim(), reg: a.r, type: a.t, cat: a.category,
-              alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1) })) };
+              alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1), mine: !!a.mine })) };
           }
         } catch (e) { console.warn('air relay', e); }
       }
@@ -161,8 +168,8 @@
       // Olympia's busy training traffic is left out: everything west of about Rochester/McCleary, plus helicopters,
       // possible military and emergencies anywhere in the area
       const special = (a) => isHeli(a) || isMil(a) || isCoastGuard(a) || EMERG[a.squawk];
-      planes = (j.aircraft || []).filter((a) => a.lat && a.lon && a.lat > 46.5 && a.lat < 48 && a.lon > -124.6 && (a.alt || 0) <= 15000 &&
-        (a.lon < -123.05 || (a.lon < -122.7 && special(a))));
+      planes = (j.aircraft || []).filter((a) => a.lat && a.lon && a.lat > 46.5 && a.lat < 48 && a.lon > -124.6 &&
+        ((rx && a.mine) || (a.alt || 0) <= 15000 && (a.lon < -123.05 || (a.lon < -122.7 && special(a)))));
       for (const a of planes) a._sit = situation(a);
     } catch (e) { console.warn('aircraft', e); }
     render();
