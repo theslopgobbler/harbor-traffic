@@ -1,7 +1,331 @@
 {
-  "updated": "2026-10-16T10:39:19.9638826+00:00",
+  "updated": "2026-10-16T11:08:53.2006183+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 718604,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from southbound US 101 to northbound I-5 in Tumwater will close for pavement repairs. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 367.2,
+      "lat": 47.022421532,
+      "lon": -122.909441988,
+      "lat2": 47.021745307,
+      "lon2": -122.907125853,
+      "county": null,
+      "start": "2026-10-12T22:27:00.0000000+00:00",
+      "end": "2026-10-16T12:00:00.0000000+00:00",
+      "updated": "2026-10-12T23:50:41.1530000+00:00",
+      "path": [
+        [
+          -122.909441988,
+          47.022421532
+        ],
+        [
+          -122.907125853,
+          47.021745307
+        ]
+      ]
+    },
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-14T19:34:57.5600000+00:00"
+    },
+    {
+      "id": 640019,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect occasional single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. Crews are putting final touches on a fish passage project. Get more details on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2027-01-01T02:00:00.0000000+00:00",
+      "updated": "2026-10-15T23:32:37.6470000+00:00"
+    },
+    {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic on SR 109 at milepost 37 near Taholah. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-09-14T14:42:15.5130000+00:00"
+    },
+    {
+      "id": 719023,
+      "kind": "closure",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 177 near Hoh River beginning at 7:14 pm on October 15, 2026 until about 5:30 am on October 16, 2026. The roadway is closed. There are no detours.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 177.0,
+      "lat": 47.810672804,
+      "lon": -124.252786023,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-10-16T02:14:00.0000000+00:00",
+      "end": "2026-10-16T12:30:00.0000000+00:00",
+      "updated": "2026-10-16T02:17:57.2800000+00:00"
+    },
+    {
+      "id": 693774,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-15T00:04:00.0000000+00:00",
+      "end": "2027-01-01T01:04:00.0000000+00:00",
+      "updated": "2026-04-15T00:09:09.8670000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 717820,
+      "kind": "other",
+      "category": "Simpson Ave Bridge",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 88.2,
+      "lat": 46.975395635,
+      "lon": -123.876840412,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-05T15:57:00.0000000+00:00",
+      "end": "2026-10-19T16:00:00.0000000+00:00",
+      "updated": "2026-10-05T16:00:10.5430000+00:00",
+      "upcoming": "MON OCT 19"
+    },
+    {
+      "id": 698910,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.87,
+      "lat": 47.266481174,
+      "lon": -124.2255995,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:40:00.0000000+00:00",
+      "end": "2026-12-31T21:40:00.0000000+00:00",
+      "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
+      "id": 718596,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from Deschutes Way to northbound I-5 will close for pavement repairs. Read the travel advisory.",
+      "description": "",
+      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 104.3,
+      "lat": 47.021089747,
+      "lon": -122.906156519,
+      "lat2": 47.023374881,
+      "lon2": -122.90393288,
+      "county": null,
+      "start": "2026-10-12T21:33:00.0000000+00:00",
+      "end": "2026-10-16T12:00:00.0000000+00:00",
+      "updated": "2026-10-12T22:27:17.1430000+00:00",
+      "path": [
+        [
+          -122.90615,
+          47.02109
+        ],
+        [
+          -122.90609,
+          47.02126
+        ],
+        [
+          -122.90604,
+          47.02138
+        ],
+        [
+          -122.90601,
+          47.02146
+        ],
+        [
+          -122.90591,
+          47.02161
+        ],
+        [
+          -122.90582,
+          47.02179
+        ],
+        [
+          -122.90568,
+          47.02196
+        ],
+        [
+          -122.90557,
+          47.0221
+        ],
+        [
+          -122.90543,
+          47.02226
+        ],
+        [
+          -122.90532,
+          47.02238
+        ],
+        [
+          -122.90523,
+          47.02246
+        ],
+        [
+          -122.90506,
+          47.02262
+        ],
+        [
+          -122.90492,
+          47.02273
+        ],
+        [
+          -122.90478,
+          47.02284
+        ],
+        [
+          -122.90468,
+          47.02291
+        ],
+        [
+          -122.90442,
+          47.02308
+        ],
+        [
+          -122.90417,
+          47.02323
+        ],
+        [
+          -122.90393,
+          47.02334
+        ],
+        [
+          -122.90387,
+          47.02337
+        ],
+        [
+          -122.90387,
+          47.02337
+        ]
+      ]
+    },
     {
       "id": 712872,
       "kind": "work",
@@ -1813,398 +2137,6 @@
           47.043808162
         ]
       ]
-    },
-    {
-      "id": 719034,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on I-5 northbound from milepost 104.32 near US 101 to milepost 105 near Capitol Blvd SE beginning at 9:25 pm on October 15, 2026 until about 5:30 am on October 16, 2026.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 104.32,
-      "lat": 47.021386205,
-      "lon": -122.906057864,
-      "lat2": 47.027653473,
-      "lon2": -122.89598173,
-      "county": "Thurston",
-      "start": "2026-10-16T04:25:00.0000000+00:00",
-      "end": "2026-10-16T12:30:00.0000000+00:00",
-      "updated": "2026-10-16T04:30:10.6100000+00:00",
-      "path": [
-        [
-          -122.90606,
-          47.02137
-        ],
-        [
-          -122.906,
-          47.0214
-        ],
-        [
-          -122.9059,
-          47.02146
-        ],
-        [
-          -122.9058,
-          47.02154
-        ],
-        [
-          -122.90565,
-          47.02167
-        ],
-        [
-          -122.90533,
-          47.02201
-        ],
-        [
-          -122.90521,
-          47.02214
-        ],
-        [
-          -122.90502,
-          47.02232
-        ],
-        [
-          -122.90476,
-          47.02257
-        ],
-        [
-          -122.90463,
-          47.0227
-        ],
-        [
-          -122.90438,
-          47.02292
-        ],
-        [
-          -122.90421,
-          47.02302
-        ],
-        [
-          -122.90406,
-          47.02309
-        ],
-        [
-          -122.90383,
-          47.02322
-        ],
-        [
-          -122.90364,
-          47.02331
-        ],
-        [
-          -122.90351,
-          47.02337
-        ],
-        [
-          -122.90347,
-          47.02339
-        ],
-        [
-          -122.90297,
-          47.02359
-        ],
-        [
-          -122.90255,
-          47.02375
-        ],
-        [
-          -122.90212,
-          47.02389
-        ],
-        [
-          -122.90146,
-          47.02414
-        ],
-        [
-          -122.90101,
-          47.02425
-        ],
-        [
-          -122.90063,
-          47.02436
-        ],
-        [
-          -122.9003,
-          47.02446
-        ],
-        [
-          -122.89971,
-          47.02467
-        ],
-        [
-          -122.89952,
-          47.02476
-        ],
-        [
-          -122.89928,
-          47.02487
-        ],
-        [
-          -122.89907,
-          47.02496
-        ],
-        [
-          -122.89891,
-          47.02506
-        ],
-        [
-          -122.89868,
-          47.0252
-        ],
-        [
-          -122.89844,
-          47.02538
-        ],
-        [
-          -122.89826,
-          47.0255
-        ],
-        [
-          -122.89801,
-          47.02568
-        ],
-        [
-          -122.89761,
-          47.02603
-        ],
-        [
-          -122.89668,
-          47.02694
-        ],
-        [
-          -122.89595,
-          47.02768
-        ],
-        [
-          -122.89595,
-          47.02768
-        ]
-      ]
-    },
-    {
-      "id": 718604,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "From 9 p.m. Thursday, Oct. 15, until 5 a.m. Friday, Oct. 16, the ramp from southbound US 101 to northbound I-5 in Tumwater will close for pavement repairs. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ee7a4",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 367.2,
-      "lat": 47.022421532,
-      "lon": -122.909441988,
-      "lat2": 47.021745307,
-      "lon2": -122.907125853,
-      "county": null,
-      "start": "2026-10-12T22:27:00.0000000+00:00",
-      "end": "2026-10-16T12:00:00.0000000+00:00",
-      "updated": "2026-10-12T23:50:41.1530000+00:00",
-      "path": [
-        [
-          -122.909441988,
-          47.022421532
-        ],
-        [
-          -122.907125853,
-          47.021745307
-        ]
-      ]
-    },
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-14T19:34:57.5600000+00:00"
-    },
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect occasional single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. Crews are putting final touches on a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-15T23:32:37.6470000+00:00"
-    },
-    {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic on SR 109 at milepost 37 near Taholah. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-09-14T14:42:15.5130000+00:00"
-    },
-    {
-      "id": 719023,
-      "kind": "closure",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 177 near Hoh River beginning at 7:14 pm on October 15, 2026 until about 5:30 am on October 16, 2026. The roadway is closed. There are no detours.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 177.0,
-      "lat": 47.810672804,
-      "lon": -124.252786023,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-10-16T02:14:00.0000000+00:00",
-      "end": "2026-10-16T12:30:00.0000000+00:00",
-      "updated": "2026-10-16T02:17:57.2800000+00:00"
-    },
-    {
-      "id": 693774,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-15T00:04:00.0000000+00:00",
-      "end": "2027-01-01T01:04:00.0000000+00:00",
-      "updated": "2026-04-15T00:09:09.8670000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 717820,
-      "kind": "other",
-      "category": "Simpson Ave Bridge",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 2:30 p.m. Monday, Oct. 19, the Simpson Avenue bridge will close to all travelers for a routine inspection. The US 101 Riverside Bridge will be reconfigured to accommodate two-way travel while work is underway. Travelers can expect congestion while the detour is in place. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42e0390",
-      "road": "101COABERDN",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 88.2,
-      "lat": 46.975395635,
-      "lon": -123.876840412,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-10-05T15:57:00.0000000+00:00",
-      "end": "2026-10-19T16:00:00.0000000+00:00",
-      "updated": "2026-10-05T16:00:10.5430000+00:00",
-      "upcoming": "MON OCT 19"
-    },
-    {
-      "id": 698910,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 at milepost 33.8 north of Moclips. The speed limit is reduced from 50 mph to 25 mph. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.87,
-      "lat": 47.266481174,
-      "lon": -124.2255995,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:40:00.0000000+00:00",
-      "end": "2026-12-31T21:40:00.0000000+00:00",
-      "updated": "2026-09-14T17:09:14.3170000+00:00"
     }
   ]
 }
