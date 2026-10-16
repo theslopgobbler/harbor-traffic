@@ -480,6 +480,109 @@ try {
     "aircraft: $($planes.Count) low and local"
 } catch { "aircraft failed: $($_.Exception.Message.Split("`n")[0])" }
 
+# ---------- aircraft registry: what each aircraft is, looked up once by its ADS-B address (hex, fixed to the airframe) ----------
+# adsb.lol's reply already has the type code, registration and military flag; hexdb.io (free, no key) adds the maker
+# and model, a few new aircraft a run. Owners only when it's an agency (Army, Coast Guard, a sheriff), never a person.
+# Only aircraft the map can show (15,000 ft and below, plus helicopters and military at any height), kept 180 days after
+# last seen. The relay's live list is checked too, so aircraft only OpenSky or the second feed heard get looked up.
+# Then reference photos per model from Wikimedia Commons (same type, never that aircraft): 2 models a run, approved on
+# the stats page like the boat photos. The map reads data/aircraft-registry.json and data/aircraft-photo-candidates.json.
+try {
+    $regFile = Join-Path $dataDir 'aircraft-registry.json'
+    $areg = [ordered]@{}
+    if (Test-Path $regFile) { try { $o = Get-Content $regFile -Raw | ConvertFrom-Json
+        foreach ($p in $o.aircraft.PSObject.Properties) { $areg[$p.Name] = $p.Value } } catch {} }
+    $agency = 'army|navy|air force|marine|coast guard|national guard|united states|u\.s\.|state of|county|sheriff|police|patrol|department|forest service|customs|border|homeland|fbi|faa|noaa|nasa|life ?flight|airlift|medevac|hospital'
+    function Mil-Hex($h) { $n = [Convert]::ToInt32($h, 16); return ($n -ge 0xADF7C8 -and $n -le 0xAFFFFF) } # the US military's address block
+    function Showable($a) {
+        if (-not ($a.lat -and $a.lon -and $a.lat -gt 46.5 -and $a.lat -lt 48.0 -and $a.lon -gt -124.6 -and $a.lon -lt -122.7)) { return $false }
+        if ("$($a.hex)" -notmatch '^[0-9a-f]{6}$') { return $false }
+        if ($a.alt_baro -eq 'ground' -or ([double]$a.alt_baro) -le 15000) { return $true }
+        return ($a.category -eq 'A7' -or ([int]$a.dbFlags -band 1) -or (Mil-Hex $a.hex))
+    }
+    $live = @()
+    if ($ac -and $ac.ac) { $live += @($ac.ac | Where-Object { Showable $_ }) }
+    try { $rl = Invoke-RestMethod 'https://harbor-traffic-relay.sms-relay-protocol.workers.dev/aircraft' -UserAgent 'harbor-traffic collector' -TimeoutSec 20
+        $live += @($rl.ac | Where-Object { Showable $_ }) } catch { "aircraft registry: relay list unavailable ($($_.Exception.Message.Split("`n")[0]))" }
+    foreach ($a in $live) {
+        $h = "$($a.hex)".ToLower()
+        if (-not $areg.Contains($h)) { $areg[$h] = [pscustomobject]@{ seen = $null } }
+        $e = $areg[$h]
+        $e | Add-Member -NotePropertyName seen -NotePropertyValue $now.ToString('o') -Force
+        if ($a.t -and -not $e.t) { $e | Add-Member -NotePropertyName t -NotePropertyValue "$($a.t)" -Force }
+        if ($a.r -and -not $e.r) { $e | Add-Member -NotePropertyName r -NotePropertyValue "$($a.r)" -Force }
+        if ((([int]$a.dbFlags) -band 1) -or (Mil-Hex $h)) { $e | Add-Member -NotePropertyName mil -NotePropertyValue $true -Force }
+    }
+    # look up a few not yet known, newest first
+    $todo = @($areg.Keys | Where-Object { -not $areg[$_].looked } | Sort-Object { $areg[$_].seen } -Descending | Select-Object -First 12)
+    $found = 0
+    foreach ($h in $todo) {
+        $e = $areg[$h]
+        try {
+            $x = Invoke-RestMethod "https://hexdb.io/api/v1/aircraft/$h" -UserAgent 'harbor-traffic/1.0 (traffic.harborevents.org)' -TimeoutSec 15
+            if ($x.Type) {
+                $found++
+                $e | Add-Member -NotePropertyName maker -NotePropertyValue ("$($x.Manufacturer)".Trim()) -Force
+                $e | Add-Member -NotePropertyName model -NotePropertyValue ("$($x.Type)".Trim()) -Force
+                if ($x.ICAOTypeCode -and -not $e.t) { $e | Add-Member -NotePropertyName t -NotePropertyValue "$($x.ICAOTypeCode)" -Force }
+                if ($x.Registration -and -not $e.r) { $e | Add-Member -NotePropertyName r -NotePropertyValue "$($x.Registration)" -Force }
+                $own = "$($x.RegisteredOwners)".Trim()
+                if ($own -match $agency) { $e | Add-Member -NotePropertyName owner -NotePropertyValue $own -Force }
+                if ($own -match 'united states (army|navy|air force|marine)|us army|us navy|usaf|usmc|coast guard|national guard') { $e | Add-Member -NotePropertyName mil -NotePropertyValue $true -Force }
+            }
+            $e | Add-Member -NotePropertyName looked -NotePropertyValue $now.ToString('o') -Force
+        } catch {
+            # not in their database (404): don't ask again. Anything else (busy, down): try again next run
+            if ("$($_.Exception.Message)" -match '404|Not Found') { $e | Add-Member -NotePropertyName looked -NotePropertyValue $now.ToString('o') -Force }
+            elseif ("$($_.Exception.Message)" -match '429|Too Many') { break }
+        }
+        Start-Sleep -Milliseconds 300
+    }
+    # forget aircraft not seen for 180 days
+    $keep = [ordered]@{}
+    foreach ($h in $areg.Keys) { $e = $areg[$h]; if ($e.seen -and ($now - [DateTimeOffset]::Parse($e.seen)).TotalDays -le 180) { $keep[$h] = $e } }
+    [IO.File]::WriteAllText($regFile, ([ordered]@{ updated = $now.ToString('o'); source = 'adsb.lol, hexdb.io'; aircraft = $keep } | ConvertTo-Json -Depth 4 -Compress), $utf8)
+    "aircraft registry: $($keep.Count) aircraft, $($live.Count) seen now, looked up $($todo.Count) ($found found)"
+
+    # reference photos per model ("Sikorsky UH-60M Blackhawk"), looked up again every 60 days
+    $pcFile = Join-Path $dataDir 'aircraft-photo-candidates.json'
+    $pc = [ordered]@{ looked = [ordered]@{}; candidates = @() }
+    if (Test-Path $pcFile) { try { $c = Get-Content $pcFile -Raw | ConvertFrom-Json
+        foreach ($p in $c.looked.PSObject.Properties) { $pc.looked[$p.Name] = $p.Value }; $pc.candidates = @($c.candidates) } catch {} }
+    $models = [ordered]@{}
+    foreach ($h in $keep.Keys) { $e = $keep[$h]; if ($e.model) { $m = ("$($e.maker) $($e.model)" -replace '\s+', ' ').Trim()
+        if (-not $models.Contains($m) -or $e.seen -gt $models[$m]) { $models[$m] = $e.seen } } }
+    $due = @($models.Keys | Where-Object { $l = $pc.looked[$_]; -not $l -or ($now - [DateTimeOffset]::Parse($l)).TotalDays -gt 60 } |
+        Sort-Object { $models[$_] } -Descending | Select-Object -First 2)
+    $wm = @{ 'User-Agent' = 'harbor-traffic/1.0 (traffic.harborevents.org; aircraft reference photos)' }
+    $wmApi = 'https://commons.wikimedia.org/w/api.php?format=json&'
+    foreach ($m in $due) {
+        try {
+            $q = Invoke-RestMethod "$($wmApi)action=query&list=search&srnamespace=6&srlimit=8&srsearch=$([uri]::EscapeDataString($m + ' filetype:bitmap'))" -Headers $wm -TimeoutSec 20
+            $titles = @($q.query.search | ForEach-Object { $_.title } | Where-Object { $t = $_; -not ($pc.candidates | Where-Object { $_.file -eq $t -and $_.model -eq $m }) } | Select-Object -First 6)
+            if ($titles.Count) {
+                $q = Invoke-RestMethod "$($wmApi)action=query&prop=imageinfo&iiprop=url|extmetadata|mime&iiurlwidth=960&titles=$([uri]::EscapeDataString($titles -join '|'))" -Headers $wm -TimeoutSec 30
+                foreach ($p in $q.query.pages.PSObject.Properties.Value) {
+                    $i = $p.imageinfo[0]; if (-not $i -or $i.mime -notmatch '^image/(jpeg|png|webp)$') { continue }
+                    $md = $i.extmetadata; $strip = { param($v) (("$v" -replace '<[^>]+>', ' ') -replace '\s+', ' ').Trim() }
+                    $desc = & $strip $md.ImageDescription.value; if ($desc.Length -gt 220) { $desc = $desc.Substring(0, 217) + '...' }
+                    $pc.candidates += [pscustomobject]@{ model = $m; file = $p.title; page = $i.descriptionurl; thumb = $i.thumburl
+                        w = [int]$i.thumbwidth; h = [int]$i.thumbheight; author = (& $strip $md.Artist.value); license = "$($md.LicenseShortName.value)"
+                        licenseUrl = "$($md.LicenseUrl.value)"; date = (& $strip $md.DateTimeOriginal.value) -replace 'date QS:.*$', ''; caption = $desc; found = $now.ToString('o') }
+                }
+            }
+            $pc.looked[$m] = $now.ToString('o')
+        } catch {
+            "aircraft photos for $($m): $($_.Exception.Message.Split("`n")[0])"
+            if ("$($_.Exception.Message)" -match '429|Too Many') { break }
+        }
+        Start-Sleep -Milliseconds 400
+    }
+    $pc.updated = $now.ToString('o')
+    Save 'aircraft-photo-candidates.json' $pc
+    if ($due.Count) { "aircraft photos: looked up $($due.Count) model(s); $(@($pc.candidates).Count) photo(s) found so far" }
+} catch { "aircraft registry failed: $($_.Exception.Message.Split("`n")[0])" }
+
 # ---------- rail crossings from OpenStreetMap: once a week is plenty (they rarely change) ----------
 $crossFile = Join-Path $dataDir 'crossings.json'
 $crossOld = -not (Test-Path $crossFile) -or ((Get-Date) - (Get-Item $crossFile).LastWriteTime).TotalDays -gt 7 -or

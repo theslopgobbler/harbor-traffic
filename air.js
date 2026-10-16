@@ -79,35 +79,60 @@
   const isMedical = (a) => isHeli(a) && /LIFE|MEDEVAC|MEDIC|AIRLIFT|LIFEGUARD|MERCY|CARE|^LF|^LN|^AMF|^AIR ?EVAC/i.test(`${a.flight || ''} ${a.reg || ''}`) ||
     /^N\d+(LF|LN|AL|MT)$/i.test(a.reg || '');
   const colorOf = (a) => EMERG[a.squawk] ? '#ff2a3d' : isCoastGuard(a) ? '#ff2a3d' : isMil(a) ? '#ff7a1a' : isHeli(a) ? '#ffffff' : '#bff4ff';
-  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : a.known?.kind === 'MILITARY' ? 'MILITARY' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
+  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : a.milSure ? 'MILITARY' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
   const altTxt = (alt) => alt < 100 ? 'GND' : alt >= 1000 ? (alt / 1000).toFixed(1) + 'K' : String(alt);
 
-  // ---- aircraft we know by call sign (planes/known.json): confirmed kind, full type name, and a reference photo of the
-  // same type (never a photo of the actual aircraft)
-  let KNOWN = [];
+  // ---- what each aircraft is. Three sources, first one wins:
+  //   planes/known.json: by hand (a call-sign pattern or an aircraft address), e.g. COUGR = Black Hawk
+  //   data/aircraft-registry.json: the collector looks up every aircraft once by its address (model, registration,
+  //     owner when it's an agency, military from adsb.lol's database or the US military's address block)
+  //   the live feed's own type code
+  // and a reference photo of the same model (never the actual aircraft): from known.json, or Commons photos the
+  // collector found that were approved on the stats page (the relay keeps the yes/no list, /plane-photos)
+  let KNOWN = [], REG = {}, PHOTOS = {}, infoAt = 0;
   async function loadKnown() {
-    try {
-      const j = await (await fetch(`planes/known.json?t=${Date.now()}`, { cache: 'no-store' })).json();
-      KNOWN = (j.callsigns || []).map((k) => { try { return { ...k, re: k.match ? new RegExp(k.match, 'i') : null, hex: (k.hex || []).map((h) => String(h).toLowerCase()) }; } catch { return null; } }).filter(Boolean);
-    } catch (e) { console.warn('known aircraft', e); }
+    if (Date.now() - infoAt < 600000) return;
+    infoAt = Date.now();
+    const get = (u) => fetch(u, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const relay = (C.airRelay || '').replace(/\/aircraft$/, '');
+    const [kn, reg, cand, dec] = await Promise.all([get(`planes/known.json?t=${Date.now()}`), get(`data/aircraft-registry.json?t=${Date.now()}`),
+      get(`data/aircraft-photo-candidates.json?t=${Date.now()}`), relay ? get(`${relay}/plane-photos`) : {}]);
+    KNOWN = (kn.callsigns || []).map((k) => { try { return { ...k, re: k.match ? new RegExp(k.match, 'i') : null, hex: (k.hex || []).map((h) => String(h).toLowerCase()) }; } catch { return null; } }).filter(Boolean);
+    REG = reg.aircraft || {};
+    const yes = new Set((dec.decisions || []).filter((d) => d.ok).map((d) => `${d.model}|${d.file}`));
+    PHOTOS = {};
+    for (const c of cand.candidates || []) if (yes.has(`${c.model}|${c.file}`)) (PHOTOS[c.model] ||= []).push({ src: c.thumb, w: c.w, h: c.h,
+      caption: c.caption, credit: c.author, license: c.license, licenseUrl: c.licenseUrl, page: c.page });
   }
+  const milBlock = (hex) => { const n = parseInt(hex, 16); return /^[0-9a-f]{6}$/.test(hex) && n >= 0xadf7c8 && n <= 0xafffff; }; // US military addresses
   function applyKnown(a) {
     const hex = String(a.hex || '').toLowerCase();
+    const r = REG[hex];
+    if (r) {
+      if (r.t && !a.type) a.type = r.t;
+      if (r.r && !a.reg) a.reg = r.r;
+      if (r.model) a.model = `${r.maker || ''} ${r.model}`.replace(/\s+/g, ' ').trim();
+      if (r.owner) a.owner = r.owner;
+    }
+    // military for sure (no question mark): adsb.lol's database flag (a.mil), the registry, or the address block
+    if (a.mil || r?.mil || milBlock(hex)) { a.mil = true; a.milSure = true; }
     const k = KNOWN.find((x) => (x.hex || []).includes(hex)) || KNOWN.find((x) => x.re && x.re.test(a.flight || ''));
     if (!k) return;
     a.known = k;
-    if (!a.type && k.type) a.type = k.type; // (so the helicopter drawing and the military color follow)
-    if (k.kind === 'MILITARY') a.mil = true;
+    if (k.type) a.type = a.type || k.type; // (so the helicopter drawing and the military color follow)
+    if (k.kind === 'MILITARY') { a.mil = true; a.milSure = true; }
   }
-  const typeName = (a) => a.known?.name ? a.known.name.toUpperCase() : a.type || 'UNKNOWN TYPE';
-  const okSrc = (u) => /^planes\/[\w.-]+\.(jpe?g|png|webp)$/i.test(u || '');
+  const typeName = (a) => (a.known?.name || a.model || a.type || 'UNKNOWN TYPE').toUpperCase();
+  const okSrc = (u) => /^(planes\/[\w.-]+\.(jpe?g|png|webp)|https:\/\/(upload|thumb)\.wikimedia\.org\/[^\s"'<>]+)$/i.test(u || '');
   function refPhoto(a) {
-    const p = (a.known?.photos || []).find((x) => okSrc(x.src));
-    if (!p) return '';
+    const list = (a.known?.photos || []).concat(PHOTOS[a.model] || []).filter((x) => okSrc(x.src));
+    if (!list.length) return '';
+    const p = list[0];
     const link = (u, t) => (/^https:\/\/[^\s"'<>]+$/.test(u || '') ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t));
-    return `<figure class="ship-photo"><img src="${esc(p.src)}" width="${+p.w || 4}" height="${+p.h || 3}" alt="${esc(a.known.name || 'aircraft')}, for reference" loading="lazy">
+    return `<figure class="ship-photo"><img src="${esc(p.src)}" width="${+p.w || 4}" height="${+p.h || 3}" alt="${esc(typeName(a))}, for reference" loading="lazy">
       <figcaption><span class="cap">FOR REFERENCE (SAME TYPE, NOT THIS AIRCRAFT)${p.caption ? ': ' + esc(p.caption) : ''}</span><span class="cr">PHOTO: ${esc(p.credit || 'unknown')}${p.license ? ' · ' + link(p.licenseUrl, p.license) : ''}${p.page ? ' · ' + link(p.page, 'COMMONS') : ''}</span></figcaption></figure>`;
   }
+  const regLine = (a) => [a.reg && a.reg !== a.flight ? 'REG ' + a.reg : '', a.owner ? a.owner.toUpperCase() : ''].filter(Boolean).join(' · ');
 
   // ---- markers ----
   let planes = [], updated = null, live = false, liveSource = '', stale = false;
@@ -139,6 +164,7 @@
       mk.getPopup().setHTML(`<h3>${esc(a.flight || a.reg || a.hex)}${a.reg && a.reg !== a.flight ? ' · ' + esc(a.reg) : ''}</h3>
         ${refPhoto(a)}<p><span style="color:${c}">${kindOf(a)}</span> · ${esc(typeName(a))} · <b>${s.state}</b></p>
         <div class="m">${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT${a.track != null ? ' · HDG ' + Math.round(a.track) + '°' : ''}${EMERG[a.squawk] ? ' · SQUAWK ' + a.squawk + ' ' + EMERG[a.squawk] : ''}</div>
+        ${regLine(a) ? `<div class="m">${esc(regLine(a))}</div>` : ''}
         <div class="m">${s.fieldNm.toFixed(1)} NM FROM ${esc(s.field.name)} · ${s.homeNm.toFixed(1)} NM FROM ABERDEEN</div>`);
     }
     for (const [hex, mk] of markers) if (!seen.has(hex)) { mk.remove(); markers.delete(hex); }
@@ -151,13 +177,13 @@
     if (!list) return;
     const flagged = planes.filter((a) => EMERG[a.squawk] || isMil(a) || isCoastGuard(a));
     alerts.innerHTML = flagged.map((a) => `<li class="${EMERG[a.squawk] ? 'k-closure' : 'k-work'} clickable" data-hex="${esc(a.hex)}">
-      <div class="t">${EMERG[a.squawk] ? `⚠ SQUAWK ${a.squawk}: ${EMERG[a.squawk]}` : isCoastGuard(a) ? '⚠ COAST GUARD AIRCRAFT' : a.known?.kind === 'MILITARY' ? '⚠ MILITARY AIRCRAFT' : '⚠ POSSIBLE MILITARY AIRCRAFT'} · ${esc(a.flight || a.reg || a.hex)}</div>
+      <div class="t">${EMERG[a.squawk] ? `⚠ SQUAWK ${a.squawk}: ${EMERG[a.squawk]}` : isCoastGuard(a) ? '⚠ COAST GUARD AIRCRAFT' : a.milSure ? '⚠ MILITARY AIRCRAFT' : '⚠ POSSIBLE MILITARY AIRCRAFT'} · ${esc(a.flight || a.reg || a.hex)}</div>
       <div class="m">${esc(typeName(a))} · ${altTxt(a.alt)} FT · ${a._sit.state} · ${a._sit.homeNm.toFixed(1)} NM FROM ABERDEEN</div></li>`).join('');
     // helicopters first, then nearest first
     const sorted = planes.slice().sort((a, b) => (isHeli(b) - isHeli(a)) || a._sit.homeNm - b._sit.homeNm);
     list.innerHTML = sorted.length ? sorted.map((a) => `<li class="clickable" data-hex="${esc(a.hex)}" style="border-left-color:${tint(a)}">
       <div class="t">${esc(a.flight || a.reg || a.hex)} <span class="pill st-${a._sit.state.replace(/\s/g, '')}">${a._sit.state}</span></div>
-      <div class="m">${kindOf(a)} · ${esc(a.known?.name ? typeName(a) : a.type || '?')} · ${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT · ${a._sit.homeNm.toFixed(1)} NM AWAY
+      <div class="m">${kindOf(a)} · ${esc(a.known?.name || a.model ? typeName(a) : a.type || '?')} · ${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT · ${a._sit.homeNm.toFixed(1)} NM AWAY
         ${a._sit.state === 'INBOUND' ? ' · TO ' + esc(a._sit.field.id) : a._sit.state === 'OUTBOUND' ? ' · FROM ' + esc(a._sit.field.id) : ''}</div></li>`).join('')
       : '<li class="empty">NO LOW AIRCRAFT IN THE AREA</li>';
     const age = updated ? Math.round((Date.now() - Date.parse(updated)) / 60000) : null;
@@ -223,5 +249,5 @@
   setOn(on);
 
   loadKnown().then(load);
-  setInterval(load, C.airRelay ? 30000 : 60000); // the relay refreshes about every 30 s
+  setInterval(() => loadKnown().then(load), C.airRelay ? 30000 : 60000); // the relay refreshes about every 30 s (what each aircraft is: every 10 min)
 })();

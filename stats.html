@@ -195,6 +195,20 @@
           <table><tbody id="shipNo"></tbody></table></details>
       </div>
     </section>
+    <section id="planeSec">
+      <h1 style="margin-top:36px">AIRCRAFT PHOTOS · FOR REFERENCE, FROM WIKIMEDIA COMMONS</h1>
+      <p class="note">One set per model (all Black Hawks share one), shown in the aircraft's popup as "for reference (same type,
+        not this aircraft)". The collector searches Commons for models it has seen, two a run. Nothing shows until you say USE.
+        Pick photos that clearly show the model, and skip any that look like the very aircraft that flies here.</p>
+      <div class="msg" id="planeMsg"></div>
+      <div id="planePending" class="shots"></div>
+      <div>
+        <details><summary id="planeUsedSum">ON THE MAP</summary>
+          <table><tbody id="planeUsed"></tbody></table></details>
+        <details><summary id="planeNoSum">TURNED DOWN</summary>
+          <table><tbody id="planeNo"></tbody></table></details>
+      </div>
+    </section>
     <section id="site">
       <h1 style="margin-top:36px">HARBOR EVENTS · <a href="https://harborevents.org/" target="_blank" rel="noopener">HARBOREVENTS.ORG</a></h1>
       <div class="msg" id="siteMsg"></div>
@@ -260,7 +274,7 @@
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
     // bus numbers only change once a minute and are added up from daily totals; every 5 minutes is plenty
     if (Date.now() - busLoadedAt > 5 * 60 * 1000) loadBuses();
-    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) { loadShipReview(); loadGone(); loadTrains(); }
+    if (Date.now() - shipLoadedAt > 10 * 60 * 1000) { loadShipReview(); loadPlaneReview(); loadGone(); loadTrains(); }
     loadSite();
   }
   let busLoadedAt = 0, shipLoadedAt = 0;
@@ -408,6 +422,50 @@
       if (ok == null) delete shipData.dec[k]; else shipData.dec[k] = ok ? 1 : 0;
       renderShipReview();
     } catch (err) { $('#shipMsg').textContent = `COULDN'T SAVE THAT: ${String(err.message || err).toUpperCase()}`; b.disabled = false; }
+  });
+  // ---- aircraft reference photos to review (per model), the same way as the boats
+  let planeData = null;
+  async function loadPlaneReview() {
+    if (!key || $('#out').hidden) return;
+    const get = (u) => fetch(u, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    try {
+      const [cand, dec] = await Promise.all([get(`data/aircraft-photo-candidates.json?t=${Date.now()}`).catch(() => ({ candidates: [] })), get(`${relay}/plane-photos`)]);
+      planeData = { cand: cand.candidates || [], dec: Object.fromEntries((dec.decisions || []).map((d) => [`${d.model}|${d.file}`, d.ok])) };
+      $('#planeMsg').textContent = '';
+      renderPlaneReview();
+    } catch (e) { $('#planeMsg').textContent = /404/.test(e.message) ? 'DEPLOY THE UPDATED RELAY TO REVIEW AIRCRAFT PHOTOS' : 'CAN\'T LOAD AIRCRAFT PHOTOS RIGHT NOW'; }
+  }
+  function renderPlaneReview() {
+    const d = planeData; if (!d) return;
+    const k = (c) => `${c.model}|${c.file}`;
+    const card = (c, buttons) => `<div class="shot"><a href="${esc(c.page)}" target="_blank" rel="noopener"><img src="${esc(c.thumb)}" alt="" loading="lazy"></a>
+      <b>${esc(c.model)}</b><span class="d">${esc(c.author || 'unknown')} · ${esc(c.license)}${c.date ? ' · ' + esc(c.date) : ''}</span>
+      ${c.caption ? `<span class="d">${esc(c.caption)}</span>` : ''}<div class="btns">${buttons}</div></div>`;
+    const btn = (c, ok, label) => `<button type="button" data-plane-photo="${esc(c.file)}" data-model="${esc(c.model)}" data-ok="${ok}">${label}</button>`;
+    const pending = d.cand.filter((c) => !(k(c) in d.dec));
+    const used = d.cand.filter((c) => d.dec[k(c)] === 1), no = d.cand.filter((c) => d.dec[k(c)] === 0);
+    $('#planePending').innerHTML = pending.map((c) => card(c, btn(c, 1, 'USE') + btn(c, 0, 'DON\'T USE'))).join('')
+      || '<p class="note">NOTHING NEW TO REVIEW. THE COLLECTOR LOOKS UP TWO AIRCRAFT MODELS EACH RUN, AND EACH ONE AGAIN EVERY 60 DAYS.</p>';
+    const row = (c, button) => `<tr><td class="thumb"><a href="${esc(c.page)}" target="_blank" rel="noopener"><img src="${esc(c.thumb)}" alt="" loading="lazy"></a></td>
+      <td class="left">${esc(c.model)}<br><span class="d">${esc(c.author || 'unknown')}</span></td><td>${button}</td></tr>`;
+    $('#planeUsed').innerHTML = used.map((c) => row(c, btn(c, 'null', 'TAKE OFF'))).join('') || '<tr><td class="left d">NONE YET (BESIDES ONES ADDED BY HAND).</td></tr>';
+    $('#planeNo').innerHTML = no.map((c) => row(c, btn(c, 'null', 'REVIEW AGAIN'))).join('');
+    $('#planeUsedSum').textContent = `ON THE MAP (${used.length})`;
+    $('#planeNoSum').textContent = `TURNED DOWN (${no.length})`;
+    $('#planeNoSum').parentElement.hidden = !no.length;
+  }
+  document.addEventListener('click', async (e) => {
+    const b = e.target.closest('button[data-plane-photo]'); if (!b || !key) return;
+    b.disabled = true;
+    const ok = b.dataset.ok === 'null' ? null : b.dataset.ok === '1';
+    try {
+      const r = await fetch(`${relay}/plane-photos`, { method: 'POST', headers: { 'X-Stats-Key': key, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file: b.dataset.planePhoto, model: b.dataset.model, ok }) });
+      if (!r.ok) throw new Error(await r.text());
+      const kk = `${b.dataset.model}|${b.dataset.planePhoto}`;
+      if (ok == null) delete planeData.dec[kk]; else planeData.dec[kk] = ok ? 1 : 0;
+      renderPlaneReview();
+    } catch (err) { $('#planeMsg').textContent = `COULDN'T SAVE THAT: ${String(err.message || err).toUpperCase()}`; b.disabled = false; }
   });
   // ---- buses: on time, how late, off route; charts drawn here in plain SVG ----
   // Marks: one validated hue (cyan) for single-series charts, amber reserved for a second series; 2px lines, columns
