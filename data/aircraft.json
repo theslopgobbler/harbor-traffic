@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-16T12:07:38.8682136+00:00",
+  "updated": "2026-10-16T12:47:07.9534070+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a81dbc",
+      "flight": "ASA1423",
+      "reg": "N622AS",
+      "type": "B737",
+      "cat": "A3",
+      "alt": 13325,
+      "gs": 297.9,
+      "track": 193.2,
+      "rate": -2496,
+      "lat": 47.85123,
+      "lon": -122.8047,
+      "squawk": "5753",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
