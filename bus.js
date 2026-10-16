@@ -735,6 +735,61 @@
   // to close the gap over a few seconds; ahead (the real bus slowed or stopped), it eases off and waits for the
   // reports to catch up, instead of snapping back. A bus with no line (or a new one) glides straight to its report.
   const PACE = 0.9, MAX_S = 30, CATCH_S = 8, BLEND_MS = 1500;
+  // a bus off its route line (deadheading, a detour) between reports: carried along the road it's on, as the map
+  // draws it (the street map's own road lines), not straight along its GPS heading. Straight, a bus on a curvy road
+  // like SR 109 ended up in the woods. Found once per report: the road within 40 m going its way, followed on
+  // through the joins between road pieces, up to ~400 m. With no road found it only coasts a few seconds
+  let roadSrc;
+  function roadLines() {
+    if (roadSrc === undefined) roadSrc = map.getStyle()?.layers.find((l) => l.id === 'road-main')?.source || null;
+    if (!roadSrc) return [];
+    let feats = [];
+    try { feats = map.querySourceFeatures(roadSrc, { sourceLayer: 'transportation' }); } catch { return []; }
+    const out = [];
+    for (const f of feats) {
+      if (!/^(motorway|trunk|primary|secondary|tertiary|minor|service)$/.test(f.properties.class || '')) continue;
+      const g = f.geometry;
+      if (g.type === 'LineString') out.push(g.coordinates); else if (g.type === 'MultiLineString') out.push(...g.coordinates);
+    }
+    return out;
+  }
+  function roadAhead(b) {
+    // (zoomed far out the street map's roads are simplified and a few meters don't show anyway: skip the work)
+    if (map.getZoom() < 10) return null;
+    const lines = roadLines();
+    if (!lines.length) return null;
+    const p = [b.lon, b.lat], hd = b.heading || 0;
+    let best = null;
+    for (const c of lines) for (let i = 0; i < c.length - 1; i++) {
+      const { dist, f } = segDist(p, c[i], c[i + 1]);
+      if (dist > 40 || (best && dist >= best.dist)) continue;
+      const off = diff(bearing(c[i], c[i + 1]), hd);
+      if (off < 60) best = { dist, c, i, f, fwd: true }; else if (off > 120) best = { dist, c, i, f, fwd: false };
+    }
+    if (!best) return null;
+    const { c, i, f } = best;
+    const at = [c[i][0] + (c[i + 1][0] - c[i][0]) * f, c[i][1] + (c[i + 1][1] - c[i][1]) * f];
+    const pts = best.fwd ? [at, ...c.slice(i + 1)] : [at, ...c.slice(0, i + 1).reverse()];
+    let len = 0; for (let k = 1; k < pts.length; k++) len += mx(pts[k - 1], pts[k]);
+    // on through the joins (road pieces end at intersections and tile edges): the piece that starts or ends where
+    // this one ends, carrying on the same way
+    for (let hop = 0; hop < 8 && len < 400 && pts.length > 1; hop++) {
+      const e = pts[pts.length - 1], dir = bearing(pts[pts.length - 2], e);
+      let next = null, nextOff = 60;
+      for (const l of lines) {
+        if (l.length < 2) continue;
+        for (const [seq, a] of [[l, l[1]], [[...l].reverse(), l[l.length - 2]]]) {
+          if (mx(seq[0], e) > 8) continue;
+          const o = diff(bearing(seq[0], a), dir);
+          if (o < nextOff && mx(a, pts[pts.length - 2]) > 1) { nextOff = o; next = seq; }
+        }
+      }
+      if (!next) break;
+      for (let k = 1; k < next.length; k++) { len += mx(pts[pts.length - 1], next[k]); pts.push(next[k]); }
+    }
+    const d = [0]; for (let k = 1; k < pts.length; k++) d.push(d[k - 1] + mx(pts[k - 1], pts[k]));
+    return d[d.length - 1] > 1 ? { c: pts, d } : null;
+  }
   // where along a line a reported position is: the closest point near where the bus is drawn now
   // A route can have several versions that share streets and then split (a detour loop, a different end of the
   // line). Before the next report shows which way the bus went, it shouldn't guess: so this finds how far ahead
@@ -805,10 +860,13 @@
         b._along = mk._s;
         pos = along(sh, mk._s);
       } else if (b.mph >= 2) {
-        // off its route line (heading out to start a route, a detour): carry on straight along its GPS heading
+        // off its route line (heading out to start a route, a detour): carry on along the road it's on (roadAhead)
         // for a little while, a bit under its speed
-        const m = b.mph * 0.44704 * PACE * Math.min(15, (now - b._at) / 1000), h = (b.heading || 0) * Math.PI / 180;
-        pos = [b.lon + (m * Math.sin(h)) / 76000, b.lat + (m * Math.cos(h)) / 111000];
+        if (mk._roadFor !== b._at) { mk._roadFor = b._at; mk._road = roadAhead(b); }
+        const m = b.mph * 0.44704 * PACE * Math.min(15, (now - b._at) / 1000);
+        if (mk._road) pos = along(mk._road, m); // (stops at the end of what was found, and waits for the next report)
+        else { const m2 = Math.min(m, b.mph * 0.44704 * PACE * 4), h = (b.heading || 0) * Math.PI / 180;
+          pos = [b.lon + (m2 * Math.sin(h)) / 76000, b.lat + (m2 * Math.cos(h)) / 111000]; }
       } else pos = [b.lon, b.lat];
       // a bus that jumped to a new line, or has none, eases over from where it was drawn
       const k = b._from ? Math.min(1, (now - b._at) / BLEND_MS) : 1;
