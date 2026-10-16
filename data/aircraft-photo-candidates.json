@@ -14,7 +14,8 @@
     "Beech King Air A90": "2026-10-16T18:10:30.0956807+00:00",
     "Robinson R44 Raven": "2026-10-16T18:54:35.7024721+00:00",
     "Boeing-Vertol CH-47F Chinook": "2026-10-16T18:54:35.7024721+00:00",
-    "Cessna 208 B": "2026-10-16T19:20:20.1522346+00:00"
+    "Cessna 208 B": "2026-10-16T19:20:20.1522346+00:00",
+    "Airbus Helicopters Squirrel AS.350 B3e": "2026-10-16T19:52:24.2782248+00:00"
   },
   "candidates": [
     {
@@ -1024,7 +1025,21 @@
       "date": "2024-05-04 14:19:46",
       "caption": "Skydive Australia (VH-DNK) Cessna 208 Caravan taxiing at Sunshine Coast Airport.",
       "found": "2026-10-16T19:20:20.1522346+00:00"
+    },
+    {
+      "model": "Airbus Helicopters Squirrel AS.350 B3e",
+      "file": "File:G-HITI (25505559198).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-HITI_(25505559198).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/G-HITI_%2825505559198%29.jpg/960px-G-HITI_%2825505559198%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-12-29 19:36",
+      "caption": "G-HITI Airbus Helicopters AS.350 B3e Squirrel @ Elstree 28/12/2017",
+      "found": "2026-10-16T19:52:24.2782248+00:00"
     }
   ],
-  "updated": "2026-10-16T19:20:20.1522346+00:00"
+  "updated": "2026-10-16T19:52:24.2782248+00:00"
 }
