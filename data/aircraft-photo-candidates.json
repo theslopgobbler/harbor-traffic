@@ -16,7 +16,8 @@
     "Boeing-Vertol CH-47F Chinook": "2026-10-16T18:54:35.7024721+00:00",
     "Cessna 208 B": "2026-10-16T19:20:20.1522346+00:00",
     "Airbus Helicopters Squirrel AS.350 B3e": "2026-10-16T19:52:24.2782248+00:00",
-    "Boeing C-17A Globemaster III": "2026-10-16T21:13:13.6448289+00:00"
+    "Boeing C-17A Globemaster III": "2026-10-16T21:13:13.6448289+00:00",
+    "Robinson R66 Turbine": "2026-10-16T21:46:27.9966833+00:00"
   },
   "candidates": [
     {
@@ -1124,7 +1125,91 @@
       "date": "2021-11-18",
       "caption": "KAF342 | Boeing C-17A Globemaster III | F-264 | Kuwait - Air Force | VGHS.",
       "found": "2026-10-16T21:13:13.6448289+00:00"
+    },
+    {
+      "model": "Robinson R66 Turbine",
+      "file": "File:Robinson R66 Turbine, Private JP7659567.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R66_Turbine,_Private_JP7659567.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Robinson_R66_Turbine%2C_Private_JP7659567.jpg/960px-Robinson_R66_Turbine%2C_Private_JP7659567.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "9 August 2013",
+      "caption": "",
+      "found": "2026-10-16T21:46:27.9966833+00:00"
+    },
+    {
+      "model": "Robinson R66 Turbine",
+      "file": "File:Robinson R66 Turbine - (S2-AGI) - BCL Aviation LTD.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R66_Turbine_-_(S2-AGI)_-_BCL_Aviation_LTD.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Robinson_R66_Turbine_-_%28S2-AGI%29_-_BCL_Aviation_LTD.jpg/960px-Robinson_R66_Turbine_-_%28S2-AGI%29_-_BCL_Aviation_LTD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 541,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-08-24",
+      "caption": "Robinson R66 Turbine - (S2-AGI) - BCL Aviation LTD.",
+      "found": "2026-10-16T21:46:27.9966833+00:00"
+    },
+    {
+      "model": "Robinson R66 Turbine",
+      "file": "File:Robinson R66 Turbine ‘G-TLMI’ (51484518794).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R66_Turbine_%E2%80%98G-TLMI%E2%80%99_(51484518794).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Robinson_R66_Turbine_%E2%80%98G-TLMI%E2%80%99_%2851484518794%29.jpg/960px-Robinson_R66_Turbine_%E2%80%98G-TLMI%E2%80%99_%2851484518794%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2021-07-04 11:48",
+      "caption": "c/n 0638 Built 2015 Seen arriving as a visitor to the Shuttleworth collection’s ‘2021 Military Airshow’. Old Warden, Bedfordshire, UK 4th July 2021",
+      "found": "2026-10-16T21:46:27.9966833+00:00"
+    },
+    {
+      "model": "Robinson R66 Turbine",
+      "file": "File:Robinson R66 Turbine ‘HB-ZSB’ (54471945663).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R66_Turbine_%E2%80%98HB-ZSB%E2%80%99_(54471945663).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Robinson_R66_Turbine_%E2%80%98HB-ZSB%E2%80%99_%2854471945663%29.jpg/960px-Robinson_R66_Turbine_%E2%80%98HB-ZSB%E2%80%99_%2854471945663%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2023-04-20 10:56",
+      "caption": "c/n 0639 Built in 2015 Friedrichshafen Airport, Baden-Württemberg, Germany. 20th April 2023",
+      "found": "2026-10-16T21:46:27.9966833+00:00"
+    },
+    {
+      "model": "Robinson R66 Turbine",
+      "file": "File:S2-AGI - Robinson R66 Turbine - Helicopter - BCL Aviation LTD - VGHS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:S2-AGI_-_Robinson_R66_Turbine_-_Helicopter_-_BCL_Aviation_LTD_-_VGHS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/S2-AGI_-_Robinson_R66_Turbine_-_Helicopter_-_BCL_Aviation_LTD_-_VGHS.jpg/960px-S2-AGI_-_Robinson_R66_Turbine_-_Helicopter_-_BCL_Aviation_LTD_-_VGHS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 541,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-08-21",
+      "caption": "S2-AGI - Robinson R66 Turbine - Helicopter - BCL Aviation LTD - VGHS.",
+      "found": "2026-10-16T21:46:27.9966833+00:00"
+    },
+    {
+      "model": "Robinson R66 Turbine",
+      "file": "File:VH-FCQ Robinson R66 Turbine (6485984149).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:VH-FCQ_Robinson_R66_Turbine_(6485984149).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/VH-FCQ_Robinson_R66_Turbine_%286485984149%29.jpg/960px-VH-FCQ_Robinson_R66_Turbine_%286485984149%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Robert Frola",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2011-03-01 00:02:04",
+      "caption": "Robinson R66 Turbine VH-FCQ c/n 0012. First registered in Australia: 27 January 2011. Registration holder and operator as of 27 January 2011 is Brazakka Pty Ltd - Day 1 Avalon 2011 Australian International Airshow. Fi...",
+      "found": "2026-10-16T21:46:27.9966833+00:00"
     }
   ],
-  "updated": "2026-10-16T21:13:13.6448289+00:00"
+  "updated": "2026-10-16T21:46:27.9966833+00:00"
 }
