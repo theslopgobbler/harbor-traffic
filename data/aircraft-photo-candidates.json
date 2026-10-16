@@ -1,6 +1,8 @@
 {
   "looked": {
-    "Embraer EMB-175 LR": "2026-10-16T04:51:34.9805264+00:00"
+    "Embraer EMB-175 LR": "2026-10-16T04:51:34.9805264+00:00",
+    "Sikorsky UH-60M Blackhawk": "2026-10-16T05:20:16.1224049+00:00",
+    "Boeing 737MAX 8": "2026-10-16T05:20:16.1224049+00:00"
   },
   "candidates": [
     {
@@ -86,7 +88,175 @@
       "date": "2024-04-17",
       "caption": "Embraer EMB-170-200 LR E175LR N401YX at Embry-Riddle Aeronautical University.",
       "found": "2026-10-16T04:51:34.9805264+00:00"
+    },
+    {
+      "model": "Sikorsky UH-60M Blackhawk",
+      "file": "File:Sikorsky UH-60M Blackhawk 14-20704 HGR MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sikorsky_UH-60M_Blackhawk_14-20704_HGR_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Sikorsky_UH-60M_Blackhawk_14-20704_HGR_MD1.jpg/960px-Sikorsky_UH-60M_Blackhawk_14-20704_HGR_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 525,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-04",
+      "caption": "Sikorsky UH-60M Blackhawk 14-20704 landing at Hagerstown Regional Airport, Maryland, USA",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Sikorsky UH-60M Blackhawk",
+      "file": "File:Sikorsky UH-60M Blackhawk 15-20757 HGR MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sikorsky_UH-60M_Blackhawk_15-20757_HGR_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Sikorsky_UH-60M_Blackhawk_15-20757_HGR_MD1.jpg/960px-Sikorsky_UH-60M_Blackhawk_15-20757_HGR_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 513,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-04",
+      "caption": "Sikorsky UH-60M Blackhawk 15-20757 landing at Hagerstown Regional Airport, Maryland, USA",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Sikorsky UH-60M Blackhawk",
+      "file": "File:Sikorsky UH-60M Blackhawk 16-20895 HGR MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sikorsky_UH-60M_Blackhawk_16-20895_HGR_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Sikorsky_UH-60M_Blackhawk_16-20895_HGR_MD1.jpg/960px-Sikorsky_UH-60M_Blackhawk_16-20895_HGR_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 492,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-04",
+      "caption": "Sikorsky UH-60M Blackhawk 16-20895 landing at Hagerstown Regional Airport, Maryland, USA",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Sikorsky UH-60M Blackhawk",
+      "file": "File:Sikorsky UH-60M Blackhawk 17-20927 HGR MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sikorsky_UH-60M_Blackhawk_17-20927_HGR_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Sikorsky_UH-60M_Blackhawk_17-20927_HGR_MD1.jpg/960px-Sikorsky_UH-60M_Blackhawk_17-20927_HGR_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 478,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-04",
+      "caption": "Sikorsky UH-60M Blackhawk 17-20927 landing at Hagerstown Regional Airport, Maryland, USA",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Sikorsky UH-60M Blackhawk",
+      "file": "File:U.S. Army, 08-20169, Sikorsky UH-60M Blackhawk (53759592197).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army,_08-20169,_Sikorsky_UH-60M_Blackhawk_(53759592197).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/U.S._Army%2C_08-20169%2C_Sikorsky_UH-60M_Blackhawk_%2853759592197%29.jpg/960px-U.S._Army%2C_08-20169%2C_Sikorsky_UH-60M_Blackhawk_%2853759592197%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-05-14 13:21",
+      "caption": "U.S. Army, 08-20169, Sikorsky UH-60M Blackhawk",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Sikorsky UH-60M Blackhawk",
+      "file": "File:U.S. Army, 11-20375, Sikorsky UH-60M Blackhawk (53760910840).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army,_11-20375,_Sikorsky_UH-60M_Blackhawk_(53760910840).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/U.S._Army%2C_11-20375%2C_Sikorsky_UH-60M_Blackhawk_%2853760910840%29.jpg/960px-U.S._Army%2C_11-20375%2C_Sikorsky_UH-60M_Blackhawk_%2853760910840%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-05-13 12:55",
+      "caption": "U.S. Army, 11-20375, Sikorsky UH-60M Blackhawk",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Boeing 737MAX 8",
+      "file": "File:Being 737MAX weather radar (54844309191).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Being_737MAX_weather_radar_(54844309191).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Being_737MAX_weather_radar_%2854844309191%29.jpg/960px-Being_737MAX_weather_radar_%2854844309191%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ian Abbott",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-06-22 09:21:17",
+      "caption": "American Airlines Boeing 737 MAX 8 N343SY , msn 67990, at Dallas Fort Worth International Airport (DFW) on June 22, 2023. This aircraft had just been flown from Boeing Field / King County International Airport (BFI) o...",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Boeing 737MAX 8",
+      "file": "File:Berlin Brandenburg Airport Icelandair Boeing 737-8 MAX TF-ICY (DSC07832).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Berlin_Brandenburg_Airport_Icelandair_Boeing_737-8_MAX_TF-ICY_(DSC07832).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Berlin_Brandenburg_Airport_Icelandair_Boeing_737-8_MAX_TF-ICY_%28DSC07832%29.jpg/960px-Berlin_Brandenburg_Airport_Icelandair_Boeing_737-8_MAX_TF-ICY_%28DSC07832%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-02-24 11:49:13",
+      "caption": "Die Boeing 737-8 MAX der Fluggesellschaft Icelandair mit dem Kennzeichen TF-ICY im Landeanflug auf die Bahn 25L des Flughafens Berlin Brandenburg. Das Flugzeug führte einen Flug vom Flughafen Keflavik nach Berlin durch.",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Boeing 737MAX 8",
+      "file": "File:Boeing 737 MAX grounded aircraft near Boeing Field, April 2019.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737_MAX_grounded_aircraft_near_Boeing_Field,_April_2019.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Boeing_737_MAX_grounded_aircraft_near_Boeing_Field%2C_April_2019.jpg/960px-Boeing_737_MAX_grounded_aircraft_near_Boeing_Field%2C_April_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "SounderBruce",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-04-24 12:47:54",
+      "caption": "Undelivered Boeing 737 MAX aircraft that were grounded by aviation agencies , seen at parking lot at Boeing Field in Seattle, Washington. This picture was taken from the South Park Bridge .",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Boeing 737MAX 8",
+      "file": "File:Boeing Business Jet BBJ 737 Max floorplan.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_Business_Jet_BBJ_737_Max_floorplan.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Boeing_Business_Jet_BBJ_737_Max_floorplan.jpg/960px-Boeing_Business_Jet_BBJ_737_Max_floorplan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1236,
+      "author": "Alexander Craker",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-05-01",
+      "caption": "Boeing Business Jet 737 Max family Interior layout with no cabin installed",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Boeing 737MAX 8",
+      "file": "File:C-FSJJ (43123199145).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-FSJJ_(43123199145).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/C-FSJJ_%2843123199145%29.jpg/960px-C-FSJJ_%2843123199145%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mark Harkin",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2018-05-15 08:34",
+      "caption": "C-FSJJ Boeing 737-8 Max Air Canada",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Boeing 737MAX 8",
+      "file": "File:Hannover Airport TUIfly Boeing 737-8 MAX D-AMAF (DSC3123).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hannover_Airport_TUIfly_Boeing_737-8_MAX_D-AMAF_(DSC3123).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Hannover_Airport_TUIfly_Boeing_737-8_MAX_D-AMAF_%28DSC3123%29.jpg/960px-Hannover_Airport_TUIfly_Boeing_737-8_MAX_D-AMAF_%28DSC3123%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-21 11:43:28",
+      "caption": "Die Boeing 737-8 MAX der Fluggesellschaft TUIfly mit dem Kennzeichen D-AMAF im Landeanflug auf die Bahn 09R des Flughafens Hannover-Langenhagen. Das Flugzeug führte einen Flug von Rhodos nach Hannover durch.",
+      "found": "2026-10-16T05:20:16.1224049+00:00"
     }
   ],
-  "updated": "2026-10-16T04:51:34.9805264+00:00"
+  "updated": "2026-10-16T05:20:16.1224049+00:00"
 }
