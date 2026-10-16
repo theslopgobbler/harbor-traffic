@@ -88,11 +88,12 @@
   async function loadKnown() {
     try {
       const j = await (await fetch(`planes/known.json?t=${Date.now()}`, { cache: 'no-store' })).json();
-      KNOWN = (j.callsigns || []).map((k) => { try { return { ...k, re: new RegExp(k.match, 'i') }; } catch { return null; } }).filter(Boolean);
+      KNOWN = (j.callsigns || []).map((k) => { try { return { ...k, re: k.match ? new RegExp(k.match, 'i') : null, hex: (k.hex || []).map((h) => String(h).toLowerCase()) }; } catch { return null; } }).filter(Boolean);
     } catch (e) { console.warn('known aircraft', e); }
   }
   function applyKnown(a) {
-    const k = KNOWN.find((x) => x.re.test(a.flight || ''));
+    const hex = String(a.hex || '').toLowerCase();
+    const k = KNOWN.find((x) => (x.hex || []).includes(hex)) || KNOWN.find((x) => x.re && x.re.test(a.flight || ''));
     if (!k) return;
     a.known = k;
     if (!a.type && k.type) a.type = k.type; // (so the helicopter drawing and the military color follow)

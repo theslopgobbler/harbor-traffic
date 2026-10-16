@@ -1,5 +1,5 @@
 {
-  "about": "Aircraft we know by call sign (air.js). match = a pattern for the call sign; kind MILITARY drops the question mark. Photos: same type, not necessarily that aircraft.",
+  "about": "Aircraft we know, by call sign pattern (match) or by the aircraft's own ADS-B address (hex, never changes; use it when the call sign is a one-off like R20655). kind MILITARY drops the question mark. Photos: same type, never that aircraft.",
   "callsigns": [
     {
       "match": "^COUGR\\d*$",
@@ -19,7 +19,11 @@
           "file": "File:16th CAB, 17th FAB conduct sling load training at JBLM 160420-A-PG801-002.jpg",
           "source": "commons"
         }
-      ]
+      ],
+      "hex": [
+        "ae577f"
+      ],
+      "note": "COUGR flights; ae577f flew as R20655 on Oct 15"
     }
   ]
 }
