@@ -17,7 +17,8 @@
     "Cessna 208 B": "2026-10-16T19:20:20.1522346+00:00",
     "Airbus Helicopters Squirrel AS.350 B3e": "2026-10-16T19:52:24.2782248+00:00",
     "Boeing C-17A Globemaster III": "2026-10-16T21:13:13.6448289+00:00",
-    "Robinson R66 Turbine": "2026-10-16T21:46:27.9966833+00:00"
+    "Robinson R66 Turbine": "2026-10-16T21:46:27.9966833+00:00",
+    "Bell 206B Jet Ranger II": "2026-10-16T22:46:58.2531962+00:00"
   },
   "candidates": [
     {
@@ -1209,7 +1210,91 @@
       "date": "2011-03-01 00:02:04",
       "caption": "Robinson R66 Turbine VH-FCQ c/n 0012. First registered in Australia: 27 January 2011. Registration holder and operator as of 27 January 2011 is Brazakka Pty Ltd - Day 1 Avalon 2011 Australian International Airshow. Fi...",
       "found": "2026-10-16T21:46:27.9966833+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger II",
+      "file": "File:Bell 206B-2 JetRanger II (N206SH, cn 1666) (4-13-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B-2_JetRanger_II_(N206SH,_cn_1666)_(4-13-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Bell_206B-2_JetRanger_II_%28N206SH%2C_cn_1666%29_%284-13-2024%29.jpg/960px-Bell_206B-2_JetRanger_II_%28N206SH%2C_cn_1666%29_%284-13-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-13",
+      "caption": "Bell 206B-2 JetRanger II N206SH at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-16T22:46:58.2531962+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger II",
+      "file": "File:Bell 206B JetRanger II AN0439163.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B_JetRanger_II_AN0439163.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Bell_206B_JetRanger_II_AN0439163.jpg/960px-Bell_206B_JetRanger_II_AN0439163.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Elisabeth Klimesch",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "22 August 2003",
+      "caption": "",
+      "found": "2026-10-16T22:46:58.2531962+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger II",
+      "file": "File:Bell 206B JetRanger II AN1175911.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B_JetRanger_II_AN1175911.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Bell_206B_JetRanger_II_AN1175911.jpg/960px-Bell_206B_JetRanger_II_AN1175911.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Alain Rioux",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "8 July 2006",
+      "caption": "This pair of former Canadian Helicopters B206 are now up for sale at $USD45,000 each as possible rebuild projects. The B206 at the back of the trailer is C-FCJC",
+      "found": "2026-10-16T22:46:58.2531962+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger II",
+      "file": "File:Bell 206L-4 LongRanger IV over Botafogo Bay, Rio de Janeiro.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_over_Botafogo_Bay,_Rio_de_Janeiro.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg/960px-Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 598,
+      "author": "Wilfredor",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2023-06-03 13:24:51",
+      "caption": "A Bell 206L-4 LongRanger IV flying over Botafogo Bay, the Corcovado and the statue of Christ behind it. Rio de Janeiro, Brazil.",
+      "found": "2026-10-16T22:46:58.2531962+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger II",
+      "file": "File:LAPD Bell 206 Jetranger.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:LAPD_Bell_206_Jetranger.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/LAPD_Bell_206_Jetranger.jpg/960px-LAPD_Bell_206_Jetranger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mfield - Matthew Field, http://www.photography.mattfield.com",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "date": "2006-10-20",
+      "caption": "Los Angeles Police Department (LAPD) 1987 Bell 206 Jetranger helicopter",
+      "found": "2026-10-16T22:46:58.2531962+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger II",
+      "file": "File:Uganda People's Defence Force Air Wing Bell 206B JetRanger II MTI-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Uganda_People%27s_Defence_Force_Air_Wing_Bell_206B_JetRanger_II_MTI-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Uganda_People%27s_Defence_Force_Air_Wing_Bell_206B_JetRanger_II_MTI-1.jpg/960px-Uganda_People%27s_Defence_Force_Air_Wing_Bell_206B_JetRanger_II_MTI-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 637,
+      "author": "Melting Tarmac Images",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2011-08",
+      "caption": "Uganda People's Defence Force Air Wing Bell 206B JetRanger II",
+      "found": "2026-10-16T22:46:58.2531962+00:00"
     }
   ],
-  "updated": "2026-10-16T22:11:37.7569396+00:00"
+  "updated": "2026-10-16T22:46:58.2531962+00:00"
 }
