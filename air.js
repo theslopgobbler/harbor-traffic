@@ -79,7 +79,10 @@
   const isMedical = (a) => isHeli(a) && /LIFE|MEDEVAC|MEDIC|AIRLIFT|LIFEGUARD|MERCY|CARE|^LF|^LN|^AMF|^AIR ?EVAC/i.test(`${a.flight || ''} ${a.reg || ''}`) ||
     /^N\d+(LF|LN|AL|MT)$/i.test(a.reg || '');
   const colorOf = (a) => EMERG[a.squawk] ? '#ff2a3d' : isCoastGuard(a) ? '#ff2a3d' : isMil(a) ? '#ff7a1a' : isHeli(a) ? '#ffffff' : '#bff4ff';
-  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : a.milSure ? 'MILITARY' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
+  // airliners: big and medium jets and turboprops (by ADS-B category, or the type code when the category is missing)
+  const AIRLINER_TYPES = /^(A2\d[N\d]|A3\d\d|A3\dN|B7\d\d|B7\dM|B3[789]M|B73\d|B74\d|B75\d|B76\d|B77\w|B78\d|BCS\d|E1[79]\d|E75[LS]|E2\d\d|E290|CRJ\d|DH8[A-D]|AT[47]\d|MD\d\d)$/;
+  const isAirliner = (a) => /^A[345]$/.test(a.cat || '') || AIRLINER_TYPES.test(a.type || '');
+  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : a.milSure ? 'MILITARY' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : isAirliner(a) ? 'AIRLINER' : 'AIRCRAFT';
   const altTxt = (alt) => alt < 100 ? 'GND' : alt >= 1000 ? (alt / 1000).toFixed(1) + 'K' : String(alt);
 
   // ---- what each aircraft is. Three sources, first one wins:
@@ -140,6 +143,11 @@
   // magenta and shown at any altitude. Everyone else sees no difference
   if (qs.has('rx')) store.set('ht.rx', qs.get('rx') === '1');
   const rx = store.get('ht.rx') === true;
+  // airliners: off unless turned on in the menu (Map Layers › AIRLINERS) or with ?airliners=1 (remembered per device;
+  // ?airliners=0 turns them off). On, they show at any height inside the area, like the jets to and from Sea-Tac
+  if (qs.has('airliners')) store.set('ht.airliners', qs.get('airliners') === '1');
+  let showAirliners = store.get('ht.airliners') === true;
+  window.htAirliners = { get: () => showAirliners, set: (v) => { showAirliners = !!v; store.set('ht.airliners', showAirliners); load(); } };
   const RX = '#ff4fd8';
   const tint = (a) => rx && a.mine ? RX : colorOf(a);
   const markers = new Map(); // hex -> marker
@@ -230,7 +238,8 @@
       // possible military and emergencies anywhere in the area
       const special = (a) => isHeli(a) || isMil(a) || isCoastGuard(a) || EMERG[a.squawk];
       planes = (j.aircraft || []).filter((a) => a.lat && a.lon && a.lat > 46.5 && a.lat < 48 && a.lon > -124.6 &&
-        ((rx && a.mine) || (a.alt || 0) <= 15000 && (a.lon < -123.05 || (a.lon < -122.7 && special(a)))));
+        ((rx && a.mine) || (isAirliner(a) && !special(a) ? showAirliners
+          : (a.alt || 0) <= 15000 && (a.lon < -123.05 || (a.lon < -122.7 && special(a))))));
       for (const a of planes) a._sit = situation(a);
     } catch (e) { console.warn('aircraft', e); }
     render();

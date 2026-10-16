@@ -12,6 +12,7 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
+    ['Oct 16', 'Airliners overhead, if you want them (Map Layers in the menu).'],
     ['Oct 15', 'Buses stay on their routes better, and the map runs lighter on phones.'],
     ['Oct 13', 'Bus stops and bridge alerts behave better.'],
     ['Oct 7', 'A menu, and handy little extras around the map.'],
@@ -38,7 +39,8 @@
   const pages = {
     main: () => `<div class="menu-title">HARBOR TRAFFIC</div>${row('layers', 'MAP LAYERS')}${row('themes', 'THEMES')}${row('settings', 'SETTINGS')}${row('about', 'ABOUT')}`,
     layers: () => `${back}<div class="menu-title">MAP LAYERS</div>
-      ${LAYERS.map(([sel, label]) => `<button type="button" class="menu-row" data-layer="${sel}">${label}<span>${$(sel)?.classList.contains('on') ? 'ON' : 'OFF'}</span></button>`).join('')}
+      ${LAYERS.map(([sel, label]) => `<button type="button" class="menu-row" data-layer="${sel}">${label}<span>${$(sel)?.classList.contains('on') ? 'ON' : 'OFF'}</span></button>`
+        + (sel === '#btnAir' && window.htAirliners ? `<button type="button" class="menu-row" data-set="airliners">&nbsp;&nbsp;AIRLINERS TOO<span>${window.htAirliners.get() ? 'ON' : 'OFF'}</span></button>` : '')).join('')}
       <button type="button" class="menu-row" data-set="tools">LAYER BUTTONS ON THE MAP<span>${hideTools() ? 'HIDDEN' : 'SHOWN'}</span></button>`,
     themes: () => `${back}<div class="menu-title">THEMES</div>
       <div class="menu-opt on">✓ HARBOR NIGHT <small>THE CURRENT LOOK</small></div>
@@ -91,6 +93,7 @@
     e.stopPropagation();
     const go = e.target.closest('[data-go]'); if (go) return show(go.dataset.go);
     const set = e.target.closest('[data-set]');
+    if (set && set.dataset.set === 'airliners') { window.htAirliners?.set(!window.htAirliners.get()); return show(page); }
     if (set && set.dataset.set === 'tools') {
       const hide = !hideTools();
       try { if (hide) localStorage.setItem('ht.hideTools', '1'); else localStorage.removeItem('ht.hideTools'); } catch {}
