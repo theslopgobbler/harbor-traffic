@@ -5,7 +5,8 @@
     "Boeing 737MAX 8": "2026-10-16T05:20:16.1224049+00:00",
     "Embraer EMB-175 LL": "2026-10-16T05:55:41.3972097+00:00",
     "Eurocopter EC135 T2": "2026-10-16T07:52:05.0478849+00:00",
-    "Boeing 737NG 790/W": "2026-10-16T12:47:07.953407+00:00"
+    "Boeing 737NG 790/W": "2026-10-16T12:47:07.953407+00:00",
+    "Bell 206B Jet Ranger III": "2026-10-16T16:50:00.0909519+00:00"
   },
   "candidates": [
     {
@@ -343,7 +344,91 @@
       "date": "2013-03-03",
       "caption": "Victoria Police , operated by CHC Helicopter , (VH-PVE) Eurocopter EC135 T2+ on display the 2013 Avalon Airshow .",
       "found": "2026-10-16T07:52:05.0478849+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger III",
+      "file": "File:Bell 206B-3 JetRanger III (N206KK, cn 4188) (4-13-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B-3_JetRanger_III_(N206KK,_cn_4188)_(4-13-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Bell_206B-3_JetRanger_III_%28N206KK%2C_cn_4188%29_%284-13-2024%29.jpg/960px-Bell_206B-3_JetRanger_III_%28N206KK%2C_cn_4188%29_%284-13-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-13",
+      "caption": "Bell 206B-3 JetRanger III N206KK at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-16T16:50:00.0909519+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger III",
+      "file": "File:Bell 206B-3 JetRanger III (N305GL, cn 2790) (4-13-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B-3_JetRanger_III_(N305GL,_cn_2790)_(4-13-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Bell_206B-3_JetRanger_III_%28N305GL%2C_cn_2790%29_%284-13-2024%29.jpg/960px-Bell_206B-3_JetRanger_III_%28N305GL%2C_cn_2790%29_%284-13-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-13",
+      "caption": "Bell 206B-3 JetRanger III N305GL at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-16T16:50:00.0909519+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger III",
+      "file": "File:Bell 206B-3 JetRanger III (N422RH, cn 3249) (4-13-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B-3_JetRanger_III_(N422RH,_cn_3249)_(4-13-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Bell_206B-3_JetRanger_III_%28N422RH%2C_cn_3249%29_%284-13-2024%29.jpg/960px-Bell_206B-3_JetRanger_III_%28N422RH%2C_cn_3249%29_%284-13-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-13",
+      "caption": "Bell 206B-3 JetRanger III N422RH at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-16T16:50:00.0909519+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger III",
+      "file": "File:Bell 206B Jet Ranger III September 2014 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B_Jet_Ranger_III_September_2014_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Bell_206B_Jet_Ranger_III_September_2014_01.jpg/960px-Bell_206B_Jet_Ranger_III_September_2014_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Arild Vågen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2014-09-20 16:29:13",
+      "caption": "Bell 206B Jet Ranger III at Jungfrusund, Ekerö.",
+      "found": "2026-10-16T16:50:00.0909519+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger III",
+      "file": "File:Bell 206B Jet Ranger III September 2014 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B_Jet_Ranger_III_September_2014_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Bell_206B_Jet_Ranger_III_September_2014_02.jpg/960px-Bell_206B_Jet_Ranger_III_September_2014_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Arild Vågen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2014-09-20 16:29:23",
+      "caption": "Bell 206B Jet Ranger III landing at Jungfrusund, Ekerö.",
+      "found": "2026-10-16T16:50:00.0909519+00:00"
+    },
+    {
+      "model": "Bell 206B Jet Ranger III",
+      "file": "File:Bell 206B Jet Ranger III September 2014 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206B_Jet_Ranger_III_September_2014_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Bell_206B_Jet_Ranger_III_September_2014_03.jpg/960px-Bell_206B_Jet_Ranger_III_September_2014_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Arild Vågen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2014-09-20 16:29:10",
+      "caption": "Bell 206B Jet Ranger III at Jungfrusund, Ekerö.",
+      "found": "2026-10-16T16:50:00.0909519+00:00"
     }
   ],
-  "updated": "2026-10-16T16:10:32.6587380+00:00"
+  "updated": "2026-10-16T16:50:00.0909519+00:00"
 }
