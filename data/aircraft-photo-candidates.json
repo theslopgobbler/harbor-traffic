@@ -15,7 +15,8 @@
     "Robinson R44 Raven": "2026-10-16T18:54:35.7024721+00:00",
     "Boeing-Vertol CH-47F Chinook": "2026-10-16T18:54:35.7024721+00:00",
     "Cessna 208 B": "2026-10-16T19:20:20.1522346+00:00",
-    "Airbus Helicopters Squirrel AS.350 B3e": "2026-10-16T19:52:24.2782248+00:00"
+    "Airbus Helicopters Squirrel AS.350 B3e": "2026-10-16T19:52:24.2782248+00:00",
+    "Boeing C-17A Globemaster III": "2026-10-16T21:13:13.6448289+00:00"
   },
   "candidates": [
     {
@@ -1039,7 +1040,91 @@
       "date": "2017-12-29 19:36",
       "caption": "G-HITI Airbus Helicopters AS.350 B3e Squirrel @ Elstree 28/12/2017",
       "found": "2026-10-16T19:52:24.2782248+00:00"
+    },
+    {
+      "model": "Boeing C-17A Globemaster III",
+      "file": "File:20190327 C-17 Globemaster Tail 10-0218 Kadena AB-33.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20190327_C-17_Globemaster_Tail_10-0218_Kadena_AB-33.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/20190327_C-17_Globemaster_Tail_10-0218_Kadena_AB-33.jpg/960px-20190327_C-17_Globemaster_Tail_10-0218_Kadena_AB-33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2019-03-27 16:52:28",
+      "caption": "A Boeing C-17 Globemaster III, tail number 10-0218, on final approach at Kadena Air Base in Okinawa, Japan. This aircraft is assigned to the 62nd Airlift Wing and the 446th Airlift Wing at Joint Base Lewis-McChord in ...",
+      "found": "2026-10-16T21:13:13.6448289+00:00"
+    },
+    {
+      "model": "Boeing C-17A Globemaster III",
+      "file": "File:20190327 C-17 Globemaster Tail 10-0218 Kadena AB-37.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20190327_C-17_Globemaster_Tail_10-0218_Kadena_AB-37.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/20190327_C-17_Globemaster_Tail_10-0218_Kadena_AB-37.jpg/960px-20190327_C-17_Globemaster_Tail_10-0218_Kadena_AB-37.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2019-03-27 16:52:29",
+      "caption": "A Boeing C-17 Globemaster III, tail number 10-0218, on final approach at Kadena Air Base in Okinawa, Japan. This aircraft is assigned to the 62nd Airlift Wing and the 446th Airlift Wing at Joint Base Lewis-McChord in ...",
+      "found": "2026-10-16T21:13:13.6448289+00:00"
+    },
+    {
+      "model": "Boeing C-17A Globemaster III",
+      "file": "File:C-17 aircraft over over the Blue Ridge Mountains 2005.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-17_aircraft_over_over_the_Blue_Ridge_Mountains_2005.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/C-17_aircraft_over_over_the_Blue_Ridge_Mountains_2005.jpg/960px-C-17_aircraft_over_over_the_Blue_Ridge_Mountains_2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 705,
+      "author": "Staff Sgt. Jacob N. Bailey, U.S. Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2005-12-20",
+      "caption": "Thirteen C-17 Globemaster III aircraft fly over the Blue Ridge Mountains in Virginia during low level tactical training Dec. 20, 2005. These C-17 planes are assigned to the 437th and 315th Airlift Wings at Charleston ...",
+      "found": "2026-10-16T21:13:13.6448289+00:00"
+    },
+    {
+      "model": "Boeing C-17A Globemaster III",
+      "file": "File:C-17 test sortie.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-17_test_sortie.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/C-17_test_sortie.jpg/960px-C-17_test_sortie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 686,
+      "author": "U.S. Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2007-03-22",
+      "caption": "A U.S. Air Force C-17 Globemaster III T-1 flies over Owens Valley, California, for a test sortie. Edwards Air Force Base, California, welcomed the aircraft home after 208 days of life-extension modifications in San An...",
+      "found": "2026-10-16T21:13:13.6448289+00:00"
+    },
+    {
+      "model": "Boeing C-17A Globemaster III",
+      "file": "File:C17 DF-SD-06-03299.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C17_DF-SD-06-03299.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/C17_DF-SD-06-03299.jpg/960px-C17_DF-SD-06-03299.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 705,
+      "author": "photo by Staff Sgt. Jacob N. Bailey, U.S. Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2005-12-20",
+      "caption": "Thirteen C-17 Globemaster III aircraft fly over the Blue Ridge Mountains in Virginia during low level tactical training Dec. 20, 2005. These C-17 planes are assigned to the 437th and 315th Airlift Wings at Charleston ...",
+      "found": "2026-10-16T21:13:13.6448289+00:00"
+    },
+    {
+      "model": "Boeing C-17A Globemaster III",
+      "file": "File:KAF342 - Boeing C-17A Globemaster III - F-264 - Kuwait Air Force - VGHS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:KAF342_-_Boeing_C-17A_Globemaster_III_-_F-264_-_Kuwait_Air_Force_-_VGHS.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/37/KAF342_-_Boeing_C-17A_Globemaster_III_-_F-264_-_Kuwait_Air_Force_-_VGHS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 540,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-11-18",
+      "caption": "KAF342 | Boeing C-17A Globemaster III | F-264 | Kuwait - Air Force | VGHS.",
+      "found": "2026-10-16T21:13:13.6448289+00:00"
     }
   ],
-  "updated": "2026-10-16T20:48:45.8773707+00:00"
+  "updated": "2026-10-16T21:13:13.6448289+00:00"
 }
