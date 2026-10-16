@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T01:49:00.9871983+00:00",
+  "updated": "2026-10-16T02:14:18.0643400+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1740,27 +1740,6 @@
       ]
     },
     {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-14T19:34:57.5600000+00:00"
-    },
-    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -2045,6 +2024,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "From 8 a.m. to 4 p.m. Friday, Oct. 16, expect four closures on SR 109 near Moclips Highway. The closures will last up to 45 minutes each and take place at unscheduled times. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-14T19:34:57.5600000+00:00"
     },
     {
       "id": 640019,
