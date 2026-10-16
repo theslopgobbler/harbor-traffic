@@ -79,8 +79,34 @@
   const isMedical = (a) => isHeli(a) && /LIFE|MEDEVAC|MEDIC|AIRLIFT|LIFEGUARD|MERCY|CARE|^LF|^LN|^AMF|^AIR ?EVAC/i.test(`${a.flight || ''} ${a.reg || ''}`) ||
     /^N\d+(LF|LN|AL|MT)$/i.test(a.reg || '');
   const colorOf = (a) => EMERG[a.squawk] ? '#ff2a3d' : isCoastGuard(a) ? '#ff2a3d' : isMil(a) ? '#ff7a1a' : isHeli(a) ? '#ffffff' : '#bff4ff';
-  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
+  const kindOf = (a) => isCoastGuard(a) ? 'COAST GUARD' : a.known?.kind === 'MILITARY' ? 'MILITARY' : isMil(a) ? 'MILITARY?' : isMedical(a) ? 'MEDICAL?' : isHeli(a) ? 'HELICOPTER' : a.cat === 'A3' || a.cat === 'A4' || a.cat === 'A5' ? 'AIRLINER' : 'AIRCRAFT';
   const altTxt = (alt) => alt < 100 ? 'GND' : alt >= 1000 ? (alt / 1000).toFixed(1) + 'K' : String(alt);
+
+  // ---- aircraft we know by call sign (planes/known.json): confirmed kind, full type name, and a reference photo of the
+  // same type (never a photo of the actual aircraft)
+  let KNOWN = [];
+  async function loadKnown() {
+    try {
+      const j = await (await fetch(`planes/known.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      KNOWN = (j.callsigns || []).map((k) => { try { return { ...k, re: new RegExp(k.match, 'i') }; } catch { return null; } }).filter(Boolean);
+    } catch (e) { console.warn('known aircraft', e); }
+  }
+  function applyKnown(a) {
+    const k = KNOWN.find((x) => x.re.test(a.flight || ''));
+    if (!k) return;
+    a.known = k;
+    if (!a.type && k.type) a.type = k.type; // (so the helicopter drawing and the military color follow)
+    if (k.kind === 'MILITARY') a.mil = true;
+  }
+  const typeName = (a) => a.known?.name ? a.known.name.toUpperCase() : a.type || 'UNKNOWN TYPE';
+  const okSrc = (u) => /^planes\/[\w.-]+\.(jpe?g|png|webp)$/i.test(u || '');
+  function refPhoto(a) {
+    const p = (a.known?.photos || []).find((x) => okSrc(x.src));
+    if (!p) return '';
+    const link = (u, t) => (/^https:\/\/[^\s"'<>]+$/.test(u || '') ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t));
+    return `<figure class="ship-photo"><img src="${esc(p.src)}" width="${+p.w || 4}" height="${+p.h || 3}" alt="${esc(a.known.name || 'aircraft')}, for reference" loading="lazy">
+      <figcaption><span class="cap">FOR REFERENCE (SAME TYPE, NOT THIS AIRCRAFT)${p.caption ? ': ' + esc(p.caption) : ''}</span><span class="cr">PHOTO: ${esc(p.credit || 'unknown')}${p.license ? ' · ' + link(p.licenseUrl, p.license) : ''}${p.page ? ' · ' + link(p.page, 'COMMONS') : ''}</span></figcaption></figure>`;
+  }
 
   // ---- markers ----
   let planes = [], updated = null, live = false, liveSource = '';
@@ -110,7 +136,7 @@
       el.title = `${a.flight || a.reg || a.hex} · ${a.type || ''}`;
       const s = a._sit;
       mk.getPopup().setHTML(`<h3>${esc(a.flight || a.reg || a.hex)}${a.reg && a.reg !== a.flight ? ' · ' + esc(a.reg) : ''}</h3>
-        <p><span style="color:${c}">${kindOf(a)}</span> · ${esc(a.type || 'UNKNOWN TYPE')} · <b>${s.state}</b></p>
+        ${refPhoto(a)}<p><span style="color:${c}">${kindOf(a)}</span> · ${esc(typeName(a))} · <b>${s.state}</b></p>
         <div class="m">${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT${a.track != null ? ' · HDG ' + Math.round(a.track) + '°' : ''}${EMERG[a.squawk] ? ' · SQUAWK ' + a.squawk + ' ' + EMERG[a.squawk] : ''}</div>
         <div class="m">${s.fieldNm.toFixed(1)} NM FROM ${esc(s.field.name)} · ${s.homeNm.toFixed(1)} NM FROM ABERDEEN</div>`);
     }
@@ -124,13 +150,13 @@
     if (!list) return;
     const flagged = planes.filter((a) => EMERG[a.squawk] || isMil(a) || isCoastGuard(a));
     alerts.innerHTML = flagged.map((a) => `<li class="${EMERG[a.squawk] ? 'k-closure' : 'k-work'} clickable" data-hex="${esc(a.hex)}">
-      <div class="t">${EMERG[a.squawk] ? `⚠ SQUAWK ${a.squawk}: ${EMERG[a.squawk]}` : isCoastGuard(a) ? '⚠ COAST GUARD AIRCRAFT' : '⚠ POSSIBLE MILITARY AIRCRAFT'} · ${esc(a.flight || a.reg || a.hex)}</div>
-      <div class="m">${esc(a.type || 'UNKNOWN TYPE')} · ${altTxt(a.alt)} FT · ${a._sit.state} · ${a._sit.homeNm.toFixed(1)} NM FROM ABERDEEN</div></li>`).join('');
+      <div class="t">${EMERG[a.squawk] ? `⚠ SQUAWK ${a.squawk}: ${EMERG[a.squawk]}` : isCoastGuard(a) ? '⚠ COAST GUARD AIRCRAFT' : a.known?.kind === 'MILITARY' ? '⚠ MILITARY AIRCRAFT' : '⚠ POSSIBLE MILITARY AIRCRAFT'} · ${esc(a.flight || a.reg || a.hex)}</div>
+      <div class="m">${esc(typeName(a))} · ${altTxt(a.alt)} FT · ${a._sit.state} · ${a._sit.homeNm.toFixed(1)} NM FROM ABERDEEN</div></li>`).join('');
     // helicopters first, then nearest first
     const sorted = planes.slice().sort((a, b) => (isHeli(b) - isHeli(a)) || a._sit.homeNm - b._sit.homeNm);
     list.innerHTML = sorted.length ? sorted.map((a) => `<li class="clickable" data-hex="${esc(a.hex)}" style="border-left-color:${tint(a)}">
       <div class="t">${esc(a.flight || a.reg || a.hex)} <span class="pill st-${a._sit.state.replace(/\s/g, '')}">${a._sit.state}</span></div>
-      <div class="m">${kindOf(a)} · ${esc(a.type || '?')} · ${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT · ${a._sit.homeNm.toFixed(1)} NM AWAY
+      <div class="m">${kindOf(a)} · ${esc(a.known?.name ? typeName(a) : a.type || '?')} · ${altTxt(a.alt)} FT · ${Math.round(a.gs || 0)} KT · ${a._sit.homeNm.toFixed(1)} NM AWAY
         ${a._sit.state === 'INBOUND' ? ' · TO ' + esc(a._sit.field.id) : a._sit.state === 'OUTBOUND' ? ' · FROM ' + esc(a._sit.field.id) : ''}</div></li>`).join('')
       : '<li class="empty">NO LOW AIRCRAFT IN THE AREA</li>';
     const age = updated ? Math.round((Date.now() - Date.parse(updated)) / 60000) : null;
@@ -165,6 +191,7 @@
       // relay missing, down, or empty: fall back to the collector's copy
       if (!j) j = await (await fetch(`data/aircraft.json?t=${Date.now()}`, { cache: 'no-store' })).json();
       updated = j.updated;
+      for (const a of j.aircraft || []) applyKnown(a);
       // Olympia's busy training traffic is left out: everything west of about Rochester/McCleary, plus helicopters,
       // possible military and emergencies anywhere in the area
       const special = (a) => isHeli(a) || isMil(a) || isCoastGuard(a) || EMERG[a.squawk];
@@ -187,6 +214,6 @@
   $('#btnAir').addEventListener('click', () => setOn(!on));
   setOn(on);
 
-  load();
+  loadKnown().then(load);
   setInterval(load, C.airRelay ? 30000 : 60000); // the relay refreshes about every 30 s
 })();

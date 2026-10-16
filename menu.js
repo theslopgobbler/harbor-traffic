@@ -74,7 +74,7 @@
         <li>Boats: AIS, via aisstream.io</li>
         <li>Aircraft: community ADS-B feeds and OpenSky Network</li>
         <li>Map: OpenStreetMap contributors, tiles by OpenFreeMap</li>
-        <li>Boat photos: their photographers (Wikimedia Commons, credited on each)</li>
+        <li>Boat and aircraft photos: their photographers (Wikimedia Commons, credited on each). Aircraft photos show the same type, for reference, never the actual aircraft</li>
       </ul>`,
     privacy: () => `<button type="button" class="menu-back" data-go="about">‹ ABOUT</button><div class="menu-title">PRIVACY</div>
       <p class="menu-p">No accounts, no ads, no tracking cookies.</p>
