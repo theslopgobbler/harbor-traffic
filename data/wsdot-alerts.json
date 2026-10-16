@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T14:38:11.6971584+00:00",
+  "updated": "2026-10-16T15:08:53.1972735+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -308,49 +308,6 @@
         [
           -124.35296,
           47.88238
-        ]
-      ]
-    },
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
         ]
       ]
     },
@@ -1054,6 +1011,49 @@
         [
           -123.92215,
           47.03119
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
         ]
       ]
     },
@@ -1943,37 +1943,6 @@
       ]
     },
     {
-      "id": 718362,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "From 8 a.m. to 3 p.m. Friday, Oct. 16, the southbound I-5 exit to Pacific Avenue will close for tree work and ramp maintenance. Read the travel advisory.",
-      "description": "",
-      "link": "https://content.govdelivery.com/accounts/WADOT/bulletins/42ea17b",
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 107.7,
-      "lat": 47.043122288,
-      "lon": -122.847557341,
-      "lat2": 47.043808162,
-      "lon2": -122.845784477,
-      "county": null,
-      "start": "2026-10-09T21:36:00.0000000+00:00",
-      "end": "2026-10-16T15:00:00.0000000+00:00",
-      "updated": "2026-10-09T22:02:45.4000000+00:00",
-      "path": [
-        [
-          -122.847557341,
-          47.043122288
-        ],
-        [
-          -122.845784477,
-          47.043808162
-        ]
-      ]
-    },
-    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -1993,6 +1962,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 719064,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 both directions at milepost 34.53 near Elma Gate Rd W beginning at 8:00 am on October 16, 2026 until about 3:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "B",
+      "milepost": 34.53,
+      "lat": 46.84468636,
+      "lon": -123.246308992,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-10-16T15:00:00.0000000+00:00",
+      "end": "2026-10-16T22:30:00.0000000+00:00",
+      "updated": "2026-10-16T15:01:42.5470000+00:00"
     },
     {
       "id": 686738,
@@ -2162,6 +2152,27 @@
       "end": "2026-10-19T16:00:00.0000000+00:00",
       "updated": "2026-10-05T16:00:10.5430000+00:00",
       "upcoming": "MON OCT 19"
+    },
+    {
+      "id": 719060,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on I-5 southbound at milepost 107.48 at the off ramp to Pacific Ave SE beginning at 7:42 am on October 16, 2026 until further notice. The Off Ramp is closed.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 107.48,
+      "lat": 47.041439753,
+      "lon": -122.851875836,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-16T14:42:00.0000000+00:00",
+      "end": "2026-10-16T22:00:00.0000000+00:00",
+      "updated": "2026-10-16T14:45:17.1370000+00:00"
     },
     {
       "id": 698910,
