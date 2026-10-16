@@ -18,7 +18,9 @@
     "Airbus Helicopters Squirrel AS.350 B3e": "2026-10-16T19:52:24.2782248+00:00",
     "Boeing C-17A Globemaster III": "2026-10-16T21:13:13.6448289+00:00",
     "Robinson R66 Turbine": "2026-10-16T21:46:27.9966833+00:00",
-    "Bell 206B Jet Ranger II": "2026-10-16T22:46:58.2531962+00:00"
+    "Bell 206B Jet Ranger II": "2026-10-16T22:46:58.2531962+00:00",
+    "Airbus A321 271NXSL": "2026-10-16T23:32:42.9571432+00:00",
+    "Bell 206L Long Ranger IV": "2026-10-16T23:32:42.9571432+00:00"
   },
   "candidates": [
     {
@@ -1294,7 +1296,91 @@
       "date": "2011-08",
       "caption": "Uganda People's Defence Force Air Wing Bell 206B JetRanger II",
       "found": "2026-10-16T22:46:58.2531962+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger IV",
+      "file": "File:Bell 206L-4 LongRanger IV, Minuteman Aviation AN0268410.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV,_Minuteman_Aviation_AN0268410.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Bell_206L-4_LongRanger_IV%2C_Minuteman_Aviation_AN0268410.jpg/960px-Bell_206L-4_LongRanger_IV%2C_Minuteman_Aviation_AN0268410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 656,
+      "author": "Ted Quackenbush",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "9 August 2002",
+      "caption": "LongRanger IV contracted for firefighting duty.",
+      "found": "2026-10-16T23:32:42.9571432+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger IV",
+      "file": "File:Bell 206L-4 LongRanger IV (N401FW, cn 52327) (4-9-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_(N401FW,_cn_52327)_(4-9-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Bell_206L-4_LongRanger_IV_%28N401FW%2C_cn_52327%29_%284-9-2024%29.jpg/960px-Bell_206L-4_LongRanger_IV_%28N401FW%2C_cn_52327%29_%284-9-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-09",
+      "caption": "Bell 206L-4 LongRanger IV N401FW at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-16T23:32:42.9571432+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger IV",
+      "file": "File:Bell 206L-4 LongRanger IV (N473AE, cn 52407) (6-10-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_(N473AE,_cn_52407)_(6-10-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Bell_206L-4_LongRanger_IV_%28N473AE%2C_cn_52407%29_%286-10-2025%29.jpg/960px-Bell_206L-4_LongRanger_IV_%28N473AE%2C_cn_52407%29_%286-10-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-06-10",
+      "caption": "Bell 206L-4 LongRanger IV (N473AE, cn 52407) at Vanderbilt University Medical Center.",
+      "found": "2026-10-16T23:32:42.9571432+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger IV",
+      "file": "File:Bell 206L-4 LongRanger IV (N6TY, cn 52007) (6-10-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_(N6TY,_cn_52007)_(6-10-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Bell_206L-4_LongRanger_IV_%28N6TY%2C_cn_52007%29_%286-10-2025%29.jpg/960px-Bell_206L-4_LongRanger_IV_%28N6TY%2C_cn_52007%29_%286-10-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-06-10",
+      "caption": "Bell 206L-4 LongRanger IV (N6TY, cn 52007) in Marietta, Georgia.",
+      "found": "2026-10-16T23:32:42.9571432+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger IV",
+      "file": "File:Bell 206L-4 LongRanger IV (N7YJ, cn 52026) (10-20-2022).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_(N7YJ,_cn_52026)_(10-20-2022).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Bell_206L-4_LongRanger_IV_%28N7YJ%2C_cn_52026%29_%2810-20-2022%29.jpg/960px-Bell_206L-4_LongRanger_IV_%28N7YJ%2C_cn_52026%29_%2810-20-2022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-10-20",
+      "caption": "Bell 206L-4 LongRanger IV (N7YJ, cn 52026) at Orlando Executive Airport.",
+      "found": "2026-10-16T23:32:42.9571432+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger IV",
+      "file": "File:Bell 206L-4 LongRanger IV over Botafogo Bay, Rio de Janeiro.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_over_Botafogo_Bay,_Rio_de_Janeiro.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg/960px-Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 598,
+      "author": "Wilfredor",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2023-06-03 13:24:51",
+      "caption": "A Bell 206L-4 LongRanger IV flying over Botafogo Bay, the Corcovado and the statue of Christ behind it. Rio de Janeiro, Brazil.",
+      "found": "2026-10-16T23:32:42.9571432+00:00"
     }
   ],
-  "updated": "2026-10-16T23:08:50.5865772+00:00"
+  "updated": "2026-10-16T23:32:42.9571432+00:00"
 }
