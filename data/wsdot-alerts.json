@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T15:08:53.1972735+00:00",
+  "updated": "2026-10-16T15:38:32.1971108+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -253,61 +253,6 @@
         [
           -123.0634,
           46.62696
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Crews are building a bridge to improve fish passage in May Creek.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865594,
-      "lon": -124.35087107,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2025-06-25T17:20:31.6500000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
         ]
       ]
     },
@@ -1943,25 +1888,25 @@
       ]
     },
     {
-      "id": 692593,
+      "id": 640019,
       "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect occasional single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. Crews are putting final touches on a fish passage project. Get more details on the project webpage.",
       "description": "",
-      "link": null,
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
       "road": "101",
       "roadLabel": "US 101",
       "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
       "lat2": 0,
       "lon2": 0,
       "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2027-01-01T02:00:00.0000000+00:00",
+      "updated": "2026-10-15T23:32:37.6470000+00:00"
     },
     {
       "id": 719064,
@@ -1985,6 +1930,27 @@
       "updated": "2026-10-16T15:01:42.5470000+00:00"
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 686738,
       "kind": "work",
       "category": "Construction",
@@ -2004,27 +1970,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-14T19:34:57.5600000+00:00"
-    },
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect occasional single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. Crews are putting final touches on a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-15T23:32:37.6470000+00:00"
     },
     {
       "id": 719056,
@@ -2090,25 +2035,25 @@
       "updated": "2026-09-14T14:42:15.5130000+00:00"
     },
     {
-      "id": 693774,
+      "id": 719071,
       "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect around-the-clock single-lane alternating traffic approaching milepost 184 near Dowans Creek Road. The road is reduced to one lane until permanent repairs are completed due to a slide.",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 97.43 near Failor Lk Rd beginning at 8:36 am on October 16, 2026 until about 6:00 pm. Motorists can expect up to 30-minutes of delay through the area.",
       "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-e-may-creek-emergency-repair",
+      "link": null,
       "road": "101",
       "roadLabel": "US 101",
       "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
+      "milepost": 97.43,
+      "lat": 47.102517044,
+      "lon": -123.906553333,
       "lat2": 0,
       "lon2": 0,
-      "county": null,
-      "start": "2026-04-15T00:04:00.0000000+00:00",
-      "end": "2027-01-01T01:04:00.0000000+00:00",
-      "updated": "2026-04-15T00:09:09.8670000+00:00"
+      "county": "Grays Harbor",
+      "start": "2026-10-16T15:36:00.0000000+00:00",
+      "end": "2026-10-17T01:00:00.0000000+00:00",
+      "updated": "2026-10-16T15:37:23.9000000+00:00"
     },
     {
       "id": 631745,
@@ -2194,6 +2139,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
+      "id": 719070,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 184 near Jefferson/Clallam County Line beginning at 8:12 am on October 16, 2026 until about 2:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-10-16T15:12:00.0000000+00:00",
+      "end": "2026-10-16T21:00:00.0000000+00:00",
+      "updated": "2026-10-16T15:14:26.0800000+00:00"
     }
   ]
 }
