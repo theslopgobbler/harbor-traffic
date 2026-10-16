@@ -3,7 +3,8 @@
     "Embraer EMB-175 LR": "2026-10-16T04:51:34.9805264+00:00",
     "Sikorsky UH-60M Blackhawk": "2026-10-16T05:20:16.1224049+00:00",
     "Boeing 737MAX 8": "2026-10-16T05:20:16.1224049+00:00",
-    "Embraer EMB-175 LL": "2026-10-16T05:55:41.3972097+00:00"
+    "Embraer EMB-175 LL": "2026-10-16T05:55:41.3972097+00:00",
+    "Eurocopter EC135 T2": "2026-10-16T07:52:05.0478849+00:00"
   },
   "candidates": [
     {
@@ -257,7 +258,91 @@
       "date": "2026-04-21 11:43:28",
       "caption": "Die Boeing 737-8 MAX der Fluggesellschaft TUIfly mit dem Kennzeichen D-AMAF im Landeanflug auf die Bahn 09R des Flughafens Hannover-Langenhagen. Das Flugzeug führte einen Flug von Rhodos nach Hannover durch.",
       "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T2",
+      "file": "File:Eurocopter EC135 T2+.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_T2%2B.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Eurocopter_EC135_T2%2B.jpg/960px-Eurocopter_EC135_T2%2B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "AlphaEchoBravo195",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-03-03",
+      "caption": "Rescue/medical helicopter Eurocopter EC 135 of Air Glaciers HB-ZUI at the Fribourg Hospital helipad.",
+      "found": "2026-10-16T07:52:05.0478849+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T2",
+      "file": "File:Eurocopter EC135 T2+ (N740MH, cn 0740) (6-26-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_T2%2B_(N740MH,_cn_0740)_(6-26-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Eurocopter_EC135_T2%2B_%28N740MH%2C_cn_0740%29_%286-26-2024%29.jpg/960px-Eurocopter_EC135_T2%2B_%28N740MH%2C_cn_0740%29_%286-26-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-26",
+      "caption": "Eurocopter EC135 T2+ N740MH at St. Mary's County Regional Airport.",
+      "found": "2026-10-16T07:52:05.0478849+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T2",
+      "file": "File:Eurocopter EC135 T2+ (Policie ČR OK-BYC).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_T2%2B_(Policie_%C4%8CR_OK-BYC).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Eurocopter_EC135_T2%2B_%28Policie_%C4%8CR_OK-BYC%29.jpg/960px-Eurocopter_EC135_T2%2B_%28Policie_%C4%8CR_OK-BYC%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 594,
+      "author": "GeXeS",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-06-23 16:29:18",
+      "caption": "OK-BYC v barvách české policie",
+      "found": "2026-10-16T07:52:05.0478849+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T2",
+      "file": "File:Eurocopter EC135 T2+ (Policie ČR OK-BYD).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_T2%2B_(Policie_%C4%8CR_OK-BYD).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Eurocopter_EC135_T2%2B_%28Policie_%C4%8CR_OK-BYD%29.jpg/960px-Eurocopter_EC135_T2%2B_%28Policie_%C4%8CR_OK-BYD%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "GeXeS",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-06-23 18:08:06",
+      "caption": "OK-BYD v barvách české policie",
+      "found": "2026-10-16T07:52:05.0478849+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T2",
+      "file": "File:Rostock-Laage Airport Bundesministerium des Innern Luftrettung Eurocopter EC135 T2+ D-HZSK (DSC09171).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rostock-Laage_Airport_Bundesministerium_des_Innern_Luftrettung_Eurocopter_EC135_T2%2B_D-HZSK_(DSC09171).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Rostock-Laage_Airport_Bundesministerium_des_Innern_Luftrettung_Eurocopter_EC135_T2%2B_D-HZSK_%28DSC09171%29.jpg/960px-Rostock-Laage_Airport_Bundesministerium_des_Innern_Luftrettung_Eurocopter_EC135_T2%2B_D-HZSK_%28DSC09171%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-09-09 15:48:17",
+      "caption": "Der Eurocopter (Airbus Helicopters) EC135 T2+ der Luftrettung des Bundesministeriums des Innern mit dem Kennzeichen D-HZSK auf dem Flughafen Rostock-Laage. Der Hubschrauber ist mit dem Funkrufnamen Christoph 34 im Ein...",
+      "found": "2026-10-16T07:52:05.0478849+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T2",
+      "file": "File:Victoria Police, operated by CHC Helicopter, (VH-PVE) Eurocopter EC135 T2+ on display at the 2013 Australian International Airshow.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Victoria_Police,_operated_by_CHC_Helicopter,_(VH-PVE)_Eurocopter_EC135_T2%2B_on_display_at_the_2013_Australian_International_Airshow.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Victoria_Police%2C_operated_by_CHC_Helicopter%2C_%28VH-PVE%29_Eurocopter_EC135_T2%2B_on_display_at_the_2013_Australian_International_Airshow.jpg/960px-Victoria_Police%2C_operated_by_CHC_Helicopter%2C_%28VH-PVE%29_Eurocopter_EC135_T2%2B_on_display_at_the_2013_Australian_International_Airshow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2013-03-03",
+      "caption": "Victoria Police , operated by CHC Helicopter , (VH-PVE) Eurocopter EC135 T2+ on display the 2013 Avalon Airshow .",
+      "found": "2026-10-16T07:52:05.0478849+00:00"
     }
   ],
-  "updated": "2026-10-16T07:12:27.1064099+00:00"
+  "updated": "2026-10-16T07:52:05.0478849+00:00"
 }
