@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-16T14:03:44.2103533+00:00",
+  "updated": "2026-10-16T14:38:11.6971584+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a26d08",
+      "flight": "N2554U",
+      "reg": "N2554U",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 5200,
+      "gs": 77.2,
+      "track": 183.72,
+      "rate": null,
+      "lat": 47.41145,
+      "lon": -122.85853,
+      "squawk": "4740",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
