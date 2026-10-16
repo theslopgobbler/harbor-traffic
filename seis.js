@@ -56,7 +56,7 @@
   (function pulse(t) {
     requestAnimationFrame(pulse);
     // (only with a quake in the last hour to pulse, and 15 steps a second: each one redraws the whole map)
-    if (t - pulseLast < 66 || document.hidden || !map.getLayer('quake-pulse') || !quakes.some((q) => Date.now() - q.time < 36e5)) return;
+    if (t - pulseLast < (window.htLite ? 200 : 66) || document.hidden || !map.getLayer('quake-pulse') || !quakes.some((q) => Date.now() - q.time < 36e5)) return;
     pulseLast = t;
     const p = (t % 2000) / 2000;
     map.setPaintProperty('quake-pulse', 'circle-radius', 8 + p * 40);

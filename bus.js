@@ -466,7 +466,7 @@
     // resolution: at most 1.5×, and fewer pixels on a big screen (about 1.2 million drawn per frame at most),
     // which is what makes a large desktop window struggle
     const box = map.getContainer();
-    map.setPixelRatio(v ? Math.max(0.6, Math.min(devicePixelRatio, 1.5, Math.sqrt(0.9e6 / Math.max(1, box.clientWidth * box.clientHeight)))) : devicePixelRatio);
+    map.setPixelRatio(v ? Math.max(0.6, Math.min(devicePixelRatio, 1.5, Math.sqrt(0.9e6 / Math.max(1, box.clientWidth * box.clientHeight)))) : window.htPixelRatio || devicePixelRatio);
     padCache = null;
     if (v) {
       if (phone() && !$('#panel').classList.contains('gone')) $('#panel').classList.add('min'); // more road on screen
@@ -777,7 +777,7 @@
   // frame rate that steps down when the computer can't keep up: 30 a second normally, then 20, then 15. Judged by
   // how far apart the browser's own frames really are (over ~2 s); back up a step after ~10 s of easy going
   // (by the strain meter in app.js: 30 a second normally, 20 when falling behind, 15 when struggling)
-  const RATES = [33, 50, 66];
+  const RATES = window.htLite ? [50, 66, 100] : [33, 50, 66]; // (phones: 20, 15, 10 a second)
   window.htFrameMs = () => RATES[window.htStrain?.() || 0];
   function glide(t) {
     requestAnimationFrame(glide);

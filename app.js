@@ -253,6 +253,8 @@
     ]
   };
 
+  window.htLite = matchMedia('(pointer: coarse)').matches || matchMedia('(max-width: 760px)').matches;
+  window.htPixelRatio = Math.min(devicePixelRatio || 1, 2);
   const map = new maplibregl.Map({
     container: 'map', style, bounds: C.bounds, fitBoundsOptions: { padding: 30 },
     // extra room to the south: on phones the view centers below the area so it clears the bottom sheet
@@ -263,9 +265,14 @@
     // labels appear and disappear at once rather than fading for 300 ms: each fade drew the map every frame, and the
     // road-alert pulse (every 200 ms) kept one going all the time
     fadeDuration: 0,
+    // sharp enough at 2x: an iPhone's 3x screen drew the map at more than twice the pixels (and graphics memory) for
+    // no visible gain, and iPhone Safari closes a tab that uses too much of it
+    pixelRatio: window.htPixelRatio,
     interactive: !TV
   });
   window.htMap = map; // handy from the browser console
+  // phones and tablets (touch screens): lighter animations everywhere (bus.js, wx.js, seis.js read htLite). Their
+  // frame rate stays smooth right up until Safari closes the tab, so the strain meter below can't warn in time
   // strain meter: how far apart the browser's frames really are (smoothed over ~2 s). 0 = fine, 1 = falling behind
   // (under ~22 frames a second), 2 = struggling (under ~12). Every animation checks it and backs off: the road-alert
   // pulse stops, weather effects slow then pause, the bus view steps down. Back down a level after ~10 s of easy going
@@ -1052,11 +1059,17 @@
     font-family="Share Tech Mono, monospace" font-size="${mark.length > 1 ? 11 : 13}" font-weight="700">${mark}</text>` : ''}</svg>`;
 
   // closure and road-work stretches breathe in step with the markers. Each step makes the whole map redraw, so only
-  // 5 a second (it's a slow breath), and none while the computer is falling behind (held at full brightness)
-  let pulseLast = 0, pulseHeld = false;
+  // 5 a second (it's a slow breath), only while one is actually on screen, never on phones, and none while the
+  // computer is falling behind (held at full brightness). It used to redraw the map 5 times a second forever
+  let pulseLast = 0, pulseHeld = false, pulseSeen = false, pulseCheck = -1e9;
   const pulse = (t) => {
     // (paused in the bus chase view, which redraws the map every frame already)
-    const strained = window.htStrain?.() > 0;
+    if (t - pulseCheck > 3000) { // is a closure or road-work line in view? (checked every 3 s)
+      pulseCheck = t;
+      try { pulseSeen = !!map.getLayer('inc-p') && map.getLayoutProperty('inc-p', 'visibility') !== 'none' && map.queryRenderedFeatures({ layers: ['inc-p'] }).length > 0; }
+      catch { pulseSeen = false; }
+    }
+    const strained = window.htLite || !pulseSeen || window.htStrain?.() > 0;
     if (strained && !pulseHeld && map.getLayer('inc-glow-p')) {
       pulseHeld = true;
       map.setPaintProperty('inc-glow-p', 'line-opacity', 0.8);

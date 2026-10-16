@@ -109,7 +109,7 @@
   }
 
   // ---- markers ----
-  let planes = [], updated = null, live = false, liveSource = '';
+  let planes = [], updated = null, live = false, liveSource = '', stale = false;
   // check mode, only on a device that opened the map with ?rx=1 (?rx=0 turns it off): aircraft flagged mine are drawn
   // magenta and shown at any altitude. Everyone else sees no difference
   if (qs.has('rx')) store.set('ht.rx', qs.get('rx') === '1');
@@ -161,7 +161,8 @@
       : '<li class="empty">NO LOW AIRCRAFT IN THE AREA</li>';
     const age = updated ? Math.round((Date.now() - Date.parse(updated)) / 60000) : null;
     note.textContent = live ? `Live ADS-B positions (${liveSource}), refreshed about every 30 seconds.`
-      : `ADS-B positions (adsb.lol) from the last collector run${age != null ? `, ${age} min ago` : ''}.${C.airRelay ? ' The live relay isn\'t answering right now.' : ''}`;
+      : stale ? `No live aircraft positions right now (the backup copy is ${age != null ? age + ' min' : 'too'} old, so it isn’t shown).`
+      : `ADS-B positions (adsb.lol) from the last collector run${age != null ? `, ${age} min ago` : ''}.${C.airRelay ? ' The live feeds have nothing right now.' : ''}`;
     $('#nAir').textContent = flagged.length || '';
     window.htTicker = window.htTicker || {};
     window.htTicker.air = flagged.map((a) => `${EMERG[a.squawk] ? 'SQUAWK ' + a.squawk : kindOf(a)} ${a.flight || a.reg || ''} ${altTxt(a.alt)} ft near ${a._sit.field.id}`).join(' · ');
@@ -189,7 +190,13 @@
         } catch (e) { console.warn('air relay', e); }
       }
       // relay missing, down, or empty: fall back to the collector's copy
-      if (!j) j = await (await fetch(`data/aircraft.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+      if (!j) {
+        j = await (await fetch(`data/aircraft.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+        // the collector's copy is only refreshed every 10-20 minutes: past 15 minutes old, a plane drawn where it was
+        // then is just wrong, so show none (the note under the list says why)
+        if (!(Date.now() - Date.parse(j.updated) < 15 * 60000)) j = { updated: j.updated, aircraft: [], stale: true };
+      }
+      stale = !!j.stale;
       updated = j.updated;
       for (const a of j.aircraft || []) applyKnown(a);
       // Olympia's busy training traffic is left out: everything west of about Rochester/McCleary, plus helicopters,

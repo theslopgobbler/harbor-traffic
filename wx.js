@@ -460,16 +460,18 @@
     // swell, wind); half that when the computer is falling behind, and paused when it's struggling (htStrain, app.js)
     const strain = window.htStrain?.() || 0;
     const falling = zones.some((z) => z.fall?.length);
-    const every = (falling ? 33 : 66) * (strain ? 2 : 1);
+    const every = (falling ? 33 : 66) * (strain ? 2 : 1) * (window.htLite ? 2 : 1); // (phones: half as often)
     if (t - last < every || document.hidden || chasing() || strain >= 2) {
       if ((chasing() || strain >= 2) && !frame.cleared) { frame.cleared = true; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); }
       return;
     }
     frame.cleared = false;
     last = t;
+    // effects off: clear once, then nothing to do (it used to clear the whole screen-sized canvas 15 times a second)
+    if (!fxOn || REDUCED) { if (!frame.off) { frame.off = true; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); } return; }
+    frame.off = false;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
-    if (!fxOn || REDUCED) return;
     drawOcean(t);
     drawSurge(t);
     drawFrost(t);
@@ -790,7 +792,7 @@
       <path d="${d2}" fill="none" stroke="${waveColor}" stroke-opacity=".45" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
   }
   let waveLast = 0;
-  (function waveLoop(t) { requestAnimationFrame(waveLoop); if (t - waveLast > 60 && !document.hidden) { waveLast = t; drawWave(REDUCED ? 0 : t); } })(0);
+  (function waveLoop(t) { requestAnimationFrame(waveLoop); if (t - waveLast > (window.htLite ? 150 : 60) && !document.hidden) { waveLast = t; drawWave(REDUCED ? 0 : t); } })(0);
 
   async function loadSea() {
     let m = null, waterWestport = null;
