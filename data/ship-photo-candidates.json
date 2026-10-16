@@ -277,7 +277,8 @@
     "368489810": "2026-10-16T00:44:12.0205909+00:00",
     "636022754": "2026-10-16T01:17:30.9714544+00:00",
     "369493289": "2026-10-16T03:13:46.9493966+00:00",
-    "366954430": "2026-10-16T03:50:03.5108608+00:00"
+    "366954430": "2026-10-16T03:50:03.5108608+00:00",
+    "338150000": "2026-10-16T04:51:34.9805264+00:00"
   },
   "candidates": [
     {
@@ -2559,7 +2560,22 @@
       "date": "2021-01-02 13:40:06",
       "caption": "Photographed in the Port of Rotterdam.",
       "found": "2026-10-15T22:03:29.6130175+00:00"
+    },
+    {
+      "mmsi": "338150000",
+      "ship": "HUNTRESS",
+      "file": "File:Sydney ferry HUNTRESS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sydney_ferry_HUNTRESS.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Sydney_ferry_HUNTRESS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 911,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "circa 1855 ",
+      "caption": "Sydney ferry HUNTRESS painting circa 1855",
+      "found": "2026-10-16T04:51:34.9805264+00:00"
     }
   ],
-  "updated": "2026-10-16T04:16:02.2599440+00:00"
+  "updated": "2026-10-16T04:51:34.9805264+00:00"
 }
