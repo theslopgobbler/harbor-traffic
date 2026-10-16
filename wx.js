@@ -460,7 +460,9 @@
     // swell, wind); half that when the computer is falling behind, and paused when it's struggling (htStrain, app.js)
     const strain = window.htStrain?.() || 0;
     const falling = zones.some((z) => z.fall?.length);
-    const every = (falling ? 33 : 66) * (strain ? 2 : 1) * (window.htLite ? 2 : 1); // (phones: half as often)
+    // (phones: rain and snow at 15 a second too, not 30. The slow things stay at 15: at 7 a second the sea and the
+    // bay currents looked like they were blinking)
+    const every = (falling && !window.htLite ? 33 : 66) * (strain ? 2 : 1);
     if (t - last < every || document.hidden || chasing() || strain >= 2) {
       if ((chasing() || strain >= 2) && !frame.cleared) { frame.cleared = true; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); }
       return;
@@ -792,7 +794,7 @@
       <path d="${d2}" fill="none" stroke="${waveColor}" stroke-opacity=".45" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
   }
   let waveLast = 0;
-  (function waveLoop(t) { requestAnimationFrame(waveLoop); if (t - waveLast > (window.htLite ? 150 : 60) && !document.hidden) { waveLast = t; drawWave(REDUCED ? 0 : t); } })(0);
+  (function waveLoop(t) { requestAnimationFrame(waveLoop); if (t - waveLast > (window.htLite ? 100 : 60) && !document.hidden) { waveLast = t; drawWave(REDUCED ? 0 : t); } })(0);
 
   async function loadSea() {
     let m = null, waterWestport = null;
