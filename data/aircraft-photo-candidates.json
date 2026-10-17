@@ -26,7 +26,9 @@
     "Piper PA-46-500TP": "2026-10-17T00:18:19.4525006+00:00",
     "Bell 429 Global Ranger": "2026-10-17T00:18:19.4525006+00:00",
     "Beech 99 C": "2026-10-17T01:02:13.6407049+00:00",
-    "Cessna Citation X": "2026-10-17T01:02:13.6407049+00:00"
+    "Cessna Citation X": "2026-10-17T01:02:13.6407049+00:00",
+    "Boeing 787 10": "2026-10-17T01:33:32.5037894+00:00",
+    "Quest Aircraft Company Kodiak 100-II": "2026-10-17T01:33:32.5037894+00:00"
   },
   "candidates": [
     {
@@ -1890,7 +1892,105 @@
       "date": "2011-03-08",
       "caption": "Vienna Jet Cessna 750 Citation X at Darwin Airport",
       "found": "2026-10-17T01:02:13.6407049+00:00"
+    },
+    {
+      "model": "Boeing 787 10",
+      "file": "File:A6-BMG Boeing 787-10 Etihad Airways SVO 2025-01-19 4251.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4251.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4251.jpg/960px-A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4251.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike1979 Russia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2025-01-19",
+      "caption": "A6-BMG Boeing 787-10 of Etihad Airways in Moscow Sheremetevo airport (SVO)",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
+    },
+    {
+      "model": "Boeing 787 10",
+      "file": "File:A6-BMG Boeing 787-10 Etihad Airways SVO 2025-01-19 4252.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4252.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4252.jpg/960px-A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4252.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike1979 Russia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2025-01-19",
+      "caption": "A6-BMG Boeing 787-10 of Etihad Airways in Moscow Sheremetevo airport (SVO)",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
+    },
+    {
+      "model": "Boeing 787 10",
+      "file": "File:A6-BMG Boeing 787-10 Etihad Airways SVO 2025-01-19 4253.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4253.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4253.jpg/960px-A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4253.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike1979 Russia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2025-01-19",
+      "caption": "A6-BMG Boeing 787-10 of Etihad Airways in Moscow Sheremetevo airport (SVO)",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
+    },
+    {
+      "model": "Boeing 787 10",
+      "file": "File:A6-BMG Boeing 787-10 Etihad Airways SVO 2025-01-19 4272.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4272.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4272.jpg/960px-A6-BMG_Boeing_787-10_Etihad_Airways_SVO_2025-01-19_4272.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike1979 Russia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2025-01-19",
+      "caption": "A6-BMG Boeing 787-10 of Etihad Airways in Moscow Sheremetevo airport (SVO)",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
+    },
+    {
+      "model": "Boeing 787 10",
+      "file": "File:Singapore Airlines Boeing 787-10.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Singapore_Airlines_Boeing_787-10.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Singapore_Airlines_Boeing_787-10.jpg/960px-Singapore_Airlines_Boeing_787-10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 681,
+      "author": "Paul Schmid",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-03-27",
+      "caption": "A new Boeing 787-10for Singapore Airlines ariving at Singapore for the first time ever",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
+    },
+    {
+      "model": "Boeing 787 10",
+      "file": "File:United Airlines Boeing 787-10 on finals at Beijing Capital Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Airlines_Boeing_787-10_on_finals_at_Beijing_Capital_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/United_Airlines_Boeing_787-10_on_finals_at_Beijing_Capital_Airport.jpg/960px-United_Airlines_Boeing_787-10_on_finals_at_Beijing_Capital_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Danny Yu",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-02-17",
+      "caption": "United Airlines Boeing 787-10 on finals at Beijing Capital Airport",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
+    },
+    {
+      "model": "Quest Aircraft Company Kodiak 100-II",
+      "file": "File:N248KQ (46779487945).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N248KQ_(46779487945).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/N248KQ_%2846779487945%29.jpg/960px-N248KQ_%2846779487945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2019-04-25 13:00",
+      "caption": "N248KQ Quest Aircraft Company Kodiak 100-II @ Friedrichshafen 10/04/2019",
+      "found": "2026-10-17T01:33:32.5037894+00:00"
     }
   ],
-  "updated": "2026-10-17T01:02:13.6407049+00:00"
+  "updated": "2026-10-17T01:33:32.5037894+00:00"
 }
