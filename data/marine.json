@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-17T09:00:37.0235490+00:00",
+  "updated": "2026-10-17T09:31:46.4303942+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-17T08:26:00.0000000+00:00",
+    "time": "2026-10-17T08:56:00.0000000+00:00",
     "waveFt": 6.6,
-    "periodS": 10.0,
-    "dirDeg": 261.0,
-    "waterF": 57.4
+    "periodS": 11.0,
+    "dirDeg": 263.0,
+    "waterF": 57.6
   },
   "bar": {
-    "issued": "2026-10-17T03:06:00+00:00",
-    "text": "Combined seas 2 to 4 ft building to 4 to 6 ft tonight and 6 to 8 ft Saturday. Bar conditions light becoming moderate Saturday. Maximum ebb currents will occur around 845 PM today, 945 AM and 945 PM Saturday.",
-    "conditions": "light becoming moderate Saturday",
-    "seas": "2 to 4 ft building to 4 to 6 ft tonight and 6 to 8 ft Saturday",
+    "issued": "2026-10-17T09:00:00+00:00",
+    "text": "Combined seas 6 to 8 ft Saturday. Bar conditions moderate. Maximum ebb currents will occur around 945 AM Saturday, 945 PM Saturday, and 1100 AM Sunday.",
+    "conditions": "moderate",
+    "seas": "6 to 8 ft Saturday",
     "ebb": null
   },
   "alerts": [
