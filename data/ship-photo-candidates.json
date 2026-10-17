@@ -298,7 +298,8 @@
     "563081600": "2026-10-17T13:11:29.2516061+00:00",
     "338072177": "2026-10-17T16:06:10.8629647+00:00",
     "366998830": "2026-10-17T16:59:34.5640385+00:00",
-    "338514204": "2026-10-17T17:48:22.4184803+00:00"
+    "338514204": "2026-10-17T17:48:22.4184803+00:00",
+    "371318000": "2026-10-17T19:28:03.0663014+00:00"
   },
   "candidates": [
     {
@@ -2715,7 +2716,52 @@
       "date": "2026-04-04 13:54:17",
       "caption": "Atrium at Deck 5 of the American Jazz.",
       "found": "2026-10-16T05:20:16.1224049+00:00"
+    },
+    {
+      "mmsi": "371318000",
+      "ship": "SHANGHAI HIGHWAY",
+      "file": "File:Autotransporter Gatunsee.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Autotransporter_Gatunsee.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Autotransporter_Gatunsee.jpg/1280px-Autotransporter_Gatunsee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Biberbaer 18:25, 27 August 2007 (UTC)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "06.03.2006 20:17, 1 February 2006 (according to EXIF)",
+      "caption": "Autotransporter Shanghai Highway auf dem Gatunsee Panamakanal IMO Number: 9294343 MMSI Number: 371318000 Callsign: 3ECE2 Length: 179 m Beam: 31 m",
+      "found": "2026-10-17T19:28:03.0663014+00:00"
+    },
+    {
+      "mmsi": "371318000",
+      "ship": "SHANGHAI HIGHWAY",
+      "file": "File:SHANGHAI HIGHWAY 2121.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SHANGHAI_HIGHWAY_2121.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/SHANGHAI_HIGHWAY_2121.jpg/1280px-SHANGHAI_HIGHWAY_2121.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Ein Dahmer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2011-09-20 08:04:55",
+      "caption": "SHANGHAI HIGHWAY in Emden",
+      "found": "2026-10-17T19:28:03.0663014+00:00"
+    },
+    {
+      "mmsi": "371318000",
+      "ship": "SHANGHAI HIGHWAY",
+      "file": "File:SHANGHAI HIGHWAY 2143.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SHANGHAI_HIGHWAY_2143.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/SHANGHAI_HIGHWAY_2143.jpg/1280px-SHANGHAI_HIGHWAY_2143.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Ein Dahmer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2011-09-20 18:45:53",
+      "caption": "SHANGHAI HIGHWAY in Emden",
+      "found": "2026-10-17T19:28:03.0663014+00:00"
     }
   ],
-  "updated": "2026-10-17T19:02:24.2548309+00:00"
+  "updated": "2026-10-17T19:28:03.0663014+00:00"
 }
