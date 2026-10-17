@@ -33,7 +33,7 @@
     "Textron Aviation King Air 360": "2026-10-17T03:32:25.5656553+00:00",
     "Boeing 737NG 790BDSF/W": "2026-10-17T07:12:54.1075576+00:00",
     "Gulfstream Aerospace GIV SP": "2026-10-17T14:58:01.1705263+00:00",
-    "Gulfstream Aerospace G200": "2026-10-17T20:43:29.6019060+00:00"
+    "Gulfstream Aerospace G200": "2026-10-17T20:43:29.601906+00:00"
   },
   "candidates": [
     {
@@ -2022,7 +2022,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "2010-10-15",
       "caption": "EC-LAE (cn 219)",
-      "found": "2026-10-17T20:43:29.6019060+00:00"
+      "found": "2026-10-17T20:43:29.601906+00:00"
     },
     {
       "model": "Gulfstream Aerospace G200",
@@ -2036,7 +2036,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "2 March 2003",
       "caption": "ALII AVIATION LLC parked at the commuter apron. The aircraft has PW306A powerplants and entered the US register on 03/05/2002. First Australian upload.",
-      "found": "2026-10-17T20:43:29.6019060+00:00"
+      "found": "2026-10-17T20:43:29.601906+00:00"
     },
     {
       "model": "Gulfstream Aerospace G200",
@@ -2050,7 +2050,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "4 March 2005",
       "caption": "",
-      "found": "2026-10-17T20:43:29.6019060+00:00"
+      "found": "2026-10-17T20:43:29.601906+00:00"
     },
     {
       "model": "Gulfstream Aerospace G200",
@@ -2064,7 +2064,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "15 November 2007",
       "caption": "",
-      "found": "2026-10-17T20:43:29.6019060+00:00"
+      "found": "2026-10-17T20:43:29.601906+00:00"
     },
     {
       "model": "Gulfstream Aerospace G200",
@@ -2078,7 +2078,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "19 June 2009",
       "caption": "",
-      "found": "2026-10-17T20:43:29.6019060+00:00"
+      "found": "2026-10-17T20:43:29.601906+00:00"
     },
     {
       "model": "Gulfstream Aerospace G200",
@@ -2092,8 +2092,8 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "date": "2012-01-26 13:54",
       "caption": "- Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, January 26, 2012 Photo: Tomás Del Coro",
-      "found": "2026-10-17T20:43:29.6019060+00:00"
+      "found": "2026-10-17T20:43:29.601906+00:00"
     }
   ],
-  "updated": "2026-10-17T20:43:29.6019060+00:00"
+  "updated": "2026-10-17T21:05:58.1840643+00:00"
 }
