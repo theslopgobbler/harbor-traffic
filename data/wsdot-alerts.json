@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T00:18:19.4525006+00:00",
+  "updated": "2026-10-17T01:02:13.6407049+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1793,27 +1793,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -1835,6 +1814,27 @@
       "updated": "2026-09-14T14:42:15.5130000+00:00"
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 640019,
       "kind": "work",
       "category": "Construction",
@@ -1854,27 +1854,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 719071,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 97.43 near Failor Lk Rd beginning at 8:36 am on October 16, 2026 until about 6:00 pm. Motorists can expect up to 30-minutes of delay through the area.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 97.43,
-      "lat": 47.102517044,
-      "lon": -123.906553333,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-16T15:36:00.0000000+00:00",
-      "end": "2026-10-17T01:00:00.0000000+00:00",
-      "updated": "2026-10-16T15:37:23.9000000+00:00"
     },
     {
       "id": 693774,
