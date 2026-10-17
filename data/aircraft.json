@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-17T05:59:57.5639502+00:00",
+  "updated": "2026-10-17T06:31:03.5403473+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a1334b",
-      "flight": "N177BD",
-      "reg": "N177BD",
-      "type": "C152",
-      "cat": "A1",
-      "alt": 5400,
-      "gs": 67.6,
-      "track": 187.65,
-      "rate": null,
-      "lat": 46.8444,
-      "lon": -122.83978,
-      "squawk": "4663",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
