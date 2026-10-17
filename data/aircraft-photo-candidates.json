@@ -33,7 +33,8 @@
     "Textron Aviation King Air 360": "2026-10-17T03:32:25.5656553+00:00",
     "Boeing 737NG 790BDSF/W": "2026-10-17T07:12:54.1075576+00:00",
     "Gulfstream Aerospace GIV SP": "2026-10-17T14:58:01.1705263+00:00",
-    "Gulfstream Aerospace G200": "2026-10-17T20:43:29.601906+00:00"
+    "Gulfstream Aerospace G200": "2026-10-17T20:43:29.601906+00:00",
+    "Swearingen Merlin IVC": "2026-10-17T21:30:44.5269016+00:00"
   },
   "candidates": [
     {
@@ -2093,7 +2094,91 @@
       "date": "2012-01-26 13:54",
       "caption": "- Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, January 26, 2012 Photo: Tomás Del Coro",
       "found": "2026-10-17T20:43:29.601906+00:00"
+    },
+    {
+      "model": "Swearingen Merlin IVC",
+      "file": "File:Fairchild Swearingen SA-227AT Merlin IVC, BinAir AN0694223.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fairchild_Swearingen_SA-227AT_Merlin_IVC,_BinAir_AN0694223.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Fairchild_Swearingen_SA-227AT_Merlin_IVC%2C_BinAir_AN0694223.jpg/960px-Fairchild_Swearingen_SA-227AT_Merlin_IVC%2C_BinAir_AN0694223.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 663,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "10 October 2004",
+      "caption": "Ex N600N",
+      "found": "2026-10-17T21:30:44.5269016+00:00"
+    },
+    {
+      "model": "Swearingen Merlin IVC",
+      "file": "File:Fairchild Swearingen SA-227AT Merlin IVC, Merlin Express AN0193894.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fairchild_Swearingen_SA-227AT_Merlin_IVC,_Merlin_Express_AN0193894.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Fairchild_Swearingen_SA-227AT_Merlin_IVC%2C_Merlin_Express_AN0193894.jpg/960px-Fairchild_Swearingen_SA-227AT_Merlin_IVC%2C_Merlin_Express_AN0193894.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 693,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2 January 1996 ",
+      "caption": "",
+      "found": "2026-10-17T21:30:44.5269016+00:00"
+    },
+    {
+      "model": "Swearingen Merlin IVC",
+      "file": "File:Fairchild Swearingen SA-227AT Merlin IVC, Merlin Express AN0207916.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fairchild_Swearingen_SA-227AT_Merlin_IVC,_Merlin_Express_AN0207916.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Fairchild_Swearingen_SA-227AT_Merlin_IVC%2C_Merlin_Express_AN0207916.jpg/960px-Fairchild_Swearingen_SA-227AT_Merlin_IVC%2C_Merlin_Express_AN0207916.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 691,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "14 December 1994 ",
+      "caption": "",
+      "found": "2026-10-17T21:30:44.5269016+00:00"
+    },
+    {
+      "model": "Swearingen Merlin IVC",
+      "file": "File:Fairchild Swearingen SA-227AT Merlin IVC AN1129009.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fairchild_Swearingen_SA-227AT_Merlin_IVC_AN1129009.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Fairchild_Swearingen_SA-227AT_Merlin_IVC_AN1129009.jpg/960px-Fairchild_Swearingen_SA-227AT_Merlin_IVC_AN1129009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Renato Spilimbergo Carvalho",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "7 October 2006",
+      "caption": "Expo Aero Brasil 2006 [Fuji FinePix S7000]",
+      "found": "2026-10-17T21:30:44.5269016+00:00"
+    },
+    {
+      "model": "Swearingen Merlin IVC",
+      "file": "File:Fairchild Swearingen SA-227AT Merlin IVC AN1129010.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fairchild_Swearingen_SA-227AT_Merlin_IVC_AN1129010.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Fairchild_Swearingen_SA-227AT_Merlin_IVC_AN1129010.jpg/960px-Fairchild_Swearingen_SA-227AT_Merlin_IVC_AN1129010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Renato Spilimbergo Carvalho",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "7 October 2006",
+      "caption": "Expo Aero Brasil 2006 [Fuji FinePix S7000]",
+      "found": "2026-10-17T21:30:44.5269016+00:00"
+    },
+    {
+      "model": "Swearingen Merlin IVC",
+      "file": "File:Fairchild Swearingen Tp88 Merlin IVC (SA-227AT), Sweden - Air Force AN0387843.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fairchild_Swearingen_Tp88_Merlin_IVC_(SA-227AT),_Sweden_-_Air_Force_AN0387843.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Fairchild_Swearingen_Tp88_Merlin_IVC_%28SA-227AT%29%2C_Sweden_-_Air_Force_AN0387843.jpg/960px-Fairchild_Swearingen_Tp88_Merlin_IVC_%28SA-227AT%29%2C_Sweden_-_Air_Force_AN0387843.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 676,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "1990 ",
+      "caption": "",
+      "found": "2026-10-17T21:30:44.5269016+00:00"
     }
   ],
-  "updated": "2026-10-17T21:05:58.1840643+00:00"
+  "updated": "2026-10-17T21:30:44.5269016+00:00"
 }
