@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T12:04:48.5111876+00:00",
+  "updated": "2026-10-18T12:36:52.6091347+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1896,27 +1896,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 719268,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Medium",
-      "headline": "A collision is causing traffic to be alternated on SR 6 westbound at milepost 4.4 near Camp One Road. Use caution and follow flagging directions beginning at 1:18 am on October 18, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "W",
-      "milepost": 4.4,
-      "lat": 46.646257514,
-      "lon": -123.66156948,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-10-18T08:18:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-18T10:18:56.6530000+00:00"
     },
     {
       "id": 717820,
