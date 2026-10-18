@@ -35,7 +35,8 @@
     "Gulfstream Aerospace GIV SP": "2026-10-17T14:58:01.1705263+00:00",
     "Gulfstream Aerospace G200": "2026-10-17T20:43:29.601906+00:00",
     "Swearingen Merlin IVC": "2026-10-17T21:30:44.5269016+00:00",
-    "Boeing 737MAX 9": "2026-10-17T21:58:14.7885601+00:00"
+    "Boeing 737MAX 9": "2026-10-17T21:58:14.7885601+00:00",
+    "Bombardier Challenger 604": "2026-10-18T00:02:06.7368270+00:00"
   },
   "candidates": [
     {
@@ -2207,7 +2208,91 @@
       "date": "2023-06-11",
       "caption": "737MAX-9 during taxi in MXP airport",
       "found": "2026-10-17T21:58:14.7885601+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 604",
+      "file": "File:Blackbox of flight Bombardier Challenger 604 CL6.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Blackbox_of_flight_Bombardier_Challenger_604_CL6.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/22/Blackbox_of_flight_Bombardier_Challenger_604_CL6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 1484,
+      "author": "Morteza Salehi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2018-03-12",
+      "caption": "انتقال اجساد هواپیمای CL۶۰ ترکیه",
+      "found": "2026-10-18T00:02:06.7368270+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 604",
+      "file": "File:Bodies of flight Bombardier Challenger 604 CL6-16.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bodies_of_flight_Bombardier_Challenger_604_CL6-16.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Bodies_of_flight_Bombardier_Challenger_604_CL6-16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 637,
+      "author": "Ali Reza Motamedi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2018-03-12",
+      "caption": "عملیات جستجو در محل سقوط هواپیمای CL۶۰ ترکیه",
+      "found": "2026-10-18T00:02:06.7368270+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 604",
+      "file": "File:Bombardier CL-600-2B16 Challenger 604, Global Jet Luxembourg JP6456451.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_CL-600-2B16_Challenger_604,_Global_Jet_Luxembourg_JP6456451.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Bombardier_CL-600-2B16_Challenger_604%2C_Global_Jet_Luxembourg_JP6456451.jpg/960px-Bombardier_CL-600-2B16_Challenger_604%2C_Global_Jet_Luxembourg_JP6456451.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aktug Ates",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "4 January 2009",
+      "caption": "",
+      "found": "2026-10-18T00:02:06.7368270+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 604",
+      "file": "File:Bombardier Challenger 604 - Tel Aviv Ben Gurion - M-TRIX-1280.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_604_-_Tel_Aviv_Ben_Gurion_-_M-TRIX-1280.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Bombardier_Challenger_604_-_Tel_Aviv_Ben_Gurion_-_M-TRIX-1280.jpg/960px-Bombardier_Challenger_604_-_Tel_Aviv_Ben_Gurion_-_M-TRIX-1280.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 563,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2011-08-16",
+      "caption": "Bombardier Challenger 604 - Airport Tel Aviv Ben Gurion - Registration: M-TRIX. On the left side: Hawker 900 M-JOLY",
+      "found": "2026-10-18T00:02:06.7368270+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 604",
+      "file": "File:Hamburg Airport Air Alliance Bombardier Challenger 604 D-ATWO (DSC08633).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hamburg_Airport_Air_Alliance_Bombardier_Challenger_604_D-ATWO_(DSC08633).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hamburg_Airport_Air_Alliance_Bombardier_Challenger_604_D-ATWO_%28DSC08633%29.jpg/960px-Hamburg_Airport_Air_Alliance_Bombardier_Challenger_604_D-ATWO_%28DSC08633%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-20 12:49:24",
+      "caption": "Die Bombardier CL-600-2B16 Challenger 604 der Fluggesellschaft Air Alliance mit dem Kennzeichen D-ATWO im Landeanflug auf die Bahn 23 des Flughafens Hamburg. Das Flugzeug führte einen Unicair-Flug von Salzburg nach Ha...",
+      "found": "2026-10-18T00:02:06.7368270+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 604",
+      "file": "File:Surveillance Australia Bombardier Challenger 604 VH-XND Perth 2025 (01).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Surveillance_Australia_Bombardier_Challenger_604_VH-XND_Perth_2025_(01).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Surveillance_Australia_Bombardier_Challenger_604_VH-XND_Perth_2025_%2801%29.jpg/960px-Surveillance_Australia_Bombardier_Challenger_604_VH-XND_Perth_2025_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 626,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 12 February 2025, 12:11:44",
+      "caption": "Surveillance Australia Bombardier Challenger 604 VH-XND landing on runway 24 at Perth Airport (PER/YPPH), Western Australia, with runway 03/21 maintenance equipment in the background – photo taken from the Perth Airpo...",
+      "found": "2026-10-18T00:02:06.7368270+00:00"
     }
   ],
-  "updated": "2026-10-17T23:46:35.8682490+00:00"
+  "updated": "2026-10-18T00:02:06.7368270+00:00"
 }
