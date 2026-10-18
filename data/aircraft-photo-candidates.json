@@ -36,7 +36,8 @@
     "Gulfstream Aerospace G200": "2026-10-17T20:43:29.601906+00:00",
     "Swearingen Merlin IVC": "2026-10-17T21:30:44.5269016+00:00",
     "Boeing 737MAX 9": "2026-10-17T21:58:14.7885601+00:00",
-    "Bombardier Challenger 604": "2026-10-18T00:02:06.736827+00:00"
+    "Bombardier Challenger 604": "2026-10-18T00:02:06.736827+00:00",
+    "Quest Aircraft Company Kodiak 100": "2026-10-18T16:45:49.2322543+00:00"
   },
   "candidates": [
     {
@@ -2292,7 +2293,35 @@
       "date": "Taken on 12 February 2025, 12:11:44",
       "caption": "Surveillance Australia Bombardier Challenger 604 VH-XND landing on runway 24 at Perth Airport (PER/YPPH), Western Australia, with runway 03/21 maintenance equipment in the background – photo taken from the Perth Airpo...",
       "found": "2026-10-18T00:02:06.736827+00:00"
+    },
+    {
+      "model": "Quest Aircraft Company Kodiak 100",
+      "file": "File:D-FBHI (46779530335).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:D-FBHI_(46779530335).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/D-FBHI_%2846779530335%29.jpg/960px-D-FBHI_%2846779530335%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2019-04-25 13:07",
+      "caption": "D-FBHI Quest Aircraft Company Kodiak 100 @ Friedrichshafen 10/04/2019",
+      "found": "2026-10-18T16:45:49.2322543+00:00"
+    },
+    {
+      "model": "Quest Aircraft Company Kodiak 100",
+      "file": "File:N248KQ (46779487945).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N248KQ_(46779487945).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/N248KQ_%2846779487945%29.jpg/960px-N248KQ_%2846779487945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2019-04-25 13:00",
+      "caption": "N248KQ Quest Aircraft Company Kodiak 100-II @ Friedrichshafen 10/04/2019",
+      "found": "2026-10-18T16:45:49.2322543+00:00"
     }
   ],
-  "updated": "2026-10-18T16:15:21.4842261+00:00"
+  "updated": "2026-10-18T16:45:49.2322543+00:00"
 }
