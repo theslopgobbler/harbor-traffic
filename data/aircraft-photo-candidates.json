@@ -41,7 +41,8 @@
     "Cessna 425 Conquest I": "2026-10-18T17:08:14.9226606+00:00",
     "Textron Aviation Citation CJ4": "2026-10-18T18:15:47.7230472+00:00",
     "de Havilland Canada DHC-6 Twin Otter 200": "2026-10-18T19:09:09.4046089+00:00",
-    "Nanchang CJ-6 A": "2026-10-18T19:32:08.2833325+00:00"
+    "Nanchang CJ-6 A": "2026-10-18T19:32:08.2833325+00:00",
+    "Embraer Phenom 300": "2026-10-18T19:56:28.5499395+00:00"
   },
   "candidates": [
     {
@@ -2577,7 +2578,91 @@
       "date": "2021-02-09 09:11:59",
       "caption": "Australian owned CJ-A6, located at Barwon Heads Airport, Victoria.",
       "found": "2026-10-18T19:32:08.2833325+00:00"
+    },
+    {
+      "model": "Embraer Phenom 300",
+      "file": "File:Embraer EMB-505 Phenom 300 - Wallner.jpeg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_EMB-505_Phenom_300_-_Wallner.jpeg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Embraer_EMB-505_Phenom_300_-_Wallner.jpeg/960px-Embraer_EMB-505_Phenom_300_-_Wallner.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Rolf Wallner",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2012-01-16",
+      "caption": "Embraer EMB-505 Phenom 300 at Zurich - Switzerland",
+      "found": "2026-10-18T19:56:28.5499395+00:00"
+    },
+    {
+      "model": "Embraer Phenom 300",
+      "file": "File:Embraer Phenom 300.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_300.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Embraer_Phenom_300.jpg/960px-Embraer_Phenom_300.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Thornfield Hall",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2012-09-01 13:30:09",
+      "caption": "Embraer Phenom 300 at KPWT",
+      "found": "2026-10-18T19:56:28.5499395+00:00"
+    },
+    {
+      "model": "Embraer Phenom 300",
+      "file": "File:Embraer Phenom 300 N235EE FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_300_N235EE_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Embraer_Phenom_300_N235EE_FDK_MD2.jpg/960px-Embraer_Phenom_300_N235EE_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 509,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-07-01",
+      "caption": "2014 Embraer Phenom 300 N235EE at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-18T19:56:28.5499395+00:00"
+    },
+    {
+      "model": "Embraer Phenom 300",
+      "file": "File:Embraer Phenom 300 cabin, EBACE 2019 (EB190435, cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_300_cabin,_EBACE_2019_(EB190435,_cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Embraer_Phenom_300_cabin%2C_EBACE_2019_%28EB190435%2C_cropped%29.jpg/960px-Embraer_Phenom_300_cabin%2C_EBACE_2019_%28EB190435%2C_cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Cabin of an Embraer Phenom 300 at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-10-18T19:56:28.5499395+00:00"
+    },
+    {
+      "model": "Embraer Phenom 300",
+      "file": "File:Embraer Phenom 300 rear.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_300_rear.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Embraer_Phenom_300_rear.jpg/960px-Embraer_Phenom_300_rear.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Thornfield Hall",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2012-09-01 13:30:43",
+      "caption": "Embraer Phenom 300 at KPWT",
+      "found": "2026-10-18T19:56:28.5499395+00:00"
+    },
+    {
+      "model": "Embraer Phenom 300",
+      "file": "File:Pura Aviation Embraer Phenom 300 PK-JCO.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pura_Aviation_Embraer_Phenom_300_PK-JCO.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Pura_Aviation_Embraer_Phenom_300_PK-JCO.jpg/960px-Pura_Aviation_Embraer_Phenom_300_PK-JCO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Makbarnnn14",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2024-02-02 10:32:42",
+      "caption": "Pura Aviation's Embraer Phenom 300 captured at BPN during taxi for departure",
+      "found": "2026-10-18T19:56:28.5499395+00:00"
     }
   ],
-  "updated": "2026-10-18T19:32:08.2833325+00:00"
+  "updated": "2026-10-18T19:56:28.5499395+00:00"
 }
