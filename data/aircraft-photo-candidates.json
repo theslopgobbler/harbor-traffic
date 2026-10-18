@@ -39,7 +39,8 @@
     "Bombardier Challenger 604": "2026-10-18T00:02:06.736827+00:00",
     "Quest Aircraft Company Kodiak 100": "2026-10-18T16:45:49.2322543+00:00",
     "Cessna 425 Conquest I": "2026-10-18T17:08:14.9226606+00:00",
-    "Textron Aviation Citation CJ4": "2026-10-18T18:15:47.7230472+00:00"
+    "Textron Aviation Citation CJ4": "2026-10-18T18:15:47.7230472+00:00",
+    "de Havilland Canada DHC-6 Twin Otter 200": "2026-10-18T19:09:09.4046089+00:00"
   },
   "candidates": [
     {
@@ -2407,7 +2408,91 @@
       "date": "2007-10-06",
       "caption": "N425SL (cn 4250236)",
       "found": "2026-10-18T17:08:14.9226606+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-6 Twin Otter 200",
+      "file": "File:Aeronaves Alimentadoras De Havilland Canada DHC-6-200 Twin Otter at MEX.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aeronaves_Alimentadoras_De_Havilland_Canada_DHC-6-200_Twin_Otter_at_MEX.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Aeronaves_Alimentadoras_De_Havilland_Canada_DHC-6-200_Twin_Otter_at_MEX.jpg/960px-Aeronaves_Alimentadoras_De_Havilland_Canada_DHC-6-200_Twin_Otter_at_MEX.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "Christian Volpati",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "1971-11-17",
+      "caption": "Aeronaves Alimentadoras De Havilland Canada DHC-6-200 Twin Otter at Mexico City International Airport",
+      "found": "2026-10-18T19:09:09.4046089+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-6 Twin Otter 200",
+      "file": "File:De Havilland Canada DHC-6-200 Twin Otter, Aero Commuter JP7317010.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-6-200_Twin_Otter,_Aero_Commuter_JP7317010.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/De_Havilland_Canada_DHC-6-200_Twin_Otter%2C_Aero_Commuter_JP7317010.jpg/960px-De_Havilland_Canada_DHC-6-200_Twin_Otter%2C_Aero_Commuter_JP7317010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 624,
+      "author": "Jon Proctor",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "May, 1969",
+      "caption": "",
+      "found": "2026-10-18T19:09:09.4046089+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-6 Twin Otter 200",
+      "file": "File:De Havilland Canada DHC-6-200 Twin Otter -- TG-JOC -- ARM Aviación.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-6-200_Twin_Otter_--_TG-JOC_--_ARM_Aviaci%C3%B3n.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/De_Havilland_Canada_DHC-6-200_Twin_Otter_--_TG-JOC_--_ARM_Aviaci%C3%B3n.jpg/960px-De_Havilland_Canada_DHC-6-200_Twin_Otter_--_TG-JOC_--_ARM_Aviaci%C3%B3n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 637,
+      "author": "Oscar Josué Elvir Vasquez",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2017-09-06",
+      "caption": "De Havilland Canada DHC-6-200 Twin Otter -- TG-JOC -- ARM Aviación",
+      "found": "2026-10-18T19:09:09.4046089+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-6 Twin Otter 200",
+      "file": "File:De Havilland Canada DHC-6-200 Twin Otter - TG-JOC - ARM Aviación.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-6-200_Twin_Otter_-_TG-JOC_-_ARM_Aviaci%C3%B3n.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/De_Havilland_Canada_DHC-6-200_Twin_Otter_-_TG-JOC_-_ARM_Aviaci%C3%B3n.jpg/960px-De_Havilland_Canada_DHC-6-200_Twin_Otter_-_TG-JOC_-_ARM_Aviaci%C3%B3n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Oscar Josué Elvir Vasquez",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2023-09-14",
+      "caption": "De Havilland Canada DHC-6-200 Twin Otter - TG-JOC - ARM Aviación",
+      "found": "2026-10-18T19:09:09.4046089+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-6 Twin Otter 200",
+      "file": "File:TAT De Havilland Canada DHC-6-200 Twin Otter Volpati-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:TAT_De_Havilland_Canada_DHC-6-200_Twin_Otter_Volpati-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/TAT_De_Havilland_Canada_DHC-6-200_Twin_Otter_Volpati-1.jpg/960px-TAT_De_Havilland_Canada_DHC-6-200_Twin_Otter_Volpati-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 637,
+      "author": "Christian Volpati",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "1972-04",
+      "caption": "Touraine Air Transport De Havilland Canada DHC-6-200 Twin Otter",
+      "found": "2026-10-18T19:09:09.4046089+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-6 Twin Otter 200",
+      "file": "File:WestAir Commuter Airlines De Havilland Canada DHC-6-200 Twin Otter Silagi-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:WestAir_Commuter_Airlines_De_Havilland_Canada_DHC-6-200_Twin_Otter_Silagi-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/WestAir_Commuter_Airlines_De_Havilland_Canada_DHC-6-200_Twin_Otter_Silagi-1.jpg/960px-WestAir_Commuter_Airlines_De_Havilland_Canada_DHC-6-200_Twin_Otter_Silagi-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Richard Silagi",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "1982-11",
+      "caption": "WestAir Commuter Airlines De Havilland Canada DHC-6-200 Twin Otter",
+      "found": "2026-10-18T19:09:09.4046089+00:00"
     }
   ],
-  "updated": "2026-10-18T18:48:40.7802238+00:00"
+  "updated": "2026-10-18T19:09:09.4046089+00:00"
 }
