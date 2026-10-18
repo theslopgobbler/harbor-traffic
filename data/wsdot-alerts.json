@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T08:35:14.8945610+00:00",
+  "updated": "2026-10-18T09:01:10.1729979+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1920,6 +1920,27 @@
       "upcoming": "MON OCT 19"
     },
     {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-16T21:53:14.6030000+00:00"
+    },
+    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -1941,25 +1962,25 @@
       "updated": "2026-09-14T17:09:14.3170000+00:00"
     },
     {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
+      "id": 719268,
+      "kind": "collision",
+      "category": "Collision",
       "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
+      "headline": "A collision has fully blocked SR 6 westbound at milepost 4.4 near Camp One Road. Usae caution and plan alternate routes beginning at 1:18 am on October 18, 2026 until further notice.",
       "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "W",
+      "milepost": 4.4,
+      "lat": 46.646257514,
+      "lon": -123.66156948,
       "lat2": 0,
       "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-16T21:53:14.6030000+00:00"
+      "county": "Pacific",
+      "start": "2026-10-18T08:18:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-18T08:53:35.5970000+00:00"
     },
     {
       "id": 584226,
