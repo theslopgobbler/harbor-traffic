@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T11:14:40.5038210+00:00",
+  "updated": "2026-10-18T11:42:25.6447155+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1812,6 +1812,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 719272,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 northbound at milepost 109.1 near Martin Way E beginning at 4:27 am on October 18, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 109.1,
+      "lat": 47.048266269,
+      "lon": -122.819331314,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-18T11:27:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-18T11:28:33.0700000+00:00"
     },
     {
       "id": 698912,
