@@ -44,7 +44,8 @@
     "Nanchang CJ-6 A": "2026-10-18T19:32:08.2833325+00:00",
     "Embraer Phenom 300": "2026-10-18T19:56:28.5499395+00:00",
     "EADS SOCATA TBM 850": "2026-10-18T21:05:38.9149483+00:00",
-    "Hawker Beechcraft Corp Premier IA": "2026-10-18T22:45:19.4760940+00:00"
+    "Hawker Beechcraft Corp Premier IA": "2026-10-18T22:45:19.476094+00:00",
+    "Pilatus PC-12 47E NG": "2026-10-18T23:04:03.1390690+00:00"
   },
   "candidates": [
     {
@@ -2692,7 +2693,91 @@
       "date": "",
       "caption": "",
       "found": "2026-10-18T21:05:38.9149483+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 47E NG",
+      "file": "File:Pilatus PC-12-47E NG (N227BM, cn 1879) (2-15-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-47E_NG_(N227BM,_cn_1879)_(2-15-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Pilatus_PC-12-47E_NG_%28N227BM%2C_cn_1879%29_%282-15-2025%29.jpg/960px-Pilatus_PC-12-47E_NG_%28N227BM%2C_cn_1879%29_%282-15-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-02-15",
+      "caption": "Pilatus PC-12-47E NG (N227BM, cn 1879) at Daytona Beach International Airport.",
+      "found": "2026-10-18T23:04:03.1390690+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 47E NG",
+      "file": "File:Pilatus PC-12-47E NG (N351AF, cn 1351) (4-9-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-47E_NG_(N351AF,_cn_1351)_(4-9-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Pilatus_PC-12-47E_NG_%28N351AF%2C_cn_1351%29_%284-9-2024%29.jpg/960px-Pilatus_PC-12-47E_NG_%28N351AF%2C_cn_1351%29_%284-9-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-09",
+      "caption": "Pilatus PC-12-47E NG N351AF at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-18T23:04:03.1390690+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 47E NG",
+      "file": "File:Pilatus PC-12-47E NG (N58CA, 1815) (8-21-2022).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-47E_NG_(N58CA,_1815)_(8-21-2022).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Pilatus_PC-12-47E_NG_%28N58CA%2C_1815%29_%288-21-2022%29.jpg/960px-Pilatus_PC-12-47E_NG_%28N58CA%2C_1815%29_%288-21-2022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-08-21",
+      "caption": "A Pilatus PC-12/47E NG at Huntsville International Airport.",
+      "found": "2026-10-18T23:04:03.1390690+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 47E NG",
+      "file": "File:Pilatus PC-12-47E NG (N696NG, cn 1696) (2-16-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-47E_NG_(N696NG,_cn_1696)_(2-16-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Pilatus_PC-12-47E_NG_%28N696NG%2C_cn_1696%29_%282-16-2025%29.jpg/960px-Pilatus_PC-12-47E_NG_%28N696NG%2C_cn_1696%29_%282-16-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-02-16",
+      "caption": "Pilatus PC-12-47E NG (N696NG, cn 1696) at Daytona Beach International Airport.",
+      "found": "2026-10-18T23:04:03.1390690+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 47E NG",
+      "file": "File:Pilatus PC-12-47E NG (N913JR, cn 1603) (1-26-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-47E_NG_(N913JR,_cn_1603)_(1-26-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Pilatus_PC-12-47E_NG_%28N913JR%2C_cn_1603%29_%281-26-2025%29.jpg/960px-Pilatus_PC-12-47E_NG_%28N913JR%2C_cn_1603%29_%281-26-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-01-26",
+      "caption": "Pilatus PC-12-47E NG (N913JR, cn 1603) at Daytona Beach International Airport.",
+      "found": "2026-10-18T23:04:03.1390690+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 47E NG",
+      "file": "File:Pilatus PC-12-47E NG (N999SV, cn 1470) (3-18-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-47E_NG_(N999SV,_cn_1470)_(3-18-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Pilatus_PC-12-47E_NG_%28N999SV%2C_cn_1470%29_%283-18-2023%29.jpg/960px-Pilatus_PC-12-47E_NG_%28N999SV%2C_cn_1470%29_%283-18-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-03-18",
+      "caption": "Pilatus PC-12-47E NG (N999SV, cn 1470) at Flagler Executive Airport.",
+      "found": "2026-10-18T23:04:03.1390690+00:00"
     }
   ],
-  "updated": "2026-10-18T22:45:19.4760940+00:00"
+  "updated": "2026-10-18T23:04:03.1390690+00:00"
 }
