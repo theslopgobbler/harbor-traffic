@@ -40,7 +40,8 @@
     "Quest Aircraft Company Kodiak 100": "2026-10-18T16:45:49.2322543+00:00",
     "Cessna 425 Conquest I": "2026-10-18T17:08:14.9226606+00:00",
     "Textron Aviation Citation CJ4": "2026-10-18T18:15:47.7230472+00:00",
-    "de Havilland Canada DHC-6 Twin Otter 200": "2026-10-18T19:09:09.4046089+00:00"
+    "de Havilland Canada DHC-6 Twin Otter 200": "2026-10-18T19:09:09.4046089+00:00",
+    "Nanchang CJ-6 A": "2026-10-18T19:32:08.2833325+00:00"
   },
   "candidates": [
     {
@@ -2492,7 +2493,91 @@
       "date": "1982-11",
       "caption": "WestAir Commuter Airlines De Havilland Canada DHC-6-200 Twin Otter",
       "found": "2026-10-18T19:09:09.4046089+00:00"
+    },
+    {
+      "model": "Nanchang CJ-6 A",
+      "file": "File:Jashore Airport – Nanchang CJ-6 aircrafts.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Jashore_Airport_%E2%80%93_Nanchang_CJ-6_aircrafts.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Jashore_Airport_%E2%80%93_Nanchang_CJ-6_aircrafts.jpg/960px-Jashore_Airport_%E2%80%93_Nanchang_CJ-6_aircrafts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 210,
+      "author": "Cayambe",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-03-19 09:10:33",
+      "caption": "Nanchang CJ-6 aircrafts at Jashore Airport, Bangladesh, in March 2024.",
+      "found": "2026-10-18T19:32:08.2833325+00:00"
+    },
+    {
+      "model": "Nanchang CJ-6 A",
+      "file": "File:Nanchang CJ-6 (N21790, cn 4232022) (4-10-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nanchang_CJ-6_(N21790,_cn_4232022)_(4-10-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Nanchang_CJ-6_%28N21790%2C_cn_4232022%29_%284-10-2024%29.jpg/960px-Nanchang_CJ-6_%28N21790%2C_cn_4232022%29_%284-10-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-10",
+      "caption": "Nanchang CJ-6 N21790 at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-18T19:32:08.2833325+00:00"
+    },
+    {
+      "model": "Nanchang CJ-6 A",
+      "file": "File:Nanchang CJ-6 (N68WH, cn 2532062) (4-9-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nanchang_CJ-6_(N68WH,_cn_2532062)_(4-9-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Nanchang_CJ-6_%28N68WH%2C_cn_2532062%29_%284-9-2024%29.jpg/960px-Nanchang_CJ-6_%28N68WH%2C_cn_2532062%29_%284-9-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-09",
+      "caption": "Nanchang CJ-6 N68WH at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-18T19:32:08.2833325+00:00"
+    },
+    {
+      "model": "Nanchang CJ-6 A",
+      "file": "File:Nanchang CJ-6 N22591 FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nanchang_CJ-6_N22591_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Nanchang_CJ-6_N22591_FDK_MD1.jpg/960px-Nanchang_CJ-6_N22591_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 652,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-09",
+      "caption": "Nanchang CJ-6 N22591 at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-18T19:32:08.2833325+00:00"
+    },
+    {
+      "model": "Nanchang CJ-6 A",
+      "file": "File:Nanchang CJ-6 corner 20060729.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nanchang_CJ-6_corner_20060729.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Nanchang_CJ-6_corner_20060729.jpg/960px-Nanchang_CJ-6_corner_20060729.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 491,
+      "author": "Mark Wagner",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "date": "2006-07-29",
+      "caption": "Front corner view of a Nanchang CJ-6 trainer aircraft, photographed at the Spokane Airshow",
+      "found": "2026-10-18T19:32:08.2833325+00:00"
+    },
+    {
+      "model": "Nanchang CJ-6 A",
+      "file": "File:Nanchang CJ-A6.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nanchang_CJ-A6.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Nanchang_CJ-A6.jpg/960px-Nanchang_CJ-A6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Sam McLeod",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-02-09 09:11:59",
+      "caption": "Australian owned CJ-A6, located at Barwon Heads Airport, Victoria.",
+      "found": "2026-10-18T19:32:08.2833325+00:00"
     }
   ],
-  "updated": "2026-10-18T19:09:09.4046089+00:00"
+  "updated": "2026-10-18T19:32:08.2833325+00:00"
 }
