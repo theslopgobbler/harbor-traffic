@@ -45,7 +45,8 @@
     "Embraer Phenom 300": "2026-10-18T19:56:28.5499395+00:00",
     "EADS SOCATA TBM 850": "2026-10-18T21:05:38.9149483+00:00",
     "Hawker Beechcraft Corp Premier IA": "2026-10-18T22:45:19.476094+00:00",
-    "Pilatus PC-12 47E NG": "2026-10-18T23:04:03.1390690+00:00"
+    "Pilatus PC-12 47E NG": "2026-10-18T23:04:03.139069+00:00",
+    "Bombardier Challenger 300": "2026-10-18T23:28:33.6932216+00:00"
   },
   "candidates": [
     {
@@ -2706,7 +2707,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2025-02-15",
       "caption": "Pilatus PC-12-47E NG (N227BM, cn 1879) at Daytona Beach International Airport.",
-      "found": "2026-10-18T23:04:03.1390690+00:00"
+      "found": "2026-10-18T23:04:03.139069+00:00"
     },
     {
       "model": "Pilatus PC-12 47E NG",
@@ -2720,7 +2721,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2024-04-09",
       "caption": "Pilatus PC-12-47E NG N351AF at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
-      "found": "2026-10-18T23:04:03.1390690+00:00"
+      "found": "2026-10-18T23:04:03.139069+00:00"
     },
     {
       "model": "Pilatus PC-12 47E NG",
@@ -2734,7 +2735,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2022-08-21",
       "caption": "A Pilatus PC-12/47E NG at Huntsville International Airport.",
-      "found": "2026-10-18T23:04:03.1390690+00:00"
+      "found": "2026-10-18T23:04:03.139069+00:00"
     },
     {
       "model": "Pilatus PC-12 47E NG",
@@ -2748,7 +2749,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2025-02-16",
       "caption": "Pilatus PC-12-47E NG (N696NG, cn 1696) at Daytona Beach International Airport.",
-      "found": "2026-10-18T23:04:03.1390690+00:00"
+      "found": "2026-10-18T23:04:03.139069+00:00"
     },
     {
       "model": "Pilatus PC-12 47E NG",
@@ -2762,7 +2763,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2025-01-26",
       "caption": "Pilatus PC-12-47E NG (N913JR, cn 1603) at Daytona Beach International Airport.",
-      "found": "2026-10-18T23:04:03.1390690+00:00"
+      "found": "2026-10-18T23:04:03.139069+00:00"
     },
     {
       "model": "Pilatus PC-12 47E NG",
@@ -2776,8 +2777,92 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2023-03-18",
       "caption": "Pilatus PC-12-47E NG (N999SV, cn 1470) at Flagler Executive Airport.",
-      "found": "2026-10-18T23:04:03.1390690+00:00"
+      "found": "2026-10-18T23:04:03.139069+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 300",
+      "file": "File:Bombardier Challenger 300 N115LF FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_300_N115LF_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Bombardier_Challenger_300_N115LF_FDK_MD2.jpg/960px-Bombardier_Challenger_300_N115LF_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 590,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-01",
+      "caption": "2008 Bombardier Challenger 300 N115LF at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-18T23:28:33.6932216+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 300",
+      "file": "File:Bombardier Challenger 300 N15TF BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_300_N15TF_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Bombardier_Challenger_300_N15TF_BWI_MD1.jpg/960px-Bombardier_Challenger_300_N15TF_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 592,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-09-15",
+      "caption": "2023 Bombardier Challenger 300 N15TF of Taylor Farms on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-10-18T23:28:33.6932216+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 300",
+      "file": "File:Bombardier Challenger 300 N256GG FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_300_N256GG_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Bombardier_Challenger_300_N256GG_FDK_MD1.jpg/960px-Bombardier_Challenger_300_N256GG_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 371,
+      "author": "{ Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-11-23",
+      "caption": "2008 Bombardier Challenger 300 N256GG at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-18T23:28:33.6932216+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 300",
+      "file": "File:Bombardier Challenger 300 N256GG FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_300_N256GG_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Bombardier_Challenger_300_N256GG_FDK_MD2.jpg/960px-Bombardier_Challenger_300_N256GG_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 366,
+      "author": "{ Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-11-23",
+      "caption": "2018 Bombardier Challenger 300 N256GG at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-18T23:28:33.6932216+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 300",
+      "file": "File:Bombardier Challenger 300 N746QS FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_300_N746QS_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Bombardier_Challenger_300_N746QS_FDK_MD1.jpg/960px-Bombardier_Challenger_300_N746QS_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 385,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-03-29",
+      "caption": "Bombardier Challenger 300 N746QS at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-18T23:28:33.6932216+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 300",
+      "file": "File:Netjets Bombardier Challenger 300 N265QS IAD VA1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Netjets_Bombardier_Challenger_300_N265QS_IAD_VA1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Netjets_Bombardier_Challenger_300_N265QS_IAD_VA1.jpg/960px-Netjets_Bombardier_Challenger_300_N265QS_IAD_VA1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 452,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-30",
+      "caption": "Netjets Bombardier Challenger 300 N265QS on final approach at Washington Dulles International Airport, Virginia, USA",
+      "found": "2026-10-18T23:28:33.6932216+00:00"
     }
   ],
-  "updated": "2026-10-18T23:04:03.1390690+00:00"
+  "updated": "2026-10-18T23:28:33.6932216+00:00"
 }
