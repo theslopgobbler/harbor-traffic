@@ -37,7 +37,8 @@
     "Swearingen Merlin IVC": "2026-10-17T21:30:44.5269016+00:00",
     "Boeing 737MAX 9": "2026-10-17T21:58:14.7885601+00:00",
     "Bombardier Challenger 604": "2026-10-18T00:02:06.736827+00:00",
-    "Quest Aircraft Company Kodiak 100": "2026-10-18T16:45:49.2322543+00:00"
+    "Quest Aircraft Company Kodiak 100": "2026-10-18T16:45:49.2322543+00:00",
+    "Cessna 425 Conquest I": "2026-10-18T17:08:14.9226606+00:00"
   },
   "candidates": [
     {
@@ -2321,7 +2322,91 @@
       "date": "2019-04-25 13:00",
       "caption": "N248KQ Quest Aircraft Company Kodiak 100-II @ Friedrichshafen 10/04/2019",
       "found": "2026-10-18T16:45:49.2322543+00:00"
+    },
+    {
+      "model": "Cessna 425 Conquest I",
+      "file": "File:Avcair Pty Ltd (VH-BSM) Cessna 425 Conquest I taxiing at Wagga Wagga Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Avcair_Pty_Ltd_(VH-BSM)_Cessna_425_Conquest_I_taxiing_at_Wagga_Wagga_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Avcair_Pty_Ltd_%28VH-BSM%29_Cessna_425_Conquest_I_taxiing_at_Wagga_Wagga_Airport.jpg/960px-Avcair_Pty_Ltd_%28VH-BSM%29_Cessna_425_Conquest_I_taxiing_at_Wagga_Wagga_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2014-04-25",
+      "caption": "Avcair Pty Ltd (VH-BSM) Cessna 425 Conquest I taxiing at Wagga Wagga Airport .",
+      "found": "2026-10-18T17:08:14.9226606+00:00"
+    },
+    {
+      "model": "Cessna 425 Conquest I",
+      "file": "File:C-GRHD 1983 Cessna Conquest I 425 C-N 425-0167 (6831995553).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-GRHD_1983_Cessna_Conquest_I_425_C-N_425-0167_(6831995553).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/C-GRHD_1983_Cessna_Conquest_I_425_C-N_425-0167_%286831995553%29.jpg/960px-C-GRHD_1983_Cessna_Conquest_I_425_C-N_425-0167_%286831995553%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 891,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-02-02 14:20",
+      "caption": "- Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, February 02, 2012 Photo: Tomás Del Coro",
+      "found": "2026-10-18T17:08:14.9226606+00:00"
+    },
+    {
+      "model": "Cessna 425 Conquest I",
+      "file": "File:Cessna 425 Conquest I, Private JP6371334.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_425_Conquest_I,_Private_JP6371334.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Cessna_425_Conquest_I%2C_Private_JP6371334.jpg/960px-Cessna_425_Conquest_I%2C_Private_JP6371334.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "",
+      "caption": "",
+      "found": "2026-10-18T17:08:14.9226606+00:00"
+    },
+    {
+      "model": "Cessna 425 Conquest I",
+      "file": "File:Cessna 425 Conquest I D-IDAX DUS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_425_Conquest_I_D-IDAX_DUS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Cessna_425_Conquest_I_D-IDAX_DUS.jpg/960px-Cessna_425_Conquest_I_D-IDAX_DUS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 712,
+      "author": "Arcturus",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "date": "2008-01",
+      "caption": "Cessna 425 Conquest I (D-IDAX) in Düsseldorf (EDDL/DUS)",
+      "found": "2026-10-18T17:08:14.9226606+00:00"
+    },
+    {
+      "model": "Cessna 425 Conquest I",
+      "file": "File:Cessna 425 Conquest I Private D-IFGU, LUX Luxembourg (Findel), Luxembourg PP1371589640.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_425_Conquest_I_Private_D-IFGU,_LUX_Luxembourg_(Findel),_Luxembourg_PP1371589640.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Cessna_425_Conquest_I_Private_D-IFGU%2C_LUX_Luxembourg_%28Findel%29%2C_Luxembourg_PP1371589640.jpg/960px-Cessna_425_Conquest_I_Private_D-IFGU%2C_LUX_Luxembourg_%28Findel%29%2C_Luxembourg_PP1371589640.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "18 June 2013",
+      "caption": "",
+      "found": "2026-10-18T17:08:14.9226606+00:00"
+    },
+    {
+      "model": "Cessna 425 Conquest I",
+      "file": "File:Cessna 425 Corsair - Conquest I.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_425_Corsair_-_Conquest_I.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Cessna_425_Corsair_-_Conquest_I.jpg/960px-Cessna_425_Corsair_-_Conquest_I.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 637,
+      "author": "Roger Oldfield",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2007-10-06",
+      "caption": "N425SL (cn 4250236)",
+      "found": "2026-10-18T17:08:14.9226606+00:00"
     }
   ],
-  "updated": "2026-10-18T16:45:49.2322543+00:00"
+  "updated": "2026-10-18T17:08:14.9226606+00:00"
 }
