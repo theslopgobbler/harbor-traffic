@@ -42,7 +42,8 @@
     "Textron Aviation Citation CJ4": "2026-10-18T18:15:47.7230472+00:00",
     "de Havilland Canada DHC-6 Twin Otter 200": "2026-10-18T19:09:09.4046089+00:00",
     "Nanchang CJ-6 A": "2026-10-18T19:32:08.2833325+00:00",
-    "Embraer Phenom 300": "2026-10-18T19:56:28.5499395+00:00"
+    "Embraer Phenom 300": "2026-10-18T19:56:28.5499395+00:00",
+    "EADS SOCATA TBM 850": "2026-10-18T21:05:38.9149483+00:00"
   },
   "candidates": [
     {
@@ -2662,7 +2663,35 @@
       "date": "2024-02-02 10:32:42",
       "caption": "Pura Aviation's Embraer Phenom 300 captured at BPN during taxi for departure",
       "found": "2026-10-18T19:56:28.5499395+00:00"
+    },
+    {
+      "model": "EADS SOCATA TBM 850",
+      "file": "File:N989PR (52511300397).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N989PR_(52511300397).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/N989PR_%2852511300397%29.jpg/960px-N989PR_%2852511300397%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-11-07 13:00",
+      "caption": "N989PR EADS SOCATA TBM 850 at Hawarden 07/11/2022",
+      "found": "2026-10-18T21:05:38.9149483+00:00"
+    },
+    {
+      "model": "EADS SOCATA TBM 850",
+      "file": "File:TBM-850.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:TBM-850.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/TBM-850.jpg/960px-TBM-850.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 399,
+      "author": "",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "date": "",
+      "caption": "",
+      "found": "2026-10-18T21:05:38.9149483+00:00"
     }
   ],
-  "updated": "2026-10-18T20:42:51.5197656+00:00"
+  "updated": "2026-10-18T21:05:38.9149483+00:00"
 }
