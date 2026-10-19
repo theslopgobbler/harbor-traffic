@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T09:19:32.8581773+00:00",
+  "updated": "2026-10-19T09:58:24.8071931+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1364,49 +1364,6 @@
       ]
     },
     {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
-    {
       "id": 718841,
       "kind": "work",
       "category": "Construction",
@@ -1586,6 +1543,49 @@
         [
           -124.06084,
           46.73248
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
         ]
       ]
     },
@@ -1833,27 +1833,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-09-14T14:42:15.5130000+00:00"
-    },
-    {
-      "id": 719315,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on SR 109 at milepost 16.11 near SR 115 beginning at 6:31 pm on October 18, 2026 until further notice. All lanes blocked.",
-      "description": "",
-      "link": null,
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": null,
-      "milepost": 16.11,
-      "lat": 47.044596611,
-      "lon": -124.15803082,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-19T01:31:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-19T01:34:08.0570000+00:00"
     },
     {
       "id": 640019,
