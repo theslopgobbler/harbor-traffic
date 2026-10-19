@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T21:13:52.8091932+00:00",
+  "updated": "2026-10-19T21:47:15.5961770+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -865,6 +865,49 @@
       ]
     },
     {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
+    {
       "id": 719352,
       "kind": "work",
       "category": "Road work",
@@ -1372,49 +1415,6 @@
         [
           -124.3177,
           47.85527
-        ]
-      ]
-    },
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
         ]
       ]
     },
@@ -2692,27 +2692,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 719358,
-      "kind": "closure",
-      "category": "Simpson Ave Bridge",
-      "priority": "Highest",
-      "headline": "Simpson Ave Bridge on US 101 Couplet - ABERDN northbound at milepost 88.2 near Simpson Ave Bridge beginning at 8:50 am on October 19, 2026 until about 2:30 pm.  Road is closed. The westbound US 101 Riverside Bridge will be reconfigured to allow two-way travel while work is underway. Travelers can expect congestion while the detour is in place.",
-      "description": "",
-      "link": null,
-      "road": "101COABERDN",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 88.2,
-      "lat": 46.975395635,
-      "lon": -123.876840412,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-19T15:50:00.0000000+00:00",
-      "end": "2026-10-19T21:30:00.0000000+00:00",
-      "updated": "2026-10-19T16:17:59.4800000+00:00"
     },
     {
       "id": 693774,
