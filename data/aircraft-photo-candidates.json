@@ -54,7 +54,8 @@
     "Airbus Helicopters Squirrel AS.350 B3e (H125)": "2026-10-19T15:11:06.4713653+00:00",
     "de Havilland Canada DHC-2 Beaver U-6A": "2026-10-19T16:14:32.5010756+00:00",
     "Cirrus Jet Vision SF50 G2+": "2026-10-19T16:35:29.1443006+00:00",
-    "Airbus A330 243": "2026-10-19T16:35:29.1443006+00:00"
+    "Airbus A330 243": "2026-10-19T16:35:29.1443006+00:00",
+    "Cessna Citation Bravo": "2026-10-19T20:11:25.7311932+00:00"
   },
   "candidates": [
     {
@@ -3458,7 +3459,91 @@
       "date": "2011-04-11",
       "caption": "Sichuan Airlines Airbus A330-243.",
       "found": "2026-10-19T16:35:29.1443006+00:00"
+    },
+    {
+      "model": "Cessna Citation Bravo",
+      "file": "File:Cessna 550 Citation Bravo, G-EHGW.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_550_Citation_Bravo,_G-EHGW.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Cessna_550_Citation_Bravo%2C_G-EHGW.jpg/960px-Cessna_550_Citation_Bravo%2C_G-EHGW.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 593,
+      "author": "Trevor Hannant",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-07-30 16:41:16",
+      "caption": "Cessna 500 Citation Bravo at Edinburgh",
+      "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "model": "Cessna Citation Bravo",
+      "file": "File:Cessna 550 Citation Bravo, G-EHGW (9509439948).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_550_Citation_Bravo,_G-EHGW_(9509439948).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Cessna_550_Citation_Bravo%2C_G-EHGW_%289509439948%29.jpg/960px-Cessna_550_Citation_Bravo%2C_G-EHGW_%289509439948%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Trevor Hannant",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-07-30 16:41",
+      "caption": "Cessna 550 Citation Bravo, G-EHGW",
+      "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "model": "Cessna Citation Bravo",
+      "file": "File:Cessna 550 Citation II - Spanish Navy - Chris Lofting.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_550_Citation_II_-_Spanish_Navy_-_Chris_Lofting.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cessna_550_Citation_II_-_Spanish_Navy_-_Chris_Lofting.jpg/960px-Cessna_550_Citation_II_-_Spanish_Navy_-_Chris_Lofting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 636,
+      "author": "Chris Lofting",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2009-07-09",
+      "caption": "U20-2 / 01-406 (cn 550-0446)",
+      "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "model": "Cessna Citation Bravo",
+      "file": "File:Euro Link, D-CESA, Cessna 550 Citation Bravo (28725630022).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Euro_Link,_D-CESA,_Cessna_550_Citation_Bravo_(28725630022).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Euro_Link%2C_D-CESA%2C_Cessna_550_Citation_Bravo_%2828725630022%29.jpg/960px-Euro_Link%2C_D-CESA%2C_Cessna_550_Citation_Bravo_%2828725630022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-08-04 14:07",
+      "caption": "Euro Link, D-CESA, Cessna 550 Citation Bravo",
+      "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "model": "Cessna Citation Bravo",
+      "file": "File:M-WOOD Cessna Citation Bravo 550B (24158941595).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:M-WOOD_Cessna_Citation_Bravo_550B_(24158941595).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/M-WOOD_Cessna_Citation_Bravo_550B_%2824158941595%29.jpg/960px-M-WOOD_Cessna_Citation_Bravo_550B_%2824158941595%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-01-02 14:48",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "model": "Cessna Citation Bravo",
+      "file": "File:OM-ATS Cessna 550 Citation Bravo C55B - EAT (25733997132).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:OM-ATS_Cessna_550_Citation_Bravo_C55B_-_EAT_(25733997132).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/OM-ATS_Cessna_550_Citation_Bravo_C55B_-_EAT_%2825733997132%29.jpg/960px-OM-ATS_Cessna_550_Citation_Bravo_C55B_-_EAT_%2825733997132%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Markus Eigenheer from Genève",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-03-01 11:58",
+      "caption": "Geneva International Airport",
+      "found": "2026-10-19T20:11:25.7311932+00:00"
     }
   ],
-  "updated": "2026-10-19T19:40:07.9497088+00:00"
+  "updated": "2026-10-19T20:11:25.7311932+00:00"
 }
