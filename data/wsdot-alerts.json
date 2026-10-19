@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T18:21:42.9452266+00:00",
+  "updated": "2026-10-19T19:08:39.7623701+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1986,61 +1986,6 @@
       ]
     },
     {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865785,
-      "lon": -124.350871258,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2026-10-16T19:28:43.2900000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
       "id": 693084,
       "kind": "work",
       "category": "Construction",
@@ -2818,27 +2763,6 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 719372,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Reported collision on SR 3 southbound at milepost 0.58 near SE Vic King Rd beginning at 10:25 am on October 19, 2026 until further notice. Alt traffic at this time both ways.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "S",
-      "milepost": 0.58,
-      "lat": 47.188258549,
-      "lon": -123.099135228,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-19T17:25:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-19T18:16:21.1070000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -3005,6 +2929,61 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
+    },
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865785,
+      "lon": -124.350871258,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2026-10-16T19:28:43.2900000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
     }
   ]
 }
