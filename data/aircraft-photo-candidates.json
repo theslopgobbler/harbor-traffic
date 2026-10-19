@@ -51,7 +51,8 @@
     "Bombardier Global 5000": "2026-10-18T23:49:24.6395511+00:00",
     "Robinson R44 Raven I": "2026-10-19T00:45:28.6713629+00:00",
     "Boeing 777 F": "2026-10-19T09:19:32.8581773+00:00",
-    "Airbus Helicopters Squirrel AS.350 B3e (H125)": "2026-10-19T15:11:06.4713653+00:00"
+    "Airbus Helicopters Squirrel AS.350 B3e (H125)": "2026-10-19T15:11:06.4713653+00:00",
+    "de Havilland Canada DHC-2 Beaver U-6A": "2026-10-19T16:14:32.5010756+00:00"
   },
   "candidates": [
     {
@@ -3203,7 +3204,91 @@
       "date": "2021-09-12",
       "caption": "VQ-BAO - AirBridgeCargo - Boeing 777-F - 66625 - VGHS.",
       "found": "2026-10-19T09:19:32.8581773+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver U-6A",
+      "file": "File:DHC U-6A Beaver '26087' (11457400806).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:DHC_U-6A_Beaver_%2726087%27_(11457400806).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/DHC_U-6A_Beaver_%2726087%27_%2811457400806%29.jpg/960px-DHC_U-6A_Beaver_%2726087%27_%2811457400806%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Weston, Spalding, Lincs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-04-18 08:25",
+      "caption": "Full military serial 52-6087. Previous civil registration N30NR. c/n 454. On display in Hangar 1 at the Warner Robins Museum of Aviation. Georgia, USA. 18-4-2013",
+      "found": "2026-10-19T16:14:32.5010756+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver U-6A",
+      "file": "File:DHC U-6A Beaver '26087' (11457403236).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:DHC_U-6A_Beaver_%2726087%27_(11457403236).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/DHC_U-6A_Beaver_%2726087%27_%2811457403236%29.jpg/960px-DHC_U-6A_Beaver_%2726087%27_%2811457403236%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Weston, Spalding, Lincs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-04-18 08:36",
+      "caption": "Full military serial 52-6087. Previous civil registration N30NR. c/n 454. On display in Hangar 1 at the Warner Robins Museum of Aviation. Georgia, USA. 18-4-2013",
+      "found": "2026-10-19T16:14:32.5010756+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver U-6A",
+      "file": "File:De Havilland Canada Beaver 61.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_Beaver_61.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/De_Havilland_Canada_Beaver_61.jpg/960px-De_Havilland_Canada_Beaver_61.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 644,
+      "author": "TSRL",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "1961-09-09",
+      "caption": "de Havilland Canada L-20A / U-6A (DHC-2 Beaver), sn/ 52-6137 of the 20th Tactical Fighter-Wing (20th TFW), USAFE, at the SBAC show at Farnborough, 9 September 1961. This aircraft was at one time based at RAF Wetherfie...",
+      "found": "2026-10-19T16:14:32.5010756+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver U-6A",
+      "file": "File:De Havilland Canada DHC-2 U-6A-DH Beaver (USAF sn 51-16501, cn 277) (5-19-2022).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_U-6A-DH_Beaver_(USAF_sn_51-16501,_cn_277)_(5-19-2022).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/De_Havilland_Canada_DHC-2_U-6A-DH_Beaver_%28USAF_sn_51-16501%2C_cn_277%29_%285-19-2022%29.jpg/960px-De_Havilland_Canada_DHC-2_U-6A-DH_Beaver_%28USAF_sn_51-16501%2C_cn_277%29_%285-19-2022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-05-19",
+      "caption": "de Havilland Canada U-6A-DH Beaver at the National Museum of the United States Air Force.",
+      "found": "2026-10-19T16:14:32.5010756+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver U-6A",
+      "file": "File:De Havilland Canada U-6A Beaver (DHC-2) AN1076445.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_U-6A_Beaver_(DHC-2)_AN1076445.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/De_Havilland_Canada_U-6A_Beaver_%28DHC-2%29_AN1076445.jpg/960px-De_Havilland_Canada_U-6A_Beaver_%28DHC-2%29_AN1076445.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 727,
+      "author": "Andre Wadman",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "17 June 2006",
+      "caption": "",
+      "found": "2026-10-19T16:14:32.5010756+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver U-6A",
+      "file": "File:De Havilland Canada U-6A Beaver 3-view line drawing.png",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_U-6A_Beaver_3-view_line_drawing.png",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/70/De_Havilland_Canada_U-6A_Beaver_3-view_line_drawing.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 498,
+      "author": "Original uploader en:User:Ericg . User:Alaniaris reuploading herre",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Original upload date 2 Aug 2005. Upload to Commons at 11 Mar 2008",
+      "caption": "3 view of U-6A Beaver",
+      "found": "2026-10-19T16:14:32.5010756+00:00"
     }
   ],
-  "updated": "2026-10-19T15:11:06.4713653+00:00"
+  "updated": "2026-10-19T16:14:32.5010756+00:00"
 }
