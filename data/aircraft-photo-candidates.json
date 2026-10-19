@@ -48,7 +48,8 @@
     "Pilatus PC-12 47E NG": "2026-10-18T23:04:03.139069+00:00",
     "Bombardier Challenger 300": "2026-10-18T23:28:33.6932216+00:00",
     "Piaggio P.180 Avanti": "2026-10-18T23:49:24.6395511+00:00",
-    "Bombardier Global 5000": "2026-10-18T23:49:24.6395511+00:00"
+    "Bombardier Global 5000": "2026-10-18T23:49:24.6395511+00:00",
+    "Robinson R44 Raven I": "2026-10-19T00:45:28.6713629+00:00"
   },
   "candidates": [
     {
@@ -3032,7 +3033,91 @@
       "date": "2022-06-16",
       "caption": "Bombardier Global 5000 N399JA at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-10-18T23:49:24.6395511+00:00"
+    },
+    {
+      "model": "Robinson R44 Raven I",
+      "file": "File:Helicóptero Robinson R44, Portage, Alaska, Estados Unidos, 2017-08-22, DD 43.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Helic%C3%B3ptero_Robinson_R44,_Portage,_Alaska,_Estados_Unidos,_2017-08-22,_DD_43.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Helic%C3%B3ptero_Robinson_R44%2C_Portage%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_43.jpg/960px-Helic%C3%B3ptero_Robinson_R44%2C_Portage%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_43.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 564,
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-08-22 17:40:14",
+      "caption": "Robinson R44 helicopter, Portage, Alaska, USA",
+      "found": "2026-10-19T00:45:28.6713629+00:00"
+    },
+    {
+      "model": "Robinson R44 Raven I",
+      "file": "File:Helicóptero Robinson R44, Portage, Alaska, Estados Unidos, 2017-08-22, DD 44.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Helic%C3%B3ptero_Robinson_R44,_Portage,_Alaska,_Estados_Unidos,_2017-08-22,_DD_44.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Helic%C3%B3ptero_Robinson_R44%2C_Portage%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_44.jpg/960px-Helic%C3%B3ptero_Robinson_R44%2C_Portage%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_44.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1245,
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-08-22 17:41:49",
+      "caption": "Robinson R44 helicopter, Portage, Alaska, USA",
+      "found": "2026-10-19T00:45:28.6713629+00:00"
+    },
+    {
+      "model": "Robinson R44 Raven I",
+      "file": "File:Robinson R44 Clipper II in Poland.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R44_Clipper_II_in_Poland.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Robinson_R44_Clipper_II_in_Poland.jpg/960px-Robinson_R44_Clipper_II_in_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Zalasem1",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2024-07-07 18:53:07",
+      "caption": "Robinson R44 Raven II in Poland",
+      "found": "2026-10-19T00:45:28.6713629+00:00"
+    },
+    {
+      "model": "Robinson R44 Raven I",
+      "file": "File:Robinson R44 Raven II Bakoma.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R44_Raven_II_Bakoma.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Robinson_R44_Raven_II_Bakoma.JPG/960px-Robinson_R44_Raven_II_Bakoma.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 607,
+      "author": "Łukasz Golowanow &amp; Maciek Hypś, Konflikty.pl",
+      "license": "Attribution",
+      "licenseUrl": "",
+      "date": "2009-06-06",
+      "caption": "A Robinson R44 helicopter at the Góraszka Air Picnic 2009",
+      "found": "2026-10-19T00:45:28.6713629+00:00"
+    },
+    {
+      "model": "Robinson R44 Raven I",
+      "file": "File:Robinson R44 Raven II in Poland.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R44_Raven_II_in_Poland.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Robinson_R44_Raven_II_in_Poland.jpg/960px-Robinson_R44_Raven_II_in_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 771,
+      "author": "Zalasem1",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2024-07-07 19:02:11",
+      "caption": "Robinson R44 Raven II / Clipper II w Polsce",
+      "found": "2026-10-19T00:45:28.6713629+00:00"
+    },
+    {
+      "model": "Robinson R44 Raven I",
+      "file": "File:Robinson R44 Raven I Sanicole Airshow 2024.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R44_Raven_I_Sanicole_Airshow_2024.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Robinson_R44_Raven_I_Sanicole_Airshow_2024.jpg/960px-Robinson_R44_Raven_I_Sanicole_Airshow_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Paul Hermans",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-09-22 09:39:36",
+      "caption": "Robinson R44 Raven I Sanicole Airshow 2024",
+      "found": "2026-10-19T00:45:28.6713629+00:00"
     }
   ],
-  "updated": "2026-10-19T00:05:11.7860685+00:00"
+  "updated": "2026-10-19T00:45:28.6713629+00:00"
 }
