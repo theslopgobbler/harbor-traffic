@@ -49,7 +49,8 @@
     "Bombardier Challenger 300": "2026-10-18T23:28:33.6932216+00:00",
     "Piaggio P.180 Avanti": "2026-10-18T23:49:24.6395511+00:00",
     "Bombardier Global 5000": "2026-10-18T23:49:24.6395511+00:00",
-    "Robinson R44 Raven I": "2026-10-19T00:45:28.6713629+00:00"
+    "Robinson R44 Raven I": "2026-10-19T00:45:28.6713629+00:00",
+    "Boeing 777 F": "2026-10-19T09:19:32.8581773+00:00"
   },
   "candidates": [
     {
@@ -3117,7 +3118,91 @@
       "date": "2024-09-22 09:39:36",
       "caption": "Robinson R44 Raven I Sanicole Airshow 2024",
       "found": "2026-10-19T00:45:28.6713629+00:00"
+    },
+    {
+      "model": "Boeing 777 F",
+      "file": "File:B-222S AIRCRAFT Boeing 777-F (1a).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:B-222S_AIRCRAFT_Boeing_777-F_(1a).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/B-222S_AIRCRAFT_Boeing_777-F_%281a%29.jpg/960px-B-222S_AIRCRAFT_Boeing_777-F_%281a%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Sg1959",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-08-04 08:05:43",
+      "caption": "Frankfurt Flughafen Zeppelinheim B-222S AIRCRAFT Boeing 777-F AIRLINE Air China Cargo OPERATOR Air China Cargo TYPE CODE B77L",
+      "found": "2026-10-19T09:19:32.8581773+00:00"
+    },
+    {
+      "model": "Boeing 777 F",
+      "file": "File:B-222S AIRCRAFT Boeing 777-F (1b).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:B-222S_AIRCRAFT_Boeing_777-F_(1b).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/B-222S_AIRCRAFT_Boeing_777-F_%281b%29.jpg/960px-B-222S_AIRCRAFT_Boeing_777-F_%281b%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Sg1959",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-08-04 08:05:43",
+      "caption": "Frankfurt Flughafen Zeppelinheim B-222S AIRCRAFT Boeing 777-F AIRLINE Air China Cargo OPERATOR Air China Cargo TYPE CODE B77L",
+      "found": "2026-10-19T09:19:32.8581773+00:00"
+    },
+    {
+      "model": "Boeing 777 F",
+      "file": "File:Boeing 777-300 - F-GSQL from Air France landing at LFBT airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_777-300_-_F-GSQL_from_Air_France_landing_at_LFBT_airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Boeing_777-300_-_F-GSQL_from_Air_France_landing_at_LFBT_airport.jpg/960px-Boeing_777-300_-_F-GSQL_from_Air_France_landing_at_LFBT_airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Hugo LUC",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-09-13",
+      "caption": "Boeing 777-300 - F-GSQL from Air France landing at LFBT airport",
+      "found": "2026-10-19T09:19:32.8581773+00:00"
+    },
+    {
+      "model": "Boeing 777 F",
+      "file": "File:I-MSCA ALFIRK - Boeing 777-F - Alis Cargo Airlines.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:I-MSCA_ALFIRK_-_Boeing_777-F_-_Alis_Cargo_Airlines.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/I-MSCA_ALFIRK_-_Boeing_777-F_-_Alis_Cargo_Airlines.jpg/960px-I-MSCA_ALFIRK_-_Boeing_777-F_-_Alis_Cargo_Airlines.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "UzeyirMikayil",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-09-25 15:39:43",
+      "caption": "I-MSCA ALFIRK - Boeing 777-F - Alis Cargo Airlines",
+      "found": "2026-10-19T09:19:32.8581773+00:00"
+    },
+    {
+      "model": "Boeing 777 F",
+      "file": "File:Qatar Airways Boeing 777-300ER A7-BEH MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Qatar_Airways_Boeing_777-300ER_A7-BEH_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Qatar_Airways_Boeing_777-300ER_A7-BEH_MD1.jpg/960px-Qatar_Airways_Boeing_777-300ER_A7-BEH_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 652,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-08-24",
+      "caption": "2016 Qatar Airways Boeing 777-300ER A7-BEH approaching Washington Dulles International Airport over Maryland, USA",
+      "found": "2026-10-19T09:19:32.8581773+00:00"
+    },
+    {
+      "model": "Boeing 777 F",
+      "file": "File:VQ-BAO - AirBridgeCargo - Boeing 777-F - 66625 - VGHS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:VQ-BAO_-_AirBridgeCargo_-_Boeing_777-F_-_66625_-_VGHS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/VQ-BAO_-_AirBridgeCargo_-_Boeing_777-F_-_66625_-_VGHS.jpg/960px-VQ-BAO_-_AirBridgeCargo_-_Boeing_777-F_-_66625_-_VGHS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-09-12",
+      "caption": "VQ-BAO - AirBridgeCargo - Boeing 777-F - 66625 - VGHS.",
+      "found": "2026-10-19T09:19:32.8581773+00:00"
     }
   ],
-  "updated": "2026-10-19T08:43:35.6903155+00:00"
+  "updated": "2026-10-19T09:19:32.8581773+00:00"
 }
