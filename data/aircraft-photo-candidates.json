@@ -57,7 +57,8 @@
     "Airbus A330 243": "2026-10-19T16:35:29.1443006+00:00",
     "Cessna Citation Bravo": "2026-10-19T20:11:25.7311932+00:00",
     "Sikorsky HH-60M Blackhawk": "2026-10-20T03:28:30.0196204+00:00",
-    "Boeing 737NG 7CT/W": "2026-10-20T05:37:00.4246641+00:00"
+    "Boeing 737NG 7CT/W": "2026-10-20T05:37:00.4246641+00:00",
+    "Boeing 767 300F": "2026-10-20T11:15:46.7992113+00:00"
   },
   "candidates": [
     {
@@ -3629,7 +3630,91 @@
       "date": "2024-05-14 13:21",
       "caption": "U.S. Army, 10-20309, Sikorsky HH-60M Blackhawk",
       "found": "2026-10-20T03:28:30.0196204+00:00"
+    },
+    {
+      "model": "Boeing 767 300F",
+      "file": "File:FedEx Boeing 767-300F N102FE landing at Taoyuan February 2026.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:FedEx_Boeing_767-300F_N102FE_landing_at_Taoyuan_February_2026.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/FedEx_Boeing_767-300F_N102FE_landing_at_Taoyuan_February_2026.jpg/960px-FedEx_Boeing_767-300F_N102FE_landing_at_Taoyuan_February_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-02-04 11:16:45",
+      "caption": "FedEx Boeing 767-300F N102FE, operating flight 6126 from Seoul-Incheon, lands on runway 05L at Taiwan Taoyuan International Airport.",
+      "found": "2026-10-20T11:15:46.7992113+00:00"
+    },
+    {
+      "model": "Boeing 767 300F",
+      "file": "File:FedEx Boeing 767-300F N191FE departing Boston March 2025.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:FedEx_Boeing_767-300F_N191FE_departing_Boston_March_2025.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/FedEx_Boeing_767-300F_N191FE_departing_Boston_March_2025.jpg/960px-FedEx_Boeing_767-300F_N191FE_departing_Boston_March_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-03-27 08:20:24",
+      "caption": "FedEx Express Boeing 767-300F N191FE departs Boston from runway 27.",
+      "found": "2026-10-20T11:15:46.7992113+00:00"
+    },
+    {
+      "model": "Boeing 767 300F",
+      "file": "File:FedEx Express Boeing 767-300F N263FE departing Boston March 2025 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:FedEx_Express_Boeing_767-300F_N263FE_departing_Boston_March_2025_1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/FedEx_Express_Boeing_767-300F_N263FE_departing_Boston_March_2025_1.jpg/960px-FedEx_Express_Boeing_767-300F_N263FE_departing_Boston_March_2025_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-03-27 08:05:33",
+      "caption": "FedEx Express Boeing 767-300F N263FE departs Boston after taking off from runway 27.",
+      "found": "2026-10-20T11:15:46.7992113+00:00"
+    },
+    {
+      "model": "Boeing 767 300F",
+      "file": "File:FedEx Express Boeing 767-300F N263FE departing Boston March 2025 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:FedEx_Express_Boeing_767-300F_N263FE_departing_Boston_March_2025_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/FedEx_Express_Boeing_767-300F_N263FE_departing_Boston_March_2025_2.jpg/960px-FedEx_Express_Boeing_767-300F_N263FE_departing_Boston_March_2025_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-03-27 08:05:36",
+      "caption": "FedEx Express Boeing 767-300F N263FE departs Boston after taking off from runway 27.",
+      "found": "2026-10-20T11:15:46.7992113+00:00"
+    },
+    {
+      "model": "Boeing 767 300F",
+      "file": "File:UPS Boeing 767-300F N315UP after take off Boston Feb 2025.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:UPS_Boeing_767-300F_N315UP_after_take_off_Boston_Feb_2025.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/UPS_Boeing_767-300F_N315UP_after_take_off_Boston_Feb_2025.jpg/960px-UPS_Boeing_767-300F_N315UP_after_take_off_Boston_Feb_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-02-14 08:50:00",
+      "caption": "UPS Boeing 767-300F N315UP after taking off from Runway 27 at Boston Logan International Airport",
+      "found": "2026-10-20T11:15:46.7992113+00:00"
+    },
+    {
+      "model": "Boeing 767 300F",
+      "file": "File:UPS Boeing 767-300F N339UP on final approach to Boston July 2026 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:UPS_Boeing_767-300F_N339UP_on_final_approach_to_Boston_July_2026_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/UPS_Boeing_767-300F_N339UP_on_final_approach_to_Boston_July_2026_2.jpg/960px-UPS_Boeing_767-300F_N339UP_on_final_approach_to_Boston_July_2026_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-07-08 18:56:54",
+      "caption": "UPS Airlines Boeing 767-300F freighter N339UP, operating flight 5012 from Ontario, California, makes its final approach to runway 04R at Boston Logan International Airport.",
+      "found": "2026-10-20T11:15:46.7992113+00:00"
     }
   ],
-  "updated": "2026-10-20T10:48:57.8257569+00:00"
+  "updated": "2026-10-20T11:15:46.7992113+00:00"
 }
