@@ -61,7 +61,9 @@
     "Boeing 767 300F": "2026-10-20T11:15:46.7992113+00:00",
     "Airbus A220 300": "2026-10-20T15:24:08.7267821+00:00",
     "Boeing 737NG 900ER/W": "2026-10-20T16:00:23.1874509+00:00",
-    "Cessna / Air Repair 305F Bird Dog": "2026-10-20T16:36:11.4251159+00:00"
+    "Cessna / Air Repair 305F Bird Dog": "2026-10-20T16:36:11.4251159+00:00",
+    "Boeing 737 505": "2026-10-20T17:45:27.2513517+00:00",
+    "Alenia HC-27J": "2026-10-20T17:45:27.2513517+00:00"
   },
   "candidates": [
     {
@@ -3801,7 +3803,91 @@
       "date": "2026-04-22 09:06:35",
       "caption": "Frankfurt Flughafen Zeppelinheim YL-ABC AIRCRAFT Airbus A220-300 AIRLINE airBaltic OPERATOR airBaltic TYPE CODE BCS3",
       "found": "2026-10-20T15:24:08.7267821+00:00"
+    },
+    {
+      "model": "Boeing 737 505",
+      "file": "File:Aeroflot - Nord Boeing 737-505.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aeroflot_-_Nord_Boeing_737-505.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Aeroflot_-_Nord_Boeing_737-505.jpg/960px-Aeroflot_-_Nord_Boeing_737-505.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anton Bannikov",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2010-09-25",
+      "caption": "VP-BOI (cn 24650/1792) Touching down runway 25R Moscow - Sheremetyevo (SVO / UUEE)",
+      "found": "2026-10-20T17:45:27.2513517+00:00"
+    },
+    {
+      "model": "Boeing 737 505",
+      "file": "File:Boeing 737-505, Aeroflot-Nord JP6276458.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-505,_Aeroflot-Nord_JP6276458.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Boeing_737-505%2C_Aeroflot-Nord_JP6276458.jpg/960px-Boeing_737-505%2C_Aeroflot-Nord_JP6276458.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aktug Ates",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "13 June 2008",
+      "caption": "",
+      "found": "2026-10-20T17:45:27.2513517+00:00"
+    },
+    {
+      "model": "Boeing 737 505",
+      "file": "File:Boeing 737-505, Braathens JP6113671.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-505,_Braathens_JP6113671.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Boeing_737-505%2C_Braathens_JP6113671.jpg/960px-Boeing_737-505%2C_Braathens_JP6113671.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2001",
+      "caption": "",
+      "found": "2026-10-20T17:45:27.2513517+00:00"
+    },
+    {
+      "model": "Boeing 737 505",
+      "file": "File:Boeing 737-505, Nordavia - Regional Airlines AN2020371.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-505,_Nordavia_-_Regional_Airlines_AN2020371.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Boeing_737-505%2C_Nordavia_-_Regional_Airlines_AN2020371.jpg/960px-Boeing_737-505%2C_Nordavia_-_Regional_Airlines_AN2020371.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Gleb Osokin - Russian AviaPhoto Team",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "15 November 2011",
+      "caption": "Check in Sibir Technik hangar. Ex G-GFFG British Airways and LN-BRC Braathens.",
+      "found": "2026-10-20T17:45:27.2513517+00:00"
+    },
+    {
+      "model": "Boeing 737 505",
+      "file": "File:Boeing 737-505, Nordavia - Regional Airlines AN2029342.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-505,_Nordavia_-_Regional_Airlines_AN2029342.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Boeing_737-505%2C_Nordavia_-_Regional_Airlines_AN2029342.jpg/960px-Boeing_737-505%2C_Nordavia_-_Regional_Airlines_AN2029342.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Gleb Osokin - Russian AviaPhoto Team",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "15 November 2011",
+      "caption": "Business cabin during check.",
+      "found": "2026-10-20T17:45:27.2513517+00:00"
+    },
+    {
+      "model": "Boeing 737 505",
+      "file": "File:Boeing 737-505, Orenair AN1587499.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-505,_Orenair_AN1587499.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Boeing_737-505%2C_Orenair_AN1587499.jpg/960px-Boeing_737-505%2C_Orenair_AN1587499.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Igor Dvurekov",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "25 September 2009",
+      "caption": "",
+      "found": "2026-10-20T17:45:27.2513517+00:00"
     }
   ],
-  "updated": "2026-10-20T17:13:21.2588857+00:00"
+  "updated": "2026-10-20T17:45:27.2513517+00:00"
 }
