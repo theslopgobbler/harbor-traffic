@@ -63,7 +63,8 @@
     "Boeing 737NG 900ER/W": "2026-10-20T16:00:23.1874509+00:00",
     "Cessna / Air Repair 305F Bird Dog": "2026-10-20T16:36:11.4251159+00:00",
     "Boeing 737 505": "2026-10-20T17:45:27.2513517+00:00",
-    "Alenia HC-27J": "2026-10-20T17:45:27.2513517+00:00"
+    "Alenia HC-27J": "2026-10-20T17:45:27.2513517+00:00",
+    "Robinson R22 Beta": "2026-10-20T18:12:18.3172928+00:00"
   },
   "candidates": [
     {
@@ -3887,7 +3888,91 @@
       "date": "25 September 2009",
       "caption": "",
       "found": "2026-10-20T17:45:27.2513517+00:00"
+    },
+    {
+      "model": "Robinson R22 Beta",
+      "file": "File:Robinson R22 Beta, Heli Travaux JP6883626.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_Beta,_Heli_Travaux_JP6883626.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Robinson_R22_Beta%2C_Heli_Travaux_JP6883626.jpg/960px-Robinson_R22_Beta%2C_Heli_Travaux_JP6883626.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "25 June 2010",
+      "caption": "",
+      "found": "2026-10-20T18:12:18.3172928+00:00"
+    },
+    {
+      "model": "Robinson R22 Beta",
+      "file": "File:Robinson R22 Beta 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_Beta_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Robinson_R22_Beta_2.jpg/960px-Robinson_R22_Beta_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Hengist Decius",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2008-04-19 12:15:48",
+      "caption": "Robinson R22 Beta; Aviosuperficie FlyRoma.",
+      "found": "2026-10-20T18:12:18.3172928+00:00"
+    },
+    {
+      "model": "Robinson R22 Beta",
+      "file": "File:Robinson R22 Beta VH-SLH from Boulia Golf Course Boulia Shire Central Western Queensland P1080699.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_Beta_VH-SLH_from_Boulia_Golf_Course_Boulia_Shire_Central_Western_Queensland_P1080699.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Robinson_R22_Beta_VH-SLH_from_Boulia_Golf_Course_Boulia_Shire_Central_Western_Queensland_P1080699.jpg/960px-Robinson_R22_Beta_VH-SLH_from_Boulia_Golf_Course_Boulia_Shire_Central_Western_Queensland_P1080699.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "John Robert McPherson",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2020-08-07 12:23:04",
+      "caption": "The Robinson R22 is a helicopter often used for cattle mustering in the Shire of Boulia and elsewhere in Australia.",
+      "found": "2026-10-20T18:12:18.3172928+00:00"
+    },
+    {
+      "model": "Robinson R22 Beta",
+      "file": "File:Robinson R22 beta N2584F FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_beta_N2584F_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Robinson_R22_beta_N2584F_FDK_MD1.jpg/960px-Robinson_R22_beta_N2584F_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 430,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-11-05",
+      "caption": "1987 Robinson R22 beta helicopter N2584F at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T18:12:18.3172928+00:00"
+    },
+    {
+      "model": "Robinson R22 Beta",
+      "file": "File:Robinson R22 beta N2584F FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_beta_N2584F_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Robinson_R22_beta_N2584F_FDK_MD2.jpg/960px-Robinson_R22_beta_N2584F_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 563,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-05-12",
+      "caption": "1987 Robinson R22 beta helicopter N2584F at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T18:12:18.3172928+00:00"
+    },
+    {
+      "model": "Robinson R22 Beta",
+      "file": "File:Robinson R22 beta N2584F FDK MD3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_beta_N2584F_FDK_MD3.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Robinson_R22_beta_N2584F_FDK_MD3.jpg/960px-Robinson_R22_beta_N2584F_FDK_MD3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 584,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-02-21",
+      "caption": "1987 Robinson R22 beta helicopter N2584F at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T18:12:18.3172928+00:00"
     }
   ],
-  "updated": "2026-10-20T17:45:27.2513517+00:00"
+  "updated": "2026-10-20T18:12:18.3172928+00:00"
 }
