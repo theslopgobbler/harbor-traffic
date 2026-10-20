@@ -58,7 +58,8 @@
     "Cessna Citation Bravo": "2026-10-19T20:11:25.7311932+00:00",
     "Sikorsky HH-60M Blackhawk": "2026-10-20T03:28:30.0196204+00:00",
     "Boeing 737NG 7CT/W": "2026-10-20T05:37:00.4246641+00:00",
-    "Boeing 767 300F": "2026-10-20T11:15:46.7992113+00:00"
+    "Boeing 767 300F": "2026-10-20T11:15:46.7992113+00:00",
+    "Airbus A220 300": "2026-10-20T15:24:08.7267821+00:00"
   },
   "candidates": [
     {
@@ -3714,7 +3715,91 @@
       "date": "2026-07-08 18:56:54",
       "caption": "UPS Airlines Boeing 767-300F freighter N339UP, operating flight 5012 from Ontario, California, makes its final approach to runway 04R at Boston Logan International Airport.",
       "found": "2026-10-20T11:15:46.7992113+00:00"
+    },
+    {
+      "model": "Airbus A220 300",
+      "file": "File:Airbus A220-300.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A220-300.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Airbus_A220-300.jpg/960px-Airbus_A220-300.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Romain COUPY",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "10 July 2018, 12:30:01",
+      "caption": "Previously knowed as CS300, the FTV8 (Flight Test Vehicle) performed a low-pass at Toulouse-Blagnac airport on 10 July 2018, for the official presentation at Airbus' headquarters with her new name.",
+      "found": "2026-10-20T15:24:08.7267821+00:00"
+    },
+    {
+      "model": "Airbus A220 300",
+      "file": "File:Frankfurt Airport airBaltic Airbus A220-300 YL-ABL (DSC09548).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Airport_airBaltic_Airbus_A220-300_YL-ABL_(DSC09548).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Frankfurt_Airport_airBaltic_Airbus_A220-300_YL-ABL_%28DSC09548%29.jpg/960px-Frankfurt_Airport_airBaltic_Airbus_A220-300_YL-ABL_%28DSC09548%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-05-03 08:56:00",
+      "caption": "Der Airbus A220-371 (BD-500-1A11) der Fluggesellschaft Lufthansa mit dem Kennzeichen YL-ABL im Landeanflug auf die Bahn 07R des Flughafens Frankfurt Main. Das Flugzeug führte einen Flug von Riga nach Frankfurt am Main...",
+      "found": "2026-10-20T15:24:08.7267821+00:00"
+    },
+    {
+      "model": "Airbus A220 300",
+      "file": "File:JetBlue Airbus A220-300 N3196J planform view.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:JetBlue_Airbus_A220-300_N3196J_planform_view.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/JetBlue_Airbus_A220-300_N3196J_planform_view.jpg/960px-JetBlue_Airbus_A220-300_N3196J_planform_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 768,
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-01-04 15:12:38",
+      "caption": "A bottom view of JetBlue Airways' Airbus A220-300 N3196J as it departs Boston",
+      "found": "2026-10-20T15:24:08.7267821+00:00"
+    },
+    {
+      "model": "Airbus A220 300",
+      "file": "File:SWISS Airbus A220-300 HB-JCI.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SWISS_Airbus_A220-300_HB-JCI.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/SWISS_Airbus_A220-300_HB-JCI.jpg/960px-SWISS_Airbus_A220-300_HB-JCI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Malokkii",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-12-18",
+      "caption": "This is an image taken at Zürich Airport of the Airbus A220-300 (HB-JCI) in the SWISS livery.",
+      "found": "2026-10-20T15:24:08.7267821+00:00"
+    },
+    {
+      "model": "Airbus A220 300",
+      "file": "File:Swiss, HB-JCC, Airbus A220-300.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Swiss,_HB-JCC,_Airbus_A220-300.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Swiss%2C_HB-JCC%2C_Airbus_A220-300.jpg/960px-Swiss%2C_HB-JCC%2C_Airbus_A220-300.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2020-03-12 20:46:43",
+      "caption": "Swiss, HB-JCC, Airbus A220-300",
+      "found": "2026-10-20T15:24:08.7267821+00:00"
+    },
+    {
+      "model": "Airbus A220 300",
+      "file": "File:YL-ABC AIRCRAFT Airbus A220-300 -1a.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:YL-ABC_AIRCRAFT_Airbus_A220-300_-1a.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/YL-ABC_AIRCRAFT_Airbus_A220-300_-1a.jpg/960px-YL-ABC_AIRCRAFT_Airbus_A220-300_-1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 960,
+      "author": "Sg1959",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-22 09:06:35",
+      "caption": "Frankfurt Flughafen Zeppelinheim YL-ABC AIRCRAFT Airbus A220-300 AIRLINE airBaltic OPERATOR airBaltic TYPE CODE BCS3",
+      "found": "2026-10-20T15:24:08.7267821+00:00"
     }
   ],
-  "updated": "2026-10-20T14:56:06.8143363+00:00"
+  "updated": "2026-10-20T15:24:08.7267821+00:00"
 }
