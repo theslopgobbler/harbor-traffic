@@ -258,5 +258,7 @@
   setOn(on);
 
   loadKnown().then(load);
-  setInterval(() => loadKnown().then(load), C.airRelay ? 30000 : 60000); // the relay refreshes about every 30 s (what each aircraft is: every 10 min)
+  // the relay refreshes about every 30 s (what each aircraft is: every 10 min); a background tab doesn't ask
+  setInterval(() => { if (!document.hidden) loadKnown().then(load); }, C.airRelay ? 30000 : 60000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadKnown().then(load); });
 })();

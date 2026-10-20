@@ -99,9 +99,17 @@
     </div>
     <h2>LAST 30 DAYS</h2>
     <table>
-      <thead><tr><th>DAY</th><th>VISITS</th><th class="bar"></th><th>MOST AT ONCE</th><th>TV</th><th>PHONE</th><th>DESKTOP</th></tr></thead>
+      <thead><tr><th>DAY</th><th>VISITS</th><th class="bar"></th><th>MOST AT ONCE</th><th>TV</th><th>PHONE</th><th>DESKTOP</th><th>TYPICAL STAY</th></tr></thead>
       <tbody id="days"></tbody>
     </table>
+    <div class="lists" style="margin-top:14px">
+      <div><h2>HOW LONG VISITS LASTED · LAST 30 DAYS</h2>
+        <p class="note" id="stayNote"></p>
+        <table><tbody id="stayRows"></tbody></table></div>
+      <div><h2>WHAT PEOPLE TAPPED · <span id="didWhen">LAST 30 DAYS</span> <button type="button" id="didToggle">TODAY</button></h2>
+        <p class="note">How many visits tapped each kind of thing at least once, and the taps in all. "Button" = the map's buttons, "list" = the side list's tabs.</p>
+        <table><thead><tr><th>WHAT</th><th>VISITS</th><th class="bar"></th><th>TAPS</th></tr></thead><tbody id="didRows"></tbody></table></div>
+    </div>
     <!-- Grays Harbor Transit, as logged by the relay once a minute -->
     <section id="busSec">
       <h1 style="margin-top:36px">BUSES · GRAYS HARBOR TRANSIT</h1>
@@ -229,7 +237,8 @@
       </div>
     </section>
     <p class="note">Updates every 30 seconds. "Watching now" is open pages that checked in during the last 3 minutes (pages in a background tab don't count).
-      A visit is a page opened in a new tab; the page's own reloads after an update don't count again. Only random tab IDs are kept, nothing about who.
+      A visit is a page opened in a new tab; the page's own reloads after an update don't count again. Only random tab IDs are kept, nothing about who
+      (with each visit's time on screen and taps by kind, for 60 days).
       <br><button type="button" id="forget" style="margin-top:10px">FORGET KEY ON THIS DEVICE</button>
       <button type="button" id="noCount" style="margin-top:10px"></button></p>
       <p class="note" id="noCountNote">Mark each of your own devices (phone, computer) once, so your own visits don't count. Visits already counted stay.</p>
@@ -269,8 +278,10 @@
       $('#peak').textContent = t.peak ?? 0;
       $('#peakAt').textContent = t.peakAt ? `AT ${time(t.peakAt)}` : '';
       const max = Math.max(1, ...j.days.map((d) => d.opens));
+      const stayBy = Object.fromEntries((j.stay?.byDay || []).map((x) => [x.day, x]));
       $('#days').innerHTML = j.days.map((d) => `<tr><td>${day(d.day)}</td><td>${d.opens}</td><td class="bar"><i style="width:${(d.opens / max) * 100}%"></i></td>
-        <td>${d.peak}</td><td>${d.tv}</td><td>${d.phone}</td><td>${d.desktop}</td></tr>`).join('') || '<tr><td colspan="7">NOTHING YET</td></tr>';
+        <td>${d.peak}</td><td>${d.tv}</td><td>${d.phone}</td><td>${d.desktop}</td><td>${stayBy[d.day] ? stayDur(stayBy[d.day].median) : ''}</td></tr>`).join('') || '<tr><td colspan="8">NOTHING YET</td></tr>';
+      showStay(j);
     } catch (e) { $('#msg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; }
     // bus numbers only change once a minute and are added up from daily totals; every 5 minutes is plenty
     if (Date.now() - busLoadedAt > 5 * 60 * 1000) loadBuses();
@@ -278,6 +289,26 @@
     loadSite();
   }
   let busLoadedAt = 0, shipLoadedAt = 0;
+  // ---- time on the map and what got tapped (from count.js; started Oct 20, 2026)
+  const stayDur = (s) => s < 60 ? `${s} S` : s < 3600 ? `${Math.round(s / 60)} MIN` : `${Math.floor(s / 3600)} H ${Math.round(s % 3600 / 60)} MIN`;
+  let didToday = false, lastViewers = null;
+  function showStay(j) {
+    lastViewers = j;
+    const st = j.stay;
+    if (!st || !st.visits) {
+      $('#stayNote').textContent = 'NOTHING YET: STARTS WITH VISITS AFTER THE OCT 20 UPDATE.';
+      $('#stayRows').innerHTML = ''; $('#didRows').innerHTML = '<tr><td colspan="4">NOTHING YET</td></tr>'; return;
+    }
+    $('#stayNote').textContent = `${st.visits} VISITS · HALF STAYED LONGER THAN ${stayDur(st.median)} · AVERAGE ${stayDur(st.avg)}. Time with the map on screen (a background tab doesn't count).`;
+    const names = ['UNDER A MINUTE', '1–5 MINUTES', '5–15 MINUTES', '15–60 MINUTES', 'OVER AN HOUR'], bmax = Math.max(1, ...st.buckets);
+    $('#stayRows').innerHTML = st.buckets.map((n, i) => `<tr><td>${names[i]}</td><td>${n}</td><td class="bar"><i style="width:${(n / bmax) * 100}%"></i></td></tr>`).join('');
+    const rows = didToday ? j.did.today : j.did.month, of = didToday ? j.did.todayVisits : st.visits, dmax = Math.max(1, ...rows.map((r) => r.visits));
+    $('#didWhen').textContent = didToday ? 'TODAY' : 'LAST 30 DAYS';
+    $('#didToggle').textContent = didToday ? 'LAST 30 DAYS' : 'TODAY';
+    $('#didRows').innerHTML = rows.map((r) => `<tr><td>${String(r.name).toUpperCase().replace(/[<&]/g, '')}</td><td>${r.visits}${of ? ` (${Math.round(r.visits / of * 100)}%)` : ''}</td>
+      <td class="bar"><i style="width:${(r.visits / dmax) * 100}%"></i></td><td>${r.taps}</td></tr>`).join('') || '<tr><td colspan="4">NOTHING TAPPED YET</td></tr>';
+  }
+  $('#didToggle').addEventListener('click', () => { didToday = !didToday; if (lastViewers) showStay(lastViewers); });
   // ---- your own devices: the map skips the viewer count on a device marked here (saved in this browser)
   const noCountOn = () => { try { return localStorage.getItem('ht.noCount') === '1'; } catch { return false; } };
   const syncNoCount = () => { $('#noCount').textContent = noCountOn() ? '✓ THIS DEVICE ISN\'T COUNTED (TAP TO COUNT IT AGAIN)' : 'DON\'T COUNT THIS DEVICE IN THE VIEWERS'; };

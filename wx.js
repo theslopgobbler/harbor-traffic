@@ -931,20 +931,31 @@
   const metersToPx = (m, lat) => m / (156543.03 * Math.cos(lat * Math.PI / 180) / 2 ** map.getZoom());
   // minimum on-screen length by type, so nothing gets lost when zoomed out; real size takes over up close
   const minLen = (s) => isCargo(s.type) ? 40 : s.type >= 80 && s.type <= 89 ? 36 : s.type >= 60 && s.type <= 69 ? 32 : isTug(s.type) ? 24 : s.classB ? 18 : 22;
-  function drawShip(el, s) {
-    const sit = s._sit;
-    const color = shipColor(s, sit);
+  // a vehicle carrier that hasn't sent its size yet (moored ones rarely do while the collector listens) is drawn as
+  // one: they're all about 200 m long
+  const shape = (s) => isCarCarrier(s) && !isCargo(s.type) ? { ...s, type: 70, lengthM: s.lengthM || 200 } : s;
+  function drawShip(el, s0) {
+    const s = shape(s0), sit = s0._sit;
+    const color = shipColor(s0, sit);
+    const realPx = s.lengthM ? Math.min(260, metersToPx(s.lengthM, s.lat)) : 0;
+    const rot = `transform:rotate(calc(${s.heading ?? s.cog ?? 0}deg - var(--brg, 0deg)))`;
     if (stopped(s)) {
+      el.classList.add('anchored');
+      // zoomed in far enough to see it, a big ship at the dock shows its real size, in the docked purple
+      if (realPx > 40) {
+        el.style.width = el.style.height = realPx + 'px';
+        el.innerHTML = `<svg viewBox="-12 0 44 100" style="${rot}">${shipOutline(s.type, '#c28bff')}</svg>`;
+        return;
+      }
       const px = isCargo(s.type) || (s.lengthM || 0) >= 100 ? 30 : 22;
       el.style.width = el.style.height = px + 'px';
       el.innerHTML = anchorSvg('#c28bff');
-      el.classList.add('anchored');
       return;
     }
     el.classList.remove('anchored');
-    const len = Math.max(minLen(s), Math.min(260, s.lengthM ? metersToPx(s.lengthM, s.lat) : 0));
+    const len = Math.max(minLen(s), realPx);
     el.style.width = el.style.height = len + 'px';
-    el.innerHTML = `<svg viewBox="-12 0 44 100" style="transform:rotate(calc(${s.heading ?? s.cog ?? 0}deg - var(--brg, 0deg)))">${shipOutline(s.type, color)}</svg>`;
+    el.innerHTML = `<svg viewBox="-12 0 44 100" style="${rot}">${shipOutline(s.type, color)}</svg>`;
   }
   map.on('zoomend', () => { shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)); groupShips(); });
 
@@ -1102,7 +1113,7 @@
   // bulk ships (soy meal) often don't. Car carriers are told apart by name: nearly all belong to a few lines that
   // name them in a set pattern (NYK "... LEADER", K Line "... HIGHWAY", MOL "... ACE", EUKOR "MORNING ...",
   // Hyundai Glovis, Höegh, Toyofuji "TRANS FUTURE"). Size alone overlaps too much with bulk ships to go by.
-  function isCarCarrier(x) { return /(\bLEADER|\bHIGHWAY|\bACE)$|^(MORNING|GLOVIS|HOEGH|HÖEGH|TRANS FUTURE)\b/i.test(String(x.name || '').trim()); }
+  function isCarCarrier(x) { return x.type !== 30 && /(\bLEADER|\bHIGHWAY|\bFREEWAY|\bACE)$|^(MORNING|GLOVIS|HOEGH|HÖEGH|TRANS FUTURE)\b/i.test(String(x.name || '').trim()); }
   // Also per the port: the biggest ships wait outside, off Westport, for the tide before coming in to load. So a car
   // carrier (or a 190 m+ ship) sitting or creeping within about 12 nm outside the Grays Harbor entrance is a heads-up.
   let nextHigh = null;

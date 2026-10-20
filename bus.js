@@ -413,6 +413,7 @@
   function startFollow(id, stop) {
     const b = buses.find((x) => x.id === id); if (!b) return;
     follow = { id, route: busRoute(b), stop };
+    window.htAct?.('follow bus');
     follow.ahead = aheadText(routeAhead(b));
     // switching buses in chase view: the old one becomes an "other bus" sprite and the new one the chase sprite
     if (chase) for (const m of markers.values()) if (m._bus) { m._c3 = null; drawBus(m); }
@@ -1090,6 +1091,7 @@
     if (rts.length === 1) pickRoute(rts[0], { bar: false });
     stopPop?.remove();
     // (always above the stop: left to choose, the popup flips sides as the map moves, which made it jump)
+    window.htAct?.('stop');
     const pop = stopPop = new maplibregl.Popup({ offset: 10, maxWidth: '300px', anchor: 'bottom' }).setLngLat(stopFocus.at).setHTML('<div class="m">LOADING…</div>').addTo(map);
     document.body.classList.add('stop-open'); // phones tuck the bus bar away while a stop is open
     pop.on('close', () => { if (stopPop === pop) { document.body.classList.remove('stop-open'); stopPop = null; stopFocus = null; map.getLayer('bus-stop-focus') && map.setFilter('bus-stop-focus', ['==', ['get', 'id'], '__none__']); } });
@@ -1550,10 +1552,12 @@
 
   loadRoutes(); loadAlerts();
   // GHT's GPS updates about every 8 s: check every 10 s while someone's watching buses closely
-  // (following one, a stop open, a route picked), every 20 s otherwise
+  // (following one, a stop open, a route picked), every 20 s otherwise; nothing while the page is in a background
+  // tab or the phone is locked (each check is a relay request, and the free plan allows 100,000 a day)
   (async function poll() {
-    await loadBuses();
+    if (!document.hidden) await loadBuses();
     setTimeout(poll, follow || stopPop || picked ? 10000 : 20000);
   })();
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadBuses(); });
   setInterval(loadAlerts, 10 * 60 * 1000);
 })();

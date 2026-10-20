@@ -347,6 +347,19 @@ if ($aisKey) {
         }
     } catch { if ("$_" -notmatch 'quiet') { "ships: $($_.Exception.Message.Split("`n")[0])" } }
     finally { try { $ws.Dispose() } catch {} }
+    # a ship only sends its type and size every 6 minutes, so a moored one is often heard without them for days:
+    # fill in what it sent before (the registry below keeps every boat's last known details)
+    $regPrev = $null
+    $regFilePrev = Join-Path $dataDir 'ship-registry.json'
+    if (Test-Path $regFilePrev) { try { $regPrev = (Get-Content $regFilePrev -Raw | ConvertFrom-Json).ships } catch {} }
+    if ($regPrev) {
+        foreach ($s in $ships.Values) {
+            $r = $regPrev."$($s.mmsi)"; if (-not $r) { continue }
+            foreach ($k in 'type', 'callsign', 'imo', 'lengthM', 'beamM', 'draughtM') {
+                if (($null -eq $s.$k -or "$($s.$k)" -eq '') -and $null -ne $r.$k -and "$($r.$k)" -ne '') { $s | Add-Member -NotePropertyName $k -NotePropertyValue $r.$k -Force }
+            }
+        }
+    }
     # kept a day: the map shows boats not heard for over an hour as faded "ghosts" where they were last heard
     $cutoff = $now.AddHours(-24)
     $keep = @($ships.Values | Where-Object { $_.lat -and $_.seen -and [DateTimeOffset]::Parse($_.seen) -gt $cutoff })

@@ -12,6 +12,7 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
+    ['Oct 20', 'Big ships at the dock show up big.'],
     ['Oct 16', 'Airliners overhead, if you want them (Map Layers in the menu).'],
     ['Oct 15', 'Buses stay on their routes better, and the map runs lighter on phones.'],
     ['Oct 13', 'Bus stops and bridge alerts behave better.'],
@@ -81,7 +82,7 @@
     privacy: () => `<button type="button" class="menu-back" data-go="about">‹ ABOUT</button><div class="menu-title">PRIVACY</div>
       <p class="menu-p">No accounts, no ads, no tracking cookies.</p>
       <p class="menu-p">Your location, if you turn it on, stays on your device: it's used only to show you on the map and to notice when you're riding a bus.</p>
-      <p class="menu-p">To count how many people are watching, each open page sends a random code every couple of minutes. It isn't tied to you or your device, and old codes are deleted within an hour.</p>
+      <p class="menu-p">To count how many people are watching, each open page sends a random code every couple of minutes. It isn't tied to you or your device. With it go how long the page has been on screen and how many times each kind of thing was tapped (like "a bus" or "a camera", never which one or where), kept for 60 days for the site's own visit totals.</p>
       <p class="menu-p">Settings like 12/24-hour time are saved in your browser only.</p>`
   };
   let page = 'main';
