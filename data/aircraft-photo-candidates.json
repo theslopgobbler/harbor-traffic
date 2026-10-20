@@ -67,7 +67,9 @@
     "Robinson R22 Beta": "2026-10-20T18:12:18.3172928+00:00",
     "Boeing 737NG 9GPER/W": "2026-10-20T18:57:06.0487471+00:00",
     "Cessna Citation Excel": "2026-10-20T19:59:14.8747322+00:00",
-    "Boeing 737NG 79P/W": "2026-10-20T19:59:14.8747322+00:00"
+    "Boeing 737NG 79P/W": "2026-10-20T19:59:14.8747322+00:00",
+    "Aerospatiale MH-65D Dolphin": "2026-10-20T20:58:41.1790323+00:00",
+    "Eurocopter EC135 P2+": "2026-10-20T20:58:41.1790323+00:00"
   },
   "candidates": [
     {
@@ -4059,7 +4061,133 @@
       "date": "2025-08-10",
       "caption": "N620TX, a 2002 Cessna Citation Excel belonging to XO Jet (now owned by VistaJet), at KBLM",
       "found": "2026-10-20T19:59:14.8747322+00:00"
+    },
+    {
+      "model": "Aerospatiale MH-65D Dolphin",
+      "file": "File:Aerospatiale MH-65D Dolphin ‘6519’ (27371268621).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aerospatiale_MH-65D_Dolphin_%E2%80%986519%E2%80%99_(27371268621).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Aerospatiale_MH-65D_Dolphin_%E2%80%986519%E2%80%99_%2827371268621%29.jpg/960px-Aerospatiale_MH-65D_Dolphin_%E2%80%986519%E2%80%99_%2827371268621%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-02-29 07:21",
+      "caption": "c/n 6139. Allocated to CGAS North Bend, Oregon. Southern California Logistics Airport. Victorville, CA, USA. 29-2-2016",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Aerospatiale MH-65D Dolphin",
+      "file": "File:Aérospatiale SA 366 G1 MH-65D Dolphin (USCG BuNo 6506, cn 6050) (1-8-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A%C3%A9rospatiale_SA_366_G1_MH-65D_Dolphin_(USCG_BuNo_6506,_cn_6050)_(1-8-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/A%C3%A9rospatiale_SA_366_G1_MH-65D_Dolphin_%28USCG_BuNo_6506%2C_cn_6050%29_%281-8-2026%29.jpg/960px-A%C3%A9rospatiale_SA_366_G1_MH-65D_Dolphin_%28USCG_BuNo_6506%2C_cn_6050%29_%281-8-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-01-08",
+      "caption": "Aérospatiale SA 366 G1 MH-65D Dolphin (USCG BuNo 6506, cn 6050) at Daytona Beach International Airport.",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Aerospatiale MH-65D Dolphin",
+      "file": "File:Aérospatiale SA 366 G1 MH-65D Dolphin (USCG BuNo 6550, cn 6226) (2-10-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A%C3%A9rospatiale_SA_366_G1_MH-65D_Dolphin_(USCG_BuNo_6550,_cn_6226)_(2-10-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/A%C3%A9rospatiale_SA_366_G1_MH-65D_Dolphin_%28USCG_BuNo_6550%2C_cn_6226%29_%282-10-2026%29.jpg/960px-A%C3%A9rospatiale_SA_366_G1_MH-65D_Dolphin_%28USCG_BuNo_6550%2C_cn_6226%29_%282-10-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-02-10",
+      "caption": "Aérospatiale SA 366 G1 MH-65D Dolphin (USCG BuNo 6550, cn 6226) at Daytona Beach International Airport.",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 P2+",
+      "file": "File:DRF Eurocopter EC135 Christoph 44 D-HDRK Göttingen 2017 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:DRF_Eurocopter_EC135_Christoph_44_D-HDRK_G%C3%B6ttingen_2017_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/DRF_Eurocopter_EC135_Christoph_44_D-HDRK_G%C3%B6ttingen_2017_03.jpg/960px-DRF_Eurocopter_EC135_Christoph_44_D-HDRK_G%C3%B6ttingen_2017_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 16 July 2017, 07:39:43",
+      "caption": "DRF Luftrettung Eurocopter EC135 P2 \"Christoph 44\" air ambulance helicopter (reg. D-HDRK, s/n 0477) during takeoff in Göttingen, Germany. Christoph 44 is called through PSAP Göttingen and stationed at the university h...",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 P2+",
+      "file": "File:EC-135 SP-HXX HEMS.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:EC-135_SP-HXX_HEMS.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/EC-135_SP-HXX_HEMS.JPG/960px-EC-135_SP-HXX_HEMS.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 475,
+      "author": "Łukasz Golowanow",
+      "license": "Attribution",
+      "licenseUrl": "",
+      "date": "2011-06-18",
+      "caption": "EC-135 SP-HXX operated by the Polish Medical Air Rescue Service.",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 P2+",
+      "file": "File:Eurocopter EC135 D-HZSG Brownout III Brüggemann.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_D-HZSG_Brownout_III_Br%C3%BCggemann.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Eurocopter_EC135_D-HZSG_Brownout_III_Br%C3%BCggemann.jpg/960px-Eurocopter_EC135_D-HZSG_Brownout_III_Br%C3%BCggemann.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 647,
+      "author": "Jan Brüggemann",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-09-14",
+      "caption": "Eurocopter EC135 D-HZSG Brownout",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 P2+",
+      "file": "File:Eurocopter EC135 P2+ in Spanish Service.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_P2%2B_in_Spanish_Service.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Eurocopter_EC135_P2%2B_in_Spanish_Service.jpg/960px-Eurocopter_EC135_P2%2B_in_Spanish_Service.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Tsumugii",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-21",
+      "caption": "Photo of a Eurocopter EC135 P2+ in Spanish police service, taken in Palma de Mallorca.",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 P2+",
+      "file": "File:Eurocopter EC135 P2 (OH-HMV) FinnHEMS FH20, Kamasa Drag Race Week, Alastaro, 30.6.2012 (4).JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_P2_(OH-HMV)_FinnHEMS_FH20,_Kamasa_Drag_Race_Week,_Alastaro,_30.6.2012_(4).JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Eurocopter_EC135_P2_%28OH-HMV%29_FinnHEMS_FH20%2C_Kamasa_Drag_Race_Week%2C_Alastaro%2C_30.6.2012_%284%29.JPG/960px-Eurocopter_EC135_P2_%28OH-HMV%29_FinnHEMS_FH20%2C_Kamasa_Drag_Race_Week%2C_Alastaro%2C_30.6.2012_%284%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Markus Rantala ( Makele-90 )",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-30",
+      "caption": "Eurocopter EC135 P2 (OH-HMV) FinnHEMS FH20. FHRA Kamasa Drag Race Week at Alastaro Circuit , Finland .",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 P2+",
+      "file": "File:Zepper-BK 117-C2-(EC145)-SchweizerischeRettungsflugwacht.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Zepper-BK_117-C2-(EC145)-SchweizerischeRettungsflugwacht.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Zepper-BK_117-C2-%28EC145%29-SchweizerischeRettungsflugwacht.jpg/960px-Zepper-BK_117-C2-%28EC145%29-SchweizerischeRettungsflugwacht.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Matthias Zepper",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "Taken on 2 January 2009",
+      "caption": "Swiss rescue helicopter in action. Model BK 117-C2 ( EC-145 ) of Rega with registration \"HB-ZRE\".",
+      "found": "2026-10-20T20:58:41.1790323+00:00"
     }
   ],
-  "updated": "2026-10-20T20:26:57.0560653+00:00"
+  "updated": "2026-10-20T20:58:41.1790323+00:00"
 }
