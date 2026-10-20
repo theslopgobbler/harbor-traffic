@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T00:08:34.3898244+00:00",
+  "updated": "2026-10-20T00:49:47.3390208+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2097,6 +2097,27 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
+      "id": 719470,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on SR 507 southbound at milepost 17.85 near Military Rd SE beginning at 4:58 pm on October 19, 2026 until further notice. The southbound lane is partially blocked.",
+      "description": "",
+      "link": null,
+      "road": "507",
+      "roadLabel": "SR 507",
+      "direction": "S",
+      "milepost": 17.85,
+      "lat": 46.860809549,
+      "lon": -122.78126518,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-19T23:58:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-20T00:12:52.8200000+00:00"
+    },
+    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -2137,27 +2158,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 719470,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on SR 507 southbound at milepost 17.85 near Military Rd SE beginning at 4:58 pm on October 19, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "507",
-      "roadLabel": "SR 507",
-      "direction": "S",
-      "milepost": 17.85,
-      "lat": 46.860809549,
-      "lon": -122.78126518,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-19T23:58:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-19T23:59:20.5870000+00:00"
     },
     {
       "id": 693774,
@@ -2202,27 +2202,6 @@
       "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -2242,6 +2221,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-09-14T17:09:14.3170000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-16T21:53:14.6030000+00:00"
     },
     {
       "id": 584226,
