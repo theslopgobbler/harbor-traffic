@@ -71,7 +71,8 @@
     "Aerospatiale MH-65D Dolphin": "2026-10-20T20:58:41.1790323+00:00",
     "Eurocopter EC135 P2+": "2026-10-20T20:58:41.1790323+00:00",
     "Airbus A350 941": "2026-10-20T22:55:27.0048068+00:00",
-    "Cessna Citation CJ3": "2026-10-20T23:18:27.8684965+00:00"
+    "Cessna Citation CJ3": "2026-10-20T23:18:27.8684965+00:00",
+    "Hughes 369 D": "2026-10-20T23:46:05.1199383+00:00"
   },
   "candidates": [
     {
@@ -4357,7 +4358,91 @@
       "date": "2018-05-28",
       "caption": "Cessna CitationJet CJ3 on static display at EBACE 2018",
       "found": "2026-10-20T23:18:27.8684965+00:00"
+    },
+    {
+      "model": "Hughes 369 D",
+      "file": "File:Cavanaugh Flight Museum December 2019 53 (Hughes OH-6 Cayuse).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cavanaugh_Flight_Museum_December_2019_53_(Hughes_OH-6_Cayuse).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Cavanaugh_Flight_Museum_December_2019_53_%28Hughes_OH-6_Cayuse%29.jpg/960px-Cavanaugh_Flight_Museum_December_2019_53_%28Hughes_OH-6_Cayuse%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 7 December 2019",
+      "caption": "A Hughes OH-6 Cayuse on display at the Cavanaugh Flight Museum at Addison Airport in Addison , Texas ( United States ).",
+      "found": "2026-10-20T23:46:05.1199383+00:00"
+    },
+    {
+      "model": "Hughes 369 D",
+      "file": "File:Hughes YOH-6A Cayuse US Army in flight.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hughes_YOH-6A_Cayuse_US_Army_in_flight.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Hughes_YOH-6A_Cayuse_US_Army_in_flight.jpg/960px-Hughes_YOH-6A_Cayuse_US_Army_in_flight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 715,
+      "author": "U.S. Army",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Unknown date",
+      "caption": "A U.S. Army Hughes YOH-6A Cayuse prototype (s/n 62-4211) in flight.",
+      "found": "2026-10-20T23:46:05.1199383+00:00"
+    },
+    {
+      "model": "Hughes 369 D",
+      "file": "File:MDH-Hughes 369 E (D-HCHS).JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:MDH-Hughes_369_E_(D-HCHS).JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/MDH-Hughes_369_E_%28D-HCHS%29.JPG/960px-MDH-Hughes_369_E_%28D-HCHS%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Huhu Uet",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2009-04-05",
+      "caption": "MDH-Hughes 369 E (D-HCHS) auf dem Flugplatz Uetersen.",
+      "found": "2026-10-20T23:46:05.1199383+00:00"
+    },
+    {
+      "model": "Hughes 369 D",
+      "file": "File:MDH-Hughes 369 E (D-HCHS) 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:MDH-Hughes_369_E_(D-HCHS)_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/MDH-Hughes_369_E_%28D-HCHS%29_01.jpg/960px-MDH-Hughes_369_E_%28D-HCHS%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 471,
+      "author": "Huhu Uet",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "date": "2010-08-14",
+      "caption": "MDH-Hughes 369 E (D-HCHS) auf dem Flugplatz Uetersen",
+      "found": "2026-10-20T23:46:05.1199383+00:00"
+    },
+    {
+      "model": "Hughes 369 D",
+      "file": "File:MDH-Hughes 369 E (D-HCHS) 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:MDH-Hughes_369_E_(D-HCHS)_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/MDH-Hughes_369_E_%28D-HCHS%29_02.jpg/960px-MDH-Hughes_369_E_%28D-HCHS%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 539,
+      "author": "Huhu Uet",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "date": "2010-08-14",
+      "caption": "MDH-Hughes 369 E (D-HCHS) auf dem Flugplatz Uetersen",
+      "found": "2026-10-20T23:46:05.1199383+00:00"
+    },
+    {
+      "model": "Hughes 369 D",
+      "file": "File:OH-6 Right side.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:OH-6_Right_side.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/OH-6_Right_side.jpg/960px-OH-6_Right_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 633,
+      "author": "",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "",
+      "caption": "",
+      "found": "2026-10-20T23:46:05.1199383+00:00"
     }
   ],
-  "updated": "2026-10-20T23:18:27.8684965+00:00"
+  "updated": "2026-10-20T23:46:05.1199383+00:00"
 }
