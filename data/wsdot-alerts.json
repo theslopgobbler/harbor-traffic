@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T23:46:27.7455095+00:00",
+  "updated": "2026-10-20T00:08:34.3898244+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2137,6 +2137,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 719470,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision reported on SR 507 southbound at milepost 17.85 near Military Rd SE beginning at 4:58 pm on October 19, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "507",
+      "roadLabel": "SR 507",
+      "direction": "S",
+      "milepost": 17.85,
+      "lat": 46.860809549,
+      "lon": -122.78126518,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-19T23:58:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-19T23:59:20.5870000+00:00"
     },
     {
       "id": 693774,
