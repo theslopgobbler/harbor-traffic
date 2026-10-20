@@ -65,7 +65,9 @@
     "Boeing 737 505": "2026-10-20T17:45:27.2513517+00:00",
     "Alenia HC-27J": "2026-10-20T17:45:27.2513517+00:00",
     "Robinson R22 Beta": "2026-10-20T18:12:18.3172928+00:00",
-    "Boeing 737NG 9GPER/W": "2026-10-20T18:57:06.0487471+00:00"
+    "Boeing 737NG 9GPER/W": "2026-10-20T18:57:06.0487471+00:00",
+    "Cessna Citation Excel": "2026-10-20T19:59:14.8747322+00:00",
+    "Boeing 737NG 79P/W": "2026-10-20T19:59:14.8747322+00:00"
   },
   "candidates": [
     {
@@ -3973,7 +3975,91 @@
       "date": "2024-02-21",
       "caption": "1987 Robinson R22 beta helicopter N2584F at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-10-20T18:12:18.3172928+00:00"
+    },
+    {
+      "model": "Cessna Citation Excel",
+      "file": "File:Cessna 560XL Citation XLS CS-DXK.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_560XL_Citation_XLS_CS-DXK.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Cessna_560XL_Citation_XLS_CS-DXK.jpg/960px-Cessna_560XL_Citation_XLS_CS-DXK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 17 August 2011, 20:50:14",
+      "caption": "NetJets Europe Cessna 560XL Citation XLS (CS-DXK, cn 560-5633) at St. Gallen-Altenrhein Airport (LSZR)",
+      "found": "2026-10-20T19:59:14.8747322+00:00"
+    },
+    {
+      "model": "Cessna Citation Excel",
+      "file": "File:Cessna Citation Excel N508UP FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Excel_N508UP_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Cessna_Citation_Excel_N508UP_FDK_MD1.jpg/960px-Cessna_Citation_Excel_N508UP_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 504,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-11-30",
+      "caption": "Cessna Citation Excel N508UP at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T19:59:14.8747322+00:00"
+    },
+    {
+      "model": "Cessna Citation Excel",
+      "file": "File:Cessna Citation Excel N508UP FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Excel_N508UP_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Cessna_Citation_Excel_N508UP_FDK_MD2.jpg/960px-Cessna_Citation_Excel_N508UP_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 608,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-11-30",
+      "caption": "Cessna Citation Excel N508UP at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T19:59:14.8747322+00:00"
+    },
+    {
+      "model": "Cessna Citation Excel",
+      "file": "File:Cessna Citation Excel N785DW FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Excel_N785DW_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Cessna_Citation_Excel_N785DW_FDK_MD1.jpg/960px-Cessna_Citation_Excel_N785DW_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 423,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-03-15",
+      "caption": "Cessna Citation Excel N785DW at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T19:59:14.8747322+00:00"
+    },
+    {
+      "model": "Cessna Citation Excel",
+      "file": "File:Cessna Citation Excel N834JS FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Excel_N834JS_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cessna_Citation_Excel_N834JS_FDK_MD1.jpg/960px-Cessna_Citation_Excel_N834JS_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 372,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-22",
+      "caption": "2001 Cessna Citation Excel N834JS at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T19:59:14.8747322+00:00"
+    },
+    {
+      "model": "Cessna Citation Excel",
+      "file": "File:N620TX, 2002 Cessna Citation Excel belonging to XO Jet (now owned by VistaJet) at KBLM.png",
+      "page": "https://commons.wikimedia.org/wiki/File:N620TX,_2002_Cessna_Citation_Excel_belonging_to_XO_Jet_(now_owned_by_VistaJet)_at_KBLM.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/N620TX%2C_2002_Cessna_Citation_Excel_belonging_to_XO_Jet_%28now_owned_by_VistaJet%29_at_KBLM.png/960px-N620TX%2C_2002_Cessna_Citation_Excel_belonging_to_XO_Jet_%28now_owned_by_VistaJet%29_at_KBLM.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Szeremeta",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2025-08-10",
+      "caption": "N620TX, a 2002 Cessna Citation Excel belonging to XO Jet (now owned by VistaJet), at KBLM",
+      "found": "2026-10-20T19:59:14.8747322+00:00"
     }
   ],
-  "updated": "2026-10-20T19:28:26.7219931+00:00"
+  "updated": "2026-10-20T19:59:14.8747322+00:00"
 }
