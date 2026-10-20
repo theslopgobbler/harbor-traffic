@@ -69,7 +69,8 @@
     "Cessna Citation Excel": "2026-10-20T19:59:14.8747322+00:00",
     "Boeing 737NG 79P/W": "2026-10-20T19:59:14.8747322+00:00",
     "Aerospatiale MH-65D Dolphin": "2026-10-20T20:58:41.1790323+00:00",
-    "Eurocopter EC135 P2+": "2026-10-20T20:58:41.1790323+00:00"
+    "Eurocopter EC135 P2+": "2026-10-20T20:58:41.1790323+00:00",
+    "Airbus A350 941": "2026-10-20T22:55:27.0048068+00:00"
   },
   "candidates": [
     {
@@ -4187,7 +4188,91 @@
       "date": "Taken on 2 January 2009",
       "caption": "Swiss rescue helicopter in action. Model BK 117-C2 ( EC-145 ) of Rega with registration \"HB-ZRE\".",
       "found": "2026-10-20T20:58:41.1790323+00:00"
+    },
+    {
+      "model": "Airbus A350 941",
+      "file": "File:Airbus A350-941 F-WWCF MSN002 ILA Berlin 2016 17.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_17.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_17.jpg/960px-Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 3 June 2016, 17:17:30",
+      "caption": "Airbus A350-941 (reg. F-WWCF, MSN 002) in Airbus promotional CFRP livery at ILA Berlin Air Show 2016. Takeoff from runway 25L on Berlin Brandenburg Airport (BER).",
+      "found": "2026-10-20T22:55:27.0048068+00:00"
+    },
+    {
+      "model": "Airbus A350 941",
+      "file": "File:Airbus A350-941 F-WWCF MSN002 ILA Berlin 2016 23.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_23.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_23.jpg/960px-Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 2 June 2016, 12:15:05",
+      "caption": "Airbus A350-941 (reg. F-WWCF, MSN 002) landing gear and Rolls-Royce Trent XWB in Airbus promotional CFRP livery at ILA Berlin Air Show 2016.",
+      "found": "2026-10-20T22:55:27.0048068+00:00"
+    },
+    {
+      "model": "Airbus A350 941",
+      "file": "File:Airbus A350-941 F-WWCF MSN002 blended winglet ILA Berlin 2016 08.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A350-941_F-WWCF_MSN002_blended_winglet_ILA_Berlin_2016_08.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Airbus_A350-941_F-WWCF_MSN002_blended_winglet_ILA_Berlin_2016_08.jpg/960px-Airbus_A350-941_F-WWCF_MSN002_blended_winglet_ILA_Berlin_2016_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 2 June 2016, 12:07:50",
+      "caption": "Airbus A350-941 (reg. F-WWCF, MSN 002) in Airbus promotional CFRP livery blended winglet/wingtip device at ILA Berlin Air Show 2016.",
+      "found": "2026-10-20T22:55:27.0048068+00:00"
+    },
+    {
+      "model": "Airbus A350 941",
+      "file": "File:Lufthansa Airbus A350-941 D-AIXA STR 2016 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_01.jpg/960px-Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2016-12-29 16:43:07",
+      "caption": "Lufthansa Airbus A350-941 (reg. D-AIXA, msn 074) landing at Stuttgart Airport (IATA: STR; ICAO: EDDS) on runway 07.",
+      "found": "2026-10-20T22:55:27.0048068+00:00"
+    },
+    {
+      "model": "Airbus A350 941",
+      "file": "File:Lufthansa Airbus A350-941 D-AIXA STR 2016 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_02.jpg/960px-Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2016-12-29 16:43:14",
+      "caption": "Lufthansa Airbus A350-941 (reg. D-AIXA, msn 074) landing at Stuttgart Airport (IATA: STR; ICAO: EDDS) on runway 07.",
+      "found": "2026-10-20T22:55:27.0048068+00:00"
+    },
+    {
+      "model": "Airbus A350 941",
+      "file": "File:Lufthansa Airbus A350-941 D-AIXA STR 2016 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_03.jpg/960px-Lufthansa_Airbus_A350-941_D-AIXA_STR_2016_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2016-12-29 15:33:06",
+      "caption": "Lufthansa Airbus A350-941 (reg. D-AIXA, msn 074) taking off at Stuttgart Airport (IATA: STR; ICAO: EDDS) on runway 07.",
+      "found": "2026-10-20T22:55:27.0048068+00:00"
     }
   ],
-  "updated": "2026-10-20T22:25:08.0127957+00:00"
+  "updated": "2026-10-20T22:55:27.0048068+00:00"
 }
