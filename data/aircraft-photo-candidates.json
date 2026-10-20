@@ -55,7 +55,8 @@
     "de Havilland Canada DHC-2 Beaver U-6A": "2026-10-19T16:14:32.5010756+00:00",
     "Cirrus Jet Vision SF50 G2+": "2026-10-19T16:35:29.1443006+00:00",
     "Airbus A330 243": "2026-10-19T16:35:29.1443006+00:00",
-    "Cessna Citation Bravo": "2026-10-19T20:11:25.7311932+00:00"
+    "Cessna Citation Bravo": "2026-10-19T20:11:25.7311932+00:00",
+    "Sikorsky HH-60M Blackhawk": "2026-10-20T03:28:30.0196204+00:00"
   },
   "candidates": [
     {
@@ -3543,7 +3544,91 @@
       "date": "2016-03-01 11:58",
       "caption": "Geneva International Airport",
       "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "model": "Sikorsky HH-60M Blackhawk",
+      "file": "File:130802-Z-UF867-001 (9448387886).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:130802-Z-UF867-001_(9448387886).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/130802-Z-UF867-001_%289448387886%29.jpg/960px-130802-Z-UF867-001_%289448387886%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "oregonmildep from Salem, Oregon, United States",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2013-08-05 16:13",
+      "caption": "A Blackhawk helicopter from the Charlie Company, 7-158 Aviation, Oregon Army National Guard, takes off with a Bambi Bucket near Glendale, Ore., Aug. 2, in support of fire suppression efforts for the Douglas Complex fi...",
+      "found": "2026-10-20T03:28:30.0196204+00:00"
+    },
+    {
+      "model": "Sikorsky HH-60M Blackhawk",
+      "file": "File:Sikorsky S-70A HH-60M-SI Blackhawk (USA sn 10-20301) (9-24-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sikorsky_S-70A_HH-60M-SI_Blackhawk_(USA_sn_10-20301)_(9-24-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Sikorsky_S-70A_HH-60M-SI_Blackhawk_%28USA_sn_10-20301%29_%289-24-2025%29.jpg/960px-Sikorsky_S-70A_HH-60M-SI_Blackhawk_%28USA_sn_10-20301%29_%289-24-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-09-24",
+      "caption": "Sikorsky S-70A HH-60M-SI Blackhawk (USA sn 10-20301) at Daytona Beach International Airport.",
+      "found": "2026-10-20T03:28:30.0196204+00:00"
+    },
+    {
+      "model": "Sikorsky HH-60M Blackhawk",
+      "file": "File:Sikorsky S-70C-1A Bluehawk ‘7009’ (55313052320).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sikorsky_S-70C-1A_Bluehawk_%E2%80%987009%E2%80%99_(55313052320).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Sikorsky_S-70C-1A_Bluehawk_%E2%80%987009%E2%80%99_%2855313052320%29.jpg/960px-Sikorsky_S-70C-1A_Bluehawk_%E2%80%987009%E2%80%99_%2855313052320%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-03-10 13:07:58",
+      "caption": "c/n 70.929 Built in 1986 The Bluehawk is a civilian-designated variant of the UH-60 Blackhawk and was developed specifically for Taiwan. Fourteen were delivered in 1986 with the four S-70C-1s being used for transport ...",
+      "found": "2026-10-20T03:28:30.0196204+00:00"
+    },
+    {
+      "model": "Sikorsky HH-60M Blackhawk",
+      "file": "File:U.S. Army, 08-20171, Sikorsky HH-60M Blackhawk (53760494981).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army,_08-20171,_Sikorsky_HH-60M_Blackhawk_(53760494981).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/U.S._Army%2C_08-20171%2C_Sikorsky_HH-60M_Blackhawk_%2853760494981%29.jpg/960px-U.S._Army%2C_08-20171%2C_Sikorsky_HH-60M_Blackhawk_%2853760494981%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-05-14 13:21",
+      "caption": "U.S. Army, 08-20171, Sikorsky HH-60M Blackhawk",
+      "found": "2026-10-20T03:28:30.0196204+00:00"
+    },
+    {
+      "model": "Sikorsky HH-60M Blackhawk",
+      "file": "File:U.S. Army, 09-20221, Sikorsky HH-60M Blackhawk (53760910940).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army,_09-20221,_Sikorsky_HH-60M_Blackhawk_(53760910940).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/U.S._Army%2C_09-20221%2C_Sikorsky_HH-60M_Blackhawk_%2853760910940%29.jpg/960px-U.S._Army%2C_09-20221%2C_Sikorsky_HH-60M_Blackhawk_%2853760910940%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-05-13 12:55",
+      "caption": "U.S. Army, 09-20221, Sikorsky HH-60M Blackhawk",
+      "found": "2026-10-20T03:28:30.0196204+00:00"
+    },
+    {
+      "model": "Sikorsky HH-60M Blackhawk",
+      "file": "File:U.S. Army, 10-20309, Sikorsky HH-60M Blackhawk (53760910835).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army,_10-20309,_Sikorsky_HH-60M_Blackhawk_(53760910835).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/U.S._Army%2C_10-20309%2C_Sikorsky_HH-60M_Blackhawk_%2853760910835%29.jpg/960px-U.S._Army%2C_10-20309%2C_Sikorsky_HH-60M_Blackhawk_%2853760910835%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-05-14 13:21",
+      "caption": "U.S. Army, 10-20309, Sikorsky HH-60M Blackhawk",
+      "found": "2026-10-20T03:28:30.0196204+00:00"
     }
   ],
-  "updated": "2026-10-20T02:59:26.2488020+00:00"
+  "updated": "2026-10-20T03:28:30.0196204+00:00"
 }
