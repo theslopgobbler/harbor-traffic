@@ -323,7 +323,9 @@
     "368025250": "2026-10-20T04:34:35.4185914+00:00",
     "367124190": "2026-10-20T05:37:00.4246641+00:00",
     "366341000": "2026-10-20T13:44:57.9283647+00:00",
-    "369493029": "2026-10-20T16:36:11.4251159+00:00"
+    "369493029": "2026-10-20T16:36:11.4251159+00:00",
+    "367384780": "2026-10-20T17:13:21.2588857+00:00",
+    "368126190": "2026-10-20T17:13:21.2588857+00:00"
   },
   "candidates": [
     {
@@ -2860,7 +2862,37 @@
       "date": "2020-02-05 10:34:20",
       "caption": "Photographed at the Port of Amsterdam, The Netherlands.",
       "found": "2026-10-19T20:11:25.7311932+00:00"
+    },
+    {
+      "mmsi": "367384780",
+      "ship": "CAROLYN DOROTHY",
+      "file": "File:Golden Bear 2978.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Golden_Bear_2978.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Golden_Bear_2978.jpg/1280px-Golden_Bear_2978.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-06-30 11:31:44",
+      "caption": "Golden Bear training ship in the Columbia River estuary.",
+      "found": "2026-10-20T17:13:21.2588857+00:00"
+    },
+    {
+      "mmsi": "367384780",
+      "ship": "CAROLYN DOROTHY",
+      "file": "File:Hybrid tug Carolyn Dorothy, Long Beach, California.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hybrid_tug_Carolyn_Dorothy,_Long_Beach,_California.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/20/Hybrid_tug_Carolyn_Dorothy%2C_Long_Beach%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 634,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2010-04",
+      "caption": "Hybrid tug Carolyn Dorothy, Long Beach, California.",
+      "found": "2026-10-20T17:13:21.2588857+00:00"
     }
   ],
-  "updated": "2026-10-20T16:36:11.4251159+00:00"
+  "updated": "2026-10-20T17:13:21.2588857+00:00"
 }
