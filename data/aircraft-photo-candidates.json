@@ -70,7 +70,8 @@
     "Boeing 737NG 79P/W": "2026-10-20T19:59:14.8747322+00:00",
     "Aerospatiale MH-65D Dolphin": "2026-10-20T20:58:41.1790323+00:00",
     "Eurocopter EC135 P2+": "2026-10-20T20:58:41.1790323+00:00",
-    "Airbus A350 941": "2026-10-20T22:55:27.0048068+00:00"
+    "Airbus A350 941": "2026-10-20T22:55:27.0048068+00:00",
+    "Cessna Citation CJ3": "2026-10-20T23:18:27.8684965+00:00"
   },
   "candidates": [
     {
@@ -4272,7 +4273,91 @@
       "date": "2016-12-29 15:33:06",
       "caption": "Lufthansa Airbus A350-941 (reg. D-AIXA, msn 074) taking off at Stuttgart Airport (IATA: STR; ICAO: EDDS) on runway 07.",
       "found": "2026-10-20T22:55:27.0048068+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ3",
+      "file": "File:Cessna 525B CitationJet CJ3 (cn 640, D-CHAT) 2024-08-25 Andre Gerwing Collection ID 021780.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525B_CitationJet_CJ3_(cn_640,_D-CHAT)_2024-08-25_Andre_Gerwing_Collection_ID_021780.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cessna_525B_CitationJet_CJ3_%28cn_640%2C_D-CHAT%29_2024-08-25_Andre_Gerwing_Collection_ID_021780.jpg/960px-Cessna_525B_CitationJet_CJ3_%28cn_640%2C_D-CHAT%29_2024-08-25_Andre_Gerwing_Collection_ID_021780.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "André Gerwing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-08-25",
+      "caption": "Cessna 525B / CitationJet CJ3+ (c/n 640, D-CHAT) landing at Schönefeld, Flughafen / EDDB (DE), 2024-08-25 - The André Gerwing Collection ID: 021780",
+      "found": "2026-10-20T23:18:27.8684965+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ3",
+      "file": "File:Cessna 525B Citation CJ3 N111KJ.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525B_Citation_CJ3_N111KJ.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Cessna_525B_Citation_CJ3_N111KJ.jpg/960px-Cessna_525B_Citation_CJ3_N111KJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 618,
+      "author": "Sixflashphoto",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-01-18 16:07:21",
+      "caption": "Cessna 525B Citation CJ3--N111KJ Landing at KCMH on 1-18-18.",
+      "found": "2026-10-20T23:18:27.8684965+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ3",
+      "file": "File:Cessna CitationJet CJ3 N1H FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_CitationJet_CJ3_N1H_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Cessna_CitationJet_CJ3_N1H_FDK_MD2.jpg/960px-Cessna_CitationJet_CJ3_N1H_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 550,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-05-11",
+      "caption": "2005 Cessna CitationJet CJ3 N1H at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-20T23:18:27.8684965+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ3",
+      "file": "File:Cessna Citation CJ3 N297KH 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_CJ3_N297KH_1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cessna_Citation_CJ3_N297KH_1.jpg/960px-Cessna_Citation_CJ3_N297KH_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 617,
+      "author": "Sixflashphoto",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-01-20 16:14:08",
+      "caption": "Cessna 525B Citation CJ3--N297KH Landing at KCMH on 1-20-18.",
+      "found": "2026-10-20T23:18:27.8684965+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ3",
+      "file": "File:Citation CJ3+ cabin, EBACE 2023, Le Grand-Saconnex (EB237565).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Citation_CJ3%2B_cabin,_EBACE_2023,_Le_Grand-Saconnex_(EB237565).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Citation_CJ3%2B_cabin%2C_EBACE_2023%2C_Le_Grand-Saconnex_%28EB237565%29.jpg/960px-Citation_CJ3%2B_cabin%2C_EBACE_2023%2C_Le_Grand-Saconnex_%28EB237565%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "date": "2023-05-23",
+      "caption": "Cabin of a Cessna Citation CJ3+ at EBACE 2023 at Palexpo, Le Grand-Saconnex",
+      "found": "2026-10-20T23:18:27.8684965+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ3",
+      "file": "File:Static display, EBACE 2018, Le Grand-Saconnex (BL7C0551).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Static_display,_EBACE_2018,_Le_Grand-Saconnex_(BL7C0551).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Static_display%2C_EBACE_2018%2C_Le_Grand-Saconnex_%28BL7C0551%29.jpg/960px-Static_display%2C_EBACE_2018%2C_Le_Grand-Saconnex_%28BL7C0551%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-05-28",
+      "caption": "Cessna CitationJet CJ3 on static display at EBACE 2018",
+      "found": "2026-10-20T23:18:27.8684965+00:00"
     }
   ],
-  "updated": "2026-10-20T22:55:27.0048068+00:00"
+  "updated": "2026-10-20T23:18:27.8684965+00:00"
 }

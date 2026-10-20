@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T22:55:27.0048068+00:00",
+  "updated": "2026-10-20T23:18:27.8684965+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -843,27 +843,6 @@
           47.3982
         ]
       ]
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-16T21:53:14.6030000+00:00"
     },
     {
       "id": 693084,
@@ -2539,27 +2518,6 @@
       "updated": "2026-09-14T14:42:15.5130000+00:00"
     },
     {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
       "id": 719545,
       "kind": "work",
       "category": "Road work",
@@ -2579,6 +2537,27 @@
       "start": "2026-10-20T16:31:00.0000000+00:00",
       "end": "2026-10-20T23:30:00.0000000+00:00",
       "updated": "2026-10-20T16:51:12.2730000+00:00"
+    },
+    {
+      "id": 640019,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2027-01-01T02:00:00.0000000+00:00",
+      "updated": "2026-10-16T18:03:13.8400000+00:00"
     },
     {
       "id": 693774,
@@ -2621,6 +2600,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-16T21:53:14.6030000+00:00"
     },
     {
       "id": 698910,
