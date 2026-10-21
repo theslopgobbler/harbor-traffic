@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-21T06:24:10.6461666+00:00",
+  "updated": "2026-10-21T07:16:29.5416681+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a2421b",
-      "flight": "N2446X",
-      "reg": "N2446X",
-      "type": "C206",
+      "hex": "a9daf0",
+      "flight": "N734LQ",
+      "reg": "N734LQ",
+      "type": "C172",
       "cat": "A1",
-      "alt": 100,
+      "alt": 375,
       "gs": 60.2,
       "track": 11.5,
-      "rate": null,
-      "lat": 46.96481,
-      "lon": -122.90584,
-      "squawk": "5523",
+      "rate": -512,
+      "lat": 46.95433,
+      "lon": -122.909,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
