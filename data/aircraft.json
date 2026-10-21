@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-21T14:38:40.1722989+00:00",
+  "updated": "2026-10-21T15:12:29.6055196+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a9ab56",
+      "flight": "N722DS",
+      "reg": "N722DS",
+      "type": "HUSK",
+      "cat": "A1",
+      "alt": 275,
+      "gs": 62.4,
+      "track": 248.37,
+      "rate": -896,
+      "lat": 47.2366,
+      "lon": -123.138,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
