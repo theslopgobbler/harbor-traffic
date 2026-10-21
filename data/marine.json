@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-21T17:00:54.4514171+00:00",
+  "updated": "2026-10-21T17:34:24.7479929+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-21T16:26:00.0000000+00:00",
-    "waveFt": 4.6,
-    "periodS": 9.0,
-    "dirDeg": 277.0,
+    "time": "2026-10-21T16:56:00.0000000+00:00",
+    "waveFt": 4.3,
+    "periodS": 13.0,
+    "dirDeg": 270.0,
     "waterF": 54.9
   },
   "bar": {
@@ -17,12 +17,6 @@
     "ebb": null
   },
   "alerts": [
-    {
-      "event": "Tsunami Warning",
-      "area": "San Pablo Bay, Suisun Bay, the West Delta and  the San Francisco Bay north of the Bay Bridge; San Francisco Bay South of the Bay Bridge; San Diego County Coastal Areas; Ventura County Beaches; Malibu Coast; Los Angeles County Beaches; Palos Verdes Hills; Orange County Coastal; Catalina and Santa Barbara Islands; San Miguel and Santa Rosa Islands; Santa Cruz and Anacapa Islands; Santa Barbara County Southwestern Coast; Santa Barbara County Southeastern Coast; San Luis Obispo County Beaches; San Luis Obispo County Inland Central Coast; Santa Lucia Mountains; Santa Barbara County Central Coast Beaches; Northern Monterey Bay; Southern Monterey Bay and Big Sur Coast; San Francisco; Southwestern Solano County Including Vallejo; Coastal North Bay Including Point Reyes National Seashore; North Bay Interior Valleys; San Francisco Bay Shoreline; San Francisco Peninsula Coast; East Bay Interior Valleys; Coastal Mendocino; Southwestern Humboldt; Northern Coastal Humboldt; Coastal Del Norte; South Central Oregon Coast; Curry County Coast; Central Coast of Oregon; Clatsop County Coast; Tillamook County Coast; San Juan County; South Washington Coast; Lowlands of Western Whatcom County; Lowlands of Western Skagit and Northwestern Snohomish Counties; Port Townsend Area; Eastern Strait of Juan de Fuca; Western Strait of Juan de Fuca; Northern Washington Coast; Grays Harbor County Coast; Lower Chehalis River Valley; Island County; Prince of Wales Island; City and Borough of Wrangell; Ketchikan Gateway Borough; City of Hyder; Annette Island; City and Borough of Sitka; Admiralty Island; Petersburg Borough; Western Kupreanof and Kuiu Island; Municipality of Skagway; Haines Borough and Klukwan; Glacier Bay; Eastern Chichagof Island; Cape Fairweather to Lisianski Strait; City and Borough of Juneau; City and Borough of Yakutat; Valdez; Cordova; Southern Kachemak Bay; SW Kenai Peninsula; NW Kenai Peninsula; Southern Kenai Mtns; West Prince William Sound & Whittier; Tyonek; Kodiak Island Northeast; Kodiak Island Southwest; Chignik and Perryville; Aleutians East Borough; Unalaska and Nikolski; Atka and Adak; Pribilof Islands; Shemya and Attu Islands",
-      "ends": "2026-10-21T17:31:00+00:00",
-      "headline": "TEST Tsunami Warning issued October 21 at 9:31AM PDT until October 21 at 10:31AM PDT by NWS National Tsunami Warning Center"
-    },
     {
       "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
