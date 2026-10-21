@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T08:32:08.2602344+00:00",
+  "updated": "2026-10-21T09:12:42.6287796+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,11 +10,30 @@
     "waterF": 54.0
   },
   "bar": {
-    "issued": "2026-10-20T21:02:00+00:00",
-    "text": "Combined seas 4 to 6 ft. Bar conditions light. Maximum ebb currents will occur around 115 AM Wednesday, 200 PM Wednesday and 215 AM Thursday.",
-    "conditions": "light",
-    "seas": "4 to 6 ft",
+    "issued": "2026-10-21T08:44:00+00:00",
+    "text": "Combined seas 3 to 5 ft, increasing to 5 to 7 ft tonight. Bar conditions light increasing to light to moderate tonight. Maximum ebb currents will occur around 200 PM this afternoon, 215 AM early Thursday morning and 245 PM Thursday afternoon.",
+    "conditions": "light increasing to light to moderate tonight",
+    "seas": "3 to 5 ft, increasing to 5 to 7 ft tonight",
     "ebb": null
   },
-  "alerts": []
+  "alerts": [
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-10-23T18:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 21 at 1:48AM PDT until October 23 at 11:00AM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-10-24T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 21 at 1:48AM PDT until October 23 at 5:00PM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-10-23T03:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 21 at 1:40AM PDT until October 22 at 8:00PM PDT by NWS Portland OR"
+    }
+  ]
 }
