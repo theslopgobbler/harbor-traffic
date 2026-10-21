@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-21T03:07:58.6696892+00:00",
+  "updated": "2026-10-21T03:38:06.1072506+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-21T02:26:00.0000000+00:00",
-    "waveFt": 4.6,
+    "time": "2026-10-21T02:56:00.0000000+00:00",
+    "waveFt": 4.9,
     "periodS": 12.0,
-    "dirDeg": 275.0,
-    "waterF": 55.2
+    "dirDeg": 265.0,
+    "waterF": 54.9
   },
   "bar": {
     "issued": "2026-10-20T21:02:00+00:00",
@@ -15,5 +15,6 @@
     "conditions": "light",
     "seas": "4 to 6 ft",
     "ebb": null
-  }
+  },
+  "alerts": []
 }
