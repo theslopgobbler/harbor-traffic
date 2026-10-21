@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-21T05:50:42.3880812+00:00",
+  "updated": "2026-10-21T06:24:10.6461666+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a204f3",
-      "flight": "N2291H",
-      "reg": "N2291H",
-      "type": "P28A",
+      "hex": "a2421b",
+      "flight": "N2446X",
+      "reg": "N2446X",
+      "type": "C206",
       "cat": "A1",
-      "alt": 7500,
-      "gs": 109.0,
-      "track": 1.58,
+      "alt": 100,
+      "gs": 60.2,
+      "track": 11.5,
       "rate": null,
-      "lat": 47.48128,
-      "lon": -122.83123,
-      "squawk": "1200",
+      "lat": 46.96481,
+      "lon": -122.90584,
+      "squawk": "5523",
       "emergency": "none",
       "mil": false
     }
