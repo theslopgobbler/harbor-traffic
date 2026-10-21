@@ -72,7 +72,8 @@
     "Eurocopter EC135 P2+": "2026-10-20T20:58:41.1790323+00:00",
     "Airbus A350 941": "2026-10-20T22:55:27.0048068+00:00",
     "Cessna Citation CJ3": "2026-10-20T23:18:27.8684965+00:00",
-    "Hughes 369 D": "2026-10-20T23:46:05.1199383+00:00"
+    "Hughes 369 D": "2026-10-20T23:46:05.1199383+00:00",
+    "Bombardier Challenger 350": "2026-10-21T00:46:48.2611717+00:00"
   },
   "candidates": [
     {
@@ -4442,7 +4443,91 @@
       "date": "",
       "caption": "",
       "found": "2026-10-20T23:46:05.1199383+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 350",
+      "file": "File:9H-VCB AIRCRAFT Bombardier Challenger 350.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:9H-VCB_AIRCRAFT_Bombardier_Challenger_350.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/9H-VCB_AIRCRAFT_Bombardier_Challenger_350.jpg/960px-9H-VCB_AIRCRAFT_Bombardier_Challenger_350.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Sg1959",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-01-23 09:47:42",
+      "caption": "Frankfurt Flughafen Affenfelsen 9H-VCB AIRCRAFT Bombardier Challenger 350 AIRLINE VistaJet OPERATOR VistaJet TYPE CODE CL35 23.01.25",
+      "found": "2026-10-21T00:46:48.2611717+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 350",
+      "file": "File:9H-VCB AIRCRAFT Bombardier Challenger 350 (2).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:9H-VCB_AIRCRAFT_Bombardier_Challenger_350_(2).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/9H-VCB_AIRCRAFT_Bombardier_Challenger_350_%282%29.jpg/960px-9H-VCB_AIRCRAFT_Bombardier_Challenger_350_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Sg1959",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-01-23 09:48:29",
+      "caption": "Frankfurt Flughafen Affenfelsen 9H-VCB AIRCRAFT Bombardier Challenger 350 AIRLINE VistaJet OPERATOR VistaJet TYPE CODE CL35 23.01.25",
+      "found": "2026-10-21T00:46:48.2611717+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 350",
+      "file": "File:Bombardier Challenger 350 N1980Z.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_350_N1980Z.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Bombardier_Challenger_350_N1980Z.jpg/960px-Bombardier_Challenger_350_N1980Z.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 482,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-10-14",
+      "caption": "2005 Bombardier Challenger 350 N1980Z at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-21T00:46:48.2611717+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 350",
+      "file": "File:Bombardier Challenger 350 N360VJ BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_350_N360VJ_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Bombardier_Challenger_350_N360VJ_BWI_MD1.jpg/960px-Bombardier_Challenger_350_N360VJ_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 506,
+      "author": "Acroterion ;",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-10-23",
+      "caption": "2022 Bombardier Challenger 350 N360VJ landing at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-10-21T00:46:48.2611717+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 350",
+      "file": "File:Netjets Bombardier Challenger 350 N757QS BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Netjets_Bombardier_Challenger_350_N757QS_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Netjets_Bombardier_Challenger_350_N757QS_BWI_MD1.jpg/960px-Netjets_Bombardier_Challenger_350_N757QS_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 532,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-08-22",
+      "caption": "2018 Netjets Bombardier Challenger 350 BD-100-1A10 N757QS landing at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-10-21T00:46:48.2611717+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 350",
+      "file": "File:Vistajet Bombardier Challenger 350 9H-VCA at Stockholm-Arlanda Airport 30-09-2022.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Vistajet_Bombardier_Challenger_350_9H-VCA_at_Stockholm-Arlanda_Airport_30-09-2022.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Vistajet_Bombardier_Challenger_350_9H-VCA_at_Stockholm-Arlanda_Airport_30-09-2022.jpg/960px-Vistajet_Bombardier_Challenger_350_9H-VCA_at_Stockholm-Arlanda_Airport_30-09-2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 589,
+      "author": "Robbie Klinkenberg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-09-30 18:06:41",
+      "caption": "Vistajet Bombardier Challenger 350 9H-VCA at Stockholm-Arlanda Airport",
+      "found": "2026-10-21T00:46:48.2611717+00:00"
     }
   ],
-  "updated": "2026-10-21T00:07:10.7102753+00:00"
+  "updated": "2026-10-21T00:46:48.2611717+00:00"
 }
