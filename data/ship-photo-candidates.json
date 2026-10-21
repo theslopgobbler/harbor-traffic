@@ -333,7 +333,8 @@
     "366679290": "2026-10-21T09:50:51.5799912+00:00",
     "357777000": "2026-10-21T10:23:20.7789037+00:00",
     "210411000": "2026-10-21T14:05:29.2891991+00:00",
-    "374353000": "2026-10-21T15:52:32.4425575+00:00"
+    "374353000": "2026-10-21T15:52:32.4425575+00:00",
+    "563199600": "2026-10-21T17:00:54.4514171+00:00"
   },
   "candidates": [
     {
@@ -2990,7 +2991,22 @@
       "date": "17 September 1917 ",
       "caption": "",
       "found": "2026-10-21T10:23:20.7789037+00:00"
+    },
+    {
+      "mmsi": "563199600",
+      "ship": "EVER MACH",
+      "file": "File:Ever Mach and Vincent Thomas Bridge.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ever_Mach_and_Vincent_Thomas_Bridge.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Ever_Mach_and_Vincent_Thomas_Bridge.jpg/1280px-Ever_Mach_and_Vincent_Thomas_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "DanielMichaelPerry",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2025-06-14 13:16:52",
+      "caption": "Container ship Ever Mach in front of the Vincent Thomas Bridge, Port of Los Angeles. Viewed from the deck of the USS Iowa.",
+      "found": "2026-10-21T17:00:54.4514171+00:00"
     }
   ],
-  "updated": "2026-10-21T16:23:19.5317995+00:00"
+  "updated": "2026-10-21T17:00:54.4514171+00:00"
 }

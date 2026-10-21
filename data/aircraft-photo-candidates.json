@@ -74,7 +74,8 @@
     "Cessna Citation CJ3": "2026-10-20T23:18:27.8684965+00:00",
     "Hughes 369 D": "2026-10-20T23:46:05.1199383+00:00",
     "Bombardier Challenger 350": "2026-10-21T00:46:48.2611717+00:00",
-    "Boeing 767 383ERBDSF": "2026-10-21T02:00:38.4907704+00:00"
+    "Boeing 767 383ERBDSF": "2026-10-21T02:00:38.4907704+00:00",
+    "Beech C-12U-3 Huron": "2026-10-21T17:00:54.4514171+00:00"
   },
   "candidates": [
     {
@@ -4528,7 +4529,21 @@
       "date": "2022-09-30 18:06:41",
       "caption": "Vistajet Bombardier Challenger 350 9H-VCA at Stockholm-Arlanda Airport",
       "found": "2026-10-21T00:46:48.2611717+00:00"
+    },
+    {
+      "model": "Beech C-12U-3 Huron",
+      "file": "File:Beech C-12U-3 Huron 40157 (34776633185).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_C-12U-3_Huron_40157_(34776633185).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Beech_C-12U-3_Huron_40157_%2834776633185%29.jpg/960px-Beech_C-12U-3_Huron_40157_%2834776633185%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Ronnie Macdonald from Chelmsford, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-05-18 13:13",
+      "caption": "Beech C-12U-3 Huron 40157",
+      "found": "2026-10-21T17:00:54.4514171+00:00"
     }
   ],
-  "updated": "2026-10-21T16:23:19.5317995+00:00"
+  "updated": "2026-10-21T17:00:54.4514171+00:00"
 }
