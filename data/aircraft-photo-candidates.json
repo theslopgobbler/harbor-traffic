@@ -75,7 +75,8 @@
     "Hughes 369 D": "2026-10-20T23:46:05.1199383+00:00",
     "Bombardier Challenger 350": "2026-10-21T00:46:48.2611717+00:00",
     "Boeing 767 383ERBDSF": "2026-10-21T02:00:38.4907704+00:00",
-    "Beech C-12U-3 Huron": "2026-10-21T17:00:54.4514171+00:00"
+    "Beech C-12U-3 Huron": "2026-10-21T17:00:54.4514171+00:00",
+    "Cessna UC-35A Citation": "2026-10-21T18:40:45.1639872+00:00"
   },
   "candidates": [
     {
@@ -4543,7 +4544,91 @@
       "date": "2017-05-18 13:13",
       "caption": "Beech C-12U-3 Huron 40157",
       "found": "2026-10-21T17:00:54.4514171+00:00"
+    },
+    {
+      "model": "Cessna UC-35A Citation",
+      "file": "File:Cessna Citation II.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_II.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Cessna_Citation_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 407,
+      "author": "Loreley28 at English Wikipedia",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "20 November 2005 (original upload date)",
+      "caption": "Aeromed Cessna Citation II N174DR Data: Manufacturer: Cessna Model: 550 (Citation II) Year built: 1979 Serial Number (C/N): 550-0074 Number of Seats: 8 Number of Engines: 2",
+      "found": "2026-10-21T18:40:45.1639872+00:00"
+    },
+    {
+      "model": "Cessna UC-35A Citation",
+      "file": "File:Cessna UC-35A1 Citation Ultra, United States - US Army JP5907770.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_UC-35A1_Citation_Ultra,_United_States_-_US_Army_JP5907770.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Cessna_UC-35A1_Citation_Ultra%2C_United_States_-_US_Army_JP5907770.jpg/960px-Cessna_UC-35A1_Citation_Ultra%2C_United_States_-_US_Army_JP5907770.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "17 November 2006",
+      "caption": "",
+      "found": "2026-10-21T18:40:45.1639872+00:00"
+    },
+    {
+      "model": "Cessna UC-35A Citation",
+      "file": "File:Cessna UC-35A Citation Ultra (560), USA - Army AN1471441.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_UC-35A_Citation_Ultra_(560),_USA_-_Army_AN1471441.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Cessna_UC-35A_Citation_Ultra_%28560%29%2C_USA_-_Army_AN1471441.jpg/960px-Cessna_UC-35A_Citation_Ultra_%28560%29%2C_USA_-_Army_AN1471441.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 636,
+      "author": "Mike Freer - Touchdown-aviation",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "29 January 2009",
+      "caption": "Seen at the recent photo-shoot.",
+      "found": "2026-10-21T18:40:45.1639872+00:00"
+    },
+    {
+      "model": "Cessna UC-35A Citation",
+      "file": "File:Cessna uc-35a citation 560 ultra v arp.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_uc-35a_citation_560_ultra_v_arp.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Cessna_uc-35a_citation_560_ultra_v_arp.jpg/960px-Cessna_uc-35a_citation_560_ultra_v_arp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 649,
+      "author": "Adrian Pingstone",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2008-07",
+      "caption": "Cessna UC-35A Citation 560 Ultra V of the US Army in Europe at the 2008 Royal International Air Tattoo, RAF Fairford, Gloucestershire, England. Taken at RIAT Fairford on the Thursday before the weekend show days. Late...",
+      "found": "2026-10-21T18:40:45.1639872+00:00"
+    },
+    {
+      "model": "Cessna UC-35A Citation",
+      "file": "File:U.S. Air Force, 97-0102, Cessna UC-35A Citation Ultra (52463162914).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Air_Force,_97-0102,_Cessna_UC-35A_Citation_Ultra_(52463162914).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/U.S._Air_Force%2C_97-0102%2C_Cessna_UC-35A_Citation_Ultra_%2852463162914%29.jpg/960px-U.S._Air_Force%2C_97-0102%2C_Cessna_UC-35A_Citation_Ultra_%2852463162914%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-10-21 16:21",
+      "caption": "U.S. Air Force, 97-0102, Cessna UC-35A Citation Ultra",
+      "found": "2026-10-21T18:40:45.1639872+00:00"
+    },
+    {
+      "model": "Cessna UC-35A Citation",
+      "file": "File:US Army, 99-0102, Cessna UC-35A Citation (18583310298).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:US_Army,_99-0102,_Cessna_UC-35A_Citation_(18583310298).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/US_Army%2C_99-0102%2C_Cessna_UC-35A_Citation_%2818583310298%29.jpg/960px-US_Army%2C_99-0102%2C_Cessna_UC-35A_Citation_%2818583310298%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-06-13 09:36",
+      "caption": "US Army, 99-0102, Cessna UC-35A Citation",
+      "found": "2026-10-21T18:40:45.1639872+00:00"
     }
   ],
-  "updated": "2026-10-21T18:05:58.9163704+00:00"
+  "updated": "2026-10-21T18:40:45.1639872+00:00"
 }
