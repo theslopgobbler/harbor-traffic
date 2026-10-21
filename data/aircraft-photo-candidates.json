@@ -76,7 +76,8 @@
     "Bombardier Challenger 350": "2026-10-21T00:46:48.2611717+00:00",
     "Boeing 767 383ERBDSF": "2026-10-21T02:00:38.4907704+00:00",
     "Beech C-12U-3 Huron": "2026-10-21T17:00:54.4514171+00:00",
-    "Cessna UC-35A Citation": "2026-10-21T18:40:45.1639872+00:00"
+    "Cessna UC-35A Citation": "2026-10-21T18:40:45.1639872+00:00",
+    "Cessna Citation VII": "2026-10-21T19:57:17.5852096+00:00"
   },
   "candidates": [
     {
@@ -4628,7 +4629,91 @@
       "date": "2015-06-13 09:36",
       "caption": "US Army, 99-0102, Cessna UC-35A Citation",
       "found": "2026-10-21T18:40:45.1639872+00:00"
+    },
+    {
+      "model": "Cessna Citation VII",
+      "file": "File:Cessna 650 Citation VII AN1936672.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_650_Citation_VII_AN1936672.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Cessna_650_Citation_VII_AN1936672.jpg/960px-Cessna_650_Citation_VII_AN1936672.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 660,
+      "author": "Alan Lebeda",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "21 October 2010",
+      "caption": "",
+      "found": "2026-10-21T19:57:17.5852096+00:00"
+    },
+    {
+      "model": "Cessna Citation VII",
+      "file": "File:Cessna Citation III (8418203324) (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_III_(8418203324)_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Cessna_Citation_III_%288418203324%29_%28cropped%29.jpg/960px-Cessna_Citation_III_%288418203324%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Joao Carlos Medau from Campinas, Brazil",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2013-01-07 17:40",
+      "caption": "Cessna Citation III",
+      "found": "2026-10-21T19:57:17.5852096+00:00"
+    },
+    {
+      "model": "Cessna Citation VII",
+      "file": "File:N18GB Cessna Citation VII (7534555216).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N18GB_Cessna_Citation_VII_(7534555216).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/N18GB_Cessna_Citation_VII_%287534555216%29.jpg/960px-N18GB_Cessna_Citation_VII_%287534555216%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-07-09 11:21:43",
+      "caption": "At Lincoln Airport Nebraska",
+      "found": "2026-10-21T19:57:17.5852096+00:00"
+    },
+    {
+      "model": "Cessna Citation VII",
+      "file": "File:N24KT Cessna Citation VII (7534319516).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N24KT_Cessna_Citation_VII_(7534319516).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/N24KT_Cessna_Citation_VII_%287534319516%29.jpg/960px-N24KT_Cessna_Citation_VII_%287534319516%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-07-09 10:23:09",
+      "caption": "At Lincoln Airport Nebraska",
+      "found": "2026-10-21T19:57:17.5852096+00:00"
+    },
+    {
+      "model": "Cessna Citation VII",
+      "file": "File:N375E Cessna Citation VII (7533952936).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N375E_Cessna_Citation_VII_(7533952936).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/N375E_Cessna_Citation_VII_%287533952936%29.jpg/960px-N375E_Cessna_Citation_VII_%287533952936%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-07-09 08:47:52",
+      "caption": "At Lincoln Airport Nebraska",
+      "found": "2026-10-21T19:57:17.5852096+00:00"
+    },
+    {
+      "model": "Cessna Citation VII",
+      "file": "File:PR-VII Cessna Citation VII (8167102786).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:PR-VII_Cessna_Citation_VII_(8167102786).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/PR-VII_Cessna_Citation_VII_%288167102786%29.jpg/960px-PR-VII_Cessna_Citation_VII_%288167102786%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-10-13 19:10:03",
+      "caption": "At Goiania Airport",
+      "found": "2026-10-21T19:57:17.5852096+00:00"
     }
   ],
-  "updated": "2026-10-21T19:20:30.6645895+00:00"
+  "updated": "2026-10-21T19:57:17.5852096+00:00"
 }

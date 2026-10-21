@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T19:20:30.6645895+00:00",
+  "updated": "2026-10-21T19:57:17.5852096+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2823,27 +2823,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 719711,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on US 12 both directions at milepost 11.3 will be alternating traffic with flaggers. Use caution beginning at 10:08 am on October 21, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "B",
-      "milepost": 11.3,
-      "lat": 46.979466964,
-      "lon": -123.583973368,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-10-21T17:08:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-21T17:09:20.2130000+00:00"
     },
     {
       "id": 698910,
