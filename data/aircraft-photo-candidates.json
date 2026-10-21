@@ -78,7 +78,8 @@
     "Beech C-12U-3 Huron": "2026-10-21T17:00:54.4514171+00:00",
     "Cessna UC-35A Citation": "2026-10-21T18:40:45.1639872+00:00",
     "Cessna Citation VII": "2026-10-21T19:57:17.5852096+00:00",
-    "Robinson R44 Raven II": "2026-10-21T20:22:49.2902285+00:00"
+    "Robinson R44 Raven II": "2026-10-21T20:22:49.2902285+00:00",
+    "Cessna O-1E Bird Dog": "2026-10-21T21:59:00.1216363+00:00"
   },
   "candidates": [
     {
@@ -4798,7 +4799,91 @@
       "date": "2024-07-07 19:02:11",
       "caption": "Robinson R44 Raven II / Clipper II w Polsce",
       "found": "2026-10-21T20:22:49.2902285+00:00"
+    },
+    {
+      "model": "Cessna O-1E Bird Dog",
+      "file": "File:Ayub Park O-1E Bird Dog tail.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ayub_Park_O-1E_Bird_Dog_tail.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Ayub_Park_O-1E_Bird_Dog_tail.jpg/960px-Ayub_Park_O-1E_Bird_Dog_tail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1705,
+      "author": "Pr0pulsion 123",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-05-08 17:11:29",
+      "caption": "Tail of a retired Pakistani O-1E Bird Dog at Vintage Park (open-air military museum, area within Ayub Park), in Rawalpindi, Pakistan.",
+      "found": "2026-10-21T21:59:00.1216363+00:00"
+    },
+    {
+      "model": "Cessna O-1E Bird Dog",
+      "file": "File:Cessna O-1E Bird Dog in flight over Vietnam, in 1967 (6344058).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_O-1E_Bird_Dog_in_flight_over_Vietnam,_in_1967_(6344058).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Cessna_O-1E_Bird_Dog_in_flight_over_Vietnam%2C_in_1967_%286344058%29.jpg/960px-Cessna_O-1E_Bird_Dog_in_flight_over_Vietnam%2C_in_1967_%286344058%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 768,
+      "author": "U.S. Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1967",
+      "caption": "A U.S. Air Force Cessna O-1E Bird Dog aircraft (s/n 56-4200) in flight in the vicinity of Saigon, Vietnam, in 1967. The aircraft was used as a forward air control aircraft throughout South Vietnam. The forward air con...",
+      "found": "2026-10-21T21:59:00.1216363+00:00"
+    },
+    {
+      "model": "Cessna O-1E Bird Dog",
+      "file": "File:O-1 Bird Dog War Memorial of Korea-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O-1_Bird_Dog_War_Memorial_of_Korea-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/O-1_Bird_Dog_War_Memorial_of_Korea-1.jpg/960px-O-1_Bird_Dog_War_Memorial_of_Korea-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2017-08-27 11:38:04",
+      "caption": "An O-1 Bird Dog on display at the War Memorial of Korea.",
+      "found": "2026-10-21T21:59:00.1216363+00:00"
+    },
+    {
+      "model": "Cessna O-1E Bird Dog",
+      "file": "File:O-1 Bird Dog War Memorial of Korea-2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O-1_Bird_Dog_War_Memorial_of_Korea-2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/O-1_Bird_Dog_War_Memorial_of_Korea-2.jpg/960px-O-1_Bird_Dog_War_Memorial_of_Korea-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2017-08-27 11:38:24",
+      "caption": "An O-1 Bird Dog on display at the War Memorial of Korea.",
+      "found": "2026-10-21T21:59:00.1216363+00:00"
+    },
+    {
+      "model": "Cessna O-1E Bird Dog",
+      "file": "File:O-1 Bird Dog War Memorial of Korea-3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O-1_Bird_Dog_War_Memorial_of_Korea-3.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/O-1_Bird_Dog_War_Memorial_of_Korea-3.jpg/960px-O-1_Bird_Dog_War_Memorial_of_Korea-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2017-08-27 11:38:31",
+      "caption": "An O-1 Bird Dog on display at the War Memorial of Korea.",
+      "found": "2026-10-21T21:59:00.1216363+00:00"
+    },
+    {
+      "model": "Cessna O-1E Bird Dog",
+      "file": "File:Old Cessna O-1E Bird Dog.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Old_Cessna_O-1E_Bird_Dog.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Old_Cessna_O-1E_Bird_Dog.jpg/960px-Old_Cessna_O-1E_Bird_Dog.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 541,
+      "author": "Pr0pulsion 123",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-05-08 17:11:06",
+      "caption": "A retired Cessna O-1E/L-19E Bird Dog of the Pakistani Army on display at Vintage Park (open-air military museum, area within Ayub Park), in Rawalpindi, Pakistan.",
+      "found": "2026-10-21T21:59:00.1216363+00:00"
     }
   ],
-  "updated": "2026-10-21T21:25:03.9006997+00:00"
+  "updated": "2026-10-21T21:59:00.1216363+00:00"
 }
