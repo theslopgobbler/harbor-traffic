@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-21T20:22:49.2902285+00:00",
+  "updated": "2026-10-21T20:57:53.9137002+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-21T19:26:00.0000000+00:00",
-    "waveFt": 3.9,
-    "periodS": 11.0,
-    "dirDeg": 281.0,
-    "waterF": 54.7
+    "time": "2026-10-21T20:26:00.0000000+00:00",
+    "waveFt": 4.3,
+    "periodS": 12.0,
+    "dirDeg": 278.0,
+    "waterF": 54.9
   },
   "bar": {
     "issued": "2026-10-21T08:44:00+00:00",
@@ -19,6 +19,18 @@
   "alerts": [
     {
       "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-10-23T03:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 21 at 1:30PM PDT until October 22 at 8:00PM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Hazardous Seas Warning",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-10-23T15:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued October 21 at 1:30PM PDT until October 23 at 8:00AM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-10-23T18:00:00+00:00",
       "headline": "Small Craft Advisory issued October 21 at 8:22AM PDT until October 23 at 11:00AM PDT by NWS Seattle WA"
@@ -28,12 +40,6 @@
       "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-10-24T00:00:00+00:00",
       "headline": "Small Craft Advisory issued October 21 at 8:22AM PDT until October 23 at 5:00PM PDT by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
-      "ends": "2026-10-23T03:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 21 at 1:40AM PDT until October 22 at 8:00PM PDT by NWS Portland OR"
     }
   ]
 }
