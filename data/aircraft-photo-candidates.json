@@ -81,7 +81,8 @@
     "Robinson R44 Raven II": "2026-10-21T20:22:49.2902285+00:00",
     "Cessna O-1E Bird Dog": "2026-10-21T21:59:00.1216363+00:00",
     "Helicopteres Guimbal Cabri G2": "2026-10-22T17:55:23.9225476+00:00",
-    "Airbus Helicopters EC130 T2 (H130)": "2026-10-22T19:08:25.7612092+00:00"
+    "Airbus Helicopters EC130 T2 (H130)": "2026-10-22T19:08:25.7612092+00:00",
+    "Beech C-12R+ Huron": "2026-10-22T19:39:48.1967578+00:00"
   },
   "candidates": [
     {
@@ -4969,7 +4970,21 @@
       "date": "2016-03-21",
       "caption": "Hiện VNH đang sử dụng máy bay trực thăng Cabri G2 cho công tác đào tạo phi công",
       "found": "2026-10-22T17:55:23.9225476+00:00"
+    },
+    {
+      "model": "Beech C-12R+ Huron",
+      "file": "File:Beech C-12R Huron (B200C), USA - Air Force AN1760214.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_C-12R_Huron_(B200C),_USA_-_Air_Force_AN1760214.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Beech_C-12R_Huron_%28B200C%29%2C_USA_-_Air_Force_AN1760214.jpg/960px-Beech_C-12R_Huron_%28B200C%29%2C_USA_-_Air_Force_AN1760214.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Andre Wadman",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "14 June 2010",
+      "caption": "",
+      "found": "2026-10-22T19:39:48.1967578+00:00"
     }
   ],
-  "updated": "2026-10-22T19:08:25.7612092+00:00"
+  "updated": "2026-10-22T19:39:48.1967578+00:00"
 }
