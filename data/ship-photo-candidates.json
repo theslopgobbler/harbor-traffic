@@ -346,7 +346,8 @@
     "636020486": "2026-10-22T08:16:31.7799891+00:00",
     "209785000": "2026-10-22T09:28:27.7927917+00:00",
     "477708500": "2026-10-22T13:49:49.4124334+00:00",
-    "432440000": "2026-10-22T14:25:10.6869239+00:00"
+    "432440000": "2026-10-22T14:25:10.6869239+00:00",
+    "352001129": "2026-10-22T15:38:48.2698103+00:00"
   },
   "candidates": [
     {
@@ -3078,7 +3079,22 @@
       "date": "Summer 2006 ",
       "caption": "The chemical tanker Ocean Pride on the river Weser near Bremen-Vegesack, Germany. Rear view",
       "found": "2026-10-22T13:49:49.4124334+00:00"
+    },
+    {
+      "mmsi": "352001129",
+      "ship": "SOO SHIN",
+      "file": "File:Car carrier vessel passing underneath the Lewis and Clark Bridge.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Car_carrier_vessel_passing_underneath_the_Lewis_and_Clark_Bridge.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Car_carrier_vessel_passing_underneath_the_Lewis_and_Clark_Bridge.jpg/1280px-Car_carrier_vessel_passing_underneath_the_Lewis_and_Clark_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 876,
+      "author": "Quintin Soloviev",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2024-11-15 18:14:21",
+      "caption": "Car carrier Soo Shin passing underneath the Lewis and Clark Bridge between Longview, Washington, and Rainier, Oregon",
+      "found": "2026-10-22T15:38:48.2698103+00:00"
     }
   ],
-  "updated": "2026-10-22T15:02:06.1809909+00:00"
+  "updated": "2026-10-22T15:38:48.2698103+00:00"
 }

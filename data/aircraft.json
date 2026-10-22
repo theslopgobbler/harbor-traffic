@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-22T15:02:06.1809909+00:00",
+  "updated": "2026-10-22T15:38:48.2698103+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a34935",
-      "flight": "N3100M",
-      "reg": "N3100M",
-      "type": "PA12",
+      "hex": "a59cee",
+      "flight": "N4607F",
+      "reg": "N4607F",
+      "type": "T206",
       "cat": "A1",
-      "alt": 2100,
-      "gs": 74.3,
-      "track": 244.47,
-      "rate": -320,
-      "lat": 47.66332,
-      "lon": -122.74454,
-      "squawk": "1200",
+      "alt": 8000,
+      "gs": 141.7,
+      "track": 14.72,
+      "rate": 0,
+      "lat": 46.55782,
+      "lon": -123.0653,
+      "squawk": "4717",
       "emergency": "none",
       "mil": false
     }
