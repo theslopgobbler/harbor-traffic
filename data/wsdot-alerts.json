@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T11:11:05.3039544+00:00",
+  "updated": "2026-10-22T11:49:12.1630909+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1854,27 +1854,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 719781,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on I-5 northbound at milepost 104.77 near Capitol Blvd SE beginning at 2:49 am on October 22, 2026 until about 4:00 am.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 104.77,
-      "lat": 47.025147878,
-      "lon": -122.898843766,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-22T09:49:00.0000000+00:00",
-      "end": "2026-10-22T11:00:00.0000000+00:00",
-      "updated": "2026-10-22T09:51:56.6100000+00:00"
     },
     {
       "id": 693774,
