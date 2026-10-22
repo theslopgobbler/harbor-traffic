@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-22T08:57:00.8417531+00:00",
+  "updated": "2026-10-22T09:28:27.7927917+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ae26b2",
+      "flight": "C6592",
+      "reg": "6592",
+      "type": "AS65",
+      "cat": "A7",
+      "alt": 5175,
+      "gs": 116.5,
+      "track": 124.51,
+      "rate": null,
+      "lat": 47.93417,
+      "lon": -122.96647,
+      "squawk": "1277",
+      "emergency": "none",
+      "mil": true
+    }
+  ]
 }
