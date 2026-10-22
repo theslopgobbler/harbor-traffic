@@ -344,7 +344,8 @@
     "636025279": "2026-10-22T06:08:05.0465038+00:00",
     "538008453": "2026-10-22T06:46:35.1528272+00:00",
     "636020486": "2026-10-22T08:16:31.7799891+00:00",
-    "209785000": "2026-10-22T09:28:27.7927917+00:00"
+    "209785000": "2026-10-22T09:28:27.7927917+00:00",
+    "477708500": "2026-10-22T13:49:49.4124334+00:00"
   },
   "candidates": [
     {
@@ -3016,7 +3017,67 @@
       "date": "2025-06-14 13:16:52",
       "caption": "Container ship Ever Mach in front of the Vincent Thomas Bridge, Port of Los Angeles. Viewed from the deck of the USS Iowa.",
       "found": "2026-10-21T17:00:54.4514171+00:00"
+    },
+    {
+      "mmsi": "477708500",
+      "ship": "OCEAN PRIDE",
+      "file": "File:9526021 Ocean Pride.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:9526021_Ocean_Pride.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/9526021_Ocean_Pride.jpg/1280px-9526021_Ocean_Pride.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 829,
+      "author": "Cavernia",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-03-15 17:01:46",
+      "caption": "«Ocean Pride» i Korsfjorden",
+      "found": "2026-10-22T13:49:49.4124334+00:00"
+    },
+    {
+      "mmsi": "477708500",
+      "ship": "OCEAN PRIDE",
+      "file": "File:9526021 Ocean Pride 2012.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:9526021_Ocean_Pride_2012.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/9526021_Ocean_Pride_2012.jpg/1280px-9526021_Ocean_Pride_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Cavernia",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-07-03 19:36:15",
+      "caption": "«Ocean Pride» i Korsfjorden",
+      "found": "2026-10-22T13:49:49.4124334+00:00"
+    },
+    {
+      "mmsi": "477708500",
+      "ship": "OCEAN PRIDE",
+      "file": "File:Ocean Pride.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ocean_Pride.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ocean_Pride.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 960,
+      "author": "Garitzko",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Summer 2006 ",
+      "caption": "The chemical tanker Ocean Pride on the river Weser near Bremen-Vegesack",
+      "found": "2026-10-22T13:49:49.4124334+00:00"
+    },
+    {
+      "mmsi": "477708500",
+      "ship": "OCEAN PRIDE",
+      "file": "File:Ocean Pride rear view.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ocean_Pride_rear_view.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Ocean_Pride_rear_view.jpg/1280px-Ocean_Pride_rear_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Garitzko",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Summer 2006 ",
+      "caption": "The chemical tanker Ocean Pride on the river Weser near Bremen-Vegesack, Germany. Rear view",
+      "found": "2026-10-22T13:49:49.4124334+00:00"
     }
   ],
-  "updated": "2026-10-22T13:13:34.6004179+00:00"
+  "updated": "2026-10-22T13:49:49.4124334+00:00"
 }
