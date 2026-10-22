@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-22T14:25:10.6869239+00:00",
+  "updated": "2026-10-22T15:02:06.1809909+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a34935",
+      "flight": "N3100M",
+      "reg": "N3100M",
+      "type": "PA12",
+      "cat": "A1",
+      "alt": 2100,
+      "gs": 74.3,
+      "track": 244.47,
+      "rate": -320,
+      "lat": 47.66332,
+      "lon": -122.74454,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
