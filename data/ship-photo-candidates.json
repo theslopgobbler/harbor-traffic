@@ -348,7 +348,8 @@
     "477708500": "2026-10-22T13:49:49.4124334+00:00",
     "432440000": "2026-10-22T14:25:10.6869239+00:00",
     "352001129": "2026-10-22T15:38:48.2698103+00:00",
-    "366999375": "2026-10-22T16:12:36.9731095+00:00"
+    "366999375": "2026-10-22T16:12:36.9731095+00:00",
+    "538007592": "2026-10-22T19:08:25.7612092+00:00"
   },
   "candidates": [
     {
@@ -3095,7 +3096,127 @@
       "date": "2024-11-15 18:14:21",
       "caption": "Car carrier Soo Shin passing underneath the Lewis and Clark Bridge between Longview, Washington, and Rainier, Oregon",
       "found": "2026-10-22T15:38:48.2698103+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (01).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(01).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Northern_Highway%2C_Fremantle%2C_2017_%2801%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 847,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:38:07",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (02).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(02).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Northern_Highway%2C_Fremantle%2C_2017_%2802%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 721,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:38:29",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (03).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(03).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Northern_Highway%2C_Fremantle%2C_2017_%2803%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:38:58",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (04).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(04).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Northern_Highway%2C_Fremantle%2C_2017_%2804%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2804%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 713,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:32:03",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (05).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(05).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Northern_Highway%2C_Fremantle%2C_2017_%2805%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2805%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:32:11",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia, with part of a rainbow in the background",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (06).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(06).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Northern_Highway%2C_Fremantle%2C_2017_%2806%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2806%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 679,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:32:23",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (07).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(07).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Northern_Highway%2C_Fremantle%2C_2017_%2807%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2807%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 719,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:41:39",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
+    },
+    {
+      "mmsi": "538007592",
+      "ship": "NORTHERN HIGHWAY",
+      "file": "File:Northern Highway, Fremantle, 2017 (08).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northern_Highway,_Fremantle,_2017_(08).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Northern_Highway%2C_Fremantle%2C_2017_%2808%29.jpg/1280px-Northern_Highway%2C_Fremantle%2C_2017_%2808%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-05-21 14:41:55",
+      "caption": "Car carrier Northern Highway departing from the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-22T19:08:25.7612092+00:00"
     }
   ],
-  "updated": "2026-10-22T18:21:28.3598687+00:00"
+  "updated": "2026-10-22T19:08:25.7612092+00:00"
 }
