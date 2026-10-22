@@ -79,7 +79,8 @@
     "Cessna UC-35A Citation": "2026-10-21T18:40:45.1639872+00:00",
     "Cessna Citation VII": "2026-10-21T19:57:17.5852096+00:00",
     "Robinson R44 Raven II": "2026-10-21T20:22:49.2902285+00:00",
-    "Cessna O-1E Bird Dog": "2026-10-21T21:59:00.1216363+00:00"
+    "Cessna O-1E Bird Dog": "2026-10-21T21:59:00.1216363+00:00",
+    "Helicopteres Guimbal Cabri G2": "2026-10-22T17:55:23.9225476+00:00"
   },
   "candidates": [
     {
@@ -4883,7 +4884,91 @@
       "date": "2023-05-08 17:11:06",
       "caption": "A retired Cessna O-1E/L-19E Bird Dog of the Pakistani Army on display at Vintage Park (open-air military museum, area within Ayub Park), in Rawalpindi, Pakistan.",
       "found": "2026-10-21T21:59:00.1216363+00:00"
+    },
+    {
+      "model": "Helicopteres Guimbal Cabri G2",
+      "file": "File:2014 - Model of Swiss Helicopter 'HB-ZDQ' Guimbal Cabri G2, Payerne, Switzerland ( Ank Kumar ).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2014_-_Model_of_Swiss_Helicopter_%27HB-ZDQ%27_Guimbal_Cabri_G2,_Payerne,_Switzerland_(_Ank_Kumar_).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/2014_-_Model_of_Swiss_Helicopter_%27HB-ZDQ%27_Guimbal_Cabri_G2%2C_Payerne%2C_Switzerland_%28_Ank_Kumar_%29.jpg/960px-2014_-_Model_of_Swiss_Helicopter_%27HB-ZDQ%27_Guimbal_Cabri_G2%2C_Payerne%2C_Switzerland_%28_Ank_Kumar_%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2014-09-06 17:39:33",
+      "caption": "Swiss Helicopter Guimbal Cabri G2 helicopter",
+      "found": "2026-10-22T17:55:23.9225476+00:00"
+    },
+    {
+      "model": "Helicopteres Guimbal Cabri G2",
+      "file": "File:Bruno Guimbal Cabri G2 2011.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bruno_Guimbal_Cabri_G2_2011.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/09/Bruno_Guimbal_Cabri_G2_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 872,
+      "author": "Waerfelu",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "date": "2011-09-01",
+      "caption": "Bruno Guimbal founder and CEO of Hélicoptères Guimbal in front of the Cabri G2.",
+      "found": "2026-10-22T17:55:23.9225476+00:00"
+    },
+    {
+      "model": "Helicopteres Guimbal Cabri G2",
+      "file": "File:Guimbal Cabri G2 - F-GRIL.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Guimbal_Cabri_G2_-_F-GRIL.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Guimbal_Cabri_G2_-_F-GRIL.jpg/960px-Guimbal_Cabri_G2_-_F-GRIL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Cjp24",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2016-08-14 18:33:48",
+      "caption": "Guimbal Cabri G2, F-GRIL.",
+      "found": "2026-10-22T17:55:23.9225476+00:00"
+    },
+    {
+      "model": "Helicopteres Guimbal Cabri G2",
+      "file": "File:Guimbal Cabri G2 1003 cockpit.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Guimbal_Cabri_G2_1003_cockpit.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Guimbal_Cabri_G2_1003_cockpit.jpg/960px-Guimbal_Cabri_G2_1003_cockpit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "Alexandre VALENTINI",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "date": "2008-09-26",
+      "caption": "Guimbal Cabri G2 Cockpit",
+      "found": "2026-10-22T17:55:23.9225476+00:00"
+    },
+    {
+      "model": "Helicopteres Guimbal Cabri G2",
+      "file": "File:Guimbal Cabri G2 fenestron.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Guimbal_Cabri_G2_fenestron.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Guimbal_Cabri_G2_fenestron.jpg/960px-Guimbal_Cabri_G2_fenestron.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "Alexandre VALENTINI",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "date": "2008-09-26",
+      "caption": "Tail rotor Guimbal Cabri G2 helicopter",
+      "found": "2026-10-22T17:55:23.9225476+00:00"
+    },
+    {
+      "model": "Helicopteres Guimbal Cabri G2",
+      "file": "File:Máy bay Guimbal Cabri G2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:M%C3%A1y_bay_Guimbal_Cabri_G2.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c0/M%C3%A1y_bay_Guimbal_Cabri_G2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 639,
+      "author": "Hoangps",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2016-03-21",
+      "caption": "Hiện VNH đang sử dụng máy bay trực thăng Cabri G2 cho công tác đào tạo phi công",
+      "found": "2026-10-22T17:55:23.9225476+00:00"
     }
   ],
-  "updated": "2026-10-22T17:21:52.7405685+00:00"
+  "updated": "2026-10-22T17:55:23.9225476+00:00"
 }
