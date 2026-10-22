@@ -82,7 +82,8 @@
     "Cessna O-1E Bird Dog": "2026-10-21T21:59:00.1216363+00:00",
     "Helicopteres Guimbal Cabri G2": "2026-10-22T17:55:23.9225476+00:00",
     "Airbus Helicopters EC130 T2 (H130)": "2026-10-22T19:08:25.7612092+00:00",
-    "Beech C-12R+ Huron": "2026-10-22T19:39:48.1967578+00:00"
+    "Beech C-12R+ Huron": "2026-10-22T19:39:48.1967578+00:00",
+    "Pilatus PC-12 45": "2026-10-22T23:13:05.1549614+00:00"
   },
   "candidates": [
     {
@@ -4984,7 +4985,91 @@
       "date": "14 June 2010",
       "caption": "",
       "found": "2026-10-22T19:39:48.1967578+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 45",
+      "file": "File:Former Sounds Air Pilatus PC-12(45).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Former_Sounds_Air_Pilatus_PC-12(45).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Former_Sounds_Air_Pilatus_PC-12%2845%29.jpg/960px-Former_Sounds_Air_Pilatus_PC-12%2845%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Tripsev777",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "28 November 2025 (upload date)",
+      "caption": "Sounds Air Pilatus PC-12 ZK-PLV backtracking at Kapiti Coast Airport",
+      "found": "2026-10-22T23:13:05.1549614+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 45",
+      "file": "File:Pilatus PC-12-45 (N101JE, cn 569) (2-16-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-45_(N101JE,_cn_569)_(2-16-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Pilatus_PC-12-45_%28N101JE%2C_cn_569%29_%282-16-2025%29.jpg/960px-Pilatus_PC-12-45_%28N101JE%2C_cn_569%29_%282-16-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-02-16",
+      "caption": "Pilatus PC-12-45 (N101JE, cn 569) at Daytona Beach International Airport.",
+      "found": "2026-10-22T23:13:05.1549614+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 45",
+      "file": "File:Pilatus PC-12-45 (N906ST, cn 641) (4-13-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-45_(N906ST,_cn_641)_(4-13-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Pilatus_PC-12-45_%28N906ST%2C_cn_641%29_%284-13-2024%29.jpg/960px-Pilatus_PC-12-45_%28N906ST%2C_cn_641%29_%284-13-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-13",
+      "caption": "Pilatus PC-12-45 N906ST at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-22T23:13:05.1549614+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 45",
+      "file": "File:Pilatus PC-12-45 N292P (630) (4691709427).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-45_N292P_(630)_(4691709427).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Pilatus_PC-12-45_N292P_%28630%29_%284691709427%29.jpg/960px-Pilatus_PC-12-45_N292P_%28630%29_%284691709427%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 655,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-06-11 14:32",
+      "caption": "North Las Vegas Airport (IATA: VGT, ICAO: KVGT, FAA LID: VGT) Photo: Tomas Del Coro 6-11-2010",
+      "found": "2026-10-22T23:13:05.1549614+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 45",
+      "file": "File:Pilatus PC-12-45 N644SD (644) (4874549786).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-45_N644SD_(644)_(4874549786).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Pilatus_PC-12-45_N644SD_%28644%29_%284874549786%29.jpg/960px-Pilatus_PC-12-45_N644SD_%28644%29_%284874549786%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 645,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-08-04 13:32",
+      "caption": "North Las Vegas Airport (IATA: VGT, ICAO: KVGT, FAA LID: VGT) 8-4-2010 Photo: TDelCoro",
+      "found": "2026-10-22T23:13:05.1549614+00:00"
+    },
+    {
+      "model": "Pilatus PC-12 45",
+      "file": "File:Pilatus PC-12-45 ZS-ZEN (14050824591).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-12-45_ZS-ZEN_(14050824591).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Pilatus_PC-12-45_ZS-ZEN_%2814050824591%29.jpg/960px-Pilatus_PC-12-45_ZS-ZEN_%2814050824591%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 646,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2002-11-01 00:00",
+      "caption": "Pilatus PC-12/45 ZS-ZEN",
+      "found": "2026-10-22T23:13:05.1549614+00:00"
     }
   ],
-  "updated": "2026-10-22T22:46:50.7202848+00:00"
+  "updated": "2026-10-22T23:13:05.1549614+00:00"
 }
