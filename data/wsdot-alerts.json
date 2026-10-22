@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T04:23:32.4657970+00:00",
+  "updated": "2026-10-22T05:01:45.8329572+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -158,6 +158,37 @@
         [
           -124.25011,
           47.8099
+        ]
+      ]
+    },
+    {
+      "id": 719770,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 367 near Olympia South City Limits to milepost 364 near Evergreen Pkwy beginning at 9:32 pm on October 21, 2026 until about 1:00 am on October 22, 2026.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 367.0,
+      "lat": 47.024308869,
+      "lon": -122.911425114,
+      "lat2": 47.042154773,
+      "lon2": -122.967444135,
+      "county": "Thurston",
+      "start": "2026-10-22T04:32:00.0000000+00:00",
+      "end": "2026-10-22T08:00:00.0000000+00:00",
+      "updated": "2026-10-22T04:34:37.2500000+00:00",
+      "path": [
+        [
+          -122.911425114,
+          47.024308869
+        ],
+        [
+          -122.967444135,
+          47.042154773
         ]
       ]
     },
