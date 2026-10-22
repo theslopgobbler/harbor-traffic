@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T17:55:23.9225476+00:00",
+  "updated": "2026-10-22T18:21:28.3598687+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2403,6 +2403,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 719841,
+      "kind": "closure",
+      "category": "Riverside Ave Bridge",
+      "priority": "Highest",
+      "headline": "Riverside Ave Bridge is closed to vehicle traffic at 11:16 AM Thursday, October 22. A boat traffic opening is in progress. Travelers can expect delays for up to 15 minutes on US 101 both directions at 87.35 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 87.35,
+      "lat": 46.979520561,
+      "lon": -123.884030117,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-10-22T18:16:26.2870000+00:00",
+      "end": "2026-10-22T18:31:26.2870000+00:00",
+      "updated": "2026-10-22T18:16:26.9070000+00:00"
     },
     {
       "id": 698912,
