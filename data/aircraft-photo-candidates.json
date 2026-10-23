@@ -83,7 +83,8 @@
     "Helicopteres Guimbal Cabri G2": "2026-10-22T17:55:23.9225476+00:00",
     "Airbus Helicopters EC130 T2 (H130)": "2026-10-22T19:08:25.7612092+00:00",
     "Beech C-12R+ Huron": "2026-10-22T19:39:48.1967578+00:00",
-    "Pilatus PC-12 45": "2026-10-22T23:13:05.1549614+00:00"
+    "Pilatus PC-12 45": "2026-10-22T23:13:05.1549614+00:00",
+    "Robinson R22 Alpha": "2026-10-23T00:07:07.1946147+00:00"
   },
   "candidates": [
     {
@@ -5069,7 +5070,91 @@
       "date": "2002-11-01 00:00",
       "caption": "Pilatus PC-12/45 ZS-ZEN",
       "found": "2026-10-22T23:13:05.1549614+00:00"
+    },
+    {
+      "model": "Robinson R22 Alpha",
+      "file": "File:Robinson R22 Beta VH-SLH from Boulia Golf Course Boulia Shire Central Western Queensland P1080699.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_Beta_VH-SLH_from_Boulia_Golf_Course_Boulia_Shire_Central_Western_Queensland_P1080699.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Robinson_R22_Beta_VH-SLH_from_Boulia_Golf_Course_Boulia_Shire_Central_Western_Queensland_P1080699.jpg/960px-Robinson_R22_Beta_VH-SLH_from_Boulia_Golf_Course_Boulia_Shire_Central_Western_Queensland_P1080699.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "John Robert McPherson",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2020-08-07 12:23:04",
+      "caption": "The Robinson R22 is a helicopter often used for cattle mustering in the Shire of Boulia and elsewhere in Australia.",
+      "found": "2026-10-23T00:07:07.1946147+00:00"
+    },
+    {
+      "model": "Robinson R22 Alpha",
+      "file": "File:Robinson R22 helicopter VH-YZO at Lake Walyungup, May 2021 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup,_May_2021_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_01.jpg/960px-Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-05-10 09:34:59",
+      "caption": "A Robinson R22 helicopter with the registration VH-YZO carrying out a simulated landing at Lake Walyungup, Western Australia.",
+      "found": "2026-10-23T00:07:07.1946147+00:00"
+    },
+    {
+      "model": "Robinson R22 Alpha",
+      "file": "File:Robinson R22 helicopter VH-YZO at Lake Walyungup, May 2021 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup,_May_2021_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_02.jpg/960px-Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-05-10 09:35:03",
+      "caption": "A Robinson R22 helicopter with the registration VH-YZO carrying out a simulated landing at Lake Walyungup, Western Australia.",
+      "found": "2026-10-23T00:07:07.1946147+00:00"
+    },
+    {
+      "model": "Robinson R22 Alpha",
+      "file": "File:Robinson R22 helicopter VH-YZO at Lake Walyungup, May 2021 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup,_May_2021_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_03.jpg/960px-Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-05-10 09:35:06",
+      "caption": "A Robinson R22 helicopter with the registration VH-YZO carrying out a simulated landing at Lake Walyungup, Western Australia.",
+      "found": "2026-10-23T00:07:07.1946147+00:00"
+    },
+    {
+      "model": "Robinson R22 Alpha",
+      "file": "File:Robinson R22 helicopter VH-YZO at Lake Walyungup, May 2021 04.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup,_May_2021_04.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_04.jpg/960px-Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-05-10 09:35:12",
+      "caption": "A Robinson R22 helicopter with the registration VH-YZO carrying out a simulated landing at Lake Walyungup, Western Australia.",
+      "found": "2026-10-23T00:07:07.1946147+00:00"
+    },
+    {
+      "model": "Robinson R22 Alpha",
+      "file": "File:Robinson R22 helicopter VH-YZO at Lake Walyungup, May 2021 05.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup,_May_2021_05.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_05.jpg/960px-Robinson_R22_helicopter_VH-YZO_at_Lake_Walyungup%2C_May_2021_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-05-10 09:35:20",
+      "caption": "A Robinson R22 helicopter with the registration VH-YZO carrying out a simulated landing at Lake Walyungup, Western Australia.",
+      "found": "2026-10-23T00:07:07.1946147+00:00"
     }
   ],
-  "updated": "2026-10-22T23:44:09.0346447+00:00"
+  "updated": "2026-10-23T00:07:07.1946147+00:00"
 }
