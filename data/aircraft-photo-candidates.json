@@ -90,7 +90,9 @@
     "Cessna Citation CJ2": "2026-10-23T15:04:37.8003666+00:00",
     "Cessna 208": "2026-10-23T15:39:30.542367+00:00",
     "Textron Aviation Citation Longitude": "2026-10-23T17:21:19.0734738+00:00",
-    "Boeing 737NG 8BK/W": "2026-10-23T18:20:51.3347646+00:00"
+    "Boeing 737NG 8BK/W": "2026-10-23T18:20:51.3347646+00:00",
+    "Cessna Citation CJ2+": "2026-10-23T19:06:46.2759997+00:00",
+    "Boeing 737NG 832/W": "2026-10-23T19:06:46.2759997+00:00"
   },
   "candidates": [
     {
@@ -5524,7 +5526,91 @@
       "date": "2018-09-27 14:34",
       "caption": "Textron Aviation, N707CL, Textron Aviation",
       "found": "2026-10-23T17:21:19.0734738+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ2+",
+      "file": "File:Cessna 525A Citation CJ2+, D-IBBS, Airport Cologne Bonn-7211.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525A_Citation_CJ2%2B,_D-IBBS,_Airport_Cologne_Bonn-7211.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Cessna_525A_Citation_CJ2%2B%2C_D-IBBS%2C_Airport_Cologne_Bonn-7211.jpg/960px-Cessna_525A_Citation_CJ2%2B%2C_D-IBBS%2C_Airport_Cologne_Bonn-7211.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2016-02-15 16:02:27",
+      "caption": "Cessna 525A Citation CJ2+, D-IBBS, Airport Cologne Bonn",
+      "found": "2026-10-23T19:06:46.2759997+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ2+",
+      "file": "File:Cessna CitationJet CJ2 - D-ITMA - Orio al Serio International Airport-7868.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_CitationJet_CJ2_-_D-ITMA_-_Orio_al_Serio_International_Airport-7868.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Cessna_CitationJet_CJ2_-_D-ITMA_-_Orio_al_Serio_International_Airport-7868.jpg/960px-Cessna_CitationJet_CJ2_-_D-ITMA_-_Orio_al_Serio_International_Airport-7868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2016-07-01 15:28:52",
+      "caption": "Cessna CitationJet CJ2 - D-ITMA - Orio al Serio International Airport",
+      "found": "2026-10-23T19:06:46.2759997+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ2+",
+      "file": "File:Cessna Citation CJ2 G-CGUZ (7382746658).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_CJ2_G-CGUZ_(7382746658).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Cessna_Citation_CJ2_G-CGUZ_%287382746658%29.jpg/960px-Cessna_Citation_CJ2_G-CGUZ_%287382746658%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-06-14 16:32",
+      "caption": "Operated by Gama aviation. msn 525A-0473. Departing Luton. 14-6-2012",
+      "found": "2026-10-23T19:06:46.2759997+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ2+",
+      "file": "File:N525DT Cessna Citation CJ2 (24467862273).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N525DT_Cessna_Citation_CJ2_(24467862273).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/N525DT_Cessna_Citation_CJ2_%2824467862273%29.jpg/960px-N525DT_Cessna_Citation_CJ2_%2824467862273%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-02-16 15:42",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-10-23T19:06:46.2759997+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ2+",
+      "file": "File:Tenerife Sur Excellent Air Cessna 525A CitationJet CJ2 D-ICMD.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tenerife_Sur_Excellent_Air_Cessna_525A_CitationJet_CJ2_D-ICMD.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Tenerife_Sur_Excellent_Air_Cessna_525A_CitationJet_CJ2_D-ICMD.jpg/960px-Tenerife_Sur_Excellent_Air_Cessna_525A_CitationJet_CJ2_D-ICMD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 802,
+      "author": "Ad Meskens You are free to use this picture for any purpose as long as you credit its author, Ad Meskens . Example: © Ad Meskens / Wikimedia Commons If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated. This image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-04-08 10:52:10",
+      "caption": "Excellent Air Cessna 525A CitationJet CJ2 (s/n 525A-0125) D-ICMD op Tenerife Sur-Reina Sofía , Spanje.",
+      "found": "2026-10-23T19:06:46.2759997+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ2+",
+      "file": "File:Untitled Cessna 525A Citation CJ2+; LN-BAC@ZRH;04.03.2011 (5501752169).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Untitled_Cessna_525A_Citation_CJ2%2B;_LN-BAC@ZRH;04.03.2011_(5501752169).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Untitled_Cessna_525A_Citation_CJ2%2B%3B_LN-BAC%40ZRH%3B04.03.2011_%285501752169%29.jpg/960px-Untitled_Cessna_525A_Citation_CJ2%2B%3B_LN-BAC%40ZRH%3B04.03.2011_%285501752169%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 629,
+      "author": "Aero Icarus from Zürich, Switzerland",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-03-04 00:00",
+      "caption": "Untitled Cessna 525A Citation CJ2+; LN-BAC@ZRH;04.03.2011",
+      "found": "2026-10-23T19:06:46.2759997+00:00"
     }
   ],
-  "updated": "2026-10-23T18:20:51.3347646+00:00"
+  "updated": "2026-10-23T19:06:46.2759997+00:00"
 }
