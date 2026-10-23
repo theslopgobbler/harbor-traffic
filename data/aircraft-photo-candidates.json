@@ -84,7 +84,8 @@
     "Airbus Helicopters EC130 T2 (H130)": "2026-10-22T19:08:25.7612092+00:00",
     "Beech C-12R+ Huron": "2026-10-22T19:39:48.1967578+00:00",
     "Pilatus PC-12 45": "2026-10-22T23:13:05.1549614+00:00",
-    "Robinson R22 Alpha": "2026-10-23T00:07:07.1946147+00:00"
+    "Robinson R22 Alpha": "2026-10-23T00:07:07.1946147+00:00",
+    "Airbus A320 232": "2026-10-23T04:49:18.9773699+00:00"
   },
   "candidates": [
     {
@@ -5154,7 +5155,91 @@
       "date": "2021-05-10 09:35:20",
       "caption": "A Robinson R22 helicopter with the registration VH-YZO carrying out a simulated landing at Lake Walyungup, Western Australia.",
       "found": "2026-10-23T00:07:07.1946147+00:00"
+    },
+    {
+      "model": "Airbus A320 232",
+      "file": "File:British Airways A320, Frankfurt (20260412-P1074993).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:British_Airways_A320,_Frankfurt_(20260412-P1074993).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/British_Airways_A320%2C_Frankfurt_%2820260412-P1074993%29.jpg/960px-British_Airways_A320%2C_Frankfurt_%2820260412-P1074993%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "date": "2026-04-12",
+      "caption": "British Airways Airbus A320-232 (registration G-EUYA) on final approach to Frankfurt International Airport",
+      "found": "2026-10-23T04:49:18.9773699+00:00"
+    },
+    {
+      "model": "Airbus A320 232",
+      "file": "File:N613JB - Airbus A320-232 - JetBlue Airways FLL 151223.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N613JB_-_Airbus_A320-232_-_JetBlue_Airways_FLL_151223.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/N613JB_-_Airbus_A320-232_-_JetBlue_Airways_FLL_151223.jpg/960px-N613JB_-_Airbus_A320-232_-_JetBlue_Airways_FLL_151223.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 526,
+      "author": "Steve Knight",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2023-12-16",
+      "caption": "A very dull and windy day at Fort Lauderdale, so just an hour on the car park roof for me! The Bahamas and Caribbeans 737 were nice and the Vomit Comet 727 a nice bonus.",
+      "found": "2026-10-23T04:49:18.9773699+00:00"
+    },
+    {
+      "model": "Airbus A320 232",
+      "file": "File:N661JB - Airbus A320-232 - JetBlue Airways FLL 191223.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N661JB_-_Airbus_A320-232_-_JetBlue_Airways_FLL_191223.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/N661JB_-_Airbus_A320-232_-_JetBlue_Airways_FLL_191223.jpg/960px-N661JB_-_Airbus_A320-232_-_JetBlue_Airways_FLL_191223.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 487,
+      "author": "Steve Knight",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2023-12-21 16:01:58",
+      "caption": "N661JB - Airbus A320-232 - JetBlue Airways FLL 191223 at Fort Lauderdale International Airport - from the roof of Parking Garage and inside Terminal 2",
+      "found": "2026-10-23T04:49:18.9773699+00:00"
+    },
+    {
+      "model": "Airbus A320 232",
+      "file": "File:N768JB Airbus A320-232 JetBlue BGI 12.10.24.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N768JB_Airbus_A320-232_JetBlue_BGI_12.10.24.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/N768JB_Airbus_A320-232_JetBlue_BGI_12.10.24.jpg/960px-N768JB_Airbus_A320-232_JetBlue_BGI_12.10.24.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Colin Cooke Photo",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-10-22 09:34:36",
+      "caption": "N768JB Airbus A320-232 JetBlue BGI 12.10.24",
+      "found": "2026-10-23T04:49:18.9773699+00:00"
+    },
+    {
+      "model": "Airbus A320 232",
+      "file": "File:N821JB - Airbus A320-232 - JetBlue Airways.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N821JB_-_Airbus_A320-232_-_JetBlue_Airways.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/N821JB_-_Airbus_A320-232_-_JetBlue_Airways.jpg/960px-N821JB_-_Airbus_A320-232_-_JetBlue_Airways.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Colin Brown",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-09-03",
+      "caption": "N821JB - Airbus A320-232 - JetBlue Airways at San Diego International - October 2, 2015",
+      "found": "2026-10-23T04:49:18.9773699+00:00"
+    },
+    {
+      "model": "Airbus A320 232",
+      "file": "File:Wizzair - Airbus A320-232 - Gdansk - HA-LPQ (3884).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wizzair_-_Airbus_A320-232_-_Gdansk_-_HA-LPQ_(3884).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Wizzair_-_Airbus_A320-232_-_Gdansk_-_HA-LPQ_%283884%29.jpg/960px-Wizzair_-_Airbus_A320-232_-_Gdansk_-_HA-LPQ_%283884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 480,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2010-07-13",
+      "caption": "Wizzair, Airbus A320-232, registration HA-LPQ, on the airport of Gdańsk.",
+      "found": "2026-10-23T04:49:18.9773699+00:00"
     }
   ],
-  "updated": "2026-10-23T04:13:28.5414678+00:00"
+  "updated": "2026-10-23T04:49:18.9773699+00:00"
 }
