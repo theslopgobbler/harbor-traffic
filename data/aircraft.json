@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-23T12:19:07.9484832+00:00",
+  "updated": "2026-10-23T13:05:02.5270942+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a40cfc",
-      "flight": "ASA854",
-      "reg": "N360HA",
-      "type": "A332",
-      "cat": "A5",
-      "alt": 13475,
-      "gs": 346.4,
-      "track": 67.06,
-      "rate": -1536,
-      "lat": 46.73547,
-      "lon": -122.9103,
-      "squawk": "3737",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
