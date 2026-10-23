@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T07:56:53.0772466+00:00",
+  "updated": "2026-10-23T08:28:06.1347204+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -18,16 +18,16 @@
   },
   "alerts": [
     {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-10-24T00:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 22 at 8:07PM PDT until October 23 at 5:00PM PDT by NWS Portland OR"
-    },
-    {
       "event": "Hazardous Seas Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-10-23T15:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued October 22 at 8:07PM PDT until October 23 at 8:00AM PDT by NWS Portland OR"
+      "headline": "Hazardous Seas Warning issued October 23 at 1:05AM PDT until October 23 at 8:00AM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-10-24T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 23 at 1:05AM PDT until October 23 at 5:00PM PDT by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
