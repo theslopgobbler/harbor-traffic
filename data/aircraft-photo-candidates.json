@@ -88,7 +88,8 @@
     "Airbus A320 232": "2026-10-23T04:49:18.9773699+00:00",
     "Bombardier Learjet 45 XR": "2026-10-23T05:51:26.9786602+00:00",
     "Cessna Citation CJ2": "2026-10-23T15:04:37.8003666+00:00",
-    "Cessna 208": "2026-10-23T15:39:30.542367+00:00"
+    "Cessna 208": "2026-10-23T15:39:30.542367+00:00",
+    "Textron Aviation Citation Longitude": "2026-10-23T17:21:19.0734738+00:00"
   },
   "candidates": [
     {
@@ -5494,7 +5495,35 @@
       "date": "2023-06-12 16:43:48",
       "caption": "Fallschirmsportzentrum Saar Cessna 208 Caravan D-FNDA at Portimão Airport",
       "found": "2026-10-23T15:39:30.542367+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Longitude",
+      "file": "File:Textron Aviation, N707CL, Cessna 700 Citation Longitude (31378962178).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Textron_Aviation,_N707CL,_Cessna_700_Citation_Longitude_(31378962178).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Textron_Aviation%2C_N707CL%2C_Cessna_700_Citation_Longitude_%2831378962178%29.jpg/960px-Textron_Aviation%2C_N707CL%2C_Cessna_700_Citation_Longitude_%2831378962178%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-09-27 14:34",
+      "caption": "Textron Aviation, N707CL, Textron Aviation",
+      "found": "2026-10-23T17:21:19.0734738+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Longitude",
+      "file": "File:Textron Aviation, N707CL, Cessna 700 Citation Longitude (31378962178) (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Textron_Aviation,_N707CL,_Cessna_700_Citation_Longitude_(31378962178)_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Textron_Aviation%2C_N707CL%2C_Cessna_700_Citation_Longitude_%2831378962178%29_%28cropped%29.jpg/960px-Textron_Aviation%2C_N707CL%2C_Cessna_700_Citation_Longitude_%2831378962178%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 479,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-09-27 14:34",
+      "caption": "Textron Aviation, N707CL, Textron Aviation",
+      "found": "2026-10-23T17:21:19.0734738+00:00"
     }
   ],
-  "updated": "2026-10-23T16:53:07.0949733+00:00"
+  "updated": "2026-10-23T17:21:19.0734738+00:00"
 }
