@@ -95,7 +95,8 @@
     "Boeing 737NG 832/W": "2026-10-23T19:06:46.2759997+00:00",
     "Beech King Air 300": "2026-10-23T21:06:21.0640069+00:00",
     "Bombardier Learjet 31 A": "2026-10-23T22:34:57.1344353+00:00",
-    "Boeing KC-46A Pegasus": "2026-10-23T23:03:11.6311782+00:00"
+    "Boeing KC-46A Pegasus": "2026-10-23T23:03:11.6311782+00:00",
+    "de Havilland Canada DHC-2 Beaver": "2026-10-23T23:32:21.6847245+00:00"
   },
   "candidates": [
     {
@@ -5865,7 +5866,91 @@
       "date": "2020-06-11 20:00:00",
       "caption": "The first KC-46A Pegasus lands at Seymour Johnson Air Force Base, North Carolina, June 12, 2020. The KC-46A Pegasus is a widebody, multirole tanker that can refuel all U.S., allied and coalition military aircraft comp...",
       "found": "2026-10-23T23:03:11.6311782+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver",
+      "file": "File:De Havilland Canada DHC-2 Beaver, Ketchikan, Alaska, Estados Unidos, 2017-08-16, DD 17-19 HDR.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_Beaver,_Ketchikan,_Alaska,_Estados_Unidos,_2017-08-16,_DD_17-19_HDR.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/De_Havilland_Canada_DHC-2_Beaver%2C_Ketchikan%2C_Alaska%2C_Estados_Unidos%2C_2017-08-16%2C_DD_17-19_HDR.jpg/960px-De_Havilland_Canada_DHC-2_Beaver%2C_Ketchikan%2C_Alaska%2C_Estados_Unidos%2C_2017-08-16%2C_DD_17-19_HDR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 16 August 2017 12:02:38",
+      "caption": "Cabin of a De Havilland Canada DHC-2 Beaver, Ketchikan, Alaska, United States",
+      "found": "2026-10-23T23:32:21.6847245+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver",
+      "file": "File:De Havilland Canada DHC-2 Beaver, Ketchikan, Alaska, Estados Unidos, 2017-08-16, DD 65.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_Beaver,_Ketchikan,_Alaska,_Estados_Unidos,_2017-08-16,_DD_65.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/De_Havilland_Canada_DHC-2_Beaver%2C_Ketchikan%2C_Alaska%2C_Estados_Unidos%2C_2017-08-16%2C_DD_65.jpg/960px-De_Havilland_Canada_DHC-2_Beaver%2C_Ketchikan%2C_Alaska%2C_Estados_Unidos%2C_2017-08-16%2C_DD_65.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 595,
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 16 August 2017 16:15:02",
+      "caption": "De Havilland Canada DHC-2 Beaver, Ketchikan, Alaska, United States",
+      "found": "2026-10-23T23:32:21.6847245+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver",
+      "file": "File:De Havilland Canada DHC-2 Beaver (N130WA).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_Beaver_(N130WA).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/De_Havilland_Canada_DHC-2_Beaver_%28N130WA%29.jpg/960px-De_Havilland_Canada_DHC-2_Beaver_%28N130WA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 385,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2004-05-02",
+      "caption": "Freebird Wilderness Tours De Havilland Canada DHC-2 Beaver (N130WA) auf der Flugzeugshow am Airport Niederrhein während der Geburtstagsfeier zum einjährigen Bestehens des Flughafens.",
+      "found": "2026-10-23T23:32:21.6847245+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver",
+      "file": "File:De Havilland Canada DHC-2 Beaver N450DM FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_Beaver_N450DM_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/De_Havilland_Canada_DHC-2_Beaver_N450DM_FDK_MD1.jpg/960px-De_Havilland_Canada_DHC-2_Beaver_N450DM_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 523,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-05-11",
+      "caption": "De Havilland Canada DHC-2 Beaver floatplane N450DM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-23T23:32:21.6847245+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver",
+      "file": "File:De Havilland Canada DHC-2 Beaver N72355 Kenmore 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_Beaver_N72355_Kenmore_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/De_Havilland_Canada_DHC-2_Beaver_N72355_Kenmore_2.jpg/960px-De_Havilland_Canada_DHC-2_Beaver_N72355_Kenmore_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Dllu",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-07-21 13:08:46",
+      "caption": "A de Havilland Canada DHC-2 Beaver with tail number N72355 operated by Kenmore. Spotted on Lake Union .",
+      "found": "2026-10-23T23:32:21.6847245+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-2 Beaver",
+      "file": "File:De Havilland Canada DHC-2 Beaver N72355 Kenmore 2 crop.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_Canada_DHC-2_Beaver_N72355_Kenmore_2_crop.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/De_Havilland_Canada_DHC-2_Beaver_N72355_Kenmore_2_crop.jpg/960px-De_Havilland_Canada_DHC-2_Beaver_N72355_Kenmore_2_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 452,
+      "author": "Dllu",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-07-21 13:08:46",
+      "caption": "A de Havilland Canada DHC-2 Beaver with tail number N72355 operated by Kenmore. Spotted on Lake Union . This photo is a retouched crop of File:De Havilland Canada DHC-2 Beaver N9766Z Kenmore 2.JPG .",
+      "found": "2026-10-23T23:32:21.6847245+00:00"
     }
   ],
-  "updated": "2026-10-23T23:03:11.6311782+00:00"
+  "updated": "2026-10-23T23:32:21.6847245+00:00"
 }
