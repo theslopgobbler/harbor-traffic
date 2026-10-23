@@ -87,7 +87,8 @@
     "Robinson R22 Alpha": "2026-10-23T00:07:07.1946147+00:00",
     "Airbus A320 232": "2026-10-23T04:49:18.9773699+00:00",
     "Bombardier Learjet 45 XR": "2026-10-23T05:51:26.9786602+00:00",
-    "Cessna Citation CJ2": "2026-10-23T15:04:37.8003666+00:00"
+    "Cessna Citation CJ2": "2026-10-23T15:04:37.8003666+00:00",
+    "Cessna 208": "2026-10-23T15:39:30.5423670+00:00"
   },
   "candidates": [
     {
@@ -5409,7 +5410,91 @@
       "date": "2011-03-04 00:00",
       "caption": "Untitled Cessna 525A Citation CJ2+; LN-BAC@ZRH;04.03.2011",
       "found": "2026-10-23T15:04:37.8003666+00:00"
+    },
+    {
+      "model": "Cessna 208",
+      "file": "File:Cessna 208 Caravan VH-UOZ over Cockburn Sound, December 2023 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_208_Caravan_VH-UOZ_over_Cockburn_Sound,_December_2023_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Cessna_208_Caravan_VH-UOZ_over_Cockburn_Sound%2C_December_2023_01.jpg/960px-Cessna_208_Caravan_VH-UOZ_over_Cockburn_Sound%2C_December_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-12-06 08:47:14",
+      "caption": "The Cessna 208 Caravan VH-UOZ heading north over Cockburn Sound after having landed and taken off again in Mangles Bay, Rockingham, Western Australia.",
+      "found": "2026-10-23T15:39:30.5423670+00:00"
+    },
+    {
+      "model": "Cessna 208",
+      "file": "File:Cessna 208 Caravan VH-UOZ over Cockburn Sound, December 2023 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_208_Caravan_VH-UOZ_over_Cockburn_Sound,_December_2023_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Cessna_208_Caravan_VH-UOZ_over_Cockburn_Sound%2C_December_2023_03.jpg/960px-Cessna_208_Caravan_VH-UOZ_over_Cockburn_Sound%2C_December_2023_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-12-06 08:47:23",
+      "caption": "The Cessna 208 Caravan VH-UOZ heading north over Cockburn Sound after having landed and taken off again in Mangles Bay, Rockingham, Western Australia.",
+      "found": "2026-10-23T15:39:30.5423670+00:00"
+    },
+    {
+      "model": "Cessna 208",
+      "file": "File:Cessna 208 Caravan VH-UOZ passing over the CBH Grain Jetty about to land, December 2023 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_208_Caravan_VH-UOZ_passing_over_the_CBH_Grain_Jetty_about_to_land,_December_2023_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Cessna_208_Caravan_VH-UOZ_passing_over_the_CBH_Grain_Jetty_about_to_land%2C_December_2023_03.jpg/960px-Cessna_208_Caravan_VH-UOZ_passing_over_the_CBH_Grain_Jetty_about_to_land%2C_December_2023_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-12-06 08:41:30",
+      "caption": "The Cessna 208 Caravan VH-UOZ passing over the CBH Grain Jetty about to land in Mangles Bay, Rockingham, Western Australia.",
+      "found": "2026-10-23T15:39:30.5423670+00:00"
+    },
+    {
+      "model": "Cessna 208",
+      "file": "File:Cessna 208 Caravan VH-UOZ passing over the CBH Grain Jetty about to land, December 2023 04.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_208_Caravan_VH-UOZ_passing_over_the_CBH_Grain_Jetty_about_to_land,_December_2023_04.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cessna_208_Caravan_VH-UOZ_passing_over_the_CBH_Grain_Jetty_about_to_land%2C_December_2023_04.jpg/960px-Cessna_208_Caravan_VH-UOZ_passing_over_the_CBH_Grain_Jetty_about_to_land%2C_December_2023_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-12-06 08:41:33",
+      "caption": "The Cessna 208 Caravan VH-UOZ passing over the CBH Grain Jetty about to land in Mangles Bay, Rockingham, Western Australia.",
+      "found": "2026-10-23T15:39:30.5423670+00:00"
+    },
+    {
+      "model": "Cessna 208",
+      "file": "File:Fallschirmsportzentrum Saar Cessna 208 Caravan D-FNDA at Portimão Airport 12-06-2023 (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fallschirmsportzentrum_Saar_Cessna_208_Caravan_D-FNDA_at_Portim%C3%A3o_Airport_12-06-2023_(1).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Fallschirmsportzentrum_Saar_Cessna_208_Caravan_D-FNDA_at_Portim%C3%A3o_Airport_12-06-2023_%281%29.jpg/960px-Fallschirmsportzentrum_Saar_Cessna_208_Caravan_D-FNDA_at_Portim%C3%A3o_Airport_12-06-2023_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 560,
+      "author": "Robbie Klinkenberg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-06-12 16:43:22",
+      "caption": "Fallschirmsportzentrum Saar Cessna 208 Caravan D-FNDA at Portimão Airport",
+      "found": "2026-10-23T15:39:30.5423670+00:00"
+    },
+    {
+      "model": "Cessna 208",
+      "file": "File:Fallschirmsportzentrum Saar Cessna 208 Caravan D-FNDA at Portimão Airport 12-06-2023 (2).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fallschirmsportzentrum_Saar_Cessna_208_Caravan_D-FNDA_at_Portim%C3%A3o_Airport_12-06-2023_(2).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Fallschirmsportzentrum_Saar_Cessna_208_Caravan_D-FNDA_at_Portim%C3%A3o_Airport_12-06-2023_%282%29.jpg/960px-Fallschirmsportzentrum_Saar_Cessna_208_Caravan_D-FNDA_at_Portim%C3%A3o_Airport_12-06-2023_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 617,
+      "author": "Robbie Klinkenberg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-06-12 16:43:48",
+      "caption": "Fallschirmsportzentrum Saar Cessna 208 Caravan D-FNDA at Portimão Airport",
+      "found": "2026-10-23T15:39:30.5423670+00:00"
     }
   ],
-  "updated": "2026-10-23T15:04:37.8003666+00:00"
+  "updated": "2026-10-23T15:39:30.5423670+00:00"
 }
