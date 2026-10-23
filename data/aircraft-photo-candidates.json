@@ -93,7 +93,8 @@
     "Boeing 737NG 8BK/W": "2026-10-23T18:20:51.3347646+00:00",
     "Cessna Citation CJ2+": "2026-10-23T19:06:46.2759997+00:00",
     "Boeing 737NG 832/W": "2026-10-23T19:06:46.2759997+00:00",
-    "Beech King Air 300": "2026-10-23T21:06:21.0640069+00:00"
+    "Beech King Air 300": "2026-10-23T21:06:21.0640069+00:00",
+    "Bombardier Learjet 31 A": "2026-10-23T22:34:57.1344353+00:00"
   },
   "candidates": [
     {
@@ -5695,7 +5696,91 @@
       "date": "2019-07-19 23:56",
       "caption": "Private, N466AC, Beech 300 Super King Air 350",
       "found": "2026-10-23T21:06:21.0640069+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 31 A",
+      "file": "File:Bombardier Learjet 31, ADAC Luftrettung JP6154898.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_31,_ADAC_Luftrettung_JP6154898.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bombardier_Learjet_31%2C_ADAC_Luftrettung_JP6154898.jpg/960px-Bombardier_Learjet_31%2C_ADAC_Luftrettung_JP6154898.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "1 June 2003",
+      "caption": "",
+      "found": "2026-10-23T22:34:57.1344353+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 31 A",
+      "file": "File:Bombardier Learjet 31, Lineas Aereas Azteca JP6028020.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_31,_Lineas_Aereas_Azteca_JP6028020.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Bombardier_Learjet_31%2C_Lineas_Aereas_Azteca_JP6028020.jpg/960px-Bombardier_Learjet_31%2C_Lineas_Aereas_Azteca_JP6028020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "André Du-pont (Mexico Air Spotters)",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "25 May 2007",
+      "caption": "",
+      "found": "2026-10-23T22:34:57.1344353+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 31 A",
+      "file": "File:Bombardier Learjet 31, Omni Aviacao e Tecnologia JP5936640.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_31,_Omni_Aviacao_e_Tecnologia_JP5936640.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Bombardier_Learjet_31%2C_Omni_Aviacao_e_Tecnologia_JP5936640.jpg/960px-Bombardier_Learjet_31%2C_Omni_Aviacao_e_Tecnologia_JP5936640.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "11 March 2007",
+      "caption": "",
+      "found": "2026-10-23T22:34:57.1344353+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 31 A",
+      "file": "File:Bombardier Learjet 31, Private JP6183998.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_31,_Private_JP6183998.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bombardier_Learjet_31%2C_Private_JP6183998.jpg/960px-Bombardier_Learjet_31%2C_Private_JP6183998.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "18 July 1993 ",
+      "caption": "",
+      "found": "2026-10-23T22:34:57.1344353+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 31 A",
+      "file": "File:Bombardier Learjet 31A, Private JP6124320.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_31A,_Private_JP6124320.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Bombardier_Learjet_31A%2C_Private_JP6124320.jpg/960px-Bombardier_Learjet_31A%2C_Private_JP6124320.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "5 December 2007",
+      "caption": "",
+      "found": "2026-10-23T22:34:57.1344353+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 31 A",
+      "file": "File:Learjet 31A.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_31A.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Learjet_31A.JPG/960px-Learjet_31A.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "100yen",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2008-09-14",
+      "caption": "Learjet 31A.",
+      "found": "2026-10-23T22:34:57.1344353+00:00"
     }
   ],
-  "updated": "2026-10-23T22:06:08.2610426+00:00"
+  "updated": "2026-10-23T22:34:57.1344353+00:00"
 }
