@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T19:37:43.2597673+00:00",
+  "updated": "2026-10-23T20:03:35.9015300+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1907,27 +1907,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 719935,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 both directions at milepost 37.58 near Elma Gate Rd beginning at 8:27 am on October 23, 2026 until about 3:30 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "B",
-      "milepost": 37.58,
-      "lat": 46.830336481,
-      "lon": -123.186337597,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-23T15:27:00.0000000+00:00",
-      "end": "2026-10-23T22:30:00.0000000+00:00",
-      "updated": "2026-10-23T15:28:37.0700000+00:00"
     },
     {
       "id": 698912,
