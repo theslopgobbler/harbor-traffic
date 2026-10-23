@@ -85,7 +85,8 @@
     "Beech C-12R+ Huron": "2026-10-22T19:39:48.1967578+00:00",
     "Pilatus PC-12 45": "2026-10-22T23:13:05.1549614+00:00",
     "Robinson R22 Alpha": "2026-10-23T00:07:07.1946147+00:00",
-    "Airbus A320 232": "2026-10-23T04:49:18.9773699+00:00"
+    "Airbus A320 232": "2026-10-23T04:49:18.9773699+00:00",
+    "Bombardier Learjet 45 XR": "2026-10-23T05:51:26.9786602+00:00"
   },
   "candidates": [
     {
@@ -5239,7 +5240,91 @@
       "date": "2010-07-13",
       "caption": "Wizzair, Airbus A320-232, registration HA-LPQ, on the airport of Gdańsk.",
       "found": "2026-10-23T04:49:18.9773699+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45 XR",
+      "file": "File:Bombardier Learjet 45 XR baggage compartment.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_baggage_compartment.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Bombardier_Learjet_45_XR_baggage_compartment.JPG/960px-Bombardier_Learjet_45_XR_baggage_compartment.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:54:33",
+      "caption": "Bombardier Learjet 45 XR baggage compartment.",
+      "found": "2026-10-23T05:51:26.9786602+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45 XR",
+      "file": "File:Bombardier Learjet 45 XR baggage compartment 2.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_baggage_compartment_2.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Bombardier_Learjet_45_XR_baggage_compartment_2.JPG/960px-Bombardier_Learjet_45_XR_baggage_compartment_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:54:47",
+      "caption": "Luggage hold of Bombardier Learjet 45 XR.",
+      "found": "2026-10-23T05:51:26.9786602+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45 XR",
+      "file": "File:Bombardier Learjet 45 XR exterior.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_exterior.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Bombardier_Learjet_45_XR_exterior.JPG/960px-Bombardier_Learjet_45_XR_exterior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:53:43",
+      "caption": "Bombardier Learjet 45 XR exterior.",
+      "found": "2026-10-23T05:51:26.9786602+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45 XR",
+      "file": "File:Bombardier Learjet 45 XR interior.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_interior.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Bombardier_Learjet_45_XR_interior.JPG/960px-Bombardier_Learjet_45_XR_interior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:52:24",
+      "caption": "Bombardier Learjet 45 XR interior cabin.",
+      "found": "2026-10-23T05:51:26.9786602+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45 XR",
+      "file": "File:Bombardier Learjet 45 XR interior 2.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_interior_2.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Bombardier_Learjet_45_XR_interior_2.JPG/960px-Bombardier_Learjet_45_XR_interior_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:52:41",
+      "caption": "Cabin of Bombardier Learjet 45 XR interior.",
+      "found": "2026-10-23T05:51:26.9786602+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45 XR",
+      "file": "File:Bombardier Learjet 45 XR interior 3.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_interior_3.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Bombardier_Learjet_45_XR_interior_3.JPG/960px-Bombardier_Learjet_45_XR_interior_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:52:48",
+      "caption": "Inside Bombardier Learjet 45 XR cabin.",
+      "found": "2026-10-23T05:51:26.9786602+00:00"
     }
   ],
-  "updated": "2026-10-23T05:16:43.4505027+00:00"
+  "updated": "2026-10-23T05:51:26.9786602+00:00"
 }
