@@ -92,7 +92,8 @@
     "Textron Aviation Citation Longitude": "2026-10-23T17:21:19.0734738+00:00",
     "Boeing 737NG 8BK/W": "2026-10-23T18:20:51.3347646+00:00",
     "Cessna Citation CJ2+": "2026-10-23T19:06:46.2759997+00:00",
-    "Boeing 737NG 832/W": "2026-10-23T19:06:46.2759997+00:00"
+    "Boeing 737NG 832/W": "2026-10-23T19:06:46.2759997+00:00",
+    "Beech King Air 300": "2026-10-23T21:06:21.0640069+00:00"
   },
   "candidates": [
     {
@@ -5610,7 +5611,91 @@
       "date": "2011-03-04 00:00",
       "caption": "Untitled Cessna 525A Citation CJ2+; LN-BAC@ZRH;04.03.2011",
       "found": "2026-10-23T19:06:46.2759997+00:00"
+    },
+    {
+      "model": "Beech King Air 300",
+      "file": "File:Beech King Air 300 (2323440726).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_King_Air_300_(2323440726).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Beech_King_Air_300_%282323440726%29.jpg/960px-Beech_King_Air_300_%282323440726%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Eddie Maloney from North Las Vegas, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2008-03-09 15:33",
+      "caption": "PRIVATE",
+      "found": "2026-10-23T21:06:21.0640069+00:00"
+    },
+    {
+      "model": "Beech King Air 300",
+      "file": "File:Beech Super King Air 300 AN1328312.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_Super_King_Air_300_AN1328312.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Beech_Super_King_Air_300_AN1328312.jpg/960px-Beech_Super_King_Air_300_AN1328312.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Andre Wadman",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "9 February 2008",
+      "caption": "",
+      "found": "2026-10-23T21:06:21.0640069+00:00"
+    },
+    {
+      "model": "Beech King Air 300",
+      "file": "File:F-HSFX Beech 300 Super King Air 350 (25800985694).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-HSFX_Beech_300_Super_King_Air_350_(25800985694).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/F-HSFX_Beech_300_Super_King_Air_350_%2825800985694%29.jpg/960px-F-HSFX_Beech_300_Super_King_Air_350_%2825800985694%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "Mark Harkin",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2016-04-10 13:51",
+      "caption": "F-HSFX Beech 300 Super King Air at Glasgow Airport",
+      "found": "2026-10-23T21:06:21.0640069+00:00"
+    },
+    {
+      "model": "Beech King Air 300",
+      "file": "File:F-HSFX Beech 300 Super King Air 350 (26339638591).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-HSFX_Beech_300_Super_King_Air_350_(26339638591).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/F-HSFX_Beech_300_Super_King_Air_350_%2826339638591%29.jpg/960px-F-HSFX_Beech_300_Super_King_Air_350_%2826339638591%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "Mark Harkin",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2016-04-10 13:50",
+      "caption": "F-HSFX Beech 300 Super King Air at Glasgow Airport",
+      "found": "2026-10-23T21:06:21.0640069+00:00"
+    },
+    {
+      "model": "Beech King Air 300",
+      "file": "File:F-HSFX Beech 300 Super King Air 350 (26339646171).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-HSFX_Beech_300_Super_King_Air_350_(26339646171).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/F-HSFX_Beech_300_Super_King_Air_350_%2826339646171%29.jpg/960px-F-HSFX_Beech_300_Super_King_Air_350_%2826339646171%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Mark Harkin",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2016-04-10 13:50",
+      "caption": "F-HSFX Beech 300 Super King Air at Glasgow Airport",
+      "found": "2026-10-23T21:06:21.0640069+00:00"
+    },
+    {
+      "model": "Beech King Air 300",
+      "file": "File:Private, N466AC, Beech 300 Super King Air 350 (49593599237).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Private,_N466AC,_Beech_300_Super_King_Air_350_(49593599237).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Private%2C_N466AC%2C_Beech_300_Super_King_Air_350_%2849593599237%29.jpg/960px-Private%2C_N466AC%2C_Beech_300_Super_King_Air_350_%2849593599237%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2019-07-19 23:56",
+      "caption": "Private, N466AC, Beech 300 Super King Air 350",
+      "found": "2026-10-23T21:06:21.0640069+00:00"
     }
   ],
-  "updated": "2026-10-23T20:35:04.5604999+00:00"
+  "updated": "2026-10-23T21:06:21.0640069+00:00"
 }
