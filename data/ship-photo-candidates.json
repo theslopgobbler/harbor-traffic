@@ -356,7 +356,9 @@
     "636017003": "2026-10-23T03:08:58.6921326+00:00",
     "563157500": "2026-10-23T03:39:05.7368924+00:00",
     "566222000": "2026-10-23T05:16:43.4505027+00:00",
-    "368435550": "2026-10-23T07:56:53.0772466+00:00"
+    "368435550": "2026-10-23T07:56:53.0772466+00:00",
+    "538008434": "2026-10-23T14:21:58.0925121+00:00",
+    "352006082": "2026-10-23T14:21:58.0925121+00:00"
   },
   "candidates": [
     {
@@ -3238,7 +3240,22 @@
       "date": "2017-09-13 12:59",
       "caption": "Calandkanaal Europoort 13-9-2017",
       "found": "2026-10-23T03:08:58.6921326+00:00"
+    },
+    {
+      "mmsi": "538008434",
+      "ship": "UNION FUJI",
+      "file": "File:Union Fuji ship.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Fuji_ship.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Union_Fuji_ship.jpg/1280px-Union_Fuji_ship.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 1202,
+      "author": "Pete Forsyth",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "date": "2023-07-23 11:26:13",
+      "caption": "Union Fuji on the Columbia River",
+      "found": "2026-10-23T14:21:58.0925121+00:00"
     }
   ],
-  "updated": "2026-10-23T13:43:39.4712490+00:00"
+  "updated": "2026-10-23T14:21:58.0925121+00:00"
 }
