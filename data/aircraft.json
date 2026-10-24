@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-24T06:38:35.9511985+00:00",
+  "updated": "2026-10-24T07:18:57.3244062+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a868d3",
-      "flight": "N6409E",
-      "reg": "N6409E",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 0,
-      "gs": 55.1,
-      "track": 175.84,
-      "rate": null,
-      "lat": 46.68938,
-      "lon": -122.9835,
-      "squawk": "1200",
+      "hex": "a8304f",
+      "flight": "ASA7097",
+      "reg": "N627AS",
+      "type": "B737",
+      "cat": "A3",
+      "alt": 14725,
+      "gs": 350.5,
+      "track": 318.12,
+      "rate": 2688,
+      "lat": 47.48566,
+      "lon": -122.70939,
+      "squawk": "6636",
       "emergency": "none",
       "mil": false
     }
