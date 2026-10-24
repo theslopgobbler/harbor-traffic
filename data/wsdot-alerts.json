@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T12:11:08.6983136+00:00",
+  "updated": "2026-10-24T12:56:20.7906259+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1812,6 +1812,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 720092,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 southbound at milepost 351.6 near Ryan Rd beginning at 5:36 am on October 24, 2026 until further notice. The left lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 351.6,
+      "lat": 47.157432346,
+      "lon": -123.095478163,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-10-24T12:36:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-24T12:47:13.4870000+00:00"
     },
     {
       "id": 698912,
