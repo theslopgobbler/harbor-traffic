@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T23:28:50.3086098+00:00",
+  "updated": "2026-10-24T23:50:04.4575366+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -7,98 +7,98 @@
       "name": "Rock Candy Mountain on SR 8",
       "lat": 47.0338,
       "lon": -123.0971,
-      "temp": 55.58,
-      "wind": 4,
-      "gust": 8,
-      "dir": "N",
+      "temp": 54.68,
+      "wind": 2,
+      "gust": 3,
+      "dir": "NNE",
       "vis": 1,
       "precip": null,
-      "humidity": 52,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "humidity": 56,
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     },
     {
       "id": 2280,
       "name": "Cosmopolis Hill on US 101",
       "lat": 46.9343,
       "lon": -123.7282,
-      "temp": 53.42,
-      "wind": 2,
-      "gust": 5,
-      "dir": "NNW",
+      "temp": 52.88,
+      "wind": 1,
+      "gust": 3,
+      "dir": "WNW",
       "vis": 1,
       "precip": null,
-      "humidity": 83,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "humidity": 89,
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     },
     {
       "id": 2281,
       "name": "State Camp Hill on US 101",
       "lat": 47.1402,
       "lon": -123.8922,
-      "temp": 53.24,
-      "wind": 2,
-      "gust": 7,
-      "dir": "ENE",
+      "temp": 52.7,
+      "wind": 0,
+      "gust": 4,
+      "dir": "N",
       "vis": 1,
       "precip": null,
-      "humidity": 61,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "humidity": 70,
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     },
     {
       "id": 2956,
       "name": "Queets on US 101",
       "lat": 47.5358,
       "lon": -124.333,
-      "temp": 51.98,
+      "temp": 51.8,
       "wind": 2,
       "gust": 7,
-      "dir": "ESE",
+      "dir": "ENE",
       "vis": 1,
       "precip": null,
       "humidity": 73,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     },
     {
       "id": 2957,
       "name": "Oyster Bay Rd on US 101",
       "lat": 47.0849,
       "lon": -123.0331,
-      "temp": 56.3,
-      "wind": 2,
-      "gust": 7,
-      "dir": "NNW",
+      "temp": 55.4,
+      "wind": 1,
+      "gust": 4,
+      "dir": "NE",
       "vis": 1,
       "precip": null,
-      "humidity": 54,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "humidity": 58,
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     },
     {
       "id": 2958,
       "name": "Pt. Grenville on SR 109",
       "lat": 47.3029,
       "lon": -124.2504,
-      "temp": 50.36,
+      "temp": 50.72,
       "wind": 1,
-      "gust": 3,
-      "dir": "ESE",
+      "gust": 5,
+      "dir": "SSE",
       "vis": 1,
       "precip": null,
-      "humidity": 90,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "humidity": 87,
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     },
     {
       "id": 3776,
       "name": "Grand Mound on I-5",
       "lat": 46.80226113,
       "lon": -123.007164104,
-      "temp": 56.66,
+      "temp": 57.38,
       "wind": 2,
-      "gust": 5,
-      "dir": "E",
+      "gust": 4,
+      "dir": "NE",
       "vis": 1,
       "precip": null,
-      "humidity": 48,
-      "time": "2026-10-24T23:00:00.0000000+00:00"
+      "humidity": 49,
+      "time": "2026-10-24T23:30:00.0000000+00:00"
     }
   ]
 }

@@ -97,7 +97,8 @@
     "Bombardier Learjet 31 A": "2026-10-23T22:34:57.1344353+00:00",
     "Boeing KC-46A Pegasus": "2026-10-23T23:03:11.6311782+00:00",
     "de Havilland Canada DHC-2 Beaver": "2026-10-23T23:32:21.6847245+00:00",
-    "Beech King Air B200": "2026-10-24T03:05:38.1044873+00:00"
+    "Beech King Air B200": "2026-10-24T03:05:38.1044873+00:00",
+    "North American SNJ-5 Texan": "2026-10-24T23:50:04.4575366+00:00"
   },
   "candidates": [
     {
@@ -6035,7 +6036,91 @@
       "date": "2014-11-08 16:20",
       "caption": "Raytheon Beech Super King Air B200C VH-AMR",
       "found": "2026-10-24T03:05:38.1044873+00:00"
+    },
+    {
+      "model": "North American SNJ-5 Texan",
+      "file": "File:Air Zoo December 2019 076 (North American AT-6-SNJ-5 Texan).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Air_Zoo_December_2019_076_(North_American_AT-6-SNJ-5_Texan).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Zoo_December_2019_076_%28North_American_AT-6-SNJ-5_Texan%29.jpg/960px-Air_Zoo_December_2019_076_%28North_American_AT-6-SNJ-5_Texan%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-12-27",
+      "caption": "A North American AT-6/SNJ-5 Texan on display at the Air Zoo at Kalamazoo/Battle Creek International Airport in Portage , Michigan ( United States ).",
+      "found": "2026-10-24T23:50:04.4575366+00:00"
+    },
+    {
+      "model": "North American SNJ-5 Texan",
+      "file": "File:Antwerp North American SNJ-5 Texan N3286 at Stampe Fly In 2023 08.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Antwerp_North_American_SNJ-5_Texan_N3286_at_Stampe_Fly_In_2023_08.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Antwerp_North_American_SNJ-5_Texan_N3286_at_Stampe_Fly_In_2023_08.jpg/960px-Antwerp_North_American_SNJ-5_Texan_N3286_at_Stampe_Fly_In_2023_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 511,
+      "author": "Ad Meskens You are free to use this picture for any purpose as long as you credit its author, Ad Meskens . Example: © Ad Meskens / Wikimedia Commons If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated. This image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-05-20 17:01:39",
+      "caption": "North American Aviation SNJ-5 Texan N3286 (Serial #: 88-15356) tijdens de Stampe Fly In 2023.",
+      "found": "2026-10-24T23:50:04.4575366+00:00"
+    },
+    {
+      "model": "North American SNJ-5 Texan",
+      "file": "File:North American SNJ-5 Texan, Commemorative Air Force JP7496374.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_SNJ-5_Texan,_Commemorative_Air_Force_JP7496374.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/North_American_SNJ-5_Texan%2C_Commemorative_Air_Force_JP7496374.jpg/960px-North_American_SNJ-5_Texan%2C_Commemorative_Air_Force_JP7496374.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 648,
+      "author": "Aldo Bidini",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "10 November 2012",
+      "caption": "",
+      "found": "2026-10-24T23:50:04.4575366+00:00"
+    },
+    {
+      "model": "North American SNJ-5 Texan",
+      "file": "File:North American SNJ-5 Texan '85028' (N3771M) - 11191731344.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_SNJ-5_Texan_%2785028%27_(N3771M)_-_11191731344.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/North_American_SNJ-5_Texan_%2785028%27_%28N3771M%29_-_11191731344.jpg/960px-North_American_SNJ-5_Texan_%2785028%27_%28N3771M%29_-_11191731344.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Hawkeye UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-04-18 13:42:59",
+      "caption": "This is a genuine U.S.Navy SNJ-5, although it was originally built as an AT-6D with the serial '42-85328'. c/n 88-17109. Commemorative Air Force 'Dixie Wing'. Peachtree Falcon Field. Georgia, USA. 18-4-2013",
+      "found": "2026-10-24T23:50:04.4575366+00:00"
+    },
+    {
+      "model": "North American SNJ-5 Texan",
+      "file": "File:North American SNJ-5 Texan ‘52020’ 2018.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_SNJ-5_Texan_%E2%80%9852020%E2%80%99_2018.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/North_American_SNJ-5_Texan_%E2%80%9852020%E2%80%99_2018.jpg/960px-North_American_SNJ-5_Texan_%E2%80%9852020%E2%80%99_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Articseahorse",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-06-13 10:05:09",
+      "caption": "North American SNJ-5 Texan on the USS USS Lexington",
+      "found": "2026-10-24T23:50:04.4575366+00:00"
+    },
+    {
+      "model": "North American SNJ-5 Texan",
+      "file": "File:North American SNJ-5 Texan ‘52020’ 2018 side view.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_SNJ-5_Texan_%E2%80%9852020%E2%80%99_2018_side_view.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/North_American_SNJ-5_Texan_%E2%80%9852020%E2%80%99_2018_side_view.jpg/960px-North_American_SNJ-5_Texan_%E2%80%9852020%E2%80%99_2018_side_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Articseahorse",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-06-13 10:05:38",
+      "caption": "North American SNJ-5 Texan on the USS USS Lexington",
+      "found": "2026-10-24T23:50:04.4575366+00:00"
     }
   ],
-  "updated": "2026-10-24T23:28:50.3086098+00:00"
+  "updated": "2026-10-24T23:50:04.4575366+00:00"
 }
