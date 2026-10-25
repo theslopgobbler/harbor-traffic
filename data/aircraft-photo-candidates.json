@@ -99,7 +99,8 @@
     "de Havilland Canada DHC-2 Beaver": "2026-10-23T23:32:21.6847245+00:00",
     "Beech King Air B200": "2026-10-24T03:05:38.1044873+00:00",
     "North American SNJ-5 Texan": "2026-10-24T23:50:04.4575366+00:00",
-    "Textron Aviation Citation Latitude": "2026-10-25T16:34:05.4199007+00:00"
+    "Textron Aviation Citation Latitude": "2026-10-25T16:34:05.4199007+00:00",
+    "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00"
   },
   "candidates": [
     {
@@ -6205,7 +6206,91 @@
       "date": "2018-09-27 14:35",
       "caption": "Textron Aviation, N613CL, Cessna 680A Citation Latitude",
       "found": "2026-10-25T16:34:05.4199007+00:00"
+    },
+    {
+      "model": "Boeing C-40A",
+      "file": "File:Boeing 737-7AX(C)(WL) C-40A-BN Clipper (USMC BuNo 170041, msn 30184, ln 925) (11-19-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-7AX(C)(WL)_C-40A-BN_Clipper_(USMC_BuNo_170041,_msn_30184,_ln_925)_(11-19-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Boeing_737-7AX%28C%29%28WL%29_C-40A-BN_Clipper_%28USMC_BuNo_170041%2C_msn_30184%2C_ln_925%29_%2811-19-2024%29.jpg/960px-Boeing_737-7AX%28C%29%28WL%29_C-40A-BN_Clipper_%28USMC_BuNo_170041%2C_msn_30184%2C_ln_925%29_%2811-19-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-11-19",
+      "caption": "Boeing 737-7AX(C)(WL) C-40A-BN Clipper (USMC BuNo 170041, msn 30184, ln 925) at Daytona Beach International Airport.",
+      "found": "2026-10-25T19:22:21.6404771+00:00"
+    },
+    {
+      "model": "Boeing C-40A",
+      "file": "File:Boeing 737-7AX(C)(WL) C-40A-BN Clipper (USMC BuNo 170042, msn 30185, ln 978) (2-17-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_737-7AX(C)(WL)_C-40A-BN_Clipper_(USMC_BuNo_170042,_msn_30185,_ln_978)_(2-17-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Boeing_737-7AX%28C%29%28WL%29_C-40A-BN_Clipper_%28USMC_BuNo_170042%2C_msn_30185%2C_ln_978%29_%282-17-2026%29.jpg/960px-Boeing_737-7AX%28C%29%28WL%29_C-40A-BN_Clipper_%28USMC_BuNo_170042%2C_msn_30185%2C_ln_978%29_%282-17-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-02-17",
+      "caption": "Boeing 737-7AX(C)(WL) C-40A-BN Clipper (USMC BuNo 170042, msn 30185, ln 978) at Daytona Beach International Airport.",
+      "found": "2026-10-25T19:22:21.6404771+00:00"
+    },
+    {
+      "model": "Boeing C-40A",
+      "file": "File:Boeing C-40A Clipper, United States - US Navy (USN) JP7067263.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_C-40A_Clipper,_United_States_-_US_Navy_(USN)_JP7067263.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Boeing_C-40A_Clipper%2C_United_States_-_US_Navy_%28USN%29_JP7067263.jpg/960px-Boeing_C-40A_Clipper%2C_United_States_-_US_Navy_%28USN%29_JP7067263.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "6 March 2011",
+      "caption": "",
+      "found": "2026-10-25T19:22:21.6404771+00:00"
+    },
+    {
+      "model": "Boeing C-40A",
+      "file": "File:C-40A Clipper.png",
+      "page": "https://commons.wikimedia.org/wiki/File:C-40A_Clipper.png",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/4d/C-40A_Clipper.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 686,
+      "author": "US Navy",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2002-11-10",
+      "caption": "A en:C-40 Clipper",
+      "found": "2026-10-25T19:22:21.6404771+00:00"
+    },
+    {
+      "model": "Boeing C-40A",
+      "file": "File:USA - Navy Boeing C-40A Clipper (737-7AFC) BuNo 165836 - 836 (cn 33836-1604) (9251573311).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Navy_Boeing_C-40A_Clipper_(737-7AFC)_BuNo_165836_-_836_(cn_33836-1604)_(9251573311).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/USA_-_Navy_Boeing_C-40A_Clipper_%28737-7AFC%29_BuNo_165836_-_836_%28cn_33836-1604%29_%289251573311%29.jpg/960px-USA_-_Navy_Boeing_C-40A_Clipper_%28737-7AFC%29_BuNo_165836_-_836_%28cn_33836-1604%29_%289251573311%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 630,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-07-03 11:30",
+      "caption": "San Diego North Island Naval Air Station (Halsey Field) - KNZY TDelCoro July 3, 2013",
+      "found": "2026-10-25T19:22:21.6404771+00:00"
+    },
+    {
+      "model": "Boeing C-40A",
+      "file": "File:USN C-40A Clipper.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:USN_C-40A_Clipper.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/USN_C-40A_Clipper.jpg/960px-USN_C-40A_Clipper.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 686,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Unknown date",
+      "caption": "A C-40A Clipper from Fleet Logistics Support Squadron (VR) 57, in Coronado , California",
+      "found": "2026-10-25T19:22:21.6404771+00:00"
     }
   ],
-  "updated": "2026-10-25T18:58:34.0851346+00:00"
+  "updated": "2026-10-25T19:22:21.6404771+00:00"
 }
