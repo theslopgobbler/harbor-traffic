@@ -1,45 +1,45 @@
 {
-  "updated": "2026-10-25T20:31:08.6164472+00:00",
+  "updated": "2026-10-25T21:00:53.5974311+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-25T19:56:00.0000000+00:00",
+    "time": "2026-10-25T20:26:00.0000000+00:00",
     "waveFt": 10.2,
     "periodS": 10.0,
-    "dirDeg": 279.0,
-    "waterF": 52.3
+    "dirDeg": 277.0,
+    "waterF": 52.2
   },
   "bar": {
-    "issued": "2026-10-25T15:50:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT UNTIL 5 PM PDT THIS AFTERNOON... Combined seas 6 to 8 ft increasing to 8 to 10 ft around the afternoon ebb today. Bar conditions moderate, becoming rough around the afternoon ebb. Maximum ebb currents will occur around 445 PM Sunday, 500 AM Monday, and 515 PM Monday. The Sunday and Monday afternoon ebbs will be very strong.",
-    "conditions": "moderate, becoming rough around the afternoon ebb",
-    "seas": "6 to 8 ft increasing to 8 to 10 ft around the afternoon ebb today",
+    "issued": "2026-10-25T20:46:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT UNTIL 11 PM PDT THIS EVENING... Combined seas 6 to 8 ft, increasing to 8 to 10 ft around the afternoon ebb today. Combined seas will decrease back to 3 to 5 ft on Monday. Bar conditions moderate, becoming rough around the afternoon ebb on Sunday. Bar conditions becoming light on Monday. Maximum ebb currents will occur around 445 PM Sunday, 500 AM Monday, and 515 PM Monday. The Sunday and Monday afternoon ebbs will be very strong.",
+    "conditions": "moderate, becoming rough around the afternoon ebb on Sunday",
+    "seas": "6 to 8 ft, increasing to 8 to 10 ft around the afternoon ebb today",
     "ebb": "afternoon ebbs will be very strong"
   },
   "alerts": [
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-10-26T12:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 1:30PM PDT until October 26 at 5:00AM PDT by NWS Portland OR"
-    },
-    {
-      "event": "Small Craft Advisory",
       "area": "Grays Harbor Bar",
-      "ends": "2026-10-26T00:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 8:31AM PDT until October 25 at 5:00PM PDT by NWS Seattle WA"
+      "ends": "2026-10-26T06:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 25 at 1:46PM PDT until October 25 at 11:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-10-26T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 8:31AM PDT until October 25 at 11:00PM PDT by NWS Seattle WA"
+      "ends": "2026-10-26T10:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 25 at 1:46PM PDT until October 26 at 3:00AM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-10-26T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 8:31AM PDT until October 25 at 11:00PM PDT by NWS Seattle WA"
+      "ends": "2026-10-26T10:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 25 at 1:46PM PDT until October 26 at 3:00AM PDT by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-10-26T12:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 25 at 1:30PM PDT until October 26 at 5:00AM PDT by NWS Portland OR"
     }
   ]
 }
