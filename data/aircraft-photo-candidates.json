@@ -98,7 +98,8 @@
     "Boeing KC-46A Pegasus": "2026-10-23T23:03:11.6311782+00:00",
     "de Havilland Canada DHC-2 Beaver": "2026-10-23T23:32:21.6847245+00:00",
     "Beech King Air B200": "2026-10-24T03:05:38.1044873+00:00",
-    "North American SNJ-5 Texan": "2026-10-24T23:50:04.4575366+00:00"
+    "North American SNJ-5 Texan": "2026-10-24T23:50:04.4575366+00:00",
+    "Textron Aviation Citation Latitude": "2026-10-25T16:34:05.4199007+00:00"
   },
   "candidates": [
     {
@@ -6120,7 +6121,91 @@
       "date": "2018-06-13 10:05:38",
       "caption": "North American SNJ-5 Texan on the USS USS Lexington",
       "found": "2026-10-24T23:50:04.4575366+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Latitude",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190631).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190631).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190631%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190631%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Textron Aviation static display at EBACE 2019, Palexpo, Switzerland",
+      "found": "2026-10-25T16:34:05.4199007+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Latitude",
+      "file": "File:N613CL Cessna Citation Latitude 680A Textron Aviation (29978420026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N613CL_Cessna_Citation_Latitude_680A_Textron_Aviation_(29978420026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/N613CL_Cessna_Citation_Latitude_680A_Textron_Aviation_%2829978420026%29.jpg/960px-N613CL_Cessna_Citation_Latitude_680A_Textron_Aviation_%2829978420026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-09-28 13:06",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-10-25T16:34:05.4199007+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Latitude",
+      "file": "File:N613CL Cessna Citation Latitude 680A Textron Aviation (30012668735).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N613CL_Cessna_Citation_Latitude_680A_Textron_Aviation_(30012668735).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/N613CL_Cessna_Citation_Latitude_680A_Textron_Aviation_%2830012668735%29.jpg/960px-N613CL_Cessna_Citation_Latitude_680A_Textron_Aviation_%2830012668735%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-09-28 13:51",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-10-25T16:34:05.4199007+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Latitude",
+      "file": "File:N626LA 2016 TEXTRON AVIATION Cessna Citation Latitude 680A s-n 680A-0026 (30805912733).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N626LA_2016_TEXTRON_AVIATION_Cessna_Citation_Latitude_680A_s-n_680A-0026_(30805912733).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/N626LA_2016_TEXTRON_AVIATION_Cessna_Citation_Latitude_680A_s-n_680A-0026_%2830805912733%29.jpg/960px-N626LA_2016_TEXTRON_AVIATION_Cessna_Citation_Latitude_680A_s-n_680A-0026_%2830805912733%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 518,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-12-02 13:20",
+      "caption": "Las Vegas - McCarran International Airport (LAS / KLAS) USA - Nevada December 2, 2016 Photo: Tomás Del Coro",
+      "found": "2026-10-25T16:34:05.4199007+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Latitude",
+      "file": "File:N920CL Cessna Citation Latitude 680A Textron Aviation Inc (37478959414).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N920CL_Cessna_Citation_Latitude_680A_Textron_Aviation_Inc_(37478959414).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/N920CL_Cessna_Citation_Latitude_680A_Textron_Aviation_Inc_%2837478959414%29.jpg/960px-N920CL_Cessna_Citation_Latitude_680A_Textron_Aviation_Inc_%2837478959414%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-11-03 14:33",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-10-25T16:34:05.4199007+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation Latitude",
+      "file": "File:Textron Aviation, N613CL, Cessna 680A Citation Latitude (45253017911).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Textron_Aviation,_N613CL,_Cessna_680A_Citation_Latitude_(45253017911).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Textron_Aviation%2C_N613CL%2C_Cessna_680A_Citation_Latitude_%2845253017911%29.jpg/960px-Textron_Aviation%2C_N613CL%2C_Cessna_680A_Citation_Latitude_%2845253017911%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-09-27 14:35",
+      "caption": "Textron Aviation, N613CL, Cessna 680A Citation Latitude",
+      "found": "2026-10-25T16:34:05.4199007+00:00"
     }
   ],
-  "updated": "2026-10-25T16:05:43.5468304+00:00"
+  "updated": "2026-10-25T16:34:05.4199007+00:00"
 }
