@@ -100,7 +100,8 @@
     "Beech King Air B200": "2026-10-24T03:05:38.1044873+00:00",
     "North American SNJ-5 Texan": "2026-10-24T23:50:04.4575366+00:00",
     "Textron Aviation Citation Latitude": "2026-10-25T16:34:05.4199007+00:00",
-    "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00"
+    "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00",
+    "Cessna Citation XLS": "2026-10-25T21:59:13.0497244+00:00"
   },
   "candidates": [
     {
@@ -6290,7 +6291,91 @@
       "date": "Unknown date",
       "caption": "A C-40A Clipper from Fleet Logistics Support Squadron (VR) 57, in Coronado , California",
       "found": "2026-10-25T19:22:21.6404771+00:00"
+    },
+    {
+      "model": "Cessna Citation XLS",
+      "file": "File:Cessna 560XL Citation XLS CS-DXK.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_560XL_Citation_XLS_CS-DXK.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Cessna_560XL_Citation_XLS_CS-DXK.jpg/960px-Cessna_560XL_Citation_XLS_CS-DXK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 17 August 2011, 20:50:14",
+      "caption": "NetJets Europe Cessna 560XL Citation XLS (CS-DXK, cn 560-5633) at St. Gallen-Altenrhein Airport (LSZR)",
+      "found": "2026-10-25T21:59:13.0497244+00:00"
+    },
+    {
+      "model": "Cessna Citation XLS",
+      "file": "File:Cessna Citation XLS N613WM FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_XLS_N613WM_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Cessna_Citation_XLS_N613WM_FDK_MD1.jpg/960px-Cessna_Citation_XLS_N613WM_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 660,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-08-19",
+      "caption": "2012 Cessna Citation XLS N613WM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-25T21:59:13.0497244+00:00"
+    },
+    {
+      "model": "Cessna Citation XLS",
+      "file": "File:Cessna Citation XLS N613WM FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_XLS_N613WM_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cessna_Citation_XLS_N613WM_FDK_MD2.jpg/960px-Cessna_Citation_XLS_N613WM_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 431,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-01-27",
+      "caption": "2012 Cessna Citation XLS N613WM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-25T21:59:13.0497244+00:00"
+    },
+    {
+      "model": "Cessna Citation XLS",
+      "file": "File:Cessna Citation XLS N876AD FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_XLS_N876AD_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Cessna_Citation_XLS_N876AD_FDK_MD1.jpg/960px-Cessna_Citation_XLS_N876AD_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 413,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-05-06",
+      "caption": "Cessna Citation XLS+ N876AD at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-25T21:59:13.0497244+00:00"
+    },
+    {
+      "model": "Cessna Citation XLS",
+      "file": "File:Cessna Citation XLS N876AD FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_XLS_N876AD_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Cessna_Citation_XLS_N876AD_FDK_MD2.jpg/960px-Cessna_Citation_XLS_N876AD_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 424,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-05-06",
+      "caption": "Cessna Citation XLS+ N876AD at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-25T21:59:13.0497244+00:00"
+    },
+    {
+      "model": "Cessna Citation XLS",
+      "file": "File:Cessna Citation XLS N876AD FDK MD3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_XLS_N876AD_FDK_MD3.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Cessna_Citation_XLS_N876AD_FDK_MD3.jpg/960px-Cessna_Citation_XLS_N876AD_FDK_MD3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 426,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-01-19",
+      "caption": "2017 Cessna Citation XLS+ N876AD at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-25T21:59:13.0497244+00:00"
     }
   ],
-  "updated": "2026-10-25T21:30:51.9296149+00:00"
+  "updated": "2026-10-25T21:59:13.0497244+00:00"
 }
