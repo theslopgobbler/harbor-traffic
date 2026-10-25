@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-25T15:38:29.4049391+00:00",
+  "updated": "2026-10-25T16:05:43.5468304+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-25T14:56:00.0000000+00:00",
-    "waveFt": 7.5,
-    "periodS": 13.0,
-    "dirDeg": 291.0,
+    "time": "2026-10-25T15:26:00.0000000+00:00",
+    "waveFt": 7.9,
+    "periodS": 11.0,
+    "dirDeg": 281.0,
     "waterF": 52.9
   },
   "bar": {
-    "issued": "2026-10-25T08:16:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH THIS AFTERNOON... Combined seas 9 to 11 ft subsiding to 7 to 9 ft this evening. Bar conditions rough becoming moderate this evening. Maximum ebb currents will occur around 415 AM Sunday, 445 PM Sunday, and 500 AM Monday. The Sunday afternoon ebb will be very strong.",
-    "conditions": "rough becoming moderate this evening",
-    "seas": "9 to 11 ft subsiding to 7 to 9 ft this evening",
-    "ebb": "afternoon ebb will be very strong"
+    "issued": "2026-10-25T15:50:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT UNTIL 5 PM PDT THIS AFTERNOON... Combined seas 6 to 8 ft increasing to 8 to 10 ft around the afternoon ebb today. Bar conditions moderate, becoming rough around the afternoon ebb. Maximum ebb currents will occur around 445 PM Sunday, 500 AM Monday, and 515 PM Monday. The Sunday and Monday afternoon ebbs will be very strong.",
+    "conditions": "moderate, becoming rough around the afternoon ebb",
+    "seas": "6 to 8 ft increasing to 8 to 10 ft around the afternoon ebb today",
+    "ebb": "afternoon ebbs will be very strong"
   },
   "alerts": [
     {

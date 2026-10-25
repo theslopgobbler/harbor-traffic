@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-25T15:38:29.4049391+00:00",
+  "updated": "2026-10-25T16:05:43.5468304+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a8c840",
-      "flight": "QXE2139",
-      "reg": "N665QX",
-      "type": "E75L",
+      "hex": "e4a711",
+      "flight": "BOE856",
+      "reg": null,
+      "type": null,
       "cat": "A3",
-      "alt": 13275,
-      "gs": 283.8,
-      "track": 210.72,
-      "rate": 2368,
-      "lat": 47.61223,
-      "lon": -122.71941,
-      "squawk": "3505",
+      "alt": 14975,
+      "gs": 333.5,
+      "track": 285.12,
+      "rate": -64,
+      "lat": 47.80296,
+      "lon": -123.09469,
+      "squawk": "4777",
       "emergency": "none",
       "mil": false
     }
