@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T23:30:58.2561185+00:00",
+  "updated": "2026-10-25T23:56:03.9128865+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1812,27 +1812,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 722188,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "High",
-      "headline": "Reported Collision on I-5 northbound at milepost 104.32 near US 101 beginning at 3:27 pm on October 25, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 104.32,
-      "lat": 47.021386205,
-      "lon": -122.906057864,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-10-25T22:27:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-25T22:28:14.3600000+00:00"
     },
     {
       "id": 698912,
