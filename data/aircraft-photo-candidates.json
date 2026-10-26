@@ -101,7 +101,8 @@
     "North American SNJ-5 Texan": "2026-10-24T23:50:04.4575366+00:00",
     "Textron Aviation Citation Latitude": "2026-10-25T16:34:05.4199007+00:00",
     "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00",
-    "Cessna Citation XLS": "2026-10-25T21:59:13.0497244+00:00"
+    "Cessna Citation XLS": "2026-10-25T21:59:13.0497244+00:00",
+    "Airbus Helicopters EC130 T2": "2026-10-26T23:46:09.0762816+00:00"
   },
   "candidates": [
     {
@@ -6375,7 +6376,49 @@
       "date": "2022-01-19",
       "caption": "2017 Cessna Citation XLS+ N876AD at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-10-25T21:59:13.0497244+00:00"
+    },
+    {
+      "model": "Airbus Helicopters EC130 T2",
+      "file": "File:Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Microflite_(VH-WVV)_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Microflite_%28VH-WVV%29_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport.jpg/960px-Microflite_%28VH-WVV%29_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2017-08-02",
+      "caption": "Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport .",
+      "found": "2026-10-26T23:46:09.0762816+00:00"
+    },
+    {
+      "model": "Airbus Helicopters EC130 T2",
+      "file": "File:Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Microflite_(VH-WVV)_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport_(1).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Microflite_%28VH-WVV%29_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport_%281%29.jpg/960px-Microflite_%28VH-WVV%29_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2017-08-02",
+      "caption": "Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport .",
+      "found": "2026-10-26T23:46:09.0762816+00:00"
+    },
+    {
+      "model": "Airbus Helicopters EC130 T2",
+      "file": "File:Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Microflite_(VH-WVV)_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport_1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Microflite_%28VH-WVV%29_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport_1.jpg/960px-Microflite_%28VH-WVV%29_Airbus_Helicopters_EC130_T2_at_Wagga_Wagga_Airport_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2017-08-23",
+      "caption": "Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport .",
+      "found": "2026-10-26T23:46:09.0762816+00:00"
     }
   ],
-  "updated": "2026-10-26T23:13:42.2446735+00:00"
+  "updated": "2026-10-26T23:46:09.0762816+00:00"
 }
