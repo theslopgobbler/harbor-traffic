@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-26T07:56:07.2759917+00:00",
+  "updated": "2026-10-26T08:36:29.2545837+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-26T07:26:00.0000000+00:00",
+    "time": "2026-10-26T07:56:00.0000000+00:00",
     "waveFt": 5.6,
     "periodS": 7.0,
-    "dirDeg": 188.0,
+    "dirDeg": 202.0,
     "waterF": 53.8
   },
   "bar": {
@@ -19,21 +19,21 @@
   "alerts": [
     {
       "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-10-26T12:00:00+00:00",
+      "headline": "Small Craft Advisory issued October 26 at 1:14AM PDT until October 26 at 5:00AM PDT by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-10-26T10:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 4:45PM PDT until October 26 at 3:00AM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 26 at 12:57AM PDT until October 26 at 3:00AM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-10-26T10:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 4:45PM PDT until October 26 at 3:00AM PDT by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-10-26T12:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 25 at 1:30PM PDT until October 26 at 5:00AM PDT by NWS Portland OR"
+      "headline": "Small Craft Advisory issued October 26 at 12:57AM PDT until October 26 at 3:00AM PDT by NWS Seattle WA"
     }
   ]
 }
