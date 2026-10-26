@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-26T11:31:17.0894576+00:00",
+  "updated": "2026-10-26T13:58:30.4199102+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ad438e",
-      "flight": "ALFT6",
-      "reg": "N954AL",
-      "type": "EC35",
-      "cat": "A7",
-      "alt": 1350,
-      "gs": 107.7,
-      "track": 201.8,
-      "rate": -128,
-      "lat": 46.9449,
-      "lon": -122.84589,
-      "squawk": "5546",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
