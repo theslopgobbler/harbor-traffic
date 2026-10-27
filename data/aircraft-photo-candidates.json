@@ -105,7 +105,8 @@
     "Airbus Helicopters EC130 T2": "2026-10-26T23:46:09.0762816+00:00",
     "Douglas R4D-1": "2026-10-27T01:03:47.893771+00:00",
     "McDonnell Douglas C-17A Globemaster III": "2026-10-27T07:13:02.5341158+00:00",
-    "Boeing 737NG 7H4/W": "2026-10-27T14:25:14.2052476+00:00"
+    "Boeing 737NG 7H4/W": "2026-10-27T14:25:14.2052476+00:00",
+    "Bell 206L Long Ranger III": "2026-10-27T20:41:44.2074159+00:00"
   },
   "candidates": [
     {
@@ -6589,7 +6590,91 @@
       "date": "2023-05-18",
       "caption": "McDonnell Douglas YC-17A Block 1 at the National Museum of the United States Air Force.",
       "found": "2026-10-27T07:13:02.5341158+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger III",
+      "file": "File:Bell 206L-3 LongRanger III 111.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-3_LongRanger_III_111.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Bell_206L-3_LongRanger_III_111.jpg/960px-Bell_206L-3_LongRanger_III_111.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 637,
+      "author": "Savvas Petoussis",
+      "license": "Attribution",
+      "licenseUrl": "",
+      "date": "Cyprus, November 8, 2006",
+      "caption": "111 (cn 51219) On the 8 November 2006, the Lakatamia Airbase was open for the annual opena day of the Cyprus Airforce. This example was on display among other helicopters including Mil-35 and Gazzelle.",
+      "found": "2026-10-27T20:41:44.2074159+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger III",
+      "file": "File:Bell 206L-3 LongRanger III AN0109158.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-3_LongRanger_III_AN0109158.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bell_206L-3_LongRanger_III_AN0109158.jpg/960px-Bell_206L-3_LongRanger_III_AN0109158.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ted Quackenbush",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "18 August 2000",
+      "caption": "This 6-place helicopter under contract to BLM for firefighting duties.",
+      "found": "2026-10-27T20:41:44.2074159+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger III",
+      "file": "File:Bell 206L-4 LongRanger IV over Botafogo Bay, Rio de Janeiro.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_over_Botafogo_Bay,_Rio_de_Janeiro.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg/960px-Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 598,
+      "author": "Wilfredor",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2023-06-03 13:24:51",
+      "caption": "A Bell 206L-4 LongRanger IV flying over Botafogo Bay, the Corcovado and the statue of Christ behind it. Rio de Janeiro, Brazil.",
+      "found": "2026-10-27T20:41:44.2074159+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger III",
+      "file": "File:Bell 206L3 LongRanger III, Bonisair Helicopters 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L3_LongRanger_III,_Bonisair_Helicopters_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bell_206L3_LongRanger_III%2C_Bonisair_Helicopters_01.jpg/960px-Bell_206L3_LongRanger_III%2C_Bonisair_Helicopters_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bernard Gagnon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-11-20",
+      "caption": "Bell 206L3 LongRanger III, Bonisair Helicopters, Zimbabwe",
+      "found": "2026-10-27T20:41:44.2074159+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger III",
+      "file": "File:Bell 206L3 LongRanger III, Bonisair Helicopters 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L3_LongRanger_III,_Bonisair_Helicopters_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Bell_206L3_LongRanger_III%2C_Bonisair_Helicopters_02.jpg/960px-Bell_206L3_LongRanger_III%2C_Bonisair_Helicopters_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bernard Gagnon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-11-20",
+      "caption": "Bell 206L3 LongRanger III, Bonisair Helicopters, Zimbabwe",
+      "found": "2026-10-27T20:41:44.2074159+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger III",
+      "file": "File:LAPD Bell 206 Jetranger.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:LAPD_Bell_206_Jetranger.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/LAPD_Bell_206_Jetranger.jpg/960px-LAPD_Bell_206_Jetranger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mfield - Matthew Field, http://www.photography.mattfield.com",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "date": "2006-10-20",
+      "caption": "Los Angeles Police Department (LAPD) 1987 Bell 206 Jetranger helicopter",
+      "found": "2026-10-27T20:41:44.2074159+00:00"
     }
   ],
-  "updated": "2026-10-27T20:09:08.7527273+00:00"
+  "updated": "2026-10-27T20:41:44.2074159+00:00"
 }
