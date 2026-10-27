@@ -635,7 +635,32 @@
   // Oct 19, the day it actually closes). So when a closure's own words say it starts on a later day, it's shown
   // as a warning ("UPCOMING CLOSURE MON OCT 19"), not a red X, until that day comes.
   const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  // A closure whose words give daily hours ("From 8 a.m. to 4:30 p.m. Monday, Oct. 26, through Thursday", "nightly
+  // 9 p.m. to 5 a.m.") is only closed during them: WSDOT's own start and end cover the whole project, so the map
+  // showed the SR 109 Spur closed at midnight (Oct 26). Outside its hours it's shown as info, with the hours
+  // ("CLOSED 8 AM–4:30 PM, OPEN NOW"); overnight hours wrap past midnight.
+  const CLOCK = String.raw`(\d{1,2})(?::(\d{2}))?\s*([ap])\.?\s*m\b\.?|(noon|midnight)`;
+  const HOURS_RE = new RegExp(`(?:${CLOCK})\\s*(?:to|until|till|through|-|–|—)\\s*(?:${CLOCK})`, 'i');
+  const clockMin = (h, mm, ap, word) => (word ? (/noon/i.test(word) ? 720 : 0) : ((+h % 12) + (/p/i.test(ap) ? 12 : 0)) * 60 + (+mm || 0));
+  const clockLabel = (m) => { const h = Math.floor(m / 60) % 24, mm = m % 60; return m % 1440 === 0 ? 'MIDNIGHT' : m === 720 ? 'NOON'
+    : `${h % 12 || 12}${mm ? ':' + String(mm).padStart(2, '0') : ''} ${h < 12 ? 'AM' : 'PM'}`; };
+  function closureHours(r) {
+    const x = HOURS_RE.exec(`${r.headline || ''} ${r.description || ''}`);
+    if (!x) return r;
+    const from = clockMin(x[1], x[2], x[3], x[4]), to = clockMin(x[5], x[6], x[7], x[8]);
+    if (from === to) return r;
+    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+    const t = now.getHours() * 60 + now.getMinutes();
+    const inside = from < to ? t >= from && t < to : t >= from || t < to;
+    if (inside) return r;
+    const hrs = `${clockLabel(from)}–${clockLabel(to)}`;
+    return { ...r, kind: 'other', hours: hrs, headline: `CLOSED ${hrs}, OPEN NOW: ${r.headline}` };
+  }
   function upcomingClosure(r) {
+    const x = datedClosure(r);
+    return x.kind === 'closure' ? closureHours(x) : x;
+  }
+  function datedClosure(r) {
     // (the collector does the same; this also catches it between its runs, and the day it starts)
     if (r.upcoming && r.kind !== 'closure') return { ...r, headline: `UPCOMING CLOSURE ${r.upcoming}: ${r.headline}` };
     if (r.ended && r.kind !== 'closure') return { ...r, headline: `CLOSURE ENDED ${r.ended}: ${r.headline}` };
