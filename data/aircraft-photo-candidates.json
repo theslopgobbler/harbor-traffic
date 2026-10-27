@@ -102,7 +102,8 @@
     "Textron Aviation Citation Latitude": "2026-10-25T16:34:05.4199007+00:00",
     "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00",
     "Cessna Citation XLS": "2026-10-25T21:59:13.0497244+00:00",
-    "Airbus Helicopters EC130 T2": "2026-10-26T23:46:09.0762816+00:00"
+    "Airbus Helicopters EC130 T2": "2026-10-26T23:46:09.0762816+00:00",
+    "Douglas R4D-1": "2026-10-27T01:03:47.8937710+00:00"
   },
   "candidates": [
     {
@@ -6418,7 +6419,91 @@
       "date": "2017-08-23",
       "caption": "Microflite (VH-WVV) Airbus Helicopters EC130 T2 at Wagga Wagga Airport .",
       "found": "2026-10-26T23:46:09.0762816+00:00"
+    },
+    {
+      "model": "Douglas R4D-1",
+      "file": "File:1944 Douglas R4D-6S, Hagerstown Aviation Museum - 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:1944_Douglas_R4D-6S,_Hagerstown_Aviation_Museum_-_1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/1944_Douglas_R4D-6S%2C_Hagerstown_Aviation_Museum_-_1.jpg/960px-1944_Douglas_R4D-6S%2C_Hagerstown_Aviation_Museum_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 385,
+      "author": "APK",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-06-24 12:35:21",
+      "caption": "1944 Douglas R4D-6S named \"Ready 4 Duty\" at the Hagerstown Aviation Museum in Hagerstown, Maryland",
+      "found": "2026-10-27T01:03:47.8937710+00:00"
+    },
+    {
+      "model": "Douglas R4D-1",
+      "file": "File:Douglas R4D-4 NATS (4567984823).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Douglas_R4D-4_NATS_(4567984823).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Douglas_R4D-4_NATS_%284567984823%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 555,
+      "author": "Bill Larkins",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-05-01 09:54",
+      "caption": "2-star Admiral command plane from the Naval Air Transport Service at Oakland on April 9, 1946.",
+      "found": "2026-10-27T01:03:47.8937710+00:00"
+    },
+    {
+      "model": "Douglas R4D-1",
+      "file": "File:Douglas R4D-6 (50783) NATS (4867479530).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Douglas_R4D-6_(50783)_NATS_(4867479530).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Douglas_R4D-6_%2850783%29_NATS_%284867479530%29.jpg/960px-Douglas_R4D-6_%2850783%29_NATS_%284867479530%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 605,
+      "author": "Bill Larkins",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-08-06 16:07",
+      "caption": "Landing at Oakland, CA, on March 13, 1946.",
+      "found": "2026-10-27T01:03:47.8937710+00:00"
+    },
+    {
+      "model": "Douglas R4D-1",
+      "file": "File:Douglas R4D-8 silhouette.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Douglas_R4D-8_silhouette.png",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Douglas_R4D-8_silhouette.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 418,
+      "author": "Greg Goebel",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2021-06-11",
+      "caption": "Plan-view silhouette of the Douglas R4D-8",
+      "found": "2026-10-27T01:03:47.8937710+00:00"
+    },
+    {
+      "model": "Douglas R4D-1",
+      "file": "File:Douglas R4D Ready 4 Duty N151ZE HGR MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Douglas_R4D_Ready_4_Duty_N151ZE_HGR_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Douglas_R4D_Ready_4_Duty_N151ZE_HGR_MD2.jpg/960px-Douglas_R4D_Ready_4_Duty_N151ZE_HGR_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 844,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-21",
+      "caption": "Douglas R4D-6S N151ZE Ready 4 Duty at Hagerstown Regional Airport, Maryland, USA",
+      "found": "2026-10-27T01:03:47.8937710+00:00"
+    },
+    {
+      "model": "Douglas R4D-1",
+      "file": "File:NASA Douglas R4D Skytrain used to tow M2-F1 experimental glider.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:NASA_Douglas_R4D_Skytrain_used_to_tow_M2-F1_experimental_glider.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/NASA_Douglas_R4D_Skytrain_used_to_tow_M2-F1_experimental_glider.jpg/960px-NASA_Douglas_R4D_Skytrain_used_to_tow_M2-F1_experimental_glider.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 769,
+      "author": "NASA Dryden Flight Research Center",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1956-05-02",
+      "caption": "NASA Douglas R4D Skytrain used to tow M2-F1 experimental glider.",
+      "found": "2026-10-27T01:03:47.8937710+00:00"
     }
   ],
-  "updated": "2026-10-27T00:10:26.2693711+00:00"
+  "updated": "2026-10-27T01:03:47.8937710+00:00"
 }
