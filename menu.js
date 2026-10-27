@@ -12,6 +12,7 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
+    ['Oct 26', 'Bus routes follow the streets buses really use, and buses heading home at night don’t wander off.'],
     ['Oct 26', 'Road closures with set hours only show closed during them.'],
     ['Oct 20', 'Big ships at the dock show up big.'],
     ['Oct 16', 'Airliners overhead, if you want them (Map Layers in the menu).'],

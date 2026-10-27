@@ -97,6 +97,12 @@
   // running (parked at the base, deadheading). Shown dimmed; left out of counts and stepping through a route
   // (the relay decides: not on the route list AND parked at GHT's base; older relays only sent "listed")
   const oos = (b) => (b.oos != null ? b.oos : b.listed === false);
+  // driving but not on the route list: heading to or from the base (end of the night, start of the day), not running
+  // its route. Not held to the route's line: at night those buses are still in route 20's feed and were carried
+  // along route 20 at 30 mph while really turning into the base, then pulled back (Oct 4-26: every night's last runs).
+  // Only within 3 km of the base: in the daytime the list leaves out 3-9% of moving buses, mostly far from it, and
+  // those are usually running their route (or the list glitched), so they keep their line
+  const deadhead = (b) => b.listed === false && !oos(b) && b.lat != null && mx([b.lon, b.lat], DEPOT) < 3000;
   const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt && !oos(b)).sort((a, b) => a.id.localeCompare(b.id));
   const routeColor = (rt) => Object.values(routes).find((r) => short(r.name) === rt)?.color || routeInfo[rt]?.color || '#bff4ff';
   const routeName = (rt) => long(Object.values(routes).find((r) => short(r.name) === rt)?.name) || routeInfo[rt]?.name || '';
@@ -735,7 +741,10 @@
   // toward where the reports say it should be (the last report, slid forward at its speed). Behind, it speeds up
   // to close the gap over a few seconds; ahead (the real bus slowed or stopped), it eases off and waits for the
   // reports to catch up, instead of snapping back. A bus with no line (or a new one) glides straight to its report.
-  const PACE = 0.9, MAX_S = 30, CATCH_S = 8, BLEND_MS = 1500;
+  // (MAX_S: how long a bus is carried on past its last report. The map asks every 20 s (10 s following one), so a
+  // little more than that keeps it moving between reports; any longer and a bus whose tracker went quiet, or that
+  // turned off its route, drove on "into the sunset" and then jumped back (Oct 26). 30 s before)
+  const PACE = 0.9, MAX_S = 22, CATCH_S = 8, BLEND_MS = 1500;
   // a bus off its route line (deadheading, a detour) between reports: carried along the road it's on, as the map
   // draws it (the street map's own road lines), not straight along its GPS heading. Straight, a bus on a curvy road
   // like SR 109 ended up in the woods. Found once per report: the road within 40 m going its way, followed on
@@ -864,7 +873,8 @@
         // off its route line (heading out to start a route, a detour): carry on along the road it's on (roadAhead)
         // for a little while, a bit under its speed
         if (mk._roadFor !== b._at) { mk._roadFor = b._at; mk._road = roadAhead(b); }
-        const m = b.mph * 0.44704 * PACE * Math.min(15, (now - b._at) / 1000);
+        // (deadheading, not on the tracker's route list: only a few seconds, it's usually pulling into the base)
+        const m = b.mph * 0.44704 * PACE * Math.min(deadhead(b) ? 5 : 15, (now - b._at) / 1000);
         if (mk._road) pos = along(mk._road, m); // (stops at the end of what was found, and waits for the next report)
         else { const m2 = Math.min(m, b.mph * 0.44704 * PACE * 4), h = (b.heading || 0) * Math.PI / 180;
           pos = [b.lon + (m2 * Math.sin(h)) / 76000, b.lat + (m2 * Math.cos(h)) / 111000]; }
@@ -1394,11 +1404,15 @@
       const wasOff = prev && prev.route === b.route && !prev._snap && prev.mph >= 2;
       const reach = wasOff ? 40 : 60;
       let sn = null;
-      if (mk._sh && prev && prev.route === b.route) {
+      // the same position as last time: the tracker hasn't heard from it again (GHT's feed has no time of its own).
+      // Not a fresh start: it keeps the old report's clock, so it isn't carried on all over again from there
+      const repeat = prev && !prev._lost && prev.lat === b.lat && prev.lon === b.lon && prev._at;
+      if (deadhead(b)) mk._sh = null;
+      else if (mk._sh && prev && prev.route === b.route) {
         const o = onLine(mk._sh, [b.lon, b.lat], mk._s, b.mph >= 2 ? b.heading : null, reach);
         if (o) sn = { sh: mk._sh, i: o.i, dist: o.dist, at: o.at };
       }
-      b._snap = sn || snap(b, rt, reach);
+      b._snap = deadhead(b) ? null : sn || snap(b, rt, reach);
       // a weak GPS signal (trees, hills, the tracker reconnecting) can put a report 100-200 m off, or give it a
       // stale heading. A bus that was on its line within the last 45 s stays on it unless it's more than 250 m away:
       // a real detour shows up over the next reports. (Oct 12-14 replay: about a third fewer brief "off route" flips)
@@ -1411,7 +1425,7 @@
       b._fork = b._snap ? forkAhead(b, rt) : undefined;
       if (window.htTrace && follow?.id === b.id) window.htTrace.push({ t: Date.now(), same: !!sn, newLine: b._snap?.sh !== mk._sh, obs: Math.round(b._obs), drawn: Math.round(mk._s), mph: Math.round(b.mph) });
       b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
-      b._at = Date.now();
+      b._at = repeat || Date.now();
       mk._bus = b;
       if (mk._lostAt) { mk._lostAt = null; mk.getElement().classList.remove('lost'); saveGhost(b.id, null); } // back on the air
       drawBus(mk);

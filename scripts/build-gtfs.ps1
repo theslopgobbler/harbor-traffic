@@ -19,8 +19,11 @@ $csv = { param($n) Import-Csv (Join-Path $tmp "$n.txt") }
 $feedEnd = $null
 if (Test-Path (Join-Path $tmp 'feed_info.txt')) { $feedEnd = (& $csv 'feed_info' | Select-Object -First 1).feed_end_date }
 if (-not $feedEnd) { $feedEnd = (& $csv 'calendar' | ForEach-Object { $_.end_date } | Sort-Object | Select-Object -Last 1) }
+# (fixes: which version of routes/route-fixes.json went in, so the collector rebuilds when it changes)
+$fixPath = Join-Path $root 'routes/route-fixes.json'
+$fixHash = if (Test-Path $fixPath) { (Get-FileHash $fixPath -Algorithm SHA1).Hash } else { '' }
 [IO.File]::WriteAllText((Join-Path $dataDir 'schedule-status.json'), ([ordered]@{ built = [DateTimeOffset]::UtcNow.ToString('o')
-    fileModified = "$($dl.Headers['Last-Modified'])"; feedEnd = "$feedEnd" } | ConvertTo-Json), (New-Object System.Text.UTF8Encoding($false)))
+    fileModified = "$($dl.Headers['Last-Modified'])"; feedEnd = "$feedEnd"; fixes = $fixHash } | ConvertTo-Json), (New-Object System.Text.UTF8Encoding($false)))
 
 $routes = @{}; foreach ($r in & $csv 'routes') { $routes[$r.route_id] = $r }
 # which shapes and which stops belong to which route
@@ -217,6 +220,93 @@ $features = foreach ($sid in $pts.Keys) {
     [ordered]@{ type = 'Feature'; properties = [ordered]@{ route = $r.route_short_name; name = $r.route_long_name; color = "#$($r.route_color)"; shape = $sid; mps = $mps }
         geometry = [ordered]@{ type = 'LineString'; coordinates = $line.ToArray() } }
 }
+$features = @($features)
+
+# Where buses really drive (routes/route-fixes.json, from Harbor Traffic's own bus log): GHT's lines have stretches
+# no bus takes (a dead end where buses loop around a block, a road buses skip). Each fix is a path; in each of GHT's
+# lines that runs this way, the stretch between where the path leaves the line and where it rejoins is swapped for
+# it ("replace": buses on those trips practically never take GHT's stretch), or a second copy of the line with the
+# path swapped in is added beside it ("add": buses take both ways). Only lines going the path's way (or either way,
+# "both") are touched. When no line lines up, the path is added as a short line of its own. Lines then carry on as
+# usual: the map holds buses to them and the relay's off-route squares (route-cells, below) include them.
+function Get-SegDist($p, $a, $b) {
+    $ax = ($a[0] - $p[0]) * 76000; $ay = ($a[1] - $p[1]) * 111000; $dx = ($b[0] - $a[0]) * 76000; $dy = ($b[1] - $a[1]) * 111000
+    $L = $dx * $dx + $dy * $dy; $t = if ($L) { [math]::Max(0, [math]::Min(1, - ($ax * $dx + $ay * $dy) / $L)) } else { 0 }
+    [math]::Sqrt([math]::Pow($ax + $t * $dx, 2) + [math]::Pow($ay + $t * $dy, 2))
+}
+function Get-LineDist($p, $line) { $best = 1e9; for ($i = 0; $i -lt $line.Count - 1; $i++) { $d = Get-SegDist $p $line[$i] $line[$i + 1]; if ($d -lt $best) { $best = $d } }; $best }
+function Get-Len($line, $i, $j) { $s = 0.0; for ($k = $i; $k -lt $j; $k++) { $s += Get-M $line[$k] $line[$k + 1] }; $s }
+function Get-Splice($line, $B) {
+    # where the path leaves this line (A) and rejoins it (Z): its points within 25 m of the line at either end are shared
+    $kA = 0; while ($kA -lt $B.Count - 1 -and (Get-LineDist $B[$kA + 1] $line) -le 25) { $kA++ }
+    $kZ = $B.Count - 1; while ($kZ -gt $kA -and (Get-LineDist $B[$kZ - 1] $line) -le 25) { $kZ-- }
+    if ($kZ - $kA -lt 1) { return $null }
+    $A = $B[$kA]; $Z = $B[$kZ]; $dA = Get-LineDist $A $line; $dZ = Get-LineDist $Z $line
+    if ($dA -gt 60 -or $dZ -gt 60) { return $null }
+    # each time the line comes by A (or Z): the closest point of that pass
+    $passes = { param($P, $tol)
+        $out = New-Object System.Collections.Generic.List[object]; $cur = $null
+        for ($i = 0; $i -lt $line.Count; $i++) {
+            $d = Get-M $line[$i] $P
+            if ($d -le $tol) { if ($cur -and $i - $cur.last -le 3) { $cur.last = $i; if ($d -lt $cur.d) { $cur.d = $d; $cur.i = $i } } else { $cur = @{ i = $i; d = $d; last = $i }; $out.Add($cur) } }
+        }
+        , $out
+    }
+    $pa = & $passes $A ([math]::Max(35, $dA + 20)); $pz = & $passes $Z ([math]::Max(35, $dZ + 20))
+    $mid = [System.Collections.Generic.List[object]]@($B[$kA..$kZ]); $lb = Get-Len $mid 0 ($mid.Count - 1)
+    $best = $null
+    foreach ($a in $pa) { foreach ($z in $pz) {
+        if ($z.i -le $a.i + 1) { continue }   # (A before Z along the line: it runs the path's way)
+        $L = Get-Len $line $a.i $z.i
+        if ($L -gt 3 * $lb + 1500) { continue }   # (not the line coming back around much later)
+        $far = 0.0; for ($k = $a.i; $k -le $z.i; $k++) { $far = [math]::Max($far, (Get-LineDist $line[$k] $mid)) }
+        if ($far -gt [math]::Max(500, 0.6 * $lb)) { continue }   # (a stretch that wanders off elsewhere isn't this one)
+        if ($far -lt 30) { continue }   # (the line already goes the path's way)
+        if (-not $best -or $L -lt $best.L) { $best = @{ ia = $a.i; iz = $z.i; L = $L } }
+    } }
+    if (-not $best) { return $null }
+    $new = New-Object System.Collections.Generic.List[object]
+    for ($k = 0; $k -le $best.ia; $k++) { $new.Add($line[$k]) }
+    foreach ($c in $mid) { $new.Add(@([double]$c[0], [double]$c[1])) }
+    for ($k = $best.iz; $k -lt $line.Count; $k++) { $new.Add($line[$k]) }
+    # (where the path meets the line it can overshoot by a few meters: those little out-and-backs go, as above)
+    Get-CleanLine $new -Quick
+    , $new
+}
+$fixFile = Join-Path $root 'routes/route-fixes.json'
+if (Test-Path $fixFile) {
+    $fixed = 0; $added = 0; $alone = 0
+    foreach ($fx in (Get-Content $fixFile -Raw | ConvertFrom-Json).fixes) {
+        $path = [System.Collections.Generic.List[object]]@($fx.path | ForEach-Object { , @([double]$_[0], [double]$_[1]) })
+        $ways = @(, $path); if ($fx.both) { $rev = [System.Collections.Generic.List[object]]@($path); $rev.Reverse(); $ways += , $rev }
+        $lons = $path | ForEach-Object { $_[0] }; $lats = $path | ForEach-Object { $_[1] }
+        $box = @((($lons | Measure-Object -Minimum).Minimum - 0.01), (($lats | Measure-Object -Minimum).Minimum - 0.007), (($lons | Measure-Object -Maximum).Maximum + 0.01), (($lats | Measure-Object -Maximum).Maximum + 0.007))
+        $hits = 0; $extra = New-Object System.Collections.Generic.List[object]
+        # (GHT's own lines only, with any earlier fix already swapped in; not the copies added for other fixes)
+        foreach ($f in @($features | Where-Object { $_.properties.route -eq $fx.route -and -not $_.properties.fix })) {
+            $line = [System.Collections.Generic.List[object]]@($f.geometry.coordinates)
+            if (-not ($line | Where-Object { $_[0] -ge $box[0] -and $_[0] -le $box[2] -and $_[1] -ge $box[1] -and $_[1] -le $box[3] } | Select-Object -First 1)) { continue }
+            foreach ($way in $ways) {
+                $new = Get-Splice $line $way
+                if (-not $new) { continue }
+                $hits++
+                if ($fx.mode -eq 'replace') { $f.geometry.coordinates = $new.ToArray(); $line = $new; $fixed++ }
+                else { $p2 = [ordered]@{}; foreach ($k in $f.properties.Keys) { $p2[$k] = $f.properties[$k] }; $p2.shape = "$($p2.shape)+fix$($fx.id)"; $p2.fix = $fx.id
+                    $extra.Add([ordered]@{ type = 'Feature'; properties = $p2; geometry = [ordered]@{ type = 'LineString'; coordinates = $new.ToArray() } }); $added++ }
+            }
+        }
+        if (-not $hits) {
+            # lined up with none of GHT's lines: the path on its own (and backwards too, for both ways)
+            $r0 = @($features | Where-Object { $_.properties.route -eq $fx.route })[0]
+            if ($r0) { foreach ($way in $ways) {
+                $extra.Add([ordered]@{ type = 'Feature'; properties = [ordered]@{ route = $fx.route; name = $r0.properties.name; color = $r0.properties.color
+                    shape = "fix$($fx.id)"; mps = $r0.properties.mps; fix = $fx.id }; geometry = [ordered]@{ type = 'LineString'; coordinates = $way.ToArray() } }); $alone++ } }
+        }
+        $features += $extra
+    }
+    "route fixes: $fixed lines corrected, $added corrected copies added, $alone paths on their own"
+}
+
 $stops = foreach ($s in & $csv 'stops') {
     if ($s.location_type -and $s.location_type -ne '0') { continue }
     $served = if ($stopRoutes[$s.stop_id]) { @($stopRoutes[$s.stop_id]) | Sort-Object } else { @() }

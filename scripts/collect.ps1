@@ -469,8 +469,12 @@ if (Test-Path $statusFile) {
         $st = Get-Content $statusFile -Raw | ConvertFrom-Json
         $head = Invoke-WebRequest -UseBasicParsing -Method Head 'http://mjcaction.com/MJC_GTFS_Public/graysharbor_google_transit.zip' -TimeoutSec 20
         $mod = "$($head.Headers['Last-Modified'])"
-        $busOld = (-not $mod) -or $mod -ne $st.fileModified -or ((Get-Date) - [datetime]$st.built).TotalDays -gt 30
+        # (and when routes/route-fixes.json, where buses really drive, has changed since the last build)
+        $fixPath = Join-Path (Split-Path $PSScriptRoot -Parent) 'routes/route-fixes.json'
+        $fixHash = if (Test-Path $fixPath) { (Get-FileHash $fixPath -Algorithm SHA1).Hash } else { '' }
+        $busOld = (-not $mod) -or $mod -ne $st.fileModified -or ((Get-Date) - [datetime]$st.built).TotalDays -gt 30 -or "$($st.fixes)" -ne $fixHash
         if ($busOld -and $mod -ne $st.fileModified) { "GHT published a new schedule file ($mod): rebuilding bus routes" }
+        elseif ($busOld -and "$($st.fixes)" -ne $fixHash) { "route fixes changed: rebuilding bus routes" }
     } catch { $busOld = $false } # (their server didn't answer: try again next run)
 }
 if ($busOld) {
