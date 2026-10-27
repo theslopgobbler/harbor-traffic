@@ -105,9 +105,10 @@
   // GHT's list leaves out whole scheduled trips at the same times every day (Oct 19-26: route 70's 4:25 PM Westport
   // to Aberdeen, route 45's 1:40 and 4:35 PM Oakville to Elma, several route 20 runs near the base at midday), and
   // those buses are running their routes
+  const PAC_HOUR = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', hourCycle: 'h23' });
   const deadhead = (b) => {
     if (b.listed !== false || oos(b) || b.lat == null || mx([b.lon, b.lat], DEPOT) >= 3000) return false;
-    const h = +new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', hourCycle: 'h23' });
+    const h = +PAC_HOUR.format(Date.now());
     return h >= 19 || h < 5;
   };
   const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt && !oos(b)).sort((a, b) => a.id.localeCompare(b.id));
