@@ -388,7 +388,10 @@
     "311048200": "2026-10-26T20:23:05.3339245+00:00",
     "368239150": "2026-10-26T20:23:05.3339245+00:00",
     "368100280": "2026-10-27T04:36:18.687894+00:00",
-    "369169000": "2026-10-27T10:00:22.713902+00:00"
+    "369169000": "2026-10-27T10:00:22.713902+00:00",
+    "367436810": "2026-10-27T15:59:36.1789273+00:00",
+    "372548000": "2026-10-27T15:59:36.1789273+00:00",
+    "316043592": "2026-10-27T15:59:36.1789273+00:00"
   },
   "candidates": [
     {
@@ -3405,7 +3408,52 @@
       "date": "2023-04-26 10:59:16",
       "caption": "The Bulk carrier Ken Kon at the Kwinana Bulk Terminal with the BHP Jetty Number 1 in the foreground, Western Australia.",
       "found": "2026-10-25T23:56:03.9128865+00:00"
+    },
+    {
+      "mmsi": "372548000",
+      "ship": "WESTERN HIGHWAY",
+      "file": "File:Western Highway, Fremantle, 2018 (01).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Western_Highway,_Fremantle,_2018_(01).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Western_Highway%2C_Fremantle%2C_2018_%2801%29.jpg/1280px-Western_Highway%2C_Fremantle%2C_2018_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-05-13 14:42:10",
+      "caption": "Car carrier Western Highway berthed at H Berth, Victoria Quay, in the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-27T15:59:36.1789273+00:00"
+    },
+    {
+      "mmsi": "372548000",
+      "ship": "WESTERN HIGHWAY",
+      "file": "File:Western Highway, Fremantle, 2018 (02).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Western_Highway,_Fremantle,_2018_(02).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Western_Highway%2C_Fremantle%2C_2018_%2802%29.jpg/1280px-Western_Highway%2C_Fremantle%2C_2018_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 719,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-05-13 14:42:39",
+      "caption": "Car carrier Western Highway berthed at H Berth, Victoria Quay, in the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-27T15:59:36.1789273+00:00"
+    },
+    {
+      "mmsi": "372548000",
+      "ship": "WESTERN HIGHWAY",
+      "file": "File:Western Highway, Fremantle, 2018 (03).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Western_Highway,_Fremantle,_2018_(03).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Western_Highway%2C_Fremantle%2C_2018_%2803%29.jpg/1280px-Western_Highway%2C_Fremantle%2C_2018_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 719,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-05-13 14:42:46",
+      "caption": "Car carrier Western Highway berthed at H Berth, Victoria Quay, in the inner harbour of the Port of Fremantle , Western Australia",
+      "found": "2026-10-27T15:59:36.1789273+00:00"
     }
   ],
-  "updated": "2026-10-27T15:13:20.3701701+00:00"
+  "updated": "2026-10-27T15:59:36.1789273+00:00"
 }
