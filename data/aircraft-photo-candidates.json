@@ -103,7 +103,7 @@
     "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00",
     "Cessna Citation XLS": "2026-10-25T21:59:13.0497244+00:00",
     "Airbus Helicopters EC130 T2": "2026-10-26T23:46:09.0762816+00:00",
-    "Douglas R4D-1": "2026-10-27T01:03:47.8937710+00:00"
+    "Douglas R4D-1": "2026-10-27T01:03:47.893771+00:00"
   },
   "candidates": [
     {
@@ -6432,7 +6432,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "date": "2026-06-24 12:35:21",
       "caption": "1944 Douglas R4D-6S named \"Ready 4 Duty\" at the Hagerstown Aviation Museum in Hagerstown, Maryland",
-      "found": "2026-10-27T01:03:47.8937710+00:00"
+      "found": "2026-10-27T01:03:47.893771+00:00"
     },
     {
       "model": "Douglas R4D-1",
@@ -6446,7 +6446,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "date": "2010-05-01 09:54",
       "caption": "2-star Admiral command plane from the Naval Air Transport Service at Oakland on April 9, 1946.",
-      "found": "2026-10-27T01:03:47.8937710+00:00"
+      "found": "2026-10-27T01:03:47.893771+00:00"
     },
     {
       "model": "Douglas R4D-1",
@@ -6460,7 +6460,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "date": "2010-08-06 16:07",
       "caption": "Landing at Oakland, CA, on March 13, 1946.",
-      "found": "2026-10-27T01:03:47.8937710+00:00"
+      "found": "2026-10-27T01:03:47.893771+00:00"
     },
     {
       "model": "Douglas R4D-1",
@@ -6474,7 +6474,7 @@
       "licenseUrl": "",
       "date": "2021-06-11",
       "caption": "Plan-view silhouette of the Douglas R4D-8",
-      "found": "2026-10-27T01:03:47.8937710+00:00"
+      "found": "2026-10-27T01:03:47.893771+00:00"
     },
     {
       "model": "Douglas R4D-1",
@@ -6488,7 +6488,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2026-06-21",
       "caption": "Douglas R4D-6S N151ZE Ready 4 Duty at Hagerstown Regional Airport, Maryland, USA",
-      "found": "2026-10-27T01:03:47.8937710+00:00"
+      "found": "2026-10-27T01:03:47.893771+00:00"
     },
     {
       "model": "Douglas R4D-1",
@@ -6502,8 +6502,8 @@
       "licenseUrl": "",
       "date": "1956-05-02",
       "caption": "NASA Douglas R4D Skytrain used to tow M2-F1 experimental glider.",
-      "found": "2026-10-27T01:03:47.8937710+00:00"
+      "found": "2026-10-27T01:03:47.893771+00:00"
     }
   ],
-  "updated": "2026-10-27T01:03:47.8937710+00:00"
+  "updated": "2026-10-27T01:06:21.9172674+00:00"
 }
