@@ -92,33 +92,6 @@
       "lon": -122.819753
     },
     {
-      "id": 3081,
-      "title": "Plum @ Union (Olympia)",
-      "img": "https://images.wsdot.wa.gov/orflow/005vc10561.jpg",
-      "road": "City & County Cams",
-      "mp": 203,
-      "lat": 47.039727,
-      "lon": -122.891596
-    },
-    {
-      "id": 3082,
-      "title": "Sleater-Kinney @ Martin Way (Olympia)",
-      "img": "https://images.wsdot.wa.gov/orflow/005vc10840.jpg",
-      "road": "City & County Cams",
-      "mp": 204,
-      "lat": 47.047902,
-      "lon": -122.833618
-    },
-    {
-      "id": 3083,
-      "title": "College @ Martin Way (Lacey)",
-      "img": "https://images.wsdot.wa.gov/orflow/005vc10895.jpg",
-      "road": "City & County Cams",
-      "mp": 202,
-      "lat": 47.048766,
-      "lon": -122.823364
-    },
-    {
       "id": 8051,
       "title": "US 101 at MP 152.5: Queets",
       "img": "https://images.wsdot.wa.gov/rweather/Medium_Queets.jpg",
