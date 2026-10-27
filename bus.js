@@ -353,7 +353,7 @@
     // four parts: the bus (route, number, speed, street) · its stop · the details (due at, route ahead) · buttons.
     // Phones stack them; desktop lays them out in one row (styles.css)
     followBar.innerHTML = `<div class="fb-bus"><span class="bus-no big" style="background:${esc(routeColor(rt))}">${esc(rt)}</span>
-        <span class="fb-id">BUS ${esc(follow.id)}<small>${b ? (b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH') : 'LOST SIGNAL'}${follow.street && !(st && follow.street === 'AT ' + st.name.toUpperCase()) ? ` · ${esc(follow.street)}` : ''}</small></span></div>
+        <span class="fb-id">BUS ${esc(follow.id)}<small><span class="tick">${b ? (b.mph < 2 ? 'STOPPED' : Math.round(b.mph) + ' MPH') : 'LOST SIGNAL'}${follow.street && !(st && follow.street === 'AT ' + st.name.toUpperCase()) ? ` · ${esc(follow.street)}` : ''}</span></small></span></div>
       <div class="fb-btns">
         <button type="button" data-act="turn" ${chase ? 'hidden' : ''} aria-label="${followUp ? 'Switch to north up' : 'Switch to heading up'}" title="${followUp ? 'Bus faces up: tap for north up' : 'North up: tap so the bus faces up'}">${followUp ? UP_SVG : 'N'}</button>
         <button type="button" data-act="chase" class="${chase ? 'on' : ''}" aria-label="${chase ? 'Leave the chase view' : 'Chase view: ride behind the bus'}">${chase ? '2D' : '3D'}</button>
@@ -363,7 +363,29 @@
       <div class="fb-info"><div class="fb-sub">${follow.stop ? `${eta != null ? `~${eta < 1 ? '<1' : eta} MIN TO ` : 'HEADED FOR '}${esc(follow.stop.name.toUpperCase())}`
         : b?.nextStop ? `DUE AT ${esc(b.nextStop.toUpperCase())}${b.nextTime ? ' · ' + tt(b.nextTime) : ''}` : ''}${chase ? '<span class="fb-note">TRAFFIC LIGHTS ARE FOR LOOKS · NOT LIVE</span>' : ''}</div>
       ${follow.ahead ? `<div class="fb-ahead">${follow.ahead.split('\n').map((l) => `<span class="${/^ROUTE AHEAD: NO/.test(l) ? 'ok' : /WEATHER/.test(l) ? 'wx' : 'warn'}">${esc(l)}</span>`).join('')}</div>` : ''}</div>`;
+    tickFollow();
+    fbBottom();
   }
+  // the speed and street line: a street name too long for the space beside the buttons slides slowly sideways and
+  // back (pausing at each end) instead of running under them (Oct 27). The banner is redrawn with every report, so
+  // the slide keeps its place across redraws (a negative delay from when it started) rather than jumping back
+  let tickSince = 0;
+  function tickFollow() {
+    const sm = followBar.querySelector('.fb-id small'), tk = sm?.firstElementChild;
+    if (!tk) return;
+    const dx = tk.scrollWidth - sm.clientWidth;
+    sm.classList.toggle('scroll', dx > 2);
+    if (dx <= 2) { tickSince = 0; return; }
+    const t = Math.max(6, (dx + 8) / 15 + 3); // seconds each way (about 15 px a second, plus the pauses)
+    if (!tickSince) tickSince = Date.now();
+    sm.style.setProperty('--dx', `-${dx + 8}px`);
+    sm.style.setProperty('--t', `${t}s`);
+    tk.style.animationDelay = `-${((Date.now() - tickSince) / 1000) % (2 * t)}s`;
+  }
+  // where the banner ends (phones: the bottom sheet never comes up over it, so its handle stays in reach; styles.css)
+  const layoutEl = document.querySelector('.layout');
+  function fbBottom() { layoutEl?.style.setProperty('--fb-bottom', `${followTop()}px`); }
+  if (followBar && window.ResizeObserver) new ResizeObserver(() => { fbBottom(); if (follow) tickFollow(); }).observe(followBar);
   // recheck the route ahead every 10 s while following; redraw the banner only when it changes
   setInterval(() => {
     if (!follow) return;

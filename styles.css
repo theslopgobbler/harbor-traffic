@@ -225,7 +225,16 @@ body.chase .hud { background: none; } /* the scanlines and grid over the whole m
   .fb-info { border-left: 1px solid var(--line-2); padding-left: 14px; }
 }
 .fb-id { flex: 1; min-width: 0; font: 600 16px/1.1 var(--disp); color: var(--cyan); letter-spacing: .12em; white-space: nowrap; }
-.fb-id small { display: block; font: 12px/1.3 var(--mono); color: var(--text); letter-spacing: .1em; }
+.fb-id small { display: block; font: 12px/1.3 var(--mono); color: var(--text); letter-spacing: .1em; overflow: hidden; }
+/* a long street name slides sideways and back instead of running under the 2D and ✕ buttons (bus.js tickFollow) */
+.fb-id small .tick { display: inline-block; white-space: nowrap; }
+.fb-id small.scroll .tick { animation: fb-tick var(--t, 8s) ease-in-out infinite alternate; }
+@keyframes fb-tick { 0%, 18% { transform: translateX(0); } 82%, 100% { transform: translateX(var(--dx, 0px)); } }
+@media (prefers-reduced-motion: reduce) {
+  .fb-id small { text-overflow: ellipsis; }
+  .fb-id small .tick { display: inline; }
+  .fb-id small.scroll .tick { animation: none; }
+}
 .follow-bar button { flex: none; min-width: 36px; height: 34px; padding: 0 6px; background: rgba(0,229,255,.08); border: 1px solid var(--line-2);
   color: var(--cyan); font: 14px var(--mono); cursor: pointer; }
 .follow-bar button.on { background: var(--cyan); color: #020807; border-color: var(--cyan); }
@@ -644,7 +653,15 @@ body.tv .list .m { font-size: 14px; }
   .bus-bar { top: auto; left: 8px; right: 8px; width: auto; transform: none; bottom: calc(38% + 66px); transition: bottom .2s ease; }
   .layout:has(.panel.min) .bus-bar { bottom: 180px; }
   .layout:has(.panel.max) .bus-bar, body.stop-open .bus-bar { display: none; }
-  .follow-bar { left: 8px; right: 8px; } /* phones: the map buttons are along the bottom, so full width */
+  /* phones: the map buttons are along the bottom, so full width; and below the ☰ menu button and the ^ tab, which
+     sat on its top-left corner and top edge (Oct 27) */
+  .follow-bar { left: 8px; right: 8px; top: 46px; }
+  /* following a bus: the bottom sheet stops just below the banner (bus.js sets --fb-bottom), so its handle never
+     ends up underneath it */
+  .layout:has(.follow-bar:not([hidden])) .panel { max-height: calc(100% - var(--fb-bottom, 0px)); }
+  /* the sheet above the 3D buses of chase view (stacked up to a few hundred, see the 1000s further up): they floated
+     over it and could sit on its handle. Still under the banner, the map buttons and the menu (1000+) */
+  .panel { z-index: 999; }
   /* the sheet tucked away: just its handle (chevron up) along the bottom edge */
   /* (the iPhone's home-bar strip goes under the handle as padding, not into the panel, or the tabs peek out) */
   .panel.gone { box-sizing: border-box; height: calc(30px + env(safe-area-inset-bottom)); overflow: hidden;
