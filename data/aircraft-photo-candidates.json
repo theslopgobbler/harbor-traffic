@@ -106,7 +106,8 @@
     "Douglas R4D-1": "2026-10-27T01:03:47.893771+00:00",
     "McDonnell Douglas C-17A Globemaster III": "2026-10-27T07:13:02.5341158+00:00",
     "Boeing 737NG 7H4/W": "2026-10-27T14:25:14.2052476+00:00",
-    "Bell 206L Long Ranger III": "2026-10-27T20:41:44.2074159+00:00"
+    "Bell 206L Long Ranger III": "2026-10-27T20:41:44.2074159+00:00",
+    "Bombardier Learjet 45": "2026-10-27T23:00:36.2244311+00:00"
   },
   "candidates": [
     {
@@ -6674,7 +6675,91 @@
       "date": "2006-10-20",
       "caption": "Los Angeles Police Department (LAPD) 1987 Bell 206 Jetranger helicopter",
       "found": "2026-10-27T20:41:44.2074159+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45",
+      "file": "File:Bombardier Learjet 45 LN-AWF in Reykjavik.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_LN-AWF_in_Reykjavik.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Bombardier_Learjet_45_LN-AWF_in_Reykjavik.jpg/960px-Bombardier_Learjet_45_LN-AWF_in_Reykjavik.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 658,
+      "author": "Olga Ernst",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-06-15 16:16:17",
+      "caption": "Bombardier Learjet 45 LN-AWF C/N 45-308 Abflug in Reykjavik",
+      "found": "2026-10-27T23:00:36.2244311+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45",
+      "file": "File:Bombardier Learjet 45 XR exterior.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_XR_exterior.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Bombardier_Learjet_45_XR_exterior.JPG/960px-Bombardier_Learjet_45_XR_exterior.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-07 11:53:43",
+      "caption": "Bombardier Learjet 45 XR exterior.",
+      "found": "2026-10-27T23:00:36.2244311+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45",
+      "file": "File:Bombardier Learjet 45 ‘M-ABEU’ (52049006625).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Learjet_45_%E2%80%98M-ABEU%E2%80%99_(52049006625).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Bombardier_Learjet_45_%E2%80%98M-ABEU%E2%80%99_%2852049006625%29.jpg/960px-Bombardier_Learjet_45_%E2%80%98M-ABEU%E2%80%99_%2852049006625%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-03-24 15:57",
+      "caption": "c/n 45-374 Built 2008 London Stansted Airport, Essex, UK 24th March 2022",
+      "found": "2026-10-27T23:00:36.2244311+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45",
+      "file": "File:CMS Air Ambulance Bombardier Learjet 45 DRW Butler.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:CMS_Air_Ambulance_Bombardier_Learjet_45_DRW_Butler.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/CMS_Air_Ambulance_Bombardier_Learjet_45_DRW_Butler.jpg/960px-CMS_Air_Ambulance_Bombardier_Learjet_45_DRW_Butler.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Eugene Butler",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2010-12-08",
+      "caption": "CMS Air Ambulance Bombardier Learjet 45 at Darwin Airport",
+      "found": "2026-10-27T23:00:36.2244311+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45",
+      "file": "File:N711R 1999 Bombardier Learjet 45 CN, 45-049 - Flickr - TDelCoro.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N711R_1999_Bombardier_Learjet_45_CN,_45-049_-_Flickr_-_TDelCoro.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/N711R_1999_Bombardier_Learjet_45_CN%2C_45-049_-_Flickr_-_TDelCoro.jpg/960px-N711R_1999_Bombardier_Learjet_45_CN%2C_45-049_-_Flickr_-_TDelCoro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 646,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "Taken on 27 February 2014, 11:58",
+      "caption": "Las Vegas - McCarran International Airport (LAS / KLAS) USA - Nevada February 27, 2014 Photo: Tomás Del Coro",
+      "found": "2026-10-27T23:00:36.2244311+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 45",
+      "file": "File:TC-RSD - Redstar Aviation - Bombardier Learjet 45 - MSN 45-453 - VGHS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:TC-RSD_-_Redstar_Aviation_-_Bombardier_Learjet_45_-_MSN_45-453_-_VGHS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/TC-RSD_-_Redstar_Aviation_-_Bombardier_Learjet_45_-_MSN_45-453_-_VGHS.jpg/960px-TC-RSD_-_Redstar_Aviation_-_Bombardier_Learjet_45_-_MSN_45-453_-_VGHS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 541,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-07-13",
+      "caption": "TC-RSD - Redstar Aviation - Bombardier Learjet 45 - MSN 45-453 - VGHS.",
+      "found": "2026-10-27T23:00:36.2244311+00:00"
     }
   ],
-  "updated": "2026-10-27T22:26:32.5373250+00:00"
+  "updated": "2026-10-27T23:00:36.2244311+00:00"
 }
