@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-27T19:30:08.6865746+00:00",
+  "updated": "2026-10-27T20:09:08.7527273+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-27T18:56:00.0000000+00:00",
-    "waveFt": 5.2,
+    "time": "2026-10-27T19:26:00.0000000+00:00",
+    "waveFt": 5.9,
     "periodS": 8.0,
-    "dirDeg": 295.0,
+    "dirDeg": 300.0,
     "waterF": 55.9
   },
   "bar": {
-    "issued": "2026-10-27T10:07:00+00:00",
-    "text": "Combined seas 4 to 6 ft, increasing to 6 to 8 ft by afternoon. Bar conditions light, becoming moderate by afternoon. Maximum ebb currents will occur around 545 AM this morning, 600 PM this evening and 630 AM Wednesday morning. The ebb this evening will be very strong.",
+    "issued": "2026-10-27T20:03:00+00:00",
+    "text": "Combined seas 4 to 6 ft, increasing to 6 to 8 ft by afternoon. Bar conditions light, becoming moderate by afternoon. Maximum ebb currents will occur around 600 PM this evening, 630 AM and 630 PM on Wednesday. The ebb this evening and Wednesday evening will be very strong.",
     "conditions": "light, becoming moderate by afternoon",
     "seas": "4 to 6 ft, increasing to 6 to 8 ft by afternoon",
-    "ebb": "The ebb this evening will be very strong"
+    "ebb": "The ebb this evening and Wednesday evening will be very strong"
   },
   "alerts": [
     {
