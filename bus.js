@@ -101,8 +101,15 @@
   // its route. Not held to the route's line: at night those buses are still in route 20's feed and were carried
   // along route 20 at 30 mph while really turning into the base, then pulled back (Oct 4-26: every night's last runs).
   // Only within 3 km of the base: in the daytime the list leaves out 3-9% of moving buses, mostly far from it, and
-  // those are usually running their route (or the list glitched), so they keep their line
-  const deadhead = (b) => b.listed === false && !oos(b) && b.lat != null && mx([b.lon, b.lat], DEPOT) < 3000;
+  // those are usually running their route (or the list glitched), so they keep their line. And only in the evening:
+  // GHT's list leaves out whole scheduled trips at the same times every day (Oct 19-26: route 70's 4:25 PM Westport
+  // to Aberdeen, route 45's 1:40 and 4:35 PM Oakville to Elma, several route 20 runs near the base at midday), and
+  // those buses are running their routes
+  const deadhead = (b) => {
+    if (b.listed !== false || oos(b) || b.lat == null || mx([b.lon, b.lat], DEPOT) >= 3000) return false;
+    const h = +new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', hourCycle: 'h23' });
+    return h >= 19 || h < 5;
+  };
   const routeBuses = (rt) => buses.filter((b) => busRoute(b) === rt && !oos(b)).sort((a, b) => a.id.localeCompare(b.id));
   const routeColor = (rt) => Object.values(routes).find((r) => short(r.name) === rt)?.color || routeInfo[rt]?.color || '#bff4ff';
   const routeName = (rt) => long(Object.values(routes).find((r) => short(r.name) === rt)?.name) || routeInfo[rt]?.name || '';
