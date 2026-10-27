@@ -392,7 +392,8 @@
     "367436810": "2026-10-27T15:59:36.1789273+00:00",
     "372548000": "2026-10-27T15:59:36.1789273+00:00",
     "316043592": "2026-10-27T15:59:36.1789273+00:00",
-    "367324020": "2026-10-27T18:09:41.8408099+00:00"
+    "367324020": "2026-10-27T18:09:41.8408099+00:00",
+    "366972850": "2026-10-27T21:53:41.6136066+00:00"
   },
   "candidates": [
     {
@@ -3454,7 +3455,112 @@
       "date": "2018-05-13 14:42:46",
       "caption": "Car carrier Western Highway berthed at H Berth, Victoria Quay, in the inner harbour of the Port of Fremantle , Western Australia",
       "found": "2026-10-27T15:59:36.1789273+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:David Rodgers’ yacht Carrie at Chittenden Locks, Ballard, ca 1918 (MOHAI 4438).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:David_Rodgers%E2%80%99_yacht_Carrie_at_Chittenden_Locks,_Ballard,_ca_1918_(MOHAI_4438).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/85/David_Rodgers%E2%80%99_yacht_Carrie_at_Chittenden_Locks%2C_Ballard%2C_ca_1918_%28MOHAI_4438%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1015,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "circa 1918 ",
+      "caption": "David Rodgers was a master shipfitter who managed the Skinner &amp; Eddy Corp. shipyard in Seattle from around 1916 until 1919. His wife’s name was Carrie. This photograph shows a group of people celebrating aboard th...",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:Lake Washington Ship Canal, Hiram M Chittenden Locks, August 3, 1916 (SEATTLE 1188).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Washington_Ship_Canal,_Hiram_M_Chittenden_Locks,_August_3,_1916_(SEATTLE_1188).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/af/Lake_Washington_Ship_Canal%2C_Hiram_M_Chittenden_Locks%2C_August_3%2C_1916_%28SEATTLE_1188%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1127,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Taken on 3 August 1916",
+      "caption": "Caption on image: Lake Washington Canal, Wash. Locks at narrows of Salmon Bay. Informal opening of large lock. \"\"Orcas\"\" and \"\"Swinomish\"\" raised to upper level. Aug. 3, 1916 No. 45703 PH Coll 885.12 Subjects (LCTGM):...",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:Lake Washington Ship Canal, Hiram M Chittenden Locks, May 17, 1916 (SEATTLE 828).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Washington_Ship_Canal,_Hiram_M_Chittenden_Locks,_May_17,_1916_(SEATTLE_828).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/34/Lake_Washington_Ship_Canal%2C_Hiram_M_Chittenden_Locks%2C_May_17%2C_1916_%28SEATTLE_828%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1008,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Taken on 17 May 1916",
+      "caption": "Caption on image: Lake Washington Canal, Wash. Locks at narrows of Salmon Bay. Snagboat \"\"Swinomish\"\" erecting light standard on lock wall. May 17, 1916. No. 434 PH Coll 885.6 Subjects (LCTGM): Boats--Washington (Stat...",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:NWS0002.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:NWS0002.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/NWS0002.jpg/1280px-NWS0002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Unknown Photographer / US Army Corps of Engineers",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Taken on 4 July 1917",
+      "caption": "The official dedication ceremony for the Lake Washington Ship Canal is held on July 4, 1917 in Seattle, Washington. The locks are now named the Hiram M. Chittenden Locks.",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:Opening of Lake Washington Ship Canal, showing sternwheel steam snagboat SWINOMISH in the locks (CURTIS 457).jpeg",
+      "page": "https://commons.wikimedia.org/wiki/File:Opening_of_Lake_Washington_Ship_Canal,_showing_sternwheel_steam_snagboat_SWINOMISH_in_the_locks_(CURTIS_457).jpeg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/75/Opening_of_Lake_Washington_Ship_Canal%2C_showing_sternwheel_steam_snagboat_SWINOMISH_in_the_locks_%28CURTIS_457%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 955,
+      "author": "Asahel Curtis",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1916 ",
+      "caption": "*Subjects (LCTGM): Locks (Hydraulic engineering)--Washington (State)--Seattle; Stern wheelers--Washington (State)--Seattle Subjects (LCSH): Lake Washington Ship Canal (Seattle, Wash.); Hiram M. Chittenden Locks (Seatt...",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:View showing engine room of snagboat SWINOMISH - NARA - 298846.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:View_showing_engine_room_of_snagboat_SWINOMISH_-_NARA_-_298846.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/View_showing_engine_room_of_snagboat_SWINOMISH_-_NARA_-_298846.jpg/1280px-View_showing_engine_room_of_snagboat_SWINOMISH_-_NARA_-_298846.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 956,
+      "author": "Unknown author Unknown author or not provided",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "27 February 1915 ",
+      "caption": "Scope and content: The US Army Corps of Engineers extensively photographed many of the Civil Works project and river and harbor improvement that they were involved with. The Corps was responsible for maintaing navigab...",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "366972850",
+      "ship": "SWINOMISH",
+      "file": "File:Waterfront vicinity of Pike St, between 1904 and ca. 1910 (SEATTLE 462).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Waterfront_vicinity_of_Pike_St,_between_1904_and_ca._1910_(SEATTLE_462).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/65/Waterfront_vicinity_of_Pike_St%2C_between_1904_and_ca._1910_%28SEATTLE_462%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 955,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "between 1904 and circa 1910 ",
+      "caption": "Waterfront vicinity of Pike St., probably between 1890 and 1910",
+      "found": "2026-10-27T21:53:41.6136066+00:00"
     }
   ],
-  "updated": "2026-10-27T21:18:00.1816008+00:00"
+  "updated": "2026-10-27T21:53:41.6136066+00:00"
 }
