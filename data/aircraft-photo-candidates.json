@@ -103,7 +103,8 @@
     "Boeing C-40A": "2026-10-25T19:22:21.6404771+00:00",
     "Cessna Citation XLS": "2026-10-25T21:59:13.0497244+00:00",
     "Airbus Helicopters EC130 T2": "2026-10-26T23:46:09.0762816+00:00",
-    "Douglas R4D-1": "2026-10-27T01:03:47.893771+00:00"
+    "Douglas R4D-1": "2026-10-27T01:03:47.893771+00:00",
+    "McDonnell Douglas C-17A Globemaster III": "2026-10-27T07:13:02.5341158+00:00"
   },
   "candidates": [
     {
@@ -6503,7 +6504,91 @@
       "date": "1956-05-02",
       "caption": "NASA Douglas R4D Skytrain used to tow M2-F1 experimental glider.",
       "found": "2026-10-27T01:03:47.893771+00:00"
+    },
+    {
+      "model": "McDonnell Douglas C-17A Globemaster III",
+      "file": "File:C-17 test sortie.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-17_test_sortie.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/C-17_test_sortie.jpg/960px-C-17_test_sortie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 686,
+      "author": "U.S. Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2007-03-22",
+      "caption": "A U.S. Air Force C-17 Globemaster III T-1 flies over Owens Valley, California, for a test sortie. Edwards Air Force Base, California, welcomed the aircraft home after 208 days of life-extension modifications in San An...",
+      "found": "2026-10-27T07:13:02.5341158+00:00"
+    },
+    {
+      "model": "McDonnell Douglas C-17A Globemaster III",
+      "file": "File:C17 DF-SD-06-03299.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C17_DF-SD-06-03299.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/C17_DF-SD-06-03299.jpg/960px-C17_DF-SD-06-03299.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 705,
+      "author": "photo by Staff Sgt. Jacob N. Bailey, U.S. Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2005-12-20",
+      "caption": "Thirteen C-17 Globemaster III aircraft fly over the Blue Ridge Mountains in Virginia during low level tactical training Dec. 20, 2005. These C-17 planes are assigned to the 437th and 315th Airlift Wings at Charleston ...",
+      "found": "2026-10-27T07:13:02.5341158+00:00"
+    },
+    {
+      "model": "McDonnell Douglas C-17A Globemaster III",
+      "file": "File:McDonnell Douglas C-17A-6-DL Globemaster III (USAF sn 94-0066, msn 50026, ln F25) (2-18-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:McDonnell_Douglas_C-17A-6-DL_Globemaster_III_(USAF_sn_94-0066,_msn_50026,_ln_F25)_(2-18-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/McDonnell_Douglas_C-17A-6-DL_Globemaster_III_%28USAF_sn_94-0066%2C_msn_50026%2C_ln_F25%29_%282-18-2026%29.jpg/960px-McDonnell_Douglas_C-17A-6-DL_Globemaster_III_%28USAF_sn_94-0066%2C_msn_50026%2C_ln_F25%29_%282-18-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-02-18",
+      "caption": "McDonnell Douglas C-17A-6-DL Globemaster III (USAF sn 94-0066, msn 50026, ln F25) at Daytona Beach International Airport.",
+      "found": "2026-10-27T07:13:02.5341158+00:00"
+    },
+    {
+      "model": "McDonnell Douglas C-17A Globemaster III",
+      "file": "File:McDonnell Douglas C-17A Globemaster III 3-view line drawing.png",
+      "page": "https://commons.wikimedia.org/wiki/File:McDonnell_Douglas_C-17A_Globemaster_III_3-view_line_drawing.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/McDonnell_Douglas_C-17A_Globemaster_III_3-view_line_drawing.png/960px-McDonnell_Douglas_C-17A_Globemaster_III_3-view_line_drawing.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1338,
+      "author": "United States Air Force",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2001-04-01",
+      "caption": "A 3-view line drawing of the McDonnell Douglas C-17A Globemaster III.",
+      "found": "2026-10-27T07:13:02.5341158+00:00"
+    },
+    {
+      "model": "McDonnell Douglas C-17A Globemaster III",
+      "file": "File:McDonnell Douglas C-17A Globemaster III ‘21104’ (28036528071).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:McDonnell_Douglas_C-17A_Globemaster_III_%E2%80%9821104%E2%80%99_(28036528071).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/McDonnell_Douglas_C-17A_Globemaster_III_%E2%80%9821104%E2%80%99_%2828036528071%29.jpg/960px-McDonnell_Douglas_C-17A_Globemaster_III_%E2%80%9821104%E2%80%99_%2828036528071%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-03-02 12:04",
+      "caption": "c/n F111/50112, l/n P104. Full US military serial 02-1104. Operated by 62nd Airlift Wing based at McChord AFB. Nellis AFB, NV, USA. 1st March 2016.",
+      "found": "2026-10-27T07:13:02.5341158+00:00"
+    },
+    {
+      "model": "McDonnell Douglas C-17A Globemaster III",
+      "file": "File:McDonnell Douglas YC-17A-1-DL Globemaster III (USAF sn 87-0025, msn 50002, ln F1) (5-18-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:McDonnell_Douglas_YC-17A-1-DL_Globemaster_III_(USAF_sn_87-0025,_msn_50002,_ln_F1)_(5-18-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/McDonnell_Douglas_YC-17A-1-DL_Globemaster_III_%28USAF_sn_87-0025%2C_msn_50002%2C_ln_F1%29_%285-18-2023%29.jpg/960px-McDonnell_Douglas_YC-17A-1-DL_Globemaster_III_%28USAF_sn_87-0025%2C_msn_50002%2C_ln_F1%29_%285-18-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-05-18",
+      "caption": "McDonnell Douglas YC-17A Block 1 at the National Museum of the United States Air Force.",
+      "found": "2026-10-27T07:13:02.5341158+00:00"
     }
   ],
-  "updated": "2026-10-27T06:19:43.4782189+00:00"
+  "updated": "2026-10-27T07:13:02.5341158+00:00"
 }
