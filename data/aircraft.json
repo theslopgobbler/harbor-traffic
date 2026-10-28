@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T13:26:14.0624595+00:00",
+  "updated": "2026-10-28T13:36:17.0633856+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N584FX",
       "type": "CL35",
       "cat": "A2",
-      "alt": 0,
-      "gs": 0.0,
-      "track": null,
-      "rate": null,
-      "lat": 46.97482,
-      "lon": -122.89803,
+      "alt": 3000,
+      "gs": 190.4,
+      "track": 18.05,
+      "rate": 0,
+      "lat": 47.16261,
+      "lon": -122.81582,
       "squawk": "4657",
       "emergency": "none",
       "mil": false
