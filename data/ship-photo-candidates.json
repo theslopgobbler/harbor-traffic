@@ -394,7 +394,8 @@
     "316043592": "2026-10-27T15:59:36.1789273+00:00",
     "367324020": "2026-10-27T18:09:41.8408099+00:00",
     "366972850": "2026-10-27T21:53:41.6136066+00:00",
-    "367439830": "2026-10-28T03:59:16.0082257+00:00"
+    "367439830": "2026-10-28T03:59:16.0082257+00:00",
+    "636016266": "2026-10-28T06:06:56.4407330+00:00"
   },
   "candidates": [
     {
@@ -3561,7 +3562,22 @@
       "date": "between 1904 and circa 1910 ",
       "caption": "Waterfront vicinity of Pike St., probably between 1890 and 1910",
       "found": "2026-10-27T21:53:41.6136066+00:00"
+    },
+    {
+      "mmsi": "636016266",
+      "ship": "VSC TRITON",
+      "file": "File:MV DST Queen Aqaba 2012.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:MV_DST_Queen_Aqaba_2012.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/MV_DST_Queen_Aqaba_2012.jpg/1280px-MV_DST_Queen_Aqaba_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Oyoyoy",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-05-22",
+      "caption": "DST Queen at the port of Aqaba. IMO 9593311",
+      "found": "2026-10-28T06:06:56.4407330+00:00"
     }
   ],
-  "updated": "2026-10-28T05:23:20.6099656+00:00"
+  "updated": "2026-10-28T06:06:56.4407330+00:00"
 }
