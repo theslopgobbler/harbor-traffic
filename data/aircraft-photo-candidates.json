@@ -108,7 +108,8 @@
     "Boeing 737NG 7H4/W": "2026-10-27T14:25:14.2052476+00:00",
     "Bell 206L Long Ranger III": "2026-10-27T20:41:44.2074159+00:00",
     "Bombardier Learjet 45": "2026-10-27T23:00:36.2244311+00:00",
-    "Raytheon Aircraft Company Premier I": "2026-10-28T02:28:06.1322503+00:00"
+    "Raytheon Aircraft Company Premier I": "2026-10-28T02:28:06.1322503+00:00",
+    "Enstrom 480 B": "2026-10-28T17:26:15.9245132+00:00"
   },
   "candidates": [
     {
@@ -6788,7 +6789,21 @@
       "date": "2006-09-19",
       "caption": "Dit is die dataplaat van die Raytheon Model 390 Premier I met die registrasienommer ZS-ABG. Sy konstruksienommer is RB-70.",
       "found": "2026-10-28T02:28:06.1322503+00:00"
+    },
+    {
+      "model": "Enstrom 480 B",
+      "file": "File:Roundel of Indonesia – Police Aviation (Historical)(Low Visibility).png",
+      "page": "https://commons.wikimedia.org/wiki/File:Roundel_of_Indonesia_%E2%80%93_Police_Aviation_(Historical)(Low_Visibility).png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Roundel_of_Indonesia_%E2%80%93_Police_Aviation_%28Historical%29%28Low_Visibility%29.png/960px-Roundel_of_Indonesia_%E2%80%93_Police_Aviation_%28Historical%29%28Low_Visibility%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 911,
+      "author": "EvoSvatch (Own work)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "19 July 2024 (Upload date)",
+      "caption": "The roundel of the Police aviation of Indonesia under the Armed Forces of the Republic of Indonesia (ABRI). It is no longer in use and has been replaced by the Air Police Directorate badge on Police aircraft.",
+      "found": "2026-10-28T17:26:15.9245132+00:00"
     }
   ],
-  "updated": "2026-10-28T17:16:20.3780800+00:00"
+  "updated": "2026-10-28T17:26:15.9245132+00:00"
 }
