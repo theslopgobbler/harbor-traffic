@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T22:46:14.3150597+00:00",
+  "updated": "2026-10-28T22:56:13.6823874+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2308,27 +2308,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 722568,
-      "kind": "collision",
-      "category": "Disabled vehicle",
-      "priority": "High",
-      "headline": "Disabled vehicle on SR 3 southbound at milepost 0.58 near SE Vic King Rd beginning at 3:24 pm on October 28, 2026 until further notice. The southbound lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "S",
-      "milepost": 0.58,
-      "lat": 47.188258549,
-      "lon": -123.099135228,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-10-28T22:24:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-10-28T22:25:55.2830000+00:00"
     },
     {
       "id": 640019,
