@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-28T13:19:39.1650209+00:00",
+  "updated": "2026-10-28T13:26:14.0624595+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a78557",
+      "flight": "LXJ584",
+      "reg": "N584FX",
+      "type": "CL35",
+      "cat": "A2",
+      "alt": 0,
+      "gs": 0.0,
+      "track": null,
+      "rate": null,
+      "lat": 46.97482,
+      "lon": -122.89803,
+      "squawk": "4657",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
