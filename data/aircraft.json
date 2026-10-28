@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T15:26:19.6348090+00:00",
+  "updated": "2026-10-28T15:36:11.2746470+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -12,8 +12,8 @@
       "gs": 0.0,
       "track": null,
       "rate": null,
-      "lat": 46.97536,
-      "lon": -122.89881,
+      "lat": 46.97535,
+      "lon": -122.8988,
       "squawk": "4665",
       "emergency": "none",
       "mil": false
