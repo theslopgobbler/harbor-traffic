@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T21:26:13.4449875+00:00",
+  "updated": "2026-10-28T21:36:17.4172074+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2266,6 +2266,27 @@
           47.8099
         ]
       ]
+    },
+    {
+      "id": 722560,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 105 near Capitol Blvd SE beginning at 2:34 pm on October 28, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 105.0,
+      "lat": 47.028045475,
+      "lon": -122.895866526,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-28T21:34:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-28T21:35:43.8270000+00:00"
     },
     {
       "id": 692593,
