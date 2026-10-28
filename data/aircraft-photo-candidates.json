@@ -111,7 +111,8 @@
     "Raytheon Aircraft Company Premier I": "2026-10-28T02:28:06.1322503+00:00",
     "Enstrom 480 B": "2026-10-28T17:26:15.9245132+00:00",
     "Sikorsky MH-60M Blackhawk": "2026-10-28T19:16:15.4944236+00:00",
-    "McDonnell Douglas Helicopters 369 E": "2026-10-28T20:46:16.3118053+00:00"
+    "McDonnell Douglas Helicopters 369 E": "2026-10-28T20:46:16.3118053+00:00",
+    "Airbus A330 941N": "2026-10-28T22:36:16.7719036+00:00"
   },
   "candidates": [
     {
@@ -6805,7 +6806,91 @@
       "date": "19 July 2024 (Upload date)",
       "caption": "The roundel of the Police aviation of Indonesia under the Armed Forces of the Republic of Indonesia (ABRI). It is no longer in use and has been replaced by the Air Police Directorate badge on Police aircraft.",
       "found": "2026-10-28T17:26:15.9245132+00:00"
+    },
+    {
+      "model": "Airbus A330 941N",
+      "file": "File:Airbus A330-941N 'Azul sem Fim' (PR-ANY, cn 1895) (2-3-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A330-941N_%27Azul_sem_Fim%27_(PR-ANY,_cn_1895)_(2-3-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Airbus_A330-941N_%27Azul_sem_Fim%27_%28PR-ANY%2C_cn_1895%29_%282-3-2024%29.jpg/960px-Airbus_A330-941N_%27Azul_sem_Fim%27_%28PR-ANY%2C_cn_1895%29_%282-3-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-02-03",
+      "caption": "Airbus A330-941N PR-ANY at Orlando International Airport.",
+      "found": "2026-10-28T22:36:16.7719036+00:00"
+    },
+    {
+      "model": "Airbus A330 941N",
+      "file": "File:Airbus A330-941N (N411DX, cn 1991) (3-11-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A330-941N_(N411DX,_cn_1991)_(3-11-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Airbus_A330-941N_%28N411DX%2C_cn_1991%29_%283-11-2024%29.jpg/960px-Airbus_A330-941N_%28N411DX%2C_cn_1991%29_%283-11-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-03-11",
+      "caption": "Airbus A330-941N N411DX at Orlando International Airport.",
+      "found": "2026-10-28T22:36:16.7719036+00:00"
+    },
+    {
+      "model": "Airbus A330 941N",
+      "file": "File:Airbus A330-941N (N415DX, cn 1997) (2-3-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A330-941N_(N415DX,_cn_1997)_(2-3-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Airbus_A330-941N_%28N415DX%2C_cn_1997%29_%282-3-2024%29.jpg/960px-Airbus_A330-941N_%28N415DX%2C_cn_1997%29_%282-3-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-02-03",
+      "caption": "Airbus A330-941N N415DX at Orlando International Airport.",
+      "found": "2026-10-28T22:36:16.7719036+00:00"
+    },
+    {
+      "model": "Airbus A330 941N",
+      "file": "File:Aircalin (F-ONEO) Airbus A330-941N taxiing at Sydney Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aircalin_(F-ONEO)_Airbus_A330-941N_taxiing_at_Sydney_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Aircalin_%28F-ONEO%29_Airbus_A330-941N_taxiing_at_Sydney_Airport.jpg/960px-Aircalin_%28F-ONEO%29_Airbus_A330-941N_taxiing_at_Sydney_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2020-10-05 13:04:50",
+      "caption": "Aircalin (F-ONEO) Airbus A330-941N taxiing at Sydney Airport.",
+      "found": "2026-10-28T22:36:16.7719036+00:00"
+    },
+    {
+      "model": "Airbus A330 941N",
+      "file": "File:Aircalin (F-ONET) Airbus A330-941N taxiing at Sydney Airport (5).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aircalin_(F-ONET)_Airbus_A330-941N_taxiing_at_Sydney_Airport_(5).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Aircalin_%28F-ONET%29_Airbus_A330-941N_taxiing_at_Sydney_Airport_%285%29.jpg/960px-Aircalin_%28F-ONET%29_Airbus_A330-941N_taxiing_at_Sydney_Airport_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2020-10-27 11:12:26",
+      "caption": "Aircalin (F-ONET) Airbus A330-941N taxiing at Sydney Airport.",
+      "found": "2026-10-28T22:36:16.7719036+00:00"
+    },
+    {
+      "model": "Airbus A330 941N",
+      "file": "File:Malaysia Airlines (9M-MNM) Airbus A330-941N arriving at Sydney Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Malaysia_Airlines_(9M-MNM)_Airbus_A330-941N_arriving_at_Sydney_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Malaysia_Airlines_%289M-MNM%29_Airbus_A330-941N_arriving_at_Sydney_Airport.jpg/960px-Malaysia_Airlines_%289M-MNM%29_Airbus_A330-941N_arriving_at_Sydney_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2026-01-09 07:51:45",
+      "caption": "Malaysia Airlines (9M-MNM) Airbus A330-941N arriving at Sydney Airport.",
+      "found": "2026-10-28T22:36:16.7719036+00:00"
     }
   ],
-  "updated": "2026-10-28T22:26:12.0703021+00:00"
+  "updated": "2026-10-28T22:36:16.7719036+00:00"
 }
