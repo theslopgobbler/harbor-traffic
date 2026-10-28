@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T17:28:29.6072377+00:00",
+  "updated": "2026-10-28T17:36:15.1421813+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2266,6 +2266,27 @@
           47.8099
         ]
       ]
+    },
+    {
+      "id": 722538,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Reported collision on US 101 southbound at milepost 367.4 near I-5 beginning at 10:31 am on October 28, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 367.33,
+      "lat": 47.021745307,
+      "lon": -122.907125853,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-28T17:31:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-28T17:32:41.3200000+00:00"
     },
     {
       "id": 692593,
