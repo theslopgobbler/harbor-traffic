@@ -4,6 +4,8 @@ name: Collect data and publish the site
 # "data", so main's history stays just your own updates. Every run puts the two together and deploys them to Pages.
 #   every ~10 minutes: collect, save to "data", deploy
 #   on a push to main (publish.py): deploy with the latest data
+#   asked for by the relay every 10 minutes (workflow_dispatch, see kickCollector in relay-worker.js): GitHub starts
+#   scheduled runs late when it's busy, so the schedule is the backup
 on:
   schedule:
     - cron: '*/10 * * * *'   # GitHub often starts these 5-15 minutes late
@@ -27,7 +29,7 @@ jobs:
     timeout-minutes: 8
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy2.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -62,5 +64,14 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      # (the run before can still be finishing its Pages deployment after it ends: GitHub then says "in progress
+      # deployment". Wait a bit and try once more instead of failing)
       - id: deploy
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait for the earlier deployment
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 90
+      - id: deploy2
+        if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v4
