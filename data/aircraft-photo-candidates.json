@@ -107,7 +107,8 @@
     "McDonnell Douglas C-17A Globemaster III": "2026-10-27T07:13:02.5341158+00:00",
     "Boeing 737NG 7H4/W": "2026-10-27T14:25:14.2052476+00:00",
     "Bell 206L Long Ranger III": "2026-10-27T20:41:44.2074159+00:00",
-    "Bombardier Learjet 45": "2026-10-27T23:00:36.2244311+00:00"
+    "Bombardier Learjet 45": "2026-10-27T23:00:36.2244311+00:00",
+    "Raytheon Aircraft Company Premier I": "2026-10-28T02:28:06.1322503+00:00"
   },
   "candidates": [
     {
@@ -6759,7 +6760,35 @@
       "date": "2021-07-13",
       "caption": "TC-RSD - Redstar Aviation - Bombardier Learjet 45 - MSN 45-453 - VGHS.",
       "found": "2026-10-27T23:00:36.2244311+00:00"
+    },
+    {
+      "model": "Raytheon Aircraft Company Premier I",
+      "file": "File:Italian Turboprop Aircraft Piaggio P.180 Avanti. MAKS 2011 Airshow. Moscow.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Italian_Turboprop_Aircraft_Piaggio_P.180_Avanti._MAKS_2011_Airshow._Moscow.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Italian_Turboprop_Aircraft_Piaggio_P.180_Avanti._MAKS_2011_Airshow._Moscow.jpg/960px-Italian_Turboprop_Aircraft_Piaggio_P.180_Avanti._MAKS_2011_Airshow._Moscow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 702,
+      "author": "Peer.Gynt",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-08-20 17:17:38",
+      "caption": "The Piaggio P180 Avanti is an Italian twin-engine turboprop aircraft produced by Piaggio Aero. It seats up to nine passengers in a pressurized cabin, and may be flown by one or two pilots. The design uses a small forw...",
+      "found": "2026-10-28T02:28:06.1322503+00:00"
+    },
+    {
+      "model": "Raytheon Aircraft Company Premier I",
+      "file": "File:Zsabg 2006-09-19 FAYP 093 rotcr shd25 600x400.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Zsabg_2006-09-19_FAYP_093_rotcr_shd25_600x400.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/67/Zsabg_2006-09-19_FAYP_093_rotcr_shd25_600x400.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 640,
+      "author": "Gaius le Roux",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2006-09-19",
+      "caption": "Dit is die dataplaat van die Raytheon Model 390 Premier I met die registrasienommer ZS-ABG. Sy konstruksienommer is RB-70.",
+      "found": "2026-10-28T02:28:06.1322503+00:00"
     }
   ],
-  "updated": "2026-10-28T01:46:22.0651479+00:00"
+  "updated": "2026-10-28T02:28:06.1322503+00:00"
 }
