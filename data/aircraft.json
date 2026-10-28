@@ -1,22 +1,22 @@
 {
-  "updated": "2026-10-28T13:36:17.0633856+00:00",
+  "updated": "2026-10-28T13:46:13.5791830+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a78557",
-      "flight": "LXJ584",
-      "reg": "N584FX",
-      "type": "CL35",
-      "cat": "A2",
-      "alt": 3000,
-      "gs": 190.4,
-      "track": 18.05,
-      "rate": 0,
-      "lat": 47.16261,
-      "lon": -122.81582,
-      "squawk": "4657",
+      "hex": "ae6015",
+      "flight": "COUGR34",
+      "reg": "17-20934",
+      "type": "H60",
+      "cat": "A7",
+      "alt": 6050,
+      "gs": 111.5,
+      "track": 5.66,
+      "rate": -64,
+      "lat": 47.34307,
+      "lon": -122.85088,
+      "squawk": "6640",
       "emergency": "none",
-      "mil": false
+      "mil": true
     }
   ]
 }
