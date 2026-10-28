@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T19:49:53.8900659+00:00",
+  "updated": "2026-10-28T19:56:15.0417921+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2308,6 +2308,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 722548,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 139.71 near Raft River beginning at 12:47 pm on October 28, 2026 until about 2:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 139.71,
+      "lat": 47.500590824,
+      "lon": -124.13805504,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-10-28T19:47:00.0000000+00:00",
+      "end": "2026-10-28T21:00:00.0000000+00:00",
+      "updated": "2026-10-28T19:51:30.5770000+00:00"
     },
     {
       "id": 640019,
