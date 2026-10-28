@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T03:59:16.0082257+00:00",
+  "updated": "2026-10-28T04:40:30.4144330+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -7,70 +7,70 @@
       "name": "Rock Candy Mountain on SR 8",
       "lat": 47.0338,
       "lon": -123.0971,
-      "temp": 46.76,
-      "wind": 1,
-      "gust": 7,
-      "dir": "SE",
+      "temp": 47.84,
+      "wind": 2,
+      "gust": 13,
+      "dir": "S",
       "vis": 1,
       "precip": null,
-      "humidity": 87,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "humidity": 84,
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     },
     {
       "id": 2280,
       "name": "Cosmopolis Hill on US 101",
       "lat": 46.9343,
       "lon": -123.7282,
-      "temp": 46.94,
-      "wind": 4,
-      "gust": 10,
-      "dir": "E",
+      "temp": 46.76,
+      "wind": 2,
+      "gust": 8,
+      "dir": "ESE",
       "vis": 1,
       "precip": null,
       "humidity": null,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     },
     {
       "id": 2281,
       "name": "State Camp Hill on US 101",
       "lat": 47.1402,
       "lon": -123.8922,
-      "temp": 48.02,
-      "wind": 4,
-      "gust": 10,
+      "temp": 48.56,
+      "wind": 7,
+      "gust": 13,
       "dir": "SSE",
       "vis": 1,
       "precip": null,
       "humidity": 98,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     },
     {
       "id": 2956,
       "name": "Queets on US 101",
       "lat": 47.5358,
       "lon": -124.333,
-      "temp": 49.1,
-      "wind": 3,
-      "gust": 7,
-      "dir": "ESE",
+      "temp": 48.74,
+      "wind": 1,
+      "gust": 3,
+      "dir": "ENE",
       "vis": 1,
       "precip": null,
-      "humidity": 98,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "humidity": 97,
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     },
     {
       "id": 2957,
       "name": "Oyster Bay Rd on US 101",
       "lat": 47.0849,
       "lon": -123.0331,
-      "temp": 46.4,
+      "temp": 45.86,
       "wind": 1,
-      "gust": 4,
-      "dir": "ESE",
+      "gust": 3,
+      "dir": "S",
       "vis": 1,
       "precip": null,
-      "humidity": 94,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "humidity": 97,
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     },
     {
       "id": 2958,
@@ -78,27 +78,27 @@
       "lat": 47.3029,
       "lon": -124.2504,
       "temp": 49.64,
-      "wind": 4,
-      "gust": 7,
+      "wind": 3,
+      "gust": 6,
       "dir": "SSW",
       "vis": 1,
       "precip": null,
       "humidity": 100,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     },
     {
       "id": 3776,
       "name": "Grand Mound on I-5",
       "lat": 46.80226113,
       "lon": -123.007164104,
-      "temp": 48.74,
-      "wind": 5,
-      "gust": 11,
+      "temp": 48.38,
+      "wind": 8,
+      "gust": 15,
       "dir": "SE",
       "vis": 1,
       "precip": null,
-      "humidity": 81,
-      "time": "2026-10-28T03:45:00.0000000+00:00"
+      "humidity": 84,
+      "time": "2026-10-28T04:30:00.0000000+00:00"
     }
   ]
 }
