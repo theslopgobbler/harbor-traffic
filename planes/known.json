@@ -24,6 +24,27 @@
         "ae577f"
       ],
       "note": "COUGR flights; ae577f flew as R20655 on Oct 15"
+    },
+    {
+      "match": "^R2[01]\\d{3}$",
+      "kind": "MILITARY",
+      "type": "H60",
+      "name": "Sikorsky UH-60M Black Hawk",
+      "photos": [
+        {
+          "src": "planes/uh60m-commons-1.jpg",
+          "w": 800,
+          "h": 533,
+          "caption": "A UH-60M Black Hawk on a sling-load run at Joint Base Lewis-McChord, Mount Rainier behind, April 2016",
+          "credit": "Capt. Brian Harris, U.S. Army",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "page": "https://commons.wikimedia.org/wiki/File:16th_CAB,_17th_FAB_conduct_sling_load_training_at_JBLM_160420-A-PG801-002.jpg",
+          "file": "File:16th CAB, 17th FAB conduct sling load training at JBLM 160420-A-PG801-002.jpg",
+          "source": "commons"
+        }
+      ],
+      "note": "Army Black Hawks fly as R + the last 5 digits of their serial (R20654 = 14-20654). Every Army aircraft seen here with a 20xxx-21xxx serial has been a UH-60M/HH-60M (Oct 2026 registry); Chris confirmed R20580 as a UH-60M Oct 28"
     }
   ]
 }

@@ -151,6 +151,139 @@
   const RX = '#ff4fd8';
   const tint = (a) => rx && a.mine ? RX : colorOf(a);
   const markers = new Map(); // hex -> marker
+
+  // ---- between reports: keep each aircraft moving the way it was going (dead reckoning) ----
+  // Each report says where the aircraft was, when (pt), its speed, heading and climb, and often how fast it's
+  // turning (turn rate, or bank angle), where the autopilot will stop the turn and the climb, and (from the desktop
+  // receiver) a short trail of its last positions. From that the map moves it along, curving through turns. A new
+  // report never pulls it backward: if the glide got ahead, it slows down until the aircraft catches up; if it fell
+  // behind, it hurries forward. When reports get spotty it stops and waits: no guessing past what's known, no
+  // dotted lines. No report for a while: it fades.
+  const D2R = Math.PI / 180, KT = 0.514444, EARTH = 6371000;
+  const COAST = { plane: 30, heli: 20, spotty: 8 }; // seconds of moving on past the last report
+  const FADE_AFTER = 45000; // a report older than this: faded
+  const models = new Map(); // hex -> what the last report says, plus the correction being eased out
+  const wrap = (d) => ((d % 360) + 540) % 360 - 180;
+  // turn rate (degrees a second, + = to the right) from the report, the trail, or the last two reports
+  function trailRate(trail) {
+    const pts = trail.slice().sort((x, y) => x[0] - y[0]), legs = [];
+    for (let i = 1; i < pts.length; i++) {
+      const a = { lat: pts[i - 1][1], lon: pts[i - 1][2] }, b = { lat: pts[i][1], lon: pts[i][2] };
+      if (nm(a, b) * 1852 < 25) continue; // too close together to give a direction
+      legs.push([(pts[i - 1][0] + pts[i][0]) / 2000, bearing(a, b)]);
+    }
+    if (legs.length < 2 || legs[legs.length - 1][0] - legs[0][0] < 3) return null;
+    for (let i = 1; i < legs.length; i++) legs[i][1] = legs[i - 1][1] + wrap(legs[i][1] - legs[i - 1][1]);
+    const n = legs.length, mt = legs.reduce((s, l) => s + l[0], 0) / n, mb = legs.reduce((s, l) => s + l[1], 0) / n;
+    let num = 0, den = 0;
+    for (const [t, b] of legs) { num += (t - mt) * (b - mb); den += (t - mt) ** 2; }
+    return den ? num / den : null;
+  }
+  function turnRate(a, prev, heli) {
+    let w = null;
+    if (Number.isFinite(a.trackRate)) w = a.trackRate;
+    else if (a.trail?.length >= 3) w = trailRate(a.trail);
+    if (w == null && Number.isFinite(a.roll) && (a.gs || 0) > 30) w = 9.81 * Math.tan(a.roll * D2R) / (a.gs * KT) / D2R;
+    if (w == null && prev && prev.trk != null && a.track != null && a.pt - prev.t > 2000 && a.pt - prev.t < 45000)
+      w = wrap(a.track - prev.trk) / ((a.pt - prev.t) / 1000);
+    if (!Number.isFinite(w)) return 0;
+    const cap = heli ? 8 : 4; // (a standard airliner turn is 3 a second)
+    return Math.max(-cap, Math.min(cap, w));
+  }
+  // how long it may move on past its last report: shorter when reports have been coming in far apart
+  const coastOf = (m) => m.spotty ? COAST.spotty : m.heli ? COAST.heli : COAST.plane;
+  // where the report says it is `secs` seconds after it was heard
+  function advance(m, secs) {
+    const v = (m.gs || 0) * KT;
+    let alt = m.alt;
+    if (m.rate && !m.ground) {
+      alt = m.alt + m.rate / 60 * secs;
+      if (m.navAlt != null && Math.sign(m.navAlt - m.alt) === Math.sign(m.rate)) alt = m.rate > 0 ? Math.min(alt, m.navAlt) : Math.max(alt, m.navAlt);
+      alt = Math.max(0, alt);
+    }
+    if (m.ground || v < 8 || m.trk == null || secs <= 0) return { lat: m.lat, lon: m.lon, trk: m.trk, alt }; // parked or hovering: stays put
+    let w = m.w, tTurn = secs;
+    // a turn ends at the heading the autopilot was set to (when it says so, and the turn is going that way)
+    if (w && m.navHdg != null) { const need = wrap(m.navHdg - m.trk); if (Math.sign(need) === Math.sign(w)) tTurn = Math.min(secs, Math.abs(need / w)); }
+    let n = 0, e = 0, th = m.trk * D2R;
+    if (w && tTurn > 0) {
+      const wr = w * D2R, th1 = th + wr * tTurn, r = v / wr;
+      e += r * (Math.cos(th) - Math.cos(th1)); n += r * (Math.sin(th1) - Math.sin(th)); th = th1;
+    }
+    const rest = secs - (w ? tTurn : 0);
+    if (rest > 0) { e += v * rest * Math.sin(th); n += v * rest * Math.cos(th); }
+    return { lat: m.lat + n / EARTH / D2R, lon: m.lon + e / (EARTH * Math.cos(m.lat * D2R)) / D2R, trk: (th / D2R + 360) % 360, alt };
+  }
+  // where to draw it now: the glide, plus whatever is left of the last correction
+  function place(m, now) {
+    if (m.still) return { lat: m.lat, lon: m.lon, trk: m.trk, alt: m.alt };
+    const p = advance(m, Math.min(Math.max(0, (now - m.t) / 1000), coastOf(m)));
+    const o = m.off;
+    if (o) {
+      const k = (T) => Math.max(0, 1 - (now - o.at) / (T * 1000));
+      const along = o.a * k(o.ta), side = o.l * k(o.tl);
+      if (!along && !side) { m.off = null; return p; }
+      const th = (p.trk ?? 0) * D2R, e = along * Math.sin(th) + side * Math.cos(th), n = along * Math.cos(th) - side * Math.sin(th);
+      p.lat += n / EARTH / D2R; p.lon += e / (EARTH * Math.cos(p.lat * D2R)) / D2R;
+    }
+    return p;
+  }
+  // a new list from the relay: update each aircraft's report, keeping its drawn position continuous
+  function syncModels(list, now) {
+    const seen = new Set();
+    for (const a of list) {
+      seen.add(a.hex);
+      const prev = models.get(a.hex), heli = isHeli(a);
+      const t = Number.isFinite(a.pt) ? Math.min(a.pt, now) : now;
+      if (prev && prev.t === t && !prev.still) continue; // the same report again: nothing new
+      const m = { lat: a.lat, lon: a.lon, t, gs: a.gs, trk: a.track ?? null, alt: a.alt || 0, rate: Number.isFinite(a.geomRate) ? a.geomRate : a.rate || 0,
+        navAlt: Number.isFinite(a.navAlt) ? a.navAlt : null, navHdg: Number.isFinite(a.navHdg) ? a.navHdg : null,
+        ground: (a.alt || 0) < 100 && (a.gs || 0) < 40, heli, still: !Number.isFinite(a.pt), off: null,
+        // spotty: this report came more than 40 s after the last one (or is already 20 s old when it gets here)
+        spotty: (prev && !prev.still && t - prev.t > 40000) || now - t > 20000 };
+      m.w = turnRate(a, prev, heli);
+      if (prev && prev.shown && !m.still) {
+        // how far the drawn spot is from where the new report says it should be now: split into along the way it's
+        // heading (ahead or behind) and to the side, and ease both out
+        const p = advance(m, Math.min(Math.max(0, (now - t) / 1000), coastOf(m)));
+        const n = (prev.shown.lat - p.lat) * D2R * EARTH, e = (prev.shown.lon - p.lon) * D2R * EARTH * Math.cos(p.lat * D2R);
+        const th = (p.trk ?? 0) * D2R, along = e * Math.sin(th) + n * Math.cos(th), side = e * Math.cos(th) - n * Math.sin(th);
+        const v = (m.gs || 0) * KT, far = Math.hypot(along, side);
+        if (far > 5 && far < Math.max(3000, v * 40)) {
+          // ahead: slow to no less than half speed until it's caught up (so it never goes backward); behind: hurry
+          const ta = along > 0 ? (v > 8 ? Math.min(20, Math.max(1.5, along / (0.5 * v))) : 3) : 1.5;
+          m.off = { a: along, l: side, at: now, ta, tl: 2.5 };
+        }
+      }
+      models.set(a.hex, m);
+    }
+    for (const hex of models.keys()) if (!seen.has(hex)) models.delete(hex);
+  }
+  // move the markers along, about 10 times a second (4 on phones), only while aircraft are shown and the page is open
+  let lastFrame = 0;
+  function frame(ts) {
+    requestAnimationFrame(frame);
+    if (!models.size || document.hidden || !on || ts - lastFrame < (window.htLite ? 250 : 100)) return;
+    lastFrame = ts;
+    const now = Date.now();
+    for (const [hex, m] of models) {
+      const mk = markers.get(hex); if (!mk) continue;
+      const p = place(m, now);
+      m.shown = { lat: p.lat, lon: p.lon };
+      mk.setLngLat([p.lon, p.lat]);
+      const el = mk.getElement();
+      const ic = el.firstElementChild, lab = el.querySelector('.alt');
+      if (p.trk != null && Math.abs(wrap(p.trk - (m.drawnTrk ?? -999))) > 0.5) {
+        m.drawnTrk = p.trk; if (ic) ic.style.transform = `rotate(calc(${p.trk.toFixed(1)}deg - var(--brg, 0deg)))`;
+      }
+      const at = altTxt(Math.round(p.alt));
+      if (lab && lab.textContent !== at) lab.textContent = at;
+      const faded = now - m.t > FADE_AFTER;
+      if (faded !== !!m.faded) { m.faded = faded; el.style.opacity = faded ? '0.5' : ''; }
+    }
+  }
+  requestAnimationFrame(frame);
+
   function render() {
     const seen = new Set();
     for (const a of planes) {
@@ -162,11 +295,15 @@
         el.className = 'air-mk';
         mk = new maplibregl.Marker({ element: el }).setLngLat([a.lon, a.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '300px' })).addTo(map);
         markers.set(a.hex, mk);
-      } else mk.setLngLat([a.lon, a.lat]);
+      }
+      const m = models.get(a.hex), p = m ? place(m, Date.now()) : { lat: a.lat, lon: a.lon, trk: a.track, alt: a.alt };
+      if (m) { m.shown = { lat: p.lat, lon: p.lon }; m.drawnTrk = p.trk; }
+      mk.setLngLat([p.lon, p.lat]);
       const el = mk.getElement();
       el.classList.toggle('emerg', !!EMERG[a.squawk]);
       el.classList.toggle('heli', isHeli(a));
-      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${a.track ?? 0}deg - var(--brg, 0deg)))">${isHeli(a) ? heliSvg(c, isMedical(a)) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(a.alt)}</span>`;
+      el.innerHTML = `<div class="ic" style="transform:rotate(calc(${p.trk ?? a.track ?? 0}deg - var(--brg, 0deg)))">${isHeli(a) ? heliSvg(c, isMedical(a)) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(Math.round(p.alt ?? a.alt))}</span>`;
+      if (m) { m.faded = Date.now() - m.t > FADE_AFTER; el.style.opacity = m.faded ? '0.5' : ''; }
       el.title = `${a.flight || a.reg || a.hex} · ${a.type || ''}`;
       const s = a._sit;
       mk.getPopup().setHTML(`<h3>${esc(a.flight || a.reg || a.hex)}${a.reg && a.reg !== a.flight ? ' · ' + esc(a.reg) : ''}</h3>
@@ -209,6 +346,7 @@
     if (mk) { map.flyTo({ center: mk.getLngLat(), zoom: Math.max(map.getZoom(), 11) }); if (!mk.getPopup().isOpen()) mk.togglePopup(); }
   });
 
+  let soonT = 0;
   async function load() {
     try {
       let j = null;
@@ -216,11 +354,17 @@
       if (C.airRelay) {
         try {
           const r = await (await fetch(`${C.airRelay}?t=${Date.now()}`, { cache: 'no-store' })).json();
+          // the relay's clock vs. ours (a phone's clock can be off by seconds), so position times line up
+          const skew = Number.isFinite(r.now) ? Date.now() - r.now : 0;
           // the relay keeps serving its last good list when feeds refuse it; only call it live if it's under 3 minutes old
           if (Array.isArray(r.ac) && r.ac.length && (!r.at || Date.now() - Date.parse(r.at) < 180000)) {
             live = true; liveSource = r.source || 'adsb.lol';
             j = { updated: new Date().toISOString(), aircraft: r.ac.map((a) => ({ hex: a.hex, flight: (a.flight || '').trim(), reg: a.r, type: a.t, cat: a.category,
-              alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1), mine: !!a.mine })) };
+              alt: a.alt_baro === 'ground' ? 0 : +a.alt_baro || 0, gs: a.gs, track: a.track, rate: a.baro_rate, lat: a.lat, lon: a.lon, squawk: a.squawk, mil: !!(a.dbFlags & 1), mine: !!a.mine,
+              // for the glide between reports (see syncModels)
+              pt: Number.isFinite(a.pt) ? a.pt + skew : (r.at ? Date.parse(r.at) + skew : undefined),
+              trackRate: a.track_rate, roll: a.roll, navHdg: a.nav_heading, navAlt: a.nav_altitude ?? a.nav_altitude_mcp ?? a.nav_altitude_fms, geomRate: a.geom_rate,
+              trail: Array.isArray(a.trail) ? a.trail.map((q) => [q[0] + skew, q[1], q[2]]) : undefined })) };
           }
         } catch (e) { console.warn('air relay', e); }
       }
@@ -241,8 +385,12 @@
         ((rx && a.mine) || (isAirliner(a) && !special(a) ? showAirliners
           : (a.alt || 0) <= 15000 && (a.lon < -123.05 || (a.lon < -122.7 && special(a))))));
       for (const a of planes) a._sit = situation(a);
+      syncModels(planes, Date.now());
     } catch (e) { console.warn('aircraft', e); }
     render();
+    // a helicopter on the map: ask again in 15 s instead of 30, so its glide gets corrected sooner
+    clearTimeout(soonT);
+    if (C.airRelay && planes.some((a) => isHeli(a))) soonT = setTimeout(() => { if (!document.hidden) load(); }, 15000);
   }
 
   // show/hide aircraft (on by default; remembered per device; ?aircraft=0 hides them)
