@@ -21,7 +21,13 @@ if (-not $code) {
 $boxW = -124.55; $boxS = 46.60; $boxE = -122.78; $boxN = 48.00
 
 $url = "https://wsdot.wa.gov/Traffic/api/HighwayAlerts/HighwayAlertsREST.svc/GetAlertsAsJson?AccessCode=$code"
-$raw = Invoke-RestMethod -Uri $url -TimeoutSec 60
+# WSDOT's server now and then fails a request; try 3 times, and if it's still down, keep the last alerts file and carry
+# on with everything else (a failed collect used to stop the whole run and email you)
+$raw = @(); $alertsOk = $false
+foreach ($try in 1..3) {
+    try { $raw = Invoke-RestMethod -Uri $url -TimeoutSec 60; $alertsOk = $true; break }
+    catch { "road alerts: try $try failed ($($_.Exception.Message.Split("`n")[0]))"; if ($try -lt 3) { Start-Sleep -Seconds 10 } }
+}
 
 function To-Iso($s) {
     # Windows PowerShell turns the date strings into DateTime by itself; pwsh leaves them as text
@@ -165,14 +171,18 @@ foreach ($al in $alerts) {
     if ($paths.ContainsKey($key)) { $al.path = $paths[$key] }
 }
 # forget stretches whose alerts are gone
-$kept = [ordered]@{}; foreach ($k in $usedKeys.Keys) { if ($paths.ContainsKey($k)) { $kept[$k] = $paths[$k] } }
-[IO.File]::WriteAllText($pathFile, ($kept | ConvertTo-Json -Depth 5 -Compress), $utf8)
+if ($alertsOk) {
+    $kept = [ordered]@{}; foreach ($k in $usedKeys.Keys) { if ($paths.ContainsKey($k)) { $kept[$k] = $paths[$k] } }
+    [IO.File]::WriteAllText($pathFile, ($kept | ConvertTo-Json -Depth 5 -Compress), $utf8)
+}
 
 function Save($name, $obj) {
     [IO.File]::WriteAllText((Join-Path $dataDir $name), ($obj | ConvertTo-Json -Depth 6), $utf8)
 }
-Save 'wsdot-alerts.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Highway Alerts'; alerts = @($alerts) })
-"$($alerts.Count) alerts in region ($(@($raw).Count) statewide)"
+if ($alertsOk) {
+    Save 'wsdot-alerts.json' ([ordered]@{ updated = $now.ToString('o'); source = 'WSDOT Highway Alerts'; alerts = @($alerts) })
+    "$($alerts.Count) alerts in region ($(@($raw).Count) statewide)"
+} else { 'road alerts: WSDOT unavailable, kept the last alerts' }
 
 # ---------- the other WSDOT feeds; one failing never stops the rest ----------
 $base = 'https://wsdot.wa.gov/Traffic/api'
