@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T05:56:00.8546802+00:00",
+  "updated": "2026-10-29T05:58:06.0314769+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,29 +8,13 @@
       "reg": "14-20654",
       "type": "H60",
       "cat": "A7",
-      "alt": 2150,
-      "gs": 90.9,
-      "track": 245.97,
-      "rate": 960,
-      "lat": 47.21704,
-      "lon": -123.19965,
+      "alt": 3425,
+      "gs": 65.3,
+      "track": 244.61,
+      "rate": 1024,
+      "lat": 47.20642,
+      "lon": -123.23378,
       "squawk": "4745",
-      "emergency": "none",
-      "mil": true
-    },
-    {
-      "hex": "ae6bc8",
-      "flight": "JUICY60",
-      "reg": "13-20590",
-      "type": "H60",
-      "cat": "A7",
-      "alt": 2000,
-      "gs": 0.7,
-      "track": 0.0,
-      "rate": 64,
-      "lat": 47.28187,
-      "lon": -122.74528,
-      "squawk": "1200",
       "emergency": "none",
       "mil": true
     }
