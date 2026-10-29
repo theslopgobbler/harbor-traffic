@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-29T07:56:01.0994464+00:00",
+  "updated": "2026-10-29T08:06:02.3416833+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "8991e7",
+      "flight": "SJX031",
+      "reg": "B-58504",
+      "type": "A359",
+      "cat": "A5",
+      "alt": 12625,
+      "gs": 374.9,
+      "track": 318.79,
+      "rate": 1280,
+      "lat": 47.54187,
+      "lon": -122.78286,
+      "squawk": "6647",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
