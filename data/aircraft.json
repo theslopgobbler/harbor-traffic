@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-29T15:35:56.2351976+00:00",
+  "updated": "2026-10-29T15:46:00.7091812+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a025ec",
-      "flight": "N1088R",
-      "reg": "N1088R",
-      "type": "C56X",
-      "cat": "A2",
-      "alt": 9250,
-      "gs": 297.0,
-      "track": 17.64,
-      "rate": -1061,
-      "lat": 46.85329,
-      "lon": -122.87748,
-      "squawk": "4620",
+      "hex": "a16441",
+      "flight": "GFY1894",
+      "reg": "N189Y",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 4125,
+      "gs": 138.9,
+      "track": 59.74,
+      "rate": 192,
+      "lat": 47.22697,
+      "lon": -122.80785,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
