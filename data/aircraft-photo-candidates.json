@@ -112,7 +112,8 @@
     "Enstrom 480 B": "2026-10-28T17:26:15.9245132+00:00",
     "Sikorsky MH-60M Blackhawk": "2026-10-28T19:16:15.4944236+00:00",
     "McDonnell Douglas Helicopters 369 E": "2026-10-28T20:46:16.3118053+00:00",
-    "Airbus A330 941N": "2026-10-28T22:36:16.7719036+00:00"
+    "Airbus A330 941N": "2026-10-28T22:36:16.7719036+00:00",
+    "Boeing 767 34AF/W": "2026-10-29T10:55:57.8962964+00:00"
   },
   "candidates": [
     {
@@ -6890,7 +6891,91 @@
       "date": "2026-01-09 07:51:45",
       "caption": "Malaysia Airlines (9M-MNM) Airbus A330-941N arriving at Sydney Airport.",
       "found": "2026-10-28T22:36:16.7719036+00:00"
+    },
+    {
+      "model": "Boeing 767 34AF/W",
+      "file": "File:N310UP - Boeing 767-34AF(ER) - UPS (38368440786).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N310UP_-_Boeing_767-34AF(ER)_-_UPS_(38368440786).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/N310UP_-_Boeing_767-34AF%28ER%29_-_UPS_%2838368440786%29.jpg/960px-N310UP_-_Boeing_767-34AF%28ER%29_-_UPS_%2838368440786%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Colin Brown from St Ann, MO, USA",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-11-14 16:20",
+      "caption": "Philadelphia International - April 30, 2008",
+      "found": "2026-10-29T10:55:57.8962964+00:00"
+    },
+    {
+      "model": "Boeing 767 34AF/W",
+      "file": "File:Second United Parcel Service N309UP Boeing 767-34AF SJC.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Second_United_Parcel_Service_N309UP_Boeing_767-34AF_SJC.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Second_United_Parcel_Service_N309UP_Boeing_767-34AF_SJC.jpg/960px-Second_United_Parcel_Service_N309UP_Boeing_767-34AF_SJC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 536,
+      "author": "Dylan Ashe from San Jose, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2007-08-15 17:13",
+      "caption": "Second",
+      "found": "2026-10-29T10:55:57.8962964+00:00"
+    },
+    {
+      "model": "Boeing 767 34AF/W",
+      "file": "File:United Parcel Service (UPS), Boeing 767-34AF(ER), N301UP - LAX (21924763690).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Parcel_Service_(UPS),_Boeing_767-34AF(ER),_N301UP_-_LAX_(21924763690).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N301UP_-_LAX_%2821924763690%29.jpg/960px-United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N301UP_-_LAX_%2821924763690%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Eric Salard",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-04-15 19:24",
+      "caption": "MSN 27239 LN 580 B767-34AF UPS LAX AIRPORT",
+      "found": "2026-10-29T10:55:57.8962964+00:00"
+    },
+    {
+      "model": "Boeing 767 34AF/W",
+      "file": "File:United Parcel Service (UPS), Boeing 767-34AF(ER), N329UP - LAX (21243302864).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Parcel_Service_(UPS),_Boeing_767-34AF(ER),_N329UP_-_LAX_(21243302864).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N329UP_-_LAX_%2821243302864%29.jpg/960px-United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N329UP_-_LAX_%2821243302864%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Eric Salard",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-04-16 17:27",
+      "caption": "MSN 27755 LN 756 B767-34AF UPS LAX AIRPORT",
+      "found": "2026-10-29T10:55:57.8962964+00:00"
+    },
+    {
+      "model": "Boeing 767 34AF/W",
+      "file": "File:United Parcel Service (UPS), Boeing 767-34AF(ER), N329UP - LAX (22709927725).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Parcel_Service_(UPS),_Boeing_767-34AF(ER),_N329UP_-_LAX_(22709927725).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N329UP_-_LAX_%2822709927725%29.jpg/960px-United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N329UP_-_LAX_%2822709927725%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Eric Salard",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-04-16 17:27",
+      "caption": "MSN 27755 LN 756 B767-34AF UPS LAX AIRPORT",
+      "found": "2026-10-29T10:55:57.8962964+00:00"
+    },
+    {
+      "model": "Boeing 767 34AF/W",
+      "file": "File:United Parcel Service (UPS), Boeing 767-34AF(ER), N329UP - LAX (22936291531).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Parcel_Service_(UPS),_Boeing_767-34AF(ER),_N329UP_-_LAX_(22936291531).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N329UP_-_LAX_%2822936291531%29.jpg/960px-United_Parcel_Service_%28UPS%29%2C_Boeing_767-34AF%28ER%29%2C_N329UP_-_LAX_%2822936291531%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Eric Salard",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-04-16 17:28",
+      "caption": "MSN 27755 LN 756 B767-34AF / 767 / 767-300 / 767-300F UPS LAX AIRPORT",
+      "found": "2026-10-29T10:55:57.8962964+00:00"
     }
   ],
-  "updated": "2026-10-29T10:46:02.2120248+00:00"
+  "updated": "2026-10-29T10:55:57.8962964+00:00"
 }
