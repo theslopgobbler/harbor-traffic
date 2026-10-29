@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-29T08:46:04.8866561+00:00",
+  "updated": "2026-10-29T08:55:57.5435518+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-29T07:56:00.0000000+00:00",
+    "time": "2026-10-29T08:26:00.0000000+00:00",
     "waveFt": 7.2,
     "periodS": 11.0,
     "dirDeg": 298.0,
-    "waterF": 54.1
+    "waterF": 54.0
   },
   "bar": {
-    "issued": "2026-10-28T20:42:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT UNTIL 9 PM PDT THIS EVENING... Combined seas 7 to 9 ft tonight building to around 10 ft during the evening ebb. Seas subsiding Thursday, becoming 5 to 7 ft. Bar conditions rough to moderate this evening, becoming moderate Thursday. Maximum ebb currents will occur around 630 PM Wednesday, 715 AM Thursday, and 730 PM Thursday. The evening ebbs will be very strong.",
-    "conditions": "rough to moderate this evening, becoming moderate Thursday",
-    "seas": "7 to 9 ft tonight building to around 10 ft during the evening ebb",
-    "ebb": "The evening ebbs will be very strong"
+    "issued": "2026-10-29T08:53:00+00:00",
+    "text": "Combined seas 5 to 7 ft subsiding to 4 to 6 ft this evening. Bar conditions generally moderate, becoming generally light this evening. Maximum ebb currents will occur around 715 AM this morning, 730 PM this evening and 800 AM Friday morning. The evening ebb will be very strong.",
+    "conditions": "generally moderate, becoming generally light this evening",
+    "seas": "5 to 7 ft subsiding to 4 to 6 ft this evening",
+    "ebb": "The evening ebb will be very strong"
   },
   "alerts": []
 }
