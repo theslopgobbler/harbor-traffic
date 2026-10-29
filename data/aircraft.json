@@ -1,5 +1,38 @@
 {
-  "updated": "2026-10-29T04:16:00.2326558+00:00",
+  "updated": "2026-10-29T04:21:53.2187306+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ae6bc8",
+      "flight": "JUICY60",
+      "reg": "13-20590",
+      "type": "H60",
+      "cat": "A7",
+      "alt": 1850,
+      "gs": 0.7,
+      "track": 0.0,
+      "rate": -128,
+      "lat": 47.19147,
+      "lon": -122.80237,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": true
+    },
+    {
+      "hex": "a9c506",
+      "flight": "ASA711",
+      "reg": "N729AL",
+      "type": "B39M",
+      "cat": "A3",
+      "alt": 13200,
+      "gs": 348.1,
+      "track": 319.08,
+      "rate": 1920,
+      "lat": 47.54804,
+      "lon": -122.7906,
+      "squawk": "3576",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
