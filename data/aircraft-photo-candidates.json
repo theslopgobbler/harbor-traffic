@@ -115,7 +115,8 @@
     "Airbus A330 941N": "2026-10-28T22:36:16.7719036+00:00",
     "Boeing 767 34AF/W": "2026-10-29T10:55:57.8962964+00:00",
     "Cessna Citation Sovereign": "2026-10-29T14:25:58.1196+00:00",
-    "Cessna Citation XLS+": "2026-10-29T15:35:56.2351976+00:00"
+    "Cessna Citation XLS+": "2026-10-29T15:35:56.2351976+00:00",
+    "Bombardier Challenger 605": "2026-10-29T18:56:00.8321249+00:00"
   },
   "candidates": [
     {
@@ -7145,7 +7146,91 @@
       "date": "2022-01-19",
       "caption": "2017 Cessna Citation XLS+ N876AD at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-10-29T15:35:56.2351976+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 605",
+      "file": "File:Bombardier CL-600-2B16 Challenger 605 (N39RE, cn 5850) (2-14-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_CL-600-2B16_Challenger_605_(N39RE,_cn_5850)_(2-14-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Bombardier_CL-600-2B16_Challenger_605_%28N39RE%2C_cn_5850%29_%282-14-2025%29.jpg/960px-Bombardier_CL-600-2B16_Challenger_605_%28N39RE%2C_cn_5850%29_%282-14-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-02-14",
+      "caption": "Bombardier CL-600-2B16 Challenger 605 (N39RE, cn 5850)",
+      "found": "2026-10-29T18:56:00.8321249+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 605",
+      "file": "File:Bombardier Challenger 605 OY-VAY 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Challenger_605_OY-VAY_3.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Bombardier_Challenger_605_OY-VAY_3.jpg/960px-Bombardier_Challenger_605_OY-VAY_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 599,
+      "author": "Riik@mctr",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2020-07-24 11:52",
+      "caption": "Manchester Airport (EGCC)",
+      "found": "2026-10-29T18:56:00.8321249+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 605",
+      "file": "File:Challenger 605 flight deck.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Challenger_605_flight_deck.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Challenger_605_flight_deck.jpg/960px-Challenger_605_flight_deck.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Igor Chernov",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-11-07 13:40:46",
+      "caption": "Bombardier Challenger 605 flight deck",
+      "found": "2026-10-29T18:56:00.8321249+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 605",
+      "file": "File:Hannover Airport VistaJet Bombardier Challenger 605 9H-VFD (DSC00307).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hannover_Airport_VistaJet_Bombardier_Challenger_605_9H-VFD_(DSC00307).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Hannover_Airport_VistaJet_Bombardier_Challenger_605_9H-VFD_%28DSC00307%29.jpg/960px-Hannover_Airport_VistaJet_Bombardier_Challenger_605_9H-VFD_%28DSC00307%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-07-30 16:03:02",
+      "caption": "Die Bombardier CL-600-2B16 Challenger 605 der Fluggesellschaft VistaJet mit dem Kennzeichen 9H-VFD im Landeanflug auf die Bahn 27R des Flughafens Hannover-Langenhagen. Das Flugzeug führte einen Flug von Olbia nach Han...",
+      "found": "2026-10-29T18:56:00.8321249+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 605",
+      "file": "File:Jetport, C-FHRL, Bombardier Challenger 605 (52342243012).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Jetport,_C-FHRL,_Bombardier_Challenger_605_(52342243012).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Jetport%2C_C-FHRL%2C_Bombardier_Challenger_605_%2852342243012%29.jpg/960px-Jetport%2C_C-FHRL%2C_Bombardier_Challenger_605_%2852342243012%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-08-24 21:54",
+      "caption": "Jetport, C-FHRL, Bombardier Challenger 605, Reykjavik-Keflavik Airport (BIKF/KEF)",
+      "found": "2026-10-29T18:56:00.8321249+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 605",
+      "file": "File:TC-RSA - Bombardier CL-600-2B16 Challenger 605 - 5857 - Redstar Aviation - VGHS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:TC-RSA_-_Bombardier_CL-600-2B16_Challenger_605_-_5857_-_Redstar_Aviation_-_VGHS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/TC-RSA_-_Bombardier_CL-600-2B16_Challenger_605_-_5857_-_Redstar_Aviation_-_VGHS.jpg/960px-TC-RSA_-_Bombardier_CL-600-2B16_Challenger_605_-_5857_-_Redstar_Aviation_-_VGHS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-19",
+      "caption": "TC-RSA | Bombardier CL-600-2B16 Challenger 605 | 5857 | Redstar Aviation | VGHS.",
+      "found": "2026-10-29T18:56:00.8321249+00:00"
     }
   ],
-  "updated": "2026-10-29T18:45:58.9671029+00:00"
+  "updated": "2026-10-29T18:56:00.8321249+00:00"
 }
