@@ -118,7 +118,8 @@
     "Cessna Citation XLS+": "2026-10-29T15:35:56.2351976+00:00",
     "Bombardier Challenger 605": "2026-10-29T18:56:00.8321249+00:00",
     "Raytheon Aircraft Company King Air B350": "2026-10-29T19:25:56.5592558+00:00",
-    "Gulfstream Aerospace GV": "2026-10-29T20:45:59.9080827+00:00"
+    "Gulfstream Aerospace GV": "2026-10-29T20:45:59.9080827+00:00",
+    "Textron Aviation Citation Sovereign+": "2026-10-29T23:06:00.4280711+00:00"
   },
   "candidates": [
     {
@@ -7318,5 +7319,5 @@
       "found": "2026-10-29T20:45:59.9080827+00:00"
     }
   ],
-  "updated": "2026-10-29T22:55:58.7566821+00:00"
+  "updated": "2026-10-29T23:06:00.4280711+00:00"
 }
