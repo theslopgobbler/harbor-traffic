@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T19:11:37.6739363+00:00",
+  "updated": "2026-10-29T19:16:00.7304527+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2360,27 +2360,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 722634,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 108 both directions at milepost 1 near 6th St beginning at 8:26 am on October 29, 2026 until about 12:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "108",
-      "roadLabel": "SR 108",
-      "direction": "B",
-      "milepost": 1.0,
-      "lat": 47.055594655,
-      "lon": -123.267550955,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-10-29T15:26:00.0000000+00:00",
-      "end": "2026-10-29T19:00:00.0000000+00:00",
-      "updated": "2026-10-29T15:27:34.3230000+00:00"
     },
     {
       "id": 686738,
