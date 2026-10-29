@@ -117,7 +117,8 @@
     "Cessna Citation Sovereign": "2026-10-29T14:25:58.1196+00:00",
     "Cessna Citation XLS+": "2026-10-29T15:35:56.2351976+00:00",
     "Bombardier Challenger 605": "2026-10-29T18:56:00.8321249+00:00",
-    "Raytheon Aircraft Company King Air B350": "2026-10-29T19:25:56.5592558+00:00"
+    "Raytheon Aircraft Company King Air B350": "2026-10-29T19:25:56.5592558+00:00",
+    "Gulfstream Aerospace GV": "2026-10-29T20:45:59.9080827+00:00"
   },
   "candidates": [
     {
@@ -7231,7 +7232,91 @@
       "date": "2022-02-19",
       "caption": "TC-RSA | Bombardier CL-600-2B16 Challenger 605 | 5857 | Redstar Aviation | VGHS.",
       "found": "2026-10-29T18:56:00.8321249+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GV",
+      "file": "File:GULFSTREAM AEROSPACE GV-SP - N974SZ (Quintin Soloviev).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:GULFSTREAM_AEROSPACE_GV-SP_-_N974SZ_(Quintin_Soloviev).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/GULFSTREAM_AEROSPACE_GV-SP_-_N974SZ_%28Quintin_Soloviev%29.jpg/960px-GULFSTREAM_AEROSPACE_GV-SP_-_N974SZ_%28Quintin_Soloviev%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Quintin Soloviev",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-12-08 21:48:57",
+      "caption": "A Gulfstream G550 at Westchester County Airport.",
+      "found": "2026-10-29T20:45:59.9080827+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GV",
+      "file": "File:N363MF 2006 GULFSTREAM AEROSPACE GV-SP (G550) s-n 5112 (32535484143).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N363MF_2006_GULFSTREAM_AEROSPACE_GV-SP_(G550)_s-n_5112_(32535484143).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/N363MF_2006_GULFSTREAM_AEROSPACE_GV-SP_%28G550%29_s-n_5112_%2832535484143%29.jpg/960px-N363MF_2006_GULFSTREAM_AEROSPACE_GV-SP_%28G550%29_s-n_5112_%2832535484143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 503,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-03-08 13:48",
+      "caption": "Las Vegas - McCarran International Airport (LAS / KLAS) USA - Nevada March 8, 2017 Photo: Tomás Del Coro",
+      "found": "2026-10-29T20:45:59.9080827+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GV",
+      "file": "File:N668P 2009 GULFSTREAM AEROSPACE GV-SP (G550) s-n 5229 (12848934123).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N668P_2009_GULFSTREAM_AEROSPACE_GV-SP_(G550)_s-n_5229_(12848934123).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/N668P_2009_GULFSTREAM_AEROSPACE_GV-SP_%28G550%29_s-n_5229_%2812848934123%29.jpg/960px-N668P_2009_GULFSTREAM_AEROSPACE_GV-SP_%28G550%29_s-n_5229_%2812848934123%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 611,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-02-27 15:21",
+      "caption": "Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, February 27, 2014 Photo: Tomás Del Coro",
+      "found": "2026-10-29T20:45:59.9080827+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GV",
+      "file": "File:N888HK 2008 Gulfstream Aerospace GV-SP (G550) C-N 5213 (7751503122).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N888HK_2008_Gulfstream_Aerospace_GV-SP_(G550)_C-N_5213_(7751503122).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/N888HK_2008_Gulfstream_Aerospace_GV-SP_%28G550%29_C-N_5213_%287751503122%29.jpg/960px-N888HK_2008_Gulfstream_Aerospace_GV-SP_%28G550%29_C-N_5213_%287751503122%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 681,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-08-09 16:00",
+      "caption": "Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, August 9, 2012 Photo: Tomás Del Coro",
+      "found": "2026-10-29T20:45:59.9080827+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GV",
+      "file": "File:Nutrien Ltd (C-GIAC) Gulfstream Aerospace GV-SP at Wagga Wagga Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nutrien_Ltd_(C-GIAC)_Gulfstream_Aerospace_GV-SP_at_Wagga_Wagga_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Nutrien_Ltd_%28C-GIAC%29_Gulfstream_Aerospace_GV-SP_at_Wagga_Wagga_Airport.jpg/960px-Nutrien_Ltd_%28C-GIAC%29_Gulfstream_Aerospace_GV-SP_at_Wagga_Wagga_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2023-01-25 14:17:25",
+      "caption": "Nutrien Ltd (C-GIAC) Gulfstream Aerospace GV-SP at Wagga Wagga Airport.",
+      "found": "2026-10-29T20:45:59.9080827+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GV",
+      "file": "File:Private, M-UGIC, Gulfstream Aerospace GV-SP (G550) (15836529833).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Private,_M-UGIC,_Gulfstream_Aerospace_GV-SP_(G550)_(15836529833).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Private%2C_M-UGIC%2C_Gulfstream_Aerospace_GV-SP_%28G550%29_%2815836529833%29.jpg/960px-Private%2C_M-UGIC%2C_Gulfstream_Aerospace_GV-SP_%28G550%29_%2815836529833%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-08-15 17:33:48",
+      "caption": "Private, M-UGIC, Gulfstream Aerospace GV-SP (G550)",
+      "found": "2026-10-29T20:45:59.9080827+00:00"
     }
   ],
-  "updated": "2026-10-29T20:35:58.1805109+00:00"
+  "updated": "2026-10-29T20:45:59.9080827+00:00"
 }
