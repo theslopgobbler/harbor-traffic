@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-29T05:11:10.7891921+00:00",
+  "updated": "2026-10-29T05:15:57.6867101+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ae6bc8",
+      "flight": "JUICY60",
+      "reg": "13-20590",
+      "type": "H60",
+      "cat": "A7",
+      "alt": 2450,
+      "gs": 0.7,
+      "track": 0.0,
+      "rate": 0,
+      "lat": 47.26353,
+      "lon": -123.01349,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": true
+    }
+  ]
 }
