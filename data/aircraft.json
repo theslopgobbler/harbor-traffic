@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-29T14:16:03.4157809+00:00",
+  "updated": "2026-10-29T14:25:58.1196000+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a9047f",
+      "flight": "PXT680",
+      "reg": "N680PC",
+      "type": "C680",
+      "cat": "A2",
+      "alt": 9950,
+      "gs": 331.1,
+      "track": 349.91,
+      "rate": -64,
+      "lat": 46.83687,
+      "lon": -122.86707,
+      "squawk": "3335",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }

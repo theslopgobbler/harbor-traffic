@@ -113,7 +113,8 @@
     "Sikorsky MH-60M Blackhawk": "2026-10-28T19:16:15.4944236+00:00",
     "McDonnell Douglas Helicopters 369 E": "2026-10-28T20:46:16.3118053+00:00",
     "Airbus A330 941N": "2026-10-28T22:36:16.7719036+00:00",
-    "Boeing 767 34AF/W": "2026-10-29T10:55:57.8962964+00:00"
+    "Boeing 767 34AF/W": "2026-10-29T10:55:57.8962964+00:00",
+    "Cessna Citation Sovereign": "2026-10-29T14:25:58.1196000+00:00"
   },
   "candidates": [
     {
@@ -6975,7 +6976,91 @@
       "date": "2015-04-16 17:28",
       "caption": "MSN 27755 LN 756 B767-34AF / 767 / 767-300 / 767-300F UPS LAX AIRPORT",
       "found": "2026-10-29T10:55:57.8962964+00:00"
+    },
+    {
+      "model": "Cessna Citation Sovereign",
+      "file": "File:Antwerp ASL Cessna Citation Sovereign PH-CJM 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Antwerp_ASL_Cessna_Citation_Sovereign_PH-CJM_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Antwerp_ASL_Cessna_Citation_Sovereign_PH-CJM_01.jpg/960px-Antwerp_ASL_Cessna_Citation_Sovereign_PH-CJM_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 529,
+      "author": "Ad Meskens You are free to use this picture for any purpose as long as you credit its author, Ad Meskens . Example: © Ad Meskens / Wikimedia Commons If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated. This image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-05-12 16:26:05",
+      "caption": "Air Service Liège (ASL) Cessna 680 Citation Sovereign PH-CJM (Serial #: 680-0271) op de Internationale Luchthaven Antwerpen tijdens de Stampe Fly In 2024.",
+      "found": "2026-10-29T14:25:58.1196000+00:00"
+    },
+    {
+      "model": "Cessna Citation Sovereign",
+      "file": "File:Antwerp ASL Cessna Citation Sovereign PH-CJM 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Antwerp_ASL_Cessna_Citation_Sovereign_PH-CJM_02.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Antwerp_ASL_Cessna_Citation_Sovereign_PH-CJM_02.jpg/960px-Antwerp_ASL_Cessna_Citation_Sovereign_PH-CJM_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 514,
+      "author": "Ad Meskens You are free to use this picture for any purpose as long as you credit its author, Ad Meskens . Example: © Ad Meskens / Wikimedia Commons If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated. This image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-05-12 16:26:07",
+      "caption": "Air Service Liège (ASL) Cessna 680 Citation Sovereign PH-CJM (Serial #: 680-0271) op de Internationale Luchthaven Antwerpen tijdens de Stampe Fly In 2024.",
+      "found": "2026-10-29T14:25:58.1196000+00:00"
+    },
+    {
+      "model": "Cessna Citation Sovereign",
+      "file": "File:Cessna Citation Sovereign N680BF FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Sovereign_N680BF_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Cessna_Citation_Sovereign_N680BF_FDK_MD1.jpg/960px-Cessna_Citation_Sovereign_N680BF_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 450,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-06-16",
+      "caption": "Cessna Citation Sovereign N680BF at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-29T14:25:58.1196000+00:00"
+    },
+    {
+      "model": "Cessna Citation Sovereign",
+      "file": "File:Cessna Citation Sovereign N990H FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Sovereign_N990H_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Cessna_Citation_Sovereign_N990H_FDK_MD1.jpg/960px-Cessna_Citation_Sovereign_N990H_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 403,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-08-30",
+      "caption": "2014 Cessna Citation Sovereign N990H at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-29T14:25:58.1196000+00:00"
+    },
+    {
+      "model": "Cessna Citation Sovereign",
+      "file": "File:D-CAWX - Cessna 680 Citation Sovereign+ BHX 301024.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:D-CAWX_-_Cessna_680_Citation_Sovereign%2B_BHX_301024.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/D-CAWX_-_Cessna_680_Citation_Sovereign%2B_BHX_301024.jpg/960px-D-CAWX_-_Cessna_680_Citation_Sovereign%2B_BHX_301024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 370,
+      "author": "kitmasterbloke",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2024-10-31 19:15:47",
+      "caption": "A quick visit to Elmdon ahead of NEC meetings to capture National Airways' 747 N936CA.",
+      "found": "2026-10-29T14:25:58.1196000+00:00"
+    },
+    {
+      "model": "Cessna Citation Sovereign",
+      "file": "File:Hannover Airport Aerowest Cessna 680 Citation Sovereign D-CAWX (DSC09462).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hannover_Airport_Aerowest_Cessna_680_Citation_Sovereign_D-CAWX_(DSC09462).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hannover_Airport_Aerowest_Cessna_680_Citation_Sovereign_D-CAWX_%28DSC09462%29.jpg/960px-Hannover_Airport_Aerowest_Cessna_680_Citation_Sovereign_D-CAWX_%28DSC09462%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-09-01 12:40:13",
+      "caption": "Die Cessna 680 Citation Sovereign der Fluggesellschaft Aerowest mit dem Kennzeichen D-CAWX im Landeanflug auf die Bahn 09R des Flughafens Hannover-Langenhagen. Das Flugzeug führte einen Flug von Manchester nach Hannov...",
+      "found": "2026-10-29T14:25:58.1196000+00:00"
     }
   ],
-  "updated": "2026-10-29T14:16:03.4157809+00:00"
+  "updated": "2026-10-29T14:25:58.1196000+00:00"
 }
