@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T03:34:46.2461120+00:00",
+  "updated": "2026-10-29T03:36:06.1075731+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -21,13 +21,13 @@
       "event": "Small Craft Advisory",
       "area": "Grays Harbor Bar",
       "ends": "2026-10-29T04:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 28 at 1:42PM PDT until October 28 at 9:00PM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 28 at 8:35PM PDT until October 28 at 9:00PM PDT by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-10-29T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued October 28 at 1:42PM PDT until October 28 at 11:00PM PDT by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued October 28 at 8:35PM PDT until October 28 at 11:00PM PDT by NWS Seattle WA"
     }
   ]
 }
