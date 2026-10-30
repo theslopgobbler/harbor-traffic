@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-30T14:25:56.3424151+00:00",
+  "updated": "2026-10-30T14:35:57.2640829+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a49f4f",
+      "flight": "N3971K",
+      "reg": "N3971K",
+      "type": "P28A",
+      "cat": "A1",
+      "alt": 6250,
+      "gs": 102.8,
+      "track": 287.55,
+      "rate": 225,
+      "lat": 47.61113,
+      "lon": -122.75752,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
