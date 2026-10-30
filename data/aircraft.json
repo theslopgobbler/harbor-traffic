@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-30T21:55:55.6938119+00:00",
+  "updated": "2026-10-30T22:06:01.0413224+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a195ee",
-      "flight": "N201CB",
-      "reg": "N201CB",
-      "type": "M20P",
+      "hex": "aa3c8c",
+      "flight": "N759MA",
+      "reg": "N759MA",
+      "type": "C182",
       "cat": "A1",
-      "alt": 1800,
-      "gs": 94.6,
-      "track": 213.35,
-      "rate": -320,
-      "lat": 47.54974,
-      "lon": -122.70904,
-      "squawk": "4641",
+      "alt": 3025,
+      "gs": 125.6,
+      "track": 260.84,
+      "rate": 0,
+      "lat": 47.18754,
+      "lon": -122.78348,
+      "squawk": "4623",
       "emergency": "none",
       "mil": false
     }
