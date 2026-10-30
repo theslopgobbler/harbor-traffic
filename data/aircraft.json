@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-30T17:16:06.2789842+00:00",
+  "updated": "2026-10-30T17:25:58.0635960+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a9da71",
+      "flight": "N734FN",
+      "reg": "N734FN",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 2350,
+      "gs": 72.5,
+      "track": 74.81,
+      "rate": 576,
+      "lat": 46.96225,
+      "lon": -122.85207,
+      "squawk": "4756",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
