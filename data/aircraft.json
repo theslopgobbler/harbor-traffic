@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-30T15:35:56.7825480+00:00",
+  "updated": "2026-10-30T15:45:58.7609280+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a2ef6b",
-      "flight": "N289AA",
-      "reg": "N289AA",
-      "type": null,
+      "hex": "aaaade",
+      "flight": "GFY4787",
+      "reg": "N787DM",
+      "type": "DA40",
       "cat": "A1",
-      "alt": 600,
-      "gs": 76.9,
-      "track": 32.24,
-      "rate": -640,
-      "lat": 47.48071,
-      "lon": -122.77386,
-      "squawk": "1200",
+      "alt": 3025,
+      "gs": 126.1,
+      "track": 357.27,
+      "rate": 256,
+      "lat": 47.29791,
+      "lon": -122.73334,
+      "squawk": "4715",
       "emergency": "none",
       "mil": false
     }
