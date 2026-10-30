@@ -1133,26 +1133,31 @@
     const cars = atBerth.filter(isCarCarrier);
     const waiting = shipList.filter((x) => x._sit && x._sit.bay === 'GRAYS HARBOR' && (x.sog ?? 0) < 3 && !atBerth.includes(x) &&
       (x._sit.inside ? stopped(x) : x._sit.dist <= 12) && (isCarCarrier(x) || (x.lengthM || 0) >= 190));
-    // likely: a car carrier at berth. Possible: any other big ship at berth or moving in the harbor, or a big one
-    // waiting outside for the tide
-    const level = cars.length ? 2 : atBerth.length || moving.length || waiting.length ? 1 : 0;
+    // What the train log shows (16 reports, Oct 6-30): a bulk ship was loading at every one, but bulk ships are at
+    // berth about 65% of the time, so on its own that would keep a warning up nearly all day. A vehicle carrier was
+    // docked, arriving or just leaving at 9 of 16, and they're only at berth about 15% of the time; some trains came
+    // before the car carrier docked. So the map chip is for vehicle carriers only: LIKELY while one is at berth,
+    // POSSIBLE while one is on its way in (waiting off Westport or under way in the harbor). A bulk ship loading gets
+    // a quiet line in the road list, with no chip and no ticker.
+    const carMoving = moving.filter(isCarCarrier), carWaitingList = waiting.filter(isCarCarrier);
+    const level = cars.length ? 2 : carMoving.length || carWaitingList.length ? 1 : 0;
     const names = (list) => list.map((x) => (x.name || 'a large vessel').toUpperCase() + (unknownAtTerminal.includes(x) ? ' (size not broadcast)' : '')).join(', ');
     const hm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     const tide = nextHigh && nextHigh.t - Date.now() < 14 * 3600e3 ? `, high tide ${hm(nextHigh.t)}` : '';
-    const who = level === 2 ? names(cars) : atBerth.length ? names(atBerth) : moving.length ? names(moving) : names(waiting);
-    const carWaiting = waiting.some(isCarCarrier);
-    const where = level === 2 ? ' (vehicle carrier) at berth' : atBerth.length ? ' at berth' : moving.length ? ' under way'
-      : `${carWaiting ? ' (vehicle carrier)' : ''} waiting by Westport for the tide${tide}`;
+    const who = level === 2 ? names(cars) : carMoving.length ? names(carMoving) : names(carWaitingList);
+    const where = level === 2 ? ' (vehicle carrier) at berth' : carMoving.length ? ' (vehicle carrier) under way in the harbor'
+      : ` (vehicle carrier) waiting by Westport for the tide${tide}`;
     const why = (who + where).toUpperCase();
     railChip.innerHTML = level ? `<b>⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'}</b><span>${escS(why)}</span>` : '';
     railChip.classList.toggle('likely', level === 2);
     const box = $('#railNote');
+    const bulk = atBerth.filter((x) => !isCarCarrier(x));
     const more = level === 2 ? 'Vehicle carriers are loaded and unloaded by train, so expect trains at crossings.'
-      : atBerth.length ? 'Bulk ships (like soy meal) don\'t always bring trains; vehicle carriers almost always do.'
-      : moving.length ? 'Trains often follow a vehicle carrier\'s arrival.'
-      : `The biggest ships wait by Westport for the tide before coming up to load${carWaiting ? '; vehicle carriers almost always mean trains once they dock.' : '.'}`;
-    if (box) box.innerHTML = level ? `<li class="${level === 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'} · ABERDEEN / HOQUIAM</div>
-      <div class="m">${escS(`${who}${where}${atBerth.length || moving.length || level === 2 ? ' in the harbor' : ''}. ${more}`)}</div></li>` : '';
+      : 'Trains often come before a vehicle carrier docks, carrying the cars it will load.';
+    if (box) box.innerHTML = (level ? `<li class="${level === 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'} · ABERDEEN / HOQUIAM</div>
+      <div class="m">${escS(`${who}${where}. ${more}`)}</div></li>` : '') +
+      (bulk.length ? `<li><div class="t">BULK SHIP LOADING · ABERDEEN / HOQUIAM</div>
+      <div class="m">${escS(`${names(bulk)} at berth. Trains to the port are possible, often in the evening; bulk ships can sit at berth for days, so this one doesn't count as a warning.`)}</div></li>` : '');
     window.htRailLevel = level;
     tick('rail', level ? `activity ${level === 2 ? 'likely' : 'possible'} in Aberdeen/Hoquiam: ${who}${where}` : '');
     window.htDeclutter?.();
@@ -1167,7 +1172,7 @@
           <div class="m">${x.m} m away · the bridge may open soon</div></li>`).join('') +
         docked.map((s) => `<li class="k-port clickable" data-lon="${s.lon}" data-lat="${s.lat}">
           <div class="t">⚓ ${escS((s.name || 'VESSEL').toUpperCase())} DOCKED AT THE PORT</div>
-          <div class="m">${SHIP_KIND(s.type)[0]}${s.lengthM ? ' · ' + s.lengthM + ' M' : ''}${isCargo(s.type) || (s.type >= 80 && s.type <= 89) ? ' · loading/unloading: expect trains' : ''}</div></li>`).join('');
+          <div class="m">${SHIP_KIND(s.type)[0]}${s.lengthM ? ' · ' + s.lengthM + ' M' : ''}${isCarCarrier(s) ? ' · vehicle carrier: expect trains' : isCargo(s.type) ? ' · loading: trains possible' : ''}</div></li>`).join('');
     }
     const box = $('#shipList');
     if (!box) return;

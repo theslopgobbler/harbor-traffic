@@ -344,9 +344,12 @@
       const out = [];
       for (const s of j.ships || []) {
         const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
-        if (ago == null || ago > 90) continue; // (not heard lately: where it is now is unknown)
         const big = (s.lengthM || 0) >= 100 || (s.type >= 70 && s.type <= 89);
         const atTerm = inB(s, TERMINALS), stoppedNow = (s.sog ?? 0) < 0.5;
+        // (not heard lately: where it is now is unknown. A ship tied up at the terminals barely broadcasts and the
+        // collector only listens briefly each run, so one stopped there still counts for 6 hours: on Oct 17 and 25
+        // trains were logged with "no big ships" while one sat at berth)
+        if (ago == null || ago > (atTerm && stoppedNow ? 360 : 90)) continue;
         const nearMouth = Math.hypot((s.lon + 124.11) * 41, (s.lat - 46.915) * 60) <= 12; // nm from the entrance, roughly
         if (!(big || (atTerm && s.type == null && !s.lengthM))) continue;
         if (!(inB(s, HARBOR) || nearMouth)) continue;
@@ -370,12 +373,16 @@
       return true;
     } catch { $('#trainMsg').textContent = 'CAN\'T REACH THE RELAY RIGHT NOW'; return false; }
   }
+  let lastTrain = 0;
   $('#trainForm').addEventListener('submit', async (e) => {
     e.preventDefault(); if (!key) return;
-    const btn = $('#trainBtn'); btn.disabled = true;
+    // (a second tap within a minute is the same train: tell, don't log it again)
+    if (Date.now() - lastTrain < 60000) { $('#trainMsg').textContent = 'ALREADY SAVED THIS ONE A MOMENT AGO'; return; }
+    const btn = $('#trainBtn'); if (btn.disabled) return; btn.disabled = true; lastTrain = Date.now();
     const ships = await shipSnapshot();
     const note = [$('#trainDir').value, $('#trainNote').value.trim()].filter(Boolean).join(' · ');
-    if (await loadTrains({ t: Date.now(), note, ships })) {
+    if (!(await loadTrains({ t: Date.now(), note, ships }))) lastTrain = 0; // (didn't save: let a retry through)
+    else {
       $('#trainMsg').textContent = `SAVED ${new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase()} · ${shipText(ships).toUpperCase()}`;
       $('#trainNote').value = ''; $('#trainDir').value = '';
     }
