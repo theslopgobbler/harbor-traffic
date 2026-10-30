@@ -12,6 +12,7 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
+    ['Oct 30', 'Aircraft landing at Bowerman or the hospital settle in instead of flying on past, and stay parked there until they take off.'],
     ['Oct 30', 'The rail activity warning only pops up for car carriers now, so it isn’t on all day.'],
     ['Oct 28', 'Aircraft glide smoothly between updates instead of hopping, and more Army helicopters get named.'],
     ['Oct 27', 'Following a bus on a phone is tidier: nothing on top of the banner or the bottom sheet.'],

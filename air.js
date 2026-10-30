@@ -191,7 +191,20 @@
     return Math.max(-cap, Math.min(cap, w));
   }
   // how long it may move on past its last report: shorter when reports have been coming in far apart
-  const coastOf = (m) => m.spotty ? COAST.spotty : m.heli ? COAST.heli : COAST.plane;
+  // landing at Bowerman or the hospital pad (low, close, heading in, slowing or coming down): glide only as far as the
+  // field or pad, then stop there and fade, like buses signing off at the depot, instead of coasting on past it
+  const LAND = FIELDS.filter((f) => f.id === 'HQM' || f.id === 'HRMC');
+  function landingAt(a, heli) {
+    if ((a.alt || 0) > 1500 || a.track == null) return null;
+    for (const f of LAND) {
+      if (f.heli && !heli) continue;
+      const d = nm(a, f);
+      const toward = angleDiff(a.track, bearing(a, f)) < 60;
+      if (d < 2 && (toward || d < 0.3) && ((a.rate ?? 0) < -100 || (a.gs || 0) < (heli ? 40 : 90))) return { f, secs: d * 1852 / Math.max(1, (a.gs || 0) * KT) };
+    }
+    return null;
+  }
+  const coastOf = (m) => Math.min(m.land ? m.land.secs : 1e9, m.spotty ? COAST.spotty : m.heli ? COAST.heli : COAST.plane);
   // where the report says it is `secs` seconds after it was heard
   function advance(m, secs) {
     const v = (m.gs || 0) * KT;
@@ -241,7 +254,10 @@
         ground: (a.alt || 0) < 100 && (a.gs || 0) < 40, heli, still: !Number.isFinite(a.pt), off: null,
         // spotty: this report came more than 40 s after the last one (or is already 20 s old when it gets here)
         spotty: (prev && !prev.still && t - prev.t > 40000) || now - t > 20000 };
+      m.label = a.flight || a.reg || a.hex;
       m.w = turnRate(a, prev, heli);
+      m.land = landingAt(a, heli);
+      if (m.land) m.w = 0; // (heading in: straight at it)
       if (prev && prev.shown && !m.still) {
         // how far the drawn spot is from where the new report says it should be now: split into along the way it's
         // heading (ahead or behind) and to the side, and ease both out
@@ -257,7 +273,42 @@
       }
       models.set(a.hex, m);
     }
-    for (const hex of models.keys()) if (!seen.has(hex)) models.delete(hex);
+    for (const [hex, m] of models) if (!seen.has(hex)) {
+      if (m.land) parkLanded(hex, m);
+      models.delete(hex);
+    }
+    for (const hex of seen) if (landed.has(hex)) { landed.delete(hex); saveLanded(); } // (heard again: it's taking off)
+  }
+  // ---- landed: an aircraft that came down at Bowerman or the hospital pad and went quiet stays there, gray, until
+  // it's heard again (taking off). Kept in this browser, so it survives a reload; anything parked over a week is dropped
+  const landed = new Map(); // hex -> { lat, lon, at, field, label, heli }
+  try { for (const [h, v] of Object.entries(JSON.parse(localStorage.getItem('ht.landed')) || {})) if (Date.now() - v.at < 7 * 864e5) landed.set(h, v); } catch {}
+  const saveLanded = () => { try { localStorage.setItem('ht.landed', JSON.stringify(Object.fromEntries(landed))); } catch {} };
+  // each parked aircraft gets its own spot in a row at the field or pad (a fixed number of pixels apart, so they never
+  // sit on top of each other at any zoom and every one stays clickable)
+  const freeSlot = (field) => { const used = new Set([...landed.values()].filter((v) => v.field === field).map((v) => v.slot)); let k = 0; while (used.has(k)) k++; return k; };
+  const slotPx = (k) => [k ? (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 30 : 0, 0];
+  for (const v of landed.values()) if (!Number.isInteger(v.slot)) v.slot = freeSlot(v.field);
+  function parkLanded(hex, m) {
+    const f = m.land.f;
+    landed.set(hex, { lat: f.lat, lon: f.lon, at: Date.now(), field: f.name, slot: freeSlot(f.name), label: m.label || hex, heli: m.heli });
+    saveLanded();
+  }
+  function drawLanded(hex, v) {
+    let mk = markers.get(hex);
+    if (!mk) {
+      const el = document.createElement('div'); el.className = 'air-mk';
+      mk = new maplibregl.Marker({ element: el }).setLngLat([v.lon, v.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '300px' })).addTo(map);
+      markers.set(hex, mk);
+    }
+    mk.setLngLat([v.lon, v.lat]).setOffset(slotPx(v.slot));
+    const el = mk.getElement();
+    el.classList.toggle('heli', !!v.heli); el.classList.remove('emerg');
+    el.style.opacity = '0.6'; el.style.filter = 'grayscale(1)';
+    el.innerHTML = `<div class="ic">${v.heli ? heliSvg('#9aa4a2', false) : planeSvg('#9aa4a2')}</div><span class="alt" style="color:#9aa4a2">LANDED</span>`;
+    el.title = `${v.label} · landed`;
+    const t = new Date(v.at).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase();
+    mk.getPopup().setHTML(`<h3>${esc(v.label)}</h3><p><b>LANDED</b> · ${esc(v.field)}</p><div class="m">LAST HEARD ${t} · STAYS HERE UNTIL IT'S HEARD AGAIN</div>`);
   }
   // move the markers along, about 10 times a second (4 on phones), only while aircraft are shown and the page is open
   let lastFrame = 0;
@@ -278,7 +329,7 @@
       }
       const at = altTxt(Math.round(p.alt));
       if (lab && lab.textContent !== at) lab.textContent = at;
-      const faded = now - m.t > FADE_AFTER;
+      const faded = now - m.t > (m.land ? 15000 : FADE_AFTER);
       if (faded !== !!m.faded) { m.faded = faded; el.style.opacity = faded ? '0.5' : ''; }
     }
   }
@@ -298,12 +349,13 @@
       }
       const m = models.get(a.hex), p = m ? place(m, Date.now()) : { lat: a.lat, lon: a.lon, trk: a.track, alt: a.alt };
       if (m) { m.shown = { lat: p.lat, lon: p.lon }; m.drawnTrk = p.trk; }
-      mk.setLngLat([p.lon, p.lat]);
+      mk.setLngLat([p.lon, p.lat]).setOffset([0, 0]);
       const el = mk.getElement();
+      el.style.filter = '';
       el.classList.toggle('emerg', !!EMERG[a.squawk]);
       el.classList.toggle('heli', isHeli(a));
       el.innerHTML = `<div class="ic" style="transform:rotate(calc(${p.trk ?? a.track ?? 0}deg - var(--brg, 0deg)))">${isHeli(a) ? heliSvg(c, isMedical(a)) : planeSvg(c)}</div><span class="alt" style="color:${c}">${altTxt(Math.round(p.alt ?? a.alt))}</span>`;
-      if (m) { m.faded = Date.now() - m.t > FADE_AFTER; el.style.opacity = m.faded ? '0.5' : ''; }
+      if (m) { m.faded = Date.now() - m.t > (m.land ? 15000 : FADE_AFTER); el.style.opacity = m.faded ? '0.5' : ''; }
       el.title = `${a.flight || a.reg || a.hex} · ${a.type || ''}`;
       const s = a._sit;
       mk.getPopup().setHTML(`<h3>${esc(a.flight || a.reg || a.hex)}${a.reg && a.reg !== a.flight ? ' · ' + esc(a.reg) : ''}</h3>
@@ -312,6 +364,7 @@
         ${regLine(a) ? `<div class="m">${esc(regLine(a))}</div>` : ''}
         <div class="m">${s.fieldNm.toFixed(1)} NM FROM ${esc(s.field.name)} · ${s.homeNm.toFixed(1)} NM FROM ABERDEEN</div>`);
     }
+    for (const [hex, v] of landed) if (!seen.has(hex)) { drawLanded(hex, v); seen.add(hex); }
     for (const [hex, mk] of markers) if (!seen.has(hex)) { mk.remove(); markers.delete(hex); }
     renderList();
     window.htDeclutter?.();
