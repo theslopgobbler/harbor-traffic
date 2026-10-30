@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T00:05:55.7248650+00:00",
+  "updated": "2026-10-30T00:15:55.3086400+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2324,7 +2324,7 @@
       "kind": "collision",
       "category": "Collision",
       "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 107.87 near Lilly Rd SE beginning at 4:27 pm on October 29, 2026 until further notice. The two left lanes are blocked.",
+      "headline": "Collision on I-5 southbound at milepost 107.87 near Lilly Rd SE beginning at 4:27 pm on October 29, 2026 until further notice. The lane is blocked.",
       "description": "",
       "link": null,
       "road": "005",
@@ -2336,9 +2336,9 @@
       "lat2": 0,
       "lon2": 0,
       "county": "Thurston",
-      "start": "2026-10-29T23:45:00.0000000+00:00",
+      "start": "2026-10-30T00:11:00.0000000+00:00",
       "end": null,
-      "updated": "2026-10-29T23:45:54.9970000+00:00"
+      "updated": "2026-10-30T00:11:34.2670000+00:00"
     },
     {
       "id": 693774,
