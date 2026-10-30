@@ -119,7 +119,8 @@
     "Bombardier Challenger 605": "2026-10-29T18:56:00.8321249+00:00",
     "Raytheon Aircraft Company King Air B350": "2026-10-29T19:25:56.5592558+00:00",
     "Gulfstream Aerospace GV": "2026-10-29T20:45:59.9080827+00:00",
-    "Textron Aviation Citation Sovereign+": "2026-10-29T23:06:00.4280711+00:00"
+    "Textron Aviation Citation Sovereign+": "2026-10-29T23:06:00.4280711+00:00",
+    "Boeing KC-135R": "2026-10-30T00:26:00.8741580+00:00"
   },
   "candidates": [
     {
@@ -7317,7 +7318,91 @@
       "date": "2014-08-15 17:33:48",
       "caption": "Private, M-UGIC, Gulfstream Aerospace GV-SP (G550)",
       "found": "2026-10-29T20:45:59.9080827+00:00"
+    },
+    {
+      "model": "Boeing KC-135R",
+      "file": "File:2022 Milwaukee Air & Water Show 078 (Wisconsin Air National Guard Boeing KC-135 Stratotanker and General Dynamics F-16 Fighting Falcons).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2022_Milwaukee_Air_%26_Water_Show_078_(Wisconsin_Air_National_Guard_Boeing_KC-135_Stratotanker_and_General_Dynamics_F-16_Fighting_Falcons).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/2022_Milwaukee_Air_%26_Water_Show_078_%28Wisconsin_Air_National_Guard_Boeing_KC-135_Stratotanker_and_General_Dynamics_F-16_Fighting_Falcons%29.jpg/960px-2022_Milwaukee_Air_%26_Water_Show_078_%28Wisconsin_Air_National_Guard_Boeing_KC-135_Stratotanker_and_General_Dynamics_F-16_Fighting_Falcons%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 24 July 2022",
+      "caption": "A Wisconsin Air National Guard Boeing KC-135 Stratotanker and General Dynamics F-16 Fighting Falcons at the 2022 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-10-30T00:26:00.8741580+00:00"
+    },
+    {
+      "model": "Boeing KC-135R",
+      "file": "File:2024 Milwaukee Air and Water Show 169 (Wisconsin Air National Guard Boeing KC-135 Stratotanker).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_Milwaukee_Air_and_Water_Show_169_(Wisconsin_Air_National_Guard_Boeing_KC-135_Stratotanker).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/2024_Milwaukee_Air_and_Water_Show_169_%28Wisconsin_Air_National_Guard_Boeing_KC-135_Stratotanker%29.jpg/960px-2024_Milwaukee_Air_and_Water_Show_169_%28Wisconsin_Air_National_Guard_Boeing_KC-135_Stratotanker%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 28 July 2024",
+      "caption": "A Wisconsin Air National Guard Boeing KC-135 Stratotanker at the 2024 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-10-30T00:26:00.8741580+00:00"
+    },
+    {
+      "model": "Boeing KC-135R",
+      "file": "File:Barksdale Global Power Museum September 2015 51 (Boeing KC-135A Stratotanker).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Barksdale_Global_Power_Museum_September_2015_51_(Boeing_KC-135A_Stratotanker).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Barksdale_Global_Power_Museum_September_2015_51_%28Boeing_KC-135A_Stratotanker%29.jpg/960px-Barksdale_Global_Power_Museum_September_2015_51_%28Boeing_KC-135A_Stratotanker%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-09-19",
+      "caption": "A Boeing KC-135A Stratotanker on display at the Barksdale Global Power Museum at Barksdale Air Force Base near Bossier City , Louisiana ( United States ).",
+      "found": "2026-10-30T00:26:00.8741580+00:00"
+    },
+    {
+      "model": "Boeing KC-135R",
+      "file": "File:Boeing KC-135 Stratotanker (5704701388).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_KC-135_Stratotanker_(5704701388).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Boeing_KC-135_Stratotanker_%285704701388%29.jpg/960px-Boeing_KC-135_Stratotanker_%285704701388%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "Robert Frola",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2011-04-05 05:25:06",
+      "caption": "This snapshot of the page as it appeared on 30 Apr 2011 15:19:21 GMT on Jetphotos.net, was viewed 596 unique times since added on April 18, 2011. (Photo number 2727) Avalon 2011 Australian International Airshow",
+      "found": "2026-10-30T00:26:00.8741580+00:00"
+    },
+    {
+      "model": "Boeing KC-135R",
+      "file": "File:Boeing KC-135 Stratotanker (unidentified) US Air Force. (8313761066).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_KC-135_Stratotanker_(unidentified)_US_Air_Force._(8313761066).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Boeing_KC-135_Stratotanker_%28unidentified%29_US_Air_Force._%288313761066%29.jpg/960px-Boeing_KC-135_Stratotanker_%28unidentified%29_US_Air_Force._%288313761066%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 666,
+      "author": "Andrew Thomas from Shrewsbury, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-12-27 06:15",
+      "caption": "AMARG, Tucson - Davis-Monthan AFB (DMA / KDMA) USA - Arizona, February 17 2007.",
+      "found": "2026-10-30T00:26:00.8741580+00:00"
+    },
+    {
+      "model": "Boeing KC-135R",
+      "file": "File:F-16 refuelling, Exercise Green Flag East - 081201-F-3071N-235.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-16_refuelling,_Exercise_Green_Flag_East_-_081201-F-3071N-235.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/F-16_refuelling%2C_Exercise_Green_Flag_East_-_081201-F-3071N-235.jpg/960px-F-16_refuelling%2C_Exercise_Green_Flag_East_-_081201-F-3071N-235.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1442,
+      "author": "U.S. Air Force photo/Master Sgt. John Nimmo Sr.",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2008-12-01",
+      "caption": "A U.S. Air National Guard General Dynamics F-16C Fighting Falcon receives fuel from a Boeing KC-135R Stratotanker on 1 December 2008 en route to Barksdale Air Force Base, Louisiana (USA), to take part in exercise \"Gre...",
+      "found": "2026-10-30T00:26:00.8741580+00:00"
     }
   ],
-  "updated": "2026-10-30T00:15:55.3086400+00:00"
+  "updated": "2026-10-30T00:26:00.8741580+00:00"
 }
