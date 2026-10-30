@@ -120,7 +120,8 @@
     "Raytheon Aircraft Company King Air B350": "2026-10-29T19:25:56.5592558+00:00",
     "Gulfstream Aerospace GV": "2026-10-29T20:45:59.9080827+00:00",
     "Textron Aviation Citation Sovereign+": "2026-10-29T23:06:00.4280711+00:00",
-    "Boeing KC-135R": "2026-10-30T00:26:00.874158+00:00"
+    "Boeing KC-135R": "2026-10-30T00:26:00.874158+00:00",
+    "Bombardier CRJ 900": "2026-10-30T01:05:53.9656658+00:00"
   },
   "candidates": [
     {
@@ -7402,7 +7403,91 @@
       "date": "2008-12-01",
       "caption": "A U.S. Air National Guard General Dynamics F-16C Fighting Falcon receives fuel from a Boeing KC-135R Stratotanker on 1 December 2008 en route to Barksdale Air Force Base, Louisiana (USA), to take part in exercise \"Gre...",
       "found": "2026-10-30T00:26:00.874158+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900",
+      "file": "File:Air Canada Express Bombardier CRJ-900 C-FJFZ BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Air_Canada_Express_Bombardier_CRJ-900_C-FJFZ_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Air_Canada_Express_Bombardier_CRJ-900_C-FJFZ_BWI_MD1.jpg/960px-Air_Canada_Express_Bombardier_CRJ-900_C-FJFZ_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 427,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-08-23",
+      "caption": "2020 Air Canada Express Bombardier CRJ-900 C-FJFZ on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-10-30T01:05:53.9656658+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900",
+      "file": "File:Bombardier CRJ-900 by Lufthansa CityLine.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_CRJ-900_by_Lufthansa_CityLine.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Bombardier_CRJ-900_by_Lufthansa_CityLine.jpg/960px-Bombardier_CRJ-900_by_Lufthansa_CityLine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Petr Lívanec",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-09 14:56:16",
+      "caption": "A Lufthansa Bombardier CRJ-900 aircraft landing at Prague Airport.",
+      "found": "2026-10-30T01:05:53.9656658+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900",
+      "file": "File:Bombardier CRJ 900-Lufthansa CityLine.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_CRJ_900-Lufthansa_CityLine.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Bombardier_CRJ_900-Lufthansa_CityLine.jpg/960px-Bombardier_CRJ_900-Lufthansa_CityLine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Klever",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2007-09-12",
+      "caption": "Lufthansa CityLine Bombardier CRJ900",
+      "found": "2026-10-30T01:05:53.9656658+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900",
+      "file": "File:Endeavor Air Delta Connection Bombardier CRJ-900 N933XJ DCA VA1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Endeavor_Air_Delta_Connection_Bombardier_CRJ-900_N933XJ_DCA_VA1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Endeavor_Air_Delta_Connection_Bombardier_CRJ-900_N933XJ_DCA_VA1.jpg/960px-Endeavor_Air_Delta_Connection_Bombardier_CRJ-900_N933XJ_DCA_VA1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 422,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-07-31",
+      "caption": "Endeavor Air/Delta Connection Bombardier CRJ-900 N933XJ landing at Ronald Reagan Washington National Airport, Virginia, USA",
+      "found": "2026-10-30T01:05:53.9656658+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900",
+      "file": "File:PSA American Eagle Bombardier CRJ-900 N633NN DCA VA1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:PSA_American_Eagle_Bombardier_CRJ-900_N633NN_DCA_VA1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/PSA_American_Eagle_Bombardier_CRJ-900_N633NN_DCA_VA1.jpg/960px-PSA_American_Eagle_Bombardier_CRJ-900_N633NN_DCA_VA1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 469,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-07-31",
+      "caption": "2015 PSA/American Eagle Bombardier CRJ-900 N633NN taking off from Ronald Reagan Washington National Airport, Virginia, USA",
+      "found": "2026-10-30T01:05:53.9656658+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900",
+      "file": "File:PSA Bombardier CRJ-900 N618NN BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:PSA_Bombardier_CRJ-900_N618NN_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/PSA_Bombardier_CRJ-900_N618NN_BWI_MD1.jpg/960px-PSA_Bombardier_CRJ-900_N618NN_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 602,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-01-30",
+      "caption": "2017 PSA Airlines/American Eagle Bombardier CRJ-900 N618NN taking off at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-10-30T01:05:53.9656658+00:00"
     }
   ],
-  "updated": "2026-10-30T00:56:00.7608859+00:00"
+  "updated": "2026-10-30T01:05:53.9656658+00:00"
 }
