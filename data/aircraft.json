@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T18:16:00.4072440+00:00",
+  "updated": "2026-10-30T18:25:59.4058030+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,45 +8,13 @@
       "reg": "N734FN",
       "type": "C172",
       "cat": "A1",
-      "alt": 900,
-      "gs": 89.3,
-      "track": 195.59,
-      "rate": 1088,
-      "lat": 46.9747,
-      "lon": -122.90342,
+      "alt": 3050,
+      "gs": 109.7,
+      "track": 331.1,
+      "rate": -64,
+      "lat": 47.11551,
+      "lon": -122.86704,
       "squawk": "4756",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a20bf5",
-      "flight": "N2308E",
-      "reg": "N2308E",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 2000,
-      "gs": 92.5,
-      "track": 173.8,
-      "rate": 0,
-      "lat": 47.22064,
-      "lon": -122.76229,
-      "squawk": "4663",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a89caa",
-      "flight": "GFY2112",
-      "reg": "N654MA",
-      "type": "AS50",
-      "cat": "A1",
-      "alt": 1125,
-      "gs": 93.3,
-      "track": 184.92,
-      "rate": 256,
-      "lat": 47.19608,
-      "lon": -122.72614,
-      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
