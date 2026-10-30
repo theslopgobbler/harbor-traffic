@@ -283,32 +283,43 @@
   // it's heard again (taking off). Kept in this browser, so it survives a reload; anything parked over a week is dropped
   const landed = new Map(); // hex -> { lat, lon, at, field, label, heli }
   try { for (const [h, v] of Object.entries(JSON.parse(localStorage.getItem('ht.landed')) || {})) if (Date.now() - v.at < 7 * 864e5) landed.set(h, v); } catch {}
+  setInterval(() => { let gone = false; for (const [h, v] of landed) if (Date.now() - v.at > 7 * 864e5) { landed.delete(h); gone = true; } if (gone) saveLanded(); }, 3600e3);
   const saveLanded = () => { try { localStorage.setItem('ht.landed', JSON.stringify(Object.fromEntries(landed))); } catch {} };
-  // each parked aircraft gets its own spot in a row at the field or pad (a fixed number of pixels apart, so they never
-  // sit on top of each other at any zoom and every one stays clickable)
-  const freeSlot = (field) => { const used = new Set([...landed.values()].filter((v) => v.field === field).map((v) => v.slot)); let k = 0; while (used.has(k)) k++; return k; };
-  const slotPx = (k) => [k ? (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 30 : 0, 0];
-  for (const v of landed.values()) if (!Number.isInteger(v.slot)) v.slot = freeSlot(v.field);
+  // at most two gray icons per field: one plane, one helicopter (side by side, a fixed 30 px apart so neither covers
+  // the other at any zoom). Tapping one lists everything of that kind parked there
   function parkLanded(hex, m) {
     const f = m.land.f;
-    landed.set(hex, { lat: f.lat, lon: f.lon, at: Date.now(), field: f.name, slot: freeSlot(f.name), label: m.label || hex, heli: m.heli });
+    landed.set(hex, { lat: f.lat, lon: f.lon, at: Date.now(), field: f.name, label: m.label || hex, heli: m.heli });
     saveLanded();
   }
-  function drawLanded(hex, v) {
-    let mk = markers.get(hex);
-    if (!mk) {
-      const el = document.createElement('div'); el.className = 'air-mk';
-      mk = new maplibregl.Marker({ element: el }).setLngLat([v.lon, v.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '300px' })).addTo(map);
-      markers.set(hex, mk);
+  function drawLandedGroups(seen) {
+    const groups = new Map(); // "landed|field|h or p" -> parked aircraft, newest first
+    for (const v of [...landed.values()].sort((x, y) => y.at - x.at)) {
+      const k = `landed|${v.field}|${v.heli ? 'h' : 'p'}`;
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(v);
     }
-    mk.setLngLat([v.lon, v.lat]).setOffset(slotPx(v.slot));
-    const el = mk.getElement();
-    el.classList.toggle('heli', !!v.heli); el.classList.remove('emerg');
-    el.style.opacity = '0.6'; el.style.filter = 'grayscale(1)';
-    el.innerHTML = `<div class="ic">${v.heli ? heliSvg('#9aa4a2', false) : planeSvg('#9aa4a2')}</div><span class="alt" style="color:#9aa4a2">LANDED</span>`;
-    el.title = `${v.label} · landed`;
-    const t = new Date(v.at).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase();
-    mk.getPopup().setHTML(`<h3>${esc(v.label)}</h3><p><b>LANDED</b> · ${esc(v.field)}</p><div class="m">LAST HEARD ${t} · STAYS HERE UNTIL IT'S HEARD AGAIN</div>`);
+    for (const [k, list] of groups) {
+      seen.add(k);
+      const v = list[0], heli = !!v.heli, both = groups.has(`landed|${v.field}|${heli ? 'p' : 'h'}`);
+      let mk = markers.get(k);
+      if (!mk) {
+        const el = document.createElement('div'); el.className = 'air-mk';
+        mk = new maplibregl.Marker({ element: el }).setLngLat([v.lon, v.lat]).setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '300px' })).addTo(map);
+        markers.set(k, mk);
+      }
+      mk.setLngLat([v.lon, v.lat]).setOffset(both ? [heli ? 15 : -15, 0] : [0, 0]);
+      const el = mk.getElement();
+      el.classList.toggle('heli', heli); el.classList.remove('emerg');
+      el.style.opacity = '0.6'; el.style.filter = 'grayscale(1)';
+      const n = list.length, what = heli ? 'HELICOPTER' : 'PLANE';
+      el.innerHTML = `<div class="ic">${heli ? heliSvg('#9aa4a2', false) : planeSvg('#9aa4a2')}</div><span class="alt" style="color:#9aa4a2">${n > 1 ? n + ' LANDED' : 'LANDED'}</span>`;
+      el.title = `${n} ${what.toLowerCase()}${n > 1 ? 's' : ''} landed`;
+      const t = (at) => new Date(at).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase();
+      mk.getPopup().setHTML(`<h3>${n} ${what}${n > 1 ? 'S' : ''} LANDED</h3><p>${esc(v.field)}</p>
+        ${list.map((x) => `<div class="m">${esc(x.label)} · LAST HEARD ${t(x.at)}</div>`).join('')}
+        <div class="m">EACH STAYS LISTED UNTIL IT'S HEARD AGAIN (TAKING OFF), OR FOR A WEEK</div>`);
+    }
   }
   // move the markers along, about 10 times a second (4 on phones), only while aircraft are shown and the page is open
   let lastFrame = 0;
@@ -364,7 +375,8 @@
         ${regLine(a) ? `<div class="m">${esc(regLine(a))}</div>` : ''}
         <div class="m">${s.fieldNm.toFixed(1)} NM FROM ${esc(s.field.name)} · ${s.homeNm.toFixed(1)} NM FROM ABERDEEN</div>`);
     }
-    for (const [hex, v] of landed) if (!seen.has(hex)) { drawLanded(hex, v); seen.add(hex); }
+    for (const hex of seen) landed.delete(hex); // (a parked one that's on the live list isn't parked)
+    drawLandedGroups(seen);
     for (const [hex, mk] of markers) if (!seen.has(hex)) { mk.remove(); markers.delete(hex); }
     renderList();
     window.htDeclutter?.();
