@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T03:35:56.2486297+00:00",
+  "updated": "2026-10-30T03:45:56.6757529+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1376,6 +1376,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 722728,
+      "kind": "closure",
+      "category": "Debris",
+      "priority": "Highest",
+      "headline": "Debris on I-5 southbound at milepost 109.1 before Martin Way E beginning at 8:36 pm on October 29, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 109.1,
+      "lat": 47.048447348,
+      "lon": -122.8194846,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-10-30T03:36:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-10-30T03:38:07.9730000+00:00"
     },
     {
       "id": 693774,
