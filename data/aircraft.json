@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-30T06:15:59.4159271+00:00",
+  "updated": "2026-10-30T06:26:00.0991747+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ac5e23",
+      "flight": "SWA1548",
+      "reg": "N8961K",
+      "type": "B38M",
+      "cat": "A3",
+      "alt": 14100,
+      "gs": 366.0,
+      "track": 217.34,
+      "rate": 2752,
+      "lat": 47.2435,
+      "lon": -122.84775,
+      "squawk": "3547",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
