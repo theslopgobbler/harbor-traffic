@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-30T13:16:03.5646331+00:00",
+  "updated": "2026-10-30T13:25:58.3460395+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a4caba",
+      "flight": "DAL9966",
+      "reg": "N408DX",
+      "type": "A339",
+      "cat": "A5",
+      "alt": 13200,
+      "gs": 317.9,
+      "track": 82.23,
+      "rate": -512,
+      "lat": 47.96356,
+      "lon": -123.70549,
+      "squawk": "1131",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
