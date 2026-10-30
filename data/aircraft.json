@@ -1,7 +1,23 @@
 {
-  "updated": "2026-10-30T21:35:54.9708482+00:00",
+  "updated": "2026-10-30T21:45:57.2230767+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
+    {
+      "hex": "a4d97e",
+      "flight": "SKW3294",
+      "reg": "N411SY",
+      "type": "E75L",
+      "cat": "A3",
+      "alt": 8975,
+      "gs": 257.2,
+      "track": 158.32,
+      "rate": -1216,
+      "lat": 47.8786,
+      "lon": -122.76095,
+      "squawk": "7057",
+      "emergency": "none",
+      "mil": false
+    },
     {
       "hex": "a84a11",
       "flight": "RFS724",
@@ -9,28 +25,12 @@
       "type": "C172",
       "cat": "A1",
       "alt": 3525,
-      "gs": 97.1,
-      "track": 87.64,
-      "rate": -64,
-      "lat": 47.3318,
-      "lon": -122.86821,
+      "gs": 65.6,
+      "track": 158.52,
+      "rate": 832,
+      "lat": 47.11589,
+      "lon": -122.72517,
       "squawk": "4624",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a336ef",
-      "flight": "RFS709",
-      "reg": "N306PP",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 3775,
-      "gs": 68.0,
-      "track": 147.01,
-      "rate": 704,
-      "lat": 47.02833,
-      "lon": -122.73292,
-      "squawk": "4723",
       "emergency": "none",
       "mil": false
     }
