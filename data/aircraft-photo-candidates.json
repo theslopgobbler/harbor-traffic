@@ -122,7 +122,8 @@
     "Textron Aviation Citation Sovereign+": "2026-10-29T23:06:00.4280711+00:00",
     "Boeing KC-135R": "2026-10-30T00:26:00.874158+00:00",
     "Bombardier CRJ 900": "2026-10-30T01:05:53.9656658+00:00",
-    "Piper PA-46-600TP M600/SLS": "2026-10-30T19:45:58.3084256+00:00"
+    "Piper PA-46-600TP M600/SLS": "2026-10-30T19:45:58.3084256+00:00",
+    "Boeing 777 300ER": "2026-10-30T21:25:54.6458962+00:00"
   },
   "candidates": [
     {
@@ -7558,7 +7559,91 @@
       "date": "2023-02-15",
       "caption": "Piper PA-46-600TP M600-SLS (N519TL, cn 4698232) at Daytona Beach International Airport.",
       "found": "2026-10-30T19:45:58.3084256+00:00"
+    },
+    {
+      "model": "Boeing 777 300ER",
+      "file": "File:Aeroflot - Boeing 777-300ER - RA-73143 - Flickr - -= Nikita Zhuravlev =.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Aeroflot_-_Boeing_777-300ER_-_RA-73143_-_Flickr_-_-%3D_Nikita_Zhuravlev_%3D.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Aeroflot_-_Boeing_777-300ER_-_RA-73143_-_Flickr_-_-%3D_Nikita_Zhuravlev_%3D.png/960px-Aeroflot_-_Boeing_777-300ER_-_RA-73143_-_Flickr_-_-%3D_Nikita_Zhuravlev_%3D.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Nikita Zhuravlev from Petropavlovsk-Kamchatsky, Russia",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 6 June 2026",
+      "caption": "Koryaksky volcano in the background",
+      "found": "2026-10-30T21:25:54.6458962+00:00"
+    },
+    {
+      "model": "Boeing 777 300ER",
+      "file": "File:Qatar Airways Boeing 777-300ER A7-BEH MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Qatar_Airways_Boeing_777-300ER_A7-BEH_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Qatar_Airways_Boeing_777-300ER_A7-BEH_MD1.jpg/960px-Qatar_Airways_Boeing_777-300ER_A7-BEH_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 652,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-08-24",
+      "caption": "2016 Qatar Airways Boeing 777-300ER A7-BEH approaching Washington Dulles International Airport over Maryland, USA",
+      "found": "2026-10-30T21:25:54.6458962+00:00"
+    },
+    {
+      "model": "Boeing 777 300ER",
+      "file": "File:Qatar Boeing 777-300ER A7-BEP IAD VA1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Qatar_Boeing_777-300ER_A7-BEP_IAD_VA1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Qatar_Boeing_777-300ER_A7-BEP_IAD_VA1.jpg/960px-Qatar_Boeing_777-300ER_A7-BEP_IAD_VA1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 470,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-30",
+      "caption": "Qatar Airways Boeing 777-300ER A7-BEP on final approach at Washington Dulles International Airport, Virginia, USA",
+      "found": "2026-10-30T21:25:54.6458962+00:00"
+    },
+    {
+      "model": "Boeing 777 300ER",
+      "file": "File:Qatar Boeing 777-300ER A7-BEP IAD VA2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Qatar_Boeing_777-300ER_A7-BEP_IAD_VA2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Qatar_Boeing_777-300ER_A7-BEP_IAD_VA2.jpg/960px-Qatar_Boeing_777-300ER_A7-BEP_IAD_VA2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 454,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-30",
+      "caption": "Qatar Airways Boeing 777-300ER A7-BEP on final approach at Washington Dulles International Airport, Virginia, USA",
+      "found": "2026-10-30T21:25:54.6458962+00:00"
+    },
+    {
+      "model": "Boeing 777 300ER",
+      "file": "File:Qatar Boeing 777-300ER A7-BES IAD VA1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Qatar_Boeing_777-300ER_A7-BES_IAD_VA1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Qatar_Boeing_777-300ER_A7-BES_IAD_VA1.jpg/960px-Qatar_Boeing_777-300ER_A7-BES_IAD_VA1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 544,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-09-12",
+      "caption": "2018 Qatar Airways Boeing 777-300ER A7-BES on final approach at Washington Dulles International Airport, Virginia, USA",
+      "found": "2026-10-30T21:25:54.6458962+00:00"
+    },
+    {
+      "model": "Boeing 777 300ER",
+      "file": "File:United Boeing 777-300ER N2136U IAD VA2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Boeing_777-300ER_N2136U_IAD_VA2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/United_Boeing_777-300ER_N2136U_IAD_VA2.jpg/960px-United_Boeing_777-300ER_N2136U_IAD_VA2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 460,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-30",
+      "caption": "2017 United Airlines Boeing 777-300ER N2136U on final approach at Washington Dulles International Airport, Virginia, USA",
+      "found": "2026-10-30T21:25:54.6458962+00:00"
     }
   ],
-  "updated": "2026-10-30T21:15:57.9485127+00:00"
+  "updated": "2026-10-30T21:25:54.6458962+00:00"
 }
