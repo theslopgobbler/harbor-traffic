@@ -123,7 +123,8 @@
     "Boeing KC-135R": "2026-10-30T00:26:00.874158+00:00",
     "Bombardier CRJ 900": "2026-10-30T01:05:53.9656658+00:00",
     "Piper PA-46-600TP M600/SLS": "2026-10-30T19:45:58.3084256+00:00",
-    "Boeing 777 300ER": "2026-10-30T21:25:54.6458962+00:00"
+    "Boeing 777 300ER": "2026-10-30T21:25:54.6458962+00:00",
+    "Embraer Phenom 100": "2026-10-30T23:15:53.7642205+00:00"
   },
   "candidates": [
     {
@@ -7643,7 +7644,91 @@
       "date": "2025-04-30",
       "caption": "2017 United Airlines Boeing 777-300ER N2136U on final approach at Washington Dulles International Airport, Virginia, USA",
       "found": "2026-10-30T21:25:54.6458962+00:00"
+    },
+    {
+      "model": "Embraer Phenom 100",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190455).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190455).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190455%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190455%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Cabin of a Embraer Phenom 100 EV at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-10-30T23:15:53.7642205+00:00"
+    },
+    {
+      "model": "Embraer Phenom 100",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190464).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190464).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190464%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190464%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-10-30T23:15:53.7642205+00:00"
+    },
+    {
+      "model": "Embraer Phenom 100",
+      "file": "File:Embraer, EBACE 2019, Le Grand-Saconnex (EB190459).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer,_EBACE_2019,_Le_Grand-Saconnex_(EB190459).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190459%29.jpg/960px-Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190459%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Cabin of an Embraer Phenom 100E at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-10-30T23:15:53.7642205+00:00"
+    },
+    {
+      "model": "Embraer Phenom 100",
+      "file": "File:Embraer Phenom 100, EBACE 2019, Le Grand-Saconnex (EB190457).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_100,_EBACE_2019,_Le_Grand-Saconnex_(EB190457).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Embraer_Phenom_100%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190457%29.jpg/960px-Embraer_Phenom_100%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190457%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "EBACE 2019, Palexpo, Switzerland",
+      "found": "2026-10-30T23:15:53.7642205+00:00"
+    },
+    {
+      "model": "Embraer Phenom 100",
+      "file": "File:Embraer Phenom 100 N316N FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_100_N316N_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Embraer_Phenom_100_N316N_FDK_MD1.jpg/960px-Embraer_Phenom_100_N316N_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 518,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-10-25",
+      "caption": "2012 Embraer Phenom 100 N326N at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-30T23:15:53.7642205+00:00"
+    },
+    {
+      "model": "Embraer Phenom 100",
+      "file": "File:Embraer Phenom 100 N316N FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Phenom_100_N316N_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Embraer_Phenom_100_N316N_FDK_MD2.jpg/960px-Embraer_Phenom_100_N316N_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 475,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-03-18",
+      "caption": "Embraer Phenom 100 N326N at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-10-30T23:15:53.7642205+00:00"
     }
   ],
-  "updated": "2026-10-30T23:06:01.6688966+00:00"
+  "updated": "2026-10-30T23:15:53.7642205+00:00"
 }
