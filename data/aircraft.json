@@ -1,38 +1,5 @@
 {
-  "updated": "2026-10-30T02:06:01.5820363+00:00",
+  "updated": "2026-10-30T02:16:00.4577225+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ae6d03",
-      "flight": "BURNT42",
-      "reg": "21-02927",
-      "type": "H47",
-      "cat": "A7",
-      "alt": 1375,
-      "gs": 136.3,
-      "track": 8.01,
-      "rate": 0,
-      "lat": 46.69804,
-      "lon": -122.84892,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": true
-    },
-    {
-      "hex": "000001",
-      "flight": "BURNT41",
-      "reg": null,
-      "type": null,
-      "cat": "A7",
-      "alt": 700,
-      "gs": 81.2,
-      "track": 189.93,
-      "rate": 0,
-      "lat": 46.91496,
-      "lon": -122.75059,
-      "squawk": "6362",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
