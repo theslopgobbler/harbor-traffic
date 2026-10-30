@@ -411,7 +411,8 @@
     "366999010": "2026-10-29T17:25:58.1424961+00:00",
     "477133900": "2026-10-29T17:46:02.5186073+00:00",
     "563168500": "2026-10-29T18:56:00.8321249+00:00",
-    "538011495": "2026-10-29T20:35:58.1805109+00:00"
+    "538011495": "2026-10-29T20:35:58.1805109+00:00",
+    "538012377": "2026-10-30T02:46:00.2246710+00:00"
   },
   "candidates": [
     {
@@ -3653,7 +3654,127 @@
       "date": "Taken on 1 November 2020",
       "caption": "Tugboat Island Voyager in Elliott Bay, seen from Jack Block Park, Seattle, Washington, U.S.",
       "found": "2026-10-29T17:25:58.1424961+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Mercurian Virgo IMO 8907905 at the Berendrecht locks, Antwerp, Belgium 20-May-2005.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mercurian_Virgo_IMO_8907905_at_the_Berendrecht_locks,_Antwerp,_Belgium_20-May-2005.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Mercurian_Virgo_IMO_8907905_at_the_Berendrecht_locks%2C_Antwerp%2C_Belgium_20-May-2005.jpg/1280px-Mercurian_Virgo_IMO_8907905_at_the_Berendrecht_locks%2C_Antwerp%2C_Belgium_20-May-2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alf van Beem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-05-20 15:01:07",
+      "caption": "Mercurian Virgo IMO 8907905 at the Berendrecht locks, Antwerp, Belgium 20-May-2005",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire Drydock Engineroom.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_Drydock_Engineroom.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Union_Sapphire_Drydock_Engineroom.jpg/1280px-Union_Sapphire_Drydock_Engineroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire Engine Drydock pE sb.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_Engine_Drydock_pE_sb.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Union_Sapphire_Engine_Drydock_pE_sb.jpg/1280px-Union_Sapphire_Engine_Drydock_pE_sb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire Engine Drydock sb.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_Engine_Drydock_sb.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Union_Sapphire_Engine_Drydock_sb.jpg/1280px-Union_Sapphire_Engine_Drydock_sb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire bow propeller 11-Jan-2005.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_bow_propeller_11-Jan-2005.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Union_Sapphire_bow_propeller_11-Jan-2005.jpg/1280px-Union_Sapphire_bow_propeller_11-Jan-2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire bridge 11-Jan-2005.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_bridge_11-Jan-2005.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Union_Sapphire_bridge_11-Jan-2005.jpg/1280px-Union_Sapphire_bridge_11-Jan-2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire bridge back to front.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_bridge_back_to_front.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Union_Sapphire_bridge_back_to_front.jpg/1280px-Union_Sapphire_bridge_back_to_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
+    },
+    {
+      "mmsi": "538012377",
+      "ship": "UNION SAPPHIRE",
+      "file": "File:Union Sapphire close up of the propellor 11-Jan-2005.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Union_Sapphire_close_up_of_the_propellor_11-Jan-2005.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Union_Sapphire_close_up_of_the_propellor_11-Jan-2005.jpg/1280px-Union_Sapphire_close_up_of_the_propellor_11-Jan-2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alfvanbeem",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2005-01-11",
+      "caption": "Photographed in the drydocks of Antwerp, Belgium.",
+      "found": "2026-10-30T02:46:00.2246710+00:00"
     }
   ],
-  "updated": "2026-10-30T02:41:45.0345357+00:00"
+  "updated": "2026-10-30T02:46:00.2246710+00:00"
 }
