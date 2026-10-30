@@ -121,7 +121,8 @@
     "Gulfstream Aerospace GV": "2026-10-29T20:45:59.9080827+00:00",
     "Textron Aviation Citation Sovereign+": "2026-10-29T23:06:00.4280711+00:00",
     "Boeing KC-135R": "2026-10-30T00:26:00.874158+00:00",
-    "Bombardier CRJ 900": "2026-10-30T01:05:53.9656658+00:00"
+    "Bombardier CRJ 900": "2026-10-30T01:05:53.9656658+00:00",
+    "Piper PA-46-600TP M600/SLS": "2026-10-30T19:45:58.3084256+00:00"
   },
   "candidates": [
     {
@@ -7487,7 +7488,77 @@
       "date": "2025-01-30",
       "caption": "2017 PSA Airlines/American Eagle Bombardier CRJ-900 N618NN taking off at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
       "found": "2026-10-30T01:05:53.9656658+00:00"
+    },
+    {
+      "model": "Piper PA-46-600TP M600/SLS",
+      "file": "File:N641WA 2020 Piper PA-46-600TP M600SLS s n 4698141 (51673457265).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N641WA_2020_Piper_PA-46-600TP_M600SLS_s_n_4698141_(51673457265).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/N641WA_2020_Piper_PA-46-600TP_M600SLS_s_n_4698141_%2851673457265%29.jpg/960px-N641WA_2020_Piper_PA-46-600TP_M600SLS_s_n_4698141_%2851673457265%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 486,
+      "author": "Tomás Del Coro from Fabulous Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-11-04 15:11",
+      "caption": "M600/SLS Aircraft / HALO Safety System &amp; Autoland / Piper Piper Aircraft no longer refers to their top-of-the-line aircraft with the names Malibu, Malibu Mirage or Malibu Meridian. The PA-46 line of aircraft, as o...",
+      "found": "2026-10-30T19:45:58.3084256+00:00"
+    },
+    {
+      "model": "Piper PA-46-600TP M600/SLS",
+      "file": "File:Piper PA-46-600TP M600-SLS (C-GLFX, cn 4698160) (1-12-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-46-600TP_M600-SLS_(C-GLFX,_cn_4698160)_(1-12-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Piper_PA-46-600TP_M600-SLS_%28C-GLFX%2C_cn_4698160%29_%281-12-2023%29.jpg/960px-Piper_PA-46-600TP_M600-SLS_%28C-GLFX%2C_cn_4698160%29_%281-12-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-01-12",
+      "caption": "Piper PA-46-600TP M600-SLS (C-GLFX, cn 4698160) at Daytona Beach International Airport.",
+      "found": "2026-10-30T19:45:58.3084256+00:00"
+    },
+    {
+      "model": "Piper PA-46-600TP M600/SLS",
+      "file": "File:Piper PA-46-600TP M600-SLS (N146PM, cn 4698146) (4-12-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-46-600TP_M600-SLS_(N146PM,_cn_4698146)_(4-12-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Piper_PA-46-600TP_M600-SLS_%28N146PM%2C_cn_4698146%29_%284-12-2024%29.jpg/960px-Piper_PA-46-600TP_M600-SLS_%28N146PM%2C_cn_4698146%29_%284-12-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-12",
+      "caption": "Piper PA-46-600TP M600-SLS (N146PM, cn 4698146) at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-10-30T19:45:58.3084256+00:00"
+    },
+    {
+      "model": "Piper PA-46-600TP M600/SLS",
+      "file": "File:Piper PA-46-600TP M600-SLS (N322WW, cn 4698133) (10-20-2022).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-46-600TP_M600-SLS_(N322WW,_cn_4698133)_(10-20-2022).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Piper_PA-46-600TP_M600-SLS_%28N322WW%2C_cn_4698133%29_%2810-20-2022%29.jpg/960px-Piper_PA-46-600TP_M600-SLS_%28N322WW%2C_cn_4698133%29_%2810-20-2022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-10-20",
+      "caption": "A Piper PA-46-600TP M600/SLS at 2022 NBAA-BACE, Orlando Executive Airport.",
+      "found": "2026-10-30T19:45:58.3084256+00:00"
+    },
+    {
+      "model": "Piper PA-46-600TP M600/SLS",
+      "file": "File:Piper PA-46-600TP M600-SLS (N519TL, cn 4698232) (2-15-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-46-600TP_M600-SLS_(N519TL,_cn_4698232)_(2-15-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Piper_PA-46-600TP_M600-SLS_%28N519TL%2C_cn_4698232%29_%282-15-2023%29.jpg/960px-Piper_PA-46-600TP_M600-SLS_%28N519TL%2C_cn_4698232%29_%282-15-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-02-15",
+      "caption": "Piper PA-46-600TP M600-SLS (N519TL, cn 4698232) at Daytona Beach International Airport.",
+      "found": "2026-10-30T19:45:58.3084256+00:00"
     }
   ],
-  "updated": "2026-10-30T19:35:56.9493842+00:00"
+  "updated": "2026-10-30T19:45:58.3084256+00:00"
 }
