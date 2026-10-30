@@ -417,7 +417,9 @@
     "352006548": "2026-10-30T04:55:58.4260801+00:00",
     "538010248": "2026-10-30T04:55:58.4260801+00:00",
     "538006508": "2026-10-30T08:35:57.1117676+00:00",
-    "367513230": "2026-10-30T09:03:19.5479487+00:00"
+    "367513230": "2026-10-30T09:03:19.5479487+00:00",
+    "538012818": "2026-10-30T12:35:59.1997735+00:00",
+    "538006443": "2026-10-30T12:35:59.1997735+00:00"
   },
   "candidates": [
     {
@@ -3779,7 +3781,22 @@
       "date": "2005-01-11",
       "caption": "Photographed in the drydocks of Antwerp, Belgium.",
       "found": "2026-10-30T02:46:00.224671+00:00"
+    },
+    {
+      "mmsi": "538006443",
+      "ship": "RB JAKE",
+      "file": "File:RB Jake (ship, 2016) IMO 9765706 Mercuriushaven, Port of Amsterdam.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:RB_Jake_(ship,_2016)_IMO_9765706_Mercuriushaven,_Port_of_Amsterdam.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/RB_Jake_%28ship%2C_2016%29_IMO_9765706_Mercuriushaven%2C_Port_of_Amsterdam.JPG/1280px-RB_Jake_%28ship%2C_2016%29_IMO_9765706_Mercuriushaven%2C_Port_of_Amsterdam.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alf van Beem",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2018-07-01 12:17:52",
+      "caption": "Photographed in Amsterdam.",
+      "found": "2026-10-30T12:35:59.1997735+00:00"
     }
   ],
-  "updated": "2026-10-30T12:25:57.3930245+00:00"
+  "updated": "2026-10-30T12:35:59.1997735+00:00"
 }
