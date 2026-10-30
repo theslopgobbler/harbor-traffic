@@ -1,7 +1,23 @@
 {
-  "updated": "2026-10-30T23:55:02.1366302+00:00",
+  "updated": "2026-10-30T23:57:00.9065735+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
+    {
+      "hex": "aaaade",
+      "flight": "GFY4787",
+      "reg": "N787DM",
+      "type": "DA40",
+      "cat": "A1",
+      "alt": 2000,
+      "gs": 119.9,
+      "track": 340.51,
+      "rate": 0,
+      "lat": 47.17891,
+      "lon": -122.80332,
+      "squawk": "4636",
+      "emergency": "none",
+      "mil": false
+    },
     {
       "hex": "a9c9cd",
       "flight": "RFS728",
@@ -9,28 +25,12 @@
       "type": "C172",
       "cat": "A1",
       "alt": 5000,
-      "gs": 90.1,
-      "track": 183.18,
+      "gs": 94.1,
+      "track": 183.04,
       "rate": 0,
-      "lat": 47.43915,
-      "lon": -122.73582,
+      "lat": 47.38794,
+      "lon": -122.73912,
       "squawk": "4767",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "aaaade",
-      "flight": "GFY4787",
-      "reg": "N787DM",
-      "type": "DA40",
-      "cat": "A1",
-      "alt": 2150,
-      "gs": 109.3,
-      "track": 278.95,
-      "rate": 0,
-      "lat": 47.19333,
-      "lon": -122.72786,
-      "squawk": "4636",
       "emergency": "none",
       "mil": false
     }
