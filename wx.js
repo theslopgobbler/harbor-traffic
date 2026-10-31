@@ -1117,6 +1117,22 @@
   // Also per the port: the biggest ships wait outside, off Westport, for the tide before coming in to load. So a car
   // carrier (or a 190 m+ ship) sitting or creeping within about 12 nm outside the Grays Harbor entrance is a heads-up.
   let nextHigh = null;
+  // a train someone actually reported (the TRAIN NOW button on the stats page): shown for 20 minutes (a train blocks crossings for a few minutes; tap again to keep it up), ahead of the
+  // ship-based guess. The relay hands out only when and which way
+  let trainSeen = null;
+  const trainBase = (window.HT?.airRelay || '').replace(/\/aircraft$/, '');
+  async function loadTrainSeen() {
+    if (!trainBase || document.hidden) return;
+    try {
+      const j = await (await fetch(`${trainBase}/train-now?t=${Date.now()}`, { cache: 'no-store' })).json();
+      const was = trainSeen?.t;
+      trainSeen = j && j.t ? j : null;
+      if ((trainSeen?.t) !== was) renderRail();
+    } catch {}
+  }
+  setTimeout(loadTrainSeen, 3000);
+  setInterval(loadTrainSeen, 120000);
+  setInterval(() => { if (trainSeen && Date.now() - trainSeen.t > 20 * 60000 && Date.now() - trainSeen.t < 23 * 60000) renderRail(); }, 60000);
   function renderRail() {
     const [w, s, e, n] = IN_HARBOR;
     const big = shipList.filter((x) => x.lon > w && x.lon < e && x.lat > s && x.lat < n &&
@@ -1140,26 +1156,31 @@
     // POSSIBLE while one is on its way in (waiting off Westport or under way in the harbor). A bulk ship loading gets
     // a quiet line in the road list, with no chip and no ticker.
     const carMoving = moving.filter(isCarCarrier), carWaitingList = waiting.filter(isCarCarrier);
-    const level = cars.length ? 2 : carMoving.length || carWaitingList.length ? 1 : 0;
+    const reported = trainSeen && Date.now() - trainSeen.t < 20 * 60000 && Date.now() - trainSeen.t > -60000;
+    const level = reported ? 3 : cars.length ? 2 : carMoving.length || carWaitingList.length ? 1 : 0;
     const names = (list) => list.map((x) => (x.name || 'a large vessel').toUpperCase() + (unknownAtTerminal.includes(x) ? ' (size not broadcast)' : '')).join(', ');
     const hm = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     const tide = nextHigh && nextHigh.t - Date.now() < 14 * 3600e3 ? `, high tide ${hm(nextHigh.t)}` : '';
-    const who = level === 2 ? names(cars) : carMoving.length ? names(carMoving) : names(carWaitingList);
-    const where = level === 2 ? ' (vehicle carrier) at berth' : carMoving.length ? ' (vehicle carrier) under way in the harbor'
+    const dirTxt = { in: 'heading in, toward the port', out: 'coming out, from the port', heard: 'heard, not seen' };
+    const who = level === 3 ? `Train reported ${hm(new Date(trainSeen.t))}` : level === 2 ? names(cars) : carMoving.length ? names(carMoving) : names(carWaitingList);
+    const where = level === 3 ? (trainSeen.dir ? `, ${dirTxt[trainSeen.dir]}` : '')
+      : level === 2 ? ' (vehicle carrier) at berth' : carMoving.length ? ' (vehicle carrier) under way in the harbor'
       : ` (vehicle carrier) waiting by Westport for the tide${tide}`;
     const why = (who + where).toUpperCase();
-    railChip.innerHTML = level ? `<b>⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'}</b><span>${escS(why)}</span>` : '';
-    railChip.classList.toggle('likely', level === 2);
+    const word = level === 3 ? 'REPORTED' : level === 2 ? 'LIKELY' : 'POSSIBLE';
+    railChip.innerHTML = level ? `<b>⚠ RAIL ACTIVITY ${word}</b><span>${escS(why)}</span>` : '';
+    railChip.classList.toggle('likely', level >= 2);
     const box = $('#railNote');
     const bulk = atBerth.filter((x) => !isCarCarrier(x));
-    const more = level === 2 ? 'Vehicle carriers are loaded and unloaded by train, so expect trains at crossings.'
+    const more = level === 3 ? 'Expect crossings in Aberdeen and Hoquiam to be blocked for a few minutes.'
+      : level === 2 ? 'Vehicle carriers are loaded and unloaded by train, so expect trains at crossings.'
       : 'Trains often come before a vehicle carrier docks, carrying the cars it will load.';
-    if (box) box.innerHTML = (level ? `<li class="${level === 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${level === 2 ? 'LIKELY' : 'POSSIBLE'} · ABERDEEN / HOQUIAM</div>
+    if (box) box.innerHTML = (level ? `<li class="${level >= 2 ? 'k-work' : ''}"><div class="t">⚠ RAIL ACTIVITY ${word} · ABERDEEN / HOQUIAM</div>
       <div class="m">${escS(`${who}${where}. ${more}`)}</div></li>` : '') +
       (bulk.length ? `<li><div class="t">BULK SHIP LOADING · ABERDEEN / HOQUIAM</div>
       <div class="m">${escS(`${names(bulk)} at berth. Trains to the port are possible, often in the evening; bulk ships can sit at berth for days, so this one doesn't count as a warning.`)}</div></li>` : '');
     window.htRailLevel = level;
-    tick('rail', level ? `activity ${level === 2 ? 'likely' : 'possible'} in Aberdeen/Hoquiam: ${who}${where}` : '');
+    tick('rail', level ? `activity ${word.toLowerCase()} in Aberdeen/Hoquiam: ${who}${where}` : '');
     window.htDeclutter?.();
   }
   function renderShipList() {
