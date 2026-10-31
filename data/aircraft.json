@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-31T03:35:52.9805371+00:00",
+  "updated": "2026-10-31T03:45:58.0741504+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a561ec",
-      "flight": "LND89",
-      "reg": "N446LL",
-      "type": "EPIC",
-      "cat": "A1",
-      "alt": 11975,
-      "gs": 309.4,
-      "track": 19.84,
-      "rate": -448,
-      "lat": 46.97354,
-      "lon": -122.88835,
-      "squawk": "4771",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
