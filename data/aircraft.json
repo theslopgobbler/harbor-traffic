@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-31T00:05:53.2388193+00:00",
+  "updated": "2026-10-31T00:15:56.2055025+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a9c9cd",
-      "flight": "RFS728",
-      "reg": "N73MH",
+      "hex": "a66e8e",
+      "flight": "N513WF",
+      "reg": "N513WF",
       "type": "C172",
       "cat": "A1",
-      "alt": 6975,
-      "gs": 63.0,
-      "track": 159.55,
-      "rate": 448,
-      "lat": 47.19312,
-      "lon": -122.71848,
-      "squawk": "4767",
+      "alt": 1950,
+      "gs": 74.9,
+      "track": 214.11,
+      "rate": -448,
+      "lat": 47.55684,
+      "lon": -122.70136,
+      "squawk": "4640",
       "emergency": "none",
       "mil": false
     }
