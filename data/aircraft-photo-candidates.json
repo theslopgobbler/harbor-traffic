@@ -126,7 +126,8 @@
     "Boeing 777 300ER": "2026-10-30T21:25:54.6458962+00:00",
     "Embraer Phenom 100": "2026-10-30T23:15:53.7642205+00:00",
     "Epic Aircraft Company Epic E1000": "2026-10-31T03:35:52.9805371+00:00",
-    "Bombardier Challenger 650": "2026-10-31T18:35:26.3231826+00:00"
+    "Bombardier Challenger 650": "2026-10-31T18:35:26.3231826+00:00",
+    "Bell UH-1H Iroquois": "2026-10-31T22:35:27.5915466+00:00"
   },
   "candidates": [
     {
@@ -7814,7 +7815,91 @@
       "date": "2026-03-26",
       "caption": "Netjets Bombardier Challenger 650 N238QS landing at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
       "found": "2026-10-31T18:35:26.3231826+00:00"
+    },
+    {
+      "model": "Bell UH-1H Iroquois",
+      "file": "File:Bell UH-1H Iroquois-Huey 9528.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_UH-1H_Iroquois-Huey_9528.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Bell_UH-1H_Iroquois-Huey_9528.jpg/960px-Bell_UH-1H_Iroquois-Huey_9528.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:33:05",
+      "caption": "Bell UH-1H Iroquis at the Evergreen Aviation &amp; Space Museum.",
+      "found": "2026-10-31T22:35:27.5915466+00:00"
+    },
+    {
+      "model": "Bell UH-1H Iroquois",
+      "file": "File:Bell UH-1H Iroquois-Huey 9529.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_UH-1H_Iroquois-Huey_9529.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Bell_UH-1H_Iroquois-Huey_9529.jpg/960px-Bell_UH-1H_Iroquois-Huey_9529.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:33:30",
+      "caption": "Bell UH-1H Iroquis at the Evergreen Aviation &amp; Space Museum.",
+      "found": "2026-10-31T22:35:27.5915466+00:00"
+    },
+    {
+      "model": "Bell UH-1H Iroquois",
+      "file": "File:Bell UH-1H Iroquois-Huey 9531.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_UH-1H_Iroquois-Huey_9531.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Bell_UH-1H_Iroquois-Huey_9531.jpg/960px-Bell_UH-1H_Iroquois-Huey_9531.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:34:12",
+      "caption": "Bell UH-1H Iroquis at the Evergreen Aviation &amp; Space Museum.",
+      "found": "2026-10-31T22:35:27.5915466+00:00"
+    },
+    {
+      "model": "Bell UH-1H Iroquois",
+      "file": "File:Helicóptero Bell UH-1H, A742730.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Helic%C3%B3ptero_Bell_UH-1H,_A742730.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Helic%C3%B3ptero_Bell_UH-1H%2C_A742730.jpg/960px-Helic%C3%B3ptero_Bell_UH-1H%2C_A742730.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1098,
+      "author": "Rjcastillo",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-02-12 16:11:04",
+      "caption": "Bell UH-1H helicopter.",
+      "found": "2026-10-31T22:35:27.5915466+00:00"
+    },
+    {
+      "model": "Bell UH-1H Iroquois",
+      "file": "File:Helicóptero Bell UH-1H, A742742.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Helic%C3%B3ptero_Bell_UH-1H,_A742742.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Helic%C3%B3ptero_Bell_UH-1H%2C_A742742.jpg/960px-Helic%C3%B3ptero_Bell_UH-1H%2C_A742742.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1058,
+      "author": "Rjcastillo",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-02-12 16:17:19",
+      "caption": "Bell UH-1H helicopter.",
+      "found": "2026-10-31T22:35:27.5915466+00:00"
+    },
+    {
+      "model": "Bell UH-1H Iroquois",
+      "file": "File:OCSD Duke 6 Bell UH 1H N186SD by Don Ramey Logan.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:OCSD_Duke_6_Bell_UH_1H_N186SD_by_Don_Ramey_Logan.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/OCSD_Duke_6_Bell_UH_1H_N186SD_by_Don_Ramey_Logan.jpg/960px-OCSD_Duke_6_Bell_UH_1H_N186SD_by_Don_Ramey_Logan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 579,
+      "author": "Don Ramey Logan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-11-07 15:41:58",
+      "caption": "OCSD Duke 6 Bell UH 1H N186SD by Don Ramey Logan",
+      "found": "2026-10-31T22:35:27.5915466+00:00"
     }
   ],
-  "updated": "2026-10-31T22:25:23.8276859+00:00"
+  "updated": "2026-10-31T22:35:27.5915466+00:00"
 }
