@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-31T15:25:30.2126555+00:00",
+  "updated": "2026-10-31T15:35:24.8169992+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-10-31T14:26:00.0000000+00:00",
-    "waveFt": 3.3,
+    "time": "2026-10-31T14:56:00.0000000+00:00",
+    "waveFt": 3.6,
     "periodS": 14.0,
-    "dirDeg": 233.0,
-    "waterF": 52.7
+    "dirDeg": 239.0,
+    "waterF": 52.5
   },
   "bar": {
     "issued": "2026-10-31T08:31:00+00:00",
@@ -16,12 +16,5 @@
     "seas": "3 to 5 ft",
     "ebb": null
   },
-  "alerts": [
-    {
-      "event": "Special Marine Warning",
-      "area": "Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-10-31T15:30:00+00:00",
-      "headline": "Special Marine Warning issued October 31 at 7:57AM PDT until October 31 at 8:30AM PDT by NWS Seattle WA"
-    }
-  ]
+  "alerts": []
 }
