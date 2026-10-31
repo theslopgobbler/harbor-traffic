@@ -1109,6 +1109,30 @@
   const railChip = document.createElement('div');
   railChip.className = 'rail-chip';
   new maplibregl.Marker({ element: railChip, anchor: 'top' }).setLngLat([-123.84, 46.962]).addTo(map);
+  // the railroad through Aberdeen, Hoquiam and Cosmopolis glows with the warning (bright for a reported train, softer
+  // for likely, faint for possible; no animation, so no constant map redraws), and tapping a rail line there shows it
+  const RAIL_AREA = { type: 'Polygon', coordinates: [[[-124.05, 46.90], [-123.55, 46.90], [-123.55, 47.06], [-124.05, 47.06], [-124.05, 46.90]]] };
+  const railFilter = ['all', ['==', ['get', 'class'], 'rail'], ['within', RAIL_AREA]];
+  let railMsg = null; // { title, text } of the current warning, for a tap on the rail line
+  // (a rail piece counts only when it lies wholly inside the area; tiles cut lines into short pieces from zoom 11 on)
+  function ensureRailGlow() {
+    if (!map.getLayer('rail') || map.getLayer('rail-glow') || !map.style?._loaded) return;
+    map.addLayer({ id: 'rail-glow', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 11, filter: railFilter,
+      layout: { 'line-cap': 'round', 'line-join': 'round' },
+      paint: { 'line-color': '#c28bff', 'line-opacity': 0, 'line-blur': 4, 'line-width': ['interpolate', ['linear'], ['zoom'], 9, 5, 16, 18] } }, 'rail-ties');
+    // an invisible wider copy, so the line is easy to tap with a finger
+    map.addLayer({ id: 'rail-hit', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 11, filter: railFilter,
+      paint: { 'line-color': '#000', 'line-opacity': 0, 'line-width': 22 } });
+    map.on('click', 'rail-hit', (e) => {
+      const t = railMsg || { title: 'NO RAIL ACTIVITY RIGHT NOW', text: 'No train reported, and no vehicle carrier in or on its way.' };
+      new maplibregl.Popup({ offset: 10, maxWidth: '300px' }).setLngLat(e.lngLat)
+        .setHTML(`<h3>${escS(t.title)}</h3><p>${escS(t.text)}</p>`).addTo(map);
+    });
+    map.on('mouseenter', 'rail-hit', () => { map.getCanvas().style.cursor = 'pointer'; });
+    map.on('mouseleave', 'rail-hit', () => { map.getCanvas().style.cursor = ''; });
+  }
+  const glowNow = () => { try { ensureRailGlow(); if (map.getLayer('rail-glow')) map.setPaintProperty('rail-glow', 'line-opacity', [0, 0.25, 0.5, 0.9][window.htRailLevel || 0]); } catch {} };
+  if (map.style?._loaded) glowNow(); else map.once('load', glowNow);
   // Per the port: the big vehicle carriers all but guarantee trains (the cars come and go by rail); the smaller
   // bulk ships (soy meal) often don't. Car carriers are told apart by name: nearly all belong to a few lines that
   // name them in a set pattern (NYK "... LEADER", K Line "... HIGHWAY", MOL "... ACE", EUKOR "MORNING ...",
@@ -1180,6 +1204,12 @@
       (bulk.length ? `<li><div class="t">BULK SHIP LOADING · ABERDEEN / HOQUIAM</div>
       <div class="m">${escS(`${names(bulk)} at berth. Trains to the port are possible, often in the evening; bulk ships can sit at berth for days, so this one doesn't count as a warning.`)}</div></li>` : '');
     window.htRailLevel = level;
+    railMsg = level ? { title: `⚠ RAIL ACTIVITY ${word} · ABERDEEN / HOQUIAM`, text: `${who}${where}. ${more}` }
+      : bulk.length ? { title: 'BULK SHIP LOADING', text: `${names(bulk)} at berth. Trains to the port are possible, often in the evening.` } : null;
+    try {
+      ensureRailGlow();
+      if (map.getLayer('rail-glow')) map.setPaintProperty('rail-glow', 'line-opacity', [0, 0.25, 0.5, 0.9][level]);
+    } catch (e) { console.warn('rail glow', e); } // (never let the glow stop the warning itself)
     tick('rail', level ? `activity ${word.toLowerCase()} in Aberdeen/Hoquiam: ${who}${where}` : '');
     window.htDeclutter?.();
   }
