@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T15:38:18.4091776+00:00",
+  "updated": "2026-10-31T15:45:28.8611418+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N787DM",
       "type": "DA40",
       "cat": "A1",
-      "alt": 850,
-      "gs": 99.9,
-      "track": 212.74,
-      "rate": -576,
-      "lat": 47.51504,
-      "lon": -122.74118,
+      "alt": 5050,
+      "gs": 96.5,
+      "track": 13.17,
+      "rate": 704,
+      "lat": 47.42626,
+      "lon": -122.81215,
       "squawk": "4635",
       "emergency": "none",
       "mil": false
