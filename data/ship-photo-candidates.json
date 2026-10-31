@@ -427,7 +427,8 @@
     "366999466": "2026-10-30T20:36:00.5545336+00:00",
     "215138000": "2026-10-30T22:15:59.5388066+00:00",
     "636024945": "2026-10-31T02:25:56.6835786+00:00",
-    "366888830": "2026-10-31T08:05:56.9410322+00:00"
+    "366888830": "2026-10-31T08:05:56.9410322+00:00",
+    "538007029": "2026-10-31T13:25:30.1311452+00:00"
   },
   "candidates": [
     {
@@ -3804,7 +3805,37 @@
       "date": "2018-07-01 12:17:52",
       "caption": "Photographed in Amsterdam.",
       "found": "2026-10-30T12:35:59.1997735+00:00"
+    },
+    {
+      "mmsi": "538007029",
+      "ship": "ZEPHYROS",
+      "file": "File:Black Pearl Elina 7 Angel Rose IV and Zephyros in Old City Marina Tallinn 8 September 2025.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Pearl_Elina_7_Angel_Rose_IV_and_Zephyros_in_Old_City_Marina_Tallinn_8_September_2025.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Black_Pearl_Elina_7_Angel_Rose_IV_and_Zephyros_in_Old_City_Marina_Tallinn_8_September_2025.jpg/1280px-Black_Pearl_Elina_7_Angel_Rose_IV_and_Zephyros_in_Old_City_Marina_Tallinn_8_September_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Pjotr Mahhonin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-09-08 11:55:42",
+      "caption": "Black Pearl , Elina 7 , Angel Rose IV and Zephyros in Old City Marina Tallinn 8 September 2025",
+      "found": "2026-10-31T13:25:30.1311452+00:00"
+    },
+    {
+      "mmsi": "538007029",
+      "ship": "ZEPHYROS",
+      "file": "File:Zephyros Name Sign Starboard Side Quay 22 Old City Marina Tallinn 8 September 2025.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Zephyros_Name_Sign_Starboard_Side_Quay_22_Old_City_Marina_Tallinn_8_September_2025.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Zephyros_Name_Sign_Starboard_Side_Quay_22_Old_City_Marina_Tallinn_8_September_2025.jpg/1280px-Zephyros_Name_Sign_Starboard_Side_Quay_22_Old_City_Marina_Tallinn_8_September_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "PjotrMahh1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-09-08 11:55:25",
+      "caption": "Zephyros Name Sign Starboard Side Quay 22 Old City Marina Tallinn 8 September 2025",
+      "found": "2026-10-31T13:25:30.1311452+00:00"
     }
   ],
-  "updated": "2026-10-31T13:15:24.2109611+00:00"
+  "updated": "2026-10-31T13:25:30.1311452+00:00"
 }

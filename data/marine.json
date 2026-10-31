@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T13:15:24.2109611+00:00",
+  "updated": "2026-10-31T13:25:30.1311452+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -16,5 +16,12 @@
     "seas": "3 to 5 ft",
     "ebb": null
   },
-  "alerts": []
+  "alerts": [
+    {
+      "event": "Special Marine Warning",
+      "area": "Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-10-31T13:45:00+00:00",
+      "headline": "Special Marine Warning issued October 31 at 6:19AM PDT until October 31 at 6:45AM PDT by NWS Seattle WA"
+    }
+  ]
 }
