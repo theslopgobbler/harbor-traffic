@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T11:26:01.1236399+00:00",
+  "updated": "2026-10-31T11:35:58.9091870+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -8,41 +8,41 @@
       "lat": 47.0338,
       "lon": -123.0971,
       "temp": 36.5,
-      "wind": 1,
-      "gust": 1,
-      "dir": "NE",
+      "wind": 3,
+      "gust": 4,
+      "dir": "N",
       "vis": 0,
       "precip": null,
       "humidity": 99,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     },
     {
       "id": 2280,
       "name": "Cosmopolis Hill on US 101",
       "lat": 46.9343,
       "lon": -123.7282,
-      "temp": 39.56,
-      "wind": 2,
-      "gust": 4,
+      "temp": 39.38,
+      "wind": 3,
+      "gust": 6,
       "dir": "NNW",
       "vis": 0,
       "precip": null,
       "humidity": null,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     },
     {
       "id": 2281,
       "name": "State Camp Hill on US 101",
       "lat": 47.1402,
       "lon": -123.8922,
-      "temp": 42.08,
+      "temp": 42.44,
       "wind": 2,
-      "gust": 3,
-      "dir": "SSW",
+      "gust": 5,
+      "dir": "E",
       "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     },
     {
       "id": 2956,
@@ -51,40 +51,40 @@
       "lon": -124.333,
       "temp": 41.36,
       "wind": 1,
-      "gust": 5,
-      "dir": "ESE",
+      "gust": 6,
+      "dir": "ENE",
       "vis": 1,
       "precip": null,
       "humidity": 98,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     },
     {
       "id": 2957,
       "name": "Oyster Bay Rd on US 101",
       "lat": 47.0849,
       "lon": -123.0331,
-      "temp": 42.08,
-      "wind": 1,
-      "gust": 3,
-      "dir": "NNE",
+      "temp": 41.9,
+      "wind": 2,
+      "gust": 4,
+      "dir": "NE",
       "vis": 0,
       "precip": null,
       "humidity": 100,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     },
     {
       "id": 2958,
       "name": "Pt. Grenville on SR 109",
       "lat": 47.3029,
       "lon": -124.2504,
-      "temp": 43.52,
-      "wind": 4,
+      "temp": 43.88,
+      "wind": 5,
       "gust": 9,
-      "dir": "NNE",
+      "dir": "NE",
       "vis": 1,
       "precip": null,
       "humidity": 98,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     },
     {
       "id": 3776,
@@ -94,11 +94,11 @@
       "temp": 34.34,
       "wind": 1,
       "gust": 2,
-      "dir": "SW",
+      "dir": "ENE",
       "vis": 0,
       "precip": null,
       "humidity": 100,
-      "time": "2026-10-31T11:00:00.0000000+00:00"
+      "time": "2026-10-31T11:15:00.0000000+00:00"
     }
   ]
 }
