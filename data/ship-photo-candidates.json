@@ -429,7 +429,8 @@
     "636024945": "2026-10-31T02:25:56.6835786+00:00",
     "366888830": "2026-10-31T08:05:56.9410322+00:00",
     "538007029": "2026-10-31T13:25:30.1311452+00:00",
-    "357359000": "2026-10-31T14:35:28.6881778+00:00"
+    "357359000": "2026-10-31T14:35:28.6881778+00:00",
+    "357353000": "2026-10-31T17:45:25.1129240+00:00"
   },
   "candidates": [
     {
@@ -3836,7 +3837,22 @@
       "date": "2025-09-08 11:55:25",
       "caption": "Zephyros Name Sign Starboard Side Quay 22 Old City Marina Tallinn 8 September 2025",
       "found": "2026-10-31T13:25:30.1311452+00:00"
+    },
+    {
+      "mmsi": "357353000",
+      "ship": "ASIAN NAGA",
+      "file": "File:Asian Naga Huangpu river Shanghai.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Asian_Naga_Huangpu_river_Shanghai.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Asian_Naga_Huangpu_river_Shanghai.JPG/1280px-Asian_Naga_Huangpu_river_Shanghai.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 852,
+      "author": "Bruno Corpet ( Quoique )",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2013-05-09 07:24:24",
+      "caption": "Le navire roro \"Asian Naga\" (IMO: 9561631) sur le Huangpu river à Shanghai",
+      "found": "2026-10-31T17:45:25.1129240+00:00"
     }
   ],
-  "updated": "2026-10-31T17:35:31.8784874+00:00"
+  "updated": "2026-10-31T17:45:25.1129240+00:00"
 }
