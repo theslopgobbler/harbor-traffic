@@ -1,22 +1,5 @@
 {
-  "updated": "2026-10-31T15:55:27.4500701+00:00",
+  "updated": "2026-10-31T16:05:27.2563752+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "aaaade",
-      "flight": "GFY4787",
-      "reg": "N787DM",
-      "type": "DA40",
-      "cat": "A1",
-      "alt": 5925,
-      "gs": 148.0,
-      "track": 345.12,
-      "rate": 0,
-      "lat": 47.80831,
-      "lon": -122.72292,
-      "squawk": "4635",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
