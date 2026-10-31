@@ -125,7 +125,8 @@
     "Piper PA-46-600TP M600/SLS": "2026-10-30T19:45:58.3084256+00:00",
     "Boeing 777 300ER": "2026-10-30T21:25:54.6458962+00:00",
     "Embraer Phenom 100": "2026-10-30T23:15:53.7642205+00:00",
-    "Epic Aircraft Company Epic E1000": "2026-10-31T03:35:52.9805371+00:00"
+    "Epic Aircraft Company Epic E1000": "2026-10-31T03:35:52.9805371+00:00",
+    "Bombardier Challenger 650": "2026-10-31T18:35:26.3231826+00:00"
   },
   "candidates": [
     {
@@ -7729,7 +7730,91 @@
       "date": "2022-03-18",
       "caption": "Embraer Phenom 100 N326N at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-10-30T23:15:53.7642205+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 650",
+      "file": "File:Bombardier-challenger-650-lodz-airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier-challenger-650-lodz-airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Bombardier-challenger-650-lodz-airport.jpg/960px-Bombardier-challenger-650-lodz-airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Medical Air Service",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2022-02-25 14:02:28",
+      "caption": "For attribution, please link to https://www.medical-air-service.com",
+      "found": "2026-10-31T18:35:26.3231826+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 650",
+      "file": "File:Bombardier CL-600-2B16 Challenger 650 (XA-OOI, cn 6122) (3-7-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_CL-600-2B16_Challenger_650_(XA-OOI,_cn_6122)_(3-7-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Bombardier_CL-600-2B16_Challenger_650_%28XA-OOI%2C_cn_6122%29_%283-7-2024%29.jpg/960px-Bombardier_CL-600-2B16_Challenger_650_%28XA-OOI%2C_cn_6122%29_%283-7-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-03-07",
+      "caption": "Bombardier Challenger 650 XA-OOI at Daytona Beach International Airport.",
+      "found": "2026-10-31T18:35:26.3231826+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 650",
+      "file": "File:Canadair CL-600-2B19 Challenger 850 AN1725873.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Canadair_CL-600-2B19_Challenger_850_AN1725873.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Canadair_CL-600-2B19_Challenger_850_AN1725873.jpg/960px-Canadair_CL-600-2B19_Challenger_850_AN1725873.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Igor Dvurekov",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "4 June 2010",
+      "caption": "",
+      "found": "2026-10-31T18:35:26.3231826+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 650",
+      "file": "File:Canadair CL-600 Challenger C-GCGS-X.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Canadair_CL-600_Challenger_C-GCGS-X.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Canadair_CL-600_Challenger_C-GCGS-X.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 754,
+      "author": "SDASM Archives",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2016-08-01",
+      "caption": "PictionID:48039787 - Catalog:01_00093906 - Title:Canadair CL-600 Challenger C-GCGS-X - Filename:01_00093906.tif - ---Repository: San Diego Air and Space Museum",
+      "found": "2026-10-31T18:35:26.3231826+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 650",
+      "file": "File:Luxembourg AirRescue Ambulance, Bombardier Challenger 650, LX-RHC.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Luxembourg_AirRescue_Ambulance,_Bombardier_Challenger_650,_LX-RHC.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Luxembourg_AirRescue_Ambulance%2C_Bombardier_Challenger_650%2C_LX-RHC.jpg/960px-Luxembourg_AirRescue_Ambulance%2C_Bombardier_Challenger_650%2C_LX-RHC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "BapMagnum",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-11-22",
+      "caption": "Ein Ambulance-Flugzeug der luxemburgischen AirRescue landet auf seinem Heimatflugplatz Findel in Luxembourg.",
+      "found": "2026-10-31T18:35:26.3231826+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 650",
+      "file": "File:Netjets Bombardier Challenger 650 N238QS BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Netjets_Bombardier_Challenger_650_N238QS_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Netjets_Bombardier_Challenger_650_N238QS_BWI_MD1.jpg/960px-Netjets_Bombardier_Challenger_650_N238QS_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 543,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-03-26",
+      "caption": "Netjets Bombardier Challenger 650 N238QS landing at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-10-31T18:35:26.3231826+00:00"
     }
   ],
-  "updated": "2026-10-31T18:25:23.6828282+00:00"
+  "updated": "2026-10-31T18:35:26.3231826+00:00"
 }
