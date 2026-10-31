@@ -1,5 +1,22 @@
 {
-  "updated": "2026-10-31T17:25:23.2235737+00:00",
+  "updated": "2026-10-31T17:35:31.8784874+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a32b7b",
+      "flight": "N303LK",
+      "reg": "N303LK",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 700,
+      "gs": 81.8,
+      "track": 212.52,
+      "rate": null,
+      "lat": 47.48291,
+      "lon": -122.77194,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
