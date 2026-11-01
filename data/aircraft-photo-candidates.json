@@ -128,7 +128,8 @@
     "Epic Aircraft Company Epic E1000": "2026-10-31T03:35:52.9805371+00:00",
     "Bombardier Challenger 650": "2026-10-31T18:35:26.3231826+00:00",
     "Bell UH-1H Iroquois": "2026-10-31T22:35:27.5915466+00:00",
-    "Boeing 777 9": "2026-10-31T23:35:24.0477505+00:00"
+    "Boeing 777 9": "2026-10-31T23:35:24.0477505+00:00",
+    "Cessna Citation M2": "2026-11-01T01:45:27.3365210+00:00"
   },
   "candidates": [
     {
@@ -7984,7 +7985,91 @@
       "date": "2026-05-18 19:48:12",
       "caption": "Boeing 777-9s parked in primer on the Everett flight line at Paine Field, seen from the Boeing Future of Flight Sky Deck. Years after its planned 2020 debut, the 777X remains stuck in certification, leaving completed ...",
       "found": "2026-10-31T23:35:24.0477505+00:00"
+    },
+    {
+      "model": "Cessna Citation M2",
+      "file": "File:Citation M2 Gen2, EBACE 2023, Le Grand-Saconnex (EB237505).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Citation_M2_Gen2,_EBACE_2023,_Le_Grand-Saconnex_(EB237505).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Citation_M2_Gen2%2C_EBACE_2023%2C_Le_Grand-Saconnex_%28EB237505%29.jpg/960px-Citation_M2_Gen2%2C_EBACE_2023%2C_Le_Grand-Saconnex_%28EB237505%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "date": "2023-05-23",
+      "caption": "Cessna Citation M2 Gen2 on static display at EBACE 2023 at Palexpo, Le Grand-Saconnex",
+      "found": "2026-11-01T01:45:27.3365210+00:00"
+    },
+    {
+      "model": "Cessna Citation M2",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190524).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190524).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190524%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190524%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Cessna Citation M2 on static display at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-01T01:45:27.3365210+00:00"
+    },
+    {
+      "model": "Cessna Citation M2",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190534).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190534).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190534%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-01T01:45:27.3365210+00:00"
+    },
+    {
+      "model": "Cessna Citation M2",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190631).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190631).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190631%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190631%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Textron Aviation static display at EBACE 2019, Palexpo, Switzerland",
+      "found": "2026-11-01T01:45:27.3365210+00:00"
+    },
+    {
+      "model": "Cessna Citation M2",
+      "file": "File:Hamburg Airport Jetkontor Cessna 525 Citation M2 D-IJKH (DSC03496).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hamburg_Airport_Jetkontor_Cessna_525_Citation_M2_D-IJKH_(DSC03496).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Hamburg_Airport_Jetkontor_Cessna_525_Citation_M2_D-IJKH_%28DSC03496%29.jpg/960px-Hamburg_Airport_Jetkontor_Cessna_525_Citation_M2_D-IJKH_%28DSC03496%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-06-12 07:30:22",
+      "caption": "Die Cessna 525 Citation M2 der Fluggesellschaft Jetkontor mit dem Kennzeichen D-IJKH rollt auf dem Flughafen Hamburg zur Startbahn 15. Das Flugzeug führte einen Flug von Hamburg nach Palma de Mallorca durch.",
+      "found": "2026-11-01T01:45:27.3365210+00:00"
+    },
+    {
+      "model": "Cessna Citation M2",
+      "file": "File:Static display, EBACE 2018, Le Grand-Saconnex (BL7C0554).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Static_display,_EBACE_2018,_Le_Grand-Saconnex_(BL7C0554).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Static_display%2C_EBACE_2018%2C_Le_Grand-Saconnex_%28BL7C0554%29.jpg/960px-Static_display%2C_EBACE_2018%2C_Le_Grand-Saconnex_%28BL7C0554%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-05-28",
+      "caption": "Cessna Citation M2 on static display at EBACE 2018",
+      "found": "2026-11-01T01:45:27.3365210+00:00"
     }
   ],
-  "updated": "2026-11-01T01:35:29.1183388+00:00"
+  "updated": "2026-11-01T01:45:27.3365210+00:00"
 }
