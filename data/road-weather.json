@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T04:25:27.4148739+00:00",
+  "updated": "2026-11-01T04:35:29.0873402+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -49,14 +49,14 @@
       "name": "Queets on US 101",
       "lat": 47.5358,
       "lon": -124.333,
-      "temp": 42.62,
-      "wind": 1,
+      "temp": 42.44,
+      "wind": 2,
       "gust": 3,
-      "dir": "SE",
+      "dir": "ESE",
       "vis": 1,
       "precip": null,
       "humidity": 98,
-      "time": "2026-11-01T04:00:00.0000000+00:00"
+      "time": "2026-11-01T04:15:00.0000000+00:00"
     },
     {
       "id": 2957,
