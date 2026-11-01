@@ -131,7 +131,8 @@
     "Boeing 777 9": "2026-10-31T23:35:24.0477505+00:00",
     "Cessna Citation M2": "2026-11-01T01:45:27.336521+00:00",
     "Beech 1900 D": "2026-11-01T02:45:28.3662878+00:00",
-    "Cessna Citation I": "2026-11-01T18:25:25.7500538+00:00"
+    "Cessna Citation I": "2026-11-01T18:25:25.7500538+00:00",
+    "Sikorsky MH-60T Jayhawk": "2026-11-01T18:35:26.6447517+00:00"
   },
   "candidates": [
     {
@@ -8239,7 +8240,91 @@
       "date": "2022-03-02",
       "caption": "1991 Cessna Citation V N563TM at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-11-01T18:25:25.7500538+00:00"
+    },
+    {
+      "model": "Sikorsky MH-60T Jayhawk",
+      "file": "File:2022 Milwaukee Air & Water Show 054 (United States Coast Guard Sikorsky MH-60T Jayhawk).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2022_Milwaukee_Air_%26_Water_Show_054_(United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/2022_Milwaukee_Air_%26_Water_Show_054_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg/960px-2022_Milwaukee_Air_%26_Water_Show_054_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 24 July 2022",
+      "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2022 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-01T18:35:26.6447517+00:00"
+    },
+    {
+      "model": "Sikorsky MH-60T Jayhawk",
+      "file": "File:2022 Milwaukee Air & Water Show 059 (United States Coast Guard Sikorsky MH-60T Jayhawk).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2022_Milwaukee_Air_%26_Water_Show_059_(United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/2022_Milwaukee_Air_%26_Water_Show_059_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg/960px-2022_Milwaukee_Air_%26_Water_Show_059_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 24 July 2022",
+      "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2022 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-01T18:35:26.6447517+00:00"
+    },
+    {
+      "model": "Sikorsky MH-60T Jayhawk",
+      "file": "File:2024 Milwaukee Air and Water Show 060 (United States Coast Guard Sikorsky MH-60T Jayhawk).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_Milwaukee_Air_and_Water_Show_060_(United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/2024_Milwaukee_Air_and_Water_Show_060_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg/960px-2024_Milwaukee_Air_and_Water_Show_060_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 28 July 2024",
+      "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2024 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-01T18:35:26.6447517+00:00"
+    },
+    {
+      "model": "Sikorsky MH-60T Jayhawk",
+      "file": "File:2024 Milwaukee Air and Water Show 061 (United States Coast Guard Sikorsky MH-60T Jayhawk).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_Milwaukee_Air_and_Water_Show_061_(United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/2024_Milwaukee_Air_and_Water_Show_061_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg/960px-2024_Milwaukee_Air_and_Water_Show_061_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 28 July 2024",
+      "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2024 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-01T18:35:26.6447517+00:00"
+    },
+    {
+      "model": "Sikorsky MH-60T Jayhawk",
+      "file": "File:2024 Milwaukee Air and Water Show 062 (United States Coast Guard Sikorsky MH-60T Jayhawk).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_Milwaukee_Air_and_Water_Show_062_(United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/2024_Milwaukee_Air_and_Water_Show_062_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg/960px-2024_Milwaukee_Air_and_Water_Show_062_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 28 July 2024",
+      "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2024 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-01T18:35:26.6447517+00:00"
+    },
+    {
+      "model": "Sikorsky MH-60T Jayhawk",
+      "file": "File:2024 Milwaukee Air and Water Show 065 (United States Coast Guard Sikorsky MH-60T Jayhawk).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_Milwaukee_Air_and_Water_Show_065_(United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/2024_Milwaukee_Air_and_Water_Show_065_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg/960px-2024_Milwaukee_Air_and_Water_Show_065_%28United_States_Coast_Guard_Sikorsky_MH-60T_Jayhawk%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 28 July 2024",
+      "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2024 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-01T18:35:26.6447517+00:00"
     }
   ],
-  "updated": "2026-11-01T18:25:25.7500538+00:00"
+  "updated": "2026-11-01T18:35:26.6447517+00:00"
 }
