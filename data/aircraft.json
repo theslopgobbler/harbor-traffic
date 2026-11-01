@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T15:15:26.2147226+00:00",
+  "updated": "2026-11-01T15:25:30.1241176+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,14 +8,14 @@
       "reg": "N5556W",
       "type": "GLST",
       "cat": "A1",
-      "alt": 1125,
-      "gs": 60.8,
-      "track": 9.46,
+      "alt": 125,
+      "gs": 69.1,
+      "track": 182.49,
       "rate": null,
-      "lat": 46.68965,
-      "lon": -123.00119,
-      "squawk": "1200",
-      "emergency": "none",
+      "lat": 46.67802,
+      "lon": -122.98288,
+      "squawk": null,
+      "emergency": null,
       "mil": false
     }
   ]
