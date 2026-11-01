@@ -3,3 +3,6 @@ aisstream-key.txt
 github-token.txt
 *.local.*
 photos/
+# home-security / device-watch project — keep it private, never publish to the site
+esp32/
+secrets.h
