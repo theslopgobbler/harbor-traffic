@@ -132,7 +132,8 @@
     "Cessna Citation M2": "2026-11-01T01:45:27.336521+00:00",
     "Beech 1900 D": "2026-11-01T02:45:28.3662878+00:00",
     "Cessna Citation I": "2026-11-01T18:25:25.7500538+00:00",
-    "Sikorsky MH-60T Jayhawk": "2026-11-01T18:35:26.6447517+00:00"
+    "Sikorsky MH-60T Jayhawk": "2026-11-01T18:35:26.6447517+00:00",
+    "Bell 206L Long Ranger": "2026-11-01T22:25:27.2455992+00:00"
   },
   "candidates": [
     {
@@ -8324,7 +8325,91 @@
       "date": "Taken on 28 July 2024",
       "caption": "A United States Coast Guard Sikorsky MH-60T Jayhawk at the 2024 Milwaukee Air and Water Show along Lake Michigan in Milwaukee , Wisconsin ( United States ).",
       "found": "2026-11-01T18:35:26.6447517+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger",
+      "file": "File:23 0048701 Convair Negative Image - People exiting Bell 206L Long Ranger (53837295129).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:23_0048701_Convair_Negative_Image_-_People_exiting_Bell_206L_Long_Ranger_(53837295129).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/23_0048701_Convair_Negative_Image_-_People_exiting_Bell_206L_Long_Ranger_%2853837295129%29.jpg/960px-23_0048701_Convair_Negative_Image_-_People_exiting_Bell_206L_Long_Ranger_%2853837295129%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 680,
+      "author": "San Diego Air &amp; Space Museum Archives",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "5 July 2024, 15:57:01 (upload date)",
+      "caption": "87714338 :Piction ID--People exiting Bell 206L Long Ranger",
+      "found": "2026-11-01T22:25:27.2455992+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger",
+      "file": "File:Bell 206L-3 LongRanger III 111.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-3_LongRanger_III_111.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Bell_206L-3_LongRanger_III_111.jpg/960px-Bell_206L-3_LongRanger_III_111.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 637,
+      "author": "Savvas Petoussis",
+      "license": "Attribution",
+      "licenseUrl": "",
+      "date": "Cyprus, November 8, 2006",
+      "caption": "111 (cn 51219) On the 8 November 2006, the Lakatamia Airbase was open for the annual opena day of the Cyprus Airforce. This example was on display among other helicopters including Mil-35 and Gazzelle.",
+      "found": "2026-11-01T22:25:27.2455992+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger",
+      "file": "File:Bell 206L-4 LongRanger IV over Botafogo Bay, Rio de Janeiro.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L-4_LongRanger_IV_over_Botafogo_Bay,_Rio_de_Janeiro.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg/960px-Bell_206L-4_LongRanger_IV_over_Botafogo_Bay%2C_Rio_de_Janeiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 598,
+      "author": "Wilfredor",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2023-06-03 13:24:51",
+      "caption": "A Bell 206L-4 LongRanger IV flying over Botafogo Bay, the Corcovado and the statue of Christ behind it. Rio de Janeiro, Brazil.",
+      "found": "2026-11-01T22:25:27.2455992+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger",
+      "file": "File:Bell 206L LongRanger N33PP FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_206L_LongRanger_N33PP_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Bell_206L_LongRanger_N33PP_FDK_MD1.jpg/960px-Bell_206L_LongRanger_N33PP_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 519,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-11-08",
+      "caption": "Bell 206L-3 LongRanger N33PP of the U.S. Park Police at Frederick Municipal Airporet, Maryland, USA",
+      "found": "2026-11-01T22:25:27.2455992+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger",
+      "file": "File:Helicóptero BELL 206L-3 LongRanger, Victoria Falls, Zimbabue, 2018-07-27, DD 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Helic%C3%B3ptero_BELL_206L-3_LongRanger,_Victoria_Falls,_Zimbabue,_2018-07-27,_DD_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Helic%C3%B3ptero_BELL_206L-3_LongRanger%2C_Victoria_Falls%2C_Zimbabue%2C_2018-07-27%2C_DD_01.jpg/960px-Helic%C3%B3ptero_BELL_206L-3_LongRanger%2C_Victoria_Falls%2C_Zimbabue%2C_2018-07-27%2C_DD_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 598,
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-07-27 15:26:23",
+      "caption": "BELL 206L-3 Longranger helicopter, Victoria Falls, Zimbabwe",
+      "found": "2026-11-01T22:25:27.2455992+00:00"
+    },
+    {
+      "model": "Bell 206L Long Ranger",
+      "file": "File:LAPD Bell 206 Jetranger.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:LAPD_Bell_206_Jetranger.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/LAPD_Bell_206_Jetranger.jpg/960px-LAPD_Bell_206_Jetranger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mfield - Matthew Field, http://www.photography.mattfield.com",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "date": "2006-10-20",
+      "caption": "Los Angeles Police Department (LAPD) 1987 Bell 206 Jetranger helicopter",
+      "found": "2026-11-01T22:25:27.2455992+00:00"
     }
   ],
-  "updated": "2026-11-01T22:15:28.5327491+00:00"
+  "updated": "2026-11-01T22:25:27.2455992+00:00"
 }
