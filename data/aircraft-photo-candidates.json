@@ -130,7 +130,8 @@
     "Bell UH-1H Iroquois": "2026-10-31T22:35:27.5915466+00:00",
     "Boeing 777 9": "2026-10-31T23:35:24.0477505+00:00",
     "Cessna Citation M2": "2026-11-01T01:45:27.336521+00:00",
-    "Beech 1900 D": "2026-11-01T02:45:28.3662878+00:00"
+    "Beech 1900 D": "2026-11-01T02:45:28.3662878+00:00",
+    "Cessna Citation I": "2026-11-01T18:25:25.7500538+00:00"
   },
   "candidates": [
     {
@@ -8154,7 +8155,91 @@
       "date": "2016-04-20 15:41",
       "caption": "Geneva International Airport",
       "found": "2026-11-01T02:45:28.3662878+00:00"
+    },
+    {
+      "model": "Cessna Citation I",
+      "file": "File:Cessna 501 Citation I plane Captain‘s working place.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_501_Citation_I_plane_Captain%E2%80%98s_working_place.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Cessna_501_Citation_I_plane_Captain%E2%80%98s_working_place.jpg/960px-Cessna_501_Citation_I_plane_Captain%E2%80%98s_working_place.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "АнИгМа",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2020-09-01",
+      "caption": "Cessna 501 Citation I/SP plane Captain‘s working place",
+      "found": "2026-11-01T18:25:25.7500538+00:00"
+    },
+    {
+      "model": "Cessna Citation I",
+      "file": "File:Cessna 525B Citation CJ3 N111KJ.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525B_Citation_CJ3_N111KJ.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Cessna_525B_Citation_CJ3_N111KJ.jpg/960px-Cessna_525B_Citation_CJ3_N111KJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 618,
+      "author": "Sixflashphoto",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-01-18 16:07:21",
+      "caption": "Cessna 525B Citation CJ3--N111KJ Landing at KCMH on 1-18-18.",
+      "found": "2026-11-01T18:25:25.7500538+00:00"
+    },
+    {
+      "model": "Cessna Citation I",
+      "file": "File:Cessna Citation CJ3 N297KH 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_CJ3_N297KH_1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cessna_Citation_CJ3_N297KH_1.jpg/960px-Cessna_Citation_CJ3_N297KH_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 617,
+      "author": "Sixflashphoto",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-01-20 16:14:08",
+      "caption": "Cessna 525B Citation CJ3--N297KH Landing at KCMH on 1-20-18.",
+      "found": "2026-11-01T18:25:25.7500538+00:00"
+    },
+    {
+      "model": "Cessna Citation I",
+      "file": "File:Cessna Citation I N892HM FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_I_N892HM_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Cessna_Citation_I_N892HM_FDK_MD1.jpg/960px-Cessna_Citation_I_N892HM_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 481,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-09-11",
+      "caption": "1983 Cessna Citation I SP/501 N892HM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-01T18:25:25.7500538+00:00"
+    },
+    {
+      "model": "Cessna Citation I",
+      "file": "File:Cessna Citation V N563TM FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N563TM_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Cessna_Citation_V_N563TM_FDK_MD1.jpg/960px-Cessna_Citation_V_N563TM_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 484,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-07-01",
+      "caption": "1991 Cessna Citation V N563TM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-01T18:25:25.7500538+00:00"
+    },
+    {
+      "model": "Cessna Citation I",
+      "file": "File:Cessna Citation V N563TM FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N563TM_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Cessna_Citation_V_N563TM_FDK_MD2.jpg/960px-Cessna_Citation_V_N563TM_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 384,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-03-02",
+      "caption": "1991 Cessna Citation V N563TM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-01T18:25:25.7500538+00:00"
     }
   ],
-  "updated": "2026-11-01T18:15:28.6504705+00:00"
+  "updated": "2026-11-01T18:25:25.7500538+00:00"
 }
