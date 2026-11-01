@@ -129,7 +129,8 @@
     "Bombardier Challenger 650": "2026-10-31T18:35:26.3231826+00:00",
     "Bell UH-1H Iroquois": "2026-10-31T22:35:27.5915466+00:00",
     "Boeing 777 9": "2026-10-31T23:35:24.0477505+00:00",
-    "Cessna Citation M2": "2026-11-01T01:45:27.336521+00:00"
+    "Cessna Citation M2": "2026-11-01T01:45:27.336521+00:00",
+    "Beech 1900 D": "2026-11-01T02:45:28.3662878+00:00"
   },
   "candidates": [
     {
@@ -8069,7 +8070,91 @@
       "date": "2018-05-28",
       "caption": "Cessna Citation M2 on static display at EBACE 2018",
       "found": "2026-11-01T01:45:27.336521+00:00"
+    },
+    {
+      "model": "Beech 1900 D",
+      "file": "File:Beech 1900C, Danish Air Transport AN0216754.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_1900C,_Danish_Air_Transport_AN0216754.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Beech_1900C%2C_Danish_Air_Transport_AN0216754.jpg/960px-Beech_1900C%2C_Danish_Air_Transport_AN0216754.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "3 October 1996 ",
+      "caption": "Ex D-CARA",
+      "found": "2026-11-01T02:45:28.3662878+00:00"
+    },
+    {
+      "model": "Beech 1900 D",
+      "file": "File:Beech 1900D (3870330353).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_1900D_(3870330353).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Beech_1900D_%283870330353%29.jpg/960px-Beech_1900D_%283870330353%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Carlos Menendez San Juan",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2008-07-10 10:31",
+      "caption": "Beech 1900D Avanti Air on behalf of Switzerland Air Force D-CBIG C/N UE-288 German immatriculation before the swiss one",
+      "found": "2026-11-01T02:45:28.3662878+00:00"
+    },
+    {
+      "model": "Beech 1900 D",
+      "file": "File:Beech 1900 D.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_1900_D.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Beech_1900_D.JPG/960px-Beech_1900_D.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "User Lommer on en.wikipedia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "date": "2005-07-07",
+      "caption": "A Sunwest Aviation Beechcraft 1900 D (C-GSWZ) on the ramp at Vancouver International Airport.",
+      "found": "2026-11-01T02:45:28.3662878+00:00"
+    },
+    {
+      "model": "Beech 1900 D",
+      "file": "File:Beech 1900d - RIAT 2008 (2743934414).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_1900d_-_RIAT_2008_(2743934414).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Beech_1900d_-_RIAT_2008_%282743934414%29.jpg/960px-Beech_1900d_-_RIAT_2008_%282743934414%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Tim Felce (Airwolfhound)",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2008-07-10 09:37",
+      "caption": "Beech 1900d - RIAT 2008",
+      "found": "2026-11-01T02:45:28.3662878+00:00"
+    },
+    {
+      "model": "Beech 1900 D",
+      "file": "File:DUSSELDORF SEPT 1990 INTEROT BEECH 1900 D-CISA (16095376755).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:DUSSELDORF_SEPT_1990_INTEROT_BEECH_1900_D-CISA_(16095376755).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/DUSSELDORF_SEPT_1990_INTEROT_BEECH_1900_D-CISA_%2816095376755%29.jpg/960px-DUSSELDORF_SEPT_1990_INTEROT_BEECH_1900_D-CISA_%2816095376755%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "simon butler from halesowen, uk",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2014-12-24 14:59",
+      "caption": "DUSSELDORF SEPT 1990 INTEROT BEECH 1900 D-CISA",
+      "found": "2026-11-01T02:45:28.3662878+00:00"
+    },
+    {
+      "model": "Beech 1900 D",
+      "file": "File:F-HBCE Beech 1900 D - CLG (26006524403).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-HBCE_Beech_1900_D_-_CLG_(26006524403).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/F-HBCE_Beech_1900_D_-_CLG_%2826006524403%29.jpg/960px-F-HBCE_Beech_1900_D_-_CLG_%2826006524403%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Markus Eigenheer from Genève",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-04-20 15:41",
+      "caption": "Geneva International Airport",
+      "found": "2026-11-01T02:45:28.3662878+00:00"
     }
   ],
-  "updated": "2026-11-01T02:35:28.1943590+00:00"
+  "updated": "2026-11-01T02:45:28.3662878+00:00"
 }
