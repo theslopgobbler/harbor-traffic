@@ -133,7 +133,8 @@
     "Beech 1900 D": "2026-11-01T02:45:28.3662878+00:00",
     "Cessna Citation I": "2026-11-01T18:25:25.7500538+00:00",
     "Sikorsky MH-60T Jayhawk": "2026-11-01T18:35:26.6447517+00:00",
-    "Bell 206L Long Ranger": "2026-11-01T22:25:27.2455992+00:00"
+    "Bell 206L Long Ranger": "2026-11-01T22:25:27.2455992+00:00",
+    "Lockheed C-5M Galaxy": "2026-11-01T23:45:27.2618169+00:00"
   },
   "candidates": [
     {
@@ -8409,7 +8410,91 @@
       "date": "2006-10-20",
       "caption": "Los Angeles Police Department (LAPD) 1987 Bell 206 Jetranger helicopter",
       "found": "2026-11-01T22:25:27.2455992+00:00"
+    },
+    {
+      "model": "Lockheed C-5M Galaxy",
+      "file": "File:C-5M Galaxy Roundel.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-5M_Galaxy_Roundel.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/C-5M_Galaxy_Roundel.jpg/960px-C-5M_Galaxy_Roundel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2017-11-12 14:44:14",
+      "caption": "The Roundel on the side of a Lockheed C-5M Galaxy of the 60th and 349th Air Mobility Wings. The C-5 was on display at Aviation Nation 2017. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
+      "found": "2026-11-01T23:45:27.2618169+00:00"
+    },
+    {
+      "model": "Lockheed C-5M Galaxy",
+      "file": "File:C-5M Super Galaxy Nose Up.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-5M_Super_Galaxy_Nose_Up.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/C-5M_Super_Galaxy_Nose_Up.jpg/960px-C-5M_Super_Galaxy_Nose_Up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2017-11-12 10:17:37",
+      "caption": "The nose of a lockheed C-5M Super Galaxy lifted at Aviation Nation 2017. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
+      "found": "2026-11-01T23:45:27.2618169+00:00"
+    },
+    {
+      "model": "Lockheed C-5M Galaxy",
+      "file": "File:EGVA - Lockheed C-5M Galaxy - United States Air Force - 87-0042 (48688911767).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EGVA_-_Lockheed_C-5M_Galaxy_-_United_States_Air_Force_-_87-0042_(48688911767).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/EGVA_-_Lockheed_C-5M_Galaxy_-_United_States_Air_Force_-_87-0042_%2848688911767%29.jpg/960px-EGVA_-_Lockheed_C-5M_Galaxy_-_United_States_Air_Force_-_87-0042_%2848688911767%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Steve Lynes from Sandshurst, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2019-09-05 10:47",
+      "caption": "RAF Fairford, Gloucestershire",
+      "found": "2026-11-01T23:45:27.2618169+00:00"
+    },
+    {
+      "model": "Lockheed C-5M Galaxy",
+      "file": "File:Lockheed C-5M Tail 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lockheed_C-5M_Tail_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Lockheed_C-5M_Tail_2.jpg/960px-Lockheed_C-5M_Tail_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2017-11-12 10:05:31",
+      "caption": "The tail of 70042, a Lockheed C-5M Galaxy of the 60th and 349th Air Mobility Wings on static display at viation Nation 2017. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
+      "found": "2026-11-01T23:45:27.2618169+00:00"
+    },
+    {
+      "model": "Lockheed C-5M Galaxy",
+      "file": "File:USAF C-5M Galaxy Aviation Nation 2017.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:USAF_C-5M_Galaxy_Aviation_Nation_2017.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/USAF_C-5M_Galaxy_Aviation_Nation_2017.jpg/960px-USAF_C-5M_Galaxy_Aviation_Nation_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2017-11-12 14:45:13",
+      "caption": "A Lockheed C-5M Galaxy (70042) of the 60th and 349th Air Mobility Wings on static display at Aviation Nation 2017. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
+      "found": "2026-11-01T23:45:27.2618169+00:00"
+    },
+    {
+      "model": "Lockheed C-5M Galaxy",
+      "file": "File:USAF C-5M Galaxy Aviation Nation 2017 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:USAF_C-5M_Galaxy_Aviation_Nation_2017_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/USAF_C-5M_Galaxy_Aviation_Nation_2017_2.jpg/960px-USAF_C-5M_Galaxy_Aviation_Nation_2017_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2017-11-12 10:09:00",
+      "caption": "A Lockheed C-5M Galaxy (70042) of the 60th and 349th Air Mobility Wings on static display at Aviation Nation 2017. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
+      "found": "2026-11-01T23:45:27.2618169+00:00"
     }
   ],
-  "updated": "2026-11-01T23:35:26.3587288+00:00"
+  "updated": "2026-11-01T23:45:27.2618169+00:00"
 }
