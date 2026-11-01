@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-01T03:35:26.2788573+00:00",
+  "updated": "2026-11-01T03:45:26.9684807+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a0a1d2",
-      "flight": "N14RD",
-      "reg": "N14RD",
-      "type": "PC12",
+      "hex": "ad4d68",
+      "flight": "N95606",
+      "reg": "N95606",
+      "type": "C152",
       "cat": "A1",
-      "alt": 6900,
-      "gs": 246.0,
-      "track": 15.56,
-      "rate": -2406,
-      "lat": 46.99644,
-      "lon": -122.80408,
-      "squawk": "1344",
+      "alt": 3500,
+      "gs": 74.0,
+      "track": 178.45,
+      "rate": 375,
+      "lat": 47.40093,
+      "lon": -122.76391,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
