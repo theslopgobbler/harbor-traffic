@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T15:05:25.8213017+00:00",
+  "updated": "2026-11-01T15:15:26.2147226+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -675,27 +675,6 @@
       "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
-      "id": 723022,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 northbound at milepost 88.36 near US 12 beginning at 6:48 am on November 1, 2026 until further notice. The northbound lanes are blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 88.36,
-      "lat": 46.80277988,
-      "lon": -123.006857302,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-01T14:48:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-01T14:48:58.0170000+00:00"
-    },
-    {
       "id": 693774,
       "kind": "work",
       "category": "Construction",
@@ -736,6 +715,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 723022,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 northbound at milepost 88.36 near US 12 beginning at 6:48 am on November 1, 2026 until further notice. The two left lanes are blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 88.36,
+      "lat": 46.80277988,
+      "lon": -123.006857302,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-01T14:48:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-01T15:08:09.4170000+00:00"
     },
     {
       "id": 686738,
