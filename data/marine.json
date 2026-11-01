@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T21:55:29.5765396+00:00",
+  "updated": "2026-11-01T22:05:23.0277523+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,24 +10,24 @@
     "waterF": 53.4
   },
   "bar": {
-    "issued": "2026-11-01T08:33:00+00:00",
-    "text": "Combined seas 2 to 4 ft, increasing to 6 to 8 ft Monday. Bar conditions light becoming moderate. Maximum ebb currents will occur around 930 AM and 945 PM Sunday, and 1045 AM Monday.",
+    "issued": "2026-11-01T21:54:00+00:00",
+    "text": "Combined seas 3 to 5 ft, increasing to 6 to 8 ft by Monday morning. Bar conditions light becoming moderate. Maximum ebb currents will occur around 945 PM Sunday, 1045 AM Monday, and 1100 PM Monday.",
     "conditions": "light becoming moderate",
-    "seas": "2 to 4 ft, increasing to 6 to 8 ft Monday",
+    "seas": "3 to 5 ft, increasing to 6 to 8 ft by Monday morning",
     "ebb": null
   },
   "alerts": [
     {
       "event": "Small Craft Advisory",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-03T15:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 1 at 1:05PM PST until November 3 at 7:00AM PST by NWS Portland OR"
+      "area": "West Entrance U.S. Waters Strait Of Juan De Fuca; Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-03T09:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 1 at 1:55PM PST until November 3 at 1:00AM PST by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
-      "area": "West Entrance U.S. Waters Strait Of Juan De Fuca; Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-03T09:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 1 at 7:56AM PST until November 3 at 1:00AM PST by NWS Seattle WA"
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-03T15:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 1 at 1:05PM PST until November 3 at 7:00AM PST by NWS Portland OR"
     }
   ]
 }
