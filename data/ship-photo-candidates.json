@@ -435,7 +435,8 @@
     "366999661": "2026-11-01T02:25:27.8769051+00:00",
     "338110000": "2026-11-01T02:25:27.8769051+00:00",
     "338334445": "2026-11-01T03:45:26.9684807+00:00",
-    "352005064": "2026-11-01T03:55:27.4020361+00:00"
+    "352005064": "2026-11-01T03:55:27.4020361+00:00",
+    "353081000": "2026-11-01T06:15:23.8264889+00:00"
   },
   "candidates": [
     {
@@ -3857,7 +3858,22 @@
       "date": "2013-05-09 07:24:24",
       "caption": "Le navire roro \"Asian Naga\" (IMO: 9561631) sur le Huangpu river à Shanghai",
       "found": "2026-10-31T17:45:25.112924+00:00"
+    },
+    {
+      "mmsi": "353081000",
+      "ship": "ELEGANT SW",
+      "file": "File:Canal de Panamá (6550002291).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Canal_de_Panam%C3%A1_(6550002291).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Canal_de_Panam%C3%A1_%286550002291%29.jpg/1280px-Canal_de_Panam%C3%A1_%286550002291%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 871,
+      "author": "Jose Jiménez",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-10-07 15:48",
+      "caption": "Canal de Panamá",
+      "found": "2026-11-01T06:15:23.8264889+00:00"
     }
   ],
-  "updated": "2026-11-01T06:05:22.8213139+00:00"
+  "updated": "2026-11-01T06:15:23.8264889+00:00"
 }
