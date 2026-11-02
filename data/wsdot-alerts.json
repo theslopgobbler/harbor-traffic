@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T05:25:27.8427075+00:00",
+  "updated": "2026-11-02T05:35:31.3354668+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -673,6 +673,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 723050,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "From 9 a.m. to 2 p.m. Monday, Nov. 2, US 101 will close multiple times approaching milepost 184 near Dowans Creek Road for pavement repairs. Each closure will last up to 60 minutes. Emergency services will be given priority access through the area during the work.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-11-02T05:24:00.0000000+00:00",
+      "end": "2026-11-02T22:00:00.0000000+00:00",
+      "updated": "2026-11-02T05:34:30.4400000+00:00"
     },
     {
       "id": 631745,
