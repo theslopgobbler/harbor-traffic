@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T19:05:27.2469090+00:00",
+  "updated": "2026-11-02T19:15:28.2145118+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,13 +8,45 @@
       "reg": "N30033",
       "type": "C177",
       "cat": "A1",
-      "alt": 4300,
-      "gs": 91.6,
-      "track": 220.13,
+      "alt": 6300,
+      "gs": 93.2,
+      "track": 202.71,
+      "rate": 128,
+      "lat": 46.80107,
+      "lon": -123.66914,
+      "squawk": "4631",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a0efca",
+      "flight": "GFY164",
+      "reg": "N16ES",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 3725,
+      "gs": 124.0,
+      "track": 253.61,
+      "rate": -64,
+      "lat": 47.26643,
+      "lon": -122.97148,
+      "squawk": "4710",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a148b6",
+      "flight": "N182GF",
+      "reg": "N182GF",
+      "type": "C82S",
+      "cat": "A1",
+      "alt": 6175,
+      "gs": 107.1,
+      "track": 229.17,
       "rate": 0,
-      "lat": 46.98555,
-      "lon": -123.44932,
-      "squawk": "1023",
+      "lat": 47.85984,
+      "lon": -122.74489,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
