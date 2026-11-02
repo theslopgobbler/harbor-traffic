@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-02T16:35:28.8247266+00:00",
+  "updated": "2026-11-02T16:45:47.9348961+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a1e66a",
+      "flight": "N221TJ",
+      "reg": "N221TJ",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 1200,
+      "gs": 81.1,
+      "track": 87.88,
+      "rate": null,
+      "lat": 46.95198,
+      "lon": -122.89321,
+      "squawk": "4613",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
