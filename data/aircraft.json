@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-02T17:55:28.1506278+00:00",
+  "updated": "2026-11-02T18:05:28.6938676+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a7153d",
-      "flight": "N5556W",
-      "reg": "N5556W",
-      "type": "GLST",
+      "hex": "a28820",
+      "flight": "N262TM",
+      "reg": "N262TM",
+      "type": "S22T",
       "cat": "A1",
-      "alt": 7350,
-      "gs": 77.8,
-      "track": 154.09,
-      "rate": null,
-      "lat": 46.54596,
-      "lon": -122.7144,
-      "squawk": "1200",
+      "alt": 2750,
+      "gs": 154.0,
+      "track": 241.27,
+      "rate": 0,
+      "lat": 47.34274,
+      "lon": -122.78526,
+      "squawk": "4714",
       "emergency": "none",
       "mil": false
     }
