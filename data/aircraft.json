@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-02T10:25:29.0063462+00:00",
+  "updated": "2026-11-02T10:35:35.5209764+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "899124",
+      "flight": "EVA637",
+      "reg": "B-16783",
+      "type": "B77L",
+      "cat": "A5",
+      "alt": 14425,
+      "gs": 365.7,
+      "track": 318.77,
+      "rate": 2560,
+      "lat": 47.52122,
+      "lon": -122.75601,
+      "squawk": "6601",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
