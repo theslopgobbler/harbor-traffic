@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:35:44.9169144+00:00",
+  "updated": "2026-11-02T04:45:27.3841709+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,44 +9,12 @@
       "type": "C172",
       "cat": "A1",
       "alt": 5300,
-      "gs": 100.3,
-      "track": 29.89,
-      "rate": 0,
-      "lat": 47.12399,
-      "lon": -123.26012,
+      "gs": 104.6,
+      "track": 56.31,
+      "rate": 64,
+      "lat": 47.30662,
+      "lon": -122.938,
       "squawk": "3552",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "acd47e",
-      "flight": "ASA408",
-      "reg": "N926AK",
-      "type": "B39M",
-      "cat": "A3",
-      "alt": 13600,
-      "gs": 359.1,
-      "track": 311.73,
-      "rate": 3008,
-      "lat": 47.56992,
-      "lon": -122.79539,
-      "squawk": "6630",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "ad5621",
-      "flight": "ALFT",
-      "reg": "N959AL",
-      "type": "EC35",
-      "cat": "A7",
-      "alt": 975,
-      "gs": 95.6,
-      "track": 201.47,
-      "rate": -256,
-      "lat": 47.51674,
-      "lon": -122.74509,
-      "squawk": "5542",
       "emergency": "none",
       "mil": false
     }
