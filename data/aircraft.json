@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-02T05:05:24.6634490+00:00",
+  "updated": "2026-11-02T05:15:25.1292874+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "acdbec",
+      "flight": "ASA590",
+      "reg": "N928AK",
+      "type": "B39M",
+      "cat": "A3",
+      "alt": 14200,
+      "gs": 343.2,
+      "track": 248.82,
+      "rate": 3264,
+      "lat": 47.28269,
+      "lon": -122.89398,
+      "squawk": "6664",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
