@@ -136,7 +136,8 @@
     "Bell 206L Long Ranger": "2026-11-01T22:25:27.2455992+00:00",
     "Lockheed C-5M Galaxy": "2026-11-01T23:45:27.2618169+00:00",
     "Airbus A319 131": "2026-11-02T01:45:27.7035468+00:00",
-    "Textron Aviation 208 B EX": "2026-11-02T18:45:27.3722707+00:00"
+    "Textron Aviation 208 B EX": "2026-11-02T18:45:27.3722707+00:00",
+    "Cessna Citation CJ1": "2026-11-02T20:35:25.2955040+00:00"
   },
   "candidates": [
     {
@@ -8580,7 +8581,91 @@
       "date": "2014-09-16",
       "caption": "United Airlines - N853UA - Airbus A319 -131 - San Francisco International Airport",
       "found": "2026-11-02T01:45:27.7035468+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ1",
+      "file": "File:Cessna 525 Citation CJ1+ AN1462829.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525_Citation_CJ1%2B_AN1462829.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Cessna_525_Citation_CJ1%2B_AN1462829.jpg/960px-Cessna_525_Citation_CJ1%2B_AN1462829.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 668,
+      "author": "Roland Nussbaumer",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2 January 2009",
+      "caption": "Outside Air Temperature at 10am was minus 20 degrees",
+      "found": "2026-11-02T20:35:25.2955040+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ1",
+      "file": "File:Cessna 525 Citation CJ1 AN0549705.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525_Citation_CJ1_AN0549705.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Cessna_525_Citation_CJ1_AN0549705.jpg/960px-Cessna_525_Citation_CJ1_AN0549705.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 646,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "3 March 2004",
+      "caption": "",
+      "found": "2026-11-02T20:35:25.2955040+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ1",
+      "file": "File:Cessna 525 Citation CJ1 AN1340962.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_525_Citation_CJ1_AN1340962.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Cessna_525_Citation_CJ1_AN1340962.jpg/960px-Cessna_525_Citation_CJ1_AN1340962.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 698,
+      "author": "Roland Nussbaumer",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "24 February 2008",
+      "caption": "",
+      "found": "2026-11-02T20:35:25.2955040+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ1",
+      "file": "File:GENEVA MAY 2006 CESSNA CITATION 525 CJ1+ N525AD (49293639663).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:GENEVA_MAY_2006_CESSNA_CITATION_525_CJ1%2B_N525AD_(49293639663).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/GENEVA_MAY_2006_CESSNA_CITATION_525_CJ1%2B_N525AD_%2849293639663%29.jpg/960px-GENEVA_MAY_2006_CESSNA_CITATION_525_CJ1%2B_N525AD_%2849293639663%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 647,
+      "author": "simon butler from halesowen, uk",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2019-12-29 18:12",
+      "caption": "GENEVA MAY 2006 CESSNA CITATION 525 CJ1+ N525AD",
+      "found": "2026-11-02T20:35:25.2955040+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ1",
+      "file": "File:N678RF 2004 Cessna 525 Citation CJ1 C-N 525-0537 (5372097290).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N678RF_2004_Cessna_525_Citation_CJ1_C-N_525-0537_(5372097290).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/N678RF_2004_Cessna_525_Citation_CJ1_C-N_525-0537_%285372097290%29.jpg/960px-N678RF_2004_Cessna_525_Citation_CJ1_C-N_525-0537_%285372097290%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 628,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-01-17 13:53",
+      "caption": "Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, January 17, 2011 Photo: Tomas Del Coro",
+      "found": "2026-11-02T20:35:25.2955040+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ1",
+      "file": "File:OE-FLG Cessna 525 CitationJet CJ1 Smartline Luftfahrt DUS 2018-09-01 (6a) (44968871174).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:OE-FLG_Cessna_525_CitationJet_CJ1_Smartline_Luftfahrt_DUS_2018-09-01_(6a)_(44968871174).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/OE-FLG_Cessna_525_CitationJet_CJ1_Smartline_Luftfahrt_DUS_2018-09-01_%286a%29_%2844968871174%29.jpg/960px-OE-FLG_Cessna_525_CitationJet_CJ1_Smartline_Luftfahrt_DUS_2018-09-01_%286a%29_%2844968871174%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Marvin Mutz",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-09-01 12:54",
+      "caption": "Flughafen Düsseldorf, Cessna 525 (OE-FLG) der Smartline Luftfahrt GmbH",
+      "found": "2026-11-02T20:35:25.2955040+00:00"
     }
   ],
-  "updated": "2026-11-02T20:25:27.9604568+00:00"
+  "updated": "2026-11-02T20:35:25.2955040+00:00"
 }
