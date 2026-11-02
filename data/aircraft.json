@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T16:55:29.5042132+00:00",
+  "updated": "2026-11-02T17:05:25.3403269+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,29 +8,13 @@
       "reg": "N221TJ",
       "type": "C172",
       "cat": "A1",
-      "alt": 2800,
-      "gs": 103.1,
-      "track": 272.78,
-      "rate": 0,
-      "lat": 47.16518,
-      "lon": -122.85606,
+      "alt": 1800,
+      "gs": 87.1,
+      "track": 178.03,
+      "rate": null,
+      "lat": 46.94357,
+      "lon": -122.91442,
       "squawk": "4613",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "782240",
-      "flight": "CKK625",
-      "reg": "B-227G",
-      "type": "B77L",
-      "cat": "A5",
-      "alt": 7725,
-      "gs": 196.5,
-      "track": 196.87,
-      "rate": 0,
-      "lat": 47.85709,
-      "lon": -122.74702,
-      "squawk": "1160",
       "emergency": "none",
       "mil": false
     }
