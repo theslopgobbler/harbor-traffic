@@ -137,7 +137,8 @@
     "Lockheed C-5M Galaxy": "2026-11-01T23:45:27.2618169+00:00",
     "Airbus A319 131": "2026-11-02T01:45:27.7035468+00:00",
     "Textron Aviation 208 B EX": "2026-11-02T18:45:27.3722707+00:00",
-    "Cessna Citation CJ1": "2026-11-02T20:35:25.295504+00:00"
+    "Cessna Citation CJ1": "2026-11-02T20:35:25.295504+00:00",
+    "Bell 505 Jet Ranger X": "2026-11-02T23:35:26.7971228+00:00"
   },
   "candidates": [
     {
@@ -8665,7 +8666,91 @@
       "date": "2018-09-01 12:54",
       "caption": "Flughafen Düsseldorf, Cessna 525 (OE-FLG) der Smartline Luftfahrt GmbH",
       "found": "2026-11-02T20:35:25.295504+00:00"
+    },
+    {
+      "model": "Bell 505 Jet Ranger X",
+      "file": "File:Bell 505 (N505GR).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_505_(N505GR).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Bell_505_%28N505GR%29.jpg/960px-Bell_505_%28N505GR%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Jason Reina",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-03-04 17:57:38",
+      "caption": "A 2017 Bell 505 Jet Ranger X (N505GR s/n 65011) belonging to Bell Textron of Fort Worth, Texas.",
+      "found": "2026-11-02T23:35:26.7971228+00:00"
+    },
+    {
+      "model": "Bell 505 Jet Ranger X",
+      "file": "File:Bell 505 Jet Ranger X.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_505_Jet_Ranger_X.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Bell_505_Jet_Ranger_X.jpg/960px-Bell_505_Jet_Ranger_X.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mpcaissy",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-06-30",
+      "caption": "Bell 505 Jet Ranger X",
+      "found": "2026-11-02T23:35:26.7971228+00:00"
+    },
+    {
+      "model": "Bell 505 Jet Ranger X",
+      "file": "File:Bell 505 Jet Ranger X (N505HR, cn 65170) (7-29-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_505_Jet_Ranger_X_(N505HR,_cn_65170)_(7-29-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Bell_505_Jet_Ranger_X_%28N505HR%2C_cn_65170%29_%287-29-2023%29.jpg/960px-Bell_505_Jet_Ranger_X_%28N505HR%2C_cn_65170%29_%287-29-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-07-29",
+      "caption": "Bell 505 at 2023 EAA AirVenture Oshkosh, Wittman Regional Airport.",
+      "found": "2026-11-02T23:35:26.7971228+00:00"
+    },
+    {
+      "model": "Bell 505 Jet Ranger X",
+      "file": "File:Bell 505 Jet Ranger X (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_505_Jet_Ranger_X_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Bell_505_Jet_Ranger_X_%28cropped%29.jpg/960px-Bell_505_Jet_Ranger_X_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Mpcaissy",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-06-30",
+      "caption": "Bell 505 Jet Ranger X",
+      "found": "2026-11-02T23:35:26.7971228+00:00"
+    },
+    {
+      "model": "Bell 505 Jet Ranger X",
+      "file": "File:Bell 505 Jet Ranger X 2016-06-03 Andre Gerwing Collection ID 003257.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_505_Jet_Ranger_X_2016-06-03_Andre_Gerwing_Collection_ID_003257.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Bell_505_Jet_Ranger_X_2016-06-03_Andre_Gerwing_Collection_ID_003257.jpg/960px-Bell_505_Jet_Ranger_X_2016-06-03_Andre_Gerwing_Collection_ID_003257.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1434,
+      "author": "André Gerwing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2016-06-03",
+      "caption": "Bell 505 Jet Ranger X at Schönefeld, Flughafen / EDDB (DE), 2016-06-03 - The André Gerwing Collection ID: 003257",
+      "found": "2026-11-02T23:35:26.7971228+00:00"
+    },
+    {
+      "model": "Bell 505 Jet Ranger X",
+      "file": "File:Bell 505 mockup 2015 IMG 8962.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_505_mockup_2015_IMG_8962.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Bell_505_mockup_2015_IMG_8962.jpg/960px-Bell_505_mockup_2015_IMG_8962.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Michal Setlak",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-09-11 11:23:01",
+      "caption": "The Bell 505 Jet Ranger X helicopter mockup during presentation in Konstancin Jeziorna near Warsaw, Poland",
+      "found": "2026-11-02T23:35:26.7971228+00:00"
     }
   ],
-  "updated": "2026-11-02T23:25:29.1195261+00:00"
+  "updated": "2026-11-02T23:35:26.7971228+00:00"
 }
