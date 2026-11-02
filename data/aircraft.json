@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-02T06:05:26.3320360+00:00",
+  "updated": "2026-11-02T06:15:28.8413713+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a97c18",
-      "flight": "ASA747",
-      "reg": "N710AL",
-      "type": "B39M",
-      "cat": "A3",
-      "alt": 14700,
-      "gs": 340.2,
-      "track": 41.19,
-      "rate": -1728,
-      "lat": 47.11943,
-      "lon": -122.71355,
-      "squawk": "7333",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
