@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T03:45:28.4273801+00:00",
+  "updated": "2026-11-02T03:55:27.2890981+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,14 +8,14 @@
       "reg": "N297PL",
       "type": "C172",
       "cat": "A1",
-      "alt": 4225,
-      "gs": 109.3,
-      "track": 212.67,
-      "rate": -128,
-      "lat": 47.01804,
-      "lon": -123.39048,
-      "squawk": "4626",
-      "emergency": "none",
+      "alt": 1900,
+      "gs": 102.1,
+      "track": 251.74,
+      "rate": -896,
+      "lat": 46.94797,
+      "lon": -123.8243,
+      "squawk": null,
+      "emergency": null,
       "mil": false
     }
   ]
