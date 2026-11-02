@@ -450,7 +450,8 @@
     "440151000": "2026-11-02T14:15:38.6869408+00:00",
     "338926457": "2026-11-02T15:35:25.6598732+00:00",
     "565884000": "2026-11-02T16:45:47.9348961+00:00",
-    "431851000": "2026-11-02T20:25:27.9604568+00:00"
+    "431851000": "2026-11-02T20:25:27.9604568+00:00",
+    "368314850": "2026-11-02T22:05:38.3576874+00:00"
   },
   "candidates": [
     {
@@ -3902,7 +3903,22 @@
       "date": "2015-05-10 06:56",
       "caption": "All this activity just a mile away from FLL. These few shots were taken during the navy departure at the end of Fleet Week 2015 at PEV. We saw about a dozen people gathered to watch. I can't imagine owning a camera an...",
       "found": "2026-11-01T12:55:28.389612+00:00"
+    },
+    {
+      "mmsi": "368314850",
+      "ship": "PERSEVERANCE",
+      "file": "File:Hope (steamboat) 002.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Hope_(steamboat)_002.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Hope_%28steamboat%29_002.JPG/1280px-Hope_%28steamboat%29_002.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 921,
+      "author": "Samuel Ward Stanton (1870-1912)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1895",
+      "caption": "Hope early steamboat on Hudson River.",
+      "found": "2026-11-02T22:05:38.3576874+00:00"
     }
   ],
-  "updated": "2026-11-02T21:55:26.3128442+00:00"
+  "updated": "2026-11-02T22:05:38.3576874+00:00"
 }

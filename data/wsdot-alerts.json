@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T21:55:26.3128442+00:00",
+  "updated": "2026-11-02T22:05:38.3576874+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2818,27 +2818,6 @@
       "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
-      "id": 723065,
-      "kind": "other",
-      "category": "Riverside Ave Bridge",
-      "priority": "High",
-      "headline": "Bridge work on US 101 northbound at milepost 87.31 near Riverside Bridge beginning at 9:00 am on November 2, 2026 until about 2:00 pm.  Expect intermittent opening throughout the day.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 87.31,
-      "lat": 46.979532278,
-      "lon": -123.883206216,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-02T17:00:00.0000000+00:00",
-      "end": "2026-11-02T22:00:00.0000000+00:00",
-      "updated": "2026-11-02T16:33:48.2830000+00:00"
-    },
-    {
       "id": 723061,
       "kind": "work",
       "category": "Road work",
@@ -2900,27 +2879,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 723050,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "From 9 a.m. to 2 p.m. Monday, Nov. 2, US 101 will close multiple times approaching milepost 184 near Dowans Creek Road for pavement repairs. Each closure will last up to 60 minutes. Emergency services will be given priority access through the area during the work.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-11-02T05:24:00.0000000+00:00",
-      "end": "2026-11-02T22:00:00.0000000+00:00",
-      "updated": "2026-11-02T05:34:30.4400000+00:00"
     },
     {
       "id": 631745,
