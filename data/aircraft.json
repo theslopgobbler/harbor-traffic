@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T18:55:25.9884924+00:00",
+  "updated": "2026-11-02T19:05:27.2469090+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,45 +8,13 @@
       "reg": "N30033",
       "type": "C177",
       "cat": "A1",
-      "alt": 4200,
-      "gs": 96.0,
-      "track": 218.66,
+      "alt": 4300,
+      "gs": 91.6,
+      "track": 220.13,
       "rate": 0,
-      "lat": 47.1963,
-      "lon": -123.18029,
-      "squawk": "4631",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a51e0e",
-      "flight": "N429LF",
-      "reg": "N429LF",
-      "type": "B429",
-      "cat": "A7",
-      "alt": 2225,
-      "gs": 119.4,
-      "track": 168.41,
-      "rate": null,
-      "lat": 46.50453,
-      "lon": -123.13188,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "add7a0",
-      "flight": "N991PA",
-      "reg": "N991PA",
-      "type": "DA40",
-      "cat": "A1",
-      "alt": 400,
-      "gs": 71.0,
-      "track": 144.74,
-      "rate": 192,
-      "lat": 46.98089,
-      "lon": -122.89771,
-      "squawk": "4716",
+      "lat": 46.98555,
+      "lon": -123.44932,
+      "squawk": "1023",
       "emergency": "none",
       "mil": false
     }
