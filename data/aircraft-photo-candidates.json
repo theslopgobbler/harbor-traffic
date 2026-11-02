@@ -134,7 +134,8 @@
     "Cessna Citation I": "2026-11-01T18:25:25.7500538+00:00",
     "Sikorsky MH-60T Jayhawk": "2026-11-01T18:35:26.6447517+00:00",
     "Bell 206L Long Ranger": "2026-11-01T22:25:27.2455992+00:00",
-    "Lockheed C-5M Galaxy": "2026-11-01T23:45:27.2618169+00:00"
+    "Lockheed C-5M Galaxy": "2026-11-01T23:45:27.2618169+00:00",
+    "Airbus A319 131": "2026-11-02T01:45:27.7035468+00:00"
   },
   "candidates": [
     {
@@ -8494,7 +8495,91 @@
       "date": "2017-11-12 10:09:00",
       "caption": "A Lockheed C-5M Galaxy (70042) of the 60th and 349th Air Mobility Wings on static display at Aviation Nation 2017. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
       "found": "2026-11-01T23:45:27.2618169+00:00"
+    },
+    {
+      "model": "Airbus A319 131",
+      "file": "File:G-EUPS Airbus A319-131 (26201479092).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-EUPS_Airbus_A319-131_(26201479092).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/G-EUPS_Airbus_A319-131_%2826201479092%29.jpg/960px-G-EUPS_Airbus_A319-131_%2826201479092%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Daniel Lintott",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2016-02-26 12:23",
+      "caption": "British Airways G-EUPS Airbus A319-131 arriving at Heathrow",
+      "found": "2026-11-02T01:45:27.7035468+00:00"
+    },
+    {
+      "model": "Airbus A319 131",
+      "file": "File:Hamburg Airport SAS Scandinavian Airlines Airbus A319-131 OY-KBT (DSC09614).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hamburg_Airport_SAS_Scandinavian_Airlines_Airbus_A319-131_OY-KBT_(DSC09614).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Hamburg_Airport_SAS_Scandinavian_Airlines_Airbus_A319-131_OY-KBT_%28DSC09614%29.jpg/960px-Hamburg_Airport_SAS_Scandinavian_Airlines_Airbus_A319-131_OY-KBT_%28DSC09614%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-09-11 12:50:49",
+      "caption": "Der Airbus A319-131 der Fluggesellschaft SAS Scandinavian Airlines mit dem Kennzeichen OY-KBT und Star Alliance-Sonderlackierung im Landeanflug auf die Bahn 23 des Flughafens Hamburg. Das Flugzeug führte einen Flug vo...",
+      "found": "2026-11-02T01:45:27.7035468+00:00"
+    },
+    {
+      "model": "Airbus A319 131",
+      "file": "File:Scandinavian Airbus A319 OY-KBT Gardermoen 2024 (01).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_(01).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_%2801%29.jpg/960px-Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 533,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 16 August 2024",
+      "caption": "Scandinavian Airlines Airbus A319-131 OY-KBT taxiing towards the terminal at Oslo Airport, Gardermoen (OSL/ENGM), near Oslo, Norway, upon its arrival from Zurich Airport (ZRH/LSZH), Switzerland, as SK4842",
+      "found": "2026-11-02T01:45:27.7035468+00:00"
+    },
+    {
+      "model": "Airbus A319 131",
+      "file": "File:Scandinavian Airbus A319 OY-KBT Gardermoen 2024 (02).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_(02).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_%2802%29.jpg/960px-Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 535,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 16 August 2024",
+      "caption": "Scandinavian Airlines Airbus A319-131 OY-KBT taxiing towards the terminal at Oslo Airport, Gardermoen (OSL/ENGM), near Oslo, Norway, upon its arrival from Zurich Airport (ZRH/LSZH), Switzerland, as SK4842",
+      "found": "2026-11-02T01:45:27.7035468+00:00"
+    },
+    {
+      "model": "Airbus A319 131",
+      "file": "File:Scandinavian Airbus A319 OY-KBT Gardermoen 2024 (03).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_(03).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_%2803%29.jpg/960px-Scandinavian_Airbus_A319_OY-KBT_Gardermoen_2024_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 627,
+      "author": "Bahnfrend",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 16 August 2024",
+      "caption": "Scandinavian Airlines Airbus A319-131 OY-KBT taxiing towards the terminal at Oslo Airport, Gardermoen (OSL/ENGM), near Oslo, Norway, upon its arrival from Zurich Airport (ZRH/LSZH), Switzerland, as SK4842",
+      "found": "2026-11-02T01:45:27.7035468+00:00"
+    },
+    {
+      "model": "Airbus A319 131",
+      "file": "File:United Airlines - N853UA - Airbus A319 -131 - San Francisco International Airport-0699.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Airlines_-_N853UA_-_Airbus_A319_-131_-_San_Francisco_International_Airport-0699.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/United_Airlines_-_N853UA_-_Airbus_A319_-131_-_San_Francisco_International_Airport-0699.jpg/960px-United_Airlines_-_N853UA_-_Airbus_A319_-131_-_San_Francisco_International_Airport-0699.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2014-09-16",
+      "caption": "United Airlines - N853UA - Airbus A319 -131 - San Francisco International Airport",
+      "found": "2026-11-02T01:45:27.7035468+00:00"
     }
   ],
-  "updated": "2026-11-02T01:35:28.0980001+00:00"
+  "updated": "2026-11-02T01:45:27.7035468+00:00"
 }
