@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T16:25:29.5202201+00:00",
+  "updated": "2026-11-02T16:35:28.8247266+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2456,6 +2456,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 723073,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 93.27 near Hoquiam River beginning at 8:27 am on November 2, 2026 until about 11:30 am.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 93.27,
+      "lat": 47.050499964,
+      "lon": -123.925263405,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-02T16:27:00.0000000+00:00",
+      "end": "2026-11-02T19:30:00.0000000+00:00",
+      "updated": "2026-11-02T16:30:13.3770000+00:00"
     },
     {
       "id": 723050,
