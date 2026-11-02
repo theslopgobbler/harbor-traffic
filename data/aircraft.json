@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-02T03:55:27.2890981+00:00",
+  "updated": "2026-11-02T04:05:26.1322792+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a310cb",
-      "flight": "RFS708",
-      "reg": "N297PL",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 1900,
-      "gs": 102.1,
-      "track": 251.74,
-      "rate": -896,
-      "lat": 46.94797,
-      "lon": -123.8243,
-      "squawk": null,
-      "emergency": null,
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
