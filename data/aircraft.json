@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-02T16:05:29.7694805+00:00",
+  "updated": "2026-11-02T16:15:27.1301592+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a8609f",
+      "flight": "QXE2332",
+      "reg": "N639QX",
+      "type": "E75L",
+      "cat": "A3",
+      "alt": 8250,
+      "gs": 270.6,
+      "track": 206.57,
+      "rate": 2560,
+      "lat": 47.63498,
+      "lon": -122.71543,
+      "squawk": "1516",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
