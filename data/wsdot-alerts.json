@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T19:49:58.8872030+00:00",
+  "updated": "2026-11-02T19:55:29.7519243+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1614,6 +1614,27 @@
       ]
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 723072,
       "kind": "work",
       "category": "Road work",
@@ -2001,25 +2022,25 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "id": 723119,
+      "kind": "closure",
+      "category": "Riverside Ave Bridge",
+      "priority": "Highest",
+      "headline": "Riverside Ave Bridge is closed to vehicle traffic at 11:53 AM Monday, November 2. A boat traffic opening is in progress. Travelers can expect delays for up to 15 minutes on US 101 both directions at 87.35 Milepost.",
       "description": "",
       "link": null,
       "road": "101",
       "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
+      "direction": "N",
+      "milepost": 87.35,
+      "lat": 46.979520561,
+      "lon": -123.884030117,
       "lat2": 0,
       "lon2": 0,
       "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
+      "start": "2026-11-02T19:53:17.5130000+00:00",
+      "end": "2026-11-02T20:08:17.5130000+00:00",
+      "updated": "2026-11-02T19:53:23.3570000+00:00"
     },
     {
       "id": 722914,
