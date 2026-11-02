@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T21:25:27.2069717+00:00",
+  "updated": "2026-11-02T21:35:29.3215192+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2043,27 +2043,6 @@
       "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
-      "id": 723065,
-      "kind": "other",
-      "category": "Riverside Ave Bridge",
-      "priority": "High",
-      "headline": "Bridge work on US 101 northbound at milepost 87.31 near Riverside Bridge beginning at 9:00 am on November 2, 2026 until about 2:00 pm.  Expect intermittent opening throughout the day.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 87.31,
-      "lat": 46.979532278,
-      "lon": -123.883206216,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-02T17:00:00.0000000+00:00",
-      "end": "2026-11-02T22:00:00.0000000+00:00",
-      "updated": "2026-11-02T16:33:48.2830000+00:00"
-    },
-    {
       "id": 722914,
       "kind": "work",
       "category": "Maintenance",
@@ -2837,6 +2816,27 @@
           46.59609
         ]
       ]
+    },
+    {
+      "id": 723065,
+      "kind": "other",
+      "category": "Riverside Ave Bridge",
+      "priority": "High",
+      "headline": "Bridge work on US 101 northbound at milepost 87.31 near Riverside Bridge beginning at 9:00 am on November 2, 2026 until about 2:00 pm.  Expect intermittent opening throughout the day.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 87.31,
+      "lat": 46.979532278,
+      "lon": -123.883206216,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-02T17:00:00.0000000+00:00",
+      "end": "2026-11-02T22:00:00.0000000+00:00",
+      "updated": "2026-11-02T16:33:48.2830000+00:00"
     },
     {
       "id": 723061,
