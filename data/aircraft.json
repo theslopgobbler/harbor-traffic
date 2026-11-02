@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T14:35:38.9933012+00:00",
+  "updated": "2026-11-02T14:45:40.5366610+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N414EP",
       "type": "C414",
       "cat": "A2",
-      "alt": 4750,
-      "gs": 160.7,
-      "track": 185.36,
-      "rate": 0,
-      "lat": 47.65818,
-      "lon": -122.8063,
+      "alt": 2750,
+      "gs": 125.0,
+      "track": 181.37,
+      "rate": -128,
+      "lat": 47.24554,
+      "lon": -122.83792,
       "squawk": "4734",
       "emergency": "none",
       "mil": false
