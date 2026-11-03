@@ -144,7 +144,8 @@
     "Bell 205A-1": "2026-11-03T16:15:28.9454314+00:00",
     "Boeing P-8A Poseidon": "2026-11-03T19:16:01.3484828+00:00",
     "Boeing 737NG 800/W": "2026-11-03T19:56:03.7676485+00:00",
-    "Bell UH-1V Iroquois": "2026-11-03T21:25:41.4152709+00:00"
+    "Bell UH-1V Iroquois": "2026-11-03T21:25:41.4152709+00:00",
+    "Bombardier Challenger 3500": "2026-11-03T22:45:28.2142308+00:00"
   },
   "candidates": [
     {
@@ -9022,7 +9023,91 @@
       "date": "2015-09-21 14:23",
       "caption": "PictionID:43723181 - Catalog:17.S_000153 - Title:Bell UH-1V 22468 CA-NG 17May87 [RJF] - Filename:17.S_000153.tif - ----Image from the René Francillon Photo Archive. This images is from a 35mm slide. Having had his int...",
       "found": "2026-11-03T21:25:41.4152709+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 3500",
+      "file": "File:Bombardier BD-100-1A10 - Challenger 3500 (c-n 21107, P4-JIMI2) 2026-04-15 Andre Gerwing Collection ID 028430.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-100-1A10_-_Challenger_3500_(c-n_21107,_P4-JIMI2)_2026-04-15_Andre_Gerwing_Collection_ID_028430.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bombardier_BD-100-1A10_-_Challenger_3500_%28c-n_21107%2C_P4-JIMI2%29_2026-04-15_Andre_Gerwing_Collection_ID_028430.jpg/960px-Bombardier_BD-100-1A10_-_Challenger_3500_%28c-n_21107%2C_P4-JIMI2%29_2026-04-15_Andre_Gerwing_Collection_ID_028430.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "André Gerwing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-15",
+      "caption": "Bombardier BD-100-1A10 / Challenger 3500 (c/n 21107, P4-JIMI2) landing at Schönefeld, Flughafen / EDDB (DE), 2026-04-15 - The André Gerwing Collection ID: 028430",
+      "found": "2026-11-03T22:45:28.2142308+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 3500",
+      "file": "File:Bombardier BD-100-1A10 - Challenger 3500 (c-n 21107, P4-JIMI2) 2026-04-15 Andre Gerwing Collection ID 028431.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-100-1A10_-_Challenger_3500_(c-n_21107,_P4-JIMI2)_2026-04-15_Andre_Gerwing_Collection_ID_028431.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Bombardier_BD-100-1A10_-_Challenger_3500_%28c-n_21107%2C_P4-JIMI2%29_2026-04-15_Andre_Gerwing_Collection_ID_028431.jpg/960px-Bombardier_BD-100-1A10_-_Challenger_3500_%28c-n_21107%2C_P4-JIMI2%29_2026-04-15_Andre_Gerwing_Collection_ID_028431.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "André Gerwing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-15",
+      "caption": "Bombardier BD-100-1A10 / Challenger 3500 (c/n 21107, P4-JIMI2) landing at Schönefeld, Flughafen / EDDB (DE), 2026-04-15 - The André Gerwing Collection ID: 028431",
+      "found": "2026-11-03T22:45:28.2142308+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 3500",
+      "file": "File:Bombardier BD-100-1A10 - Challenger 3500 (c-n 21107, P4-JIMI2) 2026-04-15 Andre Gerwing Collection ID 028432.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-100-1A10_-_Challenger_3500_(c-n_21107,_P4-JIMI2)_2026-04-15_Andre_Gerwing_Collection_ID_028432.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Bombardier_BD-100-1A10_-_Challenger_3500_%28c-n_21107%2C_P4-JIMI2%29_2026-04-15_Andre_Gerwing_Collection_ID_028432.jpg/960px-Bombardier_BD-100-1A10_-_Challenger_3500_%28c-n_21107%2C_P4-JIMI2%29_2026-04-15_Andre_Gerwing_Collection_ID_028432.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "André Gerwing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-15",
+      "caption": "Bombardier BD-100-1A10 / Challenger 3500 (c/n 21107, P4-JIMI2) landing at Schönefeld, Flughafen / EDDB (DE), 2026-04-15 - The André Gerwing Collection ID: 028432",
+      "found": "2026-11-03T22:45:28.2142308+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 3500",
+      "file": "File:Bombardier BD-100-1A10 Challenger 3500 (N339CM, cn 20940) (3-18-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-100-1A10_Challenger_3500_(N339CM,_cn_20940)_(3-18-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Bombardier_BD-100-1A10_Challenger_3500_%28N339CM%2C_cn_20940%29_%283-18-2023%29.jpg/960px-Bombardier_BD-100-1A10_Challenger_3500_%28N339CM%2C_cn_20940%29_%283-18-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-03-18",
+      "caption": "Bombardier BD-100-1A10 Challenger 3500 (N339CM, cn 20940) at Daytona Beach International Airport.",
+      "found": "2026-11-03T22:45:28.2142308+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 3500",
+      "file": "File:Bombardier BD-100-1A10 Challenger 3500 (N511FX, cn 20964) (2-10-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-100-1A10_Challenger_3500_(N511FX,_cn_20964)_(2-10-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Bombardier_BD-100-1A10_Challenger_3500_%28N511FX%2C_cn_20964%29_%282-10-2026%29.jpg/960px-Bombardier_BD-100-1A10_Challenger_3500_%28N511FX%2C_cn_20964%29_%282-10-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-02-10",
+      "caption": "Bombardier BD-100-1A10 Challenger 3500 (N511FX, cn 20964) at Daytona Beach International Airport.",
+      "found": "2026-11-03T22:45:28.2142308+00:00"
+    },
+    {
+      "model": "Bombardier Challenger 3500",
+      "file": "File:HB-JLM - Bombardier Challenger 3500 (21042) DND 140526.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:HB-JLM_-_Bombardier_Challenger_3500_(21042)_DND_140526.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/HB-JLM_-_Bombardier_Challenger_3500_%2821042%29_DND_140526.jpg/960px-HB-JLM_-_Bombardier_Challenger_3500_%2821042%29_DND_140526.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 427,
+      "author": "kitmasterbloke",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-05-17 23:28:23",
+      "caption": "Some aircraft shots from my week chasing trains in Scotland",
+      "found": "2026-11-03T22:45:28.2142308+00:00"
     }
   ],
-  "updated": "2026-11-03T22:35:25.7329208+00:00"
+  "updated": "2026-11-03T22:45:28.2142308+00:00"
 }
