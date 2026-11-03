@@ -577,6 +577,9 @@ body.tv .ticker { display: flex; align-items: center; height: 44px; flex: none; 
   /* its own layer, so the scroll runs on the graphics card and the busy map underneath can't make it stutter */
   will-change: transform; backface-visibility: hidden; transform: translateZ(0); }
 .ticker-track .tk { display: flex; align-items: center; flex: none; }
+/* bigger text on a TV (the default there): a taller, larger ticker to read from across the room */
+body.tv.big-text .ticker { height: 54px; font-size: 24px; }
+body.tv.big-text .ticker-lbl { font-size: 17px; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ti { color: var(--text); padding: 0 6px; }
 .ti b { font-weight: 400; margin-right: 4px; }

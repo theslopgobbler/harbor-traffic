@@ -1506,7 +1506,7 @@
   function putTicker(track, html) {
     track.innerHTML = `<div class="tk">${html}<i class="sep">◆</i></div><div class="tk">${html}<i class="sep">◆</i></div>`;
     const w = track.firstElementChild.getBoundingClientRect().width;
-    track.style.animationDuration = `${Math.max(20, w / 90)}s`; // about 90 px a second
+    track.style.animationDuration = `${Math.max(30, w / 60)}s`; // about 60 px a second (90 was hard to read)
   }
   if (TV) $('#ticker').addEventListener('animationiteration', (e) => {
     if (tickerNext == null) return;
