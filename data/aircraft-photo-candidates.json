@@ -140,7 +140,8 @@
     "Cessna Citation CJ1": "2026-11-02T20:35:25.295504+00:00",
     "Bell 505 Jet Ranger X": "2026-11-02T23:35:26.7971228+00:00",
     "Raytheon Aircraft Company Premier IA": "2026-11-03T15:25:27.2438523+00:00",
-    "Hawker Beechcraft Corp Hawker 4000": "2026-11-03T16:05:54.1372806+00:00"
+    "Hawker Beechcraft Corp Hawker 4000": "2026-11-03T16:05:54.1372806+00:00",
+    "Bell 205A-1": "2026-11-03T16:15:28.9454314+00:00"
   },
   "candidates": [
     {
@@ -8752,7 +8753,91 @@
       "date": "2015-09-11 11:23:01",
       "caption": "The Bell 505 Jet Ranger X helicopter mockup during presentation in Konstancin Jeziorna near Warsaw, Poland",
       "found": "2026-11-02T23:35:26.7971228+00:00"
+    },
+    {
+      "model": "Bell 205A-1",
+      "file": "File:Heli Air Zermatt at Sion Air Show 1982 HB-XFZ Bell 205A-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Heli_Air_Zermatt_at_Sion_Air_Show_1982_HB-XFZ_Bell_205A-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Heli_Air_Zermatt_at_Sion_Air_Show_1982_HB-XFZ_Bell_205A-1.jpg/960px-Heli_Air_Zermatt_at_Sion_Air_Show_1982_HB-XFZ_Bell_205A-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 665,
+      "author": "Anidaat",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "1982-06-06",
+      "caption": "Heli Air Zermatt at Sion Air Show 1982 Bell 205A-1 HB-XFZ (Air Grischa)",
+      "found": "2026-11-03T16:15:28.9454314+00:00"
+    },
+    {
+      "model": "Bell 205A-1",
+      "file": "File:O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O%27Driscoll_Aviation_(VH-HUE)_Bell_205A-1_at_Wagga_Wagga_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport.jpg/960px-O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2019-01-08 11:53:23",
+      "caption": "O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport.",
+      "found": "2026-11-03T16:15:28.9454314+00:00"
+    },
+    {
+      "model": "Bell 205A-1",
+      "file": "File:O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O%27Driscoll_Aviation_(VH-HUE)_Bell_205A-1_at_Wagga_Wagga_Airport_(1).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%281%29.jpg/960px-O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2019-01-08 11:54:07",
+      "caption": "O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport.",
+      "found": "2026-11-03T16:15:28.9454314+00:00"
+    },
+    {
+      "model": "Bell 205A-1",
+      "file": "File:O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport (4).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O%27Driscoll_Aviation_(VH-HUE)_Bell_205A-1_at_Wagga_Wagga_Airport_(4).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%284%29.jpg/960px-O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2019-01-08 12:00:47",
+      "caption": "O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport.",
+      "found": "2026-11-03T16:15:28.9454314+00:00"
+    },
+    {
+      "model": "Bell 205A-1",
+      "file": "File:O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport (5).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O%27Driscoll_Aviation_(VH-HUE)_Bell_205A-1_at_Wagga_Wagga_Airport_(5).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%285%29.jpg/960px-O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2019-01-08 12:00:54",
+      "caption": "O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport.",
+      "found": "2026-11-03T16:15:28.9454314+00:00"
+    },
+    {
+      "model": "Bell 205A-1",
+      "file": "File:O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport (6).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:O%27Driscoll_Aviation_(VH-HUE)_Bell_205A-1_at_Wagga_Wagga_Airport_(6).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%286%29.jpg/960px-O%27Driscoll_Aviation_%28VH-HUE%29_Bell_205A-1_at_Wagga_Wagga_Airport_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2019-01-08 12:01:02",
+      "caption": "O'Driscoll Aviation (VH-HUE) Bell 205A-1 at Wagga Wagga Airport.",
+      "found": "2026-11-03T16:15:28.9454314+00:00"
     }
   ],
-  "updated": "2026-11-03T16:05:54.1372806+00:00"
+  "updated": "2026-11-03T16:15:28.9454314+00:00"
 }
