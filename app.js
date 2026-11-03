@@ -1497,10 +1497,22 @@
     if (html === tickerSig) return; // unchanged: don't restart the scroll
     tickerSig = html;
     const track = $('#ticker');
+    // new text waits for the end of the current loop instead of replacing it mid-scroll: swapping it in (and changing
+    // the speed) partway through made the whole line jump back to the start. Aircraft and buses change it often
+    if (track.firstElementChild) { tickerNext = html; return; }
+    putTicker(track, html);
+  }
+  let tickerNext = null;
+  function putTicker(track, html) {
     track.innerHTML = `<div class="tk">${html}<i class="sep">◆</i></div><div class="tk">${html}<i class="sep">◆</i></div>`;
     const w = track.firstElementChild.getBoundingClientRect().width;
     track.style.animationDuration = `${Math.max(20, w / 90)}s`; // about 90 px a second
   }
+  if (TV) $('#ticker').addEventListener('animationiteration', (e) => {
+    if (tickerNext == null) return;
+    const html = tickerNext; tickerNext = null;
+    putTicker(e.currentTarget, html);
+  });
   window.htTickerRefresh = () => { clearTimeout(renderTicker._t); renderTicker._t = setTimeout(renderTicker, 400); };
   if (TV) {
     setInterval(renderTicker, 60 * 1000);
