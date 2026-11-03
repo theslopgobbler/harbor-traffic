@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T20:26:07.5391877+00:00",
+  "updated": "2026-11-03T20:35:54.7937325+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -19,15 +19,27 @@
   "alerts": [
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-04T00:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 3 at 7:43AM PST until November 3 at 4:00PM PST by NWS Seattle WA"
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-11-05T06:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 3 at 12:31PM PST until November 4 at 10:00PM PST by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm",
+      "ends": "2026-11-05T06:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 3 at 12:31PM PST until November 4 at 10:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-04T00:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 3 at 1:12AM PST until November 3 at 4:00PM PST by NWS Portland OR"
+      "headline": "Small Craft Advisory issued November 3 at 12:31PM PST until November 3 at 4:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-04T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 3 at 7:43AM PST until November 3 at 4:00PM PST by NWS Seattle WA"
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-03T20:26:07.5391877+00:00",
+  "updated": "2026-11-03T20:35:54.7937325+00:00",
   "status": "All routes are currently operating normally.",
   "alerts": [
     {
       "route": null,
       "name": null,
-      "text": "Our GPS locator is down for maintenance Please refer to the static schedules posted on our Routes page until further notice. This maintenance does not impact transit service and all routes continue to operate normally."
+      "text": "Find your ride Find real-time notices for each route using our GPS locator."
     }
   ],
   "source": "https://ghtransit.com/alerts/"
