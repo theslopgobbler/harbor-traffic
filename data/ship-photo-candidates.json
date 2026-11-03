@@ -461,7 +461,8 @@
     "367343380": "2026-11-03T15:15:34.4652685+00:00",
     "368085000": "2026-11-03T15:55:27.0706445+00:00",
     "367625310": "2026-11-03T16:05:54.1372806+00:00",
-    "368500080": "2026-11-03T20:55:42.6711871+00:00"
+    "368500080": "2026-11-03T20:55:42.6711871+00:00",
+    "367061930": "2026-11-03T23:15:27.4305897+00:00"
   },
   "candidates": [
     {
@@ -3943,7 +3944,52 @@
       "date": "2010-06-05",
       "caption": "View of fishing trawlers lined up along Smith Cove of Elliott Bay, near the Seattle, Washington, neighborhood known as Interbay.",
       "found": "2026-11-03T15:55:27.0706445+00:00"
+    },
+    {
+      "mmsi": "367061930",
+      "ship": "TEBENKOF",
+      "file": "File:Fishing vessels at Fishermen's Terminal, Seattle - 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fishing_vessels_at_Fishermen%27s_Terminal,_Seattle_-_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Fishing_vessels_at_Fishermen%27s_Terminal%2C_Seattle_-_01.jpg/1280px-Fishing_vessels_at_Fishermen%27s_Terminal%2C_Seattle_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 15 September 2018",
+      "caption": "Fishing vessels at Fishermen's Terminal, Seattle, Washington, photographed during the Fall Fishermen's Festival. Fishing ships Labrador (IMO 5201362, out of Onalaska, Alaska), Pacific Star (IMO 7367005, fish factory),...",
+      "found": "2026-11-03T23:15:27.4305897+00:00"
+    },
+    {
+      "mmsi": "367061930",
+      "ship": "TEBENKOF",
+      "file": "File:Fishing vessels at Fishermen's Terminal, Seattle - 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fishing_vessels_at_Fishermen%27s_Terminal,_Seattle_-_03.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Fishing_vessels_at_Fishermen%27s_Terminal%2C_Seattle_-_03.jpg/1280px-Fishing_vessels_at_Fishermen%27s_Terminal%2C_Seattle_-_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 15 September 2018",
+      "caption": "Fishing vessels at Fishermen's Terminal, Seattle, Washington, photographed during the Fall Fishermen's Festival. From left to right: fishing boats Tebenkof (IMO 7309273), New St. Joseph , Narada , Norseman ; fireboat ...",
+      "found": "2026-11-03T23:15:27.4305897+00:00"
+    },
+    {
+      "mmsi": "367061930",
+      "ship": "TEBENKOF",
+      "file": "File:Fishing vessels at Fishermen's Terminal, Seattle - 06.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fishing_vessels_at_Fishermen%27s_Terminal,_Seattle_-_06.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Fishing_vessels_at_Fishermen%27s_Terminal%2C_Seattle_-_06.jpg/1280px-Fishing_vessels_at_Fishermen%27s_Terminal%2C_Seattle_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 850,
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 15 September 2018",
+      "caption": "Fishing vessels at Fishermen's Terminal, Seattle, Washington, photographed during the Fall Fishermen's Festival. Fishing ships Westward Wind (partly visible), S.B.S. Provider , and fishing boats Tugidak , Husky (IMO 7...",
+      "found": "2026-11-03T23:15:27.4305897+00:00"
     }
   ],
-  "updated": "2026-11-03T23:05:29.5408968+00:00"
+  "updated": "2026-11-03T23:15:27.4305897+00:00"
 }
