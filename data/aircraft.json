@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-03T15:25:27.2438523+00:00",
+  "updated": "2026-11-03T15:35:36.8612864+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a96f7e",
-      "flight": "N707KP",
-      "reg": "N707KP",
-      "type": "PRM1",
+      "hex": "a40b26",
+      "flight": "N36NG",
+      "reg": "N36NG",
+      "type": "PC12",
       "cat": "A1",
-      "alt": 4650,
-      "gs": 252.8,
-      "track": 78.82,
-      "rate": -736,
-      "lat": 47.21063,
-      "lon": -123.00286,
-      "squawk": "4667",
+      "alt": 12725,
+      "gs": 300.8,
+      "track": 14.64,
+      "rate": -1600,
+      "lat": 46.58585,
+      "lon": -123.05148,
+      "squawk": "4661",
       "emergency": "none",
       "mil": false
     }
