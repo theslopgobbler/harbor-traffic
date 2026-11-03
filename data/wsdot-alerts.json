@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T01:55:29.1792001+00:00",
+  "updated": "2026-11-03T02:05:25.5673600+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1472,6 +1472,27 @@
           46.59609
         ]
       ]
+    },
+    {
+      "id": 723140,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 12 both directions at milepost 43.2 near Hilt St SW beginning at 5:59 pm on November 2, 2026 until further notice. The road is blocked.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "B",
+      "milepost": 43.2,
+      "lat": 46.818055906,
+      "lon": -123.07056367,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-03T01:59:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-03T02:01:06.4370000+00:00"
     },
     {
       "id": 692593,
