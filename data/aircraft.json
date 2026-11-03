@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-03T08:35:32.4302194+00:00",
+  "updated": "2026-11-03T08:45:25.6723403+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "899093",
-      "flight": "EVA025",
-      "reg": "B-17802",
-      "type": "B78X",
-      "cat": "A5",
-      "alt": 13425,
-      "gs": 361.4,
-      "track": 318.81,
-      "rate": 1803,
-      "lat": 47.55944,
-      "lon": -122.8051,
-      "squawk": "3566",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
