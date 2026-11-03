@@ -142,7 +142,8 @@
     "Raytheon Aircraft Company Premier IA": "2026-11-03T15:25:27.2438523+00:00",
     "Hawker Beechcraft Corp Hawker 4000": "2026-11-03T16:05:54.1372806+00:00",
     "Bell 205A-1": "2026-11-03T16:15:28.9454314+00:00",
-    "Boeing P-8A Poseidon": "2026-11-03T19:16:01.3484828+00:00"
+    "Boeing P-8A Poseidon": "2026-11-03T19:16:01.3484828+00:00",
+    "Boeing 737NG 800/W": "2026-11-03T19:56:03.7676485+00:00"
   },
   "candidates": [
     {
@@ -8922,7 +8923,21 @@
       "date": "2025-07-19 13:43:03",
       "caption": "Royal Air Force (RAF) Boeing Poseidon MRA1 (P-8A) 'Sqn Ldr Terence Bulloch DSO DFC' (reg. ZP803) at the Royal International Air Tattoo 2025.",
       "found": "2026-11-03T19:16:01.3484828+00:00"
+    },
+    {
+      "model": "Boeing 737NG 800/W",
+      "file": "File:Brand new 737NG (3971019906).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Brand_new_737NG_(3971019906).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/15/Brand_new_737NG_%283971019906%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 1280,
+      "author": "Cory W. Watts from Madison, Wisconsin, United States of America",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2009-09-29 16:08",
+      "caption": "On my way back from a quick visit to our Nations Capitol. Onboard \"American 1399\" with service from DCA to ORD. Brand new Boeing 737-800 operated by American Airlines. (N987AN).",
+      "found": "2026-11-03T19:56:03.7676485+00:00"
     }
   ],
-  "updated": "2026-11-03T19:45:52.8373279+00:00"
+  "updated": "2026-11-03T19:56:03.7676485+00:00"
 }
