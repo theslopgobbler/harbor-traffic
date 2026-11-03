@@ -1,7 +1,62 @@
 {
-  "updated": "2026-11-03T16:15:28.9454314+00:00",
+  "updated": "2026-11-03T16:25:31.1765711+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 723182,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 184.7 near Kallman Rd to milepost 184.5 near Jefferson/Clallam County Line beginning at 7:31 am on November 3, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.7,
+      "lat": 47.882258587,
+      "lon": -124.352849276,
+      "lat2": 47.879744939,
+      "lon2": -124.350752575,
+      "county": "Jefferson",
+      "start": "2026-11-03T15:31:00.0000000+00:00",
+      "end": "2026-11-03T23:00:00.0000000+00:00",
+      "updated": "2026-11-03T16:22:28.6570000+00:00",
+      "path": [
+        [
+          -124.35287,
+          47.88227
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.35073,
+          47.87973
+        ],
+        [
+          -124.35073,
+          47.87973
+        ]
+      ]
+    },
     {
       "id": 693084,
       "kind": "work",
@@ -697,27 +752,6 @@
           47.8099
         ]
       ]
-    },
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 722914,
@@ -1495,6 +1529,48 @@
       ]
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 723199,
+      "kind": "closure",
+      "category": "Simpson Ave Bridge",
+      "priority": "Highest",
+      "headline": "Simpson Ave Bridge is closed to vehicle traffic at 8:19 AM Tuesday, November 3. A boat traffic opening is in progress. Travelers can expect delays for up to 30 minutes on US 101 both directions at 88.20 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 87.6,
+      "lat": 46.979476391,
+      "lon": -123.887390145,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-11-03T16:19:56.2800000+00:00",
+      "end": "2026-11-03T16:49:56.2800000+00:00",
+      "updated": "2026-11-03T16:19:56.6230000+00:00"
+    },
+    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -1579,6 +1655,27 @@
       "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
+      "id": 723200,
+      "kind": "closure",
+      "category": "Riverside Ave Bridge",
+      "priority": "Highest",
+      "headline": "Riverside Ave Bridge is closed to vehicle traffic at 8:19 AM Tuesday, November 3. A boat traffic opening is in progress. Travelers can expect delays for up to 30 minutes on US 101 both directions at 87.35 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 87.35,
+      "lat": 46.979520561,
+      "lon": -123.884030117,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-11-03T16:19:56.7270000+00:00",
+      "end": "2026-11-03T16:49:56.7270000+00:00",
+      "updated": "2026-11-03T16:19:56.8570000+00:00"
+    },
+    {
       "id": 686738,
       "kind": "work",
       "category": "Construction",
@@ -1598,69 +1695,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 723182,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 182.7 to milepost 182.5 beginning at 7:31 am on November 3, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 182.7,
-      "lat": 47.859270669,
-      "lon": -124.329361088,
-      "lat2": 47.858352202,
-      "lon2": -124.3252899,
-      "county": "Jefferson",
-      "start": "2026-11-03T15:31:00.0000000+00:00",
-      "end": "2026-11-03T23:00:00.0000000+00:00",
-      "updated": "2026-11-03T15:36:56.4030000+00:00",
-      "path": [
-        [
-          -124.3294,
-          47.8593
-        ],
-        [
-          -124.32925,
-          47.85924
-        ],
-        [
-          -124.32903,
-          47.85917
-        ],
-        [
-          -124.32858,
-          47.85903
-        ],
-        [
-          -124.32835,
-          47.85896
-        ],
-        [
-          -124.328,
-          47.85887
-        ],
-        [
-          -124.32646,
-          47.85858
-        ],
-        [
-          -124.32552,
-          47.8584
-        ],
-        [
-          -124.32532,
-          47.85836
-        ],
-        [
-          -124.32532,
-          47.85836
-        ]
-      ]
     },
     {
       "id": 723178,
@@ -1822,61 +1856,6 @@
         [
           -123.17011,
           46.82775
-        ]
-      ]
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865785,
-      "lon": -124.350871258,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2026-10-16T19:28:43.2900000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
         ]
       ]
     }
