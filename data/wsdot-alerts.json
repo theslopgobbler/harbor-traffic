@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T18:35:32.5538955+00:00",
+  "updated": "2026-11-03T18:45:52.5654538+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1571,27 +1571,6 @@
       "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
-      "id": 723201,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 97.5 near Failor Lk Rd beginning at 8:25 am on November 3, 2026 until about 11:00 am.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 97.5,
-      "lat": 47.103509705,
-      "lon": -123.906352982,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-03T16:25:00.0000000+00:00",
-      "end": "2026-11-03T19:00:00.0000000+00:00",
-      "updated": "2026-11-03T16:30:18.1970000+00:00"
-    },
-    {
       "id": 640019,
       "kind": "work",
       "category": "Construction",
@@ -1674,6 +1653,27 @@
       "start": "2026-11-03T17:00:00.0000000+00:00",
       "end": "2026-11-03T23:00:00.0000000+00:00",
       "updated": "2026-11-03T15:44:16.3400000+00:00"
+    },
+    {
+      "id": 723201,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 112 near Stevens Creek beginning at 8:25 am on November 3, 2026 until about 12:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 112.0,
+      "lat": 47.259433816,
+      "lon": -123.922376385,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-03T16:25:00.0000000+00:00",
+      "end": "2026-11-03T20:00:00.0000000+00:00",
+      "updated": "2026-11-03T18:38:50.2800000+00:00"
     },
     {
       "id": 686738,
