@@ -1,772 +1,7 @@
 {
-  "updated": "2026-11-03T17:35:47.0394268+00:00",
+  "updated": "2026-11-03T17:45:36.2103626+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 698910,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on SR 109 at milepost 33.8 north of Moclips. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.87,
-      "lat": 47.266481174,
-      "lon": -124.2255995,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:40:00.0000000+00:00",
-      "end": "2026-12-31T21:40:00.0000000+00:00",
-      "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 723201,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 97.5 near Failor Lk Rd beginning at 8:25 am on November 3, 2026 until about 11:00 am.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 97.5,
-      "lat": 47.103509705,
-      "lon": -123.906352982,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-03T16:25:00.0000000+00:00",
-      "end": "2026-11-03T19:00:00.0000000+00:00",
-      "updated": "2026-11-03T16:30:18.1970000+00:00"
-    },
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 723186,
-      "kind": "other",
-      "category": "Riverside Ave Bridge",
-      "priority": "High",
-      "headline": "Bridge work on US 101 northbound at milepost 87.31 near Riverside Bridge beginning at 9:00 am on November 3, 2026 until about 3:00 pm. Expect intermittent bridge openings throughout the day.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 87.31,
-      "lat": 46.979532278,
-      "lon": -123.883206216,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-03T17:00:00.0000000+00:00",
-      "end": "2026-11-03T23:00:00.0000000+00:00",
-      "updated": "2026-11-03T15:44:16.3400000+00:00"
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 723204,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 from milepost 145.8 to milepost 151.5 near Grays Harbor/Jefferson County Line beginning at 8:32 am on November 3, 2026 until about 6:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": null,
-      "milepost": 145.8,
-      "lat": 47.538547875,
-      "lon": -124.248720524,
-      "lat2": 47.532952102,
-      "lon2": -124.334706509,
-      "county": "Jefferson",
-      "start": "2026-11-03T16:32:00.0000000+00:00",
-      "end": "2026-11-04T02:00:00.0000000+00:00",
-      "updated": "2026-11-03T16:34:57.0570000+00:00",
-      "path": [
-        [
-          -124.24868,
-          47.53854
-        ],
-        [
-          -124.24909,
-          47.53861
-        ],
-        [
-          -124.25054,
-          47.53884
-        ],
-        [
-          -124.25227,
-          47.53913
-        ],
-        [
-          -124.25697,
-          47.53991
-        ],
-        [
-          -124.25735,
-          47.53998
-        ],
-        [
-          -124.26033,
-          47.54049
-        ],
-        [
-          -124.26104,
-          47.54061
-        ],
-        [
-          -124.2614,
-          47.54069
-        ],
-        [
-          -124.26174,
-          47.54079
-        ],
-        [
-          -124.26207,
-          47.5409
-        ],
-        [
-          -124.26385,
-          47.54155
-        ],
-        [
-          -124.26403,
-          47.54161
-        ],
-        [
-          -124.26422,
-          47.54166
-        ],
-        [
-          -124.26454,
-          47.54174
-        ],
-        [
-          -124.2648,
-          47.54178
-        ],
-        [
-          -124.26529,
-          47.54184
-        ],
-        [
-          -124.26613,
-          47.54192
-        ],
-        [
-          -124.26649,
-          47.54195
-        ],
-        [
-          -124.26677,
-          47.54196
-        ],
-        [
-          -124.26704,
-          47.54197
-        ],
-        [
-          -124.26732,
-          47.54197
-        ],
-        [
-          -124.26767,
-          47.54196
-        ],
-        [
-          -124.26796,
-          47.54195
-        ],
-        [
-          -124.26842,
-          47.54191
-        ],
-        [
-          -124.26868,
-          47.54189
-        ],
-        [
-          -124.26892,
-          47.54186
-        ],
-        [
-          -124.26912,
-          47.54183
-        ],
-        [
-          -124.26934,
-          47.54179
-        ],
-        [
-          -124.26958,
-          47.54174
-        ],
-        [
-          -124.26982,
-          47.54169
-        ],
-        [
-          -124.26995,
-          47.54166
-        ],
-        [
-          -124.27025,
-          47.54158
-        ],
-        [
-          -124.27057,
-          47.5415
-        ],
-        [
-          -124.27314,
-          47.54078
-        ],
-        [
-          -124.27896,
-          47.53916
-        ],
-        [
-          -124.28038,
-          47.53876
-        ],
-        [
-          -124.2817,
-          47.5384
-        ],
-        [
-          -124.28206,
-          47.5383
-        ],
-        [
-          -124.28263,
-          47.53813
-        ],
-        [
-          -124.28295,
-          47.53805
-        ],
-        [
-          -124.28349,
-          47.53789
-        ],
-        [
-          -124.28407,
-          47.53772
-        ],
-        [
-          -124.28513,
-          47.53743
-        ],
-        [
-          -124.28547,
-          47.53734
-        ],
-        [
-          -124.28585,
-          47.53724
-        ],
-        [
-          -124.28626,
-          47.53711
-        ],
-        [
-          -124.28667,
-          47.53697
-        ],
-        [
-          -124.28702,
-          47.53684
-        ],
-        [
-          -124.2873,
-          47.53672
-        ],
-        [
-          -124.2875,
-          47.53663
-        ],
-        [
-          -124.2878,
-          47.53648
-        ],
-        [
-          -124.28819,
-          47.53626
-        ],
-        [
-          -124.28872,
-          47.53594
-        ],
-        [
-          -124.29206,
-          47.53384
-        ],
-        [
-          -124.2927,
-          47.53344
-        ],
-        [
-          -124.29961,
-          47.52909
-        ],
-        [
-          -124.30207,
-          47.52752
-        ],
-        [
-          -124.30431,
-          47.52613
-        ],
-        [
-          -124.30509,
-          47.5256
-        ],
-        [
-          -124.30673,
-          47.52457
-        ],
-        [
-          -124.3071,
-          47.52434
-        ],
-        [
-          -124.30898,
-          47.5232
-        ],
-        [
-          -124.31265,
-          47.52088
-        ],
-        [
-          -124.31495,
-          47.5194
-        ],
-        [
-          -124.31587,
-          47.51883
-        ],
-        [
-          -124.31885,
-          47.51698
-        ],
-        [
-          -124.31944,
-          47.51667
-        ],
-        [
-          -124.3201,
-          47.51642
-        ],
-        [
-          -124.32076,
-          47.51623
-        ],
-        [
-          -124.32147,
-          47.5161
-        ],
-        [
-          -124.32211,
-          47.51602
-        ],
-        [
-          -124.32246,
-          47.51599
-        ],
-        [
-          -124.32278,
-          47.516
-        ],
-        [
-          -124.32345,
-          47.51605
-        ],
-        [
-          -124.32402,
-          47.51612
-        ],
-        [
-          -124.32466,
-          47.51626
-        ],
-        [
-          -124.32589,
-          47.51661
-        ],
-        [
-          -124.32698,
-          47.51694
-        ],
-        [
-          -124.32732,
-          47.51704
-        ],
-        [
-          -124.32864,
-          47.51743
-        ],
-        [
-          -124.32948,
-          47.51766
-        ],
-        [
-          -124.32976,
-          47.51774
-        ],
-        [
-          -124.33128,
-          47.51819
-        ],
-        [
-          -124.33228,
-          47.51853
-        ],
-        [
-          -124.33243,
-          47.5186
-        ],
-        [
-          -124.33249,
-          47.51862
-        ],
-        [
-          -124.33302,
-          47.51889
-        ],
-        [
-          -124.33375,
-          47.51935
-        ],
-        [
-          -124.33402,
-          47.51961
-        ],
-        [
-          -124.33427,
-          47.51988
-        ],
-        [
-          -124.33462,
-          47.5204
-        ],
-        [
-          -124.33536,
-          47.52184
-        ],
-        [
-          -124.33607,
-          47.52345
-        ],
-        [
-          -124.33647,
-          47.52432
-        ],
-        [
-          -124.33654,
-          47.52446
-        ],
-        [
-          -124.33715,
-          47.5257
-        ],
-        [
-          -124.33744,
-          47.52641
-        ],
-        [
-          -124.33758,
-          47.52693
-        ],
-        [
-          -124.3376,
-          47.52743
-        ],
-        [
-          -124.33753,
-          47.52793
-        ],
-        [
-          -124.33739,
-          47.52833
-        ],
-        [
-          -124.33718,
-          47.52885
-        ],
-        [
-          -124.33642,
-          47.53014
-        ],
-        [
-          -124.3356,
-          47.53148
-        ],
-        [
-          -124.3352,
-          47.53224
-        ],
-        [
-          -124.33472,
-          47.533
-        ],
-        [
-          -124.33472,
-          47.533
-        ]
-      ]
-    },
-    {
-      "id": 723178,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 both directions from milepost 38.84 near Grays Harbor/Thurston County Line to milepost 38.38 near Sickman Ford Rd beginning at 7:03 am on November 3, 2026 until about 5:30 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "B",
-      "milepost": 38.84,
-      "lat": 46.827019721,
-      "lon": -123.160508667,
-      "lat2": 46.827751648,
-      "lon2": -123.170059327,
-      "county": "Thurston",
-      "start": "2026-11-03T15:03:00.0000000+00:00",
-      "end": "2026-11-04T01:30:00.0000000+00:00",
-      "updated": "2026-11-03T15:05:39.5870000+00:00",
-      "path": [
-        [
-          -123.1605,
-          46.82702
-        ],
-        [
-          -123.1605,
-          46.82702
-        ],
-        [
-          -123.16044,
-          46.82702
-        ],
-        [
-          -123.16039,
-          46.82704
-        ],
-        [
-          -123.16036,
-          46.82706
-        ],
-        [
-          -123.16033,
-          46.82709
-        ],
-        [
-          -123.16032,
-          46.82712
-        ],
-        [
-          -123.16032,
-          46.82714
-        ],
-        [
-          -123.16032,
-          46.82717
-        ],
-        [
-          -123.16034,
-          46.8272
-        ],
-        [
-          -123.16036,
-          46.82723
-        ],
-        [
-          -123.16039,
-          46.82725
-        ],
-        [
-          -123.16042,
-          46.82726
-        ],
-        [
-          -123.16046,
-          46.82727
-        ],
-        [
-          -123.16051,
-          46.82727
-        ],
-        [
-          -123.16055,
-          46.82727
-        ],
-        [
-          -123.1606,
-          46.82726
-        ],
-        [
-          -123.16064,
-          46.82724
-        ],
-        [
-          -123.16074,
-          46.82722
-        ],
-        [
-          -123.16081,
-          46.82721
-        ],
-        [
-          -123.16087,
-          46.8272
-        ],
-        [
-          -123.16094,
-          46.8272
-        ],
-        [
-          -123.16103,
-          46.82721
-        ],
-        [
-          -123.16111,
-          46.82722
-        ],
-        [
-          -123.16123,
-          46.82722
-        ],
-        [
-          -123.1614,
-          46.82723
-        ],
-        [
-          -123.16155,
-          46.82723
-        ],
-        [
-          -123.16174,
-          46.82724
-        ],
-        [
-          -123.16179,
-          46.82723
-        ],
-        [
-          -123.16321,
-          46.82731
-        ],
-        [
-          -123.16355,
-          46.82733
-        ],
-        [
-          -123.16626,
-          46.8275
-        ],
-        [
-          -123.16904,
-          46.82769
-        ],
-        [
-          -123.17011,
-          46.82775
-        ],
-        [
-          -123.17011,
-          46.82775
-        ]
-      ]
-    },
     {
       "id": 723182,
       "kind": "work",
@@ -2311,6 +1546,771 @@
         [
           -123.27908,
           46.59609
+        ]
+      ]
+    },
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 698910,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating traffic on SR 109 at milepost 33.8 north of Moclips. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.87,
+      "lat": 47.266481174,
+      "lon": -124.2255995,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:40:00.0000000+00:00",
+      "end": "2026-12-31T21:40:00.0000000+00:00",
+      "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 723201,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 97.5 near Failor Lk Rd beginning at 8:25 am on November 3, 2026 until about 11:00 am.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 97.5,
+      "lat": 47.103509705,
+      "lon": -123.906352982,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-03T16:25:00.0000000+00:00",
+      "end": "2026-11-03T19:00:00.0000000+00:00",
+      "updated": "2026-11-03T16:30:18.1970000+00:00"
+    },
+    {
+      "id": 640019,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2027-01-01T02:00:00.0000000+00:00",
+      "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 723186,
+      "kind": "other",
+      "category": "Riverside Ave Bridge",
+      "priority": "High",
+      "headline": "Bridge work on US 101 northbound at milepost 87.31 near Riverside Bridge beginning at 9:00 am on November 3, 2026 until about 3:00 pm. Expect intermittent bridge openings throughout the day.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 87.31,
+      "lat": 46.979532278,
+      "lon": -123.883206216,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-03T17:00:00.0000000+00:00",
+      "end": "2026-11-03T23:00:00.0000000+00:00",
+      "updated": "2026-11-03T15:44:16.3400000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-16T21:53:14.6030000+00:00"
+    },
+    {
+      "id": 723204,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 from milepost 145.8 to milepost 151.5 near Grays Harbor/Jefferson County Line beginning at 8:32 am on November 3, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": null,
+      "milepost": 145.8,
+      "lat": 47.538547875,
+      "lon": -124.248720524,
+      "lat2": 47.532952102,
+      "lon2": -124.334706509,
+      "county": "Jefferson",
+      "start": "2026-11-03T16:32:00.0000000+00:00",
+      "end": "2026-11-04T02:00:00.0000000+00:00",
+      "updated": "2026-11-03T16:34:57.0570000+00:00",
+      "path": [
+        [
+          -124.24868,
+          47.53854
+        ],
+        [
+          -124.24909,
+          47.53861
+        ],
+        [
+          -124.25054,
+          47.53884
+        ],
+        [
+          -124.25227,
+          47.53913
+        ],
+        [
+          -124.25697,
+          47.53991
+        ],
+        [
+          -124.25735,
+          47.53998
+        ],
+        [
+          -124.26033,
+          47.54049
+        ],
+        [
+          -124.26104,
+          47.54061
+        ],
+        [
+          -124.2614,
+          47.54069
+        ],
+        [
+          -124.26174,
+          47.54079
+        ],
+        [
+          -124.26207,
+          47.5409
+        ],
+        [
+          -124.26385,
+          47.54155
+        ],
+        [
+          -124.26403,
+          47.54161
+        ],
+        [
+          -124.26422,
+          47.54166
+        ],
+        [
+          -124.26454,
+          47.54174
+        ],
+        [
+          -124.2648,
+          47.54178
+        ],
+        [
+          -124.26529,
+          47.54184
+        ],
+        [
+          -124.26613,
+          47.54192
+        ],
+        [
+          -124.26649,
+          47.54195
+        ],
+        [
+          -124.26677,
+          47.54196
+        ],
+        [
+          -124.26704,
+          47.54197
+        ],
+        [
+          -124.26732,
+          47.54197
+        ],
+        [
+          -124.26767,
+          47.54196
+        ],
+        [
+          -124.26796,
+          47.54195
+        ],
+        [
+          -124.26842,
+          47.54191
+        ],
+        [
+          -124.26868,
+          47.54189
+        ],
+        [
+          -124.26892,
+          47.54186
+        ],
+        [
+          -124.26912,
+          47.54183
+        ],
+        [
+          -124.26934,
+          47.54179
+        ],
+        [
+          -124.26958,
+          47.54174
+        ],
+        [
+          -124.26982,
+          47.54169
+        ],
+        [
+          -124.26995,
+          47.54166
+        ],
+        [
+          -124.27025,
+          47.54158
+        ],
+        [
+          -124.27057,
+          47.5415
+        ],
+        [
+          -124.27314,
+          47.54078
+        ],
+        [
+          -124.27896,
+          47.53916
+        ],
+        [
+          -124.28038,
+          47.53876
+        ],
+        [
+          -124.2817,
+          47.5384
+        ],
+        [
+          -124.28206,
+          47.5383
+        ],
+        [
+          -124.28263,
+          47.53813
+        ],
+        [
+          -124.28295,
+          47.53805
+        ],
+        [
+          -124.28349,
+          47.53789
+        ],
+        [
+          -124.28407,
+          47.53772
+        ],
+        [
+          -124.28513,
+          47.53743
+        ],
+        [
+          -124.28547,
+          47.53734
+        ],
+        [
+          -124.28585,
+          47.53724
+        ],
+        [
+          -124.28626,
+          47.53711
+        ],
+        [
+          -124.28667,
+          47.53697
+        ],
+        [
+          -124.28702,
+          47.53684
+        ],
+        [
+          -124.2873,
+          47.53672
+        ],
+        [
+          -124.2875,
+          47.53663
+        ],
+        [
+          -124.2878,
+          47.53648
+        ],
+        [
+          -124.28819,
+          47.53626
+        ],
+        [
+          -124.28872,
+          47.53594
+        ],
+        [
+          -124.29206,
+          47.53384
+        ],
+        [
+          -124.2927,
+          47.53344
+        ],
+        [
+          -124.29961,
+          47.52909
+        ],
+        [
+          -124.30207,
+          47.52752
+        ],
+        [
+          -124.30431,
+          47.52613
+        ],
+        [
+          -124.30509,
+          47.5256
+        ],
+        [
+          -124.30673,
+          47.52457
+        ],
+        [
+          -124.3071,
+          47.52434
+        ],
+        [
+          -124.30898,
+          47.5232
+        ],
+        [
+          -124.31265,
+          47.52088
+        ],
+        [
+          -124.31495,
+          47.5194
+        ],
+        [
+          -124.31587,
+          47.51883
+        ],
+        [
+          -124.31885,
+          47.51698
+        ],
+        [
+          -124.31944,
+          47.51667
+        ],
+        [
+          -124.3201,
+          47.51642
+        ],
+        [
+          -124.32076,
+          47.51623
+        ],
+        [
+          -124.32147,
+          47.5161
+        ],
+        [
+          -124.32211,
+          47.51602
+        ],
+        [
+          -124.32246,
+          47.51599
+        ],
+        [
+          -124.32278,
+          47.516
+        ],
+        [
+          -124.32345,
+          47.51605
+        ],
+        [
+          -124.32402,
+          47.51612
+        ],
+        [
+          -124.32466,
+          47.51626
+        ],
+        [
+          -124.32589,
+          47.51661
+        ],
+        [
+          -124.32698,
+          47.51694
+        ],
+        [
+          -124.32732,
+          47.51704
+        ],
+        [
+          -124.32864,
+          47.51743
+        ],
+        [
+          -124.32948,
+          47.51766
+        ],
+        [
+          -124.32976,
+          47.51774
+        ],
+        [
+          -124.33128,
+          47.51819
+        ],
+        [
+          -124.33228,
+          47.51853
+        ],
+        [
+          -124.33243,
+          47.5186
+        ],
+        [
+          -124.33249,
+          47.51862
+        ],
+        [
+          -124.33302,
+          47.51889
+        ],
+        [
+          -124.33375,
+          47.51935
+        ],
+        [
+          -124.33402,
+          47.51961
+        ],
+        [
+          -124.33427,
+          47.51988
+        ],
+        [
+          -124.33462,
+          47.5204
+        ],
+        [
+          -124.33536,
+          47.52184
+        ],
+        [
+          -124.33607,
+          47.52345
+        ],
+        [
+          -124.33647,
+          47.52432
+        ],
+        [
+          -124.33654,
+          47.52446
+        ],
+        [
+          -124.33715,
+          47.5257
+        ],
+        [
+          -124.33744,
+          47.52641
+        ],
+        [
+          -124.33758,
+          47.52693
+        ],
+        [
+          -124.3376,
+          47.52743
+        ],
+        [
+          -124.33753,
+          47.52793
+        ],
+        [
+          -124.33739,
+          47.52833
+        ],
+        [
+          -124.33718,
+          47.52885
+        ],
+        [
+          -124.33642,
+          47.53014
+        ],
+        [
+          -124.3356,
+          47.53148
+        ],
+        [
+          -124.3352,
+          47.53224
+        ],
+        [
+          -124.33472,
+          47.533
+        ],
+        [
+          -124.33472,
+          47.533
+        ]
+      ]
+    },
+    {
+      "id": 723178,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 both directions from milepost 38.84 near Grays Harbor/Thurston County Line to milepost 38.38 near Sickman Ford Rd beginning at 7:03 am on November 3, 2026 until about 5:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "B",
+      "milepost": 38.84,
+      "lat": 46.827019721,
+      "lon": -123.160508667,
+      "lat2": 46.827751648,
+      "lon2": -123.170059327,
+      "county": "Thurston",
+      "start": "2026-11-03T15:03:00.0000000+00:00",
+      "end": "2026-11-04T01:30:00.0000000+00:00",
+      "updated": "2026-11-03T15:05:39.5870000+00:00",
+      "path": [
+        [
+          -123.1605,
+          46.82702
+        ],
+        [
+          -123.1605,
+          46.82702
+        ],
+        [
+          -123.16044,
+          46.82702
+        ],
+        [
+          -123.16039,
+          46.82704
+        ],
+        [
+          -123.16036,
+          46.82706
+        ],
+        [
+          -123.16033,
+          46.82709
+        ],
+        [
+          -123.16032,
+          46.82712
+        ],
+        [
+          -123.16032,
+          46.82714
+        ],
+        [
+          -123.16032,
+          46.82717
+        ],
+        [
+          -123.16034,
+          46.8272
+        ],
+        [
+          -123.16036,
+          46.82723
+        ],
+        [
+          -123.16039,
+          46.82725
+        ],
+        [
+          -123.16042,
+          46.82726
+        ],
+        [
+          -123.16046,
+          46.82727
+        ],
+        [
+          -123.16051,
+          46.82727
+        ],
+        [
+          -123.16055,
+          46.82727
+        ],
+        [
+          -123.1606,
+          46.82726
+        ],
+        [
+          -123.16064,
+          46.82724
+        ],
+        [
+          -123.16074,
+          46.82722
+        ],
+        [
+          -123.16081,
+          46.82721
+        ],
+        [
+          -123.16087,
+          46.8272
+        ],
+        [
+          -123.16094,
+          46.8272
+        ],
+        [
+          -123.16103,
+          46.82721
+        ],
+        [
+          -123.16111,
+          46.82722
+        ],
+        [
+          -123.16123,
+          46.82722
+        ],
+        [
+          -123.1614,
+          46.82723
+        ],
+        [
+          -123.16155,
+          46.82723
+        ],
+        [
+          -123.16174,
+          46.82724
+        ],
+        [
+          -123.16179,
+          46.82723
+        ],
+        [
+          -123.16321,
+          46.82731
+        ],
+        [
+          -123.16355,
+          46.82733
+        ],
+        [
+          -123.16626,
+          46.8275
+        ],
+        [
+          -123.16904,
+          46.82769
+        ],
+        [
+          -123.17011,
+          46.82775
+        ],
+        [
+          -123.17011,
+          46.82775
         ]
       ]
     }
