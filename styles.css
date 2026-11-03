@@ -573,9 +573,8 @@ body.tv .ticker { display: flex; align-items: center; height: 44px; flex: none; 
 .ticker-lbl { flex: none; padding: 0 14px; height: 100%; display: flex; align-items: center; background: #d11a2a; color: #fff; font: 600 14px/1 var(--disp); letter-spacing: .2em; }
 .ticker-win { flex: 1; overflow: hidden; height: 100%; display: flex; align-items: center;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); }
-.ticker-track { display: flex; white-space: nowrap; animation: ticker 60s linear infinite;
-  /* its own layer, so the scroll runs on the graphics card and the busy map underneath can't make it stutter */
-  will-change: transform; backface-visibility: hidden; transform: translateZ(0); }
+.ticker-track { display: flex; white-space: nowrap; animation: ticker 60s linear infinite; }
+/* (on the TV, app.js moves it by whole pixels instead of this animation, for sharp text) */
 .ticker-track .tk { display: flex; align-items: center; flex: none; }
 /* bigger text on a TV (the default there): a taller, larger ticker to read from across the room */
 body.tv.big-text .ticker { height: 54px; font-size: 24px; }

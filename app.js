@@ -1497,22 +1497,40 @@
     if (html === tickerSig) return; // unchanged: don't restart the scroll
     tickerSig = html;
     const track = $('#ticker');
-    // new text waits for the end of the current loop instead of replacing it mid-scroll: swapping it in (and changing
-    // the speed) partway through made the whole line jump back to the start. Aircraft and buses change it often
+    // new text waits until the current text has scrolled all the way round, then swaps in at the seam
     if (track.firstElementChild) { tickerNext = html; return; }
     putTicker(track, html);
   }
-  let tickerNext = null;
+  // The scroll moves exactly one whole pixel every k screen refreshes, k picked from the monitor's refresh rate
+  // (60 Hz: every frame, 144 Hz: every 2nd, 165 Hz: every 3rd), so it's 55-80 px a second with a perfectly even
+  // step. Whole pixels keep the text sharp; the CSS animation it replaces moved in fractions of a pixel, which
+  // blurred the letters and stuttered whenever the step didn't line up with the monitor's refresh.
+  let tickerNext = null, tkPos = 0, tkHalf = 0, tkK = 0, tkFrames = 0, tkT0 = 0;
   function putTicker(track, html) {
+    track.style.animation = 'none';
     track.innerHTML = `<div class="tk">${html}<i class="sep">◆</i></div><div class="tk">${html}<i class="sep">◆</i></div>`;
-    const w = track.firstElementChild.getBoundingClientRect().width;
-    track.style.animationDuration = `${Math.max(30, w / 60)}s`; // about 60 px a second (90 was hard to read)
+    tkHalf = Math.round(track.firstElementChild.getBoundingClientRect().width);
+    tkPos = 0;
+    track.style.transform = 'translate3d(0,0,0)';
   }
-  if (TV) $('#ticker').addEventListener('animationiteration', (e) => {
-    if (tickerNext == null) return;
-    const html = tickerNext; tickerNext = null;
-    putTicker(e.currentTarget, html);
-  });
+  function tickerFrame(ts) {
+    requestAnimationFrame(tickerFrame);
+    if (!tkHalf) return;
+    tkFrames++;
+    if (!tkK) { // first second: measure the refresh rate
+      if (!tkT0) tkT0 = ts;
+      if (ts - tkT0 < 1000) return;
+      tkK = Math.max(1, Math.round((tkFrames / ((ts - tkT0) / 1000)) / 60)); tkFrames = 0;
+    }
+    if (tkFrames % tkK) return;
+    tkPos -= 1;
+    if (-tkPos >= tkHalf) {
+      tkPos += tkHalf;
+      if (tickerNext != null) { const html = tickerNext; tickerNext = null; putTicker($('#ticker'), html); return; }
+    }
+    $('#ticker').style.transform = `translate3d(${tkPos}px,0,0)`;
+  }
+  if (TV) requestAnimationFrame(tickerFrame);
   window.htTickerRefresh = () => { clearTimeout(renderTicker._t); renderTicker._t = setTimeout(renderTicker, 400); };
   if (TV) {
     setInterval(renderTicker, 60 * 1000);
