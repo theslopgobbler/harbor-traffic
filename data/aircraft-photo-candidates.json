@@ -139,7 +139,8 @@
     "Textron Aviation 208 B EX": "2026-11-02T18:45:27.3722707+00:00",
     "Cessna Citation CJ1": "2026-11-02T20:35:25.295504+00:00",
     "Bell 505 Jet Ranger X": "2026-11-02T23:35:26.7971228+00:00",
-    "Raytheon Aircraft Company Premier IA": "2026-11-03T15:25:27.2438523+00:00"
+    "Raytheon Aircraft Company Premier IA": "2026-11-03T15:25:27.2438523+00:00",
+    "Hawker Beechcraft Corp Hawker 4000": "2026-11-03T16:05:54.1372806+00:00"
   },
   "candidates": [
     {
@@ -8753,5 +8754,5 @@
       "found": "2026-11-02T23:35:26.7971228+00:00"
     }
   ],
-  "updated": "2026-11-03T15:55:27.0706445+00:00"
+  "updated": "2026-11-03T16:05:54.1372806+00:00"
 }
