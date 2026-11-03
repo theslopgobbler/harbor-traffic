@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T19:16:01.3484828+00:00",
+  "updated": "2026-11-03T19:25:33.5367845+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1632,6 +1632,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 723226,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 108.39 near Sleater-Kinney Rd beginning at 11:15 am on November 3, 2026 until further notice. The left lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 108.39,
+      "lat": 47.045975274,
+      "lon": -122.833728258,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-03T19:15:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-03T19:15:22.2570000+00:00"
     },
     {
       "id": 723186,
