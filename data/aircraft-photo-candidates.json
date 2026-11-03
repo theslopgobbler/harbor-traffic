@@ -145,7 +145,8 @@
     "Boeing P-8A Poseidon": "2026-11-03T19:16:01.3484828+00:00",
     "Boeing 737NG 800/W": "2026-11-03T19:56:03.7676485+00:00",
     "Bell UH-1V Iroquois": "2026-11-03T21:25:41.4152709+00:00",
-    "Bombardier Challenger 3500": "2026-11-03T22:45:28.2142308+00:00"
+    "Bombardier Challenger 3500": "2026-11-03T22:45:28.2142308+00:00",
+    "Piper PA-31T2 Cheyenne IIXL": "2026-11-03T23:05:29.5408968+00:00"
   },
   "candidates": [
     {
@@ -9107,7 +9108,63 @@
       "date": "2026-05-17 23:28:23",
       "caption": "Some aircraft shots from my week chasing trains in Scotland",
       "found": "2026-11-03T22:45:28.2142308+00:00"
+    },
+    {
+      "model": "Piper PA-31T2 Cheyenne IIXL",
+      "file": "File:Piper PA-31T2-620 Cheyenne IIXL AN1704210.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-31T2-620_Cheyenne_IIXL_AN1704210.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Piper_PA-31T2-620_Cheyenne_IIXL_AN1704210.jpg/960px-Piper_PA-31T2-620_Cheyenne_IIXL_AN1704210.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Andre Wadman",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "30 April 2010",
+      "caption": "",
+      "found": "2026-11-03T23:05:29.5408968+00:00"
+    },
+    {
+      "model": "Piper PA-31T2 Cheyenne IIXL",
+      "file": "File:Piper PA-31T2 Cheyenne IIXL (N410CA, cn 31T-8166005) (2-19-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-31T2_Cheyenne_IIXL_(N410CA,_cn_31T-8166005)_(2-19-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Piper_PA-31T2_Cheyenne_IIXL_%28N410CA%2C_cn_31T-8166005%29_%282-19-2023%29.jpg/960px-Piper_PA-31T2_Cheyenne_IIXL_%28N410CA%2C_cn_31T-8166005%29_%282-19-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-02-19",
+      "caption": "A Piper PA-31T2 at Daytona Beach International Airport.",
+      "found": "2026-11-03T23:05:29.5408968+00:00"
+    },
+    {
+      "model": "Piper PA-31T2 Cheyenne IIXL",
+      "file": "File:Piper PA-31T2 Cheyenne IIXL - TG-SIK.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-31T2_Cheyenne_IIXL_-_TG-SIK.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Piper_PA-31T2_Cheyenne_IIXL_-_TG-SIK.jpg/960px-Piper_PA-31T2_Cheyenne_IIXL_-_TG-SIK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Oscar Josué Elvir Vasquez",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2014-10-24",
+      "caption": "Piper PA-31T2 Cheyenne IIXL - TG-SIK",
+      "found": "2026-11-03T23:05:29.5408968+00:00"
+    },
+    {
+      "model": "Piper PA-31T2 Cheyenne IIXL",
+      "file": "File:Piper PA-31T2 Cheyenne IIXL AN0822102.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Piper_PA-31T2_Cheyenne_IIXL_AN0822102.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Piper_PA-31T2_Cheyenne_IIXL_AN0822102.jpg/960px-Piper_PA-31T2_Cheyenne_IIXL_AN0822102.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 723,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "10 April 2005",
+      "caption": "",
+      "found": "2026-11-03T23:05:29.5408968+00:00"
     }
   ],
-  "updated": "2026-11-03T22:55:25.8759165+00:00"
+  "updated": "2026-11-03T23:05:29.5408968+00:00"
 }
