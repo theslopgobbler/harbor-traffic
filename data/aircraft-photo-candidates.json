@@ -143,7 +143,8 @@
     "Hawker Beechcraft Corp Hawker 4000": "2026-11-03T16:05:54.1372806+00:00",
     "Bell 205A-1": "2026-11-03T16:15:28.9454314+00:00",
     "Boeing P-8A Poseidon": "2026-11-03T19:16:01.3484828+00:00",
-    "Boeing 737NG 800/W": "2026-11-03T19:56:03.7676485+00:00"
+    "Boeing 737NG 800/W": "2026-11-03T19:56:03.7676485+00:00",
+    "Bell UH-1V Iroquois": "2026-11-03T21:25:41.4152709+00:00"
   },
   "candidates": [
     {
@@ -8937,7 +8938,91 @@
       "date": "2009-09-29 16:08",
       "caption": "On my way back from a quick visit to our Nations Capitol. Onboard \"American 1399\" with service from DCA to ORD. Brand new Boeing 737-800 operated by American Airlines. (N987AN).",
       "found": "2026-11-03T19:56:03.7676485+00:00"
+    },
+    {
+      "model": "Bell UH-1V Iroquois",
+      "file": "File:Bell UH-1H Iroquois 3-view line drawing.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_UH-1H_Iroquois_3-view_line_drawing.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Bell_UH-1H_Iroquois_3-view_line_drawing.png/960px-Bell_UH-1H_Iroquois_3-view_line_drawing.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 773,
+      "author": "Headquarters, Department of the Army",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1986-12-01",
+      "caption": "A 3-view line drawing of the Bell UH-1H and UH-1V Iroquois.",
+      "found": "2026-11-03T21:25:41.4152709+00:00"
+    },
+    {
+      "model": "Bell UH-1V Iroquois",
+      "file": "File:Bell UH-1V Huey ‘0-16165’ (29693610694).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_UH-1V_Huey_%E2%80%980-16165%E2%80%99_(29693610694).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Bell_UH-1V_Huey_%E2%80%980-16165%E2%80%99_%2829693610694%29.jpg/960px-Bell_UH-1V_Huey_%E2%80%980-16165%E2%80%99_%2829693610694%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "Taken on 5 March 2016, 08:55",
+      "caption": "c/n 10824. Full US military serial 68-16165. Behind are complete UH-1V ‘0-1949’, full serial 67-19494, c/n 10100 and a further Huey cabin in full CDF markings which is reported to be EH-1H ‘N492DF’ c/n 11433, US milit...",
+      "found": "2026-11-03T21:25:41.4152709+00:00"
+    },
+    {
+      "model": "Bell UH-1V Iroquois",
+      "file": "File:Bell UH-1V Iroquois (205), USA - Army AN0806999.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_UH-1V_Iroquois_(205),_USA_-_Army_AN0806999.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Bell_UH-1V_Iroquois_%28205%29%2C_USA_-_Army_AN0806999.jpg/960px-Bell_UH-1V_Iroquois_%28205%29%2C_USA_-_Army_AN0806999.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 636,
+      "author": "Mike Freer - Touchdown-aviation",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 November 1989 ",
+      "caption": "",
+      "found": "2026-11-03T21:25:41.4152709+00:00"
+    },
+    {
+      "model": "Bell UH-1V Iroquois",
+      "file": "File:Bell XHU-1 Huey 54459 (9212468650).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_XHU-1_Huey_54459_(9212468650).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Bell_XHU-1_Huey_54459_%289212468650%29.jpg/960px-Bell_XHU-1_Huey_54459_%289212468650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "Taken on 17 April 2013, 14:48",
+      "caption": "This is the very first of more than 16,000 Hueys produced by Bell. It is currently in one of the new storage buildings at one end of a line of preserved Huey variants which ends with a UH-1V. This has to be one of the...",
+      "found": "2026-11-03T21:25:41.4152709+00:00"
+    },
+    {
+      "model": "Bell UH-1V Iroquois",
+      "file": "File:Francillon Slides (21420100258).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Francillon_Slides_(21420100258).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Francillon_Slides_%2821420100258%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 637,
+      "author": "SDASM Archives",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2015-09-21 14:21",
+      "caption": "PictionID:43723193 - Catalog:17.S_000154 - Title:Bell UH-1V 22468 CA-NG 17May87 [RJF] - Filename:17.S_000154.tif - ----Image from the René Francillon Photo Archive. This images is from a 35mm slide. Having had his int...",
+      "found": "2026-11-03T21:25:41.4152709+00:00"
+    },
+    {
+      "model": "Bell UH-1V Iroquois",
+      "file": "File:Francillon Slides (21608037315).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Francillon_Slides_(21608037315).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/01/Francillon_Slides_%2821608037315%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 595,
+      "author": "SDASM Archives",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2015-09-21 14:23",
+      "caption": "PictionID:43723181 - Catalog:17.S_000153 - Title:Bell UH-1V 22468 CA-NG 17May87 [RJF] - Filename:17.S_000153.tif - ----Image from the René Francillon Photo Archive. This images is from a 35mm slide. Having had his int...",
+      "found": "2026-11-03T21:25:41.4152709+00:00"
     }
   ],
-  "updated": "2026-11-03T21:15:57.7495891+00:00"
+  "updated": "2026-11-03T21:25:41.4152709+00:00"
 }
