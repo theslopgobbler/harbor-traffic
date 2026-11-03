@@ -1427,7 +1427,8 @@
     }
     window.htDeclutter?.();
   }
-  let bigText = !TV && store.get('ht.bigText') === true;
+  // (a TV is read from across the room: bigger text unless its link says ?big=0)
+  let bigText = TV ? qs.get('big') !== '0' : store.get('ht.bigText') === true;
   $('#btnBig')?.addEventListener('click', () => { bigText = !bigText; store.set('ht.bigText', bigText); applyBigText(bigText); });
   if (bigText) { document.body.classList.add('big-text'); if (map.loaded()) applyBigText(true); else map.once('load', () => applyBigText(true)); }
 
