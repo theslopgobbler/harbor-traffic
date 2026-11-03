@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-03T05:35:23.3806277+00:00",
+  "updated": "2026-11-03T05:45:24.3346781+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a30d14",
-      "flight": "RFS707",
-      "reg": "N296PL",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 3275,
-      "gs": 107.9,
-      "track": 13.39,
-      "rate": 0,
-      "lat": 46.93727,
-      "lon": -122.92032,
-      "squawk": "3567",
+      "hex": "a24ba7",
+      "flight": "SKW3855",
+      "reg": "N247SY",
+      "type": "E75L",
+      "cat": "A3",
+      "alt": 12350,
+      "gs": 330.3,
+      "track": 267.57,
+      "rate": 2944,
+      "lat": 47.31518,
+      "lon": -122.74679,
+      "squawk": "4663",
       "emergency": "none",
       "mil": false
     }
