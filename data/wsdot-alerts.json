@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T20:55:42.6711871+00:00",
+  "updated": "2026-11-03T21:05:43.6262905+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1674,6 +1674,27 @@
       "start": "2026-11-03T17:00:00.0000000+00:00",
       "end": "2026-11-03T23:00:00.0000000+00:00",
       "updated": "2026-11-03T15:44:16.3400000+00:00"
+    },
+    {
+      "id": 723232,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 94 near Egge Rd beginning at 12:56 pm on November 3, 2026 until about 2:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 94.0,
+      "lat": 47.060482109,
+      "lon": -123.929087665,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-03T20:56:00.0000000+00:00",
+      "end": "2026-11-03T22:00:00.0000000+00:00",
+      "updated": "2026-11-03T20:57:12.8030000+00:00"
     },
     {
       "id": 686738,
