@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-03T07:35:37.9851968+00:00",
+  "updated": "2026-11-03T07:45:28.2808105+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a06bb6",
-      "flight": "N126TS",
-      "reg": "N126TS",
-      "type": "PC12",
-      "cat": "A1",
-      "alt": 7800,
-      "gs": 250.2,
-      "track": 2.06,
-      "rate": 64,
-      "lat": 47.53565,
-      "lon": -122.87102,
-      "squawk": "4707",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
