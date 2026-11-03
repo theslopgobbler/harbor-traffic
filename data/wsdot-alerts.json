@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T01:15:28.3912137+00:00",
+  "updated": "2026-11-03T01:25:23.4240401+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2027,6 +2027,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 723137,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 107 near Boulevard Rd SE beginning at 5:23 pm on November 2, 2026 until further notice. The center lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 107.0,
+      "lat": 47.040576461,
+      "lon": -122.861475538,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-03T01:23:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-03T01:24:07.1330000+00:00"
     },
     {
       "id": 631745,
