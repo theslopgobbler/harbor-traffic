@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-03T14:35:27.6876308+00:00",
+  "updated": "2026-11-03T14:45:30.2609719+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a69472",
+      "flight": "N523DV",
+      "reg": "N523DV",
+      "type": "C25B",
+      "cat": "A1",
+      "alt": 8700,
+      "gs": 281.5,
+      "track": 93.46,
+      "rate": 2802,
+      "lat": 46.61783,
+      "lon": -122.81777,
+      "squawk": "4633",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
