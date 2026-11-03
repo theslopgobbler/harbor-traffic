@@ -1,62 +1,7 @@
 {
-  "updated": "2026-11-03T17:25:40.3120443+00:00",
+  "updated": "2026-11-03T17:35:47.0394268+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 723182,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 184.7 near Kallman Rd to milepost 184.5 near Jefferson/Clallam County Line beginning at 7:31 am on November 3, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.7,
-      "lat": 47.882258587,
-      "lon": -124.352849276,
-      "lat2": 47.879744939,
-      "lon2": -124.350752575,
-      "county": "Jefferson",
-      "start": "2026-11-03T15:31:00.0000000+00:00",
-      "end": "2026-11-03T23:00:00.0000000+00:00",
-      "updated": "2026-11-03T16:22:28.6570000+00:00",
-      "path": [
-        [
-          -124.35287,
-          47.88227
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.35073,
-          47.87973
-        ],
-        [
-          -124.35073,
-          47.87973
-        ]
-      ]
-    },
     {
       "id": 692593,
       "kind": "work",
@@ -161,27 +106,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 723186,
@@ -842,6 +766,82 @@
           46.82775
         ]
       ]
+    },
+    {
+      "id": 723182,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 184.7 near Kallman Rd to milepost 184.5 near Jefferson/Clallam County Line beginning at 7:31 am on November 3, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.7,
+      "lat": 47.882258587,
+      "lon": -124.352849276,
+      "lat2": 47.879744939,
+      "lon2": -124.350752575,
+      "county": "Jefferson",
+      "start": "2026-11-03T15:31:00.0000000+00:00",
+      "end": "2026-11-03T23:00:00.0000000+00:00",
+      "updated": "2026-11-03T16:22:28.6570000+00:00",
+      "path": [
+        [
+          -124.35287,
+          47.88227
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.35073,
+          47.87973
+        ],
+        [
+          -124.35073,
+          47.87973
+        ]
+      ]
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 693084,
