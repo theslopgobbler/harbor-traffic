@@ -149,7 +149,9 @@
     "Piper PA-31T2 Cheyenne IIXL": "2026-11-03T23:05:29.5408968+00:00",
     "Textron Aviation Citation CJ3+": "2026-11-04T00:45:28.1677913+00:00",
     "Textron Aviation Citation XLS+": "2026-11-04T15:45:21.9492445+00:00",
-    "Beech C-12V Huron": "2026-11-04T17:55:28.8240619+00:00"
+    "Beech C-12V Huron": "2026-11-04T17:55:28.8240619+00:00",
+    "Beech King Air E90": "2026-11-04T21:25:26.9466728+00:00",
+    "Bell TH-67A Creek": "2026-11-04T21:25:26.9466728+00:00"
   },
   "candidates": [
     {
@@ -9237,7 +9239,105 @@
       "date": "2026-06-25 04:20:45",
       "caption": "United States Army Beech C-12V Huron MSN BW-23 Joint Forces Training Base – Los Alamitos (SLI/KSLI) 6.25.26",
       "found": "2026-11-04T17:55:28.8240619+00:00"
+    },
+    {
+      "model": "Beech King Air E90",
+      "file": "File:Beech E90 King Air, CEGA Air Ambulance AN0573224.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_E90_King_Air,_CEGA_Air_Ambulance_AN0573224.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Beech_E90_King_Air%2C_CEGA_Air_Ambulance_AN0573224.jpg/960px-Beech_E90_King_Air%2C_CEGA_Air_Ambulance_AN0573224.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 719,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "1984 ",
+      "caption": "",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
+    },
+    {
+      "model": "Beech King Air E90",
+      "file": "File:Beech E90 King Air, Cega Air Ambulance AN0746213.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_E90_King_Air,_Cega_Air_Ambulance_AN0746213.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Beech_E90_King_Air%2C_Cega_Air_Ambulance_AN0746213.jpg/960px-Beech_E90_King_Air%2C_Cega_Air_Ambulance_AN0746213.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 728,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "1986 ",
+      "caption": "",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
+    },
+    {
+      "model": "Beech King Air E90",
+      "file": "File:Beech E90 King Air, English Braids AN0552170.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_E90_King_Air,_English_Braids_AN0552170.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Beech_E90_King_Air%2C_English_Braids_AN0552170.jpg/960px-Beech_E90_King_Air%2C_English_Braids_AN0552170.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 666,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "19 February 2003",
+      "caption": "",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
+    },
+    {
+      "model": "Beech King Air E90",
+      "file": "File:Beech E90 King Air, TAP Air Portugal AN0350432.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_E90_King_Air,_TAP_Air_Portugal_AN0350432.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Beech_E90_King_Air%2C_TAP_Air_Portugal_AN0350432.jpg/960px-Beech_E90_King_Air%2C_TAP_Air_Portugal_AN0350432.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 672,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "4 May 1985 ",
+      "caption": "Main landing gear collapsed on touch down.",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
+    },
+    {
+      "model": "Beech King Air E90",
+      "file": "File:Beech E90 King Air, TAP Air Portugal AN0365257.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_E90_King_Air,_TAP_Air_Portugal_AN0365257.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Beech_E90_King_Air%2C_TAP_Air_Portugal_AN0365257.jpg/960px-Beech_E90_King_Air%2C_TAP_Air_Portugal_AN0365257.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 678,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "1985 ",
+      "caption": "Repaired just after the crash.",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
+    },
+    {
+      "model": "Beech King Air E90",
+      "file": "File:Beech E90 King Air, TAP Air Portugal AN0374334.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_E90_King_Air,_TAP_Air_Portugal_AN0374334.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Beech_E90_King_Air%2C_TAP_Air_Portugal_AN0374334.jpg/960px-Beech_E90_King_Air%2C_TAP_Air_Portugal_AN0374334.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 727,
+      "author": "Pedro Aragão",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "4 May 1985 ",
+      "caption": "Main landing gear collapsed on touch down . A few minutes after the crash , logo and registration was covered.",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
+    },
+    {
+      "model": "Bell TH-67A Creek",
+      "file": "File:TH-67A Creek.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:TH-67A_Creek.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/49/TH-67A_Creek.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 520,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "Unknown date",
+      "caption": "TH-67A Creek (Bell 206) training helicopter used by the United States Army.",
+      "found": "2026-11-04T21:25:26.9466728+00:00"
     }
   ],
-  "updated": "2026-11-04T21:15:25.6496056+00:00"
+  "updated": "2026-11-04T21:25:26.9466728+00:00"
 }
