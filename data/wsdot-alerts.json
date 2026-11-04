@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T22:46:49.0225639+00:00",
+  "updated": "2026-11-04T22:55:26.4531516+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1861,27 +1861,6 @@
           46.59609
         ]
       ]
-    },
-    {
-      "id": 723355,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 eastbound at milepost 8.5 near Wynoochee River beginning at 2:38 pm on November 4, 2026 until about 3:15 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "E",
-      "milepost": 8.5,
-      "lat": 46.976566955,
-      "lon": -123.640436367,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-04T22:38:00.0000000+00:00",
-      "end": "2026-11-04T23:15:00.0000000+00:00",
-      "updated": "2026-11-04T22:41:02.3630000+00:00"
     },
     {
       "id": 698910,
