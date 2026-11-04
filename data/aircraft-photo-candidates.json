@@ -148,7 +148,8 @@
     "Bombardier Challenger 3500": "2026-11-03T22:45:28.2142308+00:00",
     "Piper PA-31T2 Cheyenne IIXL": "2026-11-03T23:05:29.5408968+00:00",
     "Textron Aviation Citation CJ3+": "2026-11-04T00:45:28.1677913+00:00",
-    "Textron Aviation Citation XLS+": "2026-11-04T15:45:21.9492445+00:00"
+    "Textron Aviation Citation XLS+": "2026-11-04T15:45:21.9492445+00:00",
+    "Beech C-12V Huron": "2026-11-04T17:55:28.8240619+00:00"
   },
   "candidates": [
     {
@@ -9222,7 +9223,21 @@
       "date": "2025-08-27 02:39",
       "caption": "North Las Vegas Airport KVGT Photo: TDelCoro August 27, 2025",
       "found": "2026-11-04T15:45:21.9492445+00:00"
+    },
+    {
+      "model": "Beech C-12V Huron",
+      "file": "File:United States Army Beech C-12V Huron 95-00095 landing at Joint Forces Training Base Los Alamitos.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_States_Army_Beech_C-12V_Huron_95-00095_landing_at_Joint_Forces_Training_Base_Los_Alamitos.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/United_States_Army_Beech_C-12V_Huron_95-00095_landing_at_Joint_Forces_Training_Base_Los_Alamitos.jpg/960px-United_States_Army_Beech_C-12V_Huron_95-00095_landing_at_Joint_Forces_Training_Base_Los_Alamitos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Liam Thompson",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-25 04:20:45",
+      "caption": "United States Army Beech C-12V Huron MSN BW-23 Joint Forces Training Base – Los Alamitos (SLI/KSLI) 6.25.26",
+      "found": "2026-11-04T17:55:28.8240619+00:00"
     }
   ],
-  "updated": "2026-11-04T17:53:13.5417852+00:00"
+  "updated": "2026-11-04T17:55:28.8240619+00:00"
 }
