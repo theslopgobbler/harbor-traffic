@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-04T08:25:24.9305949+00:00",
+  "updated": "2026-11-04T08:35:25.9620566+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "899013",
-      "flight": "CAL021",
-      "reg": "B-18903",
-      "type": "A359",
-      "cat": "A5",
-      "alt": 12325,
-      "gs": 384.8,
-      "track": 318.9,
-      "rate": 1408,
-      "lat": 47.56654,
-      "lon": -122.81486,
-      "squawk": "3556",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
