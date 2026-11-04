@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T07:35:25.7698791+00:00",
+  "updated": "2026-11-04T07:45:24.9298204+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N6605P",
       "type": "C152",
       "cat": "A1",
-      "alt": 6875,
-      "gs": 95.1,
-      "track": 192.14,
-      "rate": -65,
-      "lat": 46.96455,
-      "lon": -122.9094,
+      "alt": 6925,
+      "gs": 93.0,
+      "track": 191.79,
+      "rate": 0,
+      "lat": 46.73968,
+      "lon": -122.99502,
       "squawk": "4605",
       "emergency": "none",
       "mil": false
