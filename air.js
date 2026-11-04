@@ -389,6 +389,11 @@
     alerts.innerHTML = flagged.map((a) => `<li class="${EMERG[a.squawk] ? 'k-closure' : 'k-work'} clickable" data-hex="${esc(a.hex)}">
       <div class="t">${EMERG[a.squawk] ? `⚠ SQUAWK ${a.squawk}: ${EMERG[a.squawk]}` : isCoastGuard(a) ? '⚠ COAST GUARD AIRCRAFT' : a.milSure ? '⚠ MILITARY AIRCRAFT' : '⚠ POSSIBLE MILITARY AIRCRAFT'} · ${esc(a.flight || a.reg || a.hex)}</div>
       <div class="m">${esc(typeName(a))} · ${altTxt(a.alt)} FT · ${a._sit.state} · ${a._sit.homeNm.toFixed(1)} NM FROM ABERDEEN</div></li>`).join('');
+    // temporary notice (shows until PAUSE_UNTIL, then disappears by itself)
+    const PAUSE_UNTIL = Date.parse('2026-11-05T13:25:00Z'); // Thu Nov 5, 5:25 AM Pacific
+    if (Date.now() < PAUSE_UNTIL) alerts.insertAdjacentHTML('afterbegin', `<li class="k-work">
+      <div class="t">⚠ LOCAL AIRCRAFT FEED PAUSED · BACK ABOUT 5:25 AM THU</div>
+      <div class="m">SOME LOW AIRCRAFT AND HELICOPTERS MAY BE MISSING UNTIL THEN · ONLINE FEEDS STILL SHOWN</div></li>`);
     // helicopters first, then nearest first
     const sorted = planes.slice().sort((a, b) => (isHeli(b) - isHeli(a)) || a._sit.homeNm - b._sit.homeNm);
     list.innerHTML = sorted.length ? sorted.map((a) => `<li class="clickable" data-hex="${esc(a.hex)}" style="border-left-color:${tint(a)}">
