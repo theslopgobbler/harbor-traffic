@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T15:05:38.2804813+00:00",
+  "updated": "2026-11-04T15:15:25.5847808+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -227,6 +227,27 @@
           46.73248
         ]
       ]
+    },
+    {
+      "id": 723295,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions from milepost 30.5 near Katula Road to milepost 31.00 near Jones Creek will be alternating traffic with flaggers. Use caution beginning at 7:11 am on November 4, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 30.5,
+      "lat": 46.604434911,
+      "lon": -123.275523456,
+      "lat2": 46.604434911,
+      "lon2": -123.275523456,
+      "county": "Lewis",
+      "start": "2026-11-04T15:11:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-04T15:12:15.2600000+00:00"
     },
     {
       "id": 722911,
@@ -1514,6 +1535,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 723294,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers. Use caution when approaching the area, beginning at 7:05 am on November 4, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-04T15:05:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-04T15:06:10.5970000+00:00"
     },
     {
       "id": 640019,
