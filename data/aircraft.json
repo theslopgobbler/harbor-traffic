@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-04T14:55:29.1570317+00:00",
+  "updated": "2026-11-04T15:05:38.2804813+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a69472",
-      "flight": "N523DV",
-      "reg": "N523DV",
-      "type": "C25B",
+      "hex": "a9b357",
+      "flight": "TDY1776",
+      "reg": "N724KP",
+      "type": "PC12",
       "cat": "A1",
-      "alt": 2625,
-      "gs": 213.3,
-      "track": 131.39,
-      "rate": null,
-      "lat": 46.63948,
-      "lon": -122.96963,
-      "squawk": "1653",
+      "alt": 12425,
+      "gs": 273.6,
+      "track": 348.4,
+      "rate": -1152,
+      "lat": 46.87196,
+      "lon": -122.87384,
+      "squawk": "4775",
       "emergency": "none",
       "mil": false
     }
