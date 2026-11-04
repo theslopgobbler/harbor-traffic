@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-04T18:05:22.5518360+00:00",
+  "updated": "2026-11-04T18:15:27.3416562+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "adfe99",
-      "flight": "PAT521",
-      "reg": "95-00100",
-      "type": "BE20",
-      "cat": "A1",
-      "alt": 1875,
-      "gs": 203.9,
-      "track": 35.02,
-      "rate": 0,
-      "lat": 47.17891,
-      "lon": -122.78114,
-      "squawk": "4633",
-      "emergency": "none",
-      "mil": true
-    }
-  ]
+  "aircraft": []
 }
