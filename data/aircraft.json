@@ -1,5 +1,86 @@
 {
-  "updated": "2026-11-04T18:15:27.3416562+00:00",
+  "updated": "2026-11-04T18:25:27.7894537+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ada167",
+      "flight": "ASA393",
+      "reg": "N978AK",
+      "type": "B39M",
+      "cat": "A3",
+      "alt": 13825,
+      "gs": 376.2,
+      "track": 237.7,
+      "rate": 2240,
+      "lat": 47.24181,
+      "lon": -123.01975,
+      "squawk": "1527",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a54904",
+      "flight": "N44HS",
+      "reg": "N44HS",
+      "type": "S22T",
+      "cat": "A1",
+      "alt": 425,
+      "gs": 114.0,
+      "track": 0.5,
+      "rate": 1152,
+      "lat": 46.68842,
+      "lon": -122.9831,
+      "squawk": null,
+      "emergency": null,
+      "mil": false
+    },
+    {
+      "hex": "a20bf5",
+      "flight": "N2308E",
+      "reg": "N2308E",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 3300,
+      "gs": 100.8,
+      "track": 22.75,
+      "rate": 0,
+      "lat": 47.26323,
+      "lon": -122.77338,
+      "squawk": "4642",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a1889a",
+      "flight": "N19820",
+      "reg": "N19820",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 4200,
+      "gs": 85.7,
+      "track": 228.31,
+      "rate": -2108,
+      "lat": 46.74042,
+      "lon": -122.74676,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a0cca0",
+      "flight": "N15000",
+      "reg": "N15000",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 5850,
+      "gs": 117.3,
+      "track": 34.23,
+      "rate": -128,
+      "lat": 46.73537,
+      "lon": -122.74214,
+      "squawk": "4726",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
