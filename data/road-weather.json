@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T18:35:27.6373140+00:00",
+  "updated": "2026-11-04T18:45:31.4100728+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -35,14 +35,14 @@
       "name": "State Camp Hill on US 101",
       "lat": 47.1402,
       "lon": -123.8922,
-      "temp": 46.58,
+      "temp": 47.3,
       "wind": 3,
-      "gust": 6,
-      "dir": "NNE",
+      "gust": 8,
+      "dir": "NE",
       "vis": 1,
       "precip": null,
-      "humidity": 92,
-      "time": "2026-11-04T18:00:00.0000000+00:00"
+      "humidity": 90,
+      "time": "2026-11-04T18:15:00.0000000+00:00"
     },
     {
       "id": 2956,
