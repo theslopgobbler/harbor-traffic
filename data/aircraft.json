@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-04T07:15:25.3118664+00:00",
+  "updated": "2026-11-04T07:25:25.2728554+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a8b74e",
+      "flight": "N6605P",
+      "reg": "N6605P",
+      "type": "C152",
+      "cat": "A1",
+      "alt": 6875,
+      "gs": 91.4,
+      "track": 197.84,
+      "rate": -75,
+      "lat": 47.2234,
+      "lon": -122.79488,
+      "squawk": "4605",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
