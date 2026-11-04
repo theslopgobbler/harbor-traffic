@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-04T05:25:23.2584150+00:00",
+  "updated": "2026-11-04T05:35:24.7934416+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a4bec4",
-      "flight": "N40464",
-      "reg": "N40464",
-      "type": "PA23",
+      "hex": "ac5ec1",
+      "flight": "N89653",
+      "reg": "N89653",
+      "type": "C152",
       "cat": "A1",
-      "alt": 1900,
-      "gs": 121.8,
-      "track": 163.8,
-      "rate": 0,
-      "lat": 47.09802,
-      "lon": -122.74278,
-      "squawk": "4665",
+      "alt": 4325,
+      "gs": 94.2,
+      "track": 192.26,
+      "rate": 73,
+      "lat": 47.42123,
+      "lon": -122.7163,
+      "squawk": "4634",
       "emergency": "none",
       "mil": false
     }
