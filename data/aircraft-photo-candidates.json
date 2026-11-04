@@ -147,7 +147,8 @@
     "Bell UH-1V Iroquois": "2026-11-03T21:25:41.4152709+00:00",
     "Bombardier Challenger 3500": "2026-11-03T22:45:28.2142308+00:00",
     "Piper PA-31T2 Cheyenne IIXL": "2026-11-03T23:05:29.5408968+00:00",
-    "Textron Aviation Citation CJ3+": "2026-11-04T00:45:28.1677913+00:00"
+    "Textron Aviation Citation CJ3+": "2026-11-04T00:45:28.1677913+00:00",
+    "Textron Aviation Citation XLS+": "2026-11-04T15:45:21.9492445+00:00"
   },
   "candidates": [
     {
@@ -9193,7 +9194,35 @@
       "date": "2018-07-07 15:21:36",
       "caption": "Textron Aviation (N542CJ) Cessna 525B CitationJet CJ3+ at Wagga Wagga Airport",
       "found": "2026-11-04T00:45:28.1677913+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation XLS+",
+      "file": "File:N594QS Cessna Citation Excel (Textron Aviation) XLS Model 560XL Serial Number 560-5697 (54753755649).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N594QS_Cessna_Citation_Excel_(Textron_Aviation)_XLS_Model_560XL_Serial_Number_560-5697_(54753755649).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/N594QS_Cessna_Citation_Excel_%28Textron_Aviation%29_XLS_Model_560XL_Serial_Number_560-5697_%2854753755649%29.jpg/960px-N594QS_Cessna_Citation_Excel_%28Textron_Aviation%29_XLS_Model_560XL_Serial_Number_560-5697_%2854753755649%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 404,
+      "author": "Tomás Del Coro from Fabulous Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-27 02:39",
+      "caption": "North Las Vegas Airport KVGT Photo: TDelCoro August 27, 2025",
+      "found": "2026-11-04T15:45:21.9492445+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation XLS+",
+      "file": "File:N594QS Cessna Citation Excel (Textron Aviation) XLS Model 560XL Serial Number 560-5697 (54753800799).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N594QS_Cessna_Citation_Excel_(Textron_Aviation)_XLS_Model_560XL_Serial_Number_560-5697_(54753800799).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/N594QS_Cessna_Citation_Excel_%28Textron_Aviation%29_XLS_Model_560XL_Serial_Number_560-5697_%2854753800799%29.jpg/960px-N594QS_Cessna_Citation_Excel_%28Textron_Aviation%29_XLS_Model_560XL_Serial_Number_560-5697_%2854753800799%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 441,
+      "author": "Tomás Del Coro from Fabulous Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-27 02:39",
+      "caption": "North Las Vegas Airport KVGT Photo: TDelCoro August 27, 2025",
+      "found": "2026-11-04T15:45:21.9492445+00:00"
     }
   ],
-  "updated": "2026-11-04T15:35:27.0370815+00:00"
+  "updated": "2026-11-04T15:45:21.9492445+00:00"
 }
