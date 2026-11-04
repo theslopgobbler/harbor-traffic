@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-04T13:25:25.9318639+00:00",
+  "updated": "2026-11-04T13:35:28.3070316+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a16bf6",
+      "flight": "AMF2122",
+      "reg": "N191AV",
+      "type": "BE99",
+      "cat": "A6",
+      "alt": 9825,
+      "gs": 201.0,
+      "track": 351.99,
+      "rate": 70,
+      "lat": 46.87708,
+      "lon": -122.8587,
+      "squawk": "4633",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
