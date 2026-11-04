@@ -152,8 +152,8 @@
     "Beech C-12V Huron": "2026-11-04T17:55:28.8240619+00:00",
     "Beech King Air E90": "2026-11-04T21:25:26.9466728+00:00",
     "Bell TH-67A Creek": "2026-11-04T21:25:26.9466728+00:00",
-    "Bell 407 GXi": "2026-11-04T22:05:26.2144620+00:00",
-    "Beech King Air C90A": "2026-11-04T22:05:26.2144620+00:00"
+    "Bell 407 GXi": "2026-11-04T22:05:26.214462+00:00",
+    "Beech King Air C90A": "2026-11-04T22:05:26.214462+00:00"
   },
   "candidates": [
     {
@@ -9352,7 +9352,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "date": "2025-12-04",
       "caption": "Helicóptero Bell 407GXi perteneciente a la IV Brigada Aérea de la Fuerza Aérea Argentina.",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Bell 407 GXi",
@@ -9366,7 +9366,7 @@
       "licenseUrl": "",
       "date": "2020-12-18",
       "caption": "Śmigłowiec Bell 407 GXi polskiej Policji",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Bell 407 GXi",
@@ -9380,7 +9380,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2021-10-22",
       "caption": "bell 407 gxi of bangladesh army",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Bell 407 GXi",
@@ -9394,7 +9394,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "date": "2023-11-01",
       "caption": "Bell 407 GXi de la Fuerza Aérea Argentina.",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Beech King Air C90A",
@@ -9408,7 +9408,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "21 March 2005",
       "caption": "On final for runway 32.",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Beech King Air C90A",
@@ -9422,7 +9422,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "11 February 2001",
       "caption": "Doing an approach to runway 32.",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Beech King Air C90A",
@@ -9436,7 +9436,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "6 July 2013",
       "caption": "",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Beech King Air C90A",
@@ -9450,7 +9450,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "24 August 2013",
       "caption": "",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Beech King Air C90A",
@@ -9464,7 +9464,7 @@
       "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
       "date": "21 April 2009",
       "caption": "",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     },
     {
       "model": "Beech King Air C90A",
@@ -9478,8 +9478,8 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "date": "2016-09-26 13:12",
       "caption": "At Gloucestershire Airport.",
-      "found": "2026-11-04T22:05:26.2144620+00:00"
+      "found": "2026-11-04T22:05:26.214462+00:00"
     }
   ],
-  "updated": "2026-11-04T22:05:26.2144620+00:00"
+  "updated": "2026-11-04T22:15:26.2484198+00:00"
 }
