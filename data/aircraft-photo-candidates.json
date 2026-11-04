@@ -146,7 +146,8 @@
     "Boeing 737NG 800/W": "2026-11-03T19:56:03.7676485+00:00",
     "Bell UH-1V Iroquois": "2026-11-03T21:25:41.4152709+00:00",
     "Bombardier Challenger 3500": "2026-11-03T22:45:28.2142308+00:00",
-    "Piper PA-31T2 Cheyenne IIXL": "2026-11-03T23:05:29.5408968+00:00"
+    "Piper PA-31T2 Cheyenne IIXL": "2026-11-03T23:05:29.5408968+00:00",
+    "Textron Aviation Citation CJ3+": "2026-11-04T00:45:28.1677913+00:00"
   },
   "candidates": [
     {
@@ -9164,7 +9165,35 @@
       "date": "10 April 2005",
       "caption": "",
       "found": "2026-11-03T23:05:29.5408968+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation CJ3+",
+      "file": "File:Textron Aviation, EBACE 2019, Le Grand-Saconnex (EB190473).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Textron_Aviation,_EBACE_2019,_Le_Grand-Saconnex_(EB190473).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Textron_Aviation%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190473%29.jpg/960px-Textron_Aviation%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190473%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-04T00:45:28.1677913+00:00"
+    },
+    {
+      "model": "Textron Aviation Citation CJ3+",
+      "file": "File:Textron Aviation (N542CJ) Cessna 525B CitationJet CJ3+ at Wagga Wagga Airport (6).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Textron_Aviation_(N542CJ)_Cessna_525B_CitationJet_CJ3%2B_at_Wagga_Wagga_Airport_(6).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Textron_Aviation_%28N542CJ%29_Cessna_525B_CitationJet_CJ3%2B_at_Wagga_Wagga_Airport_%286%29.jpg/960px-Textron_Aviation_%28N542CJ%29_Cessna_525B_CitationJet_CJ3%2B_at_Wagga_Wagga_Airport_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2018-07-07 15:21:36",
+      "caption": "Textron Aviation (N542CJ) Cessna 525B CitationJet CJ3+ at Wagga Wagga Airport",
+      "found": "2026-11-04T00:45:28.1677913+00:00"
     }
   ],
-  "updated": "2026-11-04T00:35:23.1042973+00:00"
+  "updated": "2026-11-04T00:45:28.1677913+00:00"
 }
