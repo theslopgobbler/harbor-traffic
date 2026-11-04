@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-04T14:45:29.2462859+00:00",
+  "updated": "2026-11-04T14:55:29.1570317+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "76cdb6",
-      "flight": "SIA28",
-      "reg": "9V-SMV",
-      "type": "A359",
-      "cat": "A5",
-      "alt": 9400,
-      "gs": 277.6,
-      "track": 143.79,
-      "rate": -832,
-      "lat": 47.86198,
-      "lon": -122.72806,
-      "squawk": "6245",
+      "hex": "a69472",
+      "flight": "N523DV",
+      "reg": "N523DV",
+      "type": "C25B",
+      "cat": "A1",
+      "alt": 2625,
+      "gs": 213.3,
+      "track": 131.39,
+      "rate": null,
+      "lat": 46.63948,
+      "lon": -122.96963,
+      "squawk": "1653",
       "emergency": "none",
       "mil": false
     }
