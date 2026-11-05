@@ -1,23 +1,7 @@
 {
-  "updated": "2026-11-05T17:05:28.5296306+00:00",
+  "updated": "2026-11-05T17:15:28.5105083+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
-    {
-      "hex": "a87428",
-      "flight": "ASA1341",
-      "reg": "N644AS",
-      "type": "B737",
-      "cat": "A3",
-      "alt": 14050,
-      "gs": 346.1,
-      "track": 248.48,
-      "rate": 3136,
-      "lat": 47.29428,
-      "lon": -122.85018,
-      "squawk": "3521",
-      "emergency": "none",
-      "mil": false
-    },
     {
       "hex": "ada541",
       "flight": "N979BV",
@@ -25,11 +9,11 @@
       "type": null,
       "cat": "A1",
       "alt": 6725,
-      "gs": 103.4,
-      "track": 189.46,
+      "gs": 102.1,
+      "track": 188.45,
       "rate": 0,
-      "lat": 47.69924,
-      "lon": -122.73384,
+      "lat": 47.42025,
+      "lon": -122.79884,
       "squawk": "4602",
       "emergency": "none",
       "mil": false
