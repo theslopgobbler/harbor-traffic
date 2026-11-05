@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-05T12:35:27.4652890+00:00",
+  "updated": "2026-11-05T12:45:25.2749839+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a7563a",
+      "flight": "DAL68",
+      "reg": "N572DZ",
+      "type": "A359",
+      "cat": "A5",
+      "alt": 9325,
+      "gs": 301.2,
+      "track": 127.17,
+      "rate": -1408,
+      "lat": 47.90373,
+      "lon": -122.80593,
+      "squawk": "1467",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
