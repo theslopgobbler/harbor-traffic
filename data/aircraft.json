@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T17:15:28.5105083+00:00",
+  "updated": "2026-11-05T17:25:24.8674000+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,12 +9,44 @@
       "type": null,
       "cat": "A1",
       "alt": 6725,
-      "gs": 102.1,
-      "track": 188.45,
-      "rate": 0,
-      "lat": 47.42025,
-      "lon": -122.79884,
+      "gs": 101.1,
+      "track": 188.53,
+      "rate": 64,
+      "lat": 47.15295,
+      "lon": -122.86038,
       "squawk": "4602",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a58c8f",
+      "flight": "RFS715",
+      "reg": "N457EP",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 1400,
+      "gs": 66.1,
+      "track": 219.47,
+      "rate": 1152,
+      "lat": 47.48328,
+      "lon": -122.77503,
+      "squawk": "4741",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a2b175",
+      "flight": "N27282",
+      "reg": "N27282",
+      "type": "PA31",
+      "cat": "A2",
+      "alt": 3000,
+      "gs": 120.3,
+      "track": 218.59,
+      "rate": 763,
+      "lat": 47.1492,
+      "lon": -122.71214,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
