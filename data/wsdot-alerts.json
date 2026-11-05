@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T23:36:19.6407682+00:00",
+  "updated": "2026-11-05T23:45:31.1475487+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1278,27 +1278,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 722914,
       "kind": "work",
       "category": "Maintenance",
@@ -2093,6 +2072,27 @@
       "start": "2026-11-05T20:31:00.0000000+00:00",
       "end": "2026-11-05T22:30:00.0000000+00:00",
       "updated": "2026-11-05T20:34:00.5900000+00:00"
+    },
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 698910,

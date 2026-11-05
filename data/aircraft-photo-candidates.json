@@ -155,7 +155,8 @@
     "Bell 407 GXi": "2026-11-04T22:05:26.214462+00:00",
     "Beech King Air C90A": "2026-11-04T22:05:26.214462+00:00",
     "Bombardier Global Express": "2026-11-05T00:55:25.2110649+00:00",
-    "Bombardier Global 6000": "2026-11-05T21:25:46.9027114+00:00"
+    "Bombardier Global 6000": "2026-11-05T21:25:46.9027114+00:00",
+    "North American T-28B Trojan": "2026-11-05T23:45:31.1475487+00:00"
   },
   "candidates": [
     {
@@ -9649,7 +9650,91 @@
       "date": "2018-05-28",
       "caption": "VistaJet Bombardier Global 6000 taxiing at Geneva Airport",
       "found": "2026-11-05T21:25:46.9027114+00:00"
+    },
+    {
+      "model": "North American T-28B Trojan",
+      "file": "File:20170826 North American T-28B Trojan 7781 DxO.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20170826_North_American_T-28B_Trojan_7781_DxO.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/20170826_North_American_T-28B_Trojan_7781_DxO.jpg/960px-20170826_North_American_T-28B_Trojan_7781_DxO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 636,
+      "author": "Jakub Hałun",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-08-26 16:58:06",
+      "caption": "North American T-28 Trojan from Flying Bulls team at Radom Air Show",
+      "found": "2026-11-05T23:45:31.1475487+00:00"
+    },
+    {
+      "model": "North American T-28B Trojan",
+      "file": "File:20170826 North American T-28B Trojan 7786 DxO.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20170826_North_American_T-28B_Trojan_7786_DxO.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/20170826_North_American_T-28B_Trojan_7786_DxO.jpg/960px-20170826_North_American_T-28B_Trojan_7786_DxO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 636,
+      "author": "Jakub Hałun",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-08-26 16:58:15",
+      "caption": "North American T-28 Trojan from Flying Bulls team at Radom Air Show",
+      "found": "2026-11-05T23:45:31.1475487+00:00"
+    },
+    {
+      "model": "North American T-28B Trojan",
+      "file": "File:North American T-28B Trojan 21.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_T-28B_Trojan_21.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/North_American_T-28B_Trojan_21.JPG/960px-North_American_T-28B_Trojan_21.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 437,
+      "author": "Ad Meskens",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-05-19",
+      "caption": "Privately owned North American Aviation T-28B Trojan , N1328B (cn 200-425), at the Stampe Fly-in 2012, in the colours of the US Air Force.",
+      "found": "2026-11-05T23:45:31.1475487+00:00"
+    },
+    {
+      "model": "North American T-28B Trojan",
+      "file": "File:North American T-28B Trojan 3-view line drawing.png",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_T-28B_Trojan_3-view_line_drawing.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/North_American_T-28B_Trojan_3-view_line_drawing.png/960px-North_American_T-28B_Trojan_3-view_line_drawing.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1321,
+      "author": "U.S. Military",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1955-09-30",
+      "caption": "A 3-view line drawing of the North American T-28B Trojan. Two letters from label in profile view missing from original page due to way it was cut. Replaced with characters copied from elsewhere in image.",
+      "found": "2026-11-05T23:45:31.1475487+00:00"
+    },
+    {
+      "model": "North American T-28B Trojan",
+      "file": "File:North American T-28B Trojan 38.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_T-28B_Trojan_38.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/North_American_T-28B_Trojan_38.JPG/960px-North_American_T-28B_Trojan_38.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1287,
+      "author": "Ad Meskens",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2013-05-12",
+      "caption": "Privately owned North American Aviation T-28B Trojan , N1328B (cn 200-425), at the Stampe Fly-in 2012, in the colours of the US Air Force.",
+      "found": "2026-11-05T23:45:31.1475487+00:00"
+    },
+    {
+      "model": "North American T-28B Trojan",
+      "file": "File:North American T-28B Trojan N726A 138239 FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_T-28B_Trojan_N726A_138239_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/North_American_T-28B_Trojan_N726A_138239_FDK_MD1.jpg/960px-North_American_T-28B_Trojan_N726A_138239_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 534,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-05-19",
+      "caption": "North American T-28B Trojan 138239 N726A at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-05T23:45:31.1475487+00:00"
     }
   ],
-  "updated": "2026-11-05T23:36:19.6407682+00:00"
+  "updated": "2026-11-05T23:45:31.1475487+00:00"
 }
