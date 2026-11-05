@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T03:35:32.3385316+00:00",
+  "updated": "2026-11-05T03:45:22.9302105+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "20-02922",
       "type": "H47",
       "cat": "A7",
-      "alt": 625,
-      "gs": 106.8,
-      "track": 225.38,
-      "rate": 0,
-      "lat": 47.09937,
-      "lon": -122.88659,
+      "alt": 275,
+      "gs": 52.6,
+      "track": 248.81,
+      "rate": -448,
+      "lat": 47.23483,
+      "lon": -123.14294,
       "squawk": "1200",
       "emergency": "none",
       "mil": true
@@ -24,15 +24,31 @@
       "reg": "07-08735",
       "type": "H47",
       "cat": "A7",
-      "alt": 1600,
-      "gs": 80.9,
-      "track": 219.99,
-      "rate": 0,
-      "lat": 47.59068,
-      "lon": -122.8356,
+      "alt": 925,
+      "gs": 93.7,
+      "track": 149.88,
+      "rate": 128,
+      "lat": 47.37686,
+      "lon": -122.84257,
       "squawk": "1200",
       "emergency": "none",
       "mil": true
+    },
+    {
+      "hex": "a61f05",
+      "flight": "ASA619",
+      "reg": "N494AS",
+      "type": "B739",
+      "cat": "A3",
+      "alt": 11175,
+      "gs": 279.2,
+      "track": 272.26,
+      "rate": 3456,
+      "lat": 47.31439,
+      "lon": -122.70602,
+      "squawk": "6606",
+      "emergency": "none",
+      "mil": false
     }
   ]
 }
