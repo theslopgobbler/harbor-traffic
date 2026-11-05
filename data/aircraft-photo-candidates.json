@@ -153,7 +153,8 @@
     "Beech King Air E90": "2026-11-04T21:25:26.9466728+00:00",
     "Bell TH-67A Creek": "2026-11-04T21:25:26.9466728+00:00",
     "Bell 407 GXi": "2026-11-04T22:05:26.214462+00:00",
-    "Beech King Air C90A": "2026-11-04T22:05:26.214462+00:00"
+    "Beech King Air C90A": "2026-11-04T22:05:26.214462+00:00",
+    "Bombardier Global Express": "2026-11-05T00:55:25.2110649+00:00"
   },
   "candidates": [
     {
@@ -9479,7 +9480,91 @@
       "date": "2016-09-26 13:12",
       "caption": "At Gloucestershire Airport.",
       "found": "2026-11-04T22:05:26.214462+00:00"
+    },
+    {
+      "model": "Bombardier Global Express",
+      "file": "File:Bombardier BD-700-1A10 Global Express - SP-WOI - Zurich International Airport-5375.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-700-1A10_Global_Express_-_SP-WOI_-_Zurich_International_Airport-5375.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Bombardier_BD-700-1A10_Global_Express_-_SP-WOI_-_Zurich_International_Airport-5375.jpg/960px-Bombardier_BD-700-1A10_Global_Express_-_SP-WOI_-_Zurich_International_Airport-5375.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-06-29",
+      "caption": "Bombardier BD-700-1A10 Global Express - SP-WOI - Zurich International Airport",
+      "found": "2026-11-05T00:55:25.2110649+00:00"
+    },
+    {
+      "model": "Bombardier Global Express",
+      "file": "File:Bombardier BD-700-1A10 Global Express AN1304980.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-700-1A10_Global_Express_AN1304980.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Bombardier_BD-700-1A10_Global_Express_AN1304980.jpg/960px-Bombardier_BD-700-1A10_Global_Express_AN1304980.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 706,
+      "author": "Roland Nussbaumer",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "8 December 2007",
+      "caption": "",
+      "found": "2026-11-05T00:55:25.2110649+00:00"
+    },
+    {
+      "model": "Bombardier Global Express",
+      "file": "File:Bombardier Global Express 1294133.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_Express_1294133.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/63/Bombardier_Global_Express_1294133.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 768,
+      "author": "Richard Smith",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2009-05-07",
+      "caption": "A Bombardier Global Express jet aircraft takes off from Oxford Airport en route for Stansted",
+      "found": "2026-11-05T00:55:25.2110649+00:00"
+    },
+    {
+      "model": "Bombardier Global Express",
+      "file": "File:Bombardier Global Express N96FX FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_Express_N96FX_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Bombardier_Global_Express_N96FX_FDK_MD1.jpg/960px-Bombardier_Global_Express_N96FX_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 294,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-19",
+      "caption": "2000 Bombardier Global Express N96FX at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-05T00:55:25.2110649+00:00"
+    },
+    {
+      "model": "Bombardier Global Express",
+      "file": "File:Bombardier Global Express N96FX FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_Express_N96FX_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Bombardier_Global_Express_N96FX_FDK_MD2.jpg/960px-Bombardier_Global_Express_N96FX_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 411,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-19",
+      "caption": "2000 Bombardier Global Express N96FX with reverse thrust at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-05T00:55:25.2110649+00:00"
+    },
+    {
+      "model": "Bombardier Global Express",
+      "file": "File:Bombardier Global Express N96FX FDK MD4.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_Express_N96FX_FDK_MD4.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Bombardier_Global_Express_N96FX_FDK_MD4.jpg/960px-Bombardier_Global_Express_N96FX_FDK_MD4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 343,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-19",
+      "caption": "Bombardier Global Express N96FX at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-05T00:55:25.2110649+00:00"
     }
   ],
-  "updated": "2026-11-05T00:45:40.9862175+00:00"
+  "updated": "2026-11-05T00:55:25.2110649+00:00"
 }
