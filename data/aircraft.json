@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-05T04:05:27.7804684+00:00",
+  "updated": "2026-11-05T04:15:24.3137439+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ae6cfe",
+      "flight": "LEFTY41",
+      "reg": "20-02922",
+      "type": "H47",
+      "cat": "A7",
+      "alt": 2925,
+      "gs": 108.4,
+      "track": 94.76,
+      "rate": 0,
+      "lat": 47.28786,
+      "lon": -122.8294,
+      "squawk": "4605",
+      "emergency": "none",
+      "mil": true
+    }
+  ]
 }
