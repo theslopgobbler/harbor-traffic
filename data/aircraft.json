@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-05T02:15:26.8121231+00:00",
+  "updated": "2026-11-05T02:25:24.5365615+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "~2b9a8a",
-      "flight": "",
-      "reg": null,
-      "type": null,
-      "cat": null,
-      "alt": 900,
-      "gs": 104.0,
-      "track": 213.23,
-      "rate": null,
-      "lat": 47.02465,
-      "lon": -122.97546,
-      "squawk": null,
-      "emergency": null,
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
