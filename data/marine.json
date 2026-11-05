@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T04:55:25.0007608+00:00",
+  "updated": "2026-11-05T05:05:26.4918130+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -19,13 +19,13 @@
   "alerts": [
     {
       "event": "Gale Watch",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-07T00:00:00+00:00",
       "headline": "Gale Watch issued November 4 at 7:04PM PST until November 6 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Gale Watch",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
       "ends": "2026-11-07T00:00:00+00:00",
       "headline": "Gale Watch issued November 4 at 7:04PM PST until November 6 at 4:00PM PST by NWS Portland OR"
     },
@@ -43,13 +43,13 @@
     },
     {
       "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-11-06T22:00:00+00:00",
       "headline": "Gale Watch issued November 4 at 1:54PM PST until November 6 at 2:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-11-06T22:00:00+00:00",
       "headline": "Gale Watch issued November 4 at 1:54PM PST until November 6 at 2:00PM PST by NWS Seattle WA"
     },
