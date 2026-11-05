@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T20:25:24.0408765+00:00",
+  "updated": "2026-11-05T20:35:41.1186582+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -2158,6 +2158,27 @@
       ]
     },
     {
+      "id": 723474,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 both directions at milepost 40 near Moon Rd SW beginning at 12:31 pm on November 5, 2026 until about 2:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "B",
+      "milepost": 40.0,
+      "lat": 46.825598826,
+      "lon": -123.136093754,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-05T20:31:00.0000000+00:00",
+      "end": "2026-11-05T22:30:00.0000000+00:00",
+      "updated": "2026-11-05T20:34:00.5900000+00:00"
+    },
+    {
       "id": 723421,
       "kind": "work",
       "category": "Road work",
@@ -2324,27 +2345,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 723422,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 both directions at milepost 26.9 near Porter West City Limits beginning at 7:36 am on November 5, 2026 until about 2:30 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "B",
-      "milepost": 26.9,
-      "lat": 46.942832378,
-      "lon": -123.316484228,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-05T15:36:00.0000000+00:00",
-      "end": "2026-11-05T22:30:00.0000000+00:00",
-      "updated": "2026-11-05T15:38:01.0270000+00:00"
     }
   ]
 }
