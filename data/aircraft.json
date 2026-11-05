@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-05T02:35:21.5960818+00:00",
+  "updated": "2026-11-05T02:45:27.3124426+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a1c743",
-      "flight": "N21318",
-      "reg": "N21318",
-      "type": "PA44",
-      "cat": "A1",
-      "alt": 2000,
-      "gs": 162.4,
-      "track": 36.23,
-      "rate": 0,
-      "lat": 47.02757,
-      "lon": -122.8783,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
