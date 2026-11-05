@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T08:05:23.3452352+00:00",
+  "updated": "2026-11-05T08:15:28.6693068+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -7,14 +7,14 @@
       "name": "Rock Candy Mountain on SR 8",
       "lat": 47.0338,
       "lon": -123.0971,
-      "temp": 48.56,
-      "wind": 1,
-      "gust": 3,
-      "dir": "NNW",
+      "temp": 48.38,
+      "wind": 0,
+      "gust": 2,
+      "dir": "NE",
       "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     },
     {
       "id": 2280,
@@ -22,27 +22,27 @@
       "lat": 46.9343,
       "lon": -123.7282,
       "temp": 50.36,
-      "wind": 3,
+      "wind": 2,
       "gust": 4,
       "dir": "E",
       "vis": 1,
       "precip": null,
       "humidity": null,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     },
     {
       "id": 2281,
       "name": "State Camp Hill on US 101",
       "lat": 47.1402,
       "lon": -123.8922,
-      "temp": 48.56,
-      "wind": 1,
-      "gust": 2,
-      "dir": "S",
+      "temp": 49.1,
+      "wind": 0,
+      "gust": 0,
+      "dir": "N",
       "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     },
     {
       "id": 2956,
@@ -52,39 +52,39 @@
       "temp": 48.38,
       "wind": 1,
       "gust": 4,
-      "dir": "E",
+      "dir": "ENE",
       "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     },
     {
       "id": 2957,
       "name": "Oyster Bay Rd on US 101",
       "lat": 47.0849,
       "lon": -123.0331,
-      "temp": 47.48,
+      "temp": 46.76,
       "wind": 1,
-      "gust": 3,
-      "dir": "E",
-      "vis": 1,
+      "gust": 2,
+      "dir": "ENE",
+      "vis": 0,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     },
     {
       "id": 2958,
       "name": "Pt. Grenville on SR 109",
       "lat": 47.3029,
       "lon": -124.2504,
-      "temp": 45.68,
+      "temp": 45.86,
       "wind": 1,
       "gust": 2,
-      "dir": "NNE",
+      "dir": "N",
       "vis": 1,
       "precip": null,
       "humidity": null,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     },
     {
       "id": 3776,
@@ -92,13 +92,13 @@
       "lat": 46.80226113,
       "lon": -123.007164104,
       "temp": 49.64,
-      "wind": 7,
-      "gust": 13,
+      "wind": 6,
+      "gust": 11,
       "dir": "SE",
       "vis": 1,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-05T07:45:00.0000000+00:00"
+      "time": "2026-11-05T08:00:00.0000000+00:00"
     }
   ]
 }
