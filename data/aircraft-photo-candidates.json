@@ -154,7 +154,8 @@
     "Bell TH-67A Creek": "2026-11-04T21:25:26.9466728+00:00",
     "Bell 407 GXi": "2026-11-04T22:05:26.214462+00:00",
     "Beech King Air C90A": "2026-11-04T22:05:26.214462+00:00",
-    "Bombardier Global Express": "2026-11-05T00:55:25.2110649+00:00"
+    "Bombardier Global Express": "2026-11-05T00:55:25.2110649+00:00",
+    "Bombardier Global 6000": "2026-11-05T21:25:46.9027114+00:00"
   },
   "candidates": [
     {
@@ -9564,7 +9565,91 @@
       "date": "2022-02-19",
       "caption": "Bombardier Global Express N96FX at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-11-05T00:55:25.2110649+00:00"
+    },
+    {
+      "model": "Bombardier Global 6000",
+      "file": "File:Bombardier BD-700-1A10 Global 6000 Rolex all'Aeroporto di Milano Linate.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-700-1A10_Global_6000_Rolex_all%27Aeroporto_di_Milano_Linate.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Bombardier_BD-700-1A10_Global_6000_Rolex_all%27Aeroporto_di_Milano_Linate.jpg/960px-Bombardier_BD-700-1A10_Global_6000_Rolex_all%27Aeroporto_di_Milano_Linate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 471,
+      "author": "Baldo Fabio Scotti",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-03-05 18:09:00",
+      "caption": "Bombardier BD-700-1A10 Global Express XRS all'Aeroporto di Milano Linate",
+      "found": "2026-11-05T21:25:46.9027114+00:00"
+    },
+    {
+      "model": "Bombardier Global 6000",
+      "file": "File:Bombardier Global 6000, EBACE 2019, Le Grand-Saconnex (EB190597).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_6000,_EBACE_2019,_Le_Grand-Saconnex_(EB190597).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Bombardier_Global_6000%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190597%29.jpg/960px-Bombardier_Global_6000%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190597%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Interior of a Bombardier Global 6000 at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-05T21:25:46.9027114+00:00"
+    },
+    {
+      "model": "Bombardier Global 6000",
+      "file": "File:Bombardier Global 6000 N835GL cockpit.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_6000_N835GL_cockpit.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Bombardier_Global_6000_N835GL_cockpit.jpg/960px-Bombardier_Global_6000_N835GL_cockpit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Cockpit of a Bombardier Global 6000 at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-05T21:25:46.9027114+00:00"
+    },
+    {
+      "model": "Bombardier Global 6000",
+      "file": "File:Bombardier Global 6000 at Trivandrum airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_6000_at_Trivandrum_airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Bombardier_Global_6000_at_Trivandrum_airport.jpg/960px-Bombardier_Global_6000_at_Trivandrum_airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 518,
+      "author": "Arunpnair 787",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "31 August 2024 (according to Exif data)",
+      "caption": "Bombardier Global aircraft of Reliance industries at Trivandrum airport",
+      "found": "2026-11-05T21:25:46.9027114+00:00"
+    },
+    {
+      "model": "Bombardier Global 6000",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190310).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190310).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190310%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190310%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Bombardier Global 6000 at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-05T21:25:46.9027114+00:00"
+    },
+    {
+      "model": "Bombardier Global 6000",
+      "file": "File:VistaJet Bombardier Global 6000, Le Grand-Saconnex (BL7C0566).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:VistaJet_Bombardier_Global_6000,_Le_Grand-Saconnex_(BL7C0566).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/VistaJet_Bombardier_Global_6000%2C_Le_Grand-Saconnex_%28BL7C0566%29.jpg/960px-VistaJet_Bombardier_Global_6000%2C_Le_Grand-Saconnex_%28BL7C0566%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-05-28",
+      "caption": "VistaJet Bombardier Global 6000 taxiing at Geneva Airport",
+      "found": "2026-11-05T21:25:46.9027114+00:00"
     }
   ],
-  "updated": "2026-11-05T21:15:22.5259082+00:00"
+  "updated": "2026-11-05T21:25:46.9027114+00:00"
 }
