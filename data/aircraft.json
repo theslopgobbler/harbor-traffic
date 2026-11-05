@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T08:25:28.7378957+00:00",
+  "updated": "2026-11-05T08:35:25.0713162+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,13 +8,45 @@
       "reg": "N430LF",
       "type": "B429",
       "cat": "A7",
-      "alt": 1975,
-      "gs": 89.2,
-      "track": 287.62,
-      "rate": null,
-      "lat": 47.05866,
-      "lon": -122.88592,
+      "alt": 3825,
+      "gs": 113.4,
+      "track": 281.71,
+      "rate": -465,
+      "lat": 47.11273,
+      "lon": -123.3135,
       "squawk": "4614",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a593af",
+      "flight": "N459BL",
+      "reg": "N459BL",
+      "type": "GLF6",
+      "cat": "A3",
+      "alt": 13525,
+      "gs": 310.0,
+      "track": 359.82,
+      "rate": -1600,
+      "lat": 47.1769,
+      "lon": -122.79515,
+      "squawk": "3312",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "89912c",
+      "flight": "EVA025",
+      "reg": "B-17815",
+      "type": "B78X",
+      "cat": "A5",
+      "alt": 13200,
+      "gs": 309.2,
+      "track": 303.79,
+      "rate": 2029,
+      "lat": 47.4769,
+      "lon": -122.73299,
+      "squawk": "6640",
       "emergency": "none",
       "mil": false
     }
