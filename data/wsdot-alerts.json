@@ -1,113 +1,7 @@
 {
-  "updated": "2026-11-05T03:55:26.0178412+00:00",
+  "updated": "2026-11-05T04:05:27.7804684+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 723360,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Wednesday, Nov. 4 and Thursday, Nov. 5: Travelers along southbound SR 105 between Jacobson Road (milepost 22.9) and Gould Road (milepost 22.7) will take turns moving through one open lane at a time each day from 8 a.m. to 3:30 p.m., for utility work. Flaggers will direct travelers through the area. Plan ahead and expect delays.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "S",
-      "milepost": 22.9,
-      "lat": 46.755262361,
-      "lon": -124.082500672,
-      "lat2": 46.752399245,
-      "lon2": -124.082016122,
-      "county": null,
-      "start": "2026-11-04T13:00:00.0000000+00:00",
-      "end": "2026-11-05T23:30:00.0000000+00:00",
-      "updated": "2026-11-04T23:24:00.7230000+00:00",
-      "path": [
-        [
-          -124.08249,
-          46.7553
-        ],
-        [
-          -124.08246,
-          46.75471
-        ],
-        [
-          -124.08243,
-          46.75439
-        ],
-        [
-          -124.08237,
-          46.75393
-        ],
-        [
-          -124.08226,
-          46.75339
-        ],
-        [
-          -124.08225,
-          46.75332
-        ],
-        [
-          -124.08212,
-          46.75286
-        ],
-        [
-          -124.08203,
-          46.75247
-        ],
-        [
-          -124.082,
-          46.7524
-        ],
-        [
-          -124.082,
-          46.7524
-        ]
-      ]
-    },
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
     {
       "id": 718841,
       "kind": "work",
@@ -311,6 +205,112 @@
       "start": "2026-11-02T13:00:00.0000000+00:00",
       "end": "2026-12-01T01:30:00.0000000+00:00",
       "updated": "2026-10-31T00:26:55.2670000+00:00"
+    },
+    {
+      "id": 723360,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Wednesday, Nov. 4 and Thursday, Nov. 5: Travelers along southbound SR 105 between Jacobson Road (milepost 22.9) and Gould Road (milepost 22.7) will take turns moving through one open lane at a time each day from 8 a.m. to 3:30 p.m., for utility work. Flaggers will direct travelers through the area. Plan ahead and expect delays.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "S",
+      "milepost": 22.9,
+      "lat": 46.755262361,
+      "lon": -124.082500672,
+      "lat2": 46.752399245,
+      "lon2": -124.082016122,
+      "county": null,
+      "start": "2026-11-04T13:00:00.0000000+00:00",
+      "end": "2026-11-05T23:30:00.0000000+00:00",
+      "updated": "2026-11-04T23:24:00.7230000+00:00",
+      "path": [
+        [
+          -124.08249,
+          46.7553
+        ],
+        [
+          -124.08246,
+          46.75471
+        ],
+        [
+          -124.08243,
+          46.75439
+        ],
+        [
+          -124.08237,
+          46.75393
+        ],
+        [
+          -124.08226,
+          46.75339
+        ],
+        [
+          -124.08225,
+          46.75332
+        ],
+        [
+          -124.08212,
+          46.75286
+        ],
+        [
+          -124.08203,
+          46.75247
+        ],
+        [
+          -124.082,
+          46.7524
+        ],
+        [
+          -124.082,
+          46.7524
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
     },
     {
       "id": 722913,

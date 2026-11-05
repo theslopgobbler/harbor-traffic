@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-05T03:55:26.0178412+00:00",
+  "updated": "2026-11-05T04:05:27.7804684+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ae6035",
-      "flight": "COUGR66",
-      "reg": "17-20966",
-      "type": "H60",
-      "cat": "A7",
-      "alt": 550,
-      "gs": 59.5,
-      "track": 253.39,
-      "rate": -192,
-      "lat": 46.91611,
-      "lon": -122.71186,
-      "squawk": "0006",
-      "emergency": "none",
-      "mil": true
-    }
-  ]
+  "aircraft": []
 }
