@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-05T16:45:31.6399049+00:00",
+  "updated": "2026-11-05T16:55:28.4034468+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a1b8dc",
-      "flight": "N21TK",
-      "reg": "N21TK",
-      "type": "C25A",
-      "cat": "A6",
-      "alt": 6075,
-      "gs": 249.5,
-      "track": 18.22,
-      "rate": -2304,
-      "lat": 46.9378,
-      "lon": -122.84651,
-      "squawk": "4763",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
