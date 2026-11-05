@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-05T00:15:22.2823346+00:00",
-  "status": "",
-  "alerts": [],
+  "updated": "2026-11-05T00:25:37.1762906+00:00",
+  "status": "All routes are currently operating normally.",
+  "alerts": [
+    {
+      "route": null,
+      "name": null,
+      "text": "Find your ride Find real-time notices for each route using our GPS locator."
+    }
+  ],
   "source": "https://ghtransit.com/alerts/"
 }
