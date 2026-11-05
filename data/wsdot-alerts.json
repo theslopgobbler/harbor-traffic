@@ -1,70 +1,7 @@
 {
-  "updated": "2026-11-05T22:55:35.2560081+00:00",
+  "updated": "2026-11-05T23:05:22.7914065+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 723360,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Wednesday, Nov. 4 and Thursday, Nov. 5: Travelers along southbound SR 105 between Jacobson Road (milepost 22.9) and Gould Road (milepost 22.7) will take turns moving through one open lane at a time each day from 8 a.m. to 3:30 p.m., for utility work. Flaggers will direct travelers through the area. Plan ahead and expect delays.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "S",
-      "milepost": 22.9,
-      "lat": 46.755262361,
-      "lon": -124.082500672,
-      "lat2": 46.752399245,
-      "lon2": -124.082016122,
-      "county": null,
-      "start": "2026-11-04T13:00:00.0000000+00:00",
-      "end": "2026-11-05T23:30:00.0000000+00:00",
-      "updated": "2026-11-04T23:24:00.7230000+00:00",
-      "path": [
-        [
-          -124.08249,
-          46.7553
-        ],
-        [
-          -124.08246,
-          46.75471
-        ],
-        [
-          -124.08243,
-          46.75439
-        ],
-        [
-          -124.08237,
-          46.75393
-        ],
-        [
-          -124.08226,
-          46.75339
-        ],
-        [
-          -124.08225,
-          46.75332
-        ],
-        [
-          -124.08212,
-          46.75286
-        ],
-        [
-          -124.08203,
-          46.75247
-        ],
-        [
-          -124.082,
-          46.7524
-        ],
-        [
-          -124.082,
-          46.7524
-        ]
-      ]
-    },
     {
       "id": 723427,
       "kind": "work",
@@ -2135,6 +2072,69 @@
       "start": "2026-11-05T20:31:00.0000000+00:00",
       "end": "2026-11-05T22:30:00.0000000+00:00",
       "updated": "2026-11-05T20:34:00.5900000+00:00"
+    },
+    {
+      "id": 723360,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Wednesday, Nov. 4 and Thursday, Nov. 5: Travelers along southbound SR 105 between Jacobson Road (milepost 22.9) and Gould Road (milepost 22.7) will take turns moving through one open lane at a time each day from 8 a.m. to 3:30 p.m., for utility work. Flaggers will direct travelers through the area. Plan ahead and expect delays.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "S",
+      "milepost": 22.9,
+      "lat": 46.755262361,
+      "lon": -124.082500672,
+      "lat2": 46.752399245,
+      "lon2": -124.082016122,
+      "county": null,
+      "start": "2026-11-04T13:00:00.0000000+00:00",
+      "end": "2026-11-05T23:30:00.0000000+00:00",
+      "updated": "2026-11-04T23:24:00.7230000+00:00",
+      "path": [
+        [
+          -124.08249,
+          46.7553
+        ],
+        [
+          -124.08246,
+          46.75471
+        ],
+        [
+          -124.08243,
+          46.75439
+        ],
+        [
+          -124.08237,
+          46.75393
+        ],
+        [
+          -124.08226,
+          46.75339
+        ],
+        [
+          -124.08225,
+          46.75332
+        ],
+        [
+          -124.08212,
+          46.75286
+        ],
+        [
+          -124.08203,
+          46.75247
+        ],
+        [
+          -124.082,
+          46.7524
+        ],
+        [
+          -124.082,
+          46.7524
+        ]
+      ]
     },
     {
       "id": 692593,
