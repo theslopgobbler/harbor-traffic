@@ -1,5 +1,70 @@
 {
-  "updated": "2026-11-05T03:05:33.2853266+00:00",
+  "updated": "2026-11-05T03:15:25.2746407+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a67f38",
+      "flight": "ASA724",
+      "reg": "N518AS",
+      "type": "B738",
+      "cat": "A3",
+      "alt": 13850,
+      "gs": 363.2,
+      "track": 248.52,
+      "rate": 1856,
+      "lat": 47.24881,
+      "lon": -123.01996,
+      "squawk": "3525",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "000001",
+      "flight": "LEFTY52",
+      "reg": null,
+      "type": null,
+      "cat": "A7",
+      "alt": 750,
+      "gs": 126.9,
+      "track": 282.28,
+      "rate": -64,
+      "lat": 47.24256,
+      "lon": -122.98272,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a9b70e",
+      "flight": "TDY1288",
+      "reg": "N725KP",
+      "type": "PC12",
+      "cat": "A1",
+      "alt": 14800,
+      "gs": 288.4,
+      "track": 350.02,
+      "rate": -896,
+      "lat": 46.78365,
+      "lon": -122.85379,
+      "squawk": "4742",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "aff47e",
+      "flight": "R21284",
+      "reg": "24-21284",
+      "type": "H60",
+      "cat": "A7",
+      "alt": 500,
+      "gs": 64.1,
+      "track": 190.78,
+      "rate": -448,
+      "lat": 46.92871,
+      "lon": -122.73278,
+      "squawk": "0005",
+      "emergency": "none",
+      "mil": true
+    }
+  ]
 }
