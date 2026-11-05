@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-05T15:05:25.7776033+00:00",
+  "updated": "2026-11-05T15:15:27.2665833+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a434ee",
+      "flight": "N370MR",
+      "reg": "N370MR",
+      "type": "C25B",
+      "cat": "A1",
+      "alt": 9200,
+      "gs": 293.9,
+      "track": 25.61,
+      "rate": 1335,
+      "lat": 46.77672,
+      "lon": -123.02738,
+      "squawk": "1654",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
