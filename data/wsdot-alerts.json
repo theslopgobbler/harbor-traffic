@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T02:45:27.3124426+00:00",
+  "updated": "2026-11-05T02:51:17.3597941+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1661,27 +1661,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 723378,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 105.68 near Eastside St beginning at 6:39 pm on November 4, 2026 until further notice. The two left lanes are blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 105.68,
-      "lat": 47.03540437,
-      "lon": -122.886878364,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-05T02:39:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-05T02:40:59.4500000+00:00"
     },
     {
       "id": 686738,
