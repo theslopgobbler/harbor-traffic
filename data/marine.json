@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T16:55:28.8742308+00:00",
+  "updated": "2026-11-06T17:05:32.4075499+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -48,22 +48,16 @@
       "headline": "Storm Watch issued November 6 at 7:42AM PST until November 8 at 10:00AM PST by NWS Seattle WA"
     },
     {
+      "event": "Hazardous Seas Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-11-07T18:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 5 at 11:32PM PST until November 7 at 10:00AM PST by NWS Portland OR"
+    },
+    {
       "event": "Gale Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-07T00:00:00+00:00",
       "headline": "Gale Warning issued November 5 at 11:32PM PST until November 6 at 4:00PM PST by NWS Portland OR"
-    },
-    {
-      "event": "Storm Watch",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-11-08T12:00:00+00:00",
-      "headline": "Storm Watch issued November 5 at 11:32PM PST until November 8 at 4:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Storm Watch",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-11-08T12:00:00+00:00",
-      "headline": "Storm Watch issued November 5 at 11:32PM PST until November 8 at 4:00AM PST by NWS Portland OR"
     },
     {
       "event": "Gale Warning",
@@ -72,14 +66,20 @@
       "headline": "Gale Warning issued November 5 at 11:32PM PST until November 6 at 7:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Hazardous Seas Warning",
+      "event": "Storm Watch",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "ends": "2026-11-08T12:00:00+00:00",
+      "headline": "Storm Watch issued November 5 at 11:32PM PST until November 8 at 4:00AM PST by NWS Portland OR"
+    },
+    {
+      "event": "Storm Watch",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-11-07T18:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 5 at 11:32PM PST until November 7 at 10:00AM PST by NWS Portland OR"
+      "ends": "2026-11-08T12:00:00+00:00",
+      "headline": "Storm Watch issued November 5 at 11:32PM PST until November 8 at 4:00AM PST by NWS Portland OR"
     },
     {
       "event": "Hazardous Seas Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
       "ends": "2026-11-07T18:00:00+00:00",
       "headline": "Hazardous Seas Warning issued November 5 at 11:32PM PST until November 7 at 10:00AM PST by NWS Portland OR"
     }
