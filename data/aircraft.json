@@ -1,21 +1,37 @@
 {
-  "updated": "2026-11-06T17:05:32.4075499+00:00",
+  "updated": "2026-11-06T17:15:25.6874256+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
       "hex": "a9299e",
-      "flight": "N69NW",
+      "flight": "",
       "reg": "N69NW",
       "type": "H500",
       "cat": "A7",
-      "alt": 600,
-      "gs": 13.0,
-      "track": 0.0,
+      "alt": 575,
+      "gs": 15.0,
+      "track": 3.81,
       "rate": null,
-      "lat": 46.59763,
+      "lat": 46.59786,
       "lon": -123.05525,
       "squawk": null,
       "emergency": null,
+      "mil": false
+    },
+    {
+      "hex": "ad3fd7",
+      "flight": "N953AL",
+      "reg": "N953AL",
+      "type": "EC35",
+      "cat": "A7",
+      "alt": 1600,
+      "gs": 158.8,
+      "track": 28.18,
+      "rate": 0,
+      "lat": 46.8479,
+      "lon": -122.87746,
+      "squawk": "5543",
+      "emergency": "none",
       "mil": false
     }
   ]
