@@ -156,7 +156,8 @@
     "Beech King Air C90A": "2026-11-04T22:05:26.214462+00:00",
     "Bombardier Global Express": "2026-11-05T00:55:25.2110649+00:00",
     "Bombardier Global 6000": "2026-11-05T21:25:46.9027114+00:00",
-    "North American T-28B Trojan": "2026-11-05T23:45:31.1475487+00:00"
+    "North American T-28B Trojan": "2026-11-05T23:45:31.1475487+00:00",
+    "Cessna Citation V": "2026-11-06T00:05:27.4037909+00:00"
   },
   "candidates": [
     {
@@ -9734,7 +9735,91 @@
       "date": "2023-05-19",
       "caption": "North American T-28B Trojan 138239 N726A at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-11-05T23:45:31.1475487+00:00"
+    },
+    {
+      "model": "Cessna Citation V",
+      "file": "File:Cessna Citation Ultra (N560TA) in Westhampton Beach, NY.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Ultra_(N560TA)_in_Westhampton_Beach,_NY.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cessna_Citation_Ultra_%28N560TA%29_in_Westhampton_Beach%2C_NY.jpg/960px-Cessna_Citation_Ultra_%28N560TA%29_in_Westhampton_Beach%2C_NY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 605,
+      "author": "Quintin Soloviev",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2022-06-10 15:27:53",
+      "caption": "Cessna Citation V (Ultra) at Francis S. Gabreski Airport",
+      "found": "2026-11-06T00:05:27.4037909+00:00"
+    },
+    {
+      "model": "Cessna Citation V",
+      "file": "File:Cessna Citation V N560WH FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N560WH_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Cessna_Citation_V_N560WH_FDK_MD2.jpg/960px-Cessna_Citation_V_N560WH_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 384,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-12-22",
+      "caption": "1989 Cessna Citation V N560WH at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-06T00:05:27.4037909+00:00"
+    },
+    {
+      "model": "Cessna Citation V",
+      "file": "File:Cessna Citation V N563TM FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N563TM_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Cessna_Citation_V_N563TM_FDK_MD1.jpg/960px-Cessna_Citation_V_N563TM_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 484,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-07-01",
+      "caption": "1991 Cessna Citation V N563TM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-06T00:05:27.4037909+00:00"
+    },
+    {
+      "model": "Cessna Citation V",
+      "file": "File:Cessna Citation V N563TM FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N563TM_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Cessna_Citation_V_N563TM_FDK_MD2.jpg/960px-Cessna_Citation_V_N563TM_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 384,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-03-02",
+      "caption": "1991 Cessna Citation V N563TM at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-06T00:05:27.4037909+00:00"
+    },
+    {
+      "model": "Cessna Citation V",
+      "file": "File:Cessna Citation V N564TB FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N564TB_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Cessna_Citation_V_N564TB_FDK_MD1.jpg/960px-Cessna_Citation_V_N564TB_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 466,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-08",
+      "caption": "1991 Cessna Citation V N564TB at Frederick Municipal Airport, Maryland, USA, with thrust reverser deployed",
+      "found": "2026-11-06T00:05:27.4037909+00:00"
+    },
+    {
+      "model": "Cessna Citation V",
+      "file": "File:Cessna Citation V N772CD FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_V_N772CD_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Cessna_Citation_V_N772CD_FDK_MD1.jpg/960px-Cessna_Citation_V_N772CD_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 418,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-08-31",
+      "caption": "2007 Cessna Citation V N772CS at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-06T00:05:27.4037909+00:00"
     }
   ],
-  "updated": "2026-11-05T23:55:21.3201082+00:00"
+  "updated": "2026-11-06T00:05:27.4037909+00:00"
 }
