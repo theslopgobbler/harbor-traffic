@@ -688,10 +688,14 @@ body.tv .list .m { font-size: 14px; }
   .inst { cursor: pointer; }
   .inst.zoomed { position: absolute; left: 0; top: 0; zoom: 2; z-index: 6; background: #030d0c;
     box-shadow: 0 0 0 1px var(--cyan), 0 6px 18px rgba(0,0,0,.6); }
-  /* the wind dial blown up: its label floats in the corner so the dial gets the full height */
-  .inst-wind.zoomed .inst-lbl { position: absolute; top: 3px; left: 6px; }
-  .inst-wind.zoomed .inst-body { height: 100%; gap: 10px; }
-  .inst-wind.zoomed svg { width: 52px; height: 52px; }
+  /* the wind dial blown up: the dial on the left at full height, and the label stacked over the direction and speed
+     in one neat column beside it (the label floating in the corner ran over the dial) */
+  .inst-wind.zoomed { display: grid; grid-template-columns: auto auto; grid-template-rows: auto auto; justify-content: center;
+    align-content: center; column-gap: 10px; row-gap: 2px; }
+  .inst-wind.zoomed .inst-body { display: contents; }
+  .inst-wind.zoomed svg { grid-column: 1; grid-row: 1 / span 2; align-self: center; width: 52px; height: 52px; }
+  .inst-wind.zoomed .inst-lbl { grid-column: 2; grid-row: 1; align-self: end; justify-content: flex-start; gap: 5px; padding: 0; }
+  .inst-wind.zoomed .gauge-txt { grid-column: 2; grid-row: 2; align-self: start; }
   /* the sea blown up: the bar forecast in full, wrapping beside the label (the wave steps aside to make room) */
   .inst-sea.zoomed .inst-lbl { align-items: flex-start; white-space: normal; }
   .inst-sea.zoomed #seaBar { flex: 1 1 0; font-size: 9px; line-height: 1.15; text-overflow: clip; text-align: left; }
