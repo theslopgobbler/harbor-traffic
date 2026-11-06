@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-06T22:35:25.1607465+00:00",
+  "updated": "2026-11-06T22:45:24.6286465+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "adee36",
+      "flight": "AMF2239",
+      "reg": "N997SB",
+      "type": "BE99",
+      "cat": "A6",
+      "alt": 11925,
+      "gs": 227.6,
+      "track": 351.41,
+      "rate": 0,
+      "lat": 46.69876,
+      "lon": -122.83378,
+      "squawk": "1670",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
