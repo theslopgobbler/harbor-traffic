@@ -157,7 +157,8 @@
     "Bombardier Global Express": "2026-11-05T00:55:25.2110649+00:00",
     "Bombardier Global 6000": "2026-11-05T21:25:46.9027114+00:00",
     "North American T-28B Trojan": "2026-11-05T23:45:31.1475487+00:00",
-    "Cessna Citation V": "2026-11-06T00:05:27.4037909+00:00"
+    "Cessna Citation V": "2026-11-06T00:05:27.4037909+00:00",
+    "Bombardier CC-144C": "2026-11-06T19:45:22.7519236+00:00"
   },
   "candidates": [
     {
@@ -9819,7 +9820,49 @@
       "date": "2022-08-31",
       "caption": "2007 Cessna Citation V N772CS at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-11-06T00:05:27.4037909+00:00"
+    },
+    {
+      "model": "Bombardier CC-144C",
+      "file": "File:Canadair CC-144C Challenger (CL-600-2B16-604), Canada - Air Force AN1018982.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Canadair_CC-144C_Challenger_(CL-600-2B16-604),_Canada_-_Air_Force_AN1018982.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Canadair_CC-144C_Challenger_%28CL-600-2B16-604%29%2C_Canada_-_Air_Force_AN1018982.jpg/960px-Canadair_CC-144C_Challenger_%28CL-600-2B16-604%29%2C_Canada_-_Air_Force_AN1018982.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "John Davies - CYOW Airport Watch",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "7 March 2006",
+      "caption": "On final for runway 25.",
+      "found": "2026-11-06T19:45:22.7519236+00:00"
+    },
+    {
+      "model": "Bombardier CC-144C",
+      "file": "File:Royal Canadian Air Force aircraft, 144617, Bombardier Challenger at Manchester Airport, 2013 (8754082940) (2).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Royal_Canadian_Air_Force_aircraft,_144617,_Bombardier_Challenger_at_Manchester_Airport,_2013_(8754082940)_(2).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Royal_Canadian_Air_Force_aircraft%2C_144617%2C_Bombardier_Challenger_at_Manchester_Airport%2C_2013_%288754082940%29_%282%29.jpg/960px-Royal_Canadian_Air_Force_aircraft%2C_144617%2C_Bombardier_Challenger_at_Manchester_Airport%2C_2013_%288754082940%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 518,
+      "author": "Jonathan Palombo",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2013-05-20 02:54",
+      "caption": "Canadian Armed Forces Canadair CC-144C Challenger CL-600-2B16/604 at Manchester Airport",
+      "found": "2026-11-06T19:45:22.7519236+00:00"
+    },
+    {
+      "model": "Bombardier CC-144C",
+      "file": "File:Royal Canadian Air Force aircraft, 144617, Bombardier Challenger at Manchester Airport, 2013 (8754083498) (2).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Royal_Canadian_Air_Force_aircraft,_144617,_Bombardier_Challenger_at_Manchester_Airport,_2013_(8754083498)_(2).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Royal_Canadian_Air_Force_aircraft%2C_144617%2C_Bombardier_Challenger_at_Manchester_Airport%2C_2013_%288754083498%29_%282%29.jpg/960px-Royal_Canadian_Air_Force_aircraft%2C_144617%2C_Bombardier_Challenger_at_Manchester_Airport%2C_2013_%288754083498%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Jonathan Palombo",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2013-05-20 02:57",
+      "caption": "Canadian Armed Forces Canadair CC-144C Challenger CL-600-2B16/604 Seen leaving this morning 19.05.2013",
+      "found": "2026-11-06T19:45:22.7519236+00:00"
     }
   ],
-  "updated": "2026-11-06T19:35:23.2394897+00:00"
+  "updated": "2026-11-06T19:45:22.7519236+00:00"
 }
