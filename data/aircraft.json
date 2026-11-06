@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T07:05:22.4980516+00:00",
+  "updated": "2026-11-06T07:15:28.2969500+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N16ES",
       "type": "DA42",
       "cat": "A1",
-      "alt": 5775,
-      "gs": 167.6,
-      "track": 14.87,
-      "rate": 0,
-      "lat": 46.5183,
-      "lon": -123.07757,
+      "alt": 2925,
+      "gs": 163.5,
+      "track": 39.04,
+      "rate": -384,
+      "lat": 46.9747,
+      "lon": -122.89736,
       "squawk": "4712",
       "emergency": "none",
       "mil": false
