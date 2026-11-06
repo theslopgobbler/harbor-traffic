@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T20:05:26.7001761+00:00",
+  "updated": "2026-11-06T20:15:24.8407299+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,13 +9,13 @@
       "type": "H500",
       "cat": "A7",
       "alt": 575,
-      "gs": 14.4,
-      "track": 56.31,
+      "gs": 12.1,
+      "track": 228.37,
       "rate": null,
-      "lat": 46.59176,
-      "lon": -123.03658,
-      "squawk": "1200",
-      "emergency": "none",
+      "lat": 46.59227,
+      "lon": -123.03664,
+      "squawk": null,
+      "emergency": null,
       "mil": false
     },
     {
@@ -25,11 +25,11 @@
       "type": "DA40",
       "cat": "A1",
       "alt": 1500,
-      "gs": 101.9,
-      "track": 105.95,
-      "rate": -320,
-      "lat": 47.3481,
-      "lon": -122.77398,
+      "gs": 85.6,
+      "track": 120.16,
+      "rate": 384,
+      "lat": 47.31984,
+      "lon": -122.74898,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
