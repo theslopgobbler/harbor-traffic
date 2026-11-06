@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-06T05:45:25.8284904+00:00",
+  "updated": "2026-11-06T05:55:22.3526265+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a5d51c",
-      "flight": "EJA475",
-      "reg": "N475QS",
-      "type": "E55P",
-      "cat": "A1",
-      "alt": 11750,
-      "gs": 349.2,
-      "track": 347.6,
-      "rate": 0,
-      "lat": 46.6094,
-      "lon": -122.78533,
-      "squawk": "4672",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
