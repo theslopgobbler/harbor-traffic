@@ -176,8 +176,9 @@
       attribution: 'Radar: NWS NEXRAD via Iowa Environmental Mesonet' });
     map.addLayer({ id: 'radar', type: 'raster', source: 'radar',
       layout: { visibility: radarOn ? 'visible' : 'none' },
-      // (fades a little at street level, where a radar cell covers several blocks and can only be a rough guide)
-      paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 11, 0.62, 14, 0.4], 'raster-resampling': 'linear',
+      // fades steadily as you zoom in past town level, so the stretched radar cells read as a soft wash rather than
+      // blocks (a radar cell covers several blocks, so up close it can only be a rough guide)
+      paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 9, 0.62, 11, 0.48, 13, 0.3, 15, 0.18], 'raster-resampling': 'linear',
         'raster-fade-duration': 0, 'raster-contrast': 0.15 } }, 'flow-glow');
   }
   async function radarTime() {
