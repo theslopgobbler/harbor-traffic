@@ -608,6 +608,9 @@
       state.wx[t.id] = { temp: now.temperature, f: now.shortForecast, day: now.isDaytime, wind: `${now.windDirection} ${now.windSpeed}`,
         windDir: now.windDirection, windMph: parseInt(String(now.windSpeed).split(' to ').pop(), 10) || 0,
         rain: now.probabilityOfPrecipitation?.value ?? null };
+      // high and low over the next 24 hours of the hourly forecast (always a full day ahead, even late at night)
+      const day = h.properties.periods.slice(0, 24).map((p) => p.temperature).filter((v) => typeof v === 'number');
+      if (day.length) Object.assign(state.wx[t.id], { hi: Math.max(...day), lo: Math.min(...day) });
       const mk = wxMarkers[t.id].el;
       mk.querySelector('.e').textContent = wxCode(now.shortForecast, now.isDaytime);
       mk.querySelector('.v').textContent = `${now.temperature}°`;
@@ -1224,7 +1227,7 @@
       const w = state.wx[t.id];
       if (!w) return `<li><span>${esc(t.name.toUpperCase())}</span><span class="m">…</span></li>`;
       return `<li><span>${esc(t.name.toUpperCase())}<br><span class="m">${esc(w.f)} · WIND ${esc(w.wind)}${w.rain != null ? ` · ${w.rain}% PRECIP` : ''}</span></span>
-        <span class="temp">${tempSpan(w.temp)}</span></li>`;
+        <span class="temp">${tempSpan(w.temp)}${w.hi != null ? `<span class="hl">H:${w.hi} L:${w.lo}</span>` : ''}</span></li>`;
     }).join('');
     const rw = state.roadWx || [];
     $('#roadWxList').innerHTML = rw.length ? rw.map((s) => `<li><span>${esc(s.name.toUpperCase())}<br><span class="m">WIND ${esc(s.dir || '')} ${s.wind ?? '?'} MPH${s.gust ? ` G${s.gust}` : ''}${s.precip ? ` · ${s.precip}" PRECIP` : ''}</span></span>

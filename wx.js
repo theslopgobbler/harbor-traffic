@@ -169,11 +169,16 @@
   const radarUrl = () => `${RADAR_TILES}?v=${Math.floor(Date.now() / 300000)}`; // new URL every 5 min = fresh frame
   function addRadar() {
     if (map.getSource('radar')) return;
-    map.addSource('radar', { type: 'raster', tiles: [radarUrl()], tileSize: 256, maxzoom: 10,
+    // maxzoom 8: the radar's cells are ~400-550 m, about one pixel of a zoom-8 tile. Stretching those tiles lets the
+    // map's smoothing blend neighboring cells into soft shapes; zoom-10 tiles already had each cell as a 4x4 block,
+    // which zooming in blew up into big squares
+    map.addSource('radar', { type: 'raster', tiles: [radarUrl()], tileSize: 256, maxzoom: 8,
       attribution: 'Radar: NWS NEXRAD via Iowa Environmental Mesonet' });
     map.addLayer({ id: 'radar', type: 'raster', source: 'radar',
       layout: { visibility: radarOn ? 'visible' : 'none' },
-      paint: { 'raster-opacity': 0.62, 'raster-fade-duration': 0, 'raster-contrast': 0.15 } }, 'flow-glow');
+      // (fades a little at street level, where a radar cell covers several blocks and can only be a rough guide)
+      paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 11, 0.62, 14, 0.4], 'raster-resampling': 'linear',
+        'raster-fade-duration': 0, 'raster-contrast': 0.15 } }, 'flow-glow');
   }
   async function radarTime() {
     try {
@@ -934,9 +939,10 @@
   // a vehicle carrier that hasn't sent its size yet (moored ones rarely do while the collector listens) is drawn as
   // one: they're all about 200 m long
   const shape = (s) => isCarCarrier(s) && !isCargo(s.type) ? { ...s, type: 70, lengthM: s.lengthM || 200 } : s;
+  const GHOST = '#8fa8a8'; // boats whose transponder has gone quiet (not heard for over an hour)
   function drawShip(el, s0) {
     const s = shape(s0), sit = s0._sit;
-    const color = shipColor(s0, sit);
+    const color = s0._ghost ? GHOST : shipColor(s0, sit), dock = s0._ghost ? GHOST : '#c28bff';
     const realPx = s.lengthM ? Math.min(260, metersToPx(s.lengthM, s.lat)) : 0;
     const rot = `transform:rotate(calc(${s.heading ?? s.cog ?? 0}deg - var(--brg, 0deg)))`;
     if (stopped(s)) {
@@ -944,12 +950,12 @@
       // zoomed in far enough to see it, a big ship at the dock shows its real size, in the docked purple
       if (realPx > 40) {
         el.style.width = el.style.height = realPx + 'px';
-        el.innerHTML = `<svg viewBox="-12 0 44 100" style="${rot}">${shipOutline(s.type, '#c28bff')}</svg>`;
+        el.innerHTML = `<svg viewBox="-12 0 44 100" style="${rot}">${shipOutline(s.type, dock)}</svg>`;
         return;
       }
       const px = isCargo(s.type) || (s.lengthM || 0) >= 100 ? 30 : 22;
       el.style.width = el.style.height = px + 'px';
-      el.innerHTML = anchorSvg('#c28bff');
+      el.innerHTML = anchorSvg(dock);
       return;
     }
     el.classList.remove('anchored');
@@ -960,7 +966,7 @@
   map.on('zoomend', () => { shipMarkers.forEach((m) => drawShip(m.getElement(), m._ship)); groupShips(); });
 
   // zoomed out, ships that would pile up merge into one icon with a count (like the road alerts):
-  // a purple anchor if they're all tied up or anchored, otherwise a small hull
+  // a purple anchor if they're all tied up or anchored, otherwise a small hull; gray if none of them is transmitting
   const shipGroups = [];
   function groupShips() {
     shipGroups.splice(0).forEach((m) => m.remove());
@@ -977,15 +983,15 @@
       const ships = grp.map((k) => pts[k].m._ship);
       const lls = grp.map((k) => pts[k].m.getLngLat());
       const at = [lls.reduce((s, l) => s + l.lng, 0) / lls.length, lls.reduce((s, l) => s + l.lat, 0) / lls.length];
-      const allStopped = ships.every(stopped);
-      const color = allStopped ? '#c28bff' : ships.some((s) => isCargo(s.type)) ? '#d11a2a' : '#bff4ff';
+      const allStopped = ships.every(stopped), allGhost = ships.every((s) => s._ghost);
+      const color = allGhost ? GHOST : allStopped ? '#c28bff' : ships.some((s) => isCargo(s.type)) ? '#d11a2a' : '#bff4ff';
       const el = document.createElement('div');
-      el.className = 'ship-mk ship-grp' + (allStopped ? ' anchored' : '');
+      el.className = 'ship-mk ship-grp' + (allGhost ? ' ghost-grp' : allStopped ? ' anchored' : '');
       el.style.width = el.style.height = '30px';
       el.innerHTML = (allStopped ? anchorSvg(color)
         : `<svg viewBox="0 0 16 16"><polygon points="8,1 13,6 13,15 3,15 3,6" fill="rgba(2,8,7,.85)" stroke="${color}" stroke-width="1.4"/></svg>`) +
         `<b style="color:${color}">${ships.length}</b>`;
-      el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}. Click to zoom in.`;
+      el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}${allGhost ? ' (transponders off, shown where last heard)' : ''}. Click to zoom in.`;
       el.addEventListener('click', () => {
         const b = new maplibregl.LngLatBounds(); lls.forEach((l) => b.extend(l));
         map.fitBounds(b, { padding: 90, maxZoom: 14, minZoom: 12.2 });

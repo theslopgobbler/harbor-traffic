@@ -106,9 +106,10 @@ body.overview-mode .wx-mk:not(.rg-chip), body.overview-mode .town-dot, body.over
 .ship-mk svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .ship-mk .rot { width: 100%; height: 100%; }
 .ship-mk.small { opacity: .7; }
-/* a ghost: not heard for over an hour, faded where it was last heard (MapLibre sets the marker's own opacity) */
-.ship-mk.ghost > * { opacity: .3; }
-.ship-mk.ghost { filter: grayscale(.8) !important; }
+/* a ghost: not heard for over an hour (transponder off), drawn in gray where it was last heard (MapLibre sets the
+   marker's own opacity, so the fade goes on what's inside) */
+.ship-mk.ghost > * { opacity: .75; }
+.ship-mk.ghost { filter: drop-shadow(0 0 3px rgba(143,168,168,.45)) !important; }
 body.no-vessels .ship-mk { display: none !important; }
 
 /* aircraft */
@@ -416,7 +417,8 @@ h2:first-child { margin-top: 4px; }
 .tag { font-size: 11px; letter-spacing: .08em; padding: 0 4px; border: 1px solid currentColor; margin-right: 4px; }
 .tag.closure { color: var(--red); } .tag.collision { color: var(--orange); } .tag.work { color: var(--amber); } .tag.other { color: var(--dim); }
 .wx li { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.wx .temp { font: 600 18px/1 var(--disp); color: var(--green); }
+.wx .temp { font: 600 18px/1 var(--disp); color: var(--green); text-align: right; }
+.wx .temp .hl { display: block; margin-top: 4px; font: 500 11px/1 var(--mono); color: var(--dim); letter-spacing: .04em; white-space: nowrap; }
 .fine { font-size: 11px; color: var(--dim); }
 .pill { font-size: 11px; letter-spacing: .06em; padding: 0 5px; border: 1px solid var(--line-2); color: var(--dim); white-space: nowrap; }
 .pill.bad { color: var(--red); border-color: var(--red); }
@@ -695,3 +697,5 @@ body.tv .list .m { font-size: 14px; }
 body.no-top .top { display: none; }
 body.no-top .top-toggle svg { transform: rotate(180deg); }
 body.tv .top-toggle { display: none; }
+/* a group where no boat is transmitting: gray glow instead of the docked purple */
+.ship-mk.ghost-grp { filter: drop-shadow(0 0 3px rgba(143,168,168,.45)); }
