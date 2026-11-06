@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T23:15:30.7758309+00:00",
+  "updated": "2026-11-06T23:16:44.3510508+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "T206",
       "cat": "A1",
       "alt": 5800,
-      "gs": 152.1,
-      "track": 14.86,
-      "rate": -64,
-      "lat": 46.5125,
-      "lon": -123.0795,
+      "gs": 149.9,
+      "track": 14.69,
+      "rate": 0,
+      "lat": 46.57489,
+      "lon": -123.05585,
       "squawk": "4650",
       "emergency": "none",
       "mil": false
@@ -25,28 +25,12 @@
       "type": "C206",
       "cat": "A1",
       "alt": 3800,
-      "gs": 133.2,
-      "track": 352.23,
-      "rate": -144,
-      "lat": 46.88546,
-      "lon": -122.96934,
+      "gs": 135.0,
+      "track": 359.15,
+      "rate": 0,
+      "lat": 46.94408,
+      "lon": -122.97807,
       "squawk": "4630",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a75da8",
-      "flight": "DAL281",
-      "reg": "N574DZ",
-      "type": "A359",
-      "cat": "A5",
-      "alt": 13275,
-      "gs": 345.8,
-      "track": 318.75,
-      "rate": 1600,
-      "lat": 47.54567,
-      "lon": -122.7876,
-      "squawk": "3572",
       "emergency": "none",
       "mil": false
     }
