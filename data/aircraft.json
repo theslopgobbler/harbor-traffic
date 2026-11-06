@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T22:45:24.6286465+00:00",
+  "updated": "2026-11-06T22:55:25.3333999+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N997SB",
       "type": "BE99",
       "cat": "A6",
-      "alt": 11925,
-      "gs": 227.6,
-      "track": 351.41,
-      "rate": 0,
-      "lat": 46.69876,
-      "lon": -122.83378,
+      "alt": 9600,
+      "gs": 253.3,
+      "track": 9.31,
+      "rate": -522,
+      "lat": 47.32538,
+      "lon": -122.82842,
       "squawk": "1670",
       "emergency": "none",
       "mil": false
