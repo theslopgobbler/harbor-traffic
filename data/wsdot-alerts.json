@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T16:45:21.8005637+00:00",
+  "updated": "2026-11-06T16:55:28.8742308+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -610,27 +610,6 @@
           47.8099
         ]
       ]
-    },
-    {
-      "id": 723538,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on US 101 northbound at milepost 358.1 near Holiday Valley Dr beginning at 8:33 am on November 6, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 358.1,
-      "lat": 47.087534314,
-      "lon": -123.051972232,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-06T16:33:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-06T16:34:41.0670000+00:00"
     },
     {
       "id": 692593,
