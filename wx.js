@@ -816,7 +816,11 @@
     updateBar();
     const water = waterWestport ?? b?.waterF;
     // (short words, so it fits a laptop-width box: "BAR MOD → ROUGH"; the whole wording is on hover)
-    $('#seaBar').textContent = bar?.conditions ? `BAR ${bar.conditions.toUpperCase().replace(', BECOMING', ' →').replace(/MODERATE/g, 'MOD').replace(/SEVERE/g, 'SEV')}` : 'BAR --';
+    // (the whole sentence is there too, shown instead when a phone blows the instrument up)
+    const barTxt = (bar?.conditions || '').toUpperCase();
+    $('#seaBar').innerHTML = bar?.conditions
+      ? `<span class="bs">BAR ${barTxt.replace(', BECOMING', ' →').replace(/MODERATE/g, 'MOD').replace(/SEVERE/g, 'SEV')}</span><span class="bf">BAR ${barTxt}</span>`
+      : 'BAR --';
     $('#seaBar').title = bar?.conditions ? `Grays Harbor bar: ${bar.conditions}` : '';
     $('#seaBar').style.color = waveColor;
     $('#seaWaves').textContent = b?.waveFt != null ? `WAVES ${b.waveFt}FT @${b.periodS}S ${compass(b.dirDeg)}` : 'WAVES --';
@@ -835,6 +839,8 @@
     }
     $('#seaWater').textContent = water != null ? `WATER ${Math.round(water)}°` : '';
     $('#sea').classList.toggle('alert', alerts.length > 0 || lvl >= 2);
+    // severe (or worse) anywhere in the bar forecast, now or later: red frame
+    $('#sea').classList.toggle('severe', /severe|very rough|closed|restrict/i.test(bar?.conditions || ''));
     tick('sea', [bar?.conditions ? `Grays Harbor bar ${bar.conditions}` : '', b?.waveFt != null ? `waves ${b.waveFt} ft @ ${b.periodS}s` : '',
       water != null ? `water ${Math.round(water)}°` : '', ...alerts.map((a) => a.event)].filter(Boolean).join(' · '));
     $('#sea').title = [bar?.text, b ? `Buoy 46211: ${b.waveFt} ft, ${b.periodS} s, from ${compass(b.dirDeg)}` : '',
