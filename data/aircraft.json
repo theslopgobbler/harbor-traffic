@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-06T06:25:21.7144752+00:00",
+  "updated": "2026-11-06T06:35:28.1972432+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a4d97e",
+      "flight": "SKW3358",
+      "reg": "N411SY",
+      "type": "E75L",
+      "cat": "A3",
+      "alt": 13475,
+      "gs": 323.2,
+      "track": 271.95,
+      "rate": 640,
+      "lat": 47.31439,
+      "lon": -122.70792,
+      "squawk": "3503",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
