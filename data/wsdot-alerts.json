@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T15:45:25.4299491+00:00",
+  "updated": "2026-11-06T15:55:28.8988693+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -673,6 +673,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 723530,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on SR 8 eastbound at milepost 13.41 near Summit Lk Rd NW [West-End] beginning at 7:52 am on November 6, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "008",
+      "roadLabel": "SR 8",
+      "direction": "E",
+      "milepost": 13.41,
+      "lat": 47.048422206,
+      "lon": -123.145514189,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-06T15:52:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-06T15:52:59.6070000+00:00"
     },
     {
       "id": 698912,
