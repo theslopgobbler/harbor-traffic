@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T17:55:54.8204176+00:00",
+  "updated": "2026-11-07T18:05:54.2015831+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,11 +8,11 @@
       "reg": "N69NW",
       "type": "H500",
       "cat": "A7",
-      "alt": 325,
-      "gs": 2.1,
-      "track": 90.0,
+      "alt": 250,
+      "gs": 0.7,
+      "track": 0.0,
       "rate": null,
-      "lat": 46.96522,
+      "lat": 46.96532,
       "lon": -122.89128,
       "squawk": "1200",
       "emergency": "none",
