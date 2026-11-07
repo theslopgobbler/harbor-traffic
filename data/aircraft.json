@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-07T16:55:54.6220783+00:00",
+  "updated": "2026-11-07T17:05:54.9218123+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "c0064c",
+      "flight": "JZA798",
+      "reg": "C-FCJZ",
+      "type": "CRJ7",
+      "cat": "A3",
+      "alt": 9050,
+      "gs": 259.1,
+      "track": 163.17,
+      "rate": -1628,
+      "lat": 47.87238,
+      "lon": -122.73692,
+      "squawk": "7052",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
