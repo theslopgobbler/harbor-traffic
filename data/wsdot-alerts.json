@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T06:55:21.0805419+00:00",
+  "updated": "2026-11-07T07:05:24.5710783+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -44,6 +44,27 @@
           47.29942
         ]
       ]
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 718841,
@@ -696,27 +717,6 @@
       "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
       "id": 723712,
       "kind": "collision",
       "category": "Collision",
@@ -736,27 +736,6 @@
       "start": "2026-11-07T06:32:00.0000000+00:00",
       "end": null,
       "updated": "2026-11-07T06:42:23.9000000+00:00"
-    },
-    {
-      "id": 723696,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 southbound at milepost 367.4 exit ramp to northbound I-5 beginning at 7:07 pm on November 6, 2026 until further notice. The left lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 367.33,
-      "lat": 47.021745307,
-      "lon": -122.907125853,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-07T03:07:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-07T03:08:12.3270000+00:00"
     },
     {
       "id": 686738,
