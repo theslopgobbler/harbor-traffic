@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-07T02:55:21.1130012+00:00",
-  "status": "",
-  "alerts": [],
+  "updated": "2026-11-07T03:05:25.3153980+00:00",
+  "status": "All routes are currently operating normally.",
+  "alerts": [
+    {
+      "route": null,
+      "name": null,
+      "text": "Route 25: Woodlawn construction Route 25 spur to Woodlawn is restricted until further notice due to construction. Please call GHT customer service to request a ride to or from Woodlawn: 360-532-2770."
+    }
+  ],
   "source": "https://ghtransit.com/alerts/"
 }
