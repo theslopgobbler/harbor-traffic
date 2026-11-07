@@ -1,28 +1,7 @@
 {
-  "updated": "2026-11-07T23:25:56.8486255+00:00",
+  "updated": "2026-11-07T23:35:55.1070277+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 723748,
-      "kind": "other",
-      "category": "Trees down",
-      "priority": "Highest",
-      "headline": "Trees reported down on US 101 both directions at milepost 156.84 near Kalaloch South City Limits beginning at 2:05 pm on November 7, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 156.84,
-      "lat": 47.601116767,
-      "lon": -124.369632268,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-11-07T22:05:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-07T22:12:40.2900000+00:00"
-    },
     {
       "id": 698910,
       "kind": "work",
