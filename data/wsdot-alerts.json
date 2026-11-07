@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T12:15:57.4542958+00:00",
+  "updated": "2026-11-07T12:25:56.1202838+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -248,27 +248,6 @@
       "start": "2026-11-02T13:00:00.0000000+00:00",
       "end": "2026-12-01T01:30:00.0000000+00:00",
       "updated": "2026-10-31T00:26:55.2670000+00:00"
-    },
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 640018,
@@ -633,6 +612,27 @@
       ]
     },
     {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -673,27 +673,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 723728,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 partially blocking northbound at milepost 194.8 near Klahn Rd beginning at 3:49 am on November 7, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 194.8,
-      "lat": 47.989240889,
-      "lon": -124.392335236,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Clallam",
-      "start": "2026-11-07T11:49:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-07T11:50:25.2900000+00:00"
     },
     {
       "id": 698912,
