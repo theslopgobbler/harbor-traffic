@@ -159,7 +159,8 @@
     "North American T-28B Trojan": "2026-11-05T23:45:31.1475487+00:00",
     "Cessna Citation V": "2026-11-06T00:05:27.4037909+00:00",
     "Bombardier CC-144C": "2026-11-06T19:45:22.7519236+00:00",
-    "Dassault Falcon 900 B": "2026-11-06T23:05:25.1873463+00:00"
+    "Dassault Falcon 900 B": "2026-11-06T23:05:25.1873463+00:00",
+    "Bombardier CRJ 900 LR NG": "2026-11-07T02:15:26.7843178+00:00"
   },
   "candidates": [
     {
@@ -9947,7 +9948,35 @@
       "date": "2017-06-06 18:22",
       "caption": "T18-4 Dassault Falcon 900B Spanish Royal Air Force VKO | UUWW",
       "found": "2026-11-06T23:05:25.1873463+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900 LR NG",
+      "file": "File:D-ACNF.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:D-ACNF.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/D-ACNF.jpg/960px-D-ACNF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-04-16 09:22:55",
+      "caption": "D-ACNF Bombardier CRJ 900 LR NG at Toulouse 16th April 2024",
+      "found": "2026-11-07T02:15:26.7843178+00:00"
+    },
+    {
+      "model": "Bombardier CRJ 900 LR NG",
+      "file": "File:D-ACNX.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:D-ACNX.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/D-ACNX.jpg/960px-D-ACNX.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-04-20 17:36:14",
+      "caption": "D-ACNX Bombardier CRJ 900 LR NG at Munich 20th April 2024",
+      "found": "2026-11-07T02:15:26.7843178+00:00"
     }
   ],
-  "updated": "2026-11-07T02:05:25.2815096+00:00"
+  "updated": "2026-11-07T02:15:26.7843178+00:00"
 }
