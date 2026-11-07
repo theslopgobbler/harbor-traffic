@@ -160,7 +160,8 @@
     "Cessna Citation V": "2026-11-06T00:05:27.4037909+00:00",
     "Bombardier CC-144C": "2026-11-06T19:45:22.7519236+00:00",
     "Dassault Falcon 900 B": "2026-11-06T23:05:25.1873463+00:00",
-    "Bombardier CRJ 900 LR NG": "2026-11-07T02:15:26.7843178+00:00"
+    "Bombardier CRJ 900 LR NG": "2026-11-07T02:15:26.7843178+00:00",
+    "Boeing KC-135T": "2026-11-07T20:05:59.1824746+00:00"
   },
   "candidates": [
     {
@@ -9976,7 +9977,91 @@
       "date": "2024-04-20 17:36:14",
       "caption": "D-ACNX Bombardier CRJ 900 LR NG at Munich 20th April 2024",
       "found": "2026-11-07T02:15:26.7843178+00:00"
+    },
+    {
+      "model": "Boeing KC-135T",
+      "file": "File:EGUN - Boeing KC-135T Stratotanker - United States Air Force - 58-0094 D (46168217414).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EGUN_-_Boeing_KC-135T_Stratotanker_-_United_States_Air_Force_-_58-0094_D_(46168217414).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/EGUN_-_Boeing_KC-135T_Stratotanker_-_United_States_Air_Force_-_58-0094_D_%2846168217414%29.jpg/960px-EGUN_-_Boeing_KC-135T_Stratotanker_-_United_States_Air_Force_-_58-0094_D_%2846168217414%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 608,
+      "author": "Steve Lynes from Sandshurst, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2019-01-26 11:28",
+      "caption": "RAF Mildenhall, Suffolk",
+      "found": "2026-11-07T20:05:59.1824746+00:00"
+    },
+    {
+      "model": "Boeing KC-135T",
+      "file": "File:EGUN - Boeing KC-135T Stratotanker - United States Air Force - 58-0099 (31126259547).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EGUN_-_Boeing_KC-135T_Stratotanker_-_United_States_Air_Force_-_58-0099_(31126259547).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/EGUN_-_Boeing_KC-135T_Stratotanker_-_United_States_Air_Force_-_58-0099_%2831126259547%29.jpg/960px-EGUN_-_Boeing_KC-135T_Stratotanker_-_United_States_Air_Force_-_58-0099_%2831126259547%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 628,
+      "author": "Steve Lynes from Sandshurst, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2016-06-10 10:18",
+      "caption": "RAF Mildenhall, Suffolk",
+      "found": "2026-11-07T20:05:59.1824746+00:00"
+    },
+    {
+      "model": "Boeing KC-135T",
+      "file": "File:U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335 (52239320002).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_(52239320002).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_%2852239320002%29.jpg/960px-U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_%2852239320002%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 629,
+      "author": "simon butler from halesowen, uk",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2022-07-17 09:20",
+      "caption": "U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335",
+      "found": "2026-11-07T20:05:59.1824746+00:00"
+    },
+    {
+      "model": "Boeing KC-135T",
+      "file": "File:U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335 (52240785695).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_(52240785695).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_%2852240785695%29.jpg/960px-U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_%2852240785695%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 655,
+      "author": "simon butler from halesowen, uk",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2022-07-17 09:26",
+      "caption": "U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335",
+      "found": "2026-11-07T20:05:59.1824746+00:00"
+    },
+    {
+      "model": "Boeing KC-135T",
+      "file": "File:U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335 (52245176976).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_(52245176976).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_%2852245176976%29.jpg/960px-U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_%2852245176976%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 742,
+      "author": "simon butler from halesowen, uk",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2022-07-17 12:18",
+      "caption": "U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335",
+      "found": "2026-11-07T20:05:59.1824746+00:00"
+    },
+    {
+      "model": "Boeing KC-135T",
+      "file": "File:U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335 TAIL DETAIL (52240581419).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_TAIL_DETAIL_(52240581419).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_TAIL_DETAIL_%2852240581419%29.jpg/960px-U.S._AIR_FORCE_BOEING_KC-135T_STRATOTANKER_60-0335_TAIL_DETAIL_%2852240581419%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "simon butler from halesowen, uk",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2022-07-17 09:24",
+      "caption": "U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335 TAIL DETAIL",
+      "found": "2026-11-07T20:05:59.1824746+00:00"
     }
   ],
-  "updated": "2026-11-07T19:55:56.6028822+00:00"
+  "updated": "2026-11-07T20:05:59.1824746+00:00"
 }
