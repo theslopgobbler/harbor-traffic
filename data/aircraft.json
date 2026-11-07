@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-07T15:15:56.4727480+00:00",
+  "updated": "2026-11-07T15:25:55.7781769+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aa98a4",
+      "flight": "ASA121",
+      "reg": "N782HA",
+      "type": "B789",
+      "cat": "A5",
+      "alt": 12150,
+      "gs": 354.2,
+      "track": 271.94,
+      "rate": 1278,
+      "lat": 47.31505,
+      "lon": -122.72765,
+      "squawk": "3574",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
