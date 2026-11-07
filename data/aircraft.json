@@ -1,7 +1,23 @@
 {
-  "updated": "2026-11-07T02:52:27.7169703+00:00",
+  "updated": "2026-11-07T02:55:21.1130012+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
+    {
+      "hex": "aa1f16",
+      "flight": "N751PS",
+      "reg": "N751PS",
+      "type": "S22T",
+      "cat": "A1",
+      "alt": 4200,
+      "gs": 117.5,
+      "track": 170.7,
+      "rate": 1280,
+      "lat": 46.56928,
+      "lon": -122.9583,
+      "squawk": "4611",
+      "emergency": "none",
+      "mil": false
+    },
     {
       "hex": "c05d5d",
       "flight": "N",
@@ -9,11 +25,11 @@
       "type": "S22T",
       "cat": "A1",
       "alt": 7825,
-      "gs": 183.7,
-      "track": 5.0,
-      "rate": -64,
-      "lat": 46.91646,
-      "lon": -122.90321,
+      "gs": 185.3,
+      "track": 6.82,
+      "rate": 0,
+      "lat": 47.1145,
+      "lon": -122.87229,
       "squawk": "6622",
       "emergency": "none",
       "mil": false
