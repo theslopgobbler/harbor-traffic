@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T07:25:28.1348452+00:00",
+  "updated": "2026-11-07T07:35:23.7626445+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -612,27 +612,6 @@
       ]
     },
     {
-      "id": 723716,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 southbound at milepost 358.1 near Holiday Valley Dr beginning at 11:14 pm on November 6, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 358.1,
-      "lat": 47.087785521,
-      "lon": -123.052080234,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-07T07:14:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-07T07:23:06.4400000+00:00"
-    },
-    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -736,27 +715,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 723712,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 southbound at milepost 352.6 near Lynch Rd beginning at 10:32 pm on November 6, 2026 until further notice. The left lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 352.6,
-      "lat": 47.142989728,
-      "lon": -123.094825723,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-11-07T06:32:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-07T06:42:23.9000000+00:00"
     },
     {
       "id": 686738,
