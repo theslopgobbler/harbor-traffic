@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T08:35:22.4178281+00:00",
+  "updated": "2026-11-07T08:45:25.7188545+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,13 +10,43 @@
     "waterF": 53.1
   },
   "bar": {
-    "issued": "2026-11-07T08:31:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH SUNDAY AFTERNOON... Combined seas 14 to 17 ft. Bar conditions severe with breakers. Maximum ebb currents will occur around 230 PM Friday, 245 AM Saturday, and 300 PM Saturday. The afternoon ebbs will be strong.",
-    "conditions": "severe with breakers",
-    "seas": "14 to 17 ft",
-    "ebb": "The afternoon ebbs will be strong"
+    "issued": "2026-11-07T08:37:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH SUNDAY AFTERNOON... Combined seas 15 to 17 ft building to 18 to 22 ft late tonight. Bar conditions severe with breakers covering the bar. Maximum ebb currents will occur around 245 AM Saturday, 300 PM Saturday, and 330 AM Sunday. The afternoon ebb will be strong.",
+    "conditions": "severe with breakers covering the bar",
+    "seas": "15 to 17 ft building to 18 to 22 ft late tonight",
+    "ebb": "The afternoon ebb will be strong"
   },
   "alerts": [
+    {
+      "event": "Storm Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-08T18:00:00+00:00",
+      "headline": "Storm Warning issued November 7 at 12:43AM PST until November 8 at 10:00AM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Storm Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-08T18:00:00+00:00",
+      "headline": "Storm Warning issued November 7 at 12:43AM PST until November 8 at 10:00AM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-07T18:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 7 at 12:43AM PST until November 7 at 10:00AM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-07T18:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 7 at 12:43AM PST until November 7 at 10:00AM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
+      "ends": "2026-11-09T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 7 at 12:43AM PST until November 8 at 4:00PM PST by NWS Seattle WA"
+    },
     {
       "event": "Storm Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
@@ -28,36 +58,6 @@
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-07T18:00:00+00:00",
       "headline": "Hazardous Seas Warning issued November 6 at 11:55PM PST until November 7 at 10:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
-      "ends": "2026-11-08T12:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 6 at 10:08PM PST until November 8 at 4:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-08T18:00:00+00:00",
-      "headline": "Storm Warning issued November 6 at 10:08PM PST until November 8 at 10:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-11-08T18:00:00+00:00",
-      "headline": "Storm Warning issued November 6 at 10:08PM PST until November 8 at 10:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-07T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 6 at 10:08PM PST until November 7 at 10:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-11-07T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 6 at 10:08PM PST until November 7 at 10:00AM PST by NWS Seattle WA"
     }
   ]
 }
