@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-07T06:25:22.3951727+00:00",
+  "updated": "2026-11-07T06:35:25.8748947+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ae2fa5",
-      "flight": "",
-      "reg": "08-8193",
-      "type": "C17",
-      "cat": null,
-      "alt": 14450,
-      "gs": 310.0,
-      "track": 321.0,
-      "rate": 1203,
-      "lat": 47.34022,
-      "lon": -122.81245,
-      "squawk": "3547",
-      "emergency": null,
-      "mil": true
-    }
-  ]
+  "aircraft": []
 }
