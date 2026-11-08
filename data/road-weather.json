@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T10:25:56.9207540+00:00",
+  "updated": "2026-11-08T10:35:58.3337793+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -7,28 +7,28 @@
       "name": "Rock Candy Mountain on SR 8",
       "lat": 47.0338,
       "lon": -123.0971,
-      "temp": 55.4,
-      "wind": 4,
-      "gust": 15,
-      "dir": "SSW",
+      "temp": 55.58,
+      "wind": 3,
+      "gust": 17,
+      "dir": "S",
       "vis": 1,
       "precip": null,
-      "humidity": 71,
-      "time": "2026-11-08T10:00:00.0000000+00:00"
+      "humidity": 70,
+      "time": "2026-11-08T10:15:00.0000000+00:00"
     },
     {
       "id": 2280,
       "name": "Cosmopolis Hill on US 101",
       "lat": 46.9343,
       "lon": -123.7282,
-      "temp": 53.42,
-      "wind": 8,
-      "gust": 17,
+      "temp": 53.78,
+      "wind": 6,
+      "gust": 16,
       "dir": "ESE",
       "vis": 1,
       "precip": null,
       "humidity": null,
-      "time": "2026-11-08T10:00:00.0000000+00:00"
+      "time": "2026-11-08T10:15:00.0000000+00:00"
     },
     {
       "id": 2281,
@@ -36,13 +36,13 @@
       "lat": 47.1402,
       "lon": -123.8922,
       "temp": 53.06,
-      "wind": 12,
-      "gust": 21,
-      "dir": "SSE",
+      "wind": 8,
+      "gust": 23,
+      "dir": "S",
       "vis": 1,
       "precip": null,
       "humidity": 94,
-      "time": "2026-11-08T10:00:00.0000000+00:00"
+      "time": "2026-11-08T10:15:00.0000000+00:00"
     },
     {
       "id": 2956,
@@ -50,27 +50,27 @@
       "lat": 47.5358,
       "lon": -124.333,
       "temp": 55.04,
-      "wind": 7,
-      "gust": 16,
+      "wind": 9,
+      "gust": 18,
       "dir": "SSE",
       "vis": 1,
       "precip": null,
-      "humidity": 84,
-      "time": "2026-11-08T10:00:00.0000000+00:00"
+      "humidity": 82,
+      "time": "2026-11-08T10:15:00.0000000+00:00"
     },
     {
       "id": 2957,
       "name": "Oyster Bay Rd on US 101",
       "lat": 47.0849,
       "lon": -123.0331,
-      "temp": 57.2,
-      "wind": 2,
-      "gust": 15,
-      "dir": "W",
+      "temp": 57.56,
+      "wind": 7,
+      "gust": 17,
+      "dir": "SW",
       "vis": 1,
       "precip": null,
-      "humidity": 69,
-      "time": "2026-11-08T10:00:00.0000000+00:00"
+      "humidity": 68,
+      "time": "2026-11-08T10:15:00.0000000+00:00"
     },
     {
       "id": 3776,
@@ -79,12 +79,12 @@
       "lon": -123.007164104,
       "temp": 53.06,
       "wind": 10,
-      "gust": 18,
+      "gust": 19,
       "dir": "SE",
       "vis": 1,
       "precip": null,
       "humidity": 90,
-      "time": "2026-11-08T10:00:00.0000000+00:00"
+      "time": "2026-11-08T10:15:00.0000000+00:00"
     }
   ]
 }
