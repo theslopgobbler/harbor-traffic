@@ -165,7 +165,8 @@
     "SOCATA TBM 700 B": "2026-11-07T21:05:58.8264925+00:00",
     "Embraer Praetor 500": "2026-11-08T00:25:57.9681729+00:00",
     "Boeing 737NG 824/W": "2026-11-08T15:45:19.0878125+00:00",
-    "Raytheon Aircraft Company 125 800XP": "2026-11-08T17:55:21.0379713+00:00"
+    "Raytheon Aircraft Company 125 800XP": "2026-11-08T17:55:21.0379713+00:00",
+    "Lockheed C-130J-30 Hercules": "2026-11-08T19:15:15.5656619+00:00"
   },
   "candidates": [
     {
@@ -10149,7 +10150,91 @@
       "date": "2026-06-04 09:58:06",
       "caption": "Flexjet Embraer Praetor 500 (N446FX) on short final for Runway 22 at Blue Grass Airport (KLEX), moments before touchdown.",
       "found": "2026-11-08T00:25:57.9681729+00:00"
+    },
+    {
+      "model": "Lockheed C-130J-30 Hercules",
+      "file": "File:16-5843 - United States - US Air Force (USAF) - Lockheed C-130J-30 Super Hercules - VGHS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:16-5843_-_United_States_-_US_Air_Force_(USAF)_-_Lockheed_C-130J-30_Super_Hercules_-_VGHS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/16-5843_-_United_States_-_US_Air_Force_%28USAF%29_-_Lockheed_C-130J-30_Super_Hercules_-_VGHS.jpg/960px-16-5843_-_United_States_-_US_Air_Force_%28USAF%29_-_Lockheed_C-130J-30_Super_Hercules_-_VGHS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2024-02-18",
+      "caption": "16-5843 | United States - US Air Force (USAF) | Lockheed C-130J-30 Super Hercules | VGHS.",
+      "found": "2026-11-08T19:15:15.5656619+00:00"
+    },
+    {
+      "model": "Lockheed C-130J-30 Hercules",
+      "file": "File:20180512 C-130J Super Hercules Dyess AFB Air Show 2018 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_1.jpg/960px-20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 357,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2018-05-12 11:08:43",
+      "caption": "C-130J Super Hercules at the Dyess AFB Air Show in May 2018.",
+      "found": "2026-11-08T19:15:15.5656619+00:00"
+    },
+    {
+      "model": "Lockheed C-130J-30 Hercules",
+      "file": "File:20180512 C-130J Super Hercules Dyess AFB Air Show 2018 19.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_19.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_19.jpg/960px-20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2018-05-12 11:46:13",
+      "caption": "C-130J Super Hercules at the Dyess AFB Air Show in May 2018.",
+      "found": "2026-11-08T19:15:15.5656619+00:00"
+    },
+    {
+      "model": "Lockheed C-130J-30 Hercules",
+      "file": "File:20180512 C-130J Super Hercules Dyess AFB Air Show 2018 22.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_22.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_22.jpg/960px-20180512_C-130J_Super_Hercules_Dyess_AFB_Air_Show_2018_22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2018-05-12 12:01:13",
+      "caption": "C-130J Super Hercules at the Dyess AFB Air Show in May 2018.",
+      "found": "2026-11-08T19:15:15.5656619+00:00"
+    },
+    {
+      "model": "Lockheed C-130J-30 Hercules",
+      "file": "File:Hannover Airport Luftwaffe German Air Force Lockheed Martin C-130J-30 Hercules 55+02 (DSC01156).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hannover_Airport_Luftwaffe_German_Air_Force_Lockheed_Martin_C-130J-30_Hercules_55%2B02_(DSC01156).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Hannover_Airport_Luftwaffe_German_Air_Force_Lockheed_Martin_C-130J-30_Hercules_55%2B02_%28DSC01156%29.jpg/960px-Hannover_Airport_Luftwaffe_German_Air_Force_Lockheed_Martin_C-130J-30_Hercules_55%2B02_%28DSC01156%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-10-02 13:27:36",
+      "caption": "Die Lockheed Martin C-130J-30 Hercules der Luftwaffe der Bundeswehr mit dem Kennzeichen 55+02 rollt auf dem Flughafen Hannover-Langenhagen zur Startbahn 27R.",
+      "found": "2026-11-08T19:15:15.5656619+00:00"
+    },
+    {
+      "model": "Lockheed C-130J-30 Hercules",
+      "file": "File:Lockheed C-130J, ILA 2024, Schoenefeld (ILA43898).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lockheed_C-130J,_ILA_2024,_Schoenefeld_(ILA43898).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Lockheed_C-130J%2C_ILA_2024%2C_Schoenefeld_%28ILA43898%29.jpg/960px-Lockheed_C-130J%2C_ILA_2024%2C_Schoenefeld_%28ILA43898%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "date": "2024-06-08",
+      "caption": "Lockheed C-130J Super Hercules of the Kentucky Air National Guard at ILA Berlin Air Show 2024",
+      "found": "2026-11-08T19:15:15.5656619+00:00"
     }
   ],
-  "updated": "2026-11-08T19:05:20.2248522+00:00"
+  "updated": "2026-11-08T19:15:15.5656619+00:00"
 }
