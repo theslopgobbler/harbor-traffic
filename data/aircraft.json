@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T16:25:20.4716100+00:00",
+  "updated": "2026-11-08T16:35:19.4320662+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,28 +9,12 @@
       "type": "CL30",
       "cat": "A2",
       "alt": 14850,
-      "gs": 198.3,
-      "track": 250.56,
-      "rate": -74,
-      "lat": 47.18459,
-      "lon": -123.26131,
+      "gs": 283.0,
+      "track": 190.79,
+      "rate": 0,
+      "lat": 46.92521,
+      "lon": -124.14762,
       "squawk": "4751",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "ad3fd7",
-      "flight": "N953AL",
-      "reg": "N953AL",
-      "type": "EC35",
-      "cat": "A7",
-      "alt": 125,
-      "gs": 2.3,
-      "track": 243.43,
-      "rate": -320,
-      "lat": 47.05212,
-      "lon": -122.84722,
-      "squawk": "5543",
       "emergency": "none",
       "mil": false
     }
