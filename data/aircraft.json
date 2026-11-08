@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-08T01:15:54.0752408+00:00",
+  "updated": "2026-11-08T01:25:57.2628962+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ad3fd7",
+      "flight": "N953AL",
+      "reg": "N953AL",
+      "type": "EC35",
+      "cat": "A7",
+      "alt": 1650,
+      "gs": 97.6,
+      "track": 204.2,
+      "rate": 64,
+      "lat": 47.08374,
+      "lon": -122.8049,
+      "squawk": "5543",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }

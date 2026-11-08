@@ -1,7 +1,28 @@
 {
-  "updated": "2026-11-08T01:15:54.0752408+00:00",
+  "updated": "2026-11-08T01:25:57.2628962+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
     {
       "id": 698910,
       "kind": "work",
@@ -631,48 +652,6 @@
           47.8099
         ]
       ]
-    },
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 723755,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on SR 105 northbound at milepost 45.98 near Charlie Creek beginning at 4:50 pm on November 7, 2026 until further notice. The northbound lane is partially blocked.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "N",
-      "milepost": 45.98,
-      "lat": 46.947483041,
-      "lon": -123.838112318,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-08T00:50:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-08T00:51:21.9000000+00:00"
     },
     {
       "id": 640019,
