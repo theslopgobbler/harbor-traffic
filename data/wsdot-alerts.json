@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T06:05:58.3827597+00:00",
+  "updated": "2026-11-08T06:15:56.2169692+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -736,27 +736,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 723771,
-      "kind": "other",
-      "category": "Utility Work",
-      "priority": "Highest",
-      "headline": "Reported power lines down on SR 109 northbound at milepost 31.15 near Eastern Way beginning at 7:48 pm on November 7, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "N",
-      "milepost": 31.15,
-      "lat": 47.232587482,
-      "lon": -124.212688296,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-08T03:48:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-08T03:50:50.0470000+00:00"
     },
     {
       "id": 584226,
