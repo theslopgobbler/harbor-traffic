@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T16:45:16.9672859+00:00",
+  "updated": "2026-11-08T16:55:18.9827305+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "CL30",
       "cat": "A2",
       "alt": 14850,
-      "gs": 295.6,
-      "track": 343.89,
-      "rate": -62,
-      "lat": 46.59949,
-      "lon": -123.07056,
+      "gs": 369.1,
+      "track": 99.51,
+      "rate": 0,
+      "lat": 46.99063,
+      "lon": -123.06919,
       "squawk": "4751",
       "emergency": "none",
       "mil": false
@@ -24,12 +24,12 @@
       "reg": "N7829G",
       "type": "C172",
       "cat": "A1",
-      "alt": 3200,
-      "gs": 56.7,
-      "track": 220.71,
-      "rate": 448,
-      "lat": 47.44377,
-      "lon": -122.78362,
+      "alt": 3900,
+      "gs": 96.7,
+      "track": 352.87,
+      "rate": 64,
+      "lat": 47.30269,
+      "lon": -122.88654,
       "squawk": "4623",
       "emergency": "none",
       "mil": false
