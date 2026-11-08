@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T02:05:56.7712422+00:00",
+  "updated": "2026-11-08T02:15:55.4686805+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -65,6 +65,27 @@
           47.29942
         ]
       ]
+    },
+    {
+      "id": 723760,
+      "kind": "other",
+      "category": "Trees down",
+      "priority": "Highest",
+      "headline": "Reported trees down on US 101 both directions from milepost 203 near Sol Duc River to milepost 173 beginning at 6:03 pm on November 7, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 203.0,
+      "lat": 47.773808022,
+      "lon": -124.28388332,
+      "lat2": 47.773808022,
+      "lon2": -124.28388332,
+      "county": "Clallam",
+      "start": "2026-11-08T02:03:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-08T02:10:11.3770000+00:00"
     },
     {
       "id": 718841,
