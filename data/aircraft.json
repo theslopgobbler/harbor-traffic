@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T13:15:53.3113458+00:00",
+  "updated": "2026-11-08T13:25:56.6461443+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N558LM",
       "type": "LJ45",
       "cat": "A2",
-      "alt": 14925,
-      "gs": 175.0,
-      "track": 271.31,
-      "rate": -64,
-      "lat": 47.55414,
-      "lon": -122.99366,
+      "alt": 14950,
+      "gs": 304.5,
+      "track": 40.07,
+      "rate": 192,
+      "lat": 47.84944,
+      "lon": -123.1807,
       "squawk": "6611",
       "emergency": "none",
       "mil": false
