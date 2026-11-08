@@ -568,7 +568,8 @@
     const btn = $('#btnFx');
     btn.classList.toggle('on', on);
     btn.setAttribute('aria-pressed', on);
-    for (const id of ['wxzones-fill', 'wxzones-line', 'wxzones-label', 'barline']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+    // (the power outage areas and bolts from power.js ride along with WX FX too)
+    for (const id of ['wxzones-fill', 'wxzones-line', 'wxzones-label', 'barline', 'power-fill', 'power-line', 'power-pt']) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
     document.body.classList.toggle('fx-off', !on);
   }
   $('#btnFx').addEventListener('click', () => setFx(!fxOn));

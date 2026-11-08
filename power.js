@@ -96,7 +96,14 @@
     map.on('mouseenter', 'power-pt', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'power-pt', () => (map.getCanvas().style.cursor = ''));
   }
-  if (map.isStyleLoaded()) addLayers(); else map.once('load', addLayers);
+  // shown or hidden with the WX FX button (wx.js switches these layers along with its own; this catches the start,
+  // when WX FX was already off)
+  const addAll = () => {
+    addLayers();
+    const vis = document.body.classList.contains('fx-off') ? 'none' : 'visible';
+    for (const id of ['power-fill', 'power-line', 'power-pt']) map.setLayoutProperty(id, 'visibility', vis);
+  };
+  if (map.isStyleLoaded()) addAll(); else map.once('load', addAll);
 
   const popup = (o, at) => new maplibregl.Popup({ offset: 8, maxWidth: '280px' }).setLngLat(at || [o.lon, o.lat]).setHTML(
     `<h3>⚡ POWER OUT · ${fmt(o.n)} CUSTOMER${o.n === 1 ? '' : 'S'}</h3>
