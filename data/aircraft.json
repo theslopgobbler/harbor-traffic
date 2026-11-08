@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T01:35:53.7878214+00:00",
+  "updated": "2026-11-08T01:45:53.9894068+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "DA40",
       "cat": "A1",
       "alt": 4575,
-      "gs": 159.1,
-      "track": 17.18,
-      "rate": 0,
-      "lat": 46.80032,
-      "lon": -122.91264,
+      "gs": 165.1,
+      "track": 9.06,
+      "rate": -64,
+      "lat": 47.20122,
+      "lon": -122.74876,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
