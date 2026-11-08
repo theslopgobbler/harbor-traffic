@@ -166,7 +166,8 @@
     "Embraer Praetor 500": "2026-11-08T00:25:57.9681729+00:00",
     "Boeing 737NG 824/W": "2026-11-08T15:45:19.0878125+00:00",
     "Raytheon Aircraft Company 125 800XP": "2026-11-08T17:55:21.0379713+00:00",
-    "Lockheed C-130J-30 Hercules": "2026-11-08T19:15:15.5656619+00:00"
+    "Lockheed C-130J-30 Hercules": "2026-11-08T19:15:15.5656619+00:00",
+    "Eurocopter Squirrel AS.350 B3": "2026-11-08T22:05:15.3558970+00:00"
   },
   "candidates": [
     {
@@ -10234,7 +10235,21 @@
       "date": "2024-06-08",
       "caption": "Lockheed C-130J Super Hercules of the Kentucky Air National Guard at ILA Berlin Air Show 2024",
       "found": "2026-11-08T19:15:15.5656619+00:00"
+    },
+    {
+      "model": "Eurocopter Squirrel AS.350 B3",
+      "file": "File:G-OOWS (35221616365).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-OOWS_(35221616365).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/G-OOWS_%2835221616365%29.jpg/960px-G-OOWS_%2835221616365%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-06-10 20:38",
+      "caption": "G-OOWS Eurocopter AS.350 B3 Squirrel @ Booker 03/06/2017",
+      "found": "2026-11-08T22:05:15.3558970+00:00"
     }
   ],
-  "updated": "2026-11-08T21:55:20.1200004+00:00"
+  "updated": "2026-11-08T22:05:15.3558970+00:00"
 }
