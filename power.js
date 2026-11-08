@@ -1,0 +1,130 @@
+// Power outages: Grays Harbor PUD's own outage map data (NISC "outagemap.coop", refreshed by the PUD about every
+// 5 minutes; their data host allows our site to read it directly, so no relay needed). Shaded areas on the map, a
+// POWER OUTAGES section in the PERIL tab (alert line when it's a big one), and a ticker line.
+(() => {
+  const map = window.htMap;
+  if (!map) return;
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const BASE = 'https://outagemap-data.cloud.coop/ghpud/Hosted_Outage_Map/';
+  // the PUD's points and areas are sent as meters (web mercator) counted from the corner of their service area
+  // (their config's boundaryExtent); fetched fresh from config.json in case they ever move it
+  let X0 = -13851161, Y0 = 5889142;
+  const R = 6378137, D = 180 / Math.PI;
+  const toLL = (x, y) => [(x + X0) / R * D, (2 * Math.atan(Math.exp((y + Y0) / R)) - Math.PI / 2) * D];
+  // worth an alert line (and the PERIL count, and the ticker): this many PUD customers out at once
+  const ALERT_AT = 250;
+  // color by customers out: amber for a handful, orange, red, deep red for the big ones
+  const color = (n) => n <= 10 ? '#ffc400' : n <= 100 ? '#ff7a1a' : n <= 500 ? '#ff2a3d' : '#ff2a8a';
+  const fmt = (n) => Number(n || 0).toLocaleString();
+  const since = (t) => {
+    const m = Math.max(0, Math.round((Date.now() - t) / 60000)); // (their clock can run a little ahead of ours)
+    const at = new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    return `SINCE ${at} (${m < 60 ? m + ' MIN' : Math.floor(m / 60) + ' H ' + (m % 60) + ' MIN'})`;
+  };
+
+  let outages = [], areas = [], regions = [], served = 0, updated = 0, failed = false;
+  const empty = { type: 'FeatureCollection', features: [] };
+  const areaGeo = () => ({ type: 'FeatureCollection', features: areas
+    .slice().sort((a, b) => b.n - a.n) // big areas first so the small ones inside them draw on top
+    .map((a) => ({ type: 'Feature', geometry: { type: 'Polygon', coordinates: [a.ring] }, properties: { id: a.id, n: a.n, color: color(a.n) } })) });
+  const pointGeo = () => ({ type: 'FeatureCollection', features: outages.map((o) => ({ type: 'Feature',
+    geometry: { type: 'Point', coordinates: [o.lon, o.lat] }, properties: { id: o.id, n: o.n, color: color(o.n) } })) });
+
+  function addLayers() {
+    if (map.getSource('power-areas')) return;
+    map.addSource('power-areas', { type: 'geojson', data: areaGeo() });
+    map.addSource('power-pts', { type: 'geojson', data: pointGeo() });
+    map.addLayer({ id: 'power-fill', type: 'fill', source: 'power-areas', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 0.13 } }, 'outside');
+    map.addLayer({ id: 'power-line', type: 'line', source: 'power-areas', layout: { 'line-join': 'round' },
+      paint: { 'line-color': ['get', 'color'], 'line-width': 1.4, 'line-opacity': 0.85, 'line-dasharray': [3, 2] } }, 'outside');
+    // every outage as a dot (single houses have no area), sized by customers out
+    map.addLayer({ id: 'power-pt', type: 'circle', source: 'power-pts', paint: {
+      'circle-radius': ['interpolate', ['linear'], ['get', 'n'], 1, 3, 50, 5, 500, 8, 3000, 12],
+      'circle-color': ['get', 'color'], 'circle-opacity': 0.9, 'circle-stroke-color': '#000', 'circle-stroke-width': 1 } }, 'outside');
+    const open = (e) => {
+      const id = e.features[0].properties.id;
+      const o = outages.find((x) => x.id === id);
+      if (o) popup(o, e.lngLat);
+    };
+    for (const id of ['power-pt', 'power-fill']) {
+      map.on('click', id, open);
+      map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
+      map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
+    }
+  }
+  if (map.isStyleLoaded()) addLayers(); else map.once('load', addLayers);
+
+  const popup = (o, at) => new maplibregl.Popup({ offset: 8, maxWidth: '280px' }).setLngLat(at || [o.lon, o.lat]).setHTML(
+    `<h3>⚡ POWER OUT · ${fmt(o.n)} CUSTOMER${o.n === 1 ? '' : 'S'}</h3>
+    <div class="m">${since(o.off)}${o.planned ? ' · PLANNED' : ''}</div>${o.comment ? `<p>${esc(o.comment)}</p>` : ''}
+    <div class="m">Grays Harbor PUD · <a href="https://ghpud.outagemap.coop/" target="_blank" rel="noopener">OUTAGE MAP</a></div>`).addTo(map);
+
+  function render() {
+    map.getSource('power-areas')?.setData(areas.length ? areaGeo() : empty);
+    map.getSource('power-pts')?.setData(outages.length ? pointGeo() : empty);
+    // (the PUD's region numbers are the real count: its outages can overlap, one feeder and the lines below it)
+    const out = regions.reduce((s, r) => s + (r.out || 0), 0);
+    const pct = served ? out / served * 100 : 0;
+    const big = out >= ALERT_AT;
+    $('#powerAlert').innerHTML = big ? `<li class="k-closure"><div class="t">⚡ POWER OUT FOR ${fmt(out)} PUD CUSTOMERS (${pct < 1 ? '<1' : Math.round(pct)}%)</div>
+      <div class="m">${esc(regions.filter((r) => r.out).sort((a, b) => b.out - a.out).map((r) => `${r.name.toUpperCase()} ${fmt(r.out)}`).join(' · '))}</div></li>` : '';
+    const when = updated ? ` · PUD UPDATED ${new Date(updated).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}` : '';
+    const rows = regions.filter((r) => r.served || r.out).map((r) => `<li${r.out ? ` style="border-left-color:${color(r.out)}"` : ''}>
+      <div class="t">${esc(r.name.toUpperCase())} <span style="color:${r.out ? color(r.out) : 'var(--green)'}">${r.out ? fmt(r.out) + ' OUT' : 'ON'}</span></div>
+      ${r.served ? `<div class="m">${fmt(r.served)} CUSTOMERS${r.out ? ` · ${Math.max(1, Math.round(r.out / r.served * 100))}% OUT` : ''}</div>` : ''}</li>`).join('');
+    const top = outages.filter((o) => o.n >= 10).sort((a, b) => b.n - a.n).slice(0, 8).map((o) => `<li class="clickable" data-pw="${esc(o.id)}" style="border-left-color:${color(o.n)}">
+      <div class="t">⚡ ${fmt(o.n)} OUT${o.planned ? ' · PLANNED' : ''}</div><div class="m">${since(o.off)} · TAP TO SEE AREA</div></li>`).join('');
+    $('#powerList').innerHTML = failed && !updated ? '<li class="empty">PUD OUTAGE MAP NOT ANSWERING RIGHT NOW</li>'
+      : !out && !outages.length ? `<li class="empty">NO PUD OUTAGES${when}</li>`
+      : `<li class="m" style="border:0;padding-top:0">${fmt(out)} OF ${fmt(served)} PUD CUSTOMERS OUT${when}</li>${rows}${top ? '<li class="m" style="border:0">BIGGEST OUTAGE AREAS (THEY CAN OVERLAP: A MAIN LINE AND THE LINES BELOW IT)</li>' + top : ''}`;
+    // PERIL count and ticker
+    window.htPerilPower = big ? 1 : 0;
+    window.htPerilRefresh?.();
+    window.htTicker = window.htTicker || {};
+    window.htTicker.power = out ? `${fmt(out)} PUD customers out (${regions.filter((r) => r.out).sort((a, b) => b.out - a.out).map((r) => `${r.name} ${fmt(r.out)}`).join(', ')})` : '';
+    window.htTickerRefresh?.();
+  }
+  document.addEventListener('click', (e) => {
+    const li = e.target.closest('#powerList li[data-pw]'); if (!li) return;
+    const o = outages.find((x) => x.id === li.dataset.pw); if (!o) return;
+    const a = areas.find((x) => x.id === o.id);
+    if (a) {
+      const xs = a.ring.map((p) => p[0]), ys = a.ring.map((p) => p[1]);
+      map.fitBounds([[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]], { padding: 60, maxZoom: 13 });
+    } else map.flyTo({ center: [o.lon, o.lat], zoom: Math.max(map.getZoom(), 12) });
+    popup(o);
+  });
+
+  let configTried = false;
+  async function load() {
+    try {
+      if (!configTried) {
+        configTried = true;
+        const c = await (await fetch(BASE + 'config.json')).json().catch(() => null);
+        const b = c?.mapSettings?.boundaryExtent;
+        if (Array.isArray(b) && b.length === 4 && b.every(Number.isFinite)) [X0, Y0] = b;
+      }
+      const t = Date.now();
+      const [s, b] = await Promise.all([
+        fetch(`${BASE}summary.json?t=${t}`, { cache: 'no-store' }).then((r) => r.json()),
+        fetch(`${BASE}outage.bounds.json?t=${t}`, { cache: 'no-store' }).then((r) => r.ok ? r.json() : { outageBoundaries: [] }).catch(() => ({ outageBoundaries: [] }))
+      ]);
+      outages = (s.outages || []).filter((o) => o.nbrOut > 0 && Number.isFinite(o.x) && Number.isFinite(o.y)).map((o) => {
+        const [lon, lat] = toLL(o.x, o.y);
+        return { id: String(o.id), n: o.nbrOut, off: o.timeOff, planned: !!o.planned, comment: o.comment || '', lon, lat };
+      });
+      // (the PUD's own map only draws areas for outages of 3 or more)
+      areas = (b.outageBoundaries || []).filter((a) => a.nbrOut > 2 && (a.outageGeometry || []).length > 2)
+        .map((a) => ({ id: String(a.outageId), n: a.nbrOut, ring: a.outageGeometry.map(([x, y]) => toLL(x, y)) }));
+      const set = (s.regionDataSets || [])[0];
+      regions = (set?.regions || []).map((r) => ({ name: r.name || r.id || 'Other', out: r.numberOut || 0, served: r.numberServed || 0 }));
+      served = s.totalServed || regions.reduce((n, r) => n + r.served, 0);
+      updated = s.lastUpdate || t;
+      failed = false;
+    } catch (e) { console.warn('power', e); failed = true; }
+    render();
+  }
+  load();
+  setInterval(load, 2 * 60 * 1000);
+})();

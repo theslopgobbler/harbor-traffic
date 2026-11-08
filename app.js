@@ -1018,7 +1018,7 @@
     const alertedTowns = new Set(list.flatMap((a) => townsForZones(a.affectedZones || []).map((t) => t.id)));
     for (const [id, { el }] of Object.entries(wxMarkers)) el.classList.toggle('alerted', alertedTowns.has(id));
     // PERIL count: weather warnings plus tsunami alerts and strong nearby quakes (from seis.js)
-    window.htPerilRefresh = () => { $('#nAlerts').textContent = (list.length + (window.htPerilExtra || 0) + (window.htPerilFlood || 0) + (window.htPerilTide || 0)) || ''; };
+    window.htPerilRefresh = () => { $('#nAlerts').textContent = (list.length + (window.htPerilExtra || 0) + (window.htPerilFlood || 0) + (window.htPerilTide || 0) + (window.htPerilPower || 0)) || ''; };
     window.htPerilRefresh();
     // WX ALERTS instrument: the whole area
     const allZones = new Set(Object.values(state.zonesByTown).flat());
@@ -1474,6 +1474,7 @@
     if (t.tsunami) add('x', '🌊 TSUNAMI', t.tsunami);
     if (t.quake) add('a', '⚠ QUAKE', t.quake);
     if (t.flood) add('x', '🌊 FLOOD', t.flood);
+    if (t.power) add('a', '⚡ POWER', t.power);
     if (t.lowtide) add('w', '〰 TIDE', t.lowtide);
     if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
     if (t.air) add('a', '✈ AIR', t.air);

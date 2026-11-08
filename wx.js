@@ -445,8 +445,14 @@
       case 'snow': return { kind, x, y, vx: w.x * windy * 2.5, vy: rnd(0.6, 1.4), r: rnd(0.8, 2), ph: rnd(0, 6.28) };
       case 'hail': return { kind, x, y, vx: w.x * windy * 2, vy: rnd(9, 14), r: rnd(1.2, 2.2) };
       case 'fog': return { kind, x, y, vx: 0.15 + w.x * 0.3, vy: 0, r: rnd(40, 90), a: rnd(0.12, 0.22) };
-      // mostly sideways (east/west), like the rain's slant, with only a hint of the north/south part
-      case 'wind': { const sp = 3 + z.cond.wind * 1.5; return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: (Math.abs(w.x) < 0.2 ? Math.sign(w.x || 1) * 0.6 : w.x) * sp, vy: w.y * sp * 0.15, len: rnd(18, 40), life: 0, max: rnd(40, 90) }; }
+      // the streaks blow the way the wind actually goes (a south wind runs up the screen, a west wind to the right),
+      // turned with the map when it's rotated. (They used to be held mostly sideways, so a SSE wind looked like an
+      // east or west one.)
+      case 'wind': {
+        const sp = 3 + z.cond.wind * 1.5, r = -(map.getBearing() || 0) * Math.PI / 180;
+        const dx = w.x * Math.cos(r) - w.y * Math.sin(r), dy = w.x * Math.sin(r) + w.y * Math.cos(r);
+        return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: dx * sp, vy: dy * sp, len: rnd(18, 40), life: 0, max: rnd(40, 90) };
+      }
     }
   }
   function boltPath(z) {
