@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-08T15:35:24.4759503+00:00",
+  "updated": "2026-11-08T15:45:19.0878125+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a05e02",
+      "flight": "UAL499",
+      "reg": "N12238",
+      "type": "B738",
+      "cat": "A3",
+      "alt": 11175,
+      "gs": 300.2,
+      "track": 271.91,
+      "rate": 768,
+      "lat": 47.31441,
+      "lon": -122.72504,
+      "squawk": "1537",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
