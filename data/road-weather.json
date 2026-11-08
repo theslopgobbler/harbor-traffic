@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T04:15:58.0845817+00:00",
+  "updated": "2026-11-08T04:25:55.6688009+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -71,20 +71,6 @@
       "precip": null,
       "humidity": 98,
       "time": "2026-11-08T04:00:00.0000000+00:00"
-    },
-    {
-      "id": 2958,
-      "name": "Pt. Grenville on SR 109",
-      "lat": 47.3029,
-      "lon": -124.2504,
-      "temp": 54.86,
-      "wind": 13,
-      "gust": 18,
-      "dir": "S",
-      "vis": 0,
-      "precip": null,
-      "humidity": null,
-      "time": "2026-11-08T02:15:00.0000000+00:00"
     },
     {
       "id": 3776,
