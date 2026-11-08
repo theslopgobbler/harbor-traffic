@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-08T02:55:53.8707098+00:00",
+  "updated": "2026-11-08T03:05:55.1882677+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "c07bbe",
-      "flight": "WJA2041",
-      "reg": "C-GUWJ",
-      "type": "B737",
-      "cat": "A3",
-      "alt": 13000,
-      "gs": 377.4,
-      "track": 345.26,
-      "rate": -2880,
-      "lat": 47.97599,
-      "lon": -122.99624,
-      "squawk": "6245",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
