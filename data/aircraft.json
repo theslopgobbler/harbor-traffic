@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-08T16:06:27.1760110+00:00",
+  "updated": "2026-11-08T16:15:20.1746962+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ac1d26",
+      "flight": "N88TA",
+      "reg": "N88TA",
+      "type": "B06",
+      "cat": "A7",
+      "alt": 400,
+      "gs": 91.0,
+      "track": 75.35,
+      "rate": null,
+      "lat": 46.95976,
+      "lon": -122.89095,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
