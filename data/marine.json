@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-08T22:45:15.0723992+00:00",
+  "updated": "2026-11-08T22:55:15.8549240+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-08T21:56:00.0000000+00:00",
-    "waveFt": 21.3,
-    "periodS": 17.0,
+    "time": "2026-11-08T22:26:00.0000000+00:00",
+    "waveFt": 21.0,
+    "periodS": 14.0,
     "dirDeg": 261.0,
-    "waterF": 53.6
+    "waterF": 53.8
   },
   "bar": {
     "issued": "2026-11-08T22:01:00+00:00",
@@ -36,16 +36,16 @@
       "headline": "Small Craft Advisory issued November 8 at 2:01PM PST until November 9 at 4:00AM PST by NWS Seattle WA"
     },
     {
-      "event": "Gale Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-10T03:00:00+00:00",
-      "headline": "Gale Warning issued November 8 at 12:17PM PST until November 9 at 7:00PM PST by NWS Portland OR"
-    },
-    {
       "event": "Hazardous Seas Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-09T12:00:00+00:00",
       "headline": "Hazardous Seas Warning issued November 8 at 12:17PM PST until November 9 at 4:00AM PST by NWS Portland OR"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-10T03:00:00+00:00",
+      "headline": "Gale Warning issued November 8 at 12:17PM PST until November 9 at 7:00PM PST by NWS Portland OR"
     }
   ]
 }
