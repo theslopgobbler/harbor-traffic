@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-08T04:06:02.2313977+00:00",
+  "updated": "2026-11-08T04:15:58.0845817+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ad8e30",
-      "flight": "N9725X",
-      "reg": "N9725X",
-      "type": "C210",
-      "cat": "A1",
-      "alt": 1000,
-      "gs": 51.9,
-      "track": 164.36,
-      "rate": null,
-      "lat": 47.48598,
-      "lon": -122.77222,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
