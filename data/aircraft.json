@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-08T13:25:56.6461443+00:00",
+  "updated": "2026-11-08T13:35:15.3078593+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a71e29",
-      "flight": "N558LM",
-      "reg": "N558LM",
-      "type": "LJ45",
-      "cat": "A2",
-      "alt": 14950,
-      "gs": 304.5,
-      "track": 40.07,
-      "rate": 192,
-      "lat": 47.84944,
-      "lon": -123.1807,
-      "squawk": "6611",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
