@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T11:55:56.7421670+00:00",
+  "updated": "2026-11-08T12:05:57.3040153+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,18 +10,30 @@
     "waterF": 53.4
   },
   "bar": {
-    "issued": "2026-11-08T08:27:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH LATE TONIGHT... Combined seas 15 to 17 ft building to 18 to 22 ft later this morning. Bar conditions becoming severe with breakers covering the bar. Maximum ebb currents will occur around 330 AM Sunday, and 345 PM Sunday, and 400 AM Monday. The afternoon ebb on Sunday will be strong.",
-    "conditions": "becoming severe with breakers covering the bar",
-    "seas": "15 to 17 ft building to 18 to 22 ft later this morning",
-    "ebb": "The afternoon ebb on Sunday will be strong"
+    "issued": "2026-11-08T12:00:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH LATE TONIGHT... Combined seas building to 18 to 22 ft with breakers this morning. Seas ease to 14 to 16 ft this evening. Bar conditions severe. Maximum ebb currents will occur around 345 PM Sunday, 400 AM Monday, and 415 PM Monday. The afternoon ebbs on Sunday and Monday will be strong.",
+    "conditions": "severe",
+    "seas": "building to 18 to 22 ft with breakers this morning",
+    "ebb": "The afternoon ebbs on Sunday and Monday will be strong"
   },
   "alerts": [
     {
-      "event": "Gale Warning",
+      "event": "Gale Watch",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-11-10T03:00:00+00:00",
+      "headline": "Gale Watch issued November 8 at 3:56AM PST until November 9 at 7:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Hazardous Seas Warning",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-11-09T12:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 8 at 3:56AM PST until November 9 at 4:00AM PST by NWS Portland OR"
+    },
+    {
+      "event": "Gale Watch",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-08T15:00:00+00:00",
-      "headline": "Gale Warning issued November 8 at 3:50AM PST until November 8 at 7:00AM PST by NWS Seattle WA"
+      "ends": "2026-11-10T03:00:00+00:00",
+      "headline": "Gale Watch issued November 8 at 3:50AM PST until November 9 at 7:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
@@ -36,28 +48,10 @@
       "headline": "Small Craft Advisory issued November 8 at 3:50AM PST until November 9 at 4:00AM PST by NWS Seattle WA"
     },
     {
-      "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-10T03:00:00+00:00",
-      "headline": "Gale Watch issued November 8 at 3:50AM PST until November 9 at 7:00PM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Gale Watch",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
-      "ends": "2026-11-10T03:00:00+00:00",
-      "headline": "Gale Watch issued November 8 at 12:15AM PST until November 9 at 7:00PM PST by NWS Portland OR"
-    },
-    {
       "event": "Gale Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
-      "ends": "2026-11-08T12:00:00+00:00",
-      "headline": "Gale Warning issued November 8 at 12:15AM PST until November 8 at 4:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Hazardous Seas Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
-      "ends": "2026-11-09T12:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 8 at 12:15AM PST until November 9 at 4:00AM PST by NWS Portland OR"
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-08T15:00:00+00:00",
+      "headline": "Gale Warning issued November 8 at 3:50AM PST until November 8 at 7:00AM PST by NWS Seattle WA"
     }
   ]
 }
