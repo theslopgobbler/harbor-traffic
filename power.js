@@ -42,16 +42,23 @@
     map.addLayer({ id: 'power-pt', type: 'circle', source: 'power-pts', paint: {
       'circle-radius': ['interpolate', ['linear'], ['get', 'n'], 1, 3, 50, 5, 500, 8, 3000, 12],
       'circle-color': ['get', 'color'], 'circle-opacity': 0.9, 'circle-stroke-color': '#000', 'circle-stroke-width': 1 } }, 'outside');
-    const open = (e) => {
-      const id = e.features[0].properties.id;
-      const o = outages.find((x) => x.id === id);
-      if (o) popup(o, e.lngLat);
-    };
-    for (const id of ['power-pt', 'power-fill']) {
-      map.on('click', id, open);
-      map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
-      map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
-    }
+    // a tap opens an outage only when nothing else is there: outage dots and shaded areas give way to markers, road
+    // warnings, traffic lines, bus stops and routes, the railroad and quakes (they open their own popups)
+    const OTHERS = ['inc-glow', 'inc', 'inc-glow-p', 'inc-p', 'flow-glow', 'flow', 'bus-stops', 'bus-route-picked', 'bus-route-lines', 'rail-hit', 'quake-ring'];
+    const open = (f, at) => { const o = outages.find((x) => x.id === f.properties.id); if (o) popup(o, at); };
+    map.on('click', (e) => {
+      if (e.originalEvent?.target?.closest?.('.maplibregl-marker, .maplibregl-popup')) return;
+      const near = (px) => [[e.point.x - px, e.point.y - px], [e.point.x + px, e.point.y + px]];
+      const others = OTHERS.filter((id) => map.getLayer(id) && map.getLayoutProperty(id, 'visibility') !== 'none');
+      if (others.length && map.queryRenderedFeatures(near(8), { layers: others }).length) return;
+      const dot = map.queryRenderedFeatures(near(6), { layers: ['power-pt'] })[0];
+      if (dot) return open(dot, e.lngLat);
+      // (the top area under the tap is the smallest one, since the big ones are drawn first)
+      const area = map.queryRenderedFeatures(e.point, { layers: ['power-fill'] })[0];
+      if (area) open(area, e.lngLat);
+    });
+    map.on('mouseenter', 'power-pt', () => (map.getCanvas().style.cursor = 'pointer'));
+    map.on('mouseleave', 'power-pt', () => (map.getCanvas().style.cursor = ''));
   }
   if (map.isStyleLoaded()) addLayers(); else map.once('load', addLayers);
 
