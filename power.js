@@ -15,7 +15,38 @@
   // worth an alert line (and the PERIL count, and the ticker): this many PUD customers out at once
   const ALERT_AT = 250;
   // color by customers out: amber for a handful, orange, red, deep red for the big ones
-  const color = (n) => n <= 10 ? '#ffc400' : n <= 100 ? '#ff7a1a' : n <= 500 ? '#ff2a3d' : '#ff2a8a';
+  const COLORS = ['#ffc400', '#ff7a1a', '#ff2a3d', '#ff2a8a'];
+  const tier = (n) => n <= 10 ? 0 : n <= 100 ? 1 : n <= 500 ? 2 : 3;
+  const color = (n) => COLORS[tier(n)];
+  // the outage dots are little pixel-art lightning bolts: drawn here as bitmaps (one per color and size, each pixel a
+  // solid square, black outline) so they stay crisp instead of being smoothed
+  const BOLT = [
+    '....###',
+    '...###.',
+    '..###..',
+    '.###...',
+    '#######',
+    '....##.',
+    '...##..',
+    '..##...',
+    '.##....',
+    '##.....',
+    '#......'];
+  const SIZES = { s: 2, m: 3, l: 4 }; // screen pixels per bolt pixel (on a normal screen; doubled on sharp ones)
+  const size = (n) => n < 10 ? 's' : n < 500 ? 'm' : 'l';
+  function boltImage(col, k) {
+    const w = BOLT[0].length + 2, h = BOLT.length + 2, on = (x, y) => BOLT[y - 1]?.[x - 1] === '#';
+    const dpr = 2, px = k * dpr, img = new ImageData(w * px, h * px);
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(col.slice(i, i + 2), 16));
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      let c = null;
+      if (on(x, y)) c = (on(x, y - 1) || on(x - 1, y)) ? [r, g, b, 255] : [Math.min(255, r + 90), Math.min(255, g + 90), Math.min(255, b + 90), 255]; // lit top-left edge
+      else for (let dy = -1; dy <= 1 && !c; dy++) for (let dx = -1; dx <= 1; dx++) if (on(x + dx, y + dy)) { c = [0, 0, 0, 255]; break; }
+      if (!c) continue;
+      for (let yy = 0; yy < px; yy++) for (let xx = 0; xx < px; xx++) img.data.set(c, ((y * px + yy) * w * px + x * px + xx) * 4);
+    }
+    return { img, dpr };
+  }
   const fmt = (n) => Number(n || 0).toLocaleString();
   const since = (t) => {
     const m = Math.max(0, Math.round((Date.now() - t) / 60000)); // (their clock can run a little ahead of ours)
@@ -29,7 +60,7 @@
     .slice().sort((a, b) => b.n - a.n) // big areas first so the small ones inside them draw on top
     .map((a) => ({ type: 'Feature', geometry: { type: 'Polygon', coordinates: [a.ring] }, properties: { id: a.id, n: a.n, color: color(a.n) } })) });
   const pointGeo = () => ({ type: 'FeatureCollection', features: outages.map((o) => ({ type: 'Feature',
-    geometry: { type: 'Point', coordinates: [o.lon, o.lat] }, properties: { id: o.id, n: o.n, color: color(o.n) } })) });
+    geometry: { type: 'Point', coordinates: [o.lon, o.lat] }, properties: { id: o.id, n: o.n, icon: `bolt-${tier(o.n)}-${size(o.n)}` } })) });
 
   function addLayers() {
     if (map.getSource('power-areas')) return;
@@ -38,10 +69,15 @@
     map.addLayer({ id: 'power-fill', type: 'fill', source: 'power-areas', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 0.13 } }, 'outside');
     map.addLayer({ id: 'power-line', type: 'line', source: 'power-areas', layout: { 'line-join': 'round' },
       paint: { 'line-color': ['get', 'color'], 'line-width': 1.4, 'line-opacity': 0.85, 'line-dasharray': [3, 2] } }, 'outside');
-    // every outage as a dot (single houses have no area), sized by customers out
-    map.addLayer({ id: 'power-pt', type: 'circle', source: 'power-pts', paint: {
-      'circle-radius': ['interpolate', ['linear'], ['get', 'n'], 1, 3, 50, 5, 500, 8, 3000, 12],
-      'circle-color': ['get', 'color'], 'circle-opacity': 0.9, 'circle-stroke-color': '#000', 'circle-stroke-width': 1 } }, 'outside');
+    // every outage as a pixel lightning bolt (single houses have no area): colored and sized by customers out, the
+    // biggest drawn on top
+    COLORS.forEach((col, i) => Object.entries(SIZES).forEach(([s, k]) => {
+      const name = `bolt-${i}-${s}`;
+      if (!map.hasImage(name)) { const { img, dpr } = boltImage(col, k); map.addImage(name, img, { pixelRatio: dpr }); }
+    }));
+    map.addLayer({ id: 'power-pt', type: 'symbol', source: 'power-pts', layout: {
+      'icon-image': ['get', 'icon'], 'icon-allow-overlap': true, 'icon-ignore-placement': true,
+      'symbol-sort-key': ['get', 'n'] } }, 'outside');
     // a tap opens an outage only when nothing else is there: outage dots and shaded areas give way to markers, road
     // warnings, traffic lines, bus stops and routes, the railroad and quakes (they open their own popups)
     const OTHERS = ['inc-glow', 'inc', 'inc-glow-p', 'inc-p', 'flow-glow', 'flow', 'bus-stops', 'bus-route-picked', 'bus-route-lines', 'rail-hit', 'quake-ring'];
