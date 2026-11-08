@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T04:55:59.8799098+00:00",
+  "updated": "2026-11-08T05:05:55.0743419+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1418,27 +1418,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 723776,
-      "kind": "other",
-      "category": "Trees down",
-      "priority": "Highest",
-      "headline": "Reported Trees down on US 101 southbound at milepost 353.81 near Skookum Creek beginning at 8:13 pm on November 7, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 353.81,
-      "lat": 47.126224731,
-      "lon": -123.099937923,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-11-08T04:13:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-08T04:15:22.3730000+00:00"
     },
     {
       "id": 686738,
