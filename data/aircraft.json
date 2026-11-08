@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-08T01:25:57.2628962+00:00",
+  "updated": "2026-11-08T01:35:53.7878214+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "ad3fd7",
-      "flight": "N953AL",
-      "reg": "N953AL",
-      "type": "EC35",
-      "cat": "A7",
-      "alt": 1650,
-      "gs": 97.6,
-      "track": 204.2,
-      "rate": 64,
-      "lat": 47.08374,
-      "lon": -122.8049,
-      "squawk": "5543",
+      "hex": "aaaade",
+      "flight": "GFY4787",
+      "reg": "N787DM",
+      "type": "DA40",
+      "cat": "A1",
+      "alt": 4575,
+      "gs": 159.1,
+      "track": 17.18,
+      "rate": 0,
+      "lat": 46.80032,
+      "lon": -122.91264,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
