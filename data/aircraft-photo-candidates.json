@@ -162,7 +162,8 @@
     "Dassault Falcon 900 B": "2026-11-06T23:05:25.1873463+00:00",
     "Bombardier CRJ 900 LR NG": "2026-11-07T02:15:26.7843178+00:00",
     "Boeing KC-135T": "2026-11-07T20:05:59.1824746+00:00",
-    "SOCATA TBM 700 B": "2026-11-07T21:05:58.8264925+00:00"
+    "SOCATA TBM 700 B": "2026-11-07T21:05:58.8264925+00:00",
+    "Embraer Praetor 500": "2026-11-08T00:25:57.9681729+00:00"
   },
   "candidates": [
     {
@@ -10062,7 +10063,91 @@
       "date": "2022-07-17 09:24",
       "caption": "U.S. AIR FORCE BOEING KC-135T STRATOTANKER 60-0335 TAIL DETAIL",
       "found": "2026-11-07T20:05:59.1824746+00:00"
+    },
+    {
+      "model": "Embraer Praetor 500",
+      "file": "File:Embraer, EBACE 2019, Le Grand-Saconnex (EB190415).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer,_EBACE_2019,_Le_Grand-Saconnex_(EB190415).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190415%29.jpg/960px-Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190415%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Interior of an Embraer Praetor 500 at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-08T00:25:57.9681729+00:00"
+    },
+    {
+      "model": "Embraer Praetor 500",
+      "file": "File:Embraer, EBACE 2019, Le Grand-Saconnex (EB190421).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer,_EBACE_2019,_Le_Grand-Saconnex_(EB190421).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190421%29.jpg/960px-Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190421%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Interior of an Embraer Praetor at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-08T00:25:57.9681729+00:00"
+    },
+    {
+      "model": "Embraer Praetor 500",
+      "file": "File:Embraer EMB-545 Praetor 500 (N340FX, cn 55010111) (8-15-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_EMB-545_Praetor_500_(N340FX,_cn_55010111)_(8-15-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Embraer_EMB-545_Praetor_500_%28N340FX%2C_cn_55010111%29_%288-15-2025%29.jpg/960px-Embraer_EMB-545_Praetor_500_%28N340FX%2C_cn_55010111%29_%288-15-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-15",
+      "caption": "Embraer EMB-545 Praetor 500 (N340FX, cn 55010111) at Daytona Beach International Airport.",
+      "found": "2026-11-08T00:25:57.9681729+00:00"
+    },
+    {
+      "model": "Embraer Praetor 500",
+      "file": "File:Embraer EMB-545 Praetor 500 (N449FX, cn 55010100) (2-25-2025).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_EMB-545_Praetor_500_(N449FX,_cn_55010100)_(2-25-2025).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Embraer_EMB-545_Praetor_500_%28N449FX%2C_cn_55010100%29_%282-25-2025%29.jpg/960px-Embraer_EMB-545_Praetor_500_%28N449FX%2C_cn_55010100%29_%282-25-2025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-02-25",
+      "caption": "Embraer EMB-545 Praetor 500 (N449FX, cn 55010100) at Daytona Beach International Airport.",
+      "found": "2026-11-08T00:25:57.9681729+00:00"
+    },
+    {
+      "model": "Embraer Praetor 500",
+      "file": "File:Embraer EMB-550 Praetor 500 (N583KD, cn 55020227) (3-18-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_EMB-550_Praetor_500_(N583KD,_cn_55020227)_(3-18-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Embraer_EMB-550_Praetor_500_%28N583KD%2C_cn_55020227%29_%283-18-2023%29.jpg/960px-Embraer_EMB-550_Praetor_500_%28N583KD%2C_cn_55020227%29_%283-18-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-03-18",
+      "caption": "Embraer EMB-550 Praetor 500 (N583KD, cn 55020227) at Daytona Beach International Airport.",
+      "found": "2026-11-08T00:25:57.9681729+00:00"
+    },
+    {
+      "model": "Embraer Praetor 500",
+      "file": "File:Flexjet Embraer EMB-545 Praetor 500 (N446FX) Landing Runway 22 at KLEX.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Flexjet_Embraer_EMB-545_Praetor_500_(N446FX)_Landing_Runway_22_at_KLEX.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Flexjet_Embraer_EMB-545_Praetor_500_%28N446FX%29_Landing_Runway_22_at_KLEX.jpg/960px-Flexjet_Embraer_EMB-545_Praetor_500_%28N446FX%29_Landing_Runway_22_at_KLEX.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Checkerberry",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-04 09:58:06",
+      "caption": "Flexjet Embraer Praetor 500 (N446FX) on short final for Runway 22 at Blue Grass Airport (KLEX), moments before touchdown.",
+      "found": "2026-11-08T00:25:57.9681729+00:00"
     }
   ],
-  "updated": "2026-11-08T00:15:54.9260833+00:00"
+  "updated": "2026-11-08T00:25:57.9681729+00:00"
 }
