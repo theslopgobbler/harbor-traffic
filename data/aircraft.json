@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-08T01:45:53.9894068+00:00",
+  "updated": "2026-11-08T01:55:56.3002616+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "aaaade",
-      "flight": "GFY4787",
-      "reg": "N787DM",
-      "type": "DA40",
+      "hex": "a1e66a",
+      "flight": "N221TJ",
+      "reg": "N221TJ",
+      "type": "C172",
       "cat": "A1",
-      "alt": 4575,
-      "gs": 165.1,
-      "track": 9.06,
-      "rate": -64,
-      "lat": 47.20122,
-      "lon": -122.74876,
-      "squawk": "1200",
+      "alt": 3200,
+      "gs": 159.0,
+      "track": 0.72,
+      "rate": -1002,
+      "lat": 47.19922,
+      "lon": -122.77158,
+      "squawk": "4651",
       "emergency": "none",
       "mil": false
     }
