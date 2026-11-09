@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-09T05:05:17.7491595+00:00",
+  "updated": "2026-11-09T05:15:20.3060508+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "add507",
-      "flight": "N9900M",
-      "reg": "N9900M",
-      "type": "RV10",
-      "cat": "A1",
-      "alt": 7800,
-      "gs": 167.8,
-      "track": 5.47,
-      "rate": 0,
-      "lat": 47.23947,
-      "lon": -122.86491,
-      "squawk": "4751",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
