@@ -495,7 +495,8 @@
     "440576000": "2026-11-08T11:25:53.2975904+00:00",
     "636093280": "2026-11-08T17:25:19.7643095+00:00",
     "563004900": "2026-11-09T10:45:20.6433979+00:00",
-    "441139000": "2026-11-09T13:25:19.2179019+00:00"
+    "441139000": "2026-11-09T13:25:19.2179019+00:00",
+    "636093248": "2026-11-09T15:45:27.5590192+00:00"
   },
   "candidates": [
     {
@@ -4817,7 +4818,52 @@
       "date": "2015-10-09",
       "caption": "Car carrier MORNING LUCY à quai dans le port de Casablanca - Morocco - IMO: 9383431 Pavillon: Panama Genre d'un navire: Cargo Année de Construction: 2009",
       "found": "2026-11-09T13:25:19.2179019+00:00"
+    },
+    {
+      "mmsi": "636093248",
+      "ship": "TALITHA",
+      "file": "File:Gulet yacht at Kleftiko on Milos Island, Greece.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulet_yacht_at_Kleftiko_on_Milos_Island,_Greece.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Gulet_yacht_at_Kleftiko_on_Milos_Island%2C_Greece.jpg/1280px-Gulet_yacht_at_Kleftiko_on_Milos_Island%2C_Greece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-07-16 13:29:49",
+      "caption": "Gulet yacht at Kleftiko on Milos Island, Greece",
+      "found": "2026-11-09T15:45:27.5590192+00:00"
+    },
+    {
+      "mmsi": "636093248",
+      "ship": "TALITHA",
+      "file": "File:Port Vell 4ok (3255153065).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Port_Vell_4ok_(3255153065).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Port_Vell_4ok_%283255153065%29.jpg/1280px-Port_Vell_4ok_%283255153065%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Monmar Comunicació from Vic",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2008-10-23 17:09",
+      "caption": "Port Vell_4ok",
+      "found": "2026-11-09T15:45:27.5590192+00:00"
+    },
+    {
+      "mmsi": "636093248",
+      "ship": "TALITHA",
+      "file": "File:Talitha in Carrick Roads (33969026942).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Talitha_in_Carrick_Roads_(33969026942).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Talitha_in_Carrick_Roads_%2833969026942%29.jpg/1280px-Talitha_in_Carrick_Roads_%2833969026942%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Tim Green from Bradford, UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-04-18 13:26",
+      "caption": "Talitha in Carrick Roads",
+      "found": "2026-11-09T15:45:27.5590192+00:00"
     }
   ],
-  "updated": "2026-11-09T15:35:20.3573789+00:00"
+  "updated": "2026-11-09T15:45:27.5590192+00:00"
 }
