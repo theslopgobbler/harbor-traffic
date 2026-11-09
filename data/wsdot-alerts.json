@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T19:45:21.6320553+00:00",
+  "updated": "2026-11-09T19:55:20.5123916+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1614,27 +1614,6 @@
       "updated": "2026-10-16T18:03:13.8400000+00:00"
     },
     {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
       "id": 723878,
       "kind": "work",
       "category": "Road work",
@@ -1654,6 +1633,27 @@
       "start": "2026-11-09T15:50:00.0000000+00:00",
       "end": "2026-11-10T01:00:00.0000000+00:00",
       "updated": "2026-11-09T17:06:17.0530000+00:00"
+    },
+    {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
       "id": 631745,
