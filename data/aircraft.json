@@ -1,7 +1,23 @@
 {
-  "updated": "2026-11-09T16:35:18.3623735+00:00",
+  "updated": "2026-11-09T16:45:20.9866248+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
+    {
+      "hex": "a3ecee",
+      "flight": "N352HD",
+      "reg": "N352HD",
+      "type": "AS50",
+      "cat": "A7",
+      "alt": 700,
+      "gs": 1.2,
+      "track": 90.0,
+      "rate": null,
+      "lat": 47.3521,
+      "lon": -123.18442,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
     {
       "hex": "aa30c3",
       "flight": "N756EM",
@@ -9,11 +25,11 @@
       "type": "C82R",
       "cat": "A1",
       "alt": 5500,
-      "gs": 130.2,
-      "track": 223.13,
-      "rate": 0,
-      "lat": 46.97598,
-      "lon": -122.90041,
+      "gs": 127.3,
+      "track": 183.6,
+      "rate": 64,
+      "lat": 46.63007,
+      "lon": -122.92246,
       "squawk": "1200",
       "emergency": "none",
       "mil": false

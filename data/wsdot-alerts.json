@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T16:35:18.3623735+00:00",
+  "updated": "2026-11-09T16:45:20.9866248+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1032,6 +1032,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 723894,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 78.78 near Cosi Hill beginning at 8:38 am on November 9, 2026 until about 11:00 am.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 78.78,
+      "lat": 46.936144686,
+      "lon": -123.73532834,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-09T16:38:00.0000000+00:00",
+      "end": "2026-11-09T19:00:00.0000000+00:00",
+      "updated": "2026-11-09T16:39:55.4130000+00:00"
     },
     {
       "id": 686738,
