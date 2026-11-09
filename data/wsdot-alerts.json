@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T23:35:20.5621139+00:00",
+  "updated": "2026-11-09T23:45:21.0616025+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -887,27 +887,6 @@
       ]
     },
     {
-      "id": 723870,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:02 am on November 9, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-09T15:02:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-09T15:03:37.7070000+00:00"
-    },
-    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -927,6 +906,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 723870,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:02 am on November 9, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-09T15:02:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-09T15:03:37.7070000+00:00"
     },
     {
       "id": 698910,
