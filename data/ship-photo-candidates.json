@@ -494,7 +494,8 @@
     "338517105": "2026-11-07T19:45:53.2047271+00:00",
     "440576000": "2026-11-08T11:25:53.2975904+00:00",
     "636093280": "2026-11-08T17:25:19.7643095+00:00",
-    "563004900": "2026-11-09T10:45:20.6433979+00:00"
+    "563004900": "2026-11-09T10:45:20.6433979+00:00",
+    "441139000": "2026-11-09T13:25:19.2179019+00:00"
   },
   "candidates": [
     {
@@ -4786,7 +4787,37 @@
       "date": "2019-08-18",
       "caption": "Containership Ever Strong in the port of Koper/Capodistria, Slovenia.",
       "found": "2026-11-09T10:45:20.6433979+00:00"
+    },
+    {
+      "mmsi": "441139000",
+      "ship": "MORNING LUCY",
+      "file": "File:Car carrier Morning Lucy.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Car_carrier_Morning_Lucy.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Car_carrier_Morning_Lucy.jpg/1280px-Car_carrier_Morning_Lucy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Tvabutzku1234",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2010-07-03",
+      "caption": "The car carrier Morning Lucy of EUKOR shipping company in the port of Bremerhaven, Germany",
+      "found": "2026-11-09T13:25:19.2179019+00:00"
+    },
+    {
+      "mmsi": "441139000",
+      "ship": "MORNING LUCY",
+      "file": "File:FileCar carrier - MORNING LUCY à quai -.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:FileCar_carrier_-_MORNING_LUCY_%C3%A0_quai_-.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/80/FileCar_carrier_-_MORNING_LUCY_%C3%A0_quai_-.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-10-09",
+      "caption": "Car carrier MORNING LUCY à quai dans le port de Casablanca - Morocco - IMO: 9383431 Pavillon: Panama Genre d'un navire: Cargo Année de Construction: 2009",
+      "found": "2026-11-09T13:25:19.2179019+00:00"
     }
   ],
-  "updated": "2026-11-09T13:15:18.0143901+00:00"
+  "updated": "2026-11-09T13:25:19.2179019+00:00"
 }
