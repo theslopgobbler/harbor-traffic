@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T20:55:24.3987879+00:00",
+  "updated": "2026-11-09T21:05:20.1607031+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1168,25 +1168,25 @@
       "updated": "2026-10-31T00:26:55.2670000+00:00"
     },
     {
-      "id": 723884,
+      "id": 723870,
       "kind": "work",
-      "category": "Construction",
+      "category": "Maintenance",
       "priority": "Medium",
-      "headline": "Construction on SR 6 both directions from milepost 30.5 near Katula Road to milepost 31.00 near Jones Creek will be alternating traffic with flaggers. Use caution when approaching the area, beginning at 8:09 am on November 9, 2026 until further notice.",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:02 am on November 9, 2026 until further notice.",
       "description": "",
       "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
+      "road": "105",
+      "roadLabel": "SR 105",
       "direction": "B",
-      "milepost": 30.5,
-      "lat": 46.604434911,
-      "lon": -123.275523456,
-      "lat2": 46.604434911,
-      "lon2": -123.275523456,
-      "county": "Lewis",
-      "start": "2026-11-09T16:09:00.0000000+00:00",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-09T15:02:00.0000000+00:00",
       "end": null,
-      "updated": "2026-11-09T16:09:59.1830000+00:00"
+      "updated": "2026-11-09T15:03:37.7070000+00:00"
     },
     {
       "id": 640018,
@@ -1572,27 +1572,6 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 723870,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:02 am on November 9, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-09T15:02:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-09T15:03:37.7070000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -1633,27 +1612,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 723878,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 8 westbound at milepost 17.56 near Wilson Rd NW beginning at 7:50 am on November 9, 2026 until about 5:00 pm. The off ramp is closed",
-      "description": "",
-      "link": null,
-      "road": "008",
-      "roadLabel": "SR 8",
-      "direction": "W",
-      "milepost": 17.56,
-      "lat": 47.041128761,
-      "lon": -123.068580419,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-09T15:50:00.0000000+00:00",
-      "end": "2026-11-10T01:00:00.0000000+00:00",
-      "updated": "2026-11-09T17:06:17.0530000+00:00"
     },
     {
       "id": 698912,
@@ -1772,6 +1730,27 @@
           47.88227
         ]
       ]
+    },
+    {
+      "id": 723884,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions from milepost 30.5 near Katula Road to milepost 31.00 near Jones Creek will be alternating traffic with flaggers. Use caution when approaching the area, beginning at 8:09 am on November 9, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 30.5,
+      "lat": 46.604434911,
+      "lon": -123.275523456,
+      "lat2": 46.604434911,
+      "lon2": -123.275523456,
+      "county": "Lewis",
+      "start": "2026-11-09T16:09:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-09T16:09:59.1830000+00:00"
     }
   ]
 }
