@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T22:05:19.1889399+00:00",
+  "updated": "2026-11-09T22:15:19.9797401+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1168,6 +1168,27 @@
       "updated": "2026-10-31T00:26:55.2670000+00:00"
     },
     {
+      "id": 723884,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions from milepost 30.5 near Katula Road to milepost 31.00 near Jones Creek will be alternating traffic with flaggers. Use caution when approaching the area, beginning at 8:09 am on November 9, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 30.5,
+      "lat": 46.604434911,
+      "lon": -123.275523456,
+      "lat2": 46.604434911,
+      "lon2": -123.275523456,
+      "county": "Lewis",
+      "start": "2026-11-09T16:09:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-09T16:09:59.1830000+00:00"
+    },
+    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -1730,27 +1751,6 @@
           47.88227
         ]
       ]
-    },
-    {
-      "id": 723884,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Construction on SR 6 both directions from milepost 30.5 near Katula Road to milepost 31.00 near Jones Creek will be alternating traffic with flaggers. Use caution when approaching the area, beginning at 8:09 am on November 9, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 30.5,
-      "lat": 46.604434911,
-      "lon": -123.275523456,
-      "lat2": 46.604434911,
-      "lon2": -123.275523456,
-      "county": "Lewis",
-      "start": "2026-11-09T16:09:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-09T16:09:59.1830000+00:00"
     }
   ]
 }
