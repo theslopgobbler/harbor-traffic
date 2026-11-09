@@ -493,7 +493,8 @@
     "538012780": "2026-11-07T10:45:57.0637997+00:00",
     "338517105": "2026-11-07T19:45:53.2047271+00:00",
     "440576000": "2026-11-08T11:25:53.2975904+00:00",
-    "636093280": "2026-11-08T17:25:19.7643095+00:00"
+    "636093280": "2026-11-08T17:25:19.7643095+00:00",
+    "563004900": "2026-11-09T10:45:20.6433979+00:00"
   },
   "candidates": [
     {
@@ -4755,7 +4756,37 @@
       "date": "2011-09-01 13:11:13",
       "caption": "American Pride sails in tall ship parade in San Diego Bay. (Photos: Dale Frost)",
       "found": "2026-11-09T04:55:18.5076578+00:00"
+    },
+    {
+      "mmsi": "563004900",
+      "ship": "EVER STRONG",
+      "file": "File:Ever Strong (ship, 2007) 001.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ever_Strong_(ship,_2007)_001.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Ever_Strong_%28ship%2C_2007%29_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 897,
+      "author": "Suvodeb Banerjee",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2010-07-24 13:24",
+      "caption": "Container ship Ever Strong",
+      "found": "2026-11-09T10:45:20.6433979+00:00"
+    },
+    {
+      "mmsi": "563004900",
+      "ship": "EVER STRONG",
+      "file": "File:Koper-Capodistria kikötő Ever Strong 2019-08-18.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Koper-Capodistria_kik%C3%B6t%C5%91_Ever_Strong_2019-08-18.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Koper-Capodistria_kik%C3%B6t%C5%91_Ever_Strong_2019-08-18.JPG/1280px-Koper-Capodistria_kik%C3%B6t%C5%91_Ever_Strong_2019-08-18.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 721,
+      "author": "User:Beroesz",
+      "license": "CC BY-SA 2.5 hu",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/hu/deed.en",
+      "date": "2019-08-18",
+      "caption": "Containership Ever Strong in the port of Koper/Capodistria, Slovenia.",
+      "found": "2026-11-09T10:45:20.6433979+00:00"
     }
   ],
-  "updated": "2026-11-09T10:35:16.0913860+00:00"
+  "updated": "2026-11-09T10:45:20.6433979+00:00"
 }
