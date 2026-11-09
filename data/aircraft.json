@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-09T05:25:18.8220029+00:00",
+  "updated": "2026-11-09T05:35:15.5763459+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aa7aeb",
+      "flight": "SWA3832",
+      "reg": "N7745A",
+      "type": "B737",
+      "cat": "A3",
+      "alt": 10850,
+      "gs": 353.6,
+      "track": 266.76,
+      "rate": 960,
+      "lat": 47.31427,
+      "lon": -122.74558,
+      "squawk": "3527",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
