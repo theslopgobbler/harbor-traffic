@@ -167,7 +167,8 @@
     "Boeing 737NG 824/W": "2026-11-08T15:45:19.0878125+00:00",
     "Raytheon Aircraft Company 125 800XP": "2026-11-08T17:55:21.0379713+00:00",
     "Lockheed C-130J-30 Hercules": "2026-11-08T19:15:15.5656619+00:00",
-    "Eurocopter Squirrel AS.350 B3": "2026-11-08T22:05:15.355897+00:00"
+    "Eurocopter Squirrel AS.350 B3": "2026-11-08T22:05:15.355897+00:00",
+    "Cessna Citation II": "2026-11-09T00:55:17.6517513+00:00"
   },
   "candidates": [
     {
@@ -10249,7 +10250,91 @@
       "date": "2017-06-10 20:38",
       "caption": "G-OOWS Eurocopter AS.350 B3 Squirrel @ Booker 03/06/2017",
       "found": "2026-11-08T22:05:15.355897+00:00"
+    },
+    {
+      "model": "Cessna Citation II",
+      "file": "File:Cessna 550 Citation II (P2-MRM) at Sunshine Coast Airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_550_Citation_II_(P2-MRM)_at_Sunshine_Coast_Airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Cessna_550_Citation_II_%28P2-MRM%29_at_Sunshine_Coast_Airport.jpg/960px-Cessna_550_Citation_II_%28P2-MRM%29_at_Sunshine_Coast_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0 au",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "date": "2024-05-04 15:49:18",
+      "caption": "Cessna 550 Citation II (P2-MRM) at Sunshine Coast Airport.",
+      "found": "2026-11-09T00:55:17.6517513+00:00"
+    },
+    {
+      "model": "Cessna Citation II",
+      "file": "File:Cessna 550 Citation II - Spanish Navy - Chris Lofting.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_550_Citation_II_-_Spanish_Navy_-_Chris_Lofting.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cessna_550_Citation_II_-_Spanish_Navy_-_Chris_Lofting.jpg/960px-Cessna_550_Citation_II_-_Spanish_Navy_-_Chris_Lofting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 636,
+      "author": "Chris Lofting",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2009-07-09",
+      "caption": "U20-2 / 01-406 (cn 550-0446)",
+      "found": "2026-11-09T00:55:17.6517513+00:00"
+    },
+    {
+      "model": "Cessna Citation II",
+      "file": "File:Cessna Citation G-SPRE MG 2969.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_G-SPRE_MG_2969.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Cessna_Citation_G-SPRE_MG_2969.jpg/960px-Cessna_Citation_G-SPRE_MG_2969.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 580,
+      "author": "Ronnie Robertson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2021-01-12 14:54:35",
+      "caption": "Outbound from Sumburgh",
+      "found": "2026-11-09T00:55:17.6517513+00:00"
+    },
+    {
+      "model": "Cessna Citation II",
+      "file": "File:Cessna Citation G-SPRE MG 2977.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_G-SPRE_MG_2977.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Cessna_Citation_G-SPRE_MG_2977.jpg/960px-Cessna_Citation_G-SPRE_MG_2977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 594,
+      "author": "Ronnie Robertson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2021-01-12 14:54:45",
+      "caption": "Outbound from Sumburgh",
+      "found": "2026-11-09T00:55:17.6517513+00:00"
+    },
+    {
+      "model": "Cessna Citation II",
+      "file": "File:N89LS - Cessna 550 Citation II.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N89LS_-_Cessna_550_Citation_II.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/N89LS_-_Cessna_550_Citation_II.jpg/960px-N89LS_-_Cessna_550_Citation_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 586,
+      "author": "Tequask",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2004-10-10",
+      "caption": "N89LS - Cessna 550 Citation II owned by Les Schwab Tire Centers. Grizzly Mountain in distance.",
+      "found": "2026-11-09T00:55:17.6517513+00:00"
+    },
+    {
+      "model": "Cessna Citation II",
+      "file": "File:Venezuela Air Force Cessna 550 Citation II AADPR-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Venezuela_Air_Force_Cessna_550_Citation_II_AADPR-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Venezuela_Air_Force_Cessna_550_Citation_II_AADPR-1.jpg/960px-Venezuela_Air_Force_Cessna_550_Citation_II_AADPR-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 683,
+      "author": "André Austin Du-Pont Rocha",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "2009-03",
+      "caption": "Venezuela Air Force Cessna 550 Citation II",
+      "found": "2026-11-09T00:55:17.6517513+00:00"
     }
   ],
-  "updated": "2026-11-09T00:45:18.7798889+00:00"
+  "updated": "2026-11-09T00:55:17.6517513+00:00"
 }
