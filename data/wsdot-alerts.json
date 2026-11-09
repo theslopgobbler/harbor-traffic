@@ -1,81 +1,7 @@
 {
-  "updated": "2026-11-09T16:05:20.9794437+00:00",
+  "updated": "2026-11-09T16:15:18.8569437+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 723882,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "Highest",
-      "headline": "Road work on US 101 southbound from milepost 353.05 near SE Old Olympic Hwy to milepost 354 near Skookum Creek beginning at 7:58 am on November 9, 2026 until about 8:30 am.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 353.05,
-      "lat": 47.136267304,
-      "lon": -123.094920287,
-      "lat2": 47.123574843,
-      "lon2": -123.100437513,
-      "county": "Mason",
-      "start": "2026-11-09T15:58:00.0000000+00:00",
-      "end": "2026-11-09T16:31:00.0000000+00:00",
-      "updated": "2026-11-09T16:01:55.2800000+00:00",
-      "path": [
-        [
-          -123.094920287,
-          47.136267304
-        ],
-        [
-          -123.100437513,
-          47.123574843
-        ]
-      ]
-    },
-    {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
     {
       "id": 705229,
       "kind": "work",
@@ -232,6 +158,80 @@
         [
           -124.25011,
           47.8099
+        ]
+      ]
+    },
+    {
+      "id": 723882,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Highest",
+      "headline": "Road work on US 101 southbound from milepost 353.05 near SE Old Olympic Hwy to milepost 354 near Skookum Creek beginning at 7:58 am on November 9, 2026 until about 8:30 am.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 353.05,
+      "lat": 47.136267304,
+      "lon": -123.094920287,
+      "lat2": 47.123574843,
+      "lon2": -123.100437513,
+      "county": "Mason",
+      "start": "2026-11-09T15:58:00.0000000+00:00",
+      "end": "2026-11-09T16:31:00.0000000+00:00",
+      "updated": "2026-11-09T16:01:55.2800000+00:00",
+      "path": [
+        [
+          -123.094920287,
+          47.136267304
+        ],
+        [
+          -123.100437513,
+          47.123574843
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
         ]
       ]
     },
@@ -864,6 +864,27 @@
           47.88227
         ]
       ]
+    },
+    {
+      "id": 723884,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions from milepost 30.5 near Katula Road to milepost 31.00 near Jones Creek will be alternating traffic with flaggers. Use caution when approaching the area, beginning at 8:09 am on November 9, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 30.5,
+      "lat": 46.604434911,
+      "lon": -123.275523456,
+      "lat2": 46.604434911,
+      "lon2": -123.275523456,
+      "county": "Lewis",
+      "start": "2026-11-09T16:09:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-09T16:09:59.1830000+00:00"
     }
   ]
 }
