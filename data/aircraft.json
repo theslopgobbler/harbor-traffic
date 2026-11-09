@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T14:15:22.0490043+00:00",
+  "updated": "2026-11-09T14:25:19.9091939+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,12 +9,28 @@
       "type": "C152",
       "cat": "A1",
       "alt": 3025,
-      "gs": 73.6,
-      "track": 172.97,
-      "rate": 0,
-      "lat": 47.05943,
-      "lon": -122.93118,
+      "gs": 69.5,
+      "track": 186.61,
+      "rate": 150,
+      "lat": 46.87482,
+      "lon": -122.91785,
       "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a69472",
+      "flight": "N523DV",
+      "reg": "N523DV",
+      "type": "C25B",
+      "cat": "A1",
+      "alt": 5300,
+      "gs": 242.5,
+      "track": 93.55,
+      "rate": null,
+      "lat": 46.63771,
+      "lon": -122.90426,
+      "squawk": "3511",
       "emergency": "none",
       "mil": false
     }
