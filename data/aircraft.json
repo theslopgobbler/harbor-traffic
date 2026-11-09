@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-09T15:45:27.5590192+00:00",
+  "updated": "2026-11-09T15:55:16.3120278+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a7197d",
-      "flight": "ASA1341",
-      "reg": "N557AS",
-      "type": "B738",
-      "cat": "A3",
-      "alt": 10825,
-      "gs": 322.1,
-      "track": 271.6,
-      "rate": 1856,
-      "lat": 47.31388,
-      "lon": -122.70743,
-      "squawk": "1554",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }

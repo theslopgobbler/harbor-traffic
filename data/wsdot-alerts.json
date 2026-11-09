@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T15:45:27.5590192+00:00",
+  "updated": "2026-11-09T15:55:16.3120278+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -715,6 +715,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 723878,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Highest",
+      "headline": "Road work on SR 8 westbound at milepost 17.56 near Wilson Rd NW beginning at 7:50 am on November 9, 2026 until about 5:00 pm. The off ramp is closed",
+      "description": "",
+      "link": null,
+      "road": "008",
+      "roadLabel": "SR 8",
+      "direction": "W",
+      "milepost": 17.56,
+      "lat": 47.041128761,
+      "lon": -123.068580419,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-09T15:50:00.0000000+00:00",
+      "end": "2026-11-10T01:00:00.0000000+00:00",
+      "updated": "2026-11-09T15:52:44.9200000+00:00"
     },
     {
       "id": 631745,
