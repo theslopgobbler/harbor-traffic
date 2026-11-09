@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-09T15:55:16.3120278+00:00",
+  "updated": "2026-11-09T16:05:20.9794437+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a3ecee",
+      "flight": "N352HD",
+      "reg": "N352HD",
+      "type": "AS50",
+      "cat": "A7",
+      "alt": 900,
+      "gs": 35.8,
+      "track": 206.57,
+      "rate": null,
+      "lat": 47.38307,
+      "lon": -123.18482,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
