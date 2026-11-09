@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T04:55:18.5076578+00:00",
+  "updated": "2026-11-09T05:05:17.7491595+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "RV10",
       "cat": "A1",
       "alt": 7800,
-      "gs": 173.4,
-      "track": 14.36,
+      "gs": 167.8,
+      "track": 5.47,
       "rate": 0,
-      "lat": 46.77484,
-      "lon": -122.97828,
+      "lat": 47.23947,
+      "lon": -122.86491,
       "squawk": "4751",
       "emergency": "none",
       "mil": false
