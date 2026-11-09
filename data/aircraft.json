@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-09T16:25:16.4322440+00:00",
+  "updated": "2026-11-09T16:35:18.3623735+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aa30c3",
+      "flight": "N756EM",
+      "reg": "N756EM",
+      "type": "C82R",
+      "cat": "A1",
+      "alt": 5500,
+      "gs": 130.2,
+      "track": 223.13,
+      "rate": 0,
+      "lat": 46.97598,
+      "lon": -122.90041,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
