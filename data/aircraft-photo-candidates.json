@@ -168,7 +168,8 @@
     "Raytheon Aircraft Company 125 800XP": "2026-11-08T17:55:21.0379713+00:00",
     "Lockheed C-130J-30 Hercules": "2026-11-08T19:15:15.5656619+00:00",
     "Eurocopter Squirrel AS.350 B3": "2026-11-08T22:05:15.355897+00:00",
-    "Cessna Citation II": "2026-11-09T00:55:17.6517513+00:00"
+    "Cessna Citation II": "2026-11-09T00:55:17.6517513+00:00",
+    "Embraer Legacy 450": "2026-11-09T04:45:18.1388966+00:00"
   },
   "candidates": [
     {
@@ -10334,7 +10335,91 @@
       "date": "2009-03",
       "caption": "Venezuela Air Force Cessna 550 Citation II",
       "found": "2026-11-09T00:55:17.6517513+00:00"
+    },
+    {
+      "model": "Embraer Legacy 450",
+      "file": "File:Embraer, EBACE 2019, Le Grand-Saconnex (EB190372).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer,_EBACE_2019,_Le_Grand-Saconnex_(EB190372).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190372%29.jpg/960px-Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190372%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Interior of an Embraer Praetor at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-09T04:45:18.1388966+00:00"
+    },
+    {
+      "model": "Embraer Legacy 450",
+      "file": "File:Embraer, EBACE 2019, Le Grand-Saconnex (EB190415).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer,_EBACE_2019,_Le_Grand-Saconnex_(EB190415).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190415%29.jpg/960px-Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190415%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Interior of an Embraer Praetor 500 at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-09T04:45:18.1388966+00:00"
+    },
+    {
+      "model": "Embraer Legacy 450",
+      "file": "File:Embraer, EBACE 2019, Le Grand-Saconnex (EB190421).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer,_EBACE_2019,_Le_Grand-Saconnex_(EB190421).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190421%29.jpg/960px-Embraer%2C_EBACE_2019%2C_Le_Grand-Saconnex_%28EB190421%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Interior of an Embraer Praetor at EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-09T04:45:18.1388966+00:00"
+    },
+    {
+      "model": "Embraer Legacy 450",
+      "file": "File:Embraer Legacy 450 N429FX FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Legacy_450_N429FX_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Embraer_Legacy_450_N429FX_FDK_MD1.jpg/960px-Embraer_Legacy_450_N429FX_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 463,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-04-14",
+      "caption": "Embraer Legacy 450 N429FX at Frederick Municipal Airport, Maryland, USA. Learjet 60 N207AW is behind.",
+      "found": "2026-11-09T04:45:18.1388966+00:00"
+    },
+    {
+      "model": "Embraer Legacy 450",
+      "file": "File:Embraer Legacy 450 on short final.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Embraer_Legacy_450_on_short_final.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Embraer_Legacy_450_on_short_final.jpg/960px-Embraer_Legacy_450_on_short_final.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 443,
+      "author": "Russell Sutherland",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2023-12-25",
+      "caption": "Embraer 450, on a very foggy Christmas morning, on approach to YYZ, Runway 05.",
+      "found": "2026-11-09T04:45:18.1388966+00:00"
+    },
+    {
+      "model": "Embraer Legacy 450",
+      "file": "File:Netjets Embraer Legacy 450 N280QS BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Netjets_Embraer_Legacy_450_N280QS_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Netjets_Embraer_Legacy_450_N280QS_BWI_MD1.jpg/960px-Netjets_Embraer_Legacy_450_N280QS_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 485,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-30",
+      "caption": "Netjets Embraer EMB-545 Legacy 450 N280QS on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-11-09T04:45:18.1388966+00:00"
     }
   ],
-  "updated": "2026-11-09T04:35:22.0950752+00:00"
+  "updated": "2026-11-09T04:45:18.1388966+00:00"
 }
