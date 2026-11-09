@@ -170,7 +170,8 @@
     "Eurocopter Squirrel AS.350 B3": "2026-11-08T22:05:15.355897+00:00",
     "Cessna Citation II": "2026-11-09T00:55:17.6517513+00:00",
     "Embraer Legacy 450": "2026-11-09T04:45:18.1388966+00:00",
-    "Boeing 737NG 7BD/W": "2026-11-09T05:35:15.5763459+00:00"
+    "Boeing 737NG 7BD/W": "2026-11-09T05:35:15.5763459+00:00",
+    "North American AT-6A Texan": "2026-11-09T19:35:19.8972179+00:00"
   },
   "candidates": [
     {
@@ -10420,7 +10421,91 @@
       "date": "2026-04-30",
       "caption": "Netjets Embraer EMB-545 Legacy 450 N280QS on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
       "found": "2026-11-09T04:45:18.1388966+00:00"
+    },
+    {
+      "model": "North American AT-6A Texan",
+      "file": "File:E45 North American AT-6A Texan Venezuela Airforce (7454366504).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:E45_North_American_AT-6A_Texan_Venezuela_Airforce_(7454366504).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/E45_North_American_AT-6A_Texan_Venezuela_Airforce_%287454366504%29.jpg/960px-E45_North_American_AT-6A_Texan_Venezuela_Airforce_%287454366504%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-27 14:31:20",
+      "caption": "At Museo Aeronáutico de Maracay",
+      "found": "2026-11-09T19:35:19.8972179+00:00"
+    },
+    {
+      "model": "North American AT-6A Texan",
+      "file": "File:North American AT-6A N436 Napier Field AL.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_AT-6A_N436_Napier_Field_AL.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/74/North_American_AT-6A_N436_Napier_Field_AL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 669,
+      "author": "United States Army Air Forces",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1943",
+      "caption": "North American AT-6A N436 Napier Field FL",
+      "found": "2026-11-09T19:35:19.8972179+00:00"
+    },
+    {
+      "model": "North American AT-6A Texan",
+      "file": "File:North American AT-6A Texan, Private JP6388331.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_AT-6A_Texan,_Private_JP6388331.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/North_American_AT-6A_Texan%2C_Private_JP6388331.jpg/960px-North_American_AT-6A_Texan%2C_Private_JP6388331.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 August 2008",
+      "caption": "",
+      "found": "2026-11-09T19:35:19.8972179+00:00"
+    },
+    {
+      "model": "North American AT-6A Texan",
+      "file": "File:North American AT-6A Texan '7643' (ZU-AOX) (16532228369).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_AT-6A_Texan_%277643%27_(ZU-AOX)_(16532228369).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/North_American_AT-6A_Texan_%277643%27_%28ZU-AOX%29_%2816532228369%29.jpg/960px-North_American_AT-6A_Texan_%277643%27_%28ZU-AOX%29_%2816532228369%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-09-19 14:51",
+      "caption": "c/n 78-7140. Built as '41-16762' for the USAAC. Later saw South African Air Force service as '7643'. Now operated by the South African Air Force Historic Flight and seen under maintenance in the flight's hangar at Swa...",
+      "found": "2026-11-09T19:35:19.8972179+00:00"
+    },
+    {
+      "model": "North American AT-6A Texan",
+      "file": "File:North American AT-6A Texan 'ZU-CXX' (16692475926).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_AT-6A_Texan_%27ZU-CXX%27_(16692475926).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/North_American_AT-6A_Texan_%27ZU-CXX%27_%2816692475926%29.jpg/960px-North_American_AT-6A_Texan_%27ZU-CXX%27_%2816692475926%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-09-19 14:46",
+      "caption": "c/n 77-4467. Built as '41-0508' for the USAAC. Later saw South African Air Force service as '7675'. Now operated by the South African Air Force Historic Flight in a national flag colour scheme, and seen in the flight'...",
+      "found": "2026-11-09T19:35:19.8972179+00:00"
+    },
+    {
+      "model": "North American AT-6A Texan",
+      "file": "File:North American AT-6A Texan AN1462942.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:North_American_AT-6A_Texan_AN1462942.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/North_American_AT-6A_Texan_AN1462942.jpg/960px-North_American_AT-6A_Texan_AN1462942.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Andre Wadman",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 August 2008",
+      "caption": "",
+      "found": "2026-11-09T19:35:19.8972179+00:00"
     }
   ],
-  "updated": "2026-11-09T19:25:17.8514152+00:00"
+  "updated": "2026-11-09T19:35:19.8972179+00:00"
 }
