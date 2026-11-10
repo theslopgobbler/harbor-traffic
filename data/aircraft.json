@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-10T17:25:23.1920522+00:00",
+  "updated": "2026-11-10T17:35:20.0424615+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a483e7",
+      "flight": "PGR1390",
+      "reg": "N390ML",
+      "type": "PRM1",
+      "cat": "A1",
+      "alt": 8100,
+      "gs": 226.0,
+      "track": 270.25,
+      "rate": 6334,
+      "lat": 47.22184,
+      "lon": -122.73722,
+      "squawk": "3513",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
