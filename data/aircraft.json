@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-10T17:05:19.8868227+00:00",
+  "updated": "2026-11-10T17:15:20.1540660+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a34ae6",
-      "flight": "DAL3034",
-      "reg": "N311DU",
-      "type": "BCS3",
-      "cat": "A3",
-      "alt": 14450,
-      "gs": 306.3,
-      "track": 249.55,
-      "rate": 1575,
-      "lat": 47.28567,
-      "lon": -122.88236,
-      "squawk": "1526",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
