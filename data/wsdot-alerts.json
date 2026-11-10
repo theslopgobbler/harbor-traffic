@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T21:45:17.3584396+00:00",
+  "updated": "2026-11-10T21:55:18.0646064+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1211,27 +1211,6 @@
           47.8099
         ]
       ]
-    },
-    {
-      "id": 724127,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 12 westbound at milepost 39.85 near Moon Rd SW beginning at 1:34 pm on November 10, 2026 until further notice. The westbound lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 39.85,
-      "lat": 46.825804342,
-      "lon": -123.139211301,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-10T21:34:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-10T21:36:35.7500000+00:00"
     },
     {
       "id": 692593,
