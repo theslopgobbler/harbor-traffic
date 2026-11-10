@@ -174,7 +174,8 @@
     "North American AT-6A Texan": "2026-11-09T19:35:19.8972179+00:00",
     "Pilatus PC-12 47": "2026-11-09T23:05:18.8138766+00:00",
     "Raytheon Aircraft Company King Air B200": "2026-11-10T02:45:22.5463882+00:00",
-    "Pilatus PC-12 47E NGX": "2026-11-10T20:05:18.4700822+00:00"
+    "Pilatus PC-12 47E NGX": "2026-11-10T20:05:18.4700822+00:00",
+    "Dassault Falcon 50EX": "2026-11-10T23:45:17.3092942+00:00"
   },
   "candidates": [
     {
@@ -10732,7 +10733,91 @@
       "date": "2023-04-20 12:05",
       "caption": "c/n 2243 Built in 2023 Seen on display at AERO Friedrichshafen 2023. Friedrichshafen Airport, Baden-Württemberg, Germany. 20th April 2023",
       "found": "2026-11-10T20:05:18.4700822+00:00"
+    },
+    {
+      "model": "Dassault Falcon 50EX",
+      "file": "File:Dassault Falcon 50EX (N291FJ, cn 291) (2-13-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dassault_Falcon_50EX_(N291FJ,_cn_291)_(2-13-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Dassault_Falcon_50EX_%28N291FJ%2C_cn_291%29_%282-13-2026%29.jpg/960px-Dassault_Falcon_50EX_%28N291FJ%2C_cn_291%29_%282-13-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-02-13",
+      "caption": "Dassault Falcon 50EX (N291FJ, cn 291) at Daytona Beach International Airport.",
+      "found": "2026-11-10T23:45:17.3092942+00:00"
+    },
+    {
+      "model": "Dassault Falcon 50EX",
+      "file": "File:Dassault Falcon 50EX (N803NL, cn 273) (2-18-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dassault_Falcon_50EX_(N803NL,_cn_273)_(2-18-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Dassault_Falcon_50EX_%28N803NL%2C_cn_273%29_%282-18-2026%29.jpg/960px-Dassault_Falcon_50EX_%28N803NL%2C_cn_273%29_%282-18-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-02-18",
+      "caption": "Dassault Falcon 50EX (N803NL, cn 273) at Daytona Beach International Airport.",
+      "found": "2026-11-10T23:45:17.3092942+00:00"
+    },
+    {
+      "model": "Dassault Falcon 50EX",
+      "file": "File:Dassault Falcon 50EX AN0511909.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dassault_Falcon_50EX_AN0511909.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Dassault_Falcon_50EX_AN0511909.jpg/960px-Dassault_Falcon_50EX_AN0511909.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 589,
+      "author": "Konstantin von Wedelstaedt",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 February 2004",
+      "caption": "Fresh colors for a bizjet",
+      "found": "2026-11-10T23:45:17.3092942+00:00"
+    },
+    {
+      "model": "Dassault Falcon 50EX",
+      "file": "File:Dassault Falcon 50EX AN0511910.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dassault_Falcon_50EX_AN0511910.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Dassault_Falcon_50EX_AN0511910.jpg/960px-Dassault_Falcon_50EX_AN0511910.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Konstantin von Wedelstaedt",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 February 2004",
+      "caption": "The low sun enables deep views inside the engines and cockpit.",
+      "found": "2026-11-10T23:45:17.3092942+00:00"
+    },
+    {
+      "model": "Dassault Falcon 50EX",
+      "file": "File:Dassault Falcon 50EX AN1346977.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dassault_Falcon_50EX_AN1346977.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Dassault_Falcon_50EX_AN1346977.jpg/960px-Dassault_Falcon_50EX_AN1346977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 695,
+      "author": "Roland Nussbaumer",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "26 February 2008",
+      "caption": "",
+      "found": "2026-11-10T23:45:17.3092942+00:00"
+    },
+    {
+      "model": "Dassault Falcon 50EX",
+      "file": "File:Dassault Falcon 50EX ‘N114HC’.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dassault_Falcon_50EX_%E2%80%98N114HC%E2%80%99.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Dassault_Falcon_50EX_%E2%80%98N114HC%E2%80%99.jpg/960px-Dassault_Falcon_50EX_%E2%80%98N114HC%E2%80%99.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "HawkeyeUK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-04-29 15:41:48",
+      "caption": "Biggin Hill Airport. 29-4-2022",
+      "found": "2026-11-10T23:45:17.3092942+00:00"
     }
   ],
-  "updated": "2026-11-10T23:35:25.2853088+00:00"
+  "updated": "2026-11-10T23:45:17.3092942+00:00"
 }
