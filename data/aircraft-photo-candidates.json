@@ -172,7 +172,8 @@
     "Embraer Legacy 450": "2026-11-09T04:45:18.1388966+00:00",
     "Boeing 737NG 7BD/W": "2026-11-09T05:35:15.5763459+00:00",
     "North American AT-6A Texan": "2026-11-09T19:35:19.8972179+00:00",
-    "Pilatus PC-12 47": "2026-11-09T23:05:18.8138766+00:00"
+    "Pilatus PC-12 47": "2026-11-09T23:05:18.8138766+00:00",
+    "Raytheon Aircraft Company King Air B200": "2026-11-10T02:45:22.5463882+00:00"
   },
   "candidates": [
     {
@@ -10590,7 +10591,63 @@
       "date": "2023-06-12 17:34:44",
       "caption": "Pilatus PC-12 OH-WAU at Portimão Airport",
       "found": "2026-11-09T23:05:18.8138766+00:00"
+    },
+    {
+      "model": "Raytheon Aircraft Company King Air B200",
+      "file": "File:EC-MME (52136972058).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EC-MME_(52136972058).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/EC-MME_%2852136972058%29.jpg/960px-EC-MME_%2852136972058%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-06-04 12:11",
+      "caption": "EC-MME Raytheon Aircraft Company King Air B200 at Birmingham 04/06/2022",
+      "found": "2026-11-10T02:45:22.5463882+00:00"
+    },
+    {
+      "model": "Raytheon Aircraft Company King Air B200",
+      "file": "File:G-PCOP (5917624571).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-PCOP_(5917624571).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/G-PCOP_%285917624571%29.jpg/960px-G-PCOP_%285917624571%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mark Winterbourne from Leeds. West Yorkshire, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-07-08 16:17",
+      "caption": "G-PCOP Raytheon Aircraft Company Beech B200 Super Kingair C/n BB-1860",
+      "found": "2026-11-10T02:45:22.5463882+00:00"
+    },
+    {
+      "model": "Raytheon Aircraft Company King Air B200",
+      "file": "File:G-PCOP (5917625117).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-PCOP_(5917625117).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/G-PCOP_%285917625117%29.jpg/960px-G-PCOP_%285917625117%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mark Winterbourne from Leeds. West Yorkshire, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-07-08 16:17",
+      "caption": "G-PCOP Raytheon Aircraft Company Beech B200 Super Kingair C/n BB-1860",
+      "found": "2026-11-10T02:45:22.5463882+00:00"
+    },
+    {
+      "model": "Raytheon Aircraft Company King Air B200",
+      "file": "File:G-PCOP (5917628761).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-PCOP_(5917628761).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/G-PCOP_%285917628761%29.jpg/960px-G-PCOP_%285917628761%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mark Winterbourne from Leeds. West Yorkshire, United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2011-07-08 16:19",
+      "caption": "G-PCOP Raytheon Aircraft Company Beech B200 Super Kingair C/n BB-1860",
+      "found": "2026-11-10T02:45:22.5463882+00:00"
     }
   ],
-  "updated": "2026-11-10T02:35:17.6040290+00:00"
+  "updated": "2026-11-10T02:45:22.5463882+00:00"
 }

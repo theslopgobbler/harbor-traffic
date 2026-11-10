@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-10T02:35:17.6040290+00:00",
+  "updated": "2026-11-10T02:45:22.5463882+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "c051e8",
+      "flight": "PBR680",
+      "reg": "C-GFAL",
+      "type": "PA31",
+      "cat": "A1",
+      "alt": 5575,
+      "gs": 177.0,
+      "track": 213.24,
+      "rate": -896,
+      "lat": 47.54292,
+      "lon": -122.91291,
+      "squawk": "0042",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
