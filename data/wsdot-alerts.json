@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T22:15:19.5362814+00:00",
+  "updated": "2026-11-10T22:25:21.4868418+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1255,25 +1255,25 @@
       "updated": "2026-11-10T15:06:42.9700000+00:00"
     },
     {
-      "id": 724071,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 northbound at milepost 95 beginning at 8:49 am on November 10, 2026 until about 2:30 pm.",
+      "id": 724133,
+      "kind": "closure",
+      "category": "Chehalis River Bridge",
+      "priority": "Highest",
+      "headline": "Chehalis River Bridge is closed to vehicle traffic at 2:18 PM Tuesday, November 10. A maintenance opening is in progress. Travelers can expect delays for up to 15 minutes on US 101 both directions at 83.22 Milepost.",
       "description": "",
       "link": null,
       "road": "101",
       "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 95.0,
-      "lat": 47.07339176,
-      "lon": -123.924724612,
+      "direction": "B",
+      "milepost": 83.22,
+      "lat": 46.970542365,
+      "lon": -123.805207969,
       "lat2": 0,
       "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-10T16:49:00.0000000+00:00",
-      "end": "2026-11-10T22:30:00.0000000+00:00",
-      "updated": "2026-11-10T19:43:15.7600000+00:00"
+      "county": null,
+      "start": "2026-11-10T22:18:32.9070000+00:00",
+      "end": "2026-11-10T22:33:32.9070000+00:00",
+      "updated": "2026-11-10T22:18:33.3370000+00:00"
     },
     {
       "id": 698910,
@@ -1295,6 +1295,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 724071,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 northbound at milepost 95 beginning at 8:49 am on November 10, 2026 until about 2:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 95.0,
+      "lat": 47.07339176,
+      "lon": -123.924724612,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-10T16:49:00.0000000+00:00",
+      "end": "2026-11-10T22:30:00.0000000+00:00",
+      "updated": "2026-11-10T19:43:15.7600000+00:00"
     },
     {
       "id": 640019,
