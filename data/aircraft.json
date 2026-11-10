@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T22:35:20.5347829+00:00",
+  "updated": "2026-11-10T22:45:19.1460249+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,28 +9,12 @@
       "type": "DA40",
       "cat": "A1",
       "alt": 2900,
-      "gs": 90.8,
-      "track": 187.59,
+      "gs": 86.9,
+      "track": 191.96,
       "rate": 64,
-      "lat": 47.20187,
-      "lon": -122.83835,
+      "lat": 47.17836,
+      "lon": -122.84274,
       "squawk": "4670",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a2790a",
-      "flight": "RFS705",
-      "reg": "N259BD",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 2875,
-      "gs": 100.7,
-      "track": 117.84,
-      "rate": 0,
-      "lat": 47.46052,
-      "lon": -122.73271,
-      "squawk": "4742",
       "emergency": "none",
       "mil": false
     }
