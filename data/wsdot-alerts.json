@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T19:45:19.7795905+00:00",
+  "updated": "2026-11-10T19:55:25.4415839+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1177,6 +1177,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 724113,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 southbound at milepost 367.4 exit ramp to southbound I-5 beginning at 11:50 am on November 10, 2026 until further notice. The exit ramp to southbound I-5 is partially blocked.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 367.33,
+      "lat": 47.021745307,
+      "lon": -122.907125853,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-10T19:50:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-10T19:53:45.8870000+00:00"
     },
     {
       "id": 724046,
