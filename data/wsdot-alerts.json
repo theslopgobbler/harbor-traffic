@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T19:35:20.5925457+00:00",
+  "updated": "2026-11-10T19:45:19.7795905+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1224,7 +1224,7 @@
       "id": 724071,
       "kind": "work",
       "category": "Road work",
-      "priority": "Highest",
+      "priority": "High",
       "headline": "Road work on US 101 northbound at milepost 95 beginning at 8:49 am on November 10, 2026 until about 2:30 pm.",
       "description": "",
       "link": null,
@@ -1239,7 +1239,7 @@
       "county": "Grays Harbor",
       "start": "2026-11-10T16:49:00.0000000+00:00",
       "end": "2026-11-10T22:30:00.0000000+00:00",
-      "updated": "2026-11-10T16:50:37.5100000+00:00"
+      "updated": "2026-11-10T19:43:15.7600000+00:00"
     },
     {
       "id": 640019,
