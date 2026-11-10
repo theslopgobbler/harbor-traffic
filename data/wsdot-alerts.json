@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T19:55:25.4415839+00:00",
+  "updated": "2026-11-10T20:05:18.4700822+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -775,6 +775,27 @@
       ]
     },
     {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
       "id": 722911,
       "kind": "work",
       "category": "Maintenance",
@@ -1179,27 +1200,6 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 724113,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 southbound at milepost 367.4 exit ramp to southbound I-5 beginning at 11:50 am on November 10, 2026 until further notice. The exit ramp to southbound I-5 is partially blocked.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 367.33,
-      "lat": 47.021745307,
-      "lon": -122.907125853,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-10T19:50:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-10T19:53:45.8870000+00:00"
-    },
-    {
       "id": 724046,
       "kind": "work",
       "category": "Maintenance",
@@ -1221,27 +1221,6 @@
       "updated": "2026-11-10T15:06:42.9700000+00:00"
     },
     {
-      "id": 698910,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on SR 109 at milepost 33.8 north of Moclips. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.87,
-      "lat": 47.266481174,
-      "lon": -124.2255995,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:40:00.0000000+00:00",
-      "end": "2026-12-31T21:40:00.0000000+00:00",
-      "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
       "id": 724071,
       "kind": "work",
       "category": "Road work",
@@ -1261,6 +1240,27 @@
       "start": "2026-11-10T16:49:00.0000000+00:00",
       "end": "2026-11-10T22:30:00.0000000+00:00",
       "updated": "2026-11-10T19:43:15.7600000+00:00"
+    },
+    {
+      "id": 698910,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating traffic on SR 109 at milepost 33.8 north of Moclips. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.87,
+      "lat": 47.266481174,
+      "lon": -124.2255995,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:40:00.0000000+00:00",
+      "end": "2026-12-31T21:40:00.0000000+00:00",
+      "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
       "id": 640019,
@@ -1303,27 +1303,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 686738,
