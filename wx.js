@@ -448,10 +448,15 @@
       // the streaks blow the way the wind actually goes (a south wind runs up the screen, a west wind to the right),
       // turned with the map when it's rotated. (They used to be held mostly sideways, so a SSE wind looked like an
       // east or west one.)
+      // Each one is a wisp, not a straight streak: it snakes gently around the wind direction, and about a third curl
+      // over at the end like an eddy. Speed (and so trail length) follows the wind: ~2 px a frame at 10 mph, ~5 at 30.
       case 'wind': {
-        const sp = 3 + z.cond.wind * 1.5, r = -(map.getBearing() || 0) * Math.PI / 180;
+        const mph = z.cond.windMph || 10 + (z.cond.wind || 1) * 10, r = -(map.getBearing() || 0) * Math.PI / 180;
         const dx = w.x * Math.cos(r) - w.y * Math.sin(r), dy = w.x * Math.sin(r) + w.y * Math.cos(r);
-        return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), vx: dx * sp, vy: dy * sp, len: rnd(18, 40), life: 0, max: rnd(40, 90) };
+        const sp = (0.8 + mph * 0.14) * rnd(0.8, 1.2);
+        return { kind, x: rnd(b.x0, b.x1), y: rnd(b.y0, b.y1), ang: Math.atan2(dy, dx), sp, trail: [], keep: Math.round(9 + sp * 2.2),
+          amp: rnd(0.2, 0.45), freq: rnd(0.05, 0.11), ph: rnd(0, 6.28), curl: Math.random() < 0.35 ? (Math.random() < 0.5 ? -1 : 1) * rnd(0.08, 0.14) : 0,
+          life: 0, max: rnd(70, 120) };
       }
     }
   }
@@ -533,16 +538,22 @@
           ctx.fillStyle = 'rgba(210,180,255,.9)'; ctx.fillRect(p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
         }
       }
-      // wind: streaks that fade in and out along the wind direction
-      ctx.lineWidth = 1.2;
+      // wind: wisps that wander along the wind direction, fading in and out, with a tail that thins to nothing
+      ctx.lineWidth = 1.3; ctx.lineCap = 'round';
       for (let i = 0; i < z.gusts.length; i++) {
         const p = z.gusts[i];
-        p.x += p.vx; p.y += p.vy; p.life++;
+        p.life++;
         if (p.life > p.max) { z.gusts[i] = spawn(z, 'wind', true); continue; }
-        const a = Math.sin(Math.PI * p.life / p.max) * 0.45;
-        const m = Math.hypot(p.vx, p.vy) || 1;
-        ctx.strokeStyle = `rgba(57,255,136,${a})`;
-        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx / m * p.len, p.y - p.vy / m * p.len); ctx.stroke();
+        const late = p.life - p.max * 0.55; // the last part of an eddy's life: it rolls over
+        const ang = p.ang + p.amp * Math.sin(p.ph + p.life * p.freq) + (p.curl && late > 0 ? late * p.curl : 0);
+        p.x += Math.cos(ang) * p.sp; p.y += Math.sin(ang) * p.sp;
+        p.trail.push(p.x, p.y);
+        if (p.trail.length > p.keep * 2) p.trail.splice(0, 2);
+        const a = Math.sin(Math.PI * p.life / p.max) * 0.6, n = p.trail.length / 2;
+        for (let k = 1; k < n; k++) {
+          ctx.strokeStyle = `rgba(57,255,136,${(a * k / n).toFixed(3)})`;
+          ctx.beginPath(); ctx.moveTo(p.trail[k * 2 - 2], p.trail[k * 2 - 1]); ctx.lineTo(p.trail[k * 2], p.trail[k * 2 + 1]); ctx.stroke();
+        }
       }
       // lightning
       if (z.cond.kind === 'storm') {
