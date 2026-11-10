@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T16:15:21.6894285+00:00",
+  "updated": "2026-11-10T16:25:20.9199986+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1219,6 +1219,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 724065,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on SR 105 southbound at milepost 34 near N Westhaven Dr beginning at 8:23 am on November 10, 2026 until further notice. The roadway is partially blocked.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "S",
+      "milepost": 34.0,
+      "lat": 46.881988062,
+      "lon": -124.048806187,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-10T16:23:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-10T16:24:24.1600000+00:00"
     },
     {
       "id": 640019,
