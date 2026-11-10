@@ -1,7 +1,50 @@
 {
-  "updated": "2026-11-10T15:45:37.5381342+00:00",
+  "updated": "2026-11-10T15:55:28.2020144+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-10-15T18:40:19.7130000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
+        ]
+      ]
+    },
     {
       "id": 718841,
       "kind": "work",
@@ -186,49 +229,6 @@
       ]
     },
     {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Canyon Way near Taholah. The speed limit is reduced from 50 mph to 25 mph from milepost 36.19 to milepost 36.63. Read more about this fish barrier removal work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-10-15T18:40:19.7130000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
-    {
       "id": 722911,
       "kind": "work",
       "category": "Maintenance",
@@ -248,6 +248,27 @@
       "start": "2026-11-02T13:00:00.0000000+00:00",
       "end": "2026-12-01T01:30:00.0000000+00:00",
       "updated": "2026-10-31T00:26:55.2670000+00:00"
+    },
+    {
+      "id": 724046,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:06 am on November 10, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-10T15:06:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-10T15:06:42.9700000+00:00"
     },
     {
       "id": 640018,
@@ -631,27 +652,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 724046,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:06 am on November 10, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-10T15:06:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-10T15:06:42.9700000+00:00"
     },
     {
       "id": 698910,
