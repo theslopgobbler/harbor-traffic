@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-10T04:55:22.7497919+00:00",
+  "updated": "2026-11-10T05:05:21.0167417+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-10T03:56:00.0000000+00:00",
-    "waveFt": 8.2,
+    "time": "2026-11-10T04:26:00.0000000+00:00",
+    "waveFt": 8.9,
     "periodS": 11.0,
-    "dirDeg": 260.0,
+    "dirDeg": 258.0,
     "waterF": 53.6
   },
   "bar": {
@@ -18,10 +18,16 @@
   },
   "alerts": [
     {
-      "event": "Gale Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
       "ends": "2026-11-12T00:00:00+00:00",
-      "headline": "Gale Warning issued November 9 at 3:40PM PST until November 11 at 4:00PM PST by NWS Portland OR"
+      "headline": "Small Craft Advisory issued November 9 at 8:55PM PST until November 11 at 4:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-12T00:00:00+00:00",
+      "headline": "Gale Warning issued November 9 at 8:55PM PST until November 11 at 4:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
@@ -30,16 +36,10 @@
       "headline": "Small Craft Advisory issued November 9 at 3:40PM PST until November 10 at 6:00AM PST by NWS Portland OR"
     },
     {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
-      "ends": "2026-11-12T00:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 9 at 1:47PM PST until November 11 at 4:00PM PST by NWS Seattle WA"
-    },
-    {
       "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-12T00:00:00+00:00",
-      "headline": "Gale Warning issued November 9 at 1:47PM PST until November 11 at 4:00PM PST by NWS Seattle WA"
+      "headline": "Gale Warning issued November 9 at 3:40PM PST until November 11 at 4:00PM PST by NWS Portland OR"
     }
   ]
 }
