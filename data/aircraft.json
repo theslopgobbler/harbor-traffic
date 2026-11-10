@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T22:45:19.1460249+00:00",
+  "updated": "2026-11-10T22:55:16.4937030+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N991PA",
       "type": "DA40",
       "cat": "A1",
-      "alt": 2900,
-      "gs": 86.9,
-      "track": 191.96,
-      "rate": 64,
-      "lat": 47.17836,
-      "lon": -122.84274,
+      "alt": 950,
+      "gs": 66.6,
+      "track": 187.77,
+      "rate": 0,
+      "lat": 47.01599,
+      "lon": -122.89088,
       "squawk": "4670",
       "emergency": "none",
       "mil": false
