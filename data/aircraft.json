@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T16:35:25.0641071+00:00",
+  "updated": "2026-11-10T16:45:19.0885163+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,29 +8,13 @@
       "reg": "N4087H",
       "type": "M20P",
       "cat": "A1",
-      "alt": 5900,
-      "gs": 174.9,
-      "track": 14.91,
-      "rate": 128,
-      "lat": 46.89295,
-      "lon": -122.93293,
+      "alt": 5800,
+      "gs": 167.8,
+      "track": 13.79,
+      "rate": -320,
+      "lat": 47.33594,
+      "lon": -122.76891,
       "squawk": "4651",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a483e7",
-      "flight": "PGR1390",
-      "reg": "N390ML",
-      "type": "PRM1",
-      "cat": "A1",
-      "alt": 4675,
-      "gs": 249.9,
-      "track": 11.31,
-      "rate": -691,
-      "lat": 47.14359,
-      "lon": -122.77567,
-      "squawk": "7315",
       "emergency": "none",
       "mil": false
     }
