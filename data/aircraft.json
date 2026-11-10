@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-10T00:05:20.1300802+00:00",
+  "updated": "2026-11-10T00:15:26.9630632+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a22537",
-      "flight": "N2372Z",
-      "reg": "N2372Z",
-      "type": "BE23",
-      "cat": "A1",
-      "alt": 1200,
-      "gs": 71.6,
-      "track": 208.35,
-      "rate": -448,
-      "lat": 47.52518,
-      "lon": -122.73179,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
