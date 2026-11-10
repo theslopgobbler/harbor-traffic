@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T02:55:18.8882633+00:00",
+  "updated": "2026-11-10T03:05:16.9230461+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "C-GFAL",
       "type": "PA31",
       "cat": "A1",
-      "alt": 3025,
-      "gs": 114.0,
-      "track": 190.62,
-      "rate": 0,
-      "lat": 47.15671,
-      "lon": -122.84926,
+      "alt": 0,
+      "gs": 12.2,
+      "track": 42.19,
+      "rate": null,
+      "lat": 46.97038,
+      "lon": -122.89977,
       "squawk": "0042",
       "emergency": "none",
       "mil": false
