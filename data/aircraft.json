@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-11T15:46:01.0220328+00:00",
+  "updated": "2026-11-11T15:56:04.3314942+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a6eadb",
+      "flight": "N545DS",
+      "reg": "N545DS",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 800,
+      "gs": 73.2,
+      "track": 93.92,
+      "rate": -704,
+      "lat": 46.70265,
+      "lon": -122.99302,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
