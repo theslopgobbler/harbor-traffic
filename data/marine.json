@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T21:02:54.6364897+00:00",
+  "updated": "2026-11-11T21:07:49.6324009+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,8 +10,8 @@
     "waterF": 54.1
   },
   "bar": {
-    "issued": "2026-11-11T10:12:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH THURSDAY MORNING... Combined seas 13 to 16 ft easing to 10 to 12 ft late tonight. Bar conditions severe becoming rough tonight. Maximum ebb currents will occur around 530 AM Wednesday, 530 PM Wednesday, and 600 AM Thursday. The Wednesday afternoon ebb will be strong.",
+    "issued": "2026-11-11T21:01:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH LATE THURSDAY NIGHT... Combined seas 13 to 16 ft easing to 10 to 12 ft late tonight. Bar conditions severe becoming rough tonight. Maximum ebb currents will occur around 530 AM Wednesday, 530 PM Wednesday, and 600 AM Thursday. The Wednesday afternoon ebb will be strong.",
     "conditions": "severe becoming rough tonight",
     "seas": "13 to 16 ft easing to 10 to 12 ft late tonight",
     "ebb": "afternoon ebb will be strong"
