@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-11T01:56:04.4485090+00:00",
+  "updated": "2026-11-11T02:05:54.8003913+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a02732",
-      "flight": "N109LW",
-      "reg": "N109LW",
-      "type": "LJ45",
-      "cat": "A2",
-      "alt": 2925,
-      "gs": 251.0,
-      "track": 8.94,
-      "rate": -64,
-      "lat": 47.40642,
-      "lon": -122.7051,
-      "squawk": "3710",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }

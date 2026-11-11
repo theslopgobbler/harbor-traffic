@@ -202,8 +202,8 @@
     "368578000": "2026-11-10T21:35:18.2905238+00:00",
     "636018270": "2026-11-11T01:05:56.5720998+00:00",
     "262503088": "2026-11-11T01:05:56.5720998+00:00",
-    "636015993": "2026-11-11T01:56:04.4485090+00:00",
-    "311008700": "2026-11-11T01:56:04.4485090+00:00",
+    "636015993": "2026-11-11T01:56:04.448509+00:00",
+    "311008700": "2026-11-11T01:56:04.448509+00:00",
     "538005260": "2026-10-12T03:28:26.879566+00:00",
     "367153680": "2026-10-12T04:59:45.9969905+00:00",
     "367070360": "2026-10-12T06:35:56.0006849+00:00",
@@ -5162,7 +5162,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "date": "2023-03-15 18:55:43",
       "caption": "Car carrier LAKE KIVU au port de Casablanca - Morocco - IMO: 9308792 Pavillon: Liberia Genre du navire: Car Carrier Année de Construction: 2006",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     },
     {
       "mmsi": "636015993",
@@ -5177,7 +5177,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "date": "2023-03-15 19:01:07",
       "caption": "Car carrier LAKE KIVU au port de Casablanca - Morocco - IMO: 9308792 Pavillon: Liberia Genre du navire: Car Carrier Année de Construction: 2006",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     },
     {
       "mmsi": "636015993",
@@ -5192,7 +5192,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "date": "2023-03-16 08:55:15",
       "caption": "Car carrier LAKE KIVU à quai au port de Casablanca - Morocco - IMO: 9308792 Pavillon: Liberia Genre du navire: Car Carrier Année de Construction: 2006",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     },
     {
       "mmsi": "311008700",
@@ -5207,7 +5207,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2016-05-27 16:27:23",
       "caption": "Bascule bridge at the Pierre Vandamme Lock in the port of Zeebrugge ,(Belgium). Open for the blue RoRo ship Victory leader .",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     },
     {
       "mmsi": "311008700",
@@ -5222,7 +5222,7 @@
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "date": "2016-05-27 16:28:44",
       "caption": "RoRo ship Victory leader leaving the port of Zeebrugge , Belgium. Hold larboard by tugboat Smit Lion . The car carrier (IMO: 9395628) was built in 2010 in Vietnam and is registered in Nassau, Bahamas. Shipping line: N...",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     },
     {
       "mmsi": "311008700",
@@ -5237,7 +5237,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
       "date": "2011-03-24",
       "caption": "Victory Leader, a roll-on/roll-off ship, leaving the port of Willemstad , Curaçao .",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     },
     {
       "mmsi": "311008700",
@@ -5252,8 +5252,8 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "date": "2024-12-27 12:08:38",
       "caption": "The ship Victory Ray docked at Webb Dock in Melbourne, Victoria, Australia on 27 December 2024",
-      "found": "2026-11-11T01:56:04.4485090+00:00"
+      "found": "2026-11-11T01:56:04.448509+00:00"
     }
   ],
-  "updated": "2026-11-11T01:56:04.4485090+00:00"
+  "updated": "2026-11-11T02:05:54.8003913+00:00"
 }
