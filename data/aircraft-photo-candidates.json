@@ -175,7 +175,8 @@
     "Pilatus PC-12 47": "2026-11-09T23:05:18.8138766+00:00",
     "Raytheon Aircraft Company King Air B200": "2026-11-10T02:45:22.5463882+00:00",
     "Pilatus PC-12 47E NGX": "2026-11-10T20:05:18.4700822+00:00",
-    "Dassault Falcon 50EX": "2026-11-10T23:45:17.3092942+00:00"
+    "Dassault Falcon 50EX": "2026-11-10T23:45:17.3092942+00:00",
+    "Eurocopter EC135 T3": "2026-11-11T17:45:58.8400430+00:00"
   },
   "candidates": [
     {
@@ -10817,7 +10818,63 @@
       "date": "2022-04-29 15:41:48",
       "caption": "Biggin Hill Airport. 29-4-2022",
       "found": "2026-11-10T23:45:17.3092942+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T3",
+      "file": "File:CC-DAL (EC135).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:CC-DAL_(EC135).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/CC-DAL_%28EC135%29.jpg/960px-CC-DAL_%28EC135%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Robert Motecinos Holda",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-05-25 14:19:07",
+      "caption": "Picture of cc-dal approaching the vitacura airfield.",
+      "found": "2026-11-11T17:45:58.8400430+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T3",
+      "file": "File:Eurocopter EC135 T3, F-HLNA, SAMU 24 (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_EC135_T3,_F-HLNA,_SAMU_24_(1).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Eurocopter_EC135_T3%2C_F-HLNA%2C_SAMU_24_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 720,
+      "author": "Cjp24",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-05-19 18:25:48",
+      "caption": "Eurocopter EC135 T3, F-HLNA, du SAMU 24 ; Dordogne, France.",
+      "found": "2026-11-11T17:45:58.8400430+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T3",
+      "file": "File:G-HIOW (40444342281).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G-HIOW_(40444342281).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/G-HIOW_%2840444342281%29.jpg/960px-G-HIOW_%2840444342281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-02-23 20:23",
+      "caption": "G-HIOW Eurocopter EC135 T3 @ Thruxton 18/02/2018",
+      "found": "2026-11-11T17:45:58.8400430+00:00"
+    },
+    {
+      "model": "Eurocopter EC135 T3",
+      "file": "File:RAF Airbus EC135T3 (JUNO HT1) Helicopter MOD 45165492.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:RAF_Airbus_EC135T3_(JUNO_HT1)_Helicopter_MOD_45165492.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/RAF_Airbus_EC135T3_%28JUNO_HT1%29_Helicopter_MOD_45165492.jpg/960px-RAF_Airbus_EC135T3_%28JUNO_HT1%29_Helicopter_MOD_45165492.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ian Forshaw (RAF)",
+      "license": "OGL 3",
+      "licenseUrl": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3",
+      "date": "Taken on 10 October 2018",
+      "caption": "Image of Royal Air Force (RAF) Airbus EC135 T3 helicopters (known as Juno HT1 in British military service, also known as H135 in the civilian market), from the Defence Helicopter Flying School (DHFS) based at RAF Shaw...",
+      "found": "2026-11-11T17:45:58.8400430+00:00"
     }
   ],
-  "updated": "2026-11-11T17:35:58.4181593+00:00"
+  "updated": "2026-11-11T17:45:58.8400430+00:00"
 }
