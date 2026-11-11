@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-11T23:26:00.7525494+00:00",
+  "updated": "2026-11-11T23:35:58.5502300+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-11T22:26:00.0000000+00:00",
-    "waveFt": 14.8,
-    "periodS": 11.0,
-    "dirDeg": 253.0,
+    "time": "2026-11-11T22:56:00.0000000+00:00",
+    "waveFt": 13.8,
+    "periodS": 13.0,
+    "dirDeg": 261.0,
     "waterF": 54.1
   },
   "bar": {
@@ -18,16 +18,16 @@
   },
   "alerts": [
     {
-      "event": "Gale Warning",
+      "event": "Gale Watch",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-11-12T00:00:00+00:00",
-      "headline": "Gale Warning issued November 11 at 12:27PM PST until November 11 at 4:00PM PST by NWS Portland OR"
+      "ends": "2026-11-14T00:00:00+00:00",
+      "headline": "Gale Watch issued November 11 at 12:27PM PST until November 13 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Warning",
+      "event": "Gale Watch",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-11-12T00:00:00+00:00",
-      "headline": "Gale Warning issued November 11 at 12:27PM PST until November 11 at 4:00PM PST by NWS Portland OR"
+      "ends": "2026-11-14T00:00:00+00:00",
+      "headline": "Gale Watch issued November 11 at 12:27PM PST until November 13 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Hazardous Seas Warning",
@@ -42,22 +42,22 @@
       "headline": "Hazardous Seas Warning issued November 11 at 12:27PM PST until November 12 at 7:00AM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Watch",
+      "event": "Gale Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-11-14T00:00:00+00:00",
-      "headline": "Gale Watch issued November 11 at 12:27PM PST until November 13 at 4:00PM PST by NWS Portland OR"
+      "ends": "2026-11-12T00:00:00+00:00",
+      "headline": "Gale Warning issued November 11 at 12:27PM PST until November 11 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Watch",
+      "event": "Gale Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
-      "ends": "2026-11-14T00:00:00+00:00",
-      "headline": "Gale Watch issued November 11 at 12:27PM PST until November 13 at 4:00PM PST by NWS Portland OR"
+      "ends": "2026-11-12T00:00:00+00:00",
+      "headline": "Gale Warning issued November 11 at 12:27PM PST until November 11 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
       "ends": "2026-11-13T09:00:00+00:00",
-      "headline": "Gale Watch issued November 11 at 12:21PM PST until November 13 at 1:00AM PST by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued November 11 at 12:21PM PST until November 13 at 1:00AM PST by NWS Seattle WA"
     },
     {
       "event": "Gale Warning",
@@ -72,10 +72,10 @@
       "headline": "Small Craft Advisory issued November 11 at 12:21PM PST until November 12 at 4:00PM PST by NWS Seattle WA"
     },
     {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
+      "event": "Gale Watch",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-11-13T09:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 11 at 12:21PM PST until November 13 at 1:00AM PST by NWS Seattle WA"
+      "headline": "Gale Watch issued November 11 at 12:21PM PST until November 13 at 1:00AM PST by NWS Seattle WA"
     }
   ]
 }
