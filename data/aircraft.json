@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-11T02:35:57.2449130+00:00",
+  "updated": "2026-11-11T02:45:57.2000080+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a75a24",
+      "flight": "AMF7145",
+      "reg": "N573G",
+      "type": "SW4",
+      "cat": "A2",
+      "alt": 9200,
+      "gs": 286.5,
+      "track": 57.25,
+      "rate": -1198,
+      "lat": 46.80679,
+      "lon": -122.76304,
+      "squawk": "4673",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
