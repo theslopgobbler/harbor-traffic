@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-11T03:15:56.1901978+00:00",
+  "updated": "2026-11-11T03:25:54.6340714+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a9b357",
-      "flight": "TDY484",
-      "reg": "N724KP",
-      "type": "PC12",
-      "cat": "A1",
-      "alt": 11900,
-      "gs": 255.2,
-      "track": 40.87,
-      "rate": 64,
-      "lat": 47.07465,
-      "lon": -122.7713,
-      "squawk": "4745",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
