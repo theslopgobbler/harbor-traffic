@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T16:56:00.4996667+00:00",
+  "updated": "2026-11-11T17:05:57.3132384+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -673,6 +673,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 724219,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Highest",
+      "headline": "Road work on I-5 northbound at milepost 101 near Tumwater Blvd beginning at 8:57 am on November 11, 2026 until about 9:30 am.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 101.0,
+      "lat": 46.977073879,
+      "lon": -122.929797747,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-11T16:57:00.0000000+00:00",
+      "end": "2026-11-11T17:25:00.0000000+00:00",
+      "updated": "2026-11-11T16:58:41.3670000+00:00"
     },
     {
       "id": 698912,
