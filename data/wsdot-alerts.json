@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T18:26:00.7300789+00:00",
+  "updated": "2026-11-11T18:35:59.0706061+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -633,6 +633,27 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
+      "id": 724228,
+      "kind": "closure",
+      "category": "Simpson Ave Bridge",
+      "priority": "Highest",
+      "headline": "Simpson Ave Bridge is closed to vehicle traffic at 10:30 AM Wednesday, November 11. A boat traffic opening is in progress. Travelers can expect delays for up to 30 minutes on US 101 both directions at 88.20 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101COABERDN",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 87.6,
+      "lat": 46.979476391,
+      "lon": -123.887390145,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-11-11T18:30:41.1070000+00:00",
+      "end": "2026-11-11T19:00:41.1070000+00:00",
+      "updated": "2026-11-11T18:30:42.2370000+00:00"
+    },
+    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -694,6 +715,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 724229,
+      "kind": "closure",
+      "category": "Riverside Ave Bridge",
+      "priority": "Highest",
+      "headline": "Riverside Ave Bridge is closed to vehicle traffic at 10:30 AM Wednesday, November 11. A boat traffic opening is in progress. Travelers can expect delays for up to 30 minutes on US 101 both directions at 87.35 Milepost.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 87.35,
+      "lat": 46.979520561,
+      "lon": -123.884030117,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-11-11T18:30:42.3600000+00:00",
+      "end": "2026-11-11T19:00:42.3600000+00:00",
+      "updated": "2026-11-11T18:30:42.5030000+00:00"
     },
     {
       "id": 631745,
