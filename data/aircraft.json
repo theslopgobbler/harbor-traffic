@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-11T08:26:06.0040861+00:00",
+  "updated": "2026-11-11T08:35:57.9625918+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "71c393",
-      "flight": "KAL048",
-      "reg": "HL8393",
-      "type": "B789",
-      "cat": "A5",
-      "alt": 13100,
-      "gs": 383.3,
-      "track": 318.49,
-      "rate": 2174,
-      "lat": 47.48803,
-      "lon": -122.71271,
-      "squawk": "3560",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
