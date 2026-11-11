@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-11T09:45:58.1230308+00:00",
+  "updated": "2026-11-11T09:56:00.5503945+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ac0da0",
-      "flight": "N876LF",
-      "reg": "N876LF",
-      "type": "PC12",
-      "cat": "A1",
-      "alt": 11925,
-      "gs": 282.4,
-      "track": 347.74,
-      "rate": -64,
-      "lat": 46.72834,
-      "lon": -122.82474,
-      "squawk": "4746",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
