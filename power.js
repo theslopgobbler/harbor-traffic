@@ -80,7 +80,7 @@
       'symbol-sort-key': ['get', 'n'] } }, 'outside');
     // a tap opens an outage only when nothing else is there: outage dots and shaded areas give way to markers, road
     // warnings, traffic lines, bus stops and routes, the railroad and quakes (they open their own popups)
-    const OTHERS = ['inc-glow', 'inc', 'inc-glow-p', 'inc-p', 'flow-glow', 'flow', 'bus-stops', 'bus-route-picked', 'bus-route-lines', 'rail-hit', 'quake-ring'];
+    const OTHERS = ['inc-glow', 'inc', 'inc-glow-p', 'inc-p', 'flow-glow', 'flow', 'bus-stops', 'bus-route-picked', 'bus-route-lines', 'rail-hit', 'quake-ring', 'slow-pt'];
     const open = (f, at) => { const o = outages.find((x) => x.id === f.properties.id); if (o) popup(o, at); };
     map.on('click', (e) => {
       if (e.originalEvent?.target?.closest?.('.maplibregl-marker, .maplibregl-popup')) return;
@@ -96,11 +96,11 @@
     map.on('mouseenter', 'power-pt', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'power-pt', () => (map.getCanvas().style.cursor = ''));
   }
-  // shown or hidden with the WX FX button (wx.js switches these layers along with its own; this catches the start,
-  // when WX FX was already off)
+  // shown or hidden with the ROADS button (app.js switches these layers along with the road warnings; this catches the
+  // start, when ROADS was already off)
   const addAll = () => {
     addLayers();
-    const vis = document.body.classList.contains('fx-off') ? 'none' : 'visible';
+    const vis = document.body.classList.contains('no-roads') ? 'none' : 'visible';
     for (const id of ['power-fill', 'power-line', 'power-pt']) map.setLayoutProperty(id, 'visibility', vis);
   };
   if (map.isStyleLoaded()) addAll(); else map.once('load', addAll);

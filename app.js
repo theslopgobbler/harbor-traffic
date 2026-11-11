@@ -1475,6 +1475,7 @@
     if (t.quake) add('a', '⚠ QUAKE', t.quake);
     if (t.flood) add('x', '🌊 FLOOD', t.flood);
     if (t.power) add('a', '⚡ POWER', t.power);
+    if (t.slow) add('a', '🐢 SLOW', t.slow);
     if (t.lowtide) add('w', '〰 TIDE', t.lowtide);
     if (t.bridge) add('a', '⚠ BRIDGE', t.bridge);
     if (t.air) add('a', '✈ AIR', t.air);
@@ -1551,14 +1552,14 @@
 
   loadCameras(); // the list only; images wait for a click
   // show/hide road warnings: closures, alert triangles and their stretches (on by default; remembered per device;
-  // ?roads=0 hides them). The I-5 speed colors stay.
+  // ?roads=0 hides them), and the power outage areas and bolts from power.js with them. The I-5 speed colors stay.
   let roadsOn = qs.has('roads') ? qs.get('roads') !== '0' : store.get('ht.roads') !== false;
   function setRoads(on) {
     roadsOn = on; store.set('ht.roads', on);
     const btn = $('#btnRoads');
     btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on);
     document.body.classList.toggle('no-roads', !on);
-    const apply = () => ['inc', 'inc-glow', 'inc-p', 'inc-glow-p'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+    const apply = () => ['inc', 'inc-glow', 'inc-p', 'inc-glow-p', 'power-fill', 'power-line', 'power-pt', 'slow-pt'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
     if (map.isStyleLoaded()) apply(); else map.once('load', apply);
     declutterSoon();
   }
