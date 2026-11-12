@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T19:56:04.2331308+00:00",
+  "updated": "2026-11-12T20:05:58.9806643+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -19,13 +19,13 @@
   "alerts": [
     {
       "event": "Gale Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-14T00:00:00+00:00",
       "headline": "Gale Warning issued November 12 at 8:09AM PST until November 13 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Gale Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-14T00:00:00+00:00",
       "headline": "Gale Warning issued November 12 at 8:09AM PST until November 13 at 4:00PM PST by NWS Portland OR"
     },
