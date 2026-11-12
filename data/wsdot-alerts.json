@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T23:26:04.5458628+00:00",
+  "updated": "2026-11-12T23:36:02.5464858+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -990,27 +990,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 724244,
-      "kind": "other",
-      "category": "Trees down",
-      "priority": "Highest",
-      "headline": "Trees down on SR 110 both directions at milepost 8 near Mora Rd beginning at 3:14 pm on November 12, 2026 until further notice. Alternating traffic is in effect.",
-      "description": "",
-      "link": null,
-      "road": "110",
-      "roadLabel": "SR 110",
-      "direction": "B",
-      "milepost": 8.0,
-      "lat": 47.91023535,
-      "lon": -124.536442056,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Clallam",
-      "start": "2026-11-12T23:14:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-12T23:14:39.0370000+00:00"
     },
     {
       "id": 686738,
