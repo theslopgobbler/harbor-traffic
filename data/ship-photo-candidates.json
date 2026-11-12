@@ -513,7 +513,8 @@
     "368445720": "2026-11-10T18:35:20.3116783+00:00",
     "212138000": "2026-11-10T18:45:28.1963575+00:00",
     "212656000": "2026-11-11T06:25:56.3567201+00:00",
-    "563331600": "2026-11-12T16:35:59.2602028+00:00"
+    "563331600": "2026-11-12T16:35:59.2602028+00:00",
+    "352006982": "2026-11-12T17:55:59.9709288+00:00"
   },
   "candidates": [
     {
@@ -5390,7 +5391,22 @@
       "date": "2023-07-01 19:06:14",
       "caption": "American Song (ship, 2018)",
       "found": "2026-11-12T05:35:56.5761496+00:00"
+    },
+    {
+      "mmsi": "352006982",
+      "ship": "MOSHILL",
+      "file": "File:Moshill (IMO 5105570) River Scheldt MAS AS.1968.001.2642.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Moshill_(IMO_5105570)_River_Scheldt_MAS_AS.1968.001.2642.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Moshill_%28IMO_5105570%29_River_Scheldt_MAS_AS.1968.001.2642.jpg/1280px-Moshill_%28IMO_5105570%29_River_Scheldt_MAS_AS.1968.001.2642.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Louis Claes",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "between 1945 and 1957 ",
+      "caption": "Norwegian flag reefer Moshill on the river Scheldt Creator: Claes, Louis (fotograaf) Original format: 18 cm x 13 cm Type: Glass plate Category: Collectie Stad Antwerpen, MAS File name: AS.1968.001.2642.tif",
+      "found": "2026-11-12T17:55:59.9709288+00:00"
     }
   ],
-  "updated": "2026-11-12T17:46:14.7099591+00:00"
+  "updated": "2026-11-12T17:55:59.9709288+00:00"
 }
