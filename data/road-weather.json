@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T08:36:04.4741951+00:00",
+  "updated": "2026-11-12T08:46:05.2213682+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -7,28 +7,28 @@
       "name": "Rock Candy Mountain on SR 8",
       "lat": 47.0338,
       "lon": -123.0971,
-      "temp": 52.7,
+      "temp": 52.34,
       "wind": 2,
       "gust": 3,
-      "dir": "ENE",
+      "dir": "NNE",
       "vis": 1,
       "precip": null,
       "humidity": 98,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     },
     {
       "id": 2280,
       "name": "Cosmopolis Hill on US 101",
       "lat": 46.9343,
       "lon": -123.7282,
-      "temp": 55.76,
+      "temp": 55.58,
       "wind": 3,
-      "gust": 6,
+      "gust": 5,
       "dir": "NNW",
       "vis": 0,
       "precip": null,
       "humidity": null,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     },
     {
       "id": 2281,
@@ -37,12 +37,12 @@
       "lon": -123.8922,
       "temp": 56.48,
       "wind": 2,
-      "gust": 6,
-      "dir": "E",
+      "gust": 5,
+      "dir": "ESE",
       "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     },
     {
       "id": 2956,
@@ -51,26 +51,26 @@
       "lon": -124.333,
       "temp": 54.68,
       "wind": 1,
-      "gust": 1,
-      "dir": "NE",
+      "gust": 2,
+      "dir": "N",
       "vis": 0,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     },
     {
       "id": 2957,
       "name": "Oyster Bay Rd on US 101",
       "lat": 47.0849,
       "lon": -123.0331,
-      "temp": 52.7,
-      "wind": 1,
+      "temp": 52.34,
+      "wind": 0,
       "gust": 2,
-      "dir": "WNW",
+      "dir": "NNW",
       "vis": 1,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     },
     {
       "id": 2958,
@@ -78,27 +78,27 @@
       "lat": 47.3029,
       "lon": -124.2504,
       "temp": null,
-      "wind": 2,
-      "gust": 4,
-      "dir": "S",
+      "wind": 3,
+      "gust": 5,
+      "dir": "SSW",
       "vis": 0,
       "precip": null,
       "humidity": null,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     },
     {
       "id": 3776,
       "name": "Grand Mound on I-5",
       "lat": 46.80226113,
       "lon": -123.007164104,
-      "temp": 53.24,
-      "wind": 2,
-      "gust": 3,
+      "temp": 53.6,
+      "wind": 3,
+      "gust": 5,
       "dir": "SE",
       "vis": 1,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-12T08:15:00.0000000+00:00"
+      "time": "2026-11-12T08:30:00.0000000+00:00"
     }
   ]
 }
