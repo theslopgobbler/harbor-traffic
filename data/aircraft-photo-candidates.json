@@ -181,7 +181,8 @@
     "Hawker Beechcraft Corp Hawker 400XP": "2026-11-12T15:25:58.9917776+00:00",
     "Gulfstream Aerospace GVII-G600": "2026-11-12T17:46:14.7099591+00:00",
     "Northrop T-38A Talon": "2026-11-12T19:16:05.2854083+00:00",
-    "Boeing Stearman A75N1 PT-17 Kaydet": "2026-11-12T20:16:01.8973609+00:00"
+    "Boeing Stearman A75N1 PT-17 Kaydet": "2026-11-12T20:16:01.8973609+00:00",
+    "de Havilland Canada DHC-3 Otter (Turbo)": "2026-11-12T21:46:09.4112588+00:00"
   },
   "candidates": [
     {
@@ -11131,7 +11132,91 @@
       "date": "Taken on 6 September 2013, 18:53:59",
       "caption": "Boeing PT-17 Stearman (Kaydet) A75N1 (reg. D-EQXL (787), cn 75-658, built in 1941). Engine: Continental W670-6N .",
       "found": "2026-11-12T20:16:01.8973609+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-3 Otter (Turbo)",
+      "file": "File:C-GEND DHC.3T Turbo Otter Whistler Air YVR 22JUN08 (3193144955).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:C-GEND_DHC.3T_Turbo_Otter_Whistler_Air_YVR_22JUN08_(3193144955).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/C-GEND_DHC.3T_Turbo_Otter_Whistler_Air_YVR_22JUN08_%283193144955%29.jpg/960px-C-GEND_DHC.3T_Turbo_Otter_Whistler_Air_YVR_22JUN08_%283193144955%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ken Fielding",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2009-01-13 09:24:20",
+      "caption": "A picture of an airplane (name of it is on the file name).",
+      "found": "2026-11-12T21:46:09.4112588+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-3 Otter (Turbo)",
+      "file": "File:FPEN Okpik Aviation DH3T Turbo Otter.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:FPEN_Okpik_Aviation_DH3T_Turbo_Otter.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/FPEN_Okpik_Aviation_DH3T_Turbo_Otter.jpg/960px-FPEN_Okpik_Aviation_DH3T_Turbo_Otter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "CambridgeBayWeather",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-06-09",
+      "caption": "FPEN Okpik Aviation DH3T Turbo Otter",
+      "found": "2026-11-12T21:46:09.4112588+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-3 Otter (Turbo)",
+      "file": "File:K2 Aviation DHC-3 Otter at Denali Base Camp.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:K2_Aviation_DHC-3_Otter_at_Denali_Base_Camp.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/K2_Aviation_DHC-3_Otter_at_Denali_Base_Camp.jpg/960px-K2_Aviation_DHC-3_Otter_at_Denali_Base_Camp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Quintin Soloviev",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 15 May 2026, 15:50:21",
+      "caption": "K2 Aviation DHC-3T Turbo Otter (N727KT) at Denali Base Camp on Alaska’s Kahiltna Glacier. Built in 1961, the ski-equipped Otter is still used to fly climbers and gear into the Alaska Range.",
+      "found": "2026-11-12T21:46:09.4112588+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-3 Otter (Turbo)",
+      "file": "File:K2 Aviation DHC-3 Otter at Denali Base Camp (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:K2_Aviation_DHC-3_Otter_at_Denali_Base_Camp_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/K2_Aviation_DHC-3_Otter_at_Denali_Base_Camp_%28cropped%29.jpg/960px-K2_Aviation_DHC-3_Otter_at_Denali_Base_Camp_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 576,
+      "author": "Quintin Soloviev",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 15 May 2026, 15:50:21",
+      "caption": "K2 Aviation DHC-3T Turbo Otter (N727KT) at Denali Base Camp on Alaska’s Kahiltna Glacier. Built in 1961, the ski-equipped Otter is still used to fly climbers and gear into the Alaska Range.",
+      "found": "2026-11-12T21:46:09.4112588+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-3 Otter (Turbo)",
+      "file": "File:N644JJ DHC.3T Turbo Otter Acft Invest YVR 10APR10 (4513480396).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N644JJ_DHC.3T_Turbo_Otter_Acft_Invest_YVR_10APR10_(4513480396).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/N644JJ_DHC.3T_Turbo_Otter_Acft_Invest_YVR_10APR10_%284513480396%29.jpg/960px-N644JJ_DHC.3T_Turbo_Otter_Acft_Invest_YVR_10APR10_%284513480396%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ken Fielding",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-04-12 03:52:48",
+      "caption": "Classic photo from Vancouver with the north shore mountain background",
+      "found": "2026-11-12T21:46:09.4112588+00:00"
+    },
+    {
+      "model": "de Havilland Canada DHC-3 Otter (Turbo)",
+      "file": "File:Turbo Otter on Wheel-Skiis.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Turbo_Otter_on_Wheel-Skiis.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Turbo_Otter_on_Wheel-Skiis.JPG/960px-Turbo_Otter_on_Wheel-Skiis.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "No machine-readable author provided. Trevor MacInnis assumed (based on copyright claims).",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "26 February 2005 (according to Exif data)",
+      "caption": "DHC-3 Turbo Otter (C-FXUY) on wheelskis",
+      "found": "2026-11-12T21:46:09.4112588+00:00"
     }
   ],
-  "updated": "2026-11-12T21:36:01.5773861+00:00"
+  "updated": "2026-11-12T21:46:09.4112588+00:00"
 }
