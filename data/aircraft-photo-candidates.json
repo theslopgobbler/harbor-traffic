@@ -178,7 +178,8 @@
     "Dassault Falcon 50EX": "2026-11-10T23:45:17.3092942+00:00",
     "Eurocopter EC135 T3": "2026-11-11T17:45:58.840043+00:00",
     "Airbus A321 271NSL": "2026-11-11T22:26:49.9494104+00:00",
-    "Hawker Beechcraft Corp Hawker 400XP": "2026-11-12T15:25:58.9917776+00:00"
+    "Hawker Beechcraft Corp Hawker 400XP": "2026-11-12T15:25:58.9917776+00:00",
+    "Gulfstream Aerospace GVII-G600": "2026-11-12T17:46:14.7099591+00:00"
   },
   "candidates": [
     {
@@ -10890,7 +10891,91 @@
       "date": "2022-11-11 14:12",
       "caption": "SP-EAK Hawker Beechcraft Corp Hawker 400XP at Birmingham 11/11/2022",
       "found": "2026-11-12T15:25:58.9917776+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GVII-G600",
+      "file": "File:Gulfstream G600 N618GS landing at Scottsdale Airport, October 2023.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_G600_N618GS_landing_at_Scottsdale_Airport,_October_2023.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Gulfstream_G600_N618GS_landing_at_Scottsdale_Airport%2C_October_2023.jpg/960px-Gulfstream_G600_N618GS_landing_at_Scottsdale_Airport%2C_October_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Piemags Aviation",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-10-08",
+      "caption": "Gulfstream Aerospace GVII-G600, registration N618GS, landing at Scottsdale Airport (SCF/KSDL), Scottsdale, Arizona, United States.",
+      "found": "2026-11-12T17:46:14.7099591+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GVII-G600",
+      "file": "File:Gulfstream G600 carrying FIFA World Cup Trophy Tour.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_G600_carrying_FIFA_World_Cup_Trophy_Tour.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Gulfstream_G600_carrying_FIFA_World_Cup_Trophy_Tour.jpg/960px-Gulfstream_G600_carrying_FIFA_World_Cup_Trophy_Tour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 527,
+      "author": "K.M.ABU BAKAR SIDDIQUE",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "8 June 2022 (according to Exif data)",
+      "caption": "FIFA World Cup Trophy Tour by Coca-Cola is now in Dhaka. Reg: N982RW Manufacturer: GULFSTREAM AEROSPACE CORP Model: GVII-G600 Year: 2020 Serial number: 73034",
+      "found": "2026-11-12T17:46:14.7099591+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GVII-G600",
+      "file": "File:Hannover Airport Gulfstream Aerospace Gulfstream G600 N766GD (DSC02935).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hannover_Airport_Gulfstream_Aerospace_Gulfstream_G600_N766GD_(DSC02935).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Hannover_Airport_Gulfstream_Aerospace_Gulfstream_G600_N766GD_%28DSC02935%29.jpg/960px-Hannover_Airport_Gulfstream_Aerospace_Gulfstream_G600_N766GD_%28DSC02935%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-16 18:26:58",
+      "caption": "Die Gulfstream G600 (GVII-G600) der Gulfstream Aerospace Corporation mit dem Kennzeichen N766GD rollt auf dem Flughafen Hannover-Langenhagen zur Startbahn 27R. Das Flugzeug führte einen Flug von Hannover zum Flughafen...",
+      "found": "2026-11-12T17:46:14.7099591+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GVII-G600",
+      "file": "File:Hannover Airport Gulfstream Aerospace Gulfstream G600 N766GD (DSC02961).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hannover_Airport_Gulfstream_Aerospace_Gulfstream_G600_N766GD_(DSC02961).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Hannover_Airport_Gulfstream_Aerospace_Gulfstream_G600_N766GD_%28DSC02961%29.jpg/960px-Hannover_Airport_Gulfstream_Aerospace_Gulfstream_G600_N766GD_%28DSC02961%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-16 18:27:07",
+      "caption": "Die Gulfstream G600 (GVII-G600) der Gulfstream Aerospace Corporation mit dem Kennzeichen N766GD rollt auf dem Flughafen Hannover-Langenhagen zur Startbahn 27R. Das Flugzeug führte einen Flug von Hannover zum Flughafen...",
+      "found": "2026-11-12T17:46:14.7099591+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GVII-G600",
+      "file": "File:N622PF 2021 GULFSTREAM AEROSPACE CORP GVII-G600 by Don Ramey Logan.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N622PF_2021_GULFSTREAM_AEROSPACE_CORP_GVII-G600_by_Don_Ramey_Logan.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/N622PF_2021_GULFSTREAM_AEROSPACE_CORP_GVII-G600_by_Don_Ramey_Logan.jpg/960px-N622PF_2021_GULFSTREAM_AEROSPACE_CORP_GVII-G600_by_Don_Ramey_Logan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 365,
+      "author": "Don Ramey Logan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-04-15 12:45:14",
+      "caption": "N622PF 2021 GULFSTREAM AEROSPACE CORP GVII-G600 by Don Ramey Logan",
+      "found": "2026-11-12T17:46:14.7099591+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace GVII-G600",
+      "file": "File:Untitled Gulfstream Aerospace G-V-SP Gulfstream G550; VP-CIP@ZRH;26.12.2010 (5319538078).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550;_VP-CIP@ZRH;26.12.2010_(5319538078).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550%3B_VP-CIP%40ZRH%3B26.12.2010_%285319538078%29.jpg/960px-Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550%3B_VP-CIP%40ZRH%3B26.12.2010_%285319538078%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 620,
+      "author": "Aero Icarus from Zürich, Switzerland",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-12-26 11:45",
+      "caption": "Untitled Gulfstream Aerospace G-V-SP Gulfstream G550; VP-CIP@ZRH;26.12.2010",
+      "found": "2026-11-12T17:46:14.7099591+00:00"
     }
   ],
-  "updated": "2026-11-12T17:36:01.7063030+00:00"
+  "updated": "2026-11-12T17:46:14.7099591+00:00"
 }
