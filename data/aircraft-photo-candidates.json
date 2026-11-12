@@ -184,7 +184,8 @@
     "Boeing Stearman A75N1 PT-17 Kaydet": "2026-11-12T20:16:01.8973609+00:00",
     "de Havilland Canada DHC-3 Otter (Turbo)": "2026-11-12T21:46:09.4112588+00:00",
     "Eurocopter Squirrel AS.350 B": "2026-11-12T21:55:59.615779+00:00",
-    "Lockheed HC-130J Hercules": "2026-11-12T22:16:08.7518803+00:00"
+    "Lockheed HC-130J Hercules": "2026-11-12T22:16:08.7518803+00:00",
+    "Gates Learjet 35 A": "2026-11-12T22:46:12.6481301+00:00"
   },
   "candidates": [
     {
@@ -11302,7 +11303,91 @@
       "date": "2026-07-04 10:27:52",
       "caption": "U.S. Coast Guard Aircraft: Lockheed Martin C-130J Super Hercules (CG-2015) – a four-engine turboprop transport aircraft, from CGAS Air Station Elizabeth City EADS HC-144 Ocean Sentry (CG-2309) – a twin-engine, fixed-w...",
       "found": "2026-11-12T22:16:08.7518803+00:00"
+    },
+    {
+      "model": "Gates Learjet 35 A",
+      "file": "File:Gates Learjet 35, AirNet Systems AN1003788.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Learjet_35,_AirNet_Systems_AN1003788.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Gates_Learjet_35%2C_AirNet_Systems_AN1003788.jpg/960px-Gates_Learjet_35%2C_AirNet_Systems_AN1003788.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "John Davies - CYOW Airport Watch",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "27 January 2006",
+      "caption": "On final for runway 25.",
+      "found": "2026-11-12T22:46:12.6481301+00:00"
+    },
+    {
+      "model": "Gates Learjet 35 A",
+      "file": "File:Gates Learjet 35 AN0228743.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Learjet_35_AN0228743.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Gates_Learjet_35_AN0228743.jpg/960px-Gates_Learjet_35_AN0228743.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "John Davies - CYOW Airport Watch",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "19 March 2002",
+      "caption": "Taxiing to position for take off on runway 25 on an overcast day.",
+      "found": "2026-11-12T22:46:12.6481301+00:00"
+    },
+    {
+      "model": "Gates Learjet 35 A",
+      "file": "File:Gates Learjet 35 AN0550399.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Learjet_35_AN0550399.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Gates_Learjet_35_AN0550399.jpg/960px-Gates_Learjet_35_AN0550399.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Konstantin von Wedelstaedt",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "1 April 2004",
+      "caption": "Ambulance flight",
+      "found": "2026-11-12T22:46:12.6481301+00:00"
+    },
+    {
+      "model": "Gates Learjet 35 A",
+      "file": "File:Gates Learjet 35 AN1970886.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Learjet_35_AN1970886.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Gates_Learjet_35_AN1970886.jpg/960px-Gates_Learjet_35_AN1970886.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Steve Fitzgerald",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "30 August 1979 ",
+      "caption": "Seen here at the British Airways engineering base at Hatton Cross, it was built in 1976 and operated by Aristotle Onassis's Olympic Maritime S.A.",
+      "found": "2026-11-12T22:46:12.6481301+00:00"
+    },
+    {
+      "model": "Gates Learjet 35 A",
+      "file": "File:LAR - Luxembourg Air Rescue Gates Learjet 35-36 (C-21) LX-ONE (28807211032).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:LAR_-_Luxembourg_Air_Rescue_Gates_Learjet_35-36_(C-21)_LX-ONE_(28807211032).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/LAR_-_Luxembourg_Air_Rescue_Gates_Learjet_35-36_%28C-21%29_LX-ONE_%2828807211032%29.jpg/960px-LAR_-_Luxembourg_Air_Rescue_Gates_Learjet_35-36_%28C-21%29_LX-ONE_%2828807211032%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 633,
+      "author": "Kambui",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2016-06-01 13:05",
+      "caption": "Zürich (- Kloten) (ZRH / LSZH) Switzerland 6.2016",
+      "found": "2026-11-12T22:46:12.6481301+00:00"
+    },
+    {
+      "model": "Gates Learjet 35 A",
+      "file": "File:Private Gates Learjet 35A N565GG cn 35-501 (4196686964).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Private_Gates_Learjet_35A_N565GG_cn_35-501_(4196686964).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Private_Gates_Learjet_35A_N565GG_cn_35-501_%284196686964%29.jpg/960px-Private_Gates_Learjet_35A_N565GG_cn_35-501_%284196686964%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 605,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2009-08-14 02:31",
+      "caption": "San Juan - Luis Munoz Marin International (SJU / TJSJ) Puerto Rico, 8-14-2009 Photo: Tomás Del Coro",
+      "found": "2026-11-12T22:46:12.6481301+00:00"
     }
   ],
-  "updated": "2026-11-12T22:36:04.1718064+00:00"
+  "updated": "2026-11-12T22:46:12.6481301+00:00"
 }
