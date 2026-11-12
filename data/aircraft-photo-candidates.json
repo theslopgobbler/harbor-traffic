@@ -183,7 +183,8 @@
     "Northrop T-38A Talon": "2026-11-12T19:16:05.2854083+00:00",
     "Boeing Stearman A75N1 PT-17 Kaydet": "2026-11-12T20:16:01.8973609+00:00",
     "de Havilland Canada DHC-3 Otter (Turbo)": "2026-11-12T21:46:09.4112588+00:00",
-    "Eurocopter Squirrel AS.350 B": "2026-11-12T21:55:59.615779+00:00"
+    "Eurocopter Squirrel AS.350 B": "2026-11-12T21:55:59.615779+00:00",
+    "Lockheed HC-130J Hercules": "2026-11-12T22:16:08.7518803+00:00"
   },
   "candidates": [
     {
@@ -11217,7 +11218,91 @@
       "date": "26 February 2005 (according to Exif data)",
       "caption": "DHC-3 Turbo Otter (C-FXUY) on wheelskis",
       "found": "2026-11-12T21:46:09.4112588+00:00"
+    },
+    {
+      "model": "Lockheed HC-130J Hercules",
+      "file": "File:79th RQS HC-130J After Take-Off - Aviation Nation 2019.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:79th_RQS_HC-130J_After_Take-Off_-_Aviation_Nation_2019.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/79th_RQS_HC-130J_After_Take-Off_-_Aviation_Nation_2019.jpg/960px-79th_RQS_HC-130J_After_Take-Off_-_Aviation_Nation_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-11-16 10:30:02",
+      "caption": "A Lockheed HC-130J Combat King II (10-5716) of the 79th Rescue Squadron shortly after take-off during Aviation Nation 2019. Aviation Nation is an airshow at Nellis Air Force Base, Nevada.",
+      "found": "2026-11-12T22:16:08.7518803+00:00"
+    },
+    {
+      "model": "Lockheed HC-130J Hercules",
+      "file": "File:79th RQS HC-130J Taking Off - Aviation Nation 2019.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:79th_RQS_HC-130J_Taking_Off_-_Aviation_Nation_2019.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/79th_RQS_HC-130J_Taking_Off_-_Aviation_Nation_2019.jpg/960px-79th_RQS_HC-130J_Taking_Off_-_Aviation_Nation_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-11-16 13:18:21",
+      "caption": "A Lockheed HC-130J Combat King II (10-5716) of the 79th Rescue Squadron taking off for the second performance of the USSOCOM Para-Commandos during Aviation Nation 2019. Aviation Nation is an airshow at Nellis AFB.",
+      "found": "2026-11-12T22:16:08.7518803+00:00"
+    },
+    {
+      "model": "Lockheed HC-130J Hercules",
+      "file": "File:79th RQS HC-130J on Final - Aviation Nation 2019.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:79th_RQS_HC-130J_on_Final_-_Aviation_Nation_2019.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/79th_RQS_HC-130J_on_Final_-_Aviation_Nation_2019.jpg/960px-79th_RQS_HC-130J_on_Final_-_Aviation_Nation_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-11-16 14:02:43",
+      "caption": "A Lockheed HC-130J Combat King II (10-5716) of the 79th Rescue Squadron on final after the second performance of the USSOCOM Para-Commandos during Aviation Nation 2019. Aviation Nation is an airshow at Nellis Air Forc...",
+      "found": "2026-11-12T22:16:08.7518803+00:00"
+    },
+    {
+      "model": "Lockheed HC-130J Hercules",
+      "file": "File:79th RQS HC-130J on Short Final - Aviation Nation 2019.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:79th_RQS_HC-130J_on_Short_Final_-_Aviation_Nation_2019.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/79th_RQS_HC-130J_on_Short_Final_-_Aviation_Nation_2019.jpg/960px-79th_RQS_HC-130J_on_Short_Final_-_Aviation_Nation_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Noah Wulf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-11-16 14:02:48",
+      "caption": "A Lockheed HC-130J Combat King II (10-5716) of the 79th Rescue Squadron on short final after the second performance of the USSOCOM Para-Commandos during Aviation Nation 2019. Aviation Nation is an airshow at Nellis Ai...",
+      "found": "2026-11-12T22:16:08.7518803+00:00"
+    },
+    {
+      "model": "Lockheed HC-130J Hercules",
+      "file": "File:Lockheed Martin L-382U HC-130J-LM Hercules (USCG BuNo 2001, cn 382-5524) (4-12-2024).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lockheed_Martin_L-382U_HC-130J-LM_Hercules_(USCG_BuNo_2001,_cn_382-5524)_(4-12-2024).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Lockheed_Martin_L-382U_HC-130J-LM_Hercules_%28USCG_BuNo_2001%2C_cn_382-5524%29_%284-12-2024%29.jpg/960px-Lockheed_Martin_L-382U_HC-130J-LM_Hercules_%28USCG_BuNo_2001%2C_cn_382-5524%29_%284-12-2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-04-12",
+      "caption": "Lockheed Martin L-382U HC-130J-LM Hercules BuNo 2001 at 2024 Sun 'n Fun, Lakeland Linder International Airport.",
+      "found": "2026-11-12T22:16:08.7518803+00:00"
+    },
+    {
+      "model": "Lockheed HC-130J Hercules",
+      "file": "File:US Coast Guard Lockheed Martin HC-130J Super Hercules flying over NYC on July 4, 2026.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:US_Coast_Guard_Lockheed_Martin_HC-130J_Super_Hercules_flying_over_NYC_on_July_4,_2026.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/US_Coast_Guard_Lockheed_Martin_HC-130J_Super_Hercules_flying_over_NYC_on_July_4%2C_2026.jpg/960px-US_Coast_Guard_Lockheed_Martin_HC-130J_Super_Hercules_flying_over_NYC_on_July_4%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Aude",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-07-04 10:27:52",
+      "caption": "U.S. Coast Guard Aircraft: Lockheed Martin C-130J Super Hercules (CG-2015) – a four-engine turboprop transport aircraft, from CGAS Air Station Elizabeth City EADS HC-144 Ocean Sentry (CG-2309) – a twin-engine, fixed-w...",
+      "found": "2026-11-12T22:16:08.7518803+00:00"
     }
   ],
-  "updated": "2026-11-12T22:05:57.6649675+00:00"
+  "updated": "2026-11-12T22:16:08.7518803+00:00"
 }
