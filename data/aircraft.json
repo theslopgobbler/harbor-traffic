@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-12T14:35:58.5134924+00:00",
+  "updated": "2026-11-12T14:46:00.5958770+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a352b3",
+      "flight": "",
+      "reg": "N313HP",
+      "type": "B06",
+      "cat": null,
+      "alt": 1225,
+      "gs": 69.6,
+      "track": 111.04,
+      "rate": null,
+      "lat": 46.54409,
+      "lon": -122.79014,
+      "squawk": null,
+      "emergency": null,
+      "mil": false
+    }
+  ]
 }
