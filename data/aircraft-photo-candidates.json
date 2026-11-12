@@ -182,7 +182,8 @@
     "Gulfstream Aerospace GVII-G600": "2026-11-12T17:46:14.7099591+00:00",
     "Northrop T-38A Talon": "2026-11-12T19:16:05.2854083+00:00",
     "Boeing Stearman A75N1 PT-17 Kaydet": "2026-11-12T20:16:01.8973609+00:00",
-    "de Havilland Canada DHC-3 Otter (Turbo)": "2026-11-12T21:46:09.4112588+00:00"
+    "de Havilland Canada DHC-3 Otter (Turbo)": "2026-11-12T21:46:09.4112588+00:00",
+    "Eurocopter Squirrel AS.350 B": "2026-11-12T21:55:59.6157790+00:00"
   },
   "candidates": [
     {
@@ -11218,5 +11219,5 @@
       "found": "2026-11-12T21:46:09.4112588+00:00"
     }
   ],
-  "updated": "2026-11-12T21:46:09.4112588+00:00"
+  "updated": "2026-11-12T21:55:59.6157790+00:00"
 }
