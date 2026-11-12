@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T06:25:59.9514277+00:00",
+  "updated": "2026-11-12T06:35:59.8245603+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N305DK",
       "type": "C206",
       "cat": "A1",
-      "alt": 700,
-      "gs": 67.9,
-      "track": 189.32,
+      "alt": 2500,
+      "gs": 89.7,
+      "track": 75.81,
       "rate": null,
-      "lat": 46.95946,
-      "lon": -122.90783,
+      "lat": 47.0511,
+      "lon": -122.77874,
       "squawk": "5524",
       "emergency": "none",
       "mil": false
