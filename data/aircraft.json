@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T15:16:04.6799901+00:00",
+  "updated": "2026-11-12T15:25:58.9917776+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,13 +8,29 @@
       "reg": "N5588F",
       "type": "P28A",
       "cat": "A1",
-      "alt": 3700,
-      "gs": 112.0,
-      "track": 23.13,
-      "rate": 64,
-      "lat": 47.0441,
-      "lon": -122.88071,
+      "alt": 3825,
+      "gs": 68.9,
+      "track": 193.43,
+      "rate": 0,
+      "lat": 46.90787,
+      "lon": -122.85304,
       "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "abff3c",
+      "flight": "RGY872",
+      "reg": "N872RA",
+      "type": "BE40",
+      "cat": "A2",
+      "alt": 11875,
+      "gs": 377.8,
+      "track": 349.94,
+      "rate": -1126,
+      "lat": 46.63463,
+      "lon": -122.81455,
+      "squawk": "4605",
       "emergency": "none",
       "mil": false
     }
