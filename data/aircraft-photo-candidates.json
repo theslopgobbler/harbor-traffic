@@ -179,7 +179,8 @@
     "Eurocopter EC135 T3": "2026-11-11T17:45:58.840043+00:00",
     "Airbus A321 271NSL": "2026-11-11T22:26:49.9494104+00:00",
     "Hawker Beechcraft Corp Hawker 400XP": "2026-11-12T15:25:58.9917776+00:00",
-    "Gulfstream Aerospace GVII-G600": "2026-11-12T17:46:14.7099591+00:00"
+    "Gulfstream Aerospace GVII-G600": "2026-11-12T17:46:14.7099591+00:00",
+    "Northrop T-38A Talon": "2026-11-12T19:16:05.2854083+00:00"
   },
   "candidates": [
     {
@@ -10975,7 +10976,77 @@
       "date": "2010-12-26 11:45",
       "caption": "Untitled Gulfstream Aerospace G-V-SP Gulfstream G550; VP-CIP@ZRH;26.12.2010",
       "found": "2026-11-12T17:46:14.7099591+00:00"
+    },
+    {
+      "model": "Northrop T-38A Talon",
+      "file": "File:20141025 T-38 Talon Alliance Air Show 2014-5.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20141025_T-38_Talon_Alliance_Air_Show_2014-5.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/20141025_T-38_Talon_Alliance_Air_Show_2014-5.jpg/960px-20141025_T-38_Talon_Alliance_Air_Show_2014-5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2014-10-25 12:15:49",
+      "caption": "A T-38 Talon, in a Thunderbirds scheme, performing at the Alliance Air Show in Fort Worth, Texas in 2014.",
+      "found": "2026-11-12T19:16:05.2854083+00:00"
+    },
+    {
+      "model": "Northrop T-38A Talon",
+      "file": "File:20141026 T-38 Talon Alliance Air Show 2014-2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20141026_T-38_Talon_Alliance_Air_Show_2014-2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/20141026_T-38_Talon_Alliance_Air_Show_2014-2.jpg/960px-20141026_T-38_Talon_Alliance_Air_Show_2014-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2014-10-26 12:20:37",
+      "caption": "A T-38 Talon, in a Thunderbirds scheme, performing at the Alliance Air Show in Fort Worth, Texas in 2014.",
+      "found": "2026-11-12T19:16:05.2854083+00:00"
+    },
+    {
+      "model": "Northrop T-38A Talon",
+      "file": "File:Northrop T-38A Talon - GPN-2000-001906.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Northrop_T-38A_Talon_-_GPN-2000-001906.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Northrop_T-38A_Talon_-_GPN-2000-001906.jpg/960px-Northrop_T-38A_Talon_-_GPN-2000-001906.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 578,
+      "author": "NASA",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1974-09-19",
+      "caption": "This Northrop T-38A flew at Langley from 1972 until 1980, when it was returned to the Johnson Space Center's flight operations at Ellington AFB, Texas. While at Langley, the Talon flew as a mission support aircraft an...",
+      "found": "2026-11-12T19:16:05.2854083+00:00"
+    },
+    {
+      "model": "Northrop T-38A Talon",
+      "file": "File:Shockwave pattern around a T-38C observed with Background-Oriented Schlieren photography (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Shockwave_pattern_around_a_T-38C_observed_with_Background-Oriented_Schlieren_photography_(1).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Shockwave_pattern_around_a_T-38C_observed_with_Background-Oriented_Schlieren_photography_%281%29.jpg/960px-Shockwave_pattern_around_a_T-38C_observed_with_Background-Oriented_Schlieren_photography_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 535,
+      "author": "NASA &amp; US Air Force: J.T. Heineck / Ed Schairer / Maj. Jonathan Orso / Maj. Jeremy Vanderhal",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2015-02",
+      "caption": "Air-to-air photography of a Northrop T-38 Talon in supersonic flight over the Mojave Desert reveals air density changes caused by flow regime transition around the aircraft, and the turbulent exhaust of the aircraft’s...",
+      "found": "2026-11-12T19:16:05.2854083+00:00"
+    },
+    {
+      "model": "Northrop T-38A Talon",
+      "file": "File:T-38A Talons from the 2nd Fighter Training Squadron.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:T-38A_Talons_from_the_2nd_Fighter_Training_Squadron.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/T-38A_Talons_from_the_2nd_Fighter_Training_Squadron.jpg/960px-T-38A_Talons_from_the_2nd_Fighter_Training_Squadron.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Tech. Sgt. Betty Chevalier",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2022-08-05",
+      "caption": "Four U.S. Air Force T-38A Talons assigned to the 2nd Fighter Training Squadron fly over the Florida Panhandle, Aug. 6, 2022. The 2nd FTS, stationed at Eglin Air Force Base, Fla., provides air-to-air threat replication...",
+      "found": "2026-11-12T19:16:05.2854083+00:00"
     }
   ],
-  "updated": "2026-11-12T19:06:02.3874029+00:00"
+  "updated": "2026-11-12T19:16:05.2854083+00:00"
 }
