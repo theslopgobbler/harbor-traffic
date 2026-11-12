@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-12T03:25:57.8540527+00:00",
+  "updated": "2026-11-12T03:36:01.4249063+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a5241e",
+      "flight": "N430LF",
+      "reg": "N430LF",
+      "type": "B429",
+      "cat": "A7",
+      "alt": 4000,
+      "gs": 125.9,
+      "track": 259.94,
+      "rate": 0,
+      "lat": 47.2056,
+      "lon": -122.87462,
+      "squawk": "4610",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
