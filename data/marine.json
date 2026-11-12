@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T00:55:58.9049015+00:00",
+  "updated": "2026-11-12T01:05:55.9180267+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -18,6 +18,12 @@
   },
   "alerts": [
     {
+      "event": "Small Craft Advisory",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-11-13T03:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 11 at 4:01PM PST until November 12 at 7:00PM PST by NWS Portland OR"
+    },
+    {
       "event": "Gale Watch",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
       "ends": "2026-11-14T00:00:00+00:00",
@@ -28,12 +34,6 @@
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm",
       "ends": "2026-11-14T00:00:00+00:00",
       "headline": "Gale Watch issued November 11 at 4:01PM PST until November 13 at 4:00PM PST by NWS Portland OR"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-11-13T03:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 11 at 4:01PM PST until November 12 at 7:00PM PST by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
