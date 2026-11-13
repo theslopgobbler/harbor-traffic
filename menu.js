@@ -12,8 +12,8 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
-    ['Nov 12', 'Slow traffic from the buses: a faint yellow line where they run a bit slow, a colored one with a turtle where it is really slow.'],
-    ['Nov 11', 'Possible slowdowns now show up from the buses: a little turtle where one has been crawling.'],
+    ['Nov 12', 'Slow traffic now shows on the roads: a faint yellow line for a little slow, a colored one with a turtle for really slow.'],
+    ['Nov 11', 'Possible slowdowns now show up on the map: a little turtle where traffic has been crawling.'],
     ['Nov 7', 'Power outages from the PUD now show on the map and in the PERIL tab.'],
     ['Nov 6', 'Smoother weather radar up close, highs and lows in the weather tab, and boats with their transponders off show up in gray.'],
     ['Oct 30', 'When a train’s spotted, the map says so for a while.'],

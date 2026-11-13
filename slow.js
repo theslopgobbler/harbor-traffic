@@ -114,21 +114,22 @@
   }
   if (map.isStyleLoaded()) addLayers(); else map.once('load', addLayers);
 
+  // (the wording stays vague on purpose: what's slow and where, not how it's known)
   const lineStop = (s) => s.open
-    ? `BUS AT ${s.min} MPH WHERE BUSES USUALLY DO ${s.usual} · ${mins((s.seen || Date.now()) - s.t0)} MIN SO FAR${s.n > 1 ? ` · ${s.n} BUSES` : ''}`
+    ? `NEARLY STOPPED WHERE TRAFFIC USUALLY MOVES ${s.usual} MPH · ${mins((s.seen || Date.now()) - s.t0)} MIN SO FAR${s.n > 1 ? ' · CONFIRMED' : ''}`
     : `EASED AT ${at(s.end)} AFTER ${mins(s.end - s.t0)} MIN`;
-  const lineStr = (s) => `BUS AVERAGING ${s.mph} MPH FOR ${(s.m / 1609).toFixed(1)} MI WHERE BUSES USUALLY DO ${s.usual}`
-    + (s.open ? ` · ${mins(Date.now() - s.t0)} MIN SO FAR` : ` · EASED AT ${at(s.t1)}`) + (s.n > 1 ? ` · ${s.n} BUSES` : '');
+  const lineStr = (s) => `ABOUT ${Math.round((s.avg || 0) * 100)}% OF THE USUAL SPEED FOR ${(s.m / 1609).toFixed(1)} MI`
+    + (s.open ? ` · ${mins(Date.now() - s.t0)} MIN SO FAR` : ` · EASED AT ${at(s.t1)}`) + (s.n > 1 ? ' · CONFIRMED' : '');
   const title = (x) => x.kind === 'str' ? `SLOW TRAFFIC · ${LVL[x.s.level][1]}${x.s.open ? '' : ' (EASED)'}` : `POSSIBLE SLOWDOWN${x.s.open ? '' : ' (EASED)'}`;
   const whereOf = (x) => { const [lon, lat] = x.kind === 'str' ? mid(x.s) : [x.s.lon, x.s.lat]; return { lon, lat }; };
   const popup = (x, ll) => {
     if (!x) return;
     const s = x.s, w = whereOf(x);
     const how = x.kind === 'str'
-      ? `From the buses' GPS: a bus driving well under the usual speed along this stretch (the line is where it went). ${s.n > 1 ? 'Seen by more than one bus.' : 'So far one bus; the dashes go solid if another bus is slow here too.'} Clears when a bus gets through at normal speed.`
-      : `From the buses' GPS: shown when a bus has been crawling or stopped for 3+ minutes away from its stops, where buses usually go 30+ mph.`;
+      ? `Traffic moving well under its usual speed along this stretch. ${s.n > 1 ? 'Confirmed.' : 'Dashed until it is confirmed.'} Clears once things are moving normally again.`
+      : `Traffic crawling or stopped here for a few minutes. Clears once things are moving normally again.`;
     new maplibregl.Popup({ offset: 10, maxWidth: '280px' }).setLngLat(ll || [w.lon, w.lat]).setHTML(
-      `<h3>${title(x)}</h3><div class="m">${esc(near(w))} · ROUTE ${esc(s.rt)} · SINCE ${at(s.t0)}</div>
+      `<h3>${title(x)}</h3><div class="m">${esc(near(w))} · SINCE ${at(s.t0)}</div>
       <p>${x.kind === 'str' ? lineStr(s) : lineStop(s)}.</p><div class="m">${how}</div>`).addTo(map);
   };
 
@@ -154,7 +155,7 @@
     const el = $('#slowList');
     if (el) {
       el.innerHTML = list.map((x, i) => `<li class="clickable k-work" data-i="${i}" style="${x.kind === 'str' ? `border-left-color:${LVL[x.s.level][0]};` : ''}${x.s.open ? '' : 'opacity:.6'}">
-        <div class="t">${title(x)} · ${esc(near(whereOf(x)))}</div><div class="m">${x.kind === 'str' ? lineStr(x.s) : lineStop(x.s)} · ROUTE ${esc(x.s.rt)}</div></li>`).join('');
+        <div class="t">${title(x)} · ${esc(near(whereOf(x)))}</div><div class="m">${x.kind === 'str' ? lineStr(x.s) : lineStop(x.s)}</div></li>`).join('');
       el.onclick = (e) => {
         const li = e.target.closest('li[data-i]'); const x = li && list[+li.dataset.i]; if (!x) return;
         const w = whereOf(x);
@@ -163,8 +164,8 @@
     }
     window.htTicker = window.htTicker || {};
     window.htTicker.slow = list.filter((x) => x.s.open).map((x) => x.kind === 'str'
-      ? `${LVL[x.s.level][1].toLowerCase()} traffic ${near(whereOf(x)).toLowerCase()} (bus averaging ${x.s.mph} mph, usually ${x.s.usual})`
-      : `possible slowdown ${near(x.s).toLowerCase()} (bus at ${x.s.min} mph, usually ${x.s.usual})`).join(' · ');
+      ? `${LVL[x.s.level][1].toLowerCase()} traffic ${near(whereOf(x)).toLowerCase()}`
+      : `possible slowdown ${near(x.s).toLowerCase()}`).join(' · ');
     window.htTickerRefresh?.();
   }
   window.addEventListener('ht:slow', render);
