@@ -185,7 +185,8 @@
     "de Havilland Canada DHC-3 Otter (Turbo)": "2026-11-12T21:46:09.4112588+00:00",
     "Eurocopter Squirrel AS.350 B": "2026-11-12T21:55:59.615779+00:00",
     "Lockheed HC-130J Hercules": "2026-11-12T22:16:08.7518803+00:00",
-    "Gates Learjet 35 A": "2026-11-12T22:46:12.6481301+00:00"
+    "Gates Learjet 35 A": "2026-11-12T22:46:12.6481301+00:00",
+    "Gulfstream Aerospace G450": "2026-11-13T03:56:01.8445209+00:00"
   },
   "candidates": [
     {
@@ -11387,7 +11388,91 @@
       "date": "2009-08-14 02:31",
       "caption": "San Juan - Luis Munoz Marin International (SJU / TJSJ) Puerto Rico, 8-14-2009 Photo: Tomás Del Coro",
       "found": "2026-11-12T22:46:12.6481301+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G450",
+      "file": "File:Gulfstream Aerospace G-IV-X Gulfstream G450 AN1172927.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN1172927.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN1172927.jpg/960px-Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN1172927.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Konstantin von Wedelstaedt",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "1 February 2007",
+      "caption": "These displays are huge!",
+      "found": "2026-11-13T03:56:01.8445209+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G450",
+      "file": "File:Gulfstream Aerospace G-IV-X Gulfstream G450 AN1895509.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN1895509.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN1895509.jpg/960px-Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN1895509.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 659,
+      "author": "Alan Lebeda",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "15 November 2009",
+      "caption": "",
+      "found": "2026-11-13T03:56:01.8445209+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G450",
+      "file": "File:Gulfstream Aerospace G-IV-X Gulfstream G450 AN2061000.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN2061000.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN2061000.jpg/960px-Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN2061000.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Andre Wadman",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "28 January 2012",
+      "caption": "",
+      "found": "2026-11-13T03:56:01.8445209+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G450",
+      "file": "File:Gulfstream Aerospace G-IV-X Gulfstream G450 AN2063679.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN2063679.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN2063679.jpg/960px-Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_AN2063679.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Igor Dvurekov",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "28 January 2012",
+      "caption": "",
+      "found": "2026-11-13T03:56:01.8445209+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G450",
+      "file": "File:Gulfstream Aerospace G-IV-X Gulfstream G450 N142HC (cn 4007) (5420939780).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_N142HC_(cn_4007)_(5420939780).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_N142HC_%28cn_4007%29_%285420939780%29.jpg/960px-Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_N142HC_%28cn_4007%29_%285420939780%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 574,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-02-04 15:37",
+      "caption": "Las Vegas - McCarran International (LAS / KLAS) USA - Nevada, February 4, 2011 Photo: Tomas Del Coro",
+      "found": "2026-11-13T03:56:01.8445209+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G450",
+      "file": "File:VH-MBP Gulfstream Aerospace G-IV-X Gulfstream G450 (6486143227).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:VH-MBP_Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_(6486143227).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/VH-MBP_Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_%286486143227%29.jpg/960px-VH-MBP_Gulfstream_Aerospace_G-IV-X_Gulfstream_G450_%286486143227%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Robert Frola",
+      "license": "GFDL",
+      "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+      "date": "2011-03-01 00:03:54",
+      "caption": "Gulfstream Aerospace G-IV-X Gulfstream G450 VH-MBP c/n 4185. The G450's cockpit bristles with the same advanced technology found on all other large cabin Gulfstream aircraft. The G450's PlaneView® cockpit is considere...",
+      "found": "2026-11-13T03:56:01.8445209+00:00"
     }
   ],
-  "updated": "2026-11-13T03:46:01.5867300+00:00"
+  "updated": "2026-11-13T03:56:01.8445209+00:00"
 }
