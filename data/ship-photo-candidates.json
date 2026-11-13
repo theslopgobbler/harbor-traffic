@@ -245,7 +245,7 @@
     "636021663": "2026-11-13T05:56:02.2149706+00:00",
     "373897000": "2026-11-13T07:46:06.9914479+00:00",
     "636025043": "2026-11-13T07:46:06.9914479+00:00",
-    "311000879": "2026-10-14T09:23:27.2045751+00:00",
+    "311000879": "2026-11-13T09:26:02.4806270+00:00",
     "311000368": "2026-10-14T09:59:07.4511115+00:00",
     "538071850": "2026-10-14T15:44:23.7094209+00:00",
     "367047120": "2026-10-14T16:54:52.4782107+00:00",
@@ -5409,7 +5409,67 @@
       "date": "between 1945 and 1957 ",
       "caption": "Norwegian flag reefer Moshill on the river Scheldt Creator: Claes, Louis (fotograaf) Original format: 18 cm x 13 cm Type: Glass plate Category: Collectie Stad Antwerpen, MAS File name: AS.1968.001.2642.tif",
       "found": "2026-11-12T17:55:59.9709288+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:NCLEncoreJuneau.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:NCLEncoreJuneau.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/NCLEncoreJuneau.jpg/1280px-NCLEncoreJuneau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Jackhayes1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-07-05 13:37:30",
+      "caption": "Norwegian Encore approaching Juneau, Alaska",
+      "found": "2026-11-13T09:26:02.4806270+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Neptun Werft new hall I.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Neptun_Werft_new_hall_I.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Neptun_Werft_new_hall_I.jpg/1280px-Neptun_Werft_new_hall_I.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "HenSti",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-08-01 10:45:15",
+      "caption": "Neptun Werft new hall. Norwegian Encore under construction.",
+      "found": "2026-11-13T09:26:02.4806270+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Neptun Werft new hall III.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Neptun_Werft_new_hall_III.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Neptun_Werft_new_hall_III.jpg/1280px-Neptun_Werft_new_hall_III.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "HenSti",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-08-01 10:43:31",
+      "caption": "Neptun Werft new hall. Norwegian Encore under construction.",
+      "found": "2026-11-13T09:26:02.4806270+00:00"
+    },
+    {
+      "mmsi": "311000879",
+      "ship": "NORWEGIAN ENCORE",
+      "file": "File:Norwegian Encore (50457027348).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Norwegian_Encore_(50457027348).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Norwegian_Encore_%2850457027348%29.jpg/1280px-Norwegian_Encore_%2850457027348%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 610,
+      "author": "Andrew Bone from Weymouth, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-10-11 14:49",
+      "caption": "A new addition to the Weymouth Bay anchored Cruise ship line-up. &lt;a href=\" https://en.wikipedia.org/wiki/Norwegian_Encore \" rel=\"noreferrer nofollow\"&gt;en.wikipedia.org/wiki/Norwegian_Encore&lt;/a&gt;",
+      "found": "2026-11-13T09:26:02.4806270+00:00"
     }
   ],
-  "updated": "2026-11-13T09:16:08.2326523+00:00"
+  "updated": "2026-11-13T09:26:02.4806270+00:00"
 }
