@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T22:46:03.4049409+00:00",
+  "updated": "2026-11-13T22:56:02.2532716+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1032,27 +1032,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 724452,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 93.43 near Maytown Rest Area beginning at 2:41 pm on November 13, 2026 until further notice. The right lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 93.43,
-      "lat": 46.871216063,
-      "lon": -122.969179835,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-13T22:41:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-13T22:41:57.7570000+00:00"
     },
     {
       "id": 584226,
