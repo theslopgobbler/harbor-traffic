@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-13T14:15:58.2687683+00:00",
+  "updated": "2026-11-13T14:26:00.5355095+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a1feee",
-      "flight": "N228CC",
-      "reg": "N228CC",
-      "type": "S22T",
-      "cat": "A1",
-      "alt": 7600,
-      "gs": 123.5,
-      "track": 166.41,
-      "rate": 0,
-      "lat": 46.70439,
-      "lon": -122.92013,
-      "squawk": "4710",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
