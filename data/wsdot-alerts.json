@@ -1,167 +1,7 @@
 {
-  "updated": "2026-11-13T16:35:59.1943268+00:00",
+  "updated": "2026-11-13T16:46:02.8390710+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2027-01-01T02:00:00.0000000+00:00",
-      "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 724390,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:13 am on November 13, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-13T15:13:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-13T15:14:06.6100000+00:00"
-    },
-    {
-      "id": 686738,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 33.1,
-      "lat": 47.255895764,
-      "lon": -124.22115191,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-02-27T19:56:00.0000000+00:00",
-      "end": "2026-12-31T19:56:00.0000000+00:00",
-      "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865785,
-      "lon": -124.350871258,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2026-10-16T19:28:43.2900000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
     {
       "id": 693084,
       "kind": "work",
@@ -613,6 +453,281 @@
       ]
     },
     {
+      "id": 724402,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 107 both directions from milepost 2 near Lempie Rd to milepost 4 near Preachers Slough Rd beginning at 8:42 am on November 13, 2026 until about 4:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "107",
+      "roadLabel": "SR 107",
+      "direction": "B",
+      "milepost": 2.0,
+      "lat": 46.933401749,
+      "lon": -123.690347352,
+      "lat2": 46.943447854,
+      "lon2": -123.651533369,
+      "county": "Grays Harbor",
+      "start": "2026-11-13T16:42:00.0000000+00:00",
+      "end": "2026-11-14T00:00:00.0000000+00:00",
+      "updated": "2026-11-13T16:43:11.5700000+00:00",
+      "path": [
+        [
+          -123.69032,
+          46.93342
+        ],
+        [
+          -123.6902,
+          46.93347
+        ],
+        [
+          -123.68992,
+          46.93358
+        ],
+        [
+          -123.68962,
+          46.93368
+        ],
+        [
+          -123.68931,
+          46.93375
+        ],
+        [
+          -123.68892,
+          46.93377
+        ],
+        [
+          -123.68799,
+          46.93373
+        ],
+        [
+          -123.68684,
+          46.93369
+        ],
+        [
+          -123.68609,
+          46.93368
+        ],
+        [
+          -123.68558,
+          46.9337
+        ],
+        [
+          -123.68495,
+          46.93381
+        ],
+        [
+          -123.6842,
+          46.93396
+        ],
+        [
+          -123.68336,
+          46.93416
+        ],
+        [
+          -123.6828,
+          46.93427
+        ],
+        [
+          -123.68196,
+          46.9345
+        ],
+        [
+          -123.67932,
+          46.93524
+        ],
+        [
+          -123.67878,
+          46.93543
+        ],
+        [
+          -123.67845,
+          46.9356
+        ],
+        [
+          -123.67779,
+          46.93599
+        ],
+        [
+          -123.67767,
+          46.93605
+        ],
+        [
+          -123.67729,
+          46.93625
+        ],
+        [
+          -123.67709,
+          46.93633
+        ],
+        [
+          -123.67667,
+          46.93652
+        ],
+        [
+          -123.67622,
+          46.93666
+        ],
+        [
+          -123.67563,
+          46.93683
+        ],
+        [
+          -123.67512,
+          46.93692
+        ],
+        [
+          -123.67427,
+          46.93705
+        ],
+        [
+          -123.67242,
+          46.9373
+        ],
+        [
+          -123.67198,
+          46.93737
+        ],
+        [
+          -123.67136,
+          46.93746
+        ],
+        [
+          -123.67056,
+          46.93759
+        ],
+        [
+          -123.66864,
+          46.93791
+        ],
+        [
+          -123.6677,
+          46.93808
+        ],
+        [
+          -123.66712,
+          46.9382
+        ],
+        [
+          -123.66644,
+          46.93834
+        ],
+        [
+          -123.66531,
+          46.93857
+        ],
+        [
+          -123.66469,
+          46.9387
+        ],
+        [
+          -123.66459,
+          46.93872
+        ],
+        [
+          -123.66411,
+          46.93882
+        ],
+        [
+          -123.66367,
+          46.93891
+        ],
+        [
+          -123.66303,
+          46.93904
+        ],
+        [
+          -123.66292,
+          46.93906
+        ],
+        [
+          -123.66288,
+          46.93907
+        ],
+        [
+          -123.66083,
+          46.9395
+        ],
+        [
+          -123.66004,
+          46.93974
+        ],
+        [
+          -123.6593,
+          46.93999
+        ],
+        [
+          -123.65908,
+          46.94006
+        ],
+        [
+          -123.65767,
+          46.94054
+        ],
+        [
+          -123.65696,
+          46.94078
+        ],
+        [
+          -123.65636,
+          46.94099
+        ],
+        [
+          -123.65551,
+          46.94128
+        ],
+        [
+          -123.65509,
+          46.94145
+        ],
+        [
+          -123.65477,
+          46.94159
+        ],
+        [
+          -123.65466,
+          46.94164
+        ],
+        [
+          -123.65424,
+          46.94187
+        ],
+        [
+          -123.65397,
+          46.94203
+        ],
+        [
+          -123.65392,
+          46.94205
+        ],
+        [
+          -123.65343,
+          46.94233
+        ],
+        [
+          -123.65275,
+          46.94273
+        ],
+        [
+          -123.6524,
+          46.94293
+        ],
+        [
+          -123.65195,
+          46.94321
+        ],
+        [
+          -123.65155,
+          46.94344
+        ],
+        [
+          -123.65155,
+          46.94344
+        ]
+      ]
+    },
+    {
       "id": 705229,
       "kind": "work",
       "category": "Construction",
@@ -833,6 +948,166 @@
       "start": "2026-11-13T14:20:00.0000000+00:00",
       "end": null,
       "updated": "2026-11-13T14:21:19.3200000+00:00"
+    },
+    {
+      "id": 640019,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2027-01-01T02:00:00.0000000+00:00",
+      "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 724390,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:13 am on November 13, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-13T15:13:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-13T15:14:06.6100000+00:00"
+    },
+    {
+      "id": 686738,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic around the clock through fall on SR 109 near Moclips Highway. The speed limit is reduced from 50 mph to 25 mph. Work is for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 33.1,
+      "lat": 47.255895764,
+      "lon": -124.22115191,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-02-27T19:56:00.0000000+00:00",
+      "end": "2026-12-31T19:56:00.0000000+00:00",
+      "updated": "2026-10-16T21:53:14.6030000+00:00"
+    },
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865785,
+      "lon": -124.350871258,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2026-10-16T19:28:43.2900000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
     }
   ]
 }
