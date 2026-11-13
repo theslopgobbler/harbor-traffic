@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-13T19:55:57.7149570+00:00",
+  "updated": "2026-11-13T20:02:17.3770114+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-13T18:56:00.0000000+00:00",
-    "waveFt": 15.4,
-    "periodS": 12.0,
-    "dirDeg": 232.0,
+    "time": "2026-11-13T19:26:00.0000000+00:00",
+    "waveFt": 16.4,
+    "periodS": 11.0,
+    "dirDeg": 227.0,
     "waterF": 54.5
   },
   "bar": {
@@ -43,12 +43,6 @@
     },
     {
       "event": "Hazardous Seas Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-15T00:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 13 at 12:31AM PST until November 14 at 4:00PM PST by NWS Portland OR"
-    },
-    {
-      "event": "Hazardous Seas Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-15T00:00:00+00:00",
       "headline": "Hazardous Seas Warning issued November 13 at 12:31AM PST until November 14 at 4:00PM PST by NWS Portland OR"
@@ -64,6 +58,12 @@
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-14T03:00:00+00:00",
       "headline": "Gale Warning issued November 13 at 12:31AM PST until November 13 at 7:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Hazardous Seas Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-15T00:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 13 at 12:31AM PST until November 14 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Storm Watch",
