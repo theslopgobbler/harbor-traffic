@@ -285,6 +285,22 @@
   try { for (const [h, v] of Object.entries(JSON.parse(localStorage.getItem('ht.landed')) || {})) if (Date.now() - v.at < 7 * 864e5) landed.set(h, v); } catch {}
   setInterval(() => { let gone = false; for (const [h, v] of landed) if (Date.now() - v.at > 7 * 864e5) { landed.delete(h); gone = true; } if (gone) saveLanded(); }, 3600e3);
   const saveLanded = () => { try { localStorage.setItem('ht.landed', JSON.stringify(Object.fromEntries(landed))); } catch {} };
+  function mergeLanded(list, live) {
+    const flying = new Set(live.map((a) => String(a.hex).toLowerCase())), fromRelay = new Set();
+    let changed = false;
+    for (const x of list) {
+      const f = FIELDS.find((y) => y.id === x.f), hex = String(x.hex || '').toLowerCase();
+      if (!f || !hex || flying.has(hex) || !(Date.now() - x.at < 7 * 864e5)) continue;
+      fromRelay.add(hex);
+      const old = landed.get(hex);
+      if (old && old.at >= x.at && old.field === f.name) continue;
+      landed.set(hex, { lat: f.lat, lon: f.lon, at: x.at, field: f.name, label: x.label || hex.toUpperCase(), heli: !!x.heli, relay: 1 });
+      changed = true;
+    }
+    // (one the relay listed before and doesn't now was heard taking off, maybe while this browser wasn't watching)
+    for (const [hex, v] of landed) if (v.relay && !fromRelay.has(hex)) { landed.delete(hex); changed = true; }
+    if (changed) saveLanded();
+  }
   // at most two gray icons per field: one plane, one helicopter (side by side, a fixed 30 px apart so neither covers
   // the other at any zoom). Tapping one lists everything of that kind parked there
   function parkLanded(hex, m) {
@@ -426,6 +442,9 @@
           const r = await (await fetch(`${C.airRelay}?t=${Date.now()}`, { cache: 'no-store' })).json();
           // the relay's clock vs. ours (a phone's clock can be off by seconds), so position times line up
           const skew = Number.isFinite(r.now) ? Date.now() - r.now : 0;
+          // parked at Bowerman or the hospital pad, as the desktop's receiver saw them land (so everyone sees them, not
+          // only a browser that happened to be watching): merged into this browser's own landed list
+          if (Array.isArray(r.landed)) mergeLanded(r.landed, r.ac || []);
           // the relay keeps serving its last good list when feeds refuse it; only call it live if it's under 3 minutes old
           if (Array.isArray(r.ac) && r.ac.length && (!r.at || Date.now() - Date.parse(r.at) < 180000)) {
             live = true; liveSource = r.source || 'adsb.lol';
