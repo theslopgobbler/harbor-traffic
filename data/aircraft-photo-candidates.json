@@ -186,7 +186,8 @@
     "Eurocopter Squirrel AS.350 B": "2026-11-12T21:55:59.615779+00:00",
     "Lockheed HC-130J Hercules": "2026-11-12T22:16:08.7518803+00:00",
     "Gates Learjet 35 A": "2026-11-12T22:46:12.6481301+00:00",
-    "Gulfstream Aerospace G450": "2026-11-13T03:56:01.8445209+00:00"
+    "Gulfstream Aerospace G450": "2026-11-13T03:56:01.8445209+00:00",
+    "Boeing 747 8B5F": "2026-11-13T12:55:58.5425994+00:00"
   },
   "candidates": [
     {
@@ -11472,7 +11473,91 @@
       "date": "2011-03-01 00:03:54",
       "caption": "Gulfstream Aerospace G-IV-X Gulfstream G450 VH-MBP c/n 4185. The G450's cockpit bristles with the same advanced technology found on all other large cabin Gulfstream aircraft. The G450's PlaneView® cockpit is considere...",
       "found": "2026-11-13T03:56:01.8445209+00:00"
+    },
+    {
+      "model": "Boeing 747 8B5F",
+      "file": "File:Korean Air Cargo, HL7623, Boeing 747-8B5F (51272011701).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Cargo,_HL7623,_Boeing_747-8B5F_(51272011701).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Korean_Air_Cargo%2C_HL7623%2C_Boeing_747-8B5F_%2851272011701%29.jpg/960px-Korean_Air_Cargo%2C_HL7623%2C_Boeing_747-8B5F_%2851272011701%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2021-05-06 14:33",
+      "caption": "Korean Air Cargo, HL7623, Boeing 747-8B5F",
+      "found": "2026-11-13T12:55:58.5425994+00:00"
+    },
+    {
+      "model": "Boeing 747 8B5F",
+      "file": "File:Korean Air Cargo, HL7624, Boeing 747-8B5F (51272192018).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Cargo,_HL7624,_Boeing_747-8B5F_(51272192018).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Korean_Air_Cargo%2C_HL7624%2C_Boeing_747-8B5F_%2851272192018%29.jpg/960px-Korean_Air_Cargo%2C_HL7624%2C_Boeing_747-8B5F_%2851272192018%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2021-06-09 14:11",
+      "caption": "Korean Air Cargo, HL7624, Boeing 747-8B5F",
+      "found": "2026-11-13T12:55:58.5425994+00:00"
+    },
+    {
+      "model": "Boeing 747 8B5F",
+      "file": "File:Korean Air Cargo, HL7629, Boeing 747-8B5F (52564122679).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Cargo,_HL7629,_Boeing_747-8B5F_(52564122679).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Korean_Air_Cargo%2C_HL7629%2C_Boeing_747-8B5F_%2852564122679%29.jpg/960px-Korean_Air_Cargo%2C_HL7629%2C_Boeing_747-8B5F_%2852564122679%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-11-04 15:43",
+      "caption": "Korean Air Cargo, HL7629, Boeing 747-8B5F",
+      "found": "2026-11-13T12:55:58.5425994+00:00"
+    },
+    {
+      "model": "Boeing 747 8B5F",
+      "file": "File:Korean Air Cargo, HL7639, Boeing 747-8B5F (42081894572).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Cargo,_HL7639,_Boeing_747-8B5F_(42081894572).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Korean_Air_Cargo%2C_HL7639%2C_Boeing_747-8B5F_%2842081894572%29.jpg/960px-Korean_Air_Cargo%2C_HL7639%2C_Boeing_747-8B5F_%2842081894572%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-05-05 11:49",
+      "caption": "Korean Air Cargo, HL7639, Boeing 747-8B5F",
+      "found": "2026-11-13T12:55:58.5425994+00:00"
+    },
+    {
+      "model": "Boeing 747 8B5F",
+      "file": "File:Korean Air Cargo Plane - Boeing 747-8B5F HL7623 at Schiphol.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Cargo_Plane_-_Boeing_747-8B5F_HL7623_at_Schiphol.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Korean_Air_Cargo_Plane_-_Boeing_747-8B5F_HL7623_at_Schiphol.jpg/960px-Korean_Air_Cargo_Plane_-_Boeing_747-8B5F_HL7623_at_Schiphol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 619,
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2024-07-24 17:06",
+      "caption": "Korean Air Cargo Plane - Boeing 747-8B5F HL7623 at Schiphol",
+      "found": "2026-11-13T12:55:58.5425994+00:00"
+    },
+    {
+      "model": "Boeing 747 8B5F",
+      "file": "File:Korean Air Lines Boeing 747-8B5F (HL7624) coming in from Seoul-Incheon (RKSI) @ Frankfurt - Rhein-Main International (EDDF).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Lines_Boeing_747-8B5F_(HL7624)_coming_in_from_Seoul-Incheon_(RKSI)_@_Frankfurt_-_Rhein-Main_International_(EDDF).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Korean_Air_Lines_Boeing_747-8B5F_%28HL7624%29_coming_in_from_Seoul-Incheon_%28RKSI%29_%40_Frankfurt_-_Rhein-Main_International_%28EDDF%29.jpg/960px-Korean_Air_Lines_Boeing_747-8B5F_%28HL7624%29_coming_in_from_Seoul-Incheon_%28RKSI%29_%40_Frankfurt_-_Rhein-Main_International_%28EDDF%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Oliver Holzbauer",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-03-26 14:58",
+      "caption": "HL7624 Korean Air Lines Boeing 747-8B5F coming in from Seoul-Incheon (RKSI) @ Frankfurt - Rhein-Main International (EDDF) / 26.03.2016",
+      "found": "2026-11-13T12:55:58.5425994+00:00"
     }
   ],
-  "updated": "2026-11-13T12:46:00.4257915+00:00"
+  "updated": "2026-11-13T12:55:58.5425994+00:00"
 }
