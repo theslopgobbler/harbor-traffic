@@ -1559,7 +1559,7 @@
     const btn = $('#btnRoads');
     btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on);
     document.body.classList.toggle('no-roads', !on);
-    const apply = () => ['inc', 'inc-glow', 'inc-p', 'inc-glow-p', 'power-fill', 'power-line', 'power-pt', 'slow-pt'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
+    const apply = () => ['inc', 'inc-glow', 'inc-p', 'inc-glow-p', 'power-fill', 'power-line', 'power-pt', 'slow-pt', 'slow-faint', 'slow-case', 'slow-line', 'slow-line-1'].forEach((id) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'));
     if (map.isStyleLoaded()) apply(); else map.once('load', apply);
     declutterSoon();
   }

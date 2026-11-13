@@ -80,7 +80,7 @@
       'symbol-sort-key': ['get', 'n'] } }, 'outside');
     // a tap opens an outage only when nothing else is there: outage dots and shaded areas give way to markers, road
     // warnings, traffic lines, bus stops and routes, the railroad and quakes (they open their own popups)
-    const OTHERS = ['inc-glow', 'inc', 'inc-glow-p', 'inc-p', 'flow-glow', 'flow', 'bus-stops', 'bus-route-picked', 'bus-route-lines', 'rail-hit', 'quake-ring', 'slow-pt'];
+    const OTHERS = ['inc-glow', 'inc', 'inc-glow-p', 'inc-p', 'flow-glow', 'flow', 'bus-stops', 'bus-route-picked', 'bus-route-lines', 'rail-hit', 'quake-ring', 'slow-pt', 'slow-line', 'slow-line-1'];
     const open = (f, at) => { const o = outages.find((x) => x.id === f.properties.id); if (o) popup(o, at); };
     map.on('click', (e) => {
       if (e.originalEvent?.target?.closest?.('.maplibregl-marker, .maplibregl-popup')) return;

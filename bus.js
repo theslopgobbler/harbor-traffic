@@ -71,7 +71,7 @@
           if (e.originalEvent?.target?.closest?.('.maplibregl-marker')) return;
           const box = [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]];
           // (a slowdown turtle there opens its own popup instead: slow.js)
-          if (map.getLayer('slow-pt') && map.getLayoutProperty('slow-pt', 'visibility') !== 'none' && map.queryRenderedFeatures(box, { layers: ['slow-pt'] }).length) return;
+          if (map.getLayer('slow-pt') && map.getLayoutProperty('slow-pt', 'visibility') !== 'none' && map.queryRenderedFeatures(box, { layers: ['slow-pt', 'slow-line', 'slow-line-1'] }).length) return;
           const stop = map.getLayer('bus-stops') && map.getLayoutProperty('bus-stops', 'visibility') !== 'none'
             ? map.queryRenderedFeatures(box, { layers: ['bus-stops'] })[0] : null;
           if (stop) return focusStop(stop.properties.id);
@@ -1569,7 +1569,7 @@
     try {
       const j = await (await fetch(`${RELAY}/buses?t=${Date.now()}`, { cache: 'no-store' })).json();
       // possible slowdowns the buses ran into (the relay's slowCheck; slow.js shows them)
-      window.htSlow = j.slow || []; window.dispatchEvent(new Event('ht:slow'));
+      window.htSlow = j.slow || []; window.htStretch = j.stretch || []; window.dispatchEvent(new Event('ht:slow'));
       // the relay shares one reading among everyone; the same reading again has nothing new
       if (j.at && j.at === lastAt) return;
       lastAt = j.at;

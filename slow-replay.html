@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Slowdown Replay</title>
+<meta name="theme-color" content="#030807">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+  /* Slowdown replay: every turtle the buses set off (logged by the relay, see stretchCheck in scripts/relay-worker.js),
+     played back from the bus GPS log, with a space-time chart, and a verdict for each one */
+  :root { --bg: #030807; --panel: #030d0c; --line: #12403a; --line-2: #1d6358; --text: #c4ffe9; --dim: #5f9c8b; --cyan: #00e5ff;
+    --green: #39ff88; --red: #ff2a3d; --amber: #ffc400; --orange: #ff7a1a; --faint: #d9cf6a;
+    --mono: "Share Tech Mono", ui-monospace, Consolas, monospace; --disp: "Orbitron", "Share Tech Mono", monospace; --fs: 14px; }
+  :root[data-theme="light"] { --bg: #eef3f1; --panel: #ffffff; --line: #c9dbd5; --line-2: #8fb3a8; --text: #0b2a26; --dim: #4f7a6e; --cyan: #007a8a;
+    --green: #148a4a; --red: #c8102e; --amber: #b08600; --orange: #c2560a; --faint: #9a8a10; }
+  :root.big { --fs: 18px; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: var(--fs)/1.45 var(--mono); letter-spacing: .05em; min-height: 100vh; }
+  main { max-width: 1200px; margin: 0 auto; padding: 16px 16px 40px; }
+  header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  h1 { font: 800 calc(var(--fs) + 2px)/1 var(--disp); letter-spacing: .22em; color: var(--cyan); margin: 0; flex: 1; min-width: 240px; }
+  h1 a { color: inherit; text-decoration: none; }
+  h2 { font: 600 calc(var(--fs) - 3px)/1 var(--disp); letter-spacing: .2em; color: var(--dim); margin: 18px 0 8px; }
+  button, select, input { font: inherit; color: var(--cyan); background: transparent; border: 1px solid var(--cyan); padding: 6px 10px; cursor: pointer; }
+  input { color: var(--text); border-color: var(--line-2); cursor: text; }
+  select { color: var(--text); border-color: var(--line-2); background: var(--panel); }
+  button[aria-pressed="true"] { background: var(--cyan); color: var(--bg); }
+  .msg { color: var(--red); min-height: 1.4em; }
+  .layout { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 16px; }
+  @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
+  .box { border: 1px solid var(--line); background: var(--panel); }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+  .sum { color: var(--dim); font-size: calc(var(--fs) - 3px); margin-bottom: 8px; }
+  #list { max-height: 72vh; overflow: auto; }
+  #list .it { padding: 8px 10px; border-bottom: 1px solid var(--line); border-left: 4px solid var(--dim); cursor: pointer; }
+  #list .it:hover, #list .it.on { background: rgba(0,229,255,.07); }
+  #list .it .t { color: var(--text); }
+  #list .it .m { color: var(--dim); font-size: calc(var(--fs) - 3px); }
+  #list .it .v { float: right; font-size: calc(var(--fs) - 4px); padding: 0 5px; border: 1px solid currentColor; }
+  #map { height: 46vh; min-height: 300px; }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 8px; flex-wrap: wrap; border-top: 1px solid var(--line); }
+  .bar input[type=range] { flex: 1; min-width: 160px; padding: 0; border: 0; accent-color: var(--cyan); }
+  #clock { font: 600 calc(var(--fs) + 4px)/1 var(--disp); color: var(--green); min-width: 7.5em; }
+  #st { width: 100%; height: 260px; display: block; cursor: crosshair; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; padding: 10px; }
+  .facts div { font-size: calc(var(--fs) - 3px); color: var(--dim); } .facts b { display: block; color: var(--text); font-weight: 400; font-size: var(--fs); }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: calc(var(--fs) - 4px); color: var(--dim); padding: 6px 10px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -2px; margin-right: 4px; }
+  .verdict { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; padding: 10px; border-top: 1px solid var(--line); }
+  .verdict input { flex: 1; min-width: 180px; }
+  .empty { color: var(--dim); padding: 14px; }
+  .note { color: var(--dim); font-size: calc(var(--fs) - 4px); margin-top: 16px; }
+  [hidden] { display: none !important; }
+  .maplibregl-ctrl-attrib { font-size: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1><a href="./">◂ HARBOR TRAFFIC</a> · SLOWDOWN REPLAY</h1>
+    <button id="bigBtn" aria-pressed="false" title="Bigger text">BIGGER TEXT</button>
+    <button id="themeBtn" title="Light or dark">LIGHT</button>
+  </header>
+
+  <form id="keyForm" hidden>
+    <input id="key" type="password" autocomplete="current-password" placeholder="STATS KEY" aria-label="Stats key">
+    <button type="submit">OPEN</button>
+  </form>
+  <div class="msg" id="msg"></div>
+
+  <div class="layout" id="app" hidden>
+    <section>
+      <div class="filters">
+        <select id="days" aria-label="How far back"><option value="7">LAST 7 DAYS</option><option value="14" selected>LAST 14 DAYS</option><option value="30">LAST 30 DAYS</option><option value="90">LAST 90 DAYS</option></select>
+        <select id="lvl" aria-label="Which kind"><option value="">ALL</option><option value="stop">STOPPED / STOP AND GO</option><option value="heavy">HEAVY</option><option value="moderate">MODERATE</option><option value="open">NO VERDICT YET</option></select>
+      </div>
+      <div class="sum" id="sum"></div>
+      <div class="box" id="list"></div>
+    </section>
+    <section>
+      <div class="box">
+        <div id="map"></div>
+        <div class="bar">
+          <button id="play" title="Play or pause">▶ PLAY</button>
+          <select id="speed" aria-label="Playback speed"><option value="30">30×</option><option value="60" selected>60×</option><option value="120">120×</option><option value="300">300×</option></select>
+          <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Time">
+          <span id="clock">--:--</span>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--green)"></i>USUAL SPEED</span><span><i style="background:var(--faint)"></i>75–90%</span>
+          <span><i style="background:var(--amber)"></i>50–75%</span><span><i style="background:var(--orange)"></i>25–50%</span>
+          <span><i style="background:var(--red)"></i>UNDER 25%</span><span><i style="background:var(--dim)"></i>NO USUAL SPEED THERE</span>
+        </div>
+      </div>
+      <h2>SPACE-TIME: DISTANCE ALONG THE ROAD (UP) OVER TIME (ACROSS), EACH BUS A LINE</h2>
+      <div class="box"><canvas id="st"></canvas></div>
+      <div class="box" style="margin-top:12px">
+        <div class="facts" id="facts"><div class="empty">PICK A SLOWDOWN ON THE LEFT</div></div>
+        <div class="verdict" id="verdict" hidden>
+          <span style="color:var(--dim)">WHAT WAS IT?</span>
+          <button data-v="traffic">TRAFFIC</button><button data-v="bus">JUST THE BUS</button><button data-v="unsure">NOT SURE</button>
+          <input id="vnote" placeholder="NOTE (OPTIONAL)" maxlength="500" aria-label="Note">
+        </div>
+      </div>
+      <div class="note">From Grays Harbor Transit's GPS (the relay logs it 3 times a minute). Usual speeds are the middle
+        speed buses drove each ~300 m of road, by direction, from slow-baseline.json. A flat line in the space-time chart is a bus
+        standing still; a steep one is a bus moving fast. A slowdown that builds and clears shows up as a growing, then shrinking,
+        patch of orange and red.</div>
+    </section>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const relay = (window.HT?.airRelay || '').replace(/\/aircraft$/, '');
+  const ls = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} } };
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const fmtT = (t) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  const fmtTs = (t) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' });
+  const fmtD = (t) => new Date(t).toLocaleString([], { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  const mDist = (a, b) => Math.hypot((b.lon - a.lon) * 76000, (b.lat - a.lat) * 111000);
+  const LVL = { stop: 'STOP AND GO', heavy: 'HEAVY', moderate: 'MODERATE' };
+  const VERD = { traffic: 'TRAFFIC', bus: 'JUST THE BUS', unsure: 'NOT SURE' };
+  const towns = (window.HT?.towns || []).filter((t) => !t.minor);
+  const near = (p) => {
+    let best = null, bd = Infinity;
+    for (const t of towns) { const d = Math.hypot((t.lon - p.lon) * 76, (t.lat - p.lat) * 111); if (d < bd) { bd = d; best = t; } }
+    if (!best) return '';
+    const mi = bd / 1.609;
+    return mi < 1.5 ? `IN ${best.name.toUpperCase()}` : `${Math.round(mi)} MI FROM ${best.name.toUpperCase()}`;
+  };
+  // speed as a share of usual -> color
+  const ratioColor = (r) => r == null ? css('--dim') : r >= 0.9 ? css('--green') : r >= 0.75 ? css('--faint') : r >= 0.5 ? css('--amber') : r >= 0.25 ? css('--orange') : css('--red');
+  const lvlColor = (l) => ({ stop: css('--red'), heavy: css('--orange'), moderate: css('--amber') }[l] || css('--dim'));
+
+  // ---- text size and theme (remembered on this device)
+  const root = document.documentElement;
+  const applyPrefs = () => {
+    const big = ls.get('ht.replay.big') === '1', light = ls.get('ht.replay.theme') === 'light';
+    root.classList.toggle('big', big); $('#bigBtn').setAttribute('aria-pressed', big);
+    root.dataset.theme = light ? 'light' : 'dark'; $('#themeBtn').textContent = light ? 'DARK' : 'LIGHT';
+  };
+  applyPrefs();
+  $('#bigBtn').onclick = () => { ls.set('ht.replay.big', ls.get('ht.replay.big') === '1' ? null : '1'); applyPrefs(); drawChart(); };
+  $('#themeBtn').onclick = () => { ls.set('ht.replay.theme', ls.get('ht.replay.theme') === 'light' ? null : 'light'); applyPrefs(); mapTheme(); refreshList(); show(); };
+
+  // ---- key
+  let key = ls.get('ht.statsKey');
+  const api = async (path, opts = {}) => {
+    const r = await fetch(relay + path, { ...opts, headers: { 'X-Stats-Key': key, ...(opts.headers || {}) }, cache: 'no-store' });
+    if (r.status === 403) { ls.set('ht.statsKey', null); key = null; $('#keyForm').hidden = false; $('#app').hidden = true; throw new Error('Wrong key'); }
+    if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+    return r.json();
+  };
+  $('#keyForm').onsubmit = (e) => { e.preventDefault(); key = $('#key').value.trim(); if (!key) return; ls.set('ht.statsKey', key); start(); };
+
+  // ---- usual speeds (the same file the relay uses)
+  let base = null;
+  async function loadBase() {
+    if (base) return base;
+    const j = await (await fetch('data/slow-baseline.json', { cache: 'no-store' })).json();
+    base = { kx: j.kx, ky: j.ky, cells: j.cells || {} };
+    return base;
+  }
+
+  // the usual speed for a square and way; where the log has none, the next way round, then the squares around it
+  // (the replay only: the relay itself uses the exact square, as backtested)
+  function usualAt(B, lon, lat, d) {
+    if (d == null) return null;
+    const i = Math.floor(lon / B.kx), j = Math.floor(lat / B.ky);
+    for (const dd of [d, (d + 1) % 8, (d + 7) % 8]) { const u = B.cells[`${i},${j},${dd}`]; if (u) return u; }
+    for (let di = -1; di <= 1; di++) for (let dj = -1; dj <= 1; dj++) { const u = B.cells[`${i + di},${j + dj},${d}`]; if (u) return u; }
+    return null;
+  }
+
+  // ---- the log
+  let log = [], cur = null;
+  async function loadLog() {
+    $('#list').innerHTML = '<div class="empty">LOADING…</div>';
+    const j = await api(`/slow-log?days=${$('#days').value}`);
+    log = j.log || [];
+    refreshList();
+  }
+  function refreshList() {
+    const f = $('#lvl').value;
+    const rows = log.filter((e) => !f || (f === 'open' ? !e.data.verdict : e.level === f));
+    const by = {}; for (const e of log) by[e.level] = (by[e.level] || 0) + 1;
+    const vd = {}; for (const e of log) if (e.data.verdict) vd[e.data.verdict] = (vd[e.data.verdict] || 0) + 1;
+    $('#sum').textContent = `${log.length} LOGGED · ${Object.entries(by).map(([k, n]) => `${LVL[k] || k} ${n}`).join(' · ')}`
+      + (Object.keys(vd).length ? ` · VERDICTS: ${Object.entries(vd).map(([k, n]) => `${VERD[k]} ${n}`).join(' · ')}` : '');
+    $('#list').innerHTML = rows.length ? rows.map((e) => {
+      const d = e.data, mins = Math.max(1, Math.round(((d.end || e.t1) - e.t0) / 60000));
+      const what = e.kind === 'stretch' ? `${d.mph} MPH FOR ${(d.m / 1609).toFixed(1)} MI · USUALLY ${d.usual}` : `DOWN TO ${d.min} MPH · USUALLY ${d.usual}`;
+      return `<div class="it${cur?.id === e.id ? ' on' : ''}" data-id="${esc(e.id)}" style="border-left-color:${lvlColor(e.level)}">
+        ${d.verdict ? `<span class="v">${VERD[d.verdict]}</span>` : ''}<div class="t">${esc(LVL[e.level] || e.level)} · ${esc(near(e))}</div>
+        <div class="m">${fmtD(e.t0)} · ${mins} MIN · ROUTE ${esc(e.rt)} · ${what}${(d.buses || []).length > 1 ? ` · ${d.buses.length} BUSES` : ''}</div></div>`;
+    }).join('') : '<div class="empty">NOTHING LOGGED IN THIS RANGE YET</div>';
+  }
+  $('#list').onclick = (e) => { const it = e.target.closest('.it'); if (it) open(it.dataset.id); };
+  $('#days').onchange = () => loadLog().catch((e) => ($('#msg').textContent = e.message));
+  $('#lvl').onchange = refreshList;
+
+  // ---- the map
+  const map = new maplibregl.Map({ container: 'map', center: [-123.85, 46.98], zoom: 11, attributionControl: { compact: true },
+    style: { version: 8, glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+      sources: { omt: { type: 'vector', url: 'https://tiles.openfreemap.org/planet' } },
+      layers: [
+        { id: 'bg', type: 'background', paint: { 'background-color': '#030807' } },
+        { id: 'water', type: 'fill', source: 'omt', 'source-layer': 'water', paint: { 'fill-color': '#021a24' } },
+        { id: 'roads', type: 'line', source: 'omt', 'source-layer': 'transportation', layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: { 'line-color': '#2a5a60', 'line-width': ['interpolate', ['linear'], ['zoom'], 10, 0.6, 16, 5] } },
+        { id: 'road-names', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 13,
+          layout: { 'symbol-placement': 'line', 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Regular'], 'text-size': 11 },
+          paint: { 'text-color': '#7fb9b0', 'text-halo-color': '#030807', 'text-halo-width': 1.5 } }] } });
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+  const empty = { type: 'FeatureCollection', features: [] };
+  function mapTheme() {
+    if (!map.isStyleLoaded()) return;
+    const light = root.dataset.theme === 'light';
+    map.setPaintProperty('bg', 'background-color', light ? '#eef3f1' : '#030807');
+    map.setPaintProperty('water', 'fill-color', light ? '#bfe0ea' : '#021a24');
+    map.setPaintProperty('roads', 'line-color', light ? '#a9bfbb' : '#2a5a60');
+    map.setPaintProperty('road-names', 'text-color', light ? '#33554f' : '#7fb9b0');
+    map.setPaintProperty('road-names', 'text-halo-color', light ? '#eef3f1' : '#030807');
+  }
+  map.on('load', () => {
+    for (const s of ['ref', 'paint', 'trail', 'bus']) map.addSource(s, { type: 'geojson', data: empty });
+    map.addLayer({ id: 'ref', type: 'line', source: 'ref', layout: { 'line-cap': 'round' }, paint: { 'line-color': '#00e5ff', 'line-width': 10, 'line-opacity': 0.15 } });
+    map.addLayer({ id: 'ref-pt', type: 'circle', source: 'ref', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-radius': 26, 'circle-color': '#00e5ff', 'circle-opacity': 0.12 } });
+    // every slow report so far, fading as it gets older: the slowdown growing and shrinking along the road
+    map.addLayer({ id: 'paint', type: 'circle', source: 'paint', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 4, 16, 10],
+      'circle-color': ['get', 'c'], 'circle-opacity': ['get', 'a'], 'circle-blur': 0.6 } });
+    map.addLayer({ id: 'trail', type: 'line', source: 'trail', layout: { 'line-cap': 'round' }, paint: { 'line-color': ['get', 'c'], 'line-width': 3, 'line-opacity': ['get', 'a'] } });
+    map.addLayer({ id: 'bus', type: 'circle', source: 'bus', paint: { 'circle-radius': 7, 'circle-color': ['get', 'c'], 'circle-stroke-color': '#000', 'circle-stroke-width': 2 } });
+    map.addLayer({ id: 'bus-lbl', type: 'symbol', source: 'bus', layout: { 'text-field': ['get', 'l'], 'text-font': ['Noto Sans Regular'], 'text-size': 11,
+      'text-offset': [0, -1.5], 'text-allow-overlap': true }, paint: { 'text-color': '#ffffff', 'text-halo-color': '#000', 'text-halo-width': 1.5 } });
+    mapTheme();
+    if (cur) show();
+  });
+
+  // ---- one slowdown: its positions, worked out once
+  let T = null; // { ev, from, to, pos: [{t, rt, bus, lat, lon, mph, r, frozen, s}], path, len }
+  async function open(id) {
+    const ev = log.find((e) => e.id === id); if (!ev) return;
+    cur = ev; refreshList(); stop();
+    $('#facts').innerHTML = '<div class="empty">LOADING THE BUS LOG…</div>';
+    const [j, B] = await Promise.all([api(`/slow-track?id=${encodeURIComponent(id)}`), loadBase()]);
+    if (j.error) { $('#facts').innerHTML = `<div class="empty">${esc(j.error)}</div>`; return; }
+    // direction (8 ways) from each bus's last report at 5+ mph, then the usual speed for that square and way
+    const rows = j.pos.map(([t, rt, bus, lat, lon, hd, mph]) => ({ t, rt, bus, lat, lon, hd, mph })).sort((a, b) => a.t - b.t);
+    const lastDir = {}, lastPos = {};
+    for (const p of rows) {
+      if (p.mph >= 5 && p.hd >= 0) lastDir[p.bus] = Math.round(p.hd / 45) % 8;
+      const lp = lastPos[p.bus]; p.frozen = !!(lp && lp[0] === p.lat && lp[1] === p.lon && p.mph > 3); lastPos[p.bus] = [p.lat, p.lon];
+      const u = usualAt(B, p.lon, p.lat, lastDir[p.bus]);
+      p.usual = u; p.r = u ? p.mph / u : null;
+    }
+    // the road it happened on, as a line to measure along: the stretch itself, or the first bus's path past the stop,
+    // with 1.5 km more at each end
+    let path = ev.kind === 'stretch' ? (ev.data.pts || []).slice() : rows.filter((p) => p.bus === (ev.data.buses || [])[0] && mDist(p, ev) < 2000).map((p) => [p.lon, p.lat]);
+    path = path.filter((q, i) => i === 0 || q[0] !== path[i - 1][0] || q[1] !== path[i - 1][1]);
+    if (path.length < 2) path = [[ev.lon - 0.01, ev.lat], [ev.lon + 0.01, ev.lat]];
+    const ext = (a, b) => { const dx = (a[0] - b[0]) * 76000, dy = (a[1] - b[1]) * 111000, L = Math.hypot(dx, dy) || 1; return [a[0] + dx / L * 1500 / 76000, a[1] + dy / L * 1500 / 111000]; };
+    path = [ext(path[0], path[1]), ...path, ext(path[path.length - 1], path[path.length - 2])];
+    const cum = [0]; for (let i = 1; i < path.length; i++) cum.push(cum[i - 1] + mDist({ lon: path[i - 1][0], lat: path[i - 1][1] }, { lon: path[i][0], lat: path[i][1] }));
+    for (const p of rows) {
+      let best = null;
+      for (let i = 1; i < path.length; i++) {
+        const ax = (path[i - 1][0] - p.lon) * 76000, ay = (path[i - 1][1] - p.lat) * 111000, bx = (path[i][0] - p.lon) * 76000, by = (path[i][1] - p.lat) * 111000;
+        const dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy, f = L ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L)) : 0;
+        const d = Math.hypot(ax + f * dx, ay + f * dy);
+        if (!best || d < best.d) best = { d, s: cum[i - 1] + f * Math.sqrt(L) };
+      }
+      p.s = best && best.d < 250 ? best.s : null;
+    }
+    T = { ev, from: j.from, to: j.to, pos: rows, path, len: cum[cum.length - 1], off: 1500 };
+    t = ev.t0 - 5 * 60000; if (t < T.from) t = T.from;
+    show();
+    const b = new maplibregl.LngLatBounds(); path.forEach((q) => b.extend(q)); if (ev.kind !== 'stretch') b.extend([ev.lon, ev.lat]);
+    map.fitBounds(b, { padding: 40, maxZoom: 15.5, duration: 0 });
+  }
+
+  // ---- playback
+  let t = 0, playing = false, last = 0;
+  const seek = $('#seek');
+  function stop() { playing = false; $('#play').textContent = '▶ PLAY'; }
+  $('#play').onclick = () => { if (!T) return; if (playing) return stop(); if (t >= T.to) t = T.from; playing = true; $('#play').textContent = '❚❚ PAUSE'; last = performance.now(); requestAnimationFrame(tick); };
+  function tick(now) {
+    if (!playing) return;
+    t += (now - last) * +$('#speed').value; last = now;
+    if (t >= T.to) { t = T.to; stop(); }
+    frame(); if (playing) requestAnimationFrame(tick);
+  }
+  seek.oninput = () => { if (!T) return; t = T.from + (T.to - T.from) * seek.value / 1000; frame(); };
+
+  function show() {
+    if (!T) return;
+    const ev = T.ev, d = ev.data;
+    const mins = Math.max(1, Math.round(((d.end || ev.t1) - ev.t0) / 60000));
+    const hist = (d.hist || []).map(([ht, l, mph]) => `${fmtT(ht)} ${LVL[l] || 'SLOWER'} (${mph} MPH)`).join(' → ');
+    const fact = (l, v) => `<div>${l}<b>${v}</b></div>`;
+    $('#facts').innerHTML = [
+      fact('WHAT', `${LVL[ev.level] || ev.level}${ev.kind === 'stop' ? ' (STOPPED BUS)' : ' (SLOW STRETCH)'}`),
+      fact('WHERE', `${near(ev)} · ROUTE ${esc(ev.rt)}`),
+      fact('WHEN', `${fmtD(ev.t0)} · ${mins} MIN`),
+      fact('SPEED', ev.kind === 'stretch' ? `${d.mph} MPH AVG FOR ${(d.m / 1609).toFixed(1)} MI · USUALLY ${d.usual}` : `DOWN TO ${d.min} MPH · USUALLY ${d.usual}`),
+      fact('BUSES IN IT', `${(d.buses || []).length}${d.clearedBy ? ` · CLEARED AT ${fmtT(d.cleared)} BY A BUS AT NORMAL SPEED` : ''}`),
+      hist ? fact('HOW IT WENT', hist) : '',
+      fact('MAP', `<a style="color:var(--cyan)" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${ev.lat.toFixed(5)},${ev.lon.toFixed(5)}">OPEN THE SPOT</a>`)
+    ].join('');
+    $('#verdict').hidden = false;
+    $('#verdict').querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.v === d.verdict));
+    $('#vnote').value = d.note || '';
+    if (map.getSource('ref')) map.getSource('ref').setData({ type: 'FeatureCollection', features: [ev.kind === 'stretch'
+      ? { type: 'Feature', geometry: { type: 'LineString', coordinates: d.pts }, properties: {} }
+      : { type: 'Feature', geometry: { type: 'Point', coordinates: [ev.lon, ev.lat] }, properties: {} }] });
+    frame();
+  }
+  function frame() {
+    if (!T) return;
+    seek.value = Math.round((t - T.from) / (T.to - T.from) * 1000);
+    $('#clock').textContent = fmtTs(t);
+    if (map.getSource('bus')) {
+      const now = T.pos.filter((p) => p.t <= t);
+      // where each bus is now (its latest report, if it's from the last 2 minutes)
+      const lastBy = {}; for (const p of now) lastBy[p.bus] = p;
+      const buses = Object.values(lastBy).filter((p) => t - p.t < 120000);
+      map.getSource('bus').setData({ type: 'FeatureCollection', features: buses.map((p) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [p.lon, p.lat] },
+        properties: { c: p.frozen ? css('--dim') : ratioColor(p.r), l: `${p.rt} · ${p.mph}` } })) });
+      // each bus's last 4 minutes as a trail
+      const feats = [];
+      const prev = {};
+      for (const p of now) {
+        const q = prev[p.bus]; prev[p.bus] = p;
+        if (!q || t - p.t > 240000 || p.t - q.t > 90000) continue;
+        feats.push({ type: 'Feature', geometry: { type: 'LineString', coordinates: [[q.lon, q.lat], [p.lon, p.lat]] }, properties: { c: ratioColor(p.r), a: 0.9 * (1 - (t - p.t) / 240000) } });
+      }
+      map.getSource('trail').setData({ type: 'FeatureCollection', features: feats });
+      // every slow report of the last 20 minutes, fading out: the slowdown's shape on the road
+      map.getSource('paint').setData({ type: 'FeatureCollection', features: now.filter((p) => p.r != null && p.r < 0.9 && !p.frozen && t - p.t < 1200000)
+        .map((p) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [p.lon, p.lat] }, properties: { c: ratioColor(p.r), a: 0.85 * (1 - (t - p.t) / 1200000) } })) });
+    }
+    drawChart();
+  }
+
+  // ---- space-time chart
+  const cv = $('#st');
+  function drawChart() {
+    const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
+    const fs = parseFloat(css('--fs')) - 4;
+    g.font = `${fs}px "Share Tech Mono", monospace`;
+    if (!T) { g.fillStyle = css('--dim'); g.fillText('PICK A SLOWDOWN ON THE LEFT', 12, 24); return; }
+    const L = 54, R = 10, Tp = 10, Bm = 26;
+    const X = (tt) => L + (tt - T.from) / (T.to - T.from) * (W - L - R);
+    const Y = (s) => H - Bm - s / T.len * (H - Tp - Bm);
+    // the slowdown's own stretch (between the 1.5 km extensions) and time, shaded
+    g.fillStyle = 'rgba(0,229,255,.07)';
+    g.fillRect(X(T.ev.t0), Y(T.len - T.off), X(T.ev.data.end || T.ev.t1) - X(T.ev.t0), Y(T.off) - Y(T.len - T.off));
+    // grid: every 5 minutes, every half mile
+    g.strokeStyle = css('--line'); g.fillStyle = css('--dim'); g.lineWidth = 1;
+    // (grid every 5 minutes; labels as often as they fit)
+    const step = 5 * 60000, lw = g.measureText('12:55 PM').width + 12;
+    const every = Math.max(1, Math.ceil(lw / (X(T.from + step) - X(T.from))));
+    let k = 0;
+    for (let tt = Math.ceil(T.from / step) * step; tt <= T.to; tt += step, k++) {
+      g.beginPath(); g.moveTo(X(tt), Tp); g.lineTo(X(tt), H - Bm); g.stroke();
+      if (k % every === 0) g.fillText(fmtT(tt), X(tt) - lw / 2 + 6, H - 8);
+    }
+    for (let s = 0; s <= T.len; s += 804.7) {
+      g.beginPath(); g.moveTo(L, Y(s)); g.lineTo(W - R, Y(s)); g.stroke();
+      g.fillText(`${(s / 1609.3).toFixed(1)} MI`, 4, Y(s) + 4);
+    }
+    // each bus: dots colored by speed, joined while they're on the road being measured
+    const by = {};
+    for (const p of T.pos) if (p.s != null) (by[p.bus] ||= []).push(p);
+    for (const list of Object.values(by)) {
+      for (let i = 1; i < list.length; i++) {
+        const a = list[i - 1], b = list[i];
+        if (b.t - a.t > 90000) continue;
+        g.strokeStyle = ratioColor(b.r); g.lineWidth = 2.5;
+        g.beginPath(); g.moveTo(X(a.t), Y(a.s)); g.lineTo(X(b.t), Y(b.s)); g.stroke();
+      }
+      for (const p of list) { g.fillStyle = p.frozen ? css('--dim') : ratioColor(p.r); g.beginPath(); g.arc(X(p.t), Y(p.s), 2.6, 0, 7); g.fill(); }
+    }
+    // now
+    g.strokeStyle = css('--cyan'); g.lineWidth = 1.5;
+    g.beginPath(); g.moveTo(X(t), Tp); g.lineTo(X(t), H - Bm); g.stroke();
+  }
+  cv.onclick = (e) => {
+    if (!T) return;
+    const r = cv.getBoundingClientRect(), L = 54, R = 10;
+    t = T.from + Math.max(0, Math.min(1, (e.clientX - r.left - L) / (r.width - L - R))) * (T.to - T.from);
+    frame();
+  };
+  window.addEventListener('resize', drawChart);
+
+  // ---- verdict
+  async function setVerdict(v) {
+    if (!cur) return;
+    const note = $('#vnote').value.trim();
+    try {
+      await api('/slow-verdict', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: cur.id, verdict: v, note }) });
+      cur.data.verdict = v; cur.data.note = note; refreshList(); show();
+    } catch (e) { $('#msg').textContent = e.message; }
+  }
+  $('#verdict').onclick = (e) => { const b = e.target.closest('button[data-v]'); if (b) setVerdict(cur?.data.verdict === b.dataset.v ? '' : b.dataset.v); };
+  $('#vnote').onchange = () => cur?.data.verdict && setVerdict(cur.data.verdict);
+
+  async function start() {
+    $('#msg').textContent = '';
+    if (!key) { $('#keyForm').hidden = false; return; }
+    $('#keyForm').hidden = true; $('#app').hidden = false;
+    map.resize();
+    try { await loadLog(); const id = new URLSearchParams(location.search).get('id'); if (id) open(id); }
+    catch (e) { $('#msg').textContent = e.message; }
+  }
+  drawChart();
+  start();
+})();
+</script>
+</body>
+</html>
