@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T19:26:43.4400159+00:00",
+  "updated": "2026-11-13T19:36:00.8614945+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -248,6 +248,27 @@
       "start": "2026-11-02T13:00:00.0000000+00:00",
       "end": "2026-12-01T01:30:00.0000000+00:00",
       "updated": "2026-10-31T00:26:55.2670000+00:00"
+    },
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 640018,
@@ -887,27 +908,6 @@
       ]
     },
     {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -927,27 +927,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 724383,
-      "kind": "other",
-      "category": "Trees down",
-      "priority": "Highest",
-      "headline": "Trees reported down on US 101 northbound at milepost 157.4 near Kalaloch Creek beginning at 6:20 am on November 13, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 157.4,
-      "lat": 47.608952281,
-      "lon": -124.372495049,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-11-13T14:20:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-13T14:21:19.3200000+00:00"
     },
     {
       "id": 640019,
