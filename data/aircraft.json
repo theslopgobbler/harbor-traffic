@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-14T05:06:00.8573209+00:00",
+  "updated": "2026-11-14T05:15:57.5072749+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a0efca",
-      "flight": "GFY164",
-      "reg": "N16ES",
-      "type": "DA42",
-      "cat": "A1",
-      "alt": 2500,
-      "gs": 165.4,
-      "track": 35.9,
-      "rate": -64,
-      "lat": 47.00652,
-      "lon": -122.8404,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
