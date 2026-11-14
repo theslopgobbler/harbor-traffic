@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T15:06:08.0391311+00:00",
+  "updated": "2026-11-14T15:16:06.6978349+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -715,6 +715,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 724511,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:14 am on November 14, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-14T15:14:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-14T15:14:38.7470000+00:00"
     },
     {
       "id": 686738,

@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-14T15:06:08.0391311+00:00",
+  "updated": "2026-11-14T15:16:06.6978349+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a12595",
-      "flight": "N173NY",
-      "reg": "N173NY",
-      "type": "GLF5",
-      "cat": "A3",
-      "alt": 3400,
-      "gs": 257.1,
-      "track": 7.37,
-      "rate": -1408,
-      "lat": 47.12828,
-      "lon": -122.7738,
-      "squawk": "1057",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
