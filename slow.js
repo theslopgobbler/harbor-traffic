@@ -69,13 +69,70 @@
   const LVL = { moderate: ['#ffc400', 'MODERATE'], heavy: ['#ff7a1a', 'HEAVY'], stop: ['#ff2a3d', 'STOP AND GO'] };
   let list = []; // the turtles: { kind: 'stop' | 'str', s }
   let strs = [];
-  const mid = (s) => s.pts[s.pts.length >> 1];
+  // a stretch is only a handful of GPS points ~300 m apart: joined straight they cut across every curve, so lay
+  // them onto the route's own road shape (bus.js has the shapes) and follow it between them. Off any shape: as is
+  const snapCache = new Map();
+  function onRoad(s) {
+    const shapes = window.htBusInternals?.shapesByRoute;
+    if (!shapes || !Object.keys(shapes).length || s.pts.length < 2) return s.pts; // (not loaded yet: try again next time)
+    const key = s.id + ':' + s.pts.length + ':' + s.pts[s.pts.length - 1];
+    if (snapCache.has(key)) return snapCache.get(key);
+    const K = [76000, 111000];
+    // where a point lands on one shape: the nearest spot within 120 m (a looping route passes some spots twice: a
+    // little nudge toward the spot nearest the last point's keeps it on the same pass)
+    const land = (sh, p, prev) => {
+      let best = null;
+      for (let i = 0; i < sh.c.length - 1; i++) {
+        const a = sh.c[i], b = sh.c[i + 1];
+        const ax = (b[0] - a[0]) * K[0], ay = (b[1] - a[1]) * K[1], px = (p[0] - a[0]) * K[0], py = (p[1] - a[1]) * K[1];
+        const L2 = ax * ax + ay * ay, t = L2 ? Math.max(0, Math.min(1, (px * ax + py * ay) / L2)) : 0;
+        const dist = Math.hypot(px - t * ax, py - t * ay);
+        if (dist > 120) continue;
+        const along = sh.d[i] + t * (sh.d[i + 1] - sh.d[i]);
+        const score = dist + (prev == null ? 0 : 0.02 * Math.abs(along - prev));
+        if (!best || score < best.score) best = { i, t, along, dist, score, at: [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])] };
+      }
+      return best;
+    };
+    let pick = null;
+    const all = [...(shapes[s.rt] || []), ...(shapes[s.rt + 'P'] || [])];
+    for (const sh of all.length ? all : Object.values(shapes).flat()) {
+      const hits = [];
+      for (const p of s.pts) { const h = land(sh, p, hits.length ? hits[hits.length - 1].along : null); if (!h) break; hits.push(h); }
+      if (hits.length < s.pts.length) continue;
+      const span = Math.abs(hits[hits.length - 1].along - hits[0].along);
+      if (span > 2 * (s.m || 0) + 500) continue; // (jumped to another pass of a looping route)
+      const err = hits.reduce((n, h) => n + h.dist, 0);
+      if (!pick || err < pick.err) pick = { sh, hits, err };
+    }
+    let out = s.pts;
+    if (pick) {
+      const { sh, hits } = pick;
+      out = [hits[0].at];
+      for (let k = 1; k < hits.length; k++) {
+        const a = hits[k - 1], b = hits[k];
+        if (b.along >= a.along) for (let i = a.i + 1; i <= b.i; i++) out.push(sh.c[i]);
+        else for (let i = a.i; i > b.i; i--) out.push(sh.c[i]);
+        out.push(b.at);
+      }
+    }
+    if (snapCache.size > 300) snapCache.clear();
+    snapCache.set(key, out);
+    return out;
+  }
+  // the turtle sits halfway along the stretch (by distance, on the road)
+  const mid = (s) => {
+    const c = onRoad(s), seg = (i) => Math.hypot((c[i][0] - c[i - 1][0]) * 76, (c[i][1] - c[i - 1][1]) * 111);
+    let tot = 0; for (let i = 1; i < c.length; i++) tot += seg(i);
+    let run = 0; for (let i = 1; i < c.length; i++) { run += seg(i); if (run >= tot / 2) return c[i]; }
+    return c[0];
+  };
   const geo = () => ({ type: 'FeatureCollection', features: list.map((x, i) => {
     const [lon, lat] = x.kind === 'str' ? mid(x.s) : [x.s.lon, x.s.lat];
     return { type: 'Feature', geometry: { type: 'Point', coordinates: [lon, lat] }, properties: { i, icon: x.s.open ? 'slow-on' : 'slow-off' } };
   }) });
   const lineGeo = () => ({ type: 'FeatureCollection', features: strs.filter((s) => s.pts.length > 1).map((s) => ({ type: 'Feature',
-    geometry: { type: 'LineString', coordinates: s.pts },
+    geometry: { type: 'LineString', coordinates: onRoad(s) },
     properties: { id: s.id, level: s.level, color: (LVL[s.level] || LVL.moderate)[0], one: s.n > 1 ? 0 : 1, op: s.open ? 0.95 : 0.55 } })) });
   const LINES = ['slow-faint', 'slow-glow', 'slow-case', 'slow-line', 'slow-line-1'];
   function addLayers() {

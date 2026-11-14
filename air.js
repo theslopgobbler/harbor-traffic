@@ -332,9 +332,8 @@
       el.innerHTML = `<div class="ic">${heli ? heliSvg('#9aa4a2', false) : planeSvg('#9aa4a2')}</div><span class="alt" style="color:#9aa4a2">${n > 1 ? n + ' LANDED' : 'LANDED'}</span>`;
       el.title = `${n} ${what.toLowerCase()}${n > 1 ? 's' : ''} landed`;
       const t = (at) => new Date(at).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase();
-      mk.getPopup().setHTML(`<h3>${n} ${what}${n > 1 ? 'S' : ''} LANDED</h3><p>${esc(v.field)}</p>
-        ${list.map((x) => `<div class="m">${esc(x.label)} · LAST HEARD ${t(x.at)}</div>`).join('')}
-        <div class="m">EACH STAYS LISTED UNTIL IT'S HEARD AGAIN (TAKING OFF), OR FOR A WEEK</div>`);
+      mk.getPopup().setHTML(`<h3>${n} ${what}${n > 1 ? 'S' : ''} LANDED · INACTIVE</h3><p>${esc(v.field)}</p>
+        ${list.map((x) => `<div class="m">${esc(x.label)} · LAST HEARD ${t(x.at)}</div>`).join('')}`);
     }
   }
   // move the markers along, about 10 times a second (4 on phones), only while aircraft are shown and the page is open

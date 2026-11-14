@@ -1015,7 +1015,7 @@
       el.innerHTML = (allStopped ? anchorSvg(color)
         : `<svg viewBox="0 0 16 16"><polygon points="8,1 13,6 13,15 3,15 3,6" fill="rgba(2,8,7,.85)" stroke="${color}" stroke-width="1.4"/></svg>`) +
         `<b style="color:${color}">${ships.length}</b>`;
-      el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}${allGhost ? ' (transponders off, shown where last heard)' : ''}. Click to zoom in.`;
+      el.title = `${ships.length} vessels here: ${ships.map((s) => s.name || 'vessel').join(', ')}${allGhost ? ' (inactive)' : ''}. Click to zoom in.`;
       el.addEventListener('click', () => {
         const b = new maplibregl.LngLatBounds(); lls.forEach((l) => b.extend(l));
         map.fitBounds(b, { padding: 90, maxZoom: 14, minZoom: 12.2 });
@@ -1098,9 +1098,8 @@
       el.title = s.name || 'Vessel';
       const ago = s.seen ? Math.round((Date.now() - Date.parse(s.seen)) / 60000) : null;
       const lastHeard = s.seen ? new Date(s.seen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase() : '';
-      const html = (x) => x._ghost ? `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())} · NOT HEARD</h3>
-        <p><span style="color:${color}">${kind}</span> · <b>LAST HEARD ${escS(lastHeard)}</b> (${Math.round(ago / 60)} H AGO)</p>
-        <div class="m">THIS IS WHERE ITS AIS WAS LAST HEARD. IT MAY HAVE SWITCHED IT OFF (TIED UP) OR GONE OUT OF RANGE. SHOWN FOR UP TO A DAY, OR UNTIL IT'S HEARD AGAIN.</div>${window.htCoordLine?.(x.lat, x.lon) || ''}`
+      const html = (x) => x._ghost ? `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())} · INACTIVE</h3>
+        <p><span style="color:${color}">${kind}</span> · <b>LAST HEARD ${escS(lastHeard)}</b> (${Math.round(ago / 60)} H AGO)</p>${window.htCoordLine?.(x.lat, x.lon) || ''}`
         : `${photoHtml(x)}<h3>${escS((x.name || 'UNKNOWN VESSEL').toUpperCase())}</h3>
         <p><span style="color:${color}">${kind}</span> · <b>${sit.state}</b>${stopped(x) ? '' : ` · ${(x.sog ?? 0).toFixed(1)} KT ${compass(dir)}`}</p>
         <div class="m">${sit.inside ? 'IN ' + sit.bay : `${sit.dist.toFixed(1)} NM FROM THE ${sit.bay} ENTRANCE`}${x.dest ? ' · BOUND FOR ' + escS(x.dest.toUpperCase()) : ''}${x.lengthM ? ' · ' + x.lengthM + ' M' : ''}${ago != null ? ` · SEEN ${ago < 2 ? 'JUST NOW' : ago + ' MIN AGO'}` : ''}</div>${window.htCoordLine?.(x.lat, x.lon) || ''}`;
