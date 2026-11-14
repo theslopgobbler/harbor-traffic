@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-14T16:26:02.6040505+00:00",
+  "updated": "2026-11-14T16:35:59.8179063+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a07602",
+      "flight": "RFS703",
+      "reg": "N129K",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 5225,
+      "gs": 82.3,
+      "track": 196.23,
+      "rate": -64,
+      "lat": 47.38953,
+      "lon": -122.71609,
+      "squawk": "4753",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
