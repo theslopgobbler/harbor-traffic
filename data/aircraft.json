@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-14T05:45:56.8737470+00:00",
+  "updated": "2026-11-14T05:55:55.9049169+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a1acb5",
-      "flight": "N207HB",
-      "reg": "N207HB",
-      "type": "BE20",
-      "cat": "A2",
-      "alt": 2975,
-      "gs": 167.1,
-      "track": 201.04,
-      "rate": 0,
-      "lat": 47.24391,
-      "lon": -122.75059,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
