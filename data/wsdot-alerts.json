@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T21:35:16.0706861+00:00",
+  "updated": "2026-11-14T21:45:20.8797228+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -675,27 +675,6 @@
       "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
-      "id": 724532,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 104.02 near US 101 Off-Ramp beginning at 1:13 pm on November 14, 2026 until further notice. The off ramp to US 101 is fully blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 104.02,
-      "lat": 47.017090533,
-      "lon": -122.906012478,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-14T21:13:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-14T21:17:05.8400000+00:00"
-    },
-    {
       "id": 640019,
       "kind": "work",
       "category": "Construction",
@@ -799,6 +778,27 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
+    },
+    {
+      "id": 724532,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 104.02 near US 101 Off-Ramp beginning at 1:13 pm on November 14, 2026 until further notice. The right lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 104.02,
+      "lat": 47.017090533,
+      "lon": -122.906012478,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-14T21:39:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-14T21:39:28.1400000+00:00"
     }
   ]
 }
