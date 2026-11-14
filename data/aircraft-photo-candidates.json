@@ -187,7 +187,8 @@
     "Lockheed HC-130J Hercules": "2026-11-12T22:16:08.7518803+00:00",
     "Gates Learjet 35 A": "2026-11-12T22:46:12.6481301+00:00",
     "Gulfstream Aerospace G450": "2026-11-13T03:56:01.8445209+00:00",
-    "Boeing 747 8B5F": "2026-11-13T12:55:58.5425994+00:00"
+    "Boeing 747 8B5F": "2026-11-13T12:55:58.5425994+00:00",
+    "Gulfstream Aerospace G550": "2026-11-14T15:06:08.0391311+00:00"
   },
   "candidates": [
     {
@@ -11557,7 +11558,91 @@
       "date": "2016-03-26 14:58",
       "caption": "HL7624 Korean Air Lines Boeing 747-8B5F coming in from Seoul-Incheon (RKSI) @ Frankfurt - Rhein-Main International (EDDF) / 26.03.2016",
       "found": "2026-11-13T12:55:58.5425994+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G550",
+      "file": "File:N363MF 2006 GULFSTREAM AEROSPACE GV-SP (G550) s-n 5112 (32535484143).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N363MF_2006_GULFSTREAM_AEROSPACE_GV-SP_(G550)_s-n_5112_(32535484143).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/N363MF_2006_GULFSTREAM_AEROSPACE_GV-SP_%28G550%29_s-n_5112_%2832535484143%29.jpg/960px-N363MF_2006_GULFSTREAM_AEROSPACE_GV-SP_%28G550%29_s-n_5112_%2832535484143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 503,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-03-08 13:48",
+      "caption": "Las Vegas - McCarran International Airport (LAS / KLAS) USA - Nevada March 8, 2017 Photo: Tomás Del Coro",
+      "found": "2026-11-14T15:06:08.0391311+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G550",
+      "file": "File:Private, M-UGIC, Gulfstream Aerospace GV-SP (G550) (15836529833).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Private,_M-UGIC,_Gulfstream_Aerospace_GV-SP_(G550)_(15836529833).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Private%2C_M-UGIC%2C_Gulfstream_Aerospace_GV-SP_%28G550%29_%2815836529833%29.jpg/960px-Private%2C_M-UGIC%2C_Gulfstream_Aerospace_GV-SP_%28G550%29_%2815836529833%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-08-15 17:33:48",
+      "caption": "Private, M-UGIC, Gulfstream Aerospace GV-SP (G550)",
+      "found": "2026-11-14T15:06:08.0391311+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G550",
+      "file": "File:Swedish Air Force Gulfstream Aerospace G550 TP-102D Departure From Dhaka.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Swedish_Air_Force_Gulfstream_Aerospace_G550_TP-102D_Departure_From_Dhaka.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Swedish_Air_Force_Gulfstream_Aerospace_G550_TP-102D_Departure_From_Dhaka.jpg/960px-Swedish_Air_Force_Gulfstream_Aerospace_G550_TP-102D_Departure_From_Dhaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 541,
+      "author": "Md Shaifuzzaman Ayon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-03-19",
+      "caption": "Swedish Air Force Gulfstream Aerospace G550 TP-102D Departure From Dhaka. SVF631 || Swedish Air Force || Gulfstream Aerospace G550 TP-102D || 102005.",
+      "found": "2026-11-14T15:06:08.0391311+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G550",
+      "file": "File:Untitled Gulfstream Aerospace G-V-SP Gulfstream G550 - N550RP - CSC Trust Co of Delaware Trustee - (14515551742).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_-_N550RP_-_CSC_Trust_Co_of_Delaware_Trustee_-_(14515551742).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_-_N550RP_-_CSC_Trust_Co_of_Delaware_Trustee_-_%2814515551742%29.jpg/960px-Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_-_N550RP_-_CSC_Trust_Co_of_Delaware_Trustee_-_%2814515551742%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 684,
+      "author": "Lord of the Wings© from Toronto, Canada",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-06-26 18:05",
+      "caption": "DSC_0110 cropped",
+      "found": "2026-11-14T15:06:08.0391311+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G550",
+      "file": "File:Untitled Gulfstream Aerospace G-V-SP Gulfstream G550 N605CH (23338373792).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_N605CH_(23338373792).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_N605CH_%2823338373792%29.jpg/960px-Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_N605CH_%2823338373792%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Kambui",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2012-01-25 08:33",
+      "caption": "Zürich (- Kloten) (ZRH / LSZH) Switzerland 1.2012 WEF Visitor",
+      "found": "2026-11-14T15:06:08.0391311+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G550",
+      "file": "File:Untitled Gulfstream Aerospace G-V-SP Gulfstream G550 N918SM (27781940611).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_N918SM_(27781940611).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_N918SM_%2827781940611%29.jpg/960px-Untitled_Gulfstream_Aerospace_G-V-SP_Gulfstream_G550_N918SM_%2827781940611%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Kambui",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2013-09-24 09:37",
+      "caption": "Frankfurt am Main (Rhein-Main AB) (FRA / EDDF / FRF) Germany 9.2013",
+      "found": "2026-11-14T15:06:08.0391311+00:00"
     }
   ],
-  "updated": "2026-11-14T14:55:57.9404281+00:00"
+  "updated": "2026-11-14T15:06:08.0391311+00:00"
 }

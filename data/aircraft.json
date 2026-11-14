@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-14T14:55:57.9404281+00:00",
+  "updated": "2026-11-14T15:06:08.0391311+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "ae4d69",
-      "flight": "RCH815",
-      "reg": "10-0216",
-      "type": "C17",
-      "cat": null,
-      "alt": 13425,
-      "gs": 371.0,
-      "track": 348.0,
-      "rate": -1919,
-      "lat": 46.51143,
-      "lon": -122.78592,
-      "squawk": "3256",
-      "emergency": null,
-      "mil": true
+      "hex": "a12595",
+      "flight": "N173NY",
+      "reg": "N173NY",
+      "type": "GLF5",
+      "cat": "A3",
+      "alt": 3400,
+      "gs": 257.1,
+      "track": 7.37,
+      "rate": -1408,
+      "lat": 47.12828,
+      "lon": -122.7738,
+      "squawk": "1057",
+      "emergency": "none",
+      "mil": false
     }
   ]
 }
