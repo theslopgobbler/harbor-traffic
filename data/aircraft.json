@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-14T01:55:57.5117476+00:00",
+  "updated": "2026-11-14T02:05:56.6489053+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a82ffb",
+      "flight": "N6268D",
+      "reg": "N6268D",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 4400,
+      "gs": 49.4,
+      "track": 173.02,
+      "rate": 2109,
+      "lat": 46.89336,
+      "lon": -122.91724,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
