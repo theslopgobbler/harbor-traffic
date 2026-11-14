@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T08:35:57.7402327+00:00",
+  "updated": "2026-11-14T08:45:59.2973387+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,24 +10,48 @@
     "waterF": 54.5
   },
   "bar": {
-    "issued": "2026-11-13T22:56:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY MORNING... Combined seas 14 to 16 ft becoming 20 to 24 ft Friday evening, then becoming 16 to 20 ft Saturday. Bar conditions severe. Maximum ebb currents will occur around 630 PM Friday, and 715 AM and 715 PM Saturday.",
+    "issued": "2026-11-14T08:41:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH SUNDAY MORNING... Combined seas 15 to 20 ft. Bar conditions severe. Maximum ebb currents will occur around 715 AM, 715 PM Saturday, and 815 AM Sunday.",
     "conditions": "severe",
-    "seas": "14 to 16 ft becoming 20 to 24 ft Friday evening, then becoming 16 to 20 ft Saturday",
+    "seas": "15 to 20 ft",
     "ebb": null
   },
   "alerts": [
+    {
+      "event": "Storm Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-15T09:00:00+00:00",
+      "headline": "Storm Warning issued November 14 at 12:42AM PST until November 15 at 1:00AM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-14T21:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 14 at 12:42AM PST until November 14 at 1:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-14T21:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 14 at 12:42AM PST until November 14 at 1:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
+      "ends": "2026-11-15T18:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 14 at 12:42AM PST until November 15 at 10:00AM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Storm Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-15T09:00:00+00:00",
+      "headline": "Storm Warning issued November 14 at 12:42AM PST until November 15 at 1:00AM PST by NWS Seattle WA"
+    },
     {
       "event": "Storm Watch",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-15T12:00:00+00:00",
       "headline": "Storm Watch issued November 13 at 10:00PM PST until November 15 at 4:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Hazardous Seas Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-14T21:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 13 at 10:00PM PST until November 14 at 1:00PM PST by NWS Portland OR"
     },
     {
       "event": "Storm Warning",
@@ -42,34 +66,10 @@
       "headline": "Hazardous Seas Warning issued November 13 at 10:00PM PST until November 14 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
-      "ends": "2026-11-14T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 13 at 9:25PM PST until November 14 at 10:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-15T09:00:00+00:00",
-      "headline": "Storm Warning issued November 13 at 9:25PM PST until November 15 at 1:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Watch",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-11-15T09:00:00+00:00",
-      "headline": "Storm Watch issued November 13 at 9:25PM PST until November 15 at 1:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "event": "Hazardous Seas Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-14T21:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 13 at 9:25PM PST until November 14 at 1:00PM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-14T21:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 13 at 9:25PM PST until November 14 at 1:00PM PST by NWS Seattle WA"
+      "headline": "Hazardous Seas Warning issued November 13 at 10:00PM PST until November 14 at 1:00PM PST by NWS Portland OR"
     }
   ]
 }
