@@ -256,7 +256,7 @@
     "369990145": "2026-11-13T20:56:20.5027337+00:00",
     "338571018": "2026-11-13T20:56:20.5027337+00:00",
     "369970633": "2026-11-13T21:16:04.0353366+00:00",
-    "367437970": "2026-10-15T04:36:11.0685742+00:00",
+    "367437970": "2026-11-14T04:46:02.4419904+00:00",
     "538012957": "2026-10-15T05:04:57.1549251+00:00",
     "367089450": "2026-10-15T14:29:14.204361+00:00",
     "249982000": "2026-10-15T14:29:14.204361+00:00",
@@ -5489,7 +5489,67 @@
       "date": "2025-04-23 19:07:10",
       "caption": "Ro-Ro vehicles carrier, PAVO LEADER - IMO 9181560, MMSI 636024633; heading down the Strait of Juan de Fuca near Ogden Point, Victoria, BC Canada on April 23, 2025.",
       "found": "2026-11-13T18:16:06.3050166+00:00"
+    },
+    {
+      "mmsi": "367437970",
+      "ship": "PORTLAND SPIRIT",
+      "file": "File:Portland Spirit, Tom McCall Waterfront Park, Willamette River, Portland - DPLA - 2df52030fa6aa38307f64927a0af048d.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Portland_Spirit,_Tom_McCall_Waterfront_Park,_Willamette_River,_Portland_-_DPLA_-_2df52030fa6aa38307f64927a0af048d.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Portland_Spirit%2C_Tom_McCall_Waterfront_Park%2C_Willamette_River%2C_Portland_-_DPLA_-_2df52030fa6aa38307f64927a0af048d.jpg/1280px-Portland_Spirit%2C_Tom_McCall_Waterfront_Park%2C_Willamette_River%2C_Portland_-_DPLA_-_2df52030fa6aa38307f64927a0af048d.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 854,
+      "author": "Gary Halvorson, Oregon State Archives",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "31 March 2019",
+      "caption": "The Portland Spirit cruise boat at Tom McCall Waterfront Park on the Willamette River in Portland.",
+      "found": "2026-11-14T04:46:02.4419904+00:00"
+    },
+    {
+      "mmsi": "367437970",
+      "ship": "PORTLAND SPIRIT",
+      "file": "File:Portland Spirit just south of Morrison Br, front view.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Portland_Spirit_just_south_of_Morrison_Br,_front_view.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Portland_Spirit_just_south_of_Morrison_Br%2C_front_view.jpg/1280px-Portland_Spirit_just_south_of_Morrison_Br%2C_front_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 857,
+      "author": "Steve Morgan",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-04-22",
+      "caption": "The Portland Spirit , a 1987 river cruise ship, facing south (upstream) in the middle of the Willamette River just south of the Morrison Bridge, in Portland, Oregon.",
+      "found": "2026-11-14T04:46:02.4419904+00:00"
+    },
+    {
+      "mmsi": "367437970",
+      "ship": "PORTLAND SPIRIT",
+      "file": "File:Portland Spirit just south of Morrison Br, starboard side.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Portland_Spirit_just_south_of_Morrison_Br,_starboard_side.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Portland_Spirit_just_south_of_Morrison_Br%2C_starboard_side.jpg/1280px-Portland_Spirit_just_south_of_Morrison_Br%2C_starboard_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 797,
+      "author": "Steve Morgan",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-04-22",
+      "caption": "The Portland Spirit , a 1987 river cruise ship, facing south (upstream) in the middle of the Willamette River just south of the Morrison Bridge, in Portland, Oregon.",
+      "found": "2026-11-14T04:46:02.4419904+00:00"
+    },
+    {
+      "mmsi": "367437970",
+      "ship": "PORTLAND SPIRIT",
+      "file": "File:Portland Spirit just south of Morrison Br, starboard side (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Portland_Spirit_just_south_of_Morrison_Br,_starboard_side_(cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Portland_Spirit_just_south_of_Morrison_Br%2C_starboard_side_%28cropped%29.jpg/1280px-Portland_Spirit_just_south_of_Morrison_Br%2C_starboard_side_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 739,
+      "author": "Steve Morgan",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-04-22",
+      "caption": "The Portland Spirit , a 1987 river cruise ship, facing south (upstream) in the middle of the Willamette River just south of the Morrison Bridge, in Portland, Oregon.",
+      "found": "2026-11-14T04:46:02.4419904+00:00"
     }
   ],
-  "updated": "2026-11-14T04:36:00.7777923+00:00"
+  "updated": "2026-11-14T04:46:02.4419904+00:00"
 }
