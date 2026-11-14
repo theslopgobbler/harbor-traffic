@@ -1,21 +1,37 @@
 {
-  "updated": "2026-11-14T01:16:06.0045030+00:00",
+  "updated": "2026-11-14T01:26:08.1745464+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a7d1b9",
-      "flight": "N6025E",
-      "reg": "N6025E",
-      "type": "C82S",
+      "hex": "ad0345",
+      "flight": "N9379H",
+      "reg": "N9379H",
+      "type": "C172",
       "cat": "A1",
-      "alt": 2325,
-      "gs": 132.0,
-      "track": 33.57,
-      "rate": -512,
-      "lat": 47.44888,
-      "lon": -122.80588,
+      "alt": 5050,
+      "gs": 81.5,
+      "track": 146.5,
+      "rate": 128,
+      "lat": 47.91623,
+      "lon": -122.84857,
       "squawk": "1200",
       "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a22084",
+      "flight": "N236TS",
+      "reg": "N236TS",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 1175,
+      "gs": null,
+      "track": null,
+      "rate": null,
+      "lat": 47.50264,
+      "lon": -122.75313,
+      "squawk": null,
+      "emergency": null,
       "mil": false
     }
   ]
