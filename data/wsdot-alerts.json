@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T02:05:56.6489053+00:00",
+  "updated": "2026-11-14T02:16:04.6260350+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -652,27 +652,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 724476,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on US 101 southbound at milepost 92 near Bernard Creek beginning at 5:59 pm on November 13, 2026 until further notice. Alternating traffic in effect.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 92.0,
-      "lat": 47.032493997,
-      "lon": -123.922617924,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-14T01:59:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-14T02:01:08.0930000+00:00"
     },
     {
       "id": 640019,
