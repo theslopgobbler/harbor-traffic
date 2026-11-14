@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-14T04:16:03.0714275+00:00",
+  "updated": "2026-11-14T04:25:59.4800542+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "3c66c1",
-      "flight": "DLH489",
-      "reg": "D-AIVA",
-      "type": "A359",
-      "cat": "A5",
-      "alt": 12600,
-      "gs": 387.7,
-      "track": 26.83,
-      "rate": 2688,
-      "lat": 47.57922,
-      "lon": -122.73301,
-      "squawk": "3550",
+      "hex": "a0efca",
+      "flight": "GFY164",
+      "reg": "N16ES",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 4075,
+      "gs": 108.4,
+      "track": 194.42,
+      "rate": 64,
+      "lat": 47.52379,
+      "lon": -122.70596,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
