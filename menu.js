@@ -12,6 +12,7 @@
   // what's new: newest first, in plain words (add one whenever something people would notice goes out)
   // (kept general on purpose: a line of what got better, not every detail)
   const NEWS = [
+    ['Nov 14', 'Slow traffic now shows on a lot more roads, downtowns included.'],
     ['Nov 12', 'Slow traffic now shows on the roads: a faint yellow line for a little slow, a colored one with a turtle for really slow.'],
     ['Nov 11', 'Possible slowdowns now show up on the map: a little turtle where traffic has been crawling.'],
     ['Nov 7', 'Power outages from the PUD now show on the map and in the PERIL tab.'],
