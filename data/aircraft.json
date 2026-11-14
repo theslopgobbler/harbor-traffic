@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T06:06:02.0053354+00:00",
+  "updated": "2026-11-14T06:15:57.5712125+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N520LP",
       "type": "PIPA",
       "cat": "A2",
-      "alt": 4975,
-      "gs": 157.4,
-      "track": 184.01,
-      "rate": 0,
-      "lat": 47.2866,
-      "lon": -122.78574,
+      "alt": 4200,
+      "gs": 140.9,
+      "track": 193.54,
+      "rate": -192,
+      "lat": 46.89894,
+      "lon": -122.9035,
       "squawk": "4702",
       "emergency": "none",
       "mil": false
