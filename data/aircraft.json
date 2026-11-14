@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T03:46:02.0064318+00:00",
+  "updated": "2026-11-14T03:55:56.8434639+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N282CD",
       "type": "SR22",
       "cat": "A1",
-      "alt": 6600,
-      "gs": 208.7,
-      "track": 4.67,
-      "rate": -372,
-      "lat": 46.54498,
-      "lon": -122.9333,
+      "alt": 5675,
+      "gs": 204.2,
+      "track": 2.81,
+      "rate": -293,
+      "lat": 47.07036,
+      "lon": -122.89194,
       "squawk": "4616",
       "emergency": "none",
       "mil": false
