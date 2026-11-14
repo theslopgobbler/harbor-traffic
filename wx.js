@@ -877,7 +877,7 @@
         <li><div class="t">WATER ${water != null ? Math.round(water) + '°F' : '--'}</div><div class="m">${waterWestport != null ? 'WESTPORT (NOAA 9441102)' : 'GRAYS HARBOR BUOY'}</div></li>
       </ul>
       <h2>SHIPS</h2><ul class="list" id="shipList"></ul>
-      <p class="fine">Positions from ships' AIS transponders (aisstream.io), refreshed each collector run; ships within 15 nautical miles of the harbor entrances. Entering/leaving is worked out from each ship's course. Ships tied up only report every few minutes, so each stays on the map up to 3 hours after it was last heard.</p>
+      <p class="fine">Ships within 15 nautical miles of the harbor entrances.</p>
       <p class="fine">Check with the Coast Guard (Station Grays Harbor) for bar restrictions before crossing. This is a summary, not a navigation aid.</p>`;
     renderShipList(); // the SEA tab was just rebuilt
   }
