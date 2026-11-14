@@ -133,7 +133,9 @@
   }) });
   const lineGeo = () => ({ type: 'FeatureCollection', features: strs.filter((s) => s.pts.length > 1).map((s) => ({ type: 'Feature',
     geometry: { type: 'LineString', coordinates: onRoad(s) },
-    properties: { id: s.id, level: s.level, color: (LVL[s.level] || LVL.moderate)[0], one: s.n > 1 ? 0 : 1, op: s.open ? 0.95 : 0.55 } })) });
+    properties: { id: s.id, level: s.level, color: (LVL[s.level] || LVL.moderate)[0], one: s.n > 1 ? 0 : 1, op: s.open ? 0.95 : 0.55 * fadeOf(s), fade: fadeOf(s) } })) });
+  // an eased stretch fades out over its keep time (render runs every minute): full strength when it eased, a quarter at the end
+  const fadeOf = (s) => s.open || !s.until || !s.t1 || s.until <= s.t1 ? 1 : 0.25 + 0.75 * Math.max(0, Math.min(1, (s.until - Date.now()) / (s.until - s.t1)));
   const LINES = ['slow-faint', 'slow-glow', 'slow-case', 'slow-line', 'slow-line-1'];
   function addLayers() {
     if (map.getSource('slow')) return;
@@ -144,7 +146,7 @@
     const alert = ['!=', ['get', 'level'], 'slower'];
     // "a little slower than usual": just a faint line along the road
     map.addLayer({ id: 'slow-faint', type: 'line', source: 'slow-str', filter: ['==', ['get', 'level'], 'slower'], layout: lay,
-      paint: { 'line-color': '#ffc400', 'line-width': ['interpolate', ['linear'], ['zoom'], 9, 2, 14, 4], 'line-opacity': 0.4, 'line-blur': 1 } }, 'outside');
+      paint: { 'line-color': '#ffc400', 'line-width': ['interpolate', ['linear'], ['zoom'], 9, 2, 14, 4], 'line-opacity': ['*', 0.4, ['get', 'fade']], 'line-blur': 1 } }, 'outside');
     map.addLayer({ id: 'slow-glow', type: 'line', source: 'slow-str', filter: alert, layout: lay,
       paint: { 'line-color': ['get', 'color'], 'line-width': ['interpolate', ['linear'], ['zoom'], 9, 10, 14, 22], 'line-blur': 8, 'line-opacity': ['*', 0.45, ['get', 'op']] } }, 'outside');
     map.addLayer({ id: 'slow-case', type: 'line', source: 'slow-str', filter: alert, layout: lay,

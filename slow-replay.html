@@ -58,6 +58,10 @@
   .tabs { display: flex; gap: 6px; margin-bottom: 8px; }
   .tabs button { flex: 1; font-family: var(--disp); letter-spacing: .15em; font-size: calc(var(--fs) - 3px); }
   #plist { max-height: 72vh; overflow: auto; }
+  #glist .it { padding: 8px 10px; border-bottom: 1px solid var(--line); border-left: 4px solid var(--cyan); cursor: pointer; }
+  #glist .it:hover, #glist .it.on { background: rgba(0,229,255,.07); }
+  #glist .gv button { font-size: calc(var(--fs) - 4px); padding: 2px 8px; margin: 6px 6px 0 0; }
+  #glist { max-height: 40vh; overflow: auto; margin-bottom: 12px; }
   #plist .it { padding: 8px 10px; border-bottom: 1px solid var(--line); border-left: 4px solid var(--dim); cursor: pointer; }
   #plist .it:hover, #plist .it.on { background: rgba(0,229,255,.07); }
   #plist .it .m { color: var(--dim); font-size: calc(var(--fs) - 3px); }
@@ -89,6 +93,8 @@
     <section>
       <div class="tabs"><button id="tabLog" aria-pressed="true">LOG</button><button id="tabPat" aria-pressed="false">PATTERNS</button></div>
       <div id="patSide" hidden>
+        <div class="sum" id="gsum">GUESSES</div>
+        <div class="box" id="glist"></div>
         <div class="filters">
           <select id="pdays" aria-label="How far back"><option value="30">LAST 30 DAYS</option><option value="90" selected>LAST 90 DAYS</option><option value="365">LAST YEAR</option></select>
           <select id="pmin" aria-label="How often"><option value="2">2+ DAYS</option><option value="3" selected>3+ DAYS</option><option value="5">5+ DAYS</option></select>
@@ -140,7 +146,12 @@
       <div class="note" id="patNote" hidden>PATTERNS: every logged slowdown, grouped by spot (within 500 m). The bars show when
         they happened: weekdays on top, weekends below, darker for more. The chart lays every slowdown at the spot on the same road,
         each in its own color, thick where it was slow: lined up by when each one started, or by the time of day. Tap a date to
-        replay that one. SKIPPED BEFORE: a spot the map used to leave out as routine (until Nov 14).</div>
+        replay that one. SKIPPED BEFORE: a spot the map used to leave out as routine (until Nov 14).
+        GUESSES (top left): what the slowdowns probably were, worked out each evening at 8 PM. WSDOT ALERT: WSDOT had work, a
+        closure or a bridge opening nearby at the time. POSSIBLE WORK ZONE: a new spot, 3+ days in a week, daytime. WORK MOVING:
+        the same route on 3+ days in a row, a little farther along each day. REGULAR TRAFFIC: 4+ days over 2+ weeks, the same
+        3 hours. BUS HABIT?: the same route at the same time (10 minutes) on 3+ days, probably the bus waiting. Mark each one
+        RIGHT or WRONG. None of this shows on the public map.</div>
       <div class="note" id="logNote">From Grays Harbor Transit's GPS (the relay logs it 3 times a minute). Usual speeds are the middle
         speed buses drove each ~300 m of road, by direction, from slow-baseline.json. A flat line in the space-time chart is a bus
         standing still; a steep one is a bus moving fast. A slowdown that builds and clears shows up as a growing, then shrinking,
@@ -575,7 +586,45 @@
     const [j] = await Promise.all([api(`/slow-log?lite=1&days=${$('#pdays').value}`), loadBase()]);
     plog = (j.log || []).map(flat);
     group(); refreshSpots(); drawSpots();
+    loadGuesses();
   }
+  // ---- GUESSES (see slowGuesses in the relay): newest first; tap one to go to its spot
+  const GNAME = { wsdot: 'WSDOT ALERT', work: 'POSSIBLE WORK ZONE', moving: 'WORK MOVING ALONG A ROAD', regular: 'REGULAR TRAFFIC', habit: 'BUS HABIT?' };
+  let guesses = [], gdry = false;
+  async function loadGuesses() {
+    try {
+      let j = await api('/slow-guesses');
+      gdry = false;
+      if (!(j.guesses || []).length) { j = await api('/slow-guesses?run=1'); gdry = true; } // (before the first evening run)
+      guesses = (j.guesses || []).sort((a, b) => (b.last || b.t || 0) - (a.last || a.t || 0));
+    } catch (e) { guesses = []; $('#gsum').textContent = 'GUESSES: ' + e.message; return; }
+    drawGuesses();
+  }
+  function drawGuesses() {
+    const open = guesses.filter((g) => !g.verdict).length;
+    $('#gsum').textContent = `GUESSES · ${guesses.length}${gdry ? ' (WORKED OUT NOW, NOT SAVED YET)' : ` · ${open} NOT MARKED`}`;
+    $('#glist').innerHTML = guesses.length ? guesses.map((g, i) => {
+      const n = (g.ev || []).length, when = g.last ? `LAST ${fmtD(g.last).toUpperCase()}` : '';
+      return `<div class="it" data-g="${i}"><div class="t">${GNAME[g.type] || esc(g.type)}${g.road ? ' · ' + esc(g.road) : ''} · ${esc(near(g))}</div>
+        <div class="m">${esc(g.note)}</div><div class="m">${n} SLOWDOWN${n === 1 ? '' : 'S'}${when ? ' · ' + when : ''}</div>
+        ${gdry ? '' : `<div class="gv">${['right', 'wrong'].map((v) => `<button data-gv="${v}" aria-pressed="${g.verdict === v}">${v.toUpperCase()}</button>`).join('')}</div>`}</div>`;
+    }).join('') : '<div class="empty">NO GUESSES YET</div>';
+  }
+  $('#glist').onclick = async (e) => {
+    const it = e.target.closest('.it[data-g]'); if (!it) return;
+    const g = guesses[+it.dataset.g], b = e.target.closest('button[data-gv]');
+    if (b) {
+      const v = g.verdict === b.dataset.gv ? '' : b.dataset.gv;
+      try { await api('/slow-guess-verdict', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: g.id, verdict: v }) }); g.verdict = v; drawGuesses(); }
+      catch (er) { $('#msg').textContent = er.message; }
+      return;
+    }
+    // its spot: the one holding most of its slowdowns (or the nearest)
+    const ids = new Set(g.ev || []);
+    let best = -1, bn = 0; spots.forEach((s, i) => { const k = s.ev.filter((x) => ids.has(x.id)).length; if (k > bn) { bn = k; best = i; } });
+    if (best < 0) spots.forEach((s, i) => { if (best < 0 || mDist(s, g) < mDist(spots[best], g)) best = i; });
+    if (best >= 0) pickSpot(best); else map.flyTo({ center: [g.lon, g.lat], zoom: 13.5 });
+  };
   function group() {
     const B = base, out = [];
     for (const e of plog.slice().sort((a, b) => a.t0 - b.t0)) {
@@ -754,7 +803,7 @@
     if (!key) { $('#keyForm').hidden = false; return; }
     $('#keyForm').hidden = true; $('#app').hidden = false;
     map.resize();
-    try { await loadLog(); const q = new URLSearchParams(location.search), id = q.get('id'); if (id) open(id); else if (q.get('view') === 'patterns') setMode('pat'); }
+    try { await loadLog(); const q = new URLSearchParams(location.search), id = q.get('id'); if (id) open(id); else if (q.get('view') === 'patterns' || q.get('view') === 'guesses') setMode('pat'); }
     catch (e) { $('#msg').textContent = e.message; }
   }
   drawChart();
