@@ -1,22 +1,38 @@
 {
-  "updated": "2026-11-14T06:26:08.2984820+00:00",
+  "updated": "2026-11-14T06:36:00.8267550+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a689f6",
-      "flight": "N520LP",
-      "reg": "N520LP",
-      "type": "PIPA",
-      "cat": "A2",
-      "alt": 3975,
-      "gs": 122.0,
-      "track": 180.94,
-      "rate": 0,
-      "lat": 46.50592,
-      "lon": -122.98851,
-      "squawk": "4702",
+      "hex": "a9b70e",
+      "flight": "TDY007",
+      "reg": "N725KP",
+      "type": "PC12",
+      "cat": "A1",
+      "alt": 12550,
+      "gs": 273.6,
+      "track": 41.15,
+      "rate": -64,
+      "lat": 47.04048,
+      "lon": -122.81465,
+      "squawk": "4645",
       "emergency": "none",
       "mil": false
+    },
+    {
+      "hex": "ae2fa3",
+      "flight": "",
+      "reg": "08-8191",
+      "type": "C17",
+      "cat": null,
+      "alt": 12200,
+      "gs": 404.0,
+      "track": 321.0,
+      "rate": 2017,
+      "lat": 47.28207,
+      "lon": -122.80194,
+      "squawk": "3613",
+      "emergency": null,
+      "mil": true
     }
   ]
 }
