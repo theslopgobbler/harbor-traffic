@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T01:45:59.8642668+00:00",
+  "updated": "2026-11-14T01:55:57.5117476+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -696,6 +696,27 @@
       "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
+      "id": 724471,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 northbound at milepost 109.1 near Martin Way Park & Ride beginning at 5:33 pm on November 13, 2026 until further notice. The left lane is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 109.1,
+      "lat": 47.048266269,
+      "lon": -122.819331314,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-14T01:33:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-14T01:45:09.2230000+00:00"
+    },
+    {
       "id": 631745,
       "kind": "work",
       "category": "Maintenance",
@@ -715,27 +736,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 724390,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:13 am on November 13, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-13T15:13:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-13T15:14:06.6100000+00:00"
     },
     {
       "id": 686738,
