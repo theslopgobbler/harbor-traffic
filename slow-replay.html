@@ -55,6 +55,18 @@
   .verdict input { flex: 1; min-width: 180px; }
   .empty { color: var(--dim); padding: 14px; }
   .note { color: var(--dim); font-size: calc(var(--fs) - 4px); margin-top: 16px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+  .tabs button { flex: 1; font-family: var(--disp); letter-spacing: .15em; font-size: calc(var(--fs) - 3px); }
+  #plist { max-height: 72vh; overflow: auto; }
+  #plist .it { padding: 8px 10px; border-bottom: 1px solid var(--line); border-left: 4px solid var(--dim); cursor: pointer; }
+  #plist .it:hover, #plist .it.on { background: rgba(0,229,255,.07); }
+  #plist .it .m { color: var(--dim); font-size: calc(var(--fs) - 3px); }
+  .hrs { display: block; width: 100%; height: auto; margin-top: 5px; }
+  .tag { display: inline-block; font-size: calc(var(--fs) - 5px); color: var(--dim); border: 1px solid var(--line-2); padding: 0 5px; margin: 4px 4px 0 0; }
+  .tag.hot { color: var(--amber); border-color: var(--amber); }
+  #ovKey { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+  #ovKey button { font-size: calc(var(--fs) - 4px); padding: 2px 6px; border-color: currentColor; }
+  .barlabel { color: var(--dim); font-size: calc(var(--fs) - 3px); }
   [hidden] { display: none !important; }
   .maplibregl-ctrl-attrib { font-size: 10px; }
 </style>
@@ -75,30 +87,48 @@
 
   <div class="layout" id="app" hidden>
     <section>
+      <div class="tabs"><button id="tabLog" aria-pressed="true">LOG</button><button id="tabPat" aria-pressed="false">PATTERNS</button></div>
+      <div id="patSide" hidden>
+        <div class="filters">
+          <select id="pdays" aria-label="How far back"><option value="30">LAST 30 DAYS</option><option value="90" selected>LAST 90 DAYS</option><option value="365">LAST YEAR</option></select>
+          <select id="pmin" aria-label="How often"><option value="2">2+ DAYS</option><option value="3" selected>3+ DAYS</option><option value="5">5+ DAYS</option></select>
+          <select id="psort" aria-label="Order"><option value="days">MOST DAYS</option><option value="n">MOST TIMES</option><option value="bad">WORST</option></select>
+        </div>
+        <div class="sum" id="psum"></div>
+        <div class="box" id="plist"></div>
+      </div>
+      <div id="logSide">
       <div class="filters">
         <select id="days" aria-label="How far back"><option value="1">LAST DAY</option><option value="7">LAST 7 DAYS</option><option value="14" selected>LAST 14 DAYS</option><option value="30">LAST 30 DAYS</option><option value="90">LAST 90 DAYS</option></select>
         <select id="lvl" aria-label="Which kind"><option value="">ALL</option><option value="stop">STOPPED / STOP AND GO</option><option value="heavy">HEAVY</option><option value="moderate">MODERATE</option><option value="open">NO VERDICT YET</option></select>
       </div>
       <div class="sum" id="sum"></div>
       <div class="box" id="list"></div>
+      </div>
     </section>
     <section>
       <div class="box">
         <div id="map"></div>
-        <div class="bar">
+        <div class="bar" id="playBar">
           <button id="play" title="Play or pause">▶ PLAY</button>
           <select id="speed" aria-label="Playback speed"><option value="30">30×</option><option value="60" selected>60×</option><option value="120">120×</option><option value="300">300×</option></select>
           <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Time">
           <span id="clock">--:--</span>
         </div>
-        <div class="legend">
+        <div class="legend" id="speedKey">
           <span><i style="background:var(--green)"></i>USUAL SPEED</span><span><i style="background:var(--faint)"></i>75–90%</span>
           <span><i style="background:var(--amber)"></i>50–75%</span><span><i style="background:var(--orange)"></i>25–50%</span>
           <span><i style="background:var(--red)"></i>UNDER 25%</span><span><i style="background:var(--dim)"></i>NO USUAL SPEED THERE</span>
         </div>
       </div>
-      <h2>SPACE-TIME: DISTANCE ALONG THE ROAD (UP) OVER TIME (ACROSS), EACH BUS A LINE</h2>
-      <div class="box"><canvas id="st"></canvas></div>
+      <h2 id="stTitle">SPACE-TIME: DISTANCE ALONG THE ROAD (UP) OVER TIME (ACROSS), EACH BUS A LINE</h2>
+      <div class="box">
+        <div class="bar" id="ovBar" hidden style="border-top:0;border-bottom:1px solid var(--line)">
+          <span class="barlabel">LINE UP BY</span><button id="alStart" aria-pressed="true">START</button><button id="alClock" aria-pressed="false">TIME OF DAY</button>
+          <div id="ovKey"></div>
+        </div>
+        <canvas id="st"></canvas>
+      </div>
       <div class="box" style="margin-top:12px">
         <div class="facts" id="facts"><div class="empty">PICK A SLOWDOWN ON THE LEFT</div></div>
         <div class="verdict" id="verdict" hidden>
@@ -107,7 +137,11 @@
           <input id="vnote" placeholder="NOTE (OPTIONAL)" maxlength="500" aria-label="Note">
         </div>
       </div>
-      <div class="note">From Grays Harbor Transit's GPS (the relay logs it 3 times a minute). Usual speeds are the middle
+      <div class="note" id="patNote" hidden>PATTERNS: every logged slowdown, grouped by spot (within 500 m). The bars show when
+        they happened: weekdays on top, weekends below, darker for more. The chart lays every slowdown at the spot on the same road,
+        each in its own color, thick where it was slow: lined up by when each one started, or by the time of day. Tap a date to
+        replay that one. SKIPPED BEFORE: a spot the map used to leave out as routine (until Nov 14).</div>
+      <div class="note" id="logNote">From Grays Harbor Transit's GPS (the relay logs it 3 times a minute). Usual speeds are the middle
         speed buses drove each ~300 m of road, by direction, from slow-baseline.json. A flat line in the space-time chart is a bus
         standing still; a steep one is a bus moving fast. A slowdown that builds and clears shows up as a growing, then shrinking,
         patch of orange and red.</div>
@@ -150,7 +184,7 @@
   };
   applyPrefs();
   $('#bigBtn').onclick = () => { ls.set('ht.replay.big', ls.get('ht.replay.big') === '1' ? null : '1'); applyPrefs(); drawChart(); };
-  $('#themeBtn').onclick = () => { ls.set('ht.replay.theme', ls.get('ht.replay.theme') === 'light' ? null : 'light'); applyPrefs(); mapTheme(); refreshList(); show(); };
+  $('#themeBtn').onclick = () => { ls.set('ht.replay.theme', ls.get('ht.replay.theme') === 'light' ? null : 'light'); applyPrefs(); mapTheme(); refreshList(); show(); if (mode === 'pat') { refreshSpots(); drawChart(); } };
 
   // ---- key
   let key = ls.get('ht.statsKey');
@@ -168,7 +202,7 @@
   async function loadBase() {
     if (base) return base;
     const j = await (await fetch('data/slow-baseline.json', { cache: 'no-store' })).json();
-    base = { kx: j.kx, ky: j.ky, cells: j.cells || {} };
+    base = { kx: j.kx, ky: j.ky, cells: j.cells || {}, stops: j.stops || [], sroutine: j.sroutine || [] };
     return base;
   }
 
@@ -244,7 +278,22 @@
     map.addLayer({ id: 'bus-lbl', type: 'symbol', source: 'bus', layout: { 'text-field': ['get', 'l'], 'text-font': ['Noto Sans Regular'], 'text-size': 11,
       'text-offset': [0, -1.5], 'text-allow-overlap': true }, paint: { 'text-color': '#ffffff', 'text-halo-color': '#000', 'text-halo-width': 1.5 } });
     mapTheme();
-    if (cur) show();
+    // patterns: one circle per repeat spot (bigger for more days, colored by the worst it got)
+    map.addSource('spots', { type: 'geojson', data: empty });
+    map.addLayer({ id: 'spots', type: 'circle', source: 'spots', layout: { visibility: 'none' }, paint: {
+      'circle-radius': ['interpolate', ['linear'], ['get', 'days'], 2, 6, 10, 16], 'circle-color': ['get', 'c'], 'circle-opacity': 0.55,
+      'circle-stroke-color': ['case', ['boolean', ['get', 'on'], false], '#ffffff', '#000000'], 'circle-stroke-width': ['case', ['boolean', ['get', 'on'], false], 2.5, 1] } });
+    // (the day counts from their own copy of the data: a label font that won't load can't take the circles with it)
+    map.addSource('spots-lbl', { type: 'geojson', data: empty });
+    map.addLayer({ id: 'spots-n', type: 'symbol', source: 'spots-lbl', layout: { visibility: 'none', 'text-field': ['to-string', ['get', 'days']],
+      'text-font': ['Noto Sans Regular'], 'text-size': 11, 'text-allow-overlap': true }, paint: { 'text-color': '#ffffff', 'text-halo-color': '#000', 'text-halo-width': 1.2 } });
+    map.on('click', 'spots', (e) => pickSpot(+e.features[0].properties.i));
+    map.on('mouseenter', 'spots', () => (map.getCanvas().style.cursor = 'pointer'));
+    map.on('mouseleave', 'spots', () => (map.getCanvas().style.cursor = ''));
+    mapTheme();
+    for (const id of ['spots', 'spots-n']) map.setLayoutProperty(id, 'visibility', mode === 'pat' ? 'visible' : 'none');
+    for (const id of ['paint', 'trail', 'bus', 'bus-lbl']) map.setLayoutProperty(id, 'visibility', mode === 'pat' ? 'none' : 'visible');
+    if (mode === 'pat') drawSpots(); else if (cur) show();
   });
 
   // ---- the buses' road shapes, to lay a stretch onto the road
@@ -263,7 +312,7 @@
   }
   // a stretch is only a handful of GPS points ~300 m apart: joined straight they cut across every curve, so lay
   // them onto the route's own road shape (data/bus-routes.json) and follow it between them. Off any shape: as is
-    function onRoad(s) {
+  function onRoad(s) {
     if (!shapes || s.pts.length < 2) return s.pts;
     const K = [76000, 111000];
     // where a point lands on one shape: the nearest spot within 120 m (a looping route passes some spots twice: a
@@ -307,16 +356,9 @@
     return out;
   }
 
-  // ---- one slowdown: its positions, worked out once
-  let T = null; // { ev, from, to, pos: [{t, rt, bus, lat, lon, mph, r, frozen, s}], path, len }
-  async function open(id) {
-    const ev = log.find((e) => e.id === id); if (!ev) return;
-    cur = ev; refreshList(); stop();
-    $('#facts').innerHTML = '<div class="empty">LOADING THE BUS LOG…</div>';
-    const [j, B] = await Promise.all([api(`/slow-track?id=${encodeURIComponent(id)}`), loadBase(), loadShapes()]);
-    if (j.error) { $('#facts').innerHTML = `<div class="empty">${esc(j.error)}</div>`; return; }
-    // direction (8 ways) from each bus's last report at 5+ mph, then the usual speed for that square and way
-    const rows = j.pos.map(([t, rt, bus, lat, lon, hd, mph]) => ({ t, rt, bus, lat, lon, hd, mph })).sort((a, b) => a.t - b.t);
+  // ---- positions from /slow-track: each one's usual speed (by its bus's last direction) and share of it
+  function prepRows(pos, B) {
+    const rows = pos.map(([t, rt, bus, lat, lon, hd, mph]) => ({ t, rt, bus, lat, lon, hd, mph })).sort((a, b) => a.t - b.t);
     const lastDir = {}, lastPos = {};
     for (const p of rows) {
       if (p.mph >= 5 && p.hd >= 0) lastDir[p.bus] = Math.round(p.hd / 45) % 8;
@@ -324,8 +366,11 @@
       const u = usualAt(B, p.lon, p.lat, lastDir[p.bus]);
       p.usual = u; p.r = u ? p.mph / u : null;
     }
-    // the road it happened on, as a line to measure along: the stretch itself, or the first bus's path past the stop,
-    // with 1.5 km more at each end
+    return rows;
+  }
+  // the road it happened on, as a line to measure along: the stretch laid on the road, or the first bus's path past the
+  // stop, with 1.5 km more at each end
+  function roadPath(ev, rows) {
     const road = ev.kind === 'stretch' ? onRoad({ rt: ev.rt, m: ev.data.m, pts: ev.data.pts || [] }) : null;
     let path = road ? road.slice() : rows.filter((p) => p.bus === (ev.data.buses || [])[0] && mDist(p, ev) < 2000).map((p) => [p.lon, p.lat]);
     path = path.filter((q, i) => i === 0 || q[0] !== path[i - 1][0] || q[1] !== path[i - 1][1]);
@@ -333,6 +378,11 @@
     const ext = (a, b) => { const dx = (a[0] - b[0]) * 76000, dy = (a[1] - b[1]) * 111000, L = Math.hypot(dx, dy) || 1; return [a[0] + dx / L * 1500 / 76000, a[1] + dy / L * 1500 / 111000]; };
     path = [ext(path[0], path[1]), ...path, ext(path[path.length - 1], path[path.length - 2])];
     const cum = [0]; for (let i = 1; i < path.length; i++) cum.push(cum[i - 1] + mDist({ lon: path[i - 1][0], lat: path[i - 1][1] }, { lon: path[i][0], lat: path[i][1] }));
+    return { road, path, cum, len: cum[cum.length - 1] };
+  }
+  // each position's distance along that line (null when it's over 250 m off it)
+  function measure(rows, P) {
+    const { path, cum } = P;
     for (const p of rows) {
       let best = null;
       for (let i = 1; i < path.length; i++) {
@@ -343,10 +393,23 @@
       }
       p.s = best && best.d < 250 ? best.s : null;
     }
-    T = { ev, from: j.from, to: j.to, pos: rows, path, road, len: cum[cum.length - 1], off: 1500 };
+  }
+
+  // ---- one slowdown: its positions, worked out once
+  let T = null; // { ev, from, to, pos: [{t, rt, bus, lat, lon, mph, r, frozen, s}], path, len }
+  async function open(id) {
+    const ev = log.find((e) => e.id === id); if (!ev) return;
+    cur = ev; refreshList(); stop();
+    $('#facts').innerHTML = '<div class="empty">LOADING THE BUS LOG…</div>';
+    const [j, B] = await Promise.all([api(`/slow-track?id=${encodeURIComponent(id)}`), loadBase(), loadShapes()]);
+    if (j.error) { $('#facts').innerHTML = `<div class="empty">${esc(j.error)}</div>`; return; }
+    const rows = prepRows(j.pos, B);
+    const P = roadPath(ev, rows);
+    measure(rows, P);
+    T = { ev, from: j.from, to: j.to, pos: rows, path: P.path, road: P.road, len: P.len, off: 1500 };
     t = ev.t0 - 5 * 60000; if (t < T.from) t = T.from;
     show();
-    const b = new maplibregl.LngLatBounds(); path.forEach((q) => b.extend(q)); if (ev.kind !== 'stretch') b.extend([ev.lon, ev.lat]);
+    const b = new maplibregl.LngLatBounds(); P.path.forEach((q) => b.extend(q)); if (ev.kind !== 'stretch') b.extend([ev.lon, ev.lat]);
     map.fitBounds(b, { padding: 40, maxZoom: 15.5, duration: 0 });
   }
 
@@ -421,6 +484,7 @@
     const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
     const fs = parseFloat(css('--fs')) - 4;
     g.font = `${fs}px "Share Tech Mono", monospace`;
+    if (mode === 'pat') return drawOverlay(g, W, H);
     if (!T) { g.fillStyle = css('--dim'); g.fillText('PICK A SLOWDOWN ON THE LEFT', 12, 24); return; }
     const L = 54, R = 10, Tp = 10, Bm = 26;
     const X = (tt) => L + (tt - T.from) / (T.to - T.from) * (W - L - R);
@@ -459,12 +523,206 @@
     g.beginPath(); g.moveTo(X(t), Tp); g.lineTo(X(t), H - Bm); g.stroke();
   }
   cv.onclick = (e) => {
-    if (!T) return;
+    if (!T || mode === 'pat') return;
     const r = cv.getBoundingClientRect(), L = 54, R = 10;
     t = T.from + Math.max(0, Math.min(1, (e.clientX - r.left - L) / (r.width - L - R))) * (T.to - T.from);
     frame();
   };
   window.addEventListener('resize', drawChart);
+
+  // ---- PATTERNS: the log grouped by spot (within 500 m), when they happen, and every one at a spot on one chart
+  let mode = 'log', plog = null, spots = [], spot = null, O = null, align = 'start';
+  const PAC = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: 'numeric', weekday: 'short', month: 'numeric', day: 'numeric', hourCycle: 'h23' });
+  const pac = (t) => { const o = {}; for (const x of PAC.formatToParts(t)) o[x.type] = x.value; return { h: +o.hour, min: +o.hour * 60 + +o.minute, wk: o.weekday === 'Sat' || o.weekday === 'Sun', day: `${o.month}/${o.day}` }; };
+  const hr = (h) => { h = ((h % 24) + 24) % 24; return h === 0 ? '12 AM' : h === 12 ? 'NOON' : h < 12 ? `${h} AM` : `${h - 12} PM`; };
+  const BAD = { stop: 3, heavy: 2, moderate: 1 };
+  // (the log as the relay's lite list gives it, or the full one flattened, for a relay not updated yet)
+  const flat = (e) => e.data ? { id: e.id, kind: e.kind, t0: e.t0, t1: e.t1, rt: e.rt, level: e.level, lat: e.lat, lon: e.lon, avg: e.data.avg, m: e.data.m,
+    usual: e.data.usual, mph: e.data.mph, min: e.data.min, end: e.data.end, nb: (e.data.buses || []).length, verdict: e.data.verdict } : e;
+  function setMode(m) {
+    mode = m; stop();
+    $('#tabLog').setAttribute('aria-pressed', m === 'log'); $('#tabPat').setAttribute('aria-pressed', m === 'pat');
+    $('#logSide').hidden = m !== 'log'; $('#patSide').hidden = m !== 'pat';
+    $('#playBar').hidden = m !== 'log'; $('#speedKey').hidden = m !== 'log'; $('#ovBar').hidden = m !== 'pat';
+    $('#logNote').hidden = m !== 'log'; $('#patNote').hidden = m !== 'pat'; $('#verdict').hidden = m !== 'log' || !cur;
+    $('#stTitle').textContent = m === 'pat' ? 'EVERY SLOWDOWN AT THIS SPOT: DISTANCE ALONG THE ROAD (UP) OVER TIME (ACROSS)' : 'SPACE-TIME: DISTANCE ALONG THE ROAD (UP) OVER TIME (ACROSS), EACH BUS A LINE';
+    if (map.isStyleLoaded()) {
+      for (const id of ['spots', 'spots-n']) map.setLayoutProperty(id, 'visibility', m === 'pat' ? 'visible' : 'none');
+      for (const id of ['paint', 'trail', 'bus', 'bus-lbl']) map.setLayoutProperty(id, 'visibility', m === 'pat' ? 'none' : 'visible');
+    }
+    if (m === 'pat') { if (!plog) loadPatterns().catch((e) => ($('#msg').textContent = e.message)); else { drawSpots(); showSpot(); } }
+    else { $('#facts').innerHTML = cur ? '' : '<div class="empty">PICK A SLOWDOWN ON THE LEFT</div>'; if (cur) show(); else map.getSource('ref')?.setData(empty); }
+    drawChart();
+  }
+  $('#tabLog').onclick = () => setMode('log');
+  $('#tabPat').onclick = () => setMode('pat');
+
+  async function loadPatterns() {
+    $('#plist').innerHTML = '<div class="empty">LOADING…</div>';
+    const [j] = await Promise.all([api(`/slow-log?lite=1&days=${$('#pdays').value}`), loadBase()]);
+    plog = (j.log || []).map(flat);
+    group(); refreshSpots(); drawSpots();
+  }
+  function group() {
+    const B = base, out = [];
+    for (const e of plog.slice().sort((a, b) => a.t0 - b.t0)) {
+      let g = out.find((x) => mDist(x, e) < 500);
+      if (!g) { g = { lat: e.lat, lon: e.lon, ev: [] }; out.push(g); }
+      g.ev.push(e);
+    }
+    for (const g of out) {
+      g.hrs = [Array(24).fill(0), Array(24).fill(0)]; // weekdays, weekends
+      const days = new Set(), lv = {}, vd = {};
+      for (const e of g.ev) { const p = pac(e.t0); e._p = p; g.hrs[p.wk ? 1 : 0][p.h]++; days.add(p.day); lv[e.level] = (lv[e.level] || 0) + 1; if (e.verdict) vd[e.verdict] = (vd[e.verdict] || 0) + 1; }
+      g.days = days.size; g.n = g.ev.length; g.lv = lv; g.vd = vd;
+      g.worst = Object.keys(lv).sort((a, b) => (BAD[b] || 0) - (BAD[a] || 0))[0];
+      g.bad = g.ev.reduce((n, e) => n + (BAD[e.level] || 0), 0);
+      g.rts = [...new Set(g.ev.map((e) => e.rt).filter(Boolean))];
+      g.wk = g.ev.filter((e) => e._p.wk).length;
+      g.muted = (B.sroutine || []).some((z) => mDist(z, g) < 600);
+      g.stopM = Math.round(Math.min(Infinity, ...(B.stops || []).map(([lon, lat]) => mDist({ lon, lat }, g))));
+      g.when = whenText(g);
+    }
+    spots = out;
+  }
+  // "MOSTLY 7 AM–9 AM" when 70%+ of them fall in a window of 4 hours or less; otherwise "ANY TIME OF DAY"
+  function whenText(g) {
+    const h = g.hrs[0].map((n, i) => n + g.hrs[1][i]), n = g.n;
+    let txt = n < 2 ? '' : 'ANY TIME OF DAY';
+    if (n >= 2) outer: for (let w = 1; w <= 4; w++) for (let a = 0; a < 24; a++) {
+      let c = 0; for (let k = 0; k < w; k++) c += h[(a + k) % 24];
+      if (c >= 0.7 * n) { txt = `MOSTLY ${hr(a)}–${hr(a + w)}`; break outer; }
+    }
+    const wkd = n >= 3 && !g.wk ? ' · WEEKDAYS ONLY' : n >= 3 && g.wk === n ? ' · WEEKENDS ONLY' : '';
+    return txt + wkd;
+  }
+  // when, as two rows of 24 hours: weekdays on top, weekends below, darker for more
+  function hoursSvg(g) {
+    const max = Math.max(1, ...g.hrs[0], ...g.hrs[1]), c = lvlColor(g.worst), cell = 9.5, x0 = 30;
+    let out = `<svg class="hrs" viewBox="0 0 ${x0 + 24 * cell} 30" aria-hidden="true">`;
+    g.hrs.forEach((row, r) => {
+      out += `<text x="0" y="${r * 11 + 8}" font-size="7" fill="${css('--dim')}" font-family="Share Tech Mono, monospace">${r ? 'WKND' : 'WKDY'}</text>`;
+      row.forEach((n, h) => { out += `<rect x="${x0 + h * cell}" y="${r * 11}" width="${cell - 1}" height="9" fill="${n ? c : css('--line')}" fill-opacity="${n ? 0.25 + 0.75 * n / max : 0.6}"><title>${hr(h)}: ${n}</title></rect>`; });
+    });
+    for (const [h, l] of [[0, '12A'], [6, '6A'], [12, '12P'], [18, '6P']]) out += `<text x="${x0 + h * cell}" y="29" font-size="7" fill="${css('--dim')}" font-family="Share Tech Mono, monospace">${l}</text>`;
+    return out + '</svg>';
+  }
+  function shown() {
+    const min = +$('#pmin').value, by = $('#psort').value;
+    return spots.map((g, i) => ({ g, i })).filter(({ g }) => g.days >= min)
+      .sort((a, b) => by === 'n' ? b.g.n - a.g.n || b.g.days - a.g.days : by === 'bad' ? b.g.bad - a.g.bad : b.g.days - a.g.days || b.g.n - a.g.n);
+  }
+  function refreshSpots() {
+    if (!plog) return;
+    const list = shown();
+    const days = new Set(plog.map((e) => pac(e.t0).day)).size;
+    $('#psum').textContent = `${plog.length} SLOWDOWNS ON ${days} DAYS · ${spots.length} SPOTS · ${list.length} WITH ${$('#pmin').value}+ DAYS`;
+    $('#plist').innerHTML = list.length ? list.map(({ g, i }) => `<div class="it${spot === i ? ' on' : ''}" data-i="${i}" style="border-left-color:${lvlColor(g.worst)}">
+      <div class="t">${esc(near(g))} · ${g.days} DAYS</div>
+      <div class="m">${g.n} TIMES · ${g.when}${g.rts.length ? ' · ROUTE ' + esc(g.rts.join('/')) : ''}</div>
+      ${hoursSvg(g)}
+      <div>${Object.entries(g.lv).sort((a, b) => (BAD[b[0]] || 0) - (BAD[a[0]] || 0)).map(([l, n]) => `<span class="tag" style="color:${lvlColor(l)};border-color:${lvlColor(l)}">${LVL[l] || l} ${n}</span>`).join('')}${g.muted ? '<span class="tag hot">SKIPPED BEFORE</span>' : ''}${g.stopM < 200 ? `<span class="tag">STOP ${g.stopM} M AWAY</span>` : ''}</div></div>`).join('')
+      : '<div class="empty">NO SPOT HAS THAT MANY DAYS YET</div>';
+  }
+  $('#plist').onclick = (e) => { const it = e.target.closest('.it[data-i]'); if (it) pickSpot(+it.dataset.i); };
+  $('#pmin').onchange = () => { refreshSpots(); drawSpots(); };
+  $('#psort').onchange = refreshSpots;
+  $('#pdays').onchange = () => { spot = null; O = null; loadPatterns().catch((e) => ($('#msg').textContent = e.message)); };
+  function drawSpots() {
+    if (!map.getSource('spots')) return;
+    const fc = { type: 'FeatureCollection', features: shown().map(({ g, i }) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [g.lon, g.lat] },
+      properties: { i, days: g.days, c: lvlColor(g.worst), on: spot === i } })) };
+    map.getSource('spots').setData(fc); map.getSource('spots-lbl')?.setData(fc);
+    if (map.getSource('ref')) map.getSource('ref').setData(O?.P ? { type: 'FeatureCollection', features: [{ type: 'Feature', geometry: { type: 'LineString', coordinates: O.P.road || O.P.path }, properties: {} }] } : empty);
+    if (spot == null && spots.length) {
+      const b = new maplibregl.LngLatBounds(); shown().forEach(({ g }) => b.extend([g.lon, g.lat]));
+      if (!b.isEmpty()) map.fitBounds(b, { padding: 40, maxZoom: 12, duration: 0 });
+    }
+  }
+  function showSpot() {
+    const g = spots[spot];
+    if (!g) { $('#facts').innerHTML = '<div class="empty">PICK A SPOT ON THE LEFT OR THE MAP</div>'; return; }
+    const fact = (l, v) => `<div>${l}<b>${v}</b></div>`;
+    const first = g.ev[0].t0, last = g.ev[g.ev.length - 1].t0;
+    $('#facts').innerHTML = [
+      fact('WHERE', `${near(g)}${g.rts.length ? ' · ROUTE ' + esc(g.rts.join('/')) : ''}`),
+      fact('HOW OFTEN', `${g.n} TIMES ON ${g.days} DAYS · ${fmtD(first).split(',')[1] || ''} TO ${fmtD(last).split(',')[1] || ''}`),
+      fact('WHEN', `${g.when || '—'} · ${g.n - g.wk} WEEKDAY, ${g.wk} WEEKEND`),
+      fact('HOW BAD', Object.entries(g.lv).map(([l, n]) => `${LVL[l] || l} ${n}`).join(' · ')),
+      fact('VERDICTS', Object.keys(g.vd).length ? Object.entries(g.vd).map(([v, n]) => `${VERD[v]} ${n}`).join(' · ') : 'NONE YET'),
+      fact('NEAREST STOP', `${g.stopM} M${g.muted ? ' · SKIPPED AS ROUTINE BEFORE NOV 14' : ''}`),
+      fact('MAP', `<a style="color:var(--cyan)" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${g.lat.toFixed(5)},${g.lon.toFixed(5)}">OPEN THE SPOT</a>`)
+    ].join('');
+  }
+  // the overlay: every slowdown at the spot (newest 12), measured along one road (the longest stretch's), each its own color
+  const PALETTE = ['#00e5ff', '#ff5ac8', '#c6ff3d', '#ffc400', '#a678ff', '#ff7a1a', '#3fd0a0', '#ff2a3d', '#7fa8ff', '#e8e8e8', '#ffa3a3', '#9ad94a'];
+  async function pickSpot(i) {
+    spot = i; O = null; refreshSpots(); drawSpots(); showSpot(); drawChart();
+    const g = spots[i]; if (!g) return;
+    map.flyTo({ center: [g.lon, g.lat], zoom: Math.max(map.getZoom(), 13.5), duration: 600 });
+    const evs = g.ev.slice().sort((a, b) => b.t0 - a.t0).slice(0, 12);
+    const [B] = await Promise.all([loadBase(), loadShapes()]);
+    const got = [];
+    for (let k = 0; k < evs.length; k += 3) {
+      const res = await Promise.all(evs.slice(k, k + 3).map((e) => api(`/slow-track?id=${encodeURIComponent(e.id)}`).catch(() => null)));
+      res.forEach((j, n) => { if (j && !j.error && j.ev) got.push({ ev: { ...j.ev, data: j.ev.data || {} }, j }); });
+      if (spot !== i) return; // (picked another meanwhile)
+    }
+    if (!got.length) return;
+    const rowsOf = got.map(({ j }) => prepRows(j.pos, B));
+    // the road: the longest stretch among them (a stop alone: its first bus's path)
+    let pick = 0; got.forEach((x, n) => { if (x.ev.kind === 'stretch' && (x.ev.data.m || 0) > ((got[pick].ev.kind === 'stretch' && got[pick].ev.data.m) || 0)) pick = n; });
+    const P = roadPath(got[pick].ev, rowsOf[pick]);
+    rowsOf.forEach((rows) => measure(rows, P));
+    O = { P, len: P.len, off: 1500, list: got.map(({ ev, j }, n) => ({ ev, from: j.from, to: j.to, rows: rowsOf[n], color: PALETTE[n % PALETTE.length], p: pac(ev.t0) })) };
+    $('#ovKey').innerHTML = O.list.map((x, n) => `<button data-n="${n}" style="color:${x.color}" title="Replay this one">${new Date(x.ev.t0).toLocaleDateString([], { month: 'short', day: 'numeric' })} ${fmtT(x.ev.t0)}</button>`).join('');
+    drawSpots(); drawChart();
+  }
+  $('#ovKey').onclick = async (e) => {
+    const b = e.target.closest('button[data-n]'); if (!b || !O) return;
+    const ev = O.list[+b.dataset.n].ev;
+    if (!log.some((x) => x.id === ev.id)) { $('#days').value = '90'; await loadLog(); }
+    setMode('log'); open(ev.id);
+  };
+  for (const [id, a] of [['#alStart', 'start'], ['#alClock', 'clock']]) $(id).onclick = () => {
+    align = a; $('#alStart').setAttribute('aria-pressed', a === 'start'); $('#alClock').setAttribute('aria-pressed', a === 'clock'); drawChart();
+  };
+  function drawOverlay(g, W, H) {
+    if (!O) { g.fillStyle = css('--dim'); g.fillText(spot == null ? 'PICK A SPOT ON THE LEFT OR THE MAP' : 'LOADING THE BUS LOG FOR EACH ONE…', 12, 24); return; }
+    const L = 54, R = 10, Tp = 10, Bm = 26;
+    // across: minutes from each one's start (10 before to 40 after), or the time of day (Pacific)
+    const xOf = (x, tt) => align === 'start' ? (tt - x.ev.t0) / 60000 : x.p.min + (tt - x.ev.t0) / 60000;
+    let lo, hi;
+    if (align === 'start') { lo = -10; hi = 40; }
+    else { lo = Math.min(...O.list.map((x) => x.p.min)) - 20; hi = Math.max(...O.list.map((x) => x.p.min)) + 40; lo = Math.floor(lo / 60) * 60; hi = Math.ceil(hi / 60) * 60; }
+    const X = (v) => L + (v - lo) / (hi - lo) * (W - L - R);
+    const Y = (s) => H - Bm - s / O.len * (H - Tp - Bm);
+    g.fillStyle = 'rgba(0,229,255,.06)'; g.fillRect(L, Y(O.len - O.off), W - L - R, Y(O.off) - Y(O.len - O.off));
+    g.strokeStyle = css('--line'); g.fillStyle = css('--dim'); g.lineWidth = 1;
+    const step = align === 'start' ? 5 : (hi - lo > 360 ? 60 : 30);
+    const lw = g.measureText('12:55 PM').width + 12, every = Math.max(1, Math.ceil(lw / (X(lo + step) - X(lo))));
+    let k = 0;
+    for (let v = Math.ceil(lo / step) * step; v <= hi; v += step, k++) {
+      g.beginPath(); g.moveTo(X(v), Tp); g.lineTo(X(v), H - Bm); g.stroke();
+      if (k % every) continue;
+      const lab = align === 'start' ? (v === 0 ? 'START' : `${v > 0 ? '+' : ''}${v} MIN`) : (v % 60 ? `${hr(Math.floor(v / 60)).replace(/ [AP]M|NOON/, '')}:${String(v % 60).padStart(2, '0')}` : hr(v / 60));
+      g.fillText(lab, X(v) - g.measureText(lab).width / 2, H - 8);
+    }
+    for (let s = 0; s <= O.len; s += 804.7) { g.beginPath(); g.moveTo(L, Y(s)); g.lineTo(W - R, Y(s)); g.stroke(); g.fillText(`${(s / 1609.3).toFixed(1)} MI`, 4, Y(s) + 4); }
+    g.save(); g.beginPath(); g.rect(L, Tp, W - L - R, H - Tp - Bm); g.clip();
+    for (const x of O.list) {
+      const by = {}; for (const p of x.rows) if (p.s != null) (by[p.bus] ||= []).push(p);
+      for (const list of Object.values(by)) for (let i = 1; i < list.length; i++) {
+        const a = list[i - 1], b = list[i];
+        if (b.t - a.t > 90000) continue;
+        const slow = b.r != null && b.r < 0.75 && !b.frozen;
+        g.strokeStyle = x.color; g.globalAlpha = slow ? 0.95 : 0.3; g.lineWidth = slow ? 3.5 : 1.2;
+        g.beginPath(); g.moveTo(X(xOf(x, a.t)), Y(a.s)); g.lineTo(X(xOf(x, b.t)), Y(b.s)); g.stroke();
+      }
+    }
+    g.restore(); g.globalAlpha = 1;
+    if (align === 'start') { g.strokeStyle = css('--cyan'); g.lineWidth = 1; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(X(0), Tp); g.lineTo(X(0), H - Bm); g.stroke(); g.setLineDash([]); }
+  }
 
   // ---- verdict
   async function setVerdict(v) {
@@ -483,7 +741,7 @@
     if (!key) { $('#keyForm').hidden = false; return; }
     $('#keyForm').hidden = true; $('#app').hidden = false;
     map.resize();
-    try { await loadLog(); const id = new URLSearchParams(location.search).get('id'); if (id) open(id); }
+    try { await loadLog(); const q = new URLSearchParams(location.search), id = q.get('id'); if (id) open(id); else if (q.get('view') === 'patterns') setMode('pat'); }
     catch (e) { $('#msg').textContent = e.message; }
   }
   drawChart();
