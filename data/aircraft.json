@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-14T15:16:06.6978349+00:00",
+  "updated": "2026-11-14T15:26:00.3312385+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a6237b",
+      "flight": "N495JH",
+      "reg": "N495JH",
+      "type": "E55P",
+      "cat": "A2",
+      "alt": 14250,
+      "gs": 226.5,
+      "track": 140.19,
+      "rate": 4928,
+      "lat": 47.24349,
+      "lon": -122.72975,
+      "squawk": "6667",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
