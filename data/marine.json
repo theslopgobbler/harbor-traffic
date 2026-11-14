@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T22:05:23.2135064+00:00",
+  "updated": "2026-11-14T22:15:18.1035911+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,24 +10,24 @@
     "waterF": 54.9
   },
   "bar": {
-    "issued": "2026-11-14T08:48:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH SUNDAY MORNING... Combined seas 15 to 20 ft. Bar conditions severe. Maximum ebb currents will occur around 715 AM Saturday, 715 PM Saturday, and 815 AM Sunday.",
+    "issued": "2026-11-14T22:12:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH SUNDAY EVENING... Combined seas 14 to 16 ft rising to 18 to 20 ft tonight then falling again to around 15 ft tomorrow morning. Bar conditions severe. Maximum ebb currents will occur around 715 PM Saturday, 815 AM Sunday, and 800 PM Sunday.",
     "conditions": "severe",
-    "seas": "15 to 20 ft",
+    "seas": "14 to 16 ft rising to 18 to 20 ft tonight then falling again to around 15 ft tomorrow morning",
     "ebb": null
   },
   "alerts": [
     {
       "event": "Storm Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-15T12:00:00+00:00",
       "headline": "Storm Warning issued November 14 at 12:38PM PST until November 15 at 4:00AM PST by NWS Portland OR"
     },
     {
-      "event": "Storm Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
-      "ends": "2026-11-15T12:00:00+00:00",
-      "headline": "Storm Warning issued November 14 at 12:38PM PST until November 15 at 4:00AM PST by NWS Portland OR"
+      "event": "Hazardous Seas Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-16T12:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 14 at 12:38PM PST until November 16 at 4:00AM PST by NWS Portland OR"
     },
     {
       "event": "Hazardous Seas Warning",
@@ -42,10 +42,16 @@
       "headline": "Hazardous Seas Warning issued November 14 at 12:38PM PST until November 14 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Hazardous Seas Warning",
+      "event": "Storm Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-16T12:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 14 at 12:38PM PST until November 16 at 4:00AM PST by NWS Portland OR"
+      "ends": "2026-11-15T12:00:00+00:00",
+      "headline": "Storm Warning issued November 14 at 12:38PM PST until November 15 at 4:00AM PST by NWS Portland OR"
+    },
+    {
+      "event": "Storm Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-15T09:00:00+00:00",
+      "headline": "Storm Warning issued November 14 at 7:54AM PST until November 15 at 1:00AM PST by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
@@ -56,12 +62,6 @@
     {
       "event": "Storm Warning",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-11-15T09:00:00+00:00",
-      "headline": "Storm Warning issued November 14 at 7:54AM PST until November 15 at 1:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-11-15T09:00:00+00:00",
       "headline": "Storm Warning issued November 14 at 7:54AM PST until November 15 at 1:00AM PST by NWS Seattle WA"
     }
