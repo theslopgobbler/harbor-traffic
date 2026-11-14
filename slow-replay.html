@@ -273,7 +273,7 @@
     // every slow report so far, fading as it gets older: the slowdown growing and shrinking along the road
     map.addLayer({ id: 'paint', type: 'circle', source: 'paint', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 4, 16, 10],
       'circle-color': ['get', 'c'], 'circle-opacity': ['get', 'a'], 'circle-blur': 0.6 } });
-    map.addLayer({ id: 'trail', type: 'line', source: 'trail', layout: { 'line-cap': 'round' }, paint: { 'line-color': ['get', 'c'], 'line-width': 3, 'line-opacity': ['get', 'a'] } });
+    map.addLayer({ id: 'trail', type: 'line', source: 'trail', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': ['get', 'c'], 'line-width': 3, 'line-opacity': ['get', 'a'] } });
     map.addLayer({ id: 'bus', type: 'circle', source: 'bus', paint: { 'circle-radius': 7, 'circle-color': ['get', 'c'], 'circle-stroke-color': '#000', 'circle-stroke-width': 2 } });
     map.addLayer({ id: 'bus-lbl', type: 'symbol', source: 'bus', layout: { 'text-field': ['get', 'l'], 'text-font': ['Noto Sans Regular'], 'text-size': 11,
       'text-offset': [0, -1.5], 'text-allow-overlap': true }, paint: { 'text-color': '#ffffff', 'text-halo-color': '#000', 'text-halo-width': 1.5 } });
@@ -404,6 +404,19 @@
     const [j, B] = await Promise.all([api(`/slow-track?id=${encodeURIComponent(id)}`), loadBase(), loadShapes()]);
     if (j.error) { $('#facts').innerHTML = `<div class="empty">${esc(j.error)}</div>`; return; }
     const rows = prepRows(j.pos, B);
+    // each bus's path from its last report to this one along its route (reports are 20 s apart: joined straight, a
+    // bus at 30 mph cuts ~270 m of road, corners and all)
+    const lastOf = {};
+    for (const p of rows) {
+      const q = lastOf[p.bus]; lastOf[p.bus] = p;
+      if (!q || p.t - q.t > 90000 || p.frozen) continue;
+      const m = mDist(q, p);
+      if (m > 30) {
+        const seg = onRoad({ rt: p.rt, m, pts: [[q.lon, q.lat], [p.lon, p.lat]] });
+        let L = 0; for (let i = 1; i < seg.length; i++) L += mDist({ lon: seg[i - 1][0], lat: seg[i - 1][1] }, { lon: seg[i][0], lat: seg[i][1] });
+        if (seg.length > 2 && L <= 1.6 * m + 100) p.seg = seg; // (longer: the route loops back there, and the bus didn't go round)
+      }
+    }
     const P = roadPath(ev, rows);
     measure(rows, P);
     T = { ev, from: j.from, to: j.to, pos: rows, path: P.path, road: P.road, len: P.len, off: 1500 };
@@ -466,7 +479,7 @@
       for (const p of now) {
         const q = prev[p.bus]; prev[p.bus] = p;
         if (!q || t - p.t > 240000 || p.t - q.t > 90000) continue;
-        feats.push({ type: 'Feature', geometry: { type: 'LineString', coordinates: [[q.lon, q.lat], [p.lon, p.lat]] }, properties: { c: ratioColor(p.r), a: 0.9 * (1 - (t - p.t) / 240000) } });
+        feats.push({ type: 'Feature', geometry: { type: 'LineString', coordinates: p.seg || [[q.lon, q.lat], [p.lon, p.lat]] }, properties: { c: ratioColor(p.r), a: 0.9 * (1 - (t - p.t) / 240000) } });
       }
       map.getSource('trail').setData({ type: 'FeatureCollection', features: feats });
       // every slow report of the last 20 minutes, fading out: the slowdown's shape on the road
