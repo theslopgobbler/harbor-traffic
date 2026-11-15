@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T04:35:25.2048441+00:00",
+  "updated": "2026-11-15T04:45:25.3157998+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -652,6 +652,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 724561,
+      "kind": "other",
+      "category": "Trees down",
+      "priority": "Highest",
+      "headline": "Reported trees down on US 101 southbound at milepost 126.43 near Lake Quinault Rd beginning at 8:38 pm on November 14, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 126.43,
+      "lat": 47.45686137,
+      "lon": -123.885662473,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-15T04:38:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-15T04:43:18.7400000+00:00"
     },
     {
       "id": 640019,
