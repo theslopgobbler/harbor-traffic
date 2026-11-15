@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T20:35:19.1393660+00:00",
+  "updated": "2026-11-15T20:45:20.9571761+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -739,6 +739,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 724615,
+      "kind": "other",
+      "category": "Utilities work taking place",
+      "priority": "Highest",
+      "headline": "Utilities work taking place on SR 108 both directions at milepost 9 near Eich Rd beginning at 11:38 am on November 15, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "108",
+      "roadLabel": "SR 108",
+      "direction": "B",
+      "milepost": 9.0,
+      "lat": 47.104590612,
+      "lon": -123.142835189,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-11-15T19:38:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-15T20:43:06.9600000+00:00"
     },
     {
       "id": 640019,
