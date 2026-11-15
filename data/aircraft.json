@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-15T14:05:22.4132334+00:00",
+  "updated": "2026-11-15T14:15:21.3006646+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a9f760",
-      "flight": "N741MM",
-      "reg": "N741MM",
-      "type": "C25C",
-      "cat": "A2",
-      "alt": 13675,
-      "gs": 354.2,
-      "track": 4.7,
-      "rate": -2080,
-      "lat": 47.23651,
-      "lon": -122.75926,
-      "squawk": "4616",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
