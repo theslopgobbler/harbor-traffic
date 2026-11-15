@@ -189,7 +189,8 @@
     "Gulfstream Aerospace G450": "2026-11-13T03:56:01.8445209+00:00",
     "Boeing 747 8B5F": "2026-11-13T12:55:58.5425994+00:00",
     "Gulfstream Aerospace G550": "2026-11-14T15:06:08.0391311+00:00",
-    "SAAB 2000": "2026-11-15T09:45:16.1018557+00:00"
+    "SAAB 2000": "2026-11-15T09:45:16.1018557+00:00",
+    "Cessna Citation CJ4": "2026-11-15T14:05:22.4132334+00:00"
   },
   "candidates": [
     {
@@ -11727,7 +11728,91 @@
       "date": "2020-10-12 15:23:17",
       "caption": "On the apron at Sumburgh",
       "found": "2026-11-15T09:45:16.1018557+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ4",
+      "file": "File:Cessna Citation CJ4 525C N194ME FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_CJ4_525C_N194ME_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Cessna_Citation_CJ4_525C_N194ME_FDK_MD1.jpg/960px-Cessna_Citation_CJ4_525C_N194ME_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 390,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-28",
+      "caption": "2017 Cessna Citation CJ4/525C at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-15T14:05:22.4132334+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ4",
+      "file": "File:Cessna Citation CJ4 cockpit.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_CJ4_cockpit.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Cessna_Citation_CJ4_cockpit.jpg/960px-Cessna_Citation_CJ4_cockpit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "JetRequest.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-08 03:30:20",
+      "caption": "Cessna Citation CJ4 cockpit",
+      "found": "2026-11-15T14:05:22.4132334+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ4",
+      "file": "File:Cessna Citation CJ4 ‘N22UB’ (52910579920).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_CJ4_%E2%80%98N22UB%E2%80%99_(52910579920).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Cessna_Citation_CJ4_%E2%80%98N22UB%E2%80%99_%2852910579920%29.jpg/960px-Cessna_Citation_CJ4_%E2%80%98N22UB%E2%80%99_%2852910579920%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2022-05-13 09:27",
+      "caption": "c/n 525C-0182 Built in 2014 Zurich Airport, Switzerland 13th May 2022",
+      "found": "2026-11-15T14:05:22.4132334+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ4",
+      "file": "File:N22UB Cessna Citation CJ4 (24468199463).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N22UB_Cessna_Citation_CJ4_(24468199463).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/N22UB_Cessna_Citation_CJ4_%2824468199463%29.jpg/960px-N22UB_Cessna_Citation_CJ4_%2824468199463%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-02-16 09:55",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-11-15T14:05:22.4132334+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ4",
+      "file": "File:N22UB Cessna Citation CJ4 (30189967492).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N22UB_Cessna_Citation_CJ4_(30189967492).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/N22UB_Cessna_Citation_CJ4_%2830189967492%29.jpg/960px-N22UB_Cessna_Citation_CJ4_%2830189967492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-10-09 14:59",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-11-15T14:05:22.4132334+00:00"
+    },
+    {
+      "model": "Cessna Citation CJ4",
+      "file": "File:N95FP Cessna Citation CJ4 (23547118419).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N95FP_Cessna_Citation_CJ4_(23547118419).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/N95FP_Cessna_Citation_CJ4_%2823547118419%29.jpg/960px-N95FP_Cessna_Citation_CJ4_%2823547118419%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-12-21 15:20",
+      "caption": "At Gloucestershire Airport.",
+      "found": "2026-11-15T14:05:22.4132334+00:00"
     }
   ],
-  "updated": "2026-11-15T13:55:16.1712500+00:00"
+  "updated": "2026-11-15T14:05:22.4132334+00:00"
 }
