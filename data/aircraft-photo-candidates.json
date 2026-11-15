@@ -188,7 +188,8 @@
     "Gates Learjet 35 A": "2026-11-12T22:46:12.6481301+00:00",
     "Gulfstream Aerospace G450": "2026-11-13T03:56:01.8445209+00:00",
     "Boeing 747 8B5F": "2026-11-13T12:55:58.5425994+00:00",
-    "Gulfstream Aerospace G550": "2026-11-14T15:06:08.0391311+00:00"
+    "Gulfstream Aerospace G550": "2026-11-14T15:06:08.0391311+00:00",
+    "SAAB 2000": "2026-11-15T09:45:16.1018557+00:00"
   },
   "candidates": [
     {
@@ -11642,7 +11643,91 @@
       "date": "2013-09-24 09:37",
       "caption": "Frankfurt am Main (Rhein-Main AB) (FRA / EDDF / FRF) Germany 9.2013",
       "found": "2026-11-14T15:06:08.0391311+00:00"
+    },
+    {
+      "model": "SAAB 2000",
+      "file": "File:Braunschweig Airport Frost Air Saab 2000 OY-FSD (DSC09300).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Braunschweig_Airport_Frost_Air_Saab_2000_OY-FSD_(DSC09300).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Braunschweig_Airport_Frost_Air_Saab_2000_OY-FSD_%28DSC09300%29.jpg/960px-Braunschweig_Airport_Frost_Air_Saab_2000_OY-FSD_%28DSC09300%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-08-20 14:31:54",
+      "caption": "Die Saab 2000 der Fluggesellschaft Frost Air mit dem Kennzeichen OY-FSD rollt auf dem Flughafen Braunschweig-Wolfsburg zur Startbahn 08. Das Flugzeug führte zuvor in der Nacht einen Flug vom Flughafen Köln/Bonn nach B...",
+      "found": "2026-11-15T09:45:16.1018557+00:00"
+    },
+    {
+      "model": "SAAB 2000",
+      "file": "File:Etihad Saab 2000 take off.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Etihad_Saab_2000_take_off.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Etihad_Saab_2000_take_off.jpg/960px-Etihad_Saab_2000_take_off.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ISORauscht",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2014-10-14 12:02:37",
+      "caption": "Take off at DUS",
+      "found": "2026-11-15T09:45:16.1018557+00:00"
+    },
+    {
+      "model": "SAAB 2000",
+      "file": "File:Saab 2000, SkyWork Airlines.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Saab_2000,_SkyWork_Airlines.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Saab_2000%2C_SkyWork_Airlines.jpg/960px-Saab_2000%2C_SkyWork_Airlines.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 580,
+      "author": "Fizzibuzli",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-09-07",
+      "caption": "Saab 2000, SkyWork Airlines",
+      "found": "2026-11-15T09:45:16.1018557+00:00"
+    },
+    {
+      "model": "SAAB 2000",
+      "file": "File:Saab 2000 G-CDEB MG 8762.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Saab_2000_G-CDEB_MG_8762.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Saab_2000_G-CDEB_MG_8762.jpg/960px-Saab_2000_G-CDEB_MG_8762.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 580,
+      "author": "Ronnie Robertson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2020-10-12 15:07:27",
+      "caption": "On the apron at Sumburgh, possibly first time visit.",
+      "found": "2026-11-15T09:45:16.1018557+00:00"
+    },
+    {
+      "model": "SAAB 2000",
+      "file": "File:Saab 2000 G-CDEB MG 8769.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Saab_2000_G-CDEB_MG_8769.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Saab_2000_G-CDEB_MG_8769.jpg/960px-Saab_2000_G-CDEB_MG_8769.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 546,
+      "author": "Ronnie Robertson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2020-10-12 15:21:03",
+      "caption": "On the apron at Sumburgh",
+      "found": "2026-11-15T09:45:16.1018557+00:00"
+    },
+    {
+      "model": "SAAB 2000",
+      "file": "File:Saab 2000 G-CDEB MG 8773.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Saab_2000_G-CDEB_MG_8773.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Saab_2000_G-CDEB_MG_8773.jpg/960px-Saab_2000_G-CDEB_MG_8773.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 531,
+      "author": "Ronnie Robertson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2020-10-12 15:23:17",
+      "caption": "On the apron at Sumburgh",
+      "found": "2026-11-15T09:45:16.1018557+00:00"
     }
   ],
-  "updated": "2026-11-15T09:35:27.3036915+00:00"
+  "updated": "2026-11-15T09:45:16.1018557+00:00"
 }
