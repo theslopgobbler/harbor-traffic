@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-15T09:05:16.9745122+00:00",
+  "updated": "2026-11-15T09:15:20.6389390+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-15T08:26:00.0000000+00:00",
-    "waveFt": 17.1,
-    "periodS": 13.0,
-    "dirDeg": 236.0,
+    "time": "2026-11-15T08:56:00.0000000+00:00",
+    "waveFt": 16.1,
+    "periodS": 12.0,
+    "dirDeg": 232.0,
     "waterF": 55.0
   },
   "bar": {
@@ -18,26 +18,26 @@
   },
   "alerts": [
     {
-      "event": "Storm Warning",
+      "event": "Hazardous Seas Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-17T06:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 15 at 12:34AM PST until November 16 at 10:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Hazardous Seas Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
+      "ends": "2026-11-17T06:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 15 at 12:34AM PST until November 16 at 10:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Storm Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-15T12:00:00+00:00",
       "headline": "Storm Warning issued November 15 at 12:34AM PST until November 15 at 4:00AM PST by NWS Portland OR"
     },
     {
-      "event": "Hazardous Seas Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-17T06:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 15 at 12:34AM PST until November 16 at 10:00PM PST by NWS Portland OR"
-    },
-    {
-      "event": "Hazardous Seas Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
-      "ends": "2026-11-17T06:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 15 at 12:34AM PST until November 16 at 10:00PM PST by NWS Portland OR"
-    },
-    {
       "event": "Storm Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-15T12:00:00+00:00",
       "headline": "Storm Warning issued November 15 at 12:34AM PST until November 15 at 4:00AM PST by NWS Portland OR"
     },
