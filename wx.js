@@ -261,14 +261,60 @@
     return parts.join(' · ');
   }
 
+  // ---- is it actually coming down? The hourly forecast can say "Chance Light Rain" for hours on end, and drawing
+  // that as rain had it raining over Hoquiam under a clear sky (Nov 15). So rain, snow, hail and storms are drawn only
+  // where the radar (the same NEXRAD tiles as the radar button) has echoes within about 3 km of a town; a forecast of
+  // rain under a clear radar is drawn as cloud. Echoes over a town the forecast called dry are drawn as light rain (or
+  // snow, when the forecast mentions it). If the radar can't be read, the forecast decides, as before.
+  const ECHO_Z = 8, ECHO_R = 8; // zoom-8 pixels are about 420 m here: 8 of them each way is about 3 km
+  const echoTiles = new Map();
+  async function echoAt(lat, lon) { // share (0..1) of radar pixels near the spot with an echo, or null
+    try {
+      const n = 2 ** ECHO_Z, x = (lon + 180) / 360 * n, r = lat * Math.PI / 180;
+      const y = (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n;
+      const tx = Math.floor(x), ty = Math.floor(y), px = Math.floor((x % 1) * 256), py = Math.floor((y % 1) * 256);
+      const v = Math.floor(Date.now() / 300000), key = `${tx}/${ty}/${v}`;
+      if (!echoTiles.has(key)) {
+        echoTiles.set(key, (async () => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.src = RADAR_TILES.replace('{z}', ECHO_Z).replace('{x}', tx).replace('{y}', ty) + `?v=${v}`;
+          await img.decode();
+          const cv2 = document.createElement('canvas'); cv2.width = cv2.height = 256;
+          const g = cv2.getContext('2d', { willReadFrequently: true }); g.drawImage(img, 0, 0);
+          return g.getImageData(0, 0, 256, 256).data;
+        })());
+        for (const k of echoTiles.keys()) if (!k.endsWith('/' + v)) echoTiles.delete(k);
+      }
+      const d = await echoTiles.get(key);
+      let hit = 0, all = 0;
+      for (let dy = -ECHO_R; dy <= ECHO_R; dy++) for (let dx = -ECHO_R; dx <= ECHO_R; dx++) {
+        const X = px + dx, Y = py + dy;
+        if (X < 0 || Y < 0 || X > 255 || Y > 255) continue; // (the edge of a tile: the part on this tile is enough)
+        all++; if (d[(Y * 256 + X) * 4 + 3] > 0) hit++;
+      }
+      return all ? hit / all : null;
+    } catch (e) { echoTiles.clear(); console.warn('radar check', e); return null; }
+  }
+  const FALLING = ['rain', 'storm', 'snow', 'hail'];
+  function radarCheck(c, echo, f) {
+    if (echo == null || SIM.length || previewing) return c;
+    if (FALLING.includes(c.kind) && echo < 0.03) Object.assign(c, { kind: 'none', level: 0, cloud: 2, held: true });
+    else if (!FALLING.includes(c.kind) && echo >= 0.15) Object.assign(c, { kind: /snow|flurr/i.test(f) ? 'snow' : 'rain', level: echo >= 0.6 ? 2 : 1, cloud: 2, radar: true });
+    return c;
+  }
+
+  let homeCond = null; // (Aberdeen's, after the radar check: the sky icon)
   async function updateZones({ wx, zonesByTown, nws, towns }) {
+    homeCond = null;
     // worst conditions among the towns in each NWS forecast zone
     const byZone = {};
     for (const t of towns) {
       const url = (zonesByTown[t.id] || [])[0], w = wx[t.id];
       if (!url || !w) continue;
-      const c = classify(w.f, w.windMph);
+      const c = radarCheck(classify(w.f, w.windMph), await echoAt(t.lat, t.lon), w.f);
       c.windMph = w.windMph; c.windDir = w.windDir; c.pop = w.rain; c.town = t.id;
+      if (t.id === 'aberdeen') homeCond = c;
       const z = byZone[url];
       if (!z) { byZone[url] = c; continue; }
       if (w.rain != null) z.pop = Math.max(z.pop ?? 0, w.rain);
@@ -308,7 +354,7 @@
     resetParticles();
     // the sky icon uses Aberdeen's own conditions
     const home = wx.aberdeen;
-    if (home) { skyCond = SIM.length ? { ...SIM_COND[SIM[SIM.length - 1]], cloud: 2 } : classify(home.f, home.windMph); skySvg(); }
+    if (home) { skyCond = SIM.length ? { ...SIM_COND[SIM[SIM.length - 1]], cloud: 2 } : homeCond || classify(home.f, home.windMph); skySvg(); }
   }
   let pendingZones = null;
   let previewing = false; // htWx.preview() in use: skip the real precipitation rates
