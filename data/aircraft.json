@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-15T15:55:19.7996070+00:00",
+  "updated": "2026-11-15T16:05:20.0840658+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ab3a54",
-      "flight": "N822WY",
-      "reg": "N822WY",
-      "type": "RV6",
-      "cat": "A1",
-      "alt": 950,
-      "gs": 70.2,
-      "track": 79.33,
-      "rate": -704,
-      "lat": 46.69711,
-      "lon": -122.9905,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
