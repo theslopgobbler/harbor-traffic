@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-15T16:05:20.0840658+00:00",
+  "updated": "2026-11-15T16:15:16.9024503+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aad7b4",
+      "flight": "N798WC",
+      "reg": "N798WC",
+      "type": "PC12",
+      "cat": "A6",
+      "alt": 13425,
+      "gs": 268.7,
+      "track": 14.66,
+      "rate": -960,
+      "lat": 46.77294,
+      "lon": -122.97897,
+      "squawk": "4744",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
