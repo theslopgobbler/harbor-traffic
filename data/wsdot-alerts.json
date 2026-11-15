@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T22:35:20.1234588+00:00",
+  "updated": "2026-11-15T22:45:23.5739944+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -652,48 +652,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 724615,
-      "kind": "other",
-      "category": "Utilities work taking place",
-      "priority": "Highest",
-      "headline": "Utilities work taking place on SR 108 both directions at milepost 9 near Eich Rd beginning at 11:38 am on November 15, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "108",
-      "roadLabel": "SR 108",
-      "direction": "B",
-      "milepost": 9.0,
-      "lat": 47.104590612,
-      "lon": -123.142835189,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-11-15T19:38:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-15T20:43:06.9600000+00:00"
-    },
-    {
-      "id": 724620,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on SR 3 southbound at milepost 6.52 near Bayshore Dr beginning at 2:26 pm on November 15, 2026 until further notice. The southbound lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "003",
-      "roadLabel": "SR 3",
-      "direction": "S",
-      "milepost": 6.52,
-      "lat": 47.247275134,
-      "lon": -123.046327239,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Mason",
-      "start": "2026-11-15T22:26:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-15T22:27:58.8370000+00:00"
     },
     {
       "id": 640019,
