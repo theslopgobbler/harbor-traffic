@@ -8,7 +8,9 @@
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const towns = (window.HT?.towns || []).filter((t) => !t.minor);
+  // (city limits, see near.js; the nearest town's center if that didn't load)
   const near = (s) => {
+    if (window.htNear) return window.htNear(s);
     let best = null, bd = Infinity;
     for (const t of towns) { const d = Math.hypot((t.lon - s.lon) * 76, (t.lat - s.lat) * 111); if (d < bd) { bd = d; best = t; } }
     if (!best) return '';

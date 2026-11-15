@@ -1457,6 +1457,16 @@
       b._fork = b._snap ? forkAhead(b, rt) : undefined;
       if (window.htTrace && follow?.id === b.id) window.htTrace.push({ t: Date.now(), same: !!sn, newLine: b._snap?.sh !== mk._sh, obs: Math.round(b._obs), drawn: Math.round(mk._s), mph: Math.round(b.mph) });
       b._along = b._snap && b._snap.sh === mk._sh ? mk._s : b._obs;
+      // still on the line it's drawn on: it carries on along the line from where it's drawn (glide). The straight
+      // ease-over from where it was drawn is only for a bus that jumped to a new line or has none: on the same line it
+      // cut across the inside of every corner a report landed near, which looked like the bus swinging wide (Nov 14)
+      if (b._snap && b._snap.sh === mk._sh && mk._s != null) b._from = null;
+      // moved onto another line (the next trip, a branch at a split): if it's drawn within 30 m of that line, it
+      // carries on along it from the nearest point, instead of easing straight across to the report
+      else if (b._snap && mk._sh && b._snap.sh !== mk._sh && mk._s != null) {
+        const ll = mk.getLngLat(), o = onLine(b._snap.sh, [ll.lng, ll.lat], b._obs, null, 30);
+        if (o && Math.abs(o.at - b._obs) < 400) { mk._sh = b._snap.sh; mk._s = o.at; b._along = o.at; b._from = null; }
+      }
       b._at = repeat || Date.now();
       mk._bus = b;
       if (mk._lostAt) { mk._lostAt = null; mk.getElement().classList.remove('lost'); saveGhost(b.id, null); } // back on the air

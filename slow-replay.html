@@ -106,7 +106,7 @@
       <div id="logSide">
       <div class="filters">
         <select id="days" aria-label="How far back"><option value="1">LAST DAY</option><option value="7">LAST 7 DAYS</option><option value="14" selected>LAST 14 DAYS</option><option value="30">LAST 30 DAYS</option><option value="90">LAST 90 DAYS</option></select>
-        <select id="lvl" aria-label="Which kind"><option value="">ALL</option><option value="stop">STOPPED / STOP AND GO</option><option value="heavy">HEAVY</option><option value="moderate">MODERATE</option><option value="open">NO VERDICT YET</option></select>
+        <select id="lvl" aria-label="Which kind"><option value="">ALL</option><option value="stop">STOPPED / STOP AND GO</option><option value="heavy">HEAVY</option><option value="moderate">MODERATE</option><option value="slower">LIGHT</option><option value="open">NO VERDICT YET</option></select>
       </div>
       <div class="sum" id="sum"></div>
       <div class="box" id="list"></div>
@@ -148,7 +148,8 @@
         each in its own color, thick where it was slow: lined up by when each one started, or by the time of day. Tap a date to
         replay that one. SKIPPED BEFORE: a spot the map used to leave out as routine (until Nov 14).
         GUESSES (top left): what the slowdowns probably were, worked out each evening at 8 PM. WSDOT ALERT: WSDOT had work, a
-        closure or a bridge opening nearby at the time. POSSIBLE WORK ZONE: a new spot, 3+ days in a week, daytime. WORK MOVING:
+        closure or a bridge opening nearby, at the time the alert itself gives (its hours, or a bridge opening's time plus
+        its delay), with how many minutes after and how far. POSSIBLE WORK ZONE: a new spot, 3+ days in a week, daytime. WORK MOVING:
         the same route on 3+ days in a row, a little farther along each day. REGULAR TRAFFIC: 4+ days over 2+ weeks, the same
         3 hours. BUS HABIT?: the same route at the same time (10 minutes) on 3+ days, probably the bus waiting. Mark each one
         RIGHT or WRONG. None of this shows on the public map.</div>
@@ -160,6 +161,7 @@
   </div>
 </main>
 <script src="config.js"></script>
+<script src="near.js"></script>
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>
 (() => {
@@ -172,10 +174,11 @@
   const fmtTs = (t) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' });
   const fmtD = (t) => new Date(t).toLocaleString([], { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
   const mDist = (a, b) => Math.hypot((b.lon - a.lon) * 76000, (b.lat - a.lat) * 111000);
-  const LVL = { stop: 'STOP AND GO', heavy: 'HEAVY', moderate: 'MODERATE' };
+  const LVL = { stop: 'STOP AND GO', heavy: 'HEAVY', moderate: 'MODERATE', slower: 'LIGHT' }; // (light ones logged since Nov 14)
   const VERD = { traffic: 'TRAFFIC', bus: 'JUST THE BUS', unsure: 'NOT SURE' };
   const towns = (window.HT?.towns || []).filter((t) => !t.minor);
   const near = (p) => {
+    if (window.htNear) return window.htNear(p); // (city limits, see near.js)
     let best = null, bd = Infinity;
     for (const t of towns) { const d = Math.hypot((t.lon - p.lon) * 76, (t.lat - p.lat) * 111); if (d < bd) { bd = d; best = t; } }
     if (!best) return '';
