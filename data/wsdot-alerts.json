@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T07:15:16.4476680+00:00",
+  "updated": "2026-11-15T07:25:19.2319531+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -612,6 +612,27 @@
       ]
     },
     {
+      "id": 724571,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Medium",
+      "headline": "Collision partially blocking on SR 6 eastbound at milepost 34 near Chandler Road beginning at 11:20 pm on November 14, 2026 until further notice. Please use caution",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "E",
+      "milepost": 34.0,
+      "lat": 46.629882402,
+      "lon": -123.255635843,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Lewis",
+      "start": "2026-11-15T07:20:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-15T07:21:53.4070000+00:00"
+    },
+    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -652,6 +673,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 724570,
+      "kind": "other",
+      "category": "Debris blocking",
+      "priority": "Medium",
+      "headline": "Debris blocking on SR 6 eastbound at milepost 1 near Elwood Street beginning at 10:59 pm on November 14, 2026 until further notice. Please use caution",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "E",
+      "milepost": 1.0,
+      "lat": 46.678278733,
+      "lon": -123.71198693,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-15T06:59:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-15T07:17:31.8030000+00:00"
     },
     {
       "id": 640019,
