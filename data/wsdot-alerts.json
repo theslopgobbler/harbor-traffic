@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T19:35:17.8227917+00:00",
+  "updated": "2026-11-15T19:45:16.8744968+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -781,6 +781,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 724615,
+      "kind": "other",
+      "category": "Fire",
+      "priority": "Highest",
+      "headline": "Reported Fire on SR 108 eastbound at milepost 9.0 near Eich Rd beginning at 11:38 am on November 15, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "108",
+      "roadLabel": "SR 108",
+      "direction": "E",
+      "milepost": 9.0,
+      "lat": 47.104590612,
+      "lon": -123.142835189,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Mason",
+      "start": "2026-11-15T19:38:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-15T19:40:24.1200000+00:00"
     },
     {
       "id": 631745,
