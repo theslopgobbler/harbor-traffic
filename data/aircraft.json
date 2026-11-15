@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-15T10:15:18.2173898+00:00",
+  "updated": "2026-11-15T10:25:20.6818552+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "ae49c2",
+      "flight": "RCH4163",
+      "reg": "09-9206",
+      "type": "C17",
+      "cat": "A5",
+      "alt": 9150,
+      "gs": 309.8,
+      "track": 323.8,
+      "rate": 1664,
+      "lat": 47.24057,
+      "lon": -122.77702,
+      "squawk": "6602",
+      "emergency": "none",
+      "mil": true
+    }
+  ]
 }
