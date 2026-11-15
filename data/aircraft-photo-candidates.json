@@ -190,7 +190,8 @@
     "Boeing 747 8B5F": "2026-11-13T12:55:58.5425994+00:00",
     "Gulfstream Aerospace G550": "2026-11-14T15:06:08.0391311+00:00",
     "SAAB 2000": "2026-11-15T09:45:16.1018557+00:00",
-    "Cessna Citation CJ4": "2026-11-15T14:05:22.4132334+00:00"
+    "Cessna Citation CJ4": "2026-11-15T14:05:22.4132334+00:00",
+    "Bombardier Learjet 60 XR": "2026-11-15T21:15:17.9028872+00:00"
   },
   "candidates": [
     {
@@ -11812,7 +11813,91 @@
       "date": "2015-12-21 15:20",
       "caption": "At Gloucestershire Airport.",
       "found": "2026-11-15T14:05:22.4132334+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 60 XR",
+      "file": "File:Learjet 60 (N317MM, cn 60-236) (2-12-2026).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_60_(N317MM,_cn_60-236)_(2-12-2026).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Learjet_60_%28N317MM%2C_cn_60-236%29_%282-12-2026%29.jpg/960px-Learjet_60_%28N317MM%2C_cn_60-236%29_%282-12-2026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-05-02",
+      "caption": "Learjet 60 (N317MM, cn 60-236) at Daytona Beach International Airport.",
+      "found": "2026-11-15T21:15:17.9028872+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 60 XR",
+      "file": "File:Learjet 60 D-CKKK.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_60_D-CKKK.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Learjet_60_D-CKKK.jpg/960px-Learjet_60_D-CKKK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 591,
+      "author": "Lars Henseleit ( Lhensele at de.wikipedia )",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2006-11-01",
+      "caption": "Learjet 60",
+      "found": "2026-11-15T21:15:17.9028872+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 60 XR",
+      "file": "File:Learjet 60 N207AW FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_60_N207AW_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Learjet_60_N207AW_FDK_MD1.jpg/960px-Learjet_60_N207AW_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 330,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-03-01",
+      "caption": "2005 Learjet 60 N207AW at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-15T21:15:17.9028872+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 60 XR",
+      "file": "File:Learjet 60 N358F FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_60_N358F_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Learjet_60_N358F_FDK_MD1.jpg/960px-Learjet_60_N358F_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 370,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-22",
+      "caption": "2000 Learjet 60 N358F at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-15T21:15:17.9028872+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 60 XR",
+      "file": "File:Learjet 60 N74HT FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_60_N74HT_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Learjet_60_N74HT_FDK_MD1.jpg/960px-Learjet_60_N74HT_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 432,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-11-17",
+      "caption": "Learjet 60 N74HT at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-15T21:15:17.9028872+00:00"
+    },
+    {
+      "model": "Bombardier Learjet 60 XR",
+      "file": "File:Learjet 60 VH-AND Seletar Jet Charter Pte Ltd.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Learjet_60_VH-AND_Seletar_Jet_Charter_Pte_Ltd.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Learjet_60_VH-AND_Seletar_Jet_Charter_Pte_Ltd.jpg/960px-Learjet_60_VH-AND_Seletar_Jet_Charter_Pte_Ltd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 502,
+      "author": "Md Shaifuzzaman",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2020-12-29 14:36:02",
+      "caption": "Airline: Seletar Jet Charter Reg: VH-AND Aircraft: Bombardier Learjet 60 Serial #: 60-281",
+      "found": "2026-11-15T21:15:17.9028872+00:00"
     }
   ],
-  "updated": "2026-11-15T21:05:20.5511676+00:00"
+  "updated": "2026-11-15T21:15:17.9028872+00:00"
 }
