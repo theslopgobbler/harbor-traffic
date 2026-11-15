@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T16:35:23.6930882+00:00",
+  "updated": "2026-11-15T16:45:12.4724845+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -612,6 +612,93 @@
       ]
     },
     {
+      "id": 724597,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 southbound from milepost 185.46 near Smith Rd to milepost 184.7 near Kallman Rd beginning at 8:36 am on November 15, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 185.46,
+      "lat": 47.892297632,
+      "lon": -124.355738693,
+      "lat2": 47.882258587,
+      "lon2": -124.352849276,
+      "county": "Clallam",
+      "start": "2026-11-15T16:36:00.0000000+00:00",
+      "end": "2026-11-15T23:00:00.0000000+00:00",
+      "updated": "2026-11-15T16:38:56.1170000+00:00",
+      "path": [
+        [
+          -124.35574,
+          47.8923
+        ],
+        [
+          -124.35574,
+          47.89229
+        ],
+        [
+          -124.3559,
+          47.89193
+        ],
+        [
+          -124.35602,
+          47.89175
+        ],
+        [
+          -124.35611,
+          47.8916
+        ],
+        [
+          -124.35676,
+          47.89063
+        ],
+        [
+          -124.35698,
+          47.89013
+        ],
+        [
+          -124.35712,
+          47.88963
+        ],
+        [
+          -124.3572,
+          47.88906
+        ],
+        [
+          -124.35713,
+          47.88844
+        ],
+        [
+          -124.357,
+          47.88797
+        ],
+        [
+          -124.35678,
+          47.88746
+        ],
+        [
+          -124.35629,
+          47.8867
+        ],
+        [
+          -124.35622,
+          47.88661
+        ],
+        [
+          -124.35287,
+          47.88227
+        ],
+        [
+          -124.35287,
+          47.88227
+        ]
+      ]
+    },
+    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -736,61 +823,6 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865785,
-      "lon": -124.350871258,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2026-10-16T19:28:43.2900000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
     }
   ]
 }
