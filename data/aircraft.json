@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-16T00:45:16.0645944+00:00",
+  "updated": "2026-11-16T00:55:15.3794359+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a5e7bc",
-      "flight": "N48RE",
-      "reg": "N48RE",
-      "type": "SR22",
-      "cat": "A1",
-      "alt": 475,
-      "gs": 80.4,
-      "track": 196.63,
-      "rate": -512,
-      "lat": 46.98852,
-      "lon": -122.89863,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
