@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T22:15:21.6740467+00:00",
+  "updated": "2026-11-16T22:25:21.7365429+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1003,61 +1003,6 @@
         [
           -124.41027,
           47.6917
-        ]
-      ]
-    },
-    {
-      "id": 724691,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "Highest",
-      "headline": "Road work on US 101 southbound from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 8:05 am on November 16, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 184.5,
-      "lat": 47.879744939,
-      "lon": -124.350752575,
-      "lat2": 47.882258587,
-      "lon2": -124.352849276,
-      "county": "Clallam",
-      "start": "2026-11-16T16:05:00.0000000+00:00",
-      "end": "2026-11-16T23:00:00.0000000+00:00",
-      "updated": "2026-11-16T16:06:47.8430000+00:00",
-      "path": [
-        [
-          -124.35073,
-          47.87973
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35287,
-          47.88227
-        ],
-        [
-          -124.35287,
-          47.88227
         ]
       ]
     },
