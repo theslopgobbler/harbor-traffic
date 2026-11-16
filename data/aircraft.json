@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T15:45:29.9631409+00:00",
+  "updated": "2026-11-16T15:55:18.4583826+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,28 +8,12 @@
       "reg": "N4746N",
       "type": "C182",
       "cat": "A1",
-      "alt": 2025,
-      "gs": 109.2,
-      "track": 273.67,
-      "rate": 320,
-      "lat": 47.01388,
-      "lon": -122.94566,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a04d74",
-      "flight": "N11880",
-      "reg": "N11880",
-      "type": "C150",
-      "cat": "A1",
-      "alt": 2200,
-      "gs": 91.1,
-      "track": 182.52,
-      "rate": -64,
-      "lat": 47.5778,
-      "lon": -122.87844,
+      "alt": 1900,
+      "gs": 125.2,
+      "track": 71.85,
+      "rate": -512,
+      "lat": 46.78048,
+      "lon": -122.86924,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
