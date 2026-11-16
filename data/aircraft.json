@@ -1,23 +1,7 @@
 {
-  "updated": "2026-11-16T03:15:21.6139745+00:00",
+  "updated": "2026-11-16T03:25:20.1957887+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
-    {
-      "hex": "a5241e",
-      "flight": "N430LF",
-      "reg": "N430LF",
-      "type": "B429",
-      "cat": "A7",
-      "alt": 1825,
-      "gs": 127.2,
-      "track": 253.56,
-      "rate": null,
-      "lat": 47.01572,
-      "lon": -123.46861,
-      "squawk": "0350",
-      "emergency": "none",
-      "mil": false
-    },
     {
       "hex": "ad3fd7",
       "flight": "N953AL",
@@ -25,12 +9,28 @@
       "type": "EC35",
       "cat": "A7",
       "alt": 1525,
-      "gs": 106.5,
-      "track": 192.47,
-      "rate": 0,
-      "lat": 47.43356,
-      "lon": -122.7567,
+      "gs": 104.3,
+      "track": 192.17,
+      "rate": 64,
+      "lat": 47.13139,
+      "lon": -122.85194,
       "squawk": "5543",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a5ee13",
+      "flight": "UAL2478",
+      "reg": "N481UA",
+      "type": "A320",
+      "cat": "A3",
+      "alt": 12500,
+      "gs": 308.3,
+      "track": 272.6,
+      "rate": 2624,
+      "lat": 47.31523,
+      "lon": -122.72806,
+      "squawk": "6651",
       "emergency": "none",
       "mil": false
     }
