@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T14:15:20.8971116+00:00",
+  "updated": "2026-11-16T14:25:19.2081275+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -631,27 +631,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 724670,
-      "kind": "collision",
-      "category": "Disabled vehicle",
-      "priority": "Highest",
-      "headline": "Disabled vehicle on I-5 southbound at milepost 104.32 near US 101 beginning at 5:43 am on November 16, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 104.32,
-      "lat": 47.021300118,
-      "lon": -122.906220635,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-16T13:43:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-16T13:45:14.9070000+00:00"
     },
     {
       "id": 698910,
