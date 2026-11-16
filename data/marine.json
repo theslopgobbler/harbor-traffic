@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T13:56:54.0677653+00:00",
+  "updated": "2026-11-16T14:05:22.6310848+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -17,6 +17,12 @@
     "ebb": null
   },
   "alerts": [
+    {
+      "event": "Special Marine Warning",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "ends": "2026-11-16T14:30:00+00:00",
+      "headline": "Special Marine Warning issued November 16 at 6:00AM PST until November 16 at 6:30AM PST by NWS Portland OR"
+    },
     {
       "event": "Small Craft Advisory",
       "area": "Grays Harbor Bar",
