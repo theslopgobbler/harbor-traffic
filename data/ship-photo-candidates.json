@@ -526,7 +526,8 @@
     "352006531": "2026-11-14T11:46:04.458518+00:00",
     "636015567": "2026-11-14T16:06:04.1411293+00:00",
     "368014620": "2026-11-15T18:55:25.7060417+00:00",
-    "405000336": "2026-11-16T06:45:24.2710273+00:00"
+    "405000336": "2026-11-16T06:45:24.2710273+00:00",
+    "368205040": "2026-11-16T19:05:20.1488529+00:00"
   },
   "candidates": [
     {
@@ -5613,7 +5614,127 @@
       "date": "2026-04-04 20:44:23",
       "caption": "Fitness Center of the American Jazz.",
       "found": "2026-11-15T05:25:19.7553948+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Borchgrevink theodolite.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Borchgrevink_theodolite.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/10/Borchgrevink_theodolite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 922,
+      "author": "William Colbeck [Attributed]",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1899",
+      "caption": "Borchgrevink using a theodolite on the ice, Antarctica, British Antarctic (Southern Cross) Expedition, 1899, William Colbeck photograph collection, State Library of New South Wales, PXA 2123",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Cape-Adare-1899-Carsten-Borchgrevink-SS-Southern-Cross-ship.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cape-Adare-1899-Carsten-Borchgrevink-SS-Southern-Cross-ship.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Cape-Adare-1899-Carsten-Borchgrevink-SS-Southern-Cross-ship.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 959,
+      "author": "Carsten Borchgrevink",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1899",
+      "caption": "Captain of the SS South Cross ship on the Southern Cross Expedition ca 1899",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Cape-Adare-1899-Carsten-Borchgrevink-Sea-temperature-SS-Southern-Cross-ship.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cape-Adare-1899-Carsten-Borchgrevink-Sea-temperature-SS-Southern-Cross-ship.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/45/Cape-Adare-1899-Carsten-Borchgrevink-Sea-temperature-SS-Southern-Cross-ship.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1028,
+      "author": "Carsten Borchgrevink",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1899",
+      "caption": "Nicolai Hanson taking sea surface temperature measurements, near the SS Southern Cross, around 1899, near Antarctica",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Cape-Adare-1899-Carsten-Borchgrevink-Theodolite-work-in-the-ice-pack.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cape-Adare-1899-Carsten-Borchgrevink-Theodolite-work-in-the-ice-pack.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/47/Cape-Adare-1899-Carsten-Borchgrevink-Theodolite-work-in-the-ice-pack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 865,
+      "author": "Carsten Borchgrevink",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1899",
+      "caption": "Theodolite work in the ice pack",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Granite Memorial Wall, S.S. Southern Cross - Elliston, NL.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Granite_Memorial_Wall,_S.S._Southern_Cross_-_Elliston,_NL.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Granite_Memorial_Wall%2C_S.S._Southern_Cross_-_Elliston%2C_NL.jpg/1280px-Granite_Memorial_Wall%2C_S.S._Southern_Cross_-_Elliston%2C_NL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Jon Kolbert",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-07-24 12:44:05",
+      "caption": "The S.S. Southern Cross side of the Granite Memorial Wall at Porter's Point in Elliston, Newfoundland.",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Nine men on deck of the Southern Cross 1899.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nine_men_on_deck_of_the_Southern_Cross_1899.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Nine_men_on_deck_of_the_Southern_Cross_1899.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 1024,
+      "author": "William Colbeck [attributed]",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1898",
+      "caption": "Nine men (Ole Must in traditional Lap dress) and two dogs on deck, Southern Cross, British Antarctic (Southern Cross) Expedition, 1898-1900, William Colbeck photographs and clippings, State Library of New South Wales,...",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:SouthernXdeparture.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SouthernXdeparture.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/64/SouthernXdeparture.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 767,
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1898-08",
+      "caption": "The Southern Cross leaving England for the Antarctic, August 1898. From Carsten Borchgrevink's expedition account: First on the Antarctic Continent, George Newnes, London 1901",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "368205040",
+      "ship": "SOUTHERN CROSS",
+      "file": "File:Southern Cross–the ice slackened somewhat.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Southern_Cross%E2%80%93the_ice_slackened_somewhat.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Southern_Cross%E2%80%93the_ice_slackened_somewhat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 984,
+      "author": "Carsten Borchgrevink",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "1899",
+      "caption": "SS Southern Cross on the Southern Cross Expedition ca 1899",
+      "found": "2026-11-16T19:05:20.1488529+00:00"
     }
   ],
-  "updated": "2026-11-16T18:55:22.5136580+00:00"
+  "updated": "2026-11-16T19:05:20.1488529+00:00"
 }
