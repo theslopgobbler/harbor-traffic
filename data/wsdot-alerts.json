@@ -1,38 +1,7 @@
 {
-  "updated": "2026-11-16T18:35:16.1301136+00:00",
+  "updated": "2026-11-16T18:45:20.5129377+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 724702,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "Highest",
-      "headline": "Road work on US 101 southbound from milepost 355.7 near SE Old Olympic Hwy to milepost 356 near SE Old Olympic Hwy beginning at 10:00 am on November 16, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "S",
-      "milepost": 355.7,
-      "lat": 47.103459047,
-      "lon": -123.088331733,
-      "lat2": 47.099325319,
-      "lon2": -123.086544963,
-      "county": "Mason",
-      "start": "2026-11-16T18:00:00.0000000+00:00",
-      "end": "2026-11-16T23:00:00.0000000+00:00",
-      "updated": "2026-11-16T16:56:36.9530000+00:00",
-      "path": [
-        [
-          -123.088331733,
-          47.103459047
-        ],
-        [
-          -123.086544963,
-          47.099325319
-        ]
-      ]
-    },
     {
       "id": 693084,
       "kind": "work",
@@ -694,6 +663,37 @@
         [
           -124.35287,
           47.88227
+        ]
+      ]
+    },
+    {
+      "id": 724702,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Highest",
+      "headline": "Road work on US 101 southbound from milepost 355.7 near SE Old Olympic Hwy to milepost 356 near SE Old Olympic Hwy beginning at 10:00 am on November 16, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 355.7,
+      "lat": 47.103459047,
+      "lon": -123.088331733,
+      "lat2": 47.099325319,
+      "lon2": -123.086544963,
+      "county": "Mason",
+      "start": "2026-11-16T18:00:00.0000000+00:00",
+      "end": "2026-11-16T23:00:00.0000000+00:00",
+      "updated": "2026-11-16T16:56:36.9530000+00:00",
+      "path": [
+        [
+          -123.088331733,
+          47.103459047
+        ],
+        [
+          -123.086544963,
+          47.099325319
         ]
       ]
     },
