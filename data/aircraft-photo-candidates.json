@@ -195,7 +195,8 @@
     "Gulfstream Aerospace G280": "2026-11-17T00:05:21.2637587+00:00",
     "Pilatus PC-24": "2026-11-17T16:05:36.2610149+00:00",
     "Boeing 737NG 7AX": "2026-11-17T20:15:41.1249965+00:00",
-    "Cessna Citation Ultra": "2026-11-17T20:55:35.1250522+00:00"
+    "Cessna Citation Ultra": "2026-11-17T20:55:35.1250522+00:00",
+    "Bell 407": "2026-11-17T23:15:37.9435712+00:00"
   },
   "candidates": [
     {
@@ -12153,7 +12154,91 @@
       "date": "2008-07",
       "caption": "Cessna UC-35A Citation 560 Ultra V of the US Army in Europe at the 2008 Royal International Air Tattoo, RAF Fairford, Gloucestershire, England. Taken at RIAT Fairford on the Thursday before the weekend show days. Late...",
       "found": "2026-11-17T20:55:35.1250522+00:00"
+    },
+    {
+      "model": "Bell 407",
+      "file": "File:Bell 407 (N462P).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_407_(N462P).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Bell_407_%28N462P%29.jpg/960px-Bell_407_%28N462P%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "JasonReina",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-02-24 16:52:22",
+      "caption": "A 2014 Bell 407 (serial 54164) owned by PHI Health, LLC.",
+      "found": "2026-11-17T23:15:37.9435712+00:00"
+    },
+    {
+      "model": "Bell 407",
+      "file": "File:Bell 407 -N23986.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_407_-N23986.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Bell_407_-N23986.jpg/960px-Bell_407_-N23986.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 567,
+      "author": "stuart.mike",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2013-08-04",
+      "caption": "Bell 407 N23986",
+      "found": "2026-11-17T23:15:37.9435712+00:00"
+    },
+    {
+      "model": "Bell 407",
+      "file": "File:Bell 407 GXi Policja.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_407_GXi_Policja.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Bell_407_GXi_Policja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 960,
+      "h": 720,
+      "author": "KWP w Poznaniu/policja.pl",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2020-12-18",
+      "caption": "Śmigłowiec Bell 407 GXi polskiej Policji",
+      "found": "2026-11-17T23:15:37.9435712+00:00"
+    },
+    {
+      "model": "Bell 407",
+      "file": "File:Bell 407 HB-XQY.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_407_HB-XQY.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Bell_407_HB-XQY.jpg/960px-Bell_407_HB-XQY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chme82",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2020-12-02 11:23:36",
+      "caption": "Multi-purpose helicopter type Bell 407 with the marking HB-XQY during a transport mission over Brugg (Canton Aargau, Switzerland)",
+      "found": "2026-11-17T23:15:37.9435712+00:00"
+    },
+    {
+      "model": "Bell 407",
+      "file": "File:Bell 407 N777ZA FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_407_N777ZA_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Bell_407_N777ZA_FDK_MD1.jpg/960px-Bell_407_N777ZA_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 541,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-05-11",
+      "caption": "2015 Bell 407 N777ZA at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-17T23:15:37.9435712+00:00"
+    },
+    {
+      "model": "Bell 407",
+      "file": "File:Bell 407 N777ZA FDK MD3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_407_N777ZA_FDK_MD3.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Bell_407_N777ZA_FDK_MD3.jpg/960px-Bell_407_N777ZA_FDK_MD3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 846,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-05-11",
+      "caption": "2015 Bell 407 N777ZA at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-17T23:15:37.9435712+00:00"
     }
   ],
-  "updated": "2026-11-17T23:05:40.6599404+00:00"
+  "updated": "2026-11-17T23:15:37.9435712+00:00"
 }
