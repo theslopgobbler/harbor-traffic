@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T19:25:35.4736558+00:00",
+  "updated": "2026-11-17T19:35:34.7698441+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1021,6 +1021,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 724924,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Reported collision on SR 109 southbound at milepost 24 beginning at 10:17 am on November 17, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "S",
+      "milepost": 24.0,
+      "lat": 47.151820414,
+      "lon": -124.18267993,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-17T18:17:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-17T19:25:09.4470000+00:00"
     },
     {
       "id": 686738,
