@@ -191,7 +191,8 @@
     "Gulfstream Aerospace G550": "2026-11-14T15:06:08.0391311+00:00",
     "SAAB 2000": "2026-11-15T09:45:16.1018557+00:00",
     "Cessna Citation CJ4": "2026-11-15T14:05:22.4132334+00:00",
-    "Bombardier Learjet 60 XR": "2026-11-15T21:15:17.9028872+00:00"
+    "Bombardier Learjet 60 XR": "2026-11-15T21:15:17.9028872+00:00",
+    "Gulfstream Aerospace G280": "2026-11-17T00:05:21.2637587+00:00"
   },
   "candidates": [
     {
@@ -11897,7 +11898,91 @@
       "date": "2020-12-29 14:36:02",
       "caption": "Airline: Seletar Jet Charter Reg: VH-AND Aircraft: Bombardier Learjet 60 Serial #: 60-281",
       "found": "2026-11-15T21:15:17.9028872+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G280",
+      "file": "File:G280 Dallas.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:G280_Dallas.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/G280_Dallas.jpg/960px-G280_Dallas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 552,
+      "author": "heobix",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-02-10 11:21:14",
+      "caption": "Gulfstream DAL",
+      "found": "2026-11-17T00:05:21.2637587+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G280",
+      "file": "File:Gulfstream Aerospace, N280GD, Gulfstream G280 (35640661556).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace,_N280GD,_Gulfstream_G280_(35640661556).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Gulfstream_Aerospace%2C_N280GD%2C_Gulfstream_G280_%2835640661556%29.jpg/960px-Gulfstream_Aerospace%2C_N280GD%2C_Gulfstream_G280_%2835640661556%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-06-24 17:08",
+      "caption": "Gulfstream Aerospace, N280GD, Gulfstream G280",
+      "found": "2026-11-17T00:05:21.2637587+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G280",
+      "file": "File:Gulfstream Aerospace (N280GD) Gulfstream G280 on display at the 2015 Australian International Airshow.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_(N280GD)_Gulfstream_G280_on_display_at_the_2015_Australian_International_Airshow.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Gulfstream_Aerospace_%28N280GD%29_Gulfstream_G280_on_display_at_the_2015_Australian_International_Airshow.jpg/960px-Gulfstream_Aerospace_%28N280GD%29_Gulfstream_G280_on_display_at_the_2015_Australian_International_Airshow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Bidgee",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "27 February 2015 (according to Exif data)",
+      "caption": "Gulfstream Aerospace (N280GD) Gulfstream G280 on display at the 2015 Australian International Airshow",
+      "found": "2026-11-17T00:05:21.2637587+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G280",
+      "file": "File:Gulfstream Aerospace G280 (c-n 2265, D-BDRX) 2026-05-08 Andre Gerwing Collection ID 028666.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_G280_(c-n_2265,_D-BDRX)_2026-05-08_Andre_Gerwing_Collection_ID_028666.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Gulfstream_Aerospace_G280_%28c-n_2265%2C_D-BDRX%29_2026-05-08_Andre_Gerwing_Collection_ID_028666.jpg/960px-Gulfstream_Aerospace_G280_%28c-n_2265%2C_D-BDRX%29_2026-05-08_Andre_Gerwing_Collection_ID_028666.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "André Gerwing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-05-08",
+      "caption": "Gulfstream Aerospace G280 (c/n 2265, D-BDRX) landing at Schönefeld, Flughafen / EDDB (DE), 2026-05-08 - The André Gerwing Collection ID: 028666",
+      "found": "2026-11-17T00:05:21.2637587+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G280",
+      "file": "File:IAI Gulfstream G280 - Gulfstrem Aerospace (18701234531).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:IAI_Gulfstream_G280_-_Gulfstrem_Aerospace_(18701234531).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/IAI_Gulfstream_G280_-_Gulfstrem_Aerospace_%2818701234531%29.jpg/960px-IAI_Gulfstream_G280_-_Gulfstrem_Aerospace_%2818701234531%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 714,
+      "author": "flybyeigenheer",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-05-16 14:10:57",
+      "caption": "GVA 16.05.2015",
+      "found": "2026-11-17T00:05:21.2637587+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace G280",
+      "file": "File:N283CE IAI Gulfstream Aerospace G280 s n 2226 (51890107051).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N283CE_IAI_Gulfstream_Aerospace_G280_s_n_2226_(51890107051).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/N283CE_IAI_Gulfstream_Aerospace_G280_s_n_2226_%2851890107051%29.jpg/960px-N283CE_IAI_Gulfstream_Aerospace_G280_s_n_2226_%2851890107051%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 460,
+      "author": "Tomás Del Coro from Fabulous Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-02-18 14:13",
+      "caption": "Southwest Florida International Airport (KRSW) Fort Myers, Florida Photo: Deborah Del Coro February 18, 2022 (TDelCoro) (T)",
+      "found": "2026-11-17T00:05:21.2637587+00:00"
     }
   ],
-  "updated": "2026-11-16T23:55:26.1029251+00:00"
+  "updated": "2026-11-17T00:05:21.2637587+00:00"
 }
