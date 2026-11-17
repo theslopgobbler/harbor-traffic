@@ -531,7 +531,8 @@
     "367707330": "2026-11-16T23:35:19.8810248+00:00",
     "367085290": "2026-11-17T01:45:20.3824201+00:00",
     "563108700": "2026-11-17T09:55:20.7294623+00:00",
-    "262503230": "2026-11-17T11:25:22.2945725+00:00"
+    "262503230": "2026-11-17T11:25:22.2945725+00:00",
+    "357147000": "2026-11-17T12:15:33.7181874+00:00"
   },
   "candidates": [
     {
@@ -5768,7 +5769,37 @@
       "date": "2010-08-24 22:08:43",
       "caption": "\"This was our ship for a week long visit to the SE Alaskan Coast\" The photographer's description of the image set [1] says their vessel was the National Geographic/Linblad Sea Lion . The Sea Lion is a sister ship pf t...",
       "found": "2026-11-17T11:15:18.3342191+00:00"
+    },
+    {
+      "mmsi": "357147000",
+      "ship": "SUPREME ACE",
+      "file": "File:Cuxhaven 07-2016 photo15 port area.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cuxhaven_07-2016_photo15_port_area.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Cuxhaven_07-2016_photo15_port_area.jpg/1280px-Cuxhaven_07-2016_photo15_port_area.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "A.Savin",
+      "license": "FAL",
+      "licenseUrl": "http://artlibre.org/licence/lal/en",
+      "date": "2016-07-03",
+      "caption": "Sea port and its surroundings in Cuxhaven, Germany",
+      "found": "2026-11-17T12:15:33.7181874+00:00"
+    },
+    {
+      "mmsi": "357147000",
+      "ship": "SUPREME ACE",
+      "file": "File:Supreme Ace Hong Kong (13950977590).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Supreme_Ace_Hong_Kong_(13950977590).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Supreme_Ace_Hong_Kong_%2813950977590%29.jpg/1280px-Supreme_Ace_Hong_Kong_%2813950977590%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Michael Coghlan from Adelaide, Australia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2014-04-19 16:26",
+      "caption": "Squat, Square Ship",
+      "found": "2026-11-17T12:15:33.7181874+00:00"
     }
   ],
-  "updated": "2026-11-17T12:05:35.1355425+00:00"
+  "updated": "2026-11-17T12:15:33.7181874+00:00"
 }
