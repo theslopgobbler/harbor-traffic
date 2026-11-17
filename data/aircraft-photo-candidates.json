@@ -194,7 +194,8 @@
     "Bombardier Learjet 60 XR": "2026-11-15T21:15:17.9028872+00:00",
     "Gulfstream Aerospace G280": "2026-11-17T00:05:21.2637587+00:00",
     "Pilatus PC-24": "2026-11-17T16:05:36.2610149+00:00",
-    "Boeing 737NG 7AX": "2026-11-17T20:15:41.1249965+00:00"
+    "Boeing 737NG 7AX": "2026-11-17T20:15:41.1249965+00:00",
+    "Cessna Citation Ultra": "2026-11-17T20:55:35.1250522+00:00"
   },
   "candidates": [
     {
@@ -12068,7 +12069,91 @@
       "date": "2025-04-11",
       "caption": "MB-one and Pilatus PC-24 at AERO Friedrichshafen 2025",
       "found": "2026-11-17T16:05:36.2610149+00:00"
+    },
+    {
+      "model": "Cessna Citation Ultra",
+      "file": "File:Cessna 560 Citation Ultra, Private JP6364646.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_560_Citation_Ultra,_Private_JP6364646.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Cessna_560_Citation_Ultra%2C_Private_JP6364646.jpg/960px-Cessna_560_Citation_Ultra%2C_Private_JP6364646.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "19 September 2008",
+      "caption": "",
+      "found": "2026-11-17T20:55:35.1250522+00:00"
+    },
+    {
+      "model": "Cessna Citation Ultra",
+      "file": "File:Cessna 560 Citation Ultra, Private JP6514938.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_560_Citation_Ultra,_Private_JP6514938.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Cessna_560_Citation_Ultra%2C_Private_JP6514938.jpg/960px-Cessna_560_Citation_Ultra%2C_Private_JP6514938.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Peter Bakema",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "19 March 2009",
+      "caption": "",
+      "found": "2026-11-17T20:55:35.1250522+00:00"
+    },
+    {
+      "model": "Cessna Citation Ultra",
+      "file": "File:Cessna 560 Citation Ultra AN1228534.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_560_Citation_Ultra_AN1228534.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Cessna_560_Citation_Ultra_AN1228534.jpg/960px-Cessna_560_Citation_Ultra_AN1228534.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Darian Froese",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "18 June 2007",
+      "caption": "Quick stop in town for this plane after deviating around the cells in the background [Canon 350D]",
+      "found": "2026-11-17T20:55:35.1250522+00:00"
+    },
+    {
+      "model": "Cessna Citation Ultra",
+      "file": "File:Cessna 560 Citation Ultra Queensland Police Service VH-PSU from Gateway Bridge Eagle Farm IMGP3383.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_560_Citation_Ultra_Queensland_Police_Service_VH-PSU_from_Gateway_Bridge_Eagle_Farm_IMGP3383.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Cessna_560_Citation_Ultra_Queensland_Police_Service_VH-PSU_from_Gateway_Bridge_Eagle_Farm_IMGP3383.jpg/960px-Cessna_560_Citation_Ultra_Queensland_Police_Service_VH-PSU_from_Gateway_Bridge_Eagle_Farm_IMGP3383.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 960,
+      "author": "John Robert McPherson",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2012-02-11 17:16:01",
+      "caption": "Cessna 560 Citation Ultra Queensland Police Service VH-PSU",
+      "found": "2026-11-17T20:55:35.1250522+00:00"
+    },
+    {
+      "model": "Cessna Citation Ultra",
+      "file": "File:Cessna Citation Ultra (N560TA) in Westhampton Beach, NY.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_Citation_Ultra_(N560TA)_in_Westhampton_Beach,_NY.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cessna_Citation_Ultra_%28N560TA%29_in_Westhampton_Beach%2C_NY.jpg/960px-Cessna_Citation_Ultra_%28N560TA%29_in_Westhampton_Beach%2C_NY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 605,
+      "author": "Quintin Soloviev",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2022-06-10 15:27:53",
+      "caption": "Cessna Citation V (Ultra) at Francis S. Gabreski Airport",
+      "found": "2026-11-17T20:55:35.1250522+00:00"
+    },
+    {
+      "model": "Cessna Citation Ultra",
+      "file": "File:Cessna uc-35a citation 560 ultra v arp.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cessna_uc-35a_citation_560_ultra_v_arp.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Cessna_uc-35a_citation_560_ultra_v_arp.jpg/960px-Cessna_uc-35a_citation_560_ultra_v_arp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 649,
+      "author": "Adrian Pingstone",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2008-07",
+      "caption": "Cessna UC-35A Citation 560 Ultra V of the US Army in Europe at the 2008 Royal International Air Tattoo, RAF Fairford, Gloucestershire, England. Taken at RIAT Fairford on the Thursday before the weekend show days. Late...",
+      "found": "2026-11-17T20:55:35.1250522+00:00"
     }
   ],
-  "updated": "2026-11-17T20:45:34.7305502+00:00"
+  "updated": "2026-11-17T20:55:35.1250522+00:00"
 }
