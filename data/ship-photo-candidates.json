@@ -301,7 +301,7 @@
     "338514204": "2026-11-16T17:55:35.1240702+00:00",
     "371318000": "2026-11-16T19:35:18.2835615+00:00",
     "338024103": "2026-11-16T23:55:26.1029251+00:00",
-    "366892350": "2026-10-18T11:14:40.503821+00:00",
+    "366892350": "2026-11-17T11:15:18.3342191+00:00",
     "368314870": "2026-10-18T14:58:29.982492+00:00",
     "367358520": "2026-10-18T16:45:49.2322543+00:00",
     "368220970": "2026-10-18T17:32:33.4455897+00:00",
@@ -5737,7 +5737,37 @@
       "date": "1899",
       "caption": "SS Southern Cross on the Southern Cross Expedition ca 1899",
       "found": "2026-11-16T19:05:20.1488529+00:00"
+    },
+    {
+      "mmsi": "366892350",
+      "ship": "NAT GEO SEA BIRD",
+      "file": "File:2010 National Geographic Sea Bird gf678.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2010_National_Geographic_Sea_Bird_gf678.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/2010_National_Geographic_Sea_Bird_gf678.jpg/1280px-2010_National_Geographic_Sea_Bird_gf678.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 1117,
+      "author": "Gillfoto",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2010-05-23 00:30:13",
+      "caption": "2010 National Geographic Sea Bird, Juneau, Alaska.",
+      "found": "2026-11-17T11:15:18.3342191+00:00"
+    },
+    {
+      "mmsi": "366892350",
+      "ship": "NAT GEO SEA BIRD",
+      "file": "File:The Sea Bird.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Sea_Bird.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/The_Sea_Bird.jpg/1280px-The_Sea_Bird.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 673,
+      "author": "Doug Knuth",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-08-24 22:08:43",
+      "caption": "\"This was our ship for a week long visit to the SE Alaskan Coast\" The photographer's description of the image set [1] says their vessel was the National Geographic/Linblad Sea Lion . The Sea Lion is a sister ship pf t...",
+      "found": "2026-11-17T11:15:18.3342191+00:00"
     }
   ],
-  "updated": "2026-11-17T11:05:21.2379233+00:00"
+  "updated": "2026-11-17T11:15:18.3342191+00:00"
 }
