@@ -1,7 +1,38 @@
 {
-  "updated": "2026-11-17T17:15:33.0960754+00:00",
+  "updated": "2026-11-17T17:25:42.4436382+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 724900,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Highest",
+      "headline": "Road work on US 12 westbound from milepost 1.56 near E Wishkah St to milepost 2.5 near Edgewood Rd beginning at 9:17 am on November 17, 2026 until about 3:30 pm.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "W",
+      "milepost": 1.56,
+      "lat": 46.980719414,
+      "lon": -123.782223651,
+      "lat2": 46.979505343,
+      "lon2": -123.763053572,
+      "county": "Grays Harbor",
+      "start": "2026-11-17T17:17:00.0000000+00:00",
+      "end": "2026-11-17T23:30:00.0000000+00:00",
+      "updated": "2026-11-17T17:19:27.1670000+00:00",
+      "path": [
+        [
+          -123.782223651,
+          46.980719414
+        ],
+        [
+          -123.763053572,
+          46.979505343
+        ]
+      ]
+    },
     {
       "id": 693084,
       "kind": "work",
