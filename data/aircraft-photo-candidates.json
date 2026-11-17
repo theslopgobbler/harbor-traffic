@@ -196,7 +196,8 @@
     "Pilatus PC-24": "2026-11-17T16:05:36.2610149+00:00",
     "Boeing 737NG 7AX": "2026-11-17T20:15:41.1249965+00:00",
     "Cessna Citation Ultra": "2026-11-17T20:55:35.1250522+00:00",
-    "Bell 407": "2026-11-17T23:15:37.9435712+00:00"
+    "Bell 407": "2026-11-17T23:15:37.9435712+00:00",
+    "Cessna Citation Encore+": "2026-11-17T23:35:36.7154481+00:00"
   },
   "candidates": [
     {
@@ -12238,7 +12239,91 @@
       "date": "2024-05-11",
       "caption": "2015 Bell 407 N777ZA at Frederick Municipal Airport, Maryland, USA",
       "found": "2026-11-17T23:15:37.9435712+00:00"
+    },
+    {
+      "model": "Cessna Citation Encore+",
+      "file": "File:The Flying Bulls 'OE-GDM' Cessna 560 Citation Encore, Hangar 7, Salzburg, Austria (Ank Kumar, Infosys Limited) 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore,_Hangar_7,_Salzburg,_Austria_(Ank_Kumar,_Infosys_Limited)_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_01.jpg/960px-The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-05-15 14:38:48",
+      "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
+      "found": "2026-11-17T23:35:36.7154481+00:00"
+    },
+    {
+      "model": "Cessna Citation Encore+",
+      "file": "File:The Flying Bulls 'OE-GDM' Cessna 560 Citation Encore, Hangar 7, Salzburg, Austria (Ank Kumar, Infosys Limited) 04.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore,_Hangar_7,_Salzburg,_Austria_(Ank_Kumar,_Infosys_Limited)_04.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_04.jpg/960px-The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-05-15 14:38:59",
+      "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
+      "found": "2026-11-17T23:35:36.7154481+00:00"
+    },
+    {
+      "model": "Cessna Citation Encore+",
+      "file": "File:The Flying Bulls 'OE-GDM' Cessna 560 Citation Encore, Hangar 7, Salzburg, Austria (Ank Kumar, Infosys Limited) 05.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore,_Hangar_7,_Salzburg,_Austria_(Ank_Kumar,_Infosys_Limited)_05.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_05.jpg/960px-The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-05-15 14:49:20",
+      "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
+      "found": "2026-11-17T23:35:36.7154481+00:00"
+    },
+    {
+      "model": "Cessna Citation Encore+",
+      "file": "File:The Flying Bulls 'OE-GDM' Cessna 560 Citation Encore, Hangar 7, Salzburg, Austria (Ank Kumar, Infosys Limited) 08.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore,_Hangar_7,_Salzburg,_Austria_(Ank_Kumar,_Infosys_Limited)_08.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_08.jpg/960px-The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-05-15 14:52:25",
+      "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
+      "found": "2026-11-17T23:35:36.7154481+00:00"
+    },
+    {
+      "model": "Cessna Citation Encore+",
+      "file": "File:The Flying Bulls 'OE-GDM' Cessna 560 Citation Encore, Hangar 7, Salzburg, Austria (Ank Kumar, Infosys Limited) 09.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore,_Hangar_7,_Salzburg,_Austria_(Ank_Kumar,_Infosys_Limited)_09.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_09.jpg/960px-The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-05-15 14:50:55",
+      "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
+      "found": "2026-11-17T23:35:36.7154481+00:00"
+    },
+    {
+      "model": "Cessna Citation Encore+",
+      "file": "File:The Flying Bulls 'OE-GDM' Cessna 560 Citation Encore, Hangar 7, Salzburg, Austria (Ank Kumar, Infosys Limited) 10.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore,_Hangar_7,_Salzburg,_Austria_(Ank_Kumar,_Infosys_Limited)_10.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_10.jpg/960px-The_Flying_Bulls_%27OE-GDM%27_Cessna_560_Citation_Encore%2C_Hangar_7%2C_Salzburg%2C_Austria_%28Ank_Kumar%2C_Infosys_Limited%29_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-05-15 14:52:16",
+      "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
+      "found": "2026-11-17T23:35:36.7154481+00:00"
     }
   ],
-  "updated": "2026-11-17T23:25:42.0195306+00:00"
+  "updated": "2026-11-17T23:35:36.7154481+00:00"
 }
