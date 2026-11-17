@@ -192,7 +192,8 @@
     "SAAB 2000": "2026-11-15T09:45:16.1018557+00:00",
     "Cessna Citation CJ4": "2026-11-15T14:05:22.4132334+00:00",
     "Bombardier Learjet 60 XR": "2026-11-15T21:15:17.9028872+00:00",
-    "Gulfstream Aerospace G280": "2026-11-17T00:05:21.2637587+00:00"
+    "Gulfstream Aerospace G280": "2026-11-17T00:05:21.2637587+00:00",
+    "Pilatus PC-24": "2026-11-17T16:05:36.2610149+00:00"
   },
   "candidates": [
     {
@@ -11982,7 +11983,91 @@
       "date": "2022-02-18 14:13",
       "caption": "Southwest Florida International Airport (KRSW) Fort Myers, Florida Photo: Deborah Del Coro February 18, 2022 (TDelCoro) (T)",
       "found": "2026-11-17T00:05:21.2637587+00:00"
+    },
+    {
+      "model": "Pilatus PC-24",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190160).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190160).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190160%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190160%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "Pilatus PC-24 Jet at EBACE 2019, Palexpo, Switzerland",
+      "found": "2026-11-17T16:05:36.2610149+00:00"
+    },
+    {
+      "model": "Pilatus PC-24",
+      "file": "File:EBACE 2019, Le Grand-Saconnex (EB190188).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EBACE_2019,_Le_Grand-Saconnex_(EB190188).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/EBACE_2019%2C_Le_Grand-Saconnex_%28EB190188%29.jpg/960px-EBACE_2019%2C_Le_Grand-Saconnex_%28EB190188%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-05-20",
+      "caption": "EBACE 2019, Palexpo , Switzerland",
+      "found": "2026-11-17T16:05:36.2610149+00:00"
+    },
+    {
+      "model": "Pilatus PC-24",
+      "file": "File:EC-NRA Pilatus PC-24 during landing at LFBT airport.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:EC-NRA_Pilatus_PC-24_during_landing_at_LFBT_airport.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/EC-NRA_Pilatus_PC-24_during_landing_at_LFBT_airport.jpg/960px-EC-NRA_Pilatus_PC-24_during_landing_at_LFBT_airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Hugo LUC",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-06-14",
+      "caption": "EC-NRA Pilatus PC-24 during landing at LFBT airport",
+      "found": "2026-11-17T16:05:36.2610149+00:00"
+    },
+    {
+      "model": "Pilatus PC-24",
+      "file": "File:Pilatus PC-24 at AERO Friedrichshafen 2025-0428.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0428.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0428.jpg/960px-Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0428.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "New York-air",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-11",
+      "caption": "Pilatus PC-24 at AERO Friedrichshafen 2025",
+      "found": "2026-11-17T16:05:36.2610149+00:00"
+    },
+    {
+      "model": "Pilatus PC-24",
+      "file": "File:Pilatus PC-24 at AERO Friedrichshafen 2025-0441.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0441.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0441.jpg/960px-Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0441.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "New York-air",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-11",
+      "caption": "Pilatus PC-24 at AERO Friedrichshafen 2025",
+      "found": "2026-11-17T16:05:36.2610149+00:00"
+    },
+    {
+      "model": "Pilatus PC-24",
+      "file": "File:Pilatus PC-24 at AERO Friedrichshafen 2025-0447.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0447.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0447.jpg/960px-Pilatus_PC-24_at_AERO_Friedrichshafen_2025-0447.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "New York-air",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-11",
+      "caption": "MB-one and Pilatus PC-24 at AERO Friedrichshafen 2025",
+      "found": "2026-11-17T16:05:36.2610149+00:00"
     }
   ],
-  "updated": "2026-11-17T15:55:43.8784211+00:00"
+  "updated": "2026-11-17T16:05:36.2610149+00:00"
 }
