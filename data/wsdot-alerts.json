@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T17:25:42.4436382+00:00",
+  "updated": "2026-11-17T17:35:32.4648622+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -32,6 +32,27 @@
           46.979505343
         ]
       ]
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 693084,
@@ -1205,27 +1226,6 @@
       "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
       "id": 724879,
       "kind": "work",
       "category": "Road work",
@@ -1295,6 +1295,113 @@
         [
           -123.775235959,
           46.981674209
+        ]
+      ]
+    },
+    {
+      "id": 724902,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 109 both directions from milepost 21.3 near Copalis Beach Rd to milepost 21.5 near Copalis River beginning at 9:29 am on November 17, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 21.3,
+      "lat": 47.114966233,
+      "lon": -124.169421966,
+      "lat2": 47.117686716,
+      "lon2": -124.170263322,
+      "county": null,
+      "start": "2026-11-17T17:29:00.0000000+00:00",
+      "end": "2026-11-17T23:00:00.0000000+00:00",
+      "updated": "2026-11-17T17:30:09.2070000+00:00",
+      "path": [
+        [
+          -124.16939,
+          47.11499
+        ],
+        [
+          -124.16936,
+          47.11502
+        ],
+        [
+          -124.1693,
+          47.11508
+        ],
+        [
+          -124.16926,
+          47.11517
+        ],
+        [
+          -124.16924,
+          47.11524
+        ],
+        [
+          -124.16924,
+          47.11532
+        ],
+        [
+          -124.16925,
+          47.11594
+        ],
+        [
+          -124.16927,
+          47.1161
+        ],
+        [
+          -124.1693,
+          47.11621
+        ],
+        [
+          -124.16932,
+          47.1163
+        ],
+        [
+          -124.16936,
+          47.11639
+        ],
+        [
+          -124.1694,
+          47.11647
+        ],
+        [
+          -124.16947,
+          47.11658
+        ],
+        [
+          -124.16959,
+          47.11678
+        ],
+        [
+          -124.16966,
+          47.11688
+        ],
+        [
+          -124.1697,
+          47.11694
+        ],
+        [
+          -124.16978,
+          47.11705
+        ],
+        [
+          -124.17013,
+          47.11749
+        ],
+        [
+          -124.17016,
+          47.11753
+        ],
+        [
+          -124.17028,
+          47.1177
+        ],
+        [
+          -124.17028,
+          47.1177
         ]
       ]
     },
