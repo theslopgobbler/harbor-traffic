@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T15:35:33.8757349+00:00",
+  "updated": "2026-11-17T15:45:35.3225556+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,29 +8,13 @@
       "reg": "N54715",
       "type": "C172",
       "cat": "A1",
-      "alt": 5400,
-      "gs": 93.1,
-      "track": 200.77,
-      "rate": -64,
-      "lat": 47.73688,
-      "lon": -122.9651,
+      "alt": 3300,
+      "gs": 90.2,
+      "track": 215.98,
+      "rate": 0,
+      "lat": 47.51364,
+      "lon": -123.04047,
       "squawk": "4634",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a81dbc",
-      "flight": "ASA65",
-      "reg": "N622AS",
-      "type": "B737",
-      "cat": "A3",
-      "alt": 13350,
-      "gs": 355.0,
-      "track": 321.29,
-      "rate": 2944,
-      "lat": 47.50497,
-      "lon": -122.73424,
-      "squawk": "3531",
       "emergency": "none",
       "mil": false
     }
