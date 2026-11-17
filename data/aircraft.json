@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-17T13:35:50.0151777+00:00",
+  "updated": "2026-11-17T13:45:37.7905571+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "8990ee",
-      "flight": "CAL5235",
-      "reg": "B-18776",
-      "type": "B77L",
-      "cat": "A5",
-      "alt": 14125,
-      "gs": 368.5,
-      "track": 318.74,
-      "rate": 3584,
-      "lat": 47.48328,
-      "lon": -122.70672,
-      "squawk": "3570",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
