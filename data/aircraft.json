@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T16:45:42.8382650+00:00",
+  "updated": "2026-11-17T16:55:31.7461070+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,28 @@
       "reg": "N5556W",
       "type": "GLST",
       "cat": "A1",
-      "alt": 1075,
-      "gs": 73.7,
-      "track": 7.8,
+      "alt": 1100,
+      "gs": 77.6,
+      "track": 277.4,
       "rate": null,
-      "lat": 46.68462,
-      "lon": -123.00139,
+      "lat": 46.65527,
+      "lon": -122.99034,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a22084",
+      "flight": "N236TS",
+      "reg": "N236TS",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 3425,
+      "gs": 107.4,
+      "track": 4.81,
+      "rate": -192,
+      "lat": 47.32645,
+      "lon": -122.96877,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
