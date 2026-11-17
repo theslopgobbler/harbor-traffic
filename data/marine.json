@@ -1,12 +1,19 @@
 {
-  "updated": "2026-11-17T16:35:37.3394414+00:00",
+  "updated": "2026-11-17T16:45:42.8382650+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-17T15:56:00.0000000+00:00",
-    "waveFt": 9.8,
+    "time": "2026-11-17T16:26:00.0000000+00:00",
+    "waveFt": 10.2,
     "periodS": 13.0,
-    "dirDeg": 285.0,
-    "waterF": 54.9
+    "dirDeg": 284.0,
+    "waterF": 55.0
+  },
+  "bar": {
+    "issued": "2026-11-17T14:49:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT UNTIL 10 AM PST THIS MORNING... Combined seas 10 to 11 feet this morning, decreasing to 7 to 9 feet by this afternoon. Bar conditions rough, becoming moderate in the afternoon. Maximum ebb currents will occur around 1030 AM Tuesday, 1000 PM Tuesday, and 1130 AM Wednesday.",
+    "conditions": "rough, becoming moderate in the afternoon",
+    "seas": "10 to 11 feet this morning, decreasing to 7 to 9 feet by this afternoon",
+    "ebb": null
   }
 }
