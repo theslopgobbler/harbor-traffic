@@ -198,7 +198,8 @@
     "Cessna Citation Ultra": "2026-11-17T20:55:35.1250522+00:00",
     "Bell 407": "2026-11-17T23:15:37.9435712+00:00",
     "Cessna Citation Encore+": "2026-11-17T23:35:36.7154481+00:00",
-    "Eurocopter UH-72A Lakota": "2026-11-18T01:55:36.6063512+00:00"
+    "Eurocopter UH-72A Lakota": "2026-11-18T01:55:36.6063512+00:00",
+    "Bombardier Global 7500": "2026-11-18T15:05:37.6445022+00:00"
   },
   "candidates": [
     {
@@ -12408,7 +12409,91 @@
       "date": "2011-04-22 12:39",
       "caption": "North Las Vegas Airport (IATA: VGT, ICAO: KVGT, FAA LID: VGT) Photo: Tomás Del Coro April 22, 2011",
       "found": "2026-11-18T01:55:36.6063512+00:00"
+    },
+    {
+      "model": "Bombardier Global 7500",
+      "file": "File:Bombardier BD-700-2A12 Global 7500 (9H-VIG, cn 70086) (1-19-2023).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_BD-700-2A12_Global_7500_(9H-VIG,_cn_70086)_(1-19-2023).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Bombardier_BD-700-2A12_Global_7500_%289H-VIG%2C_cn_70086%29_%281-19-2023%29.jpg/960px-Bombardier_BD-700-2A12_Global_7500_%289H-VIG%2C_cn_70086%29_%281-19-2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "ZLEA",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-01-19",
+      "caption": "Bombardier BD-700-2A12 Global 7500 (9H-VIG, cn 70086) at Daytona Beach International Airport.",
+      "found": "2026-11-18T15:05:37.6445022+00:00"
+    },
+    {
+      "model": "Bombardier Global 7500",
+      "file": "File:Bombardier Global 7500, Paris Air Show 2019, Le Bourget (SIAE8903).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_7500,_Paris_Air_Show_2019,_Le_Bourget_(SIAE8903).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Bombardier_Global_7500%2C_Paris_Air_Show_2019%2C_Le_Bourget_%28SIAE8903%29.jpg/960px-Bombardier_Global_7500%2C_Paris_Air_Show_2019%2C_Le_Bourget_%28SIAE8903%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1280,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "date": "2019-06-17",
+      "caption": "Cabin of a Bombardier Global 7500 at Paris Air Show 2019",
+      "found": "2026-11-18T15:05:37.6445022+00:00"
+    },
+    {
+      "model": "Bombardier Global 7500",
+      "file": "File:Bombardier Global 7500, Paris Air Show 2019, Le Bourget (SIAE8909).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_7500,_Paris_Air_Show_2019,_Le_Bourget_(SIAE8909).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Bombardier_Global_7500%2C_Paris_Air_Show_2019%2C_Le_Bourget_%28SIAE8909%29.jpg/960px-Bombardier_Global_7500%2C_Paris_Air_Show_2019%2C_Le_Bourget_%28SIAE8909%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-06-17",
+      "caption": "Cabin of a Bombardier Global 7500 at Paris Air Show 2019",
+      "found": "2026-11-18T15:05:37.6445022+00:00"
+    },
+    {
+      "model": "Bombardier Global 7500",
+      "file": "File:Bombardier Global 7500-8000 three views.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_7500-8000_three_views.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Bombardier_Global_7500-8000_three_views.png/960px-Bombardier_Global_7500-8000_three_views.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Marc Lacoste",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2017-02-22",
+      "caption": "Bombardier Global 7500 three views drawing, based on global-7000 and global-8000",
+      "found": "2026-11-18T15:05:37.6445022+00:00"
+    },
+    {
+      "model": "Bombardier Global 7500",
+      "file": "File:Bombardier Global 7500 CS-ESS BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_7500_CS-ESS_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Bombardier_Global_7500_CS-ESS_BWI_MD1.jpg/960px-Bombardier_Global_7500_CS-ESS_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 512,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-05-20",
+      "caption": "2021 Bombardier Global 7500 CS-ESS on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-11-18T15:05:37.6445022+00:00"
+    },
+    {
+      "model": "Bombardier Global 7500",
+      "file": "File:Bombardier Global 7500 VP-CSY (51522930176).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombardier_Global_7500_VP-CSY_(51522930176).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Bombardier_Global_7500_VP-CSY_%2851522930176%29.jpg/960px-Bombardier_Global_7500_VP-CSY_%2851522930176%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Steven Byles from Yokohama, Japan",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2021-09-27 03:03",
+      "caption": "Bombardier Global 7500 VP-CSY @ Tokyo, Haneda on September 27, 2021.",
+      "found": "2026-11-18T15:05:37.6445022+00:00"
     }
   ],
-  "updated": "2026-11-18T14:55:36.7209995+00:00"
+  "updated": "2026-11-18T15:05:37.6445022+00:00"
 }
