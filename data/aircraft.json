@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-18T09:25:35.0894372+00:00",
+  "updated": "2026-11-18T09:35:34.9360833+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "71be46",
+      "flight": "AIH243",
+      "reg": "HL7646",
+      "type": "B744",
+      "cat": "A5",
+      "alt": 14175,
+      "gs": 420.2,
+      "track": 318.76,
+      "rate": 2880,
+      "lat": 47.54962,
+      "lon": -122.79208,
+      "squawk": "3530",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
