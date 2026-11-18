@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-18T06:35:31.8897959+00:00",
+  "updated": "2026-11-18T06:45:34.3605323+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a24755",
+      "flight": "N246LT",
+      "reg": "N246LT",
+      "type": "SLG2",
+      "cat": "A1",
+      "alt": 11575,
+      "gs": 85.6,
+      "track": 186.71,
+      "rate": 0,
+      "lat": 47.44911,
+      "lon": -122.71524,
+      "squawk": "6647",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
