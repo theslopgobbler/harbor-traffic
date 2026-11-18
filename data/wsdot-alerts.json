@@ -1,106 +1,7 @@
 {
-  "updated": "2026-11-18T19:25:34.3166637+00:00",
+  "updated": "2026-11-18T19:35:38.1787597+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
-    {
-      "id": 725023,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 westbound from milepost 10 near Montesano West City Limits to milepost 9.4 near Devonshire Rd beginning at 8:00 am on November 18, 2026 until about 12:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 10.0,
-      "lat": 46.973334282,
-      "lon": -123.609549782,
-      "lat2": 46.975645508,
-      "lon2": -123.621680602,
-      "county": "Grays Harbor",
-      "start": "2026-11-18T16:00:00.0000000+00:00",
-      "end": "2026-11-18T20:00:00.0000000+00:00",
-      "updated": "2026-11-18T16:01:44.7300000+00:00",
-      "path": [
-        [
-          -123.60951,
-          46.97334
-        ],
-        [
-          -123.60972,
-          46.97332
-        ],
-        [
-          -123.60995,
-          46.9733
-        ],
-        [
-          -123.61023,
-          46.97327
-        ],
-        [
-          -123.61074,
-          46.97325
-        ],
-        [
-          -123.61126,
-          46.97324
-        ],
-        [
-          -123.61176,
-          46.97326
-        ],
-        [
-          -123.61208,
-          46.97328
-        ],
-        [
-          -123.61246,
-          46.97331
-        ],
-        [
-          -123.61278,
-          46.97335
-        ],
-        [
-          -123.61339,
-          46.97347
-        ],
-        [
-          -123.61372,
-          46.97354
-        ],
-        [
-          -123.61585,
-          46.97409
-        ],
-        [
-          -123.61661,
-          46.9743
-        ],
-        [
-          -123.61792,
-          46.97465
-        ],
-        [
-          -123.61917,
-          46.97498
-        ],
-        [
-          -123.62137,
-          46.97557
-        ],
-        [
-          -123.62167,
-          46.97565
-        ],
-        [
-          -123.62167,
-          46.97565
-        ]
-      ]
-    },
     {
       "id": 725024,
       "kind": "work",
@@ -887,27 +788,6 @@
       "updated": "2026-11-18T18:35:49.4400000+00:00"
     },
     {
-      "id": 725013,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:11 am on November 18, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-18T15:11:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-18T15:13:16.7830000+00:00"
-    },
-    {
       "id": 640019,
       "kind": "work",
       "category": "Construction",
@@ -927,6 +807,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 725013,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:11 am on November 18, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-18T15:11:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-18T15:13:16.7830000+00:00"
     },
     {
       "id": 698912,
@@ -990,6 +891,101 @@
       "start": "2026-02-27T19:56:00.0000000+00:00",
       "end": "2026-12-31T19:56:00.0000000+00:00",
       "updated": "2026-10-16T21:53:14.6030000+00:00"
+    },
+    {
+      "id": 725023,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 eastbound from milepost 9.4 near Devonshire Rd to milepost 10 near Montesano West City Limits beginning at 8:00 am on November 18, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "E",
+      "milepost": 9.4,
+      "lat": 46.975488481,
+      "lon": -123.621768654,
+      "lat2": 46.97316175,
+      "lon2": -123.609480717,
+      "county": "Grays Harbor",
+      "start": "2026-11-18T16:00:00.0000000+00:00",
+      "end": "2026-11-18T23:00:00.0000000+00:00",
+      "updated": "2026-11-18T19:32:10.1130000+00:00",
+      "path": [
+        [
+          -123.62181,
+          46.97549
+        ],
+        [
+          -123.61926,
+          46.97481
+        ],
+        [
+          -123.61802,
+          46.97448
+        ],
+        [
+          -123.61672,
+          46.97414
+        ],
+        [
+          -123.61594,
+          46.97393
+        ],
+        [
+          -123.61535,
+          46.97377
+        ],
+        [
+          -123.6138,
+          46.97337
+        ],
+        [
+          -123.61351,
+          46.97331
+        ],
+        [
+          -123.61314,
+          46.97324
+        ],
+        [
+          -123.61281,
+          46.97319
+        ],
+        [
+          -123.61253,
+          46.97315
+        ],
+        [
+          -123.61218,
+          46.97311
+        ],
+        [
+          -123.61144,
+          46.97306
+        ],
+        [
+          -123.61046,
+          46.97306
+        ],
+        [
+          -123.60976,
+          46.97311
+        ],
+        [
+          -123.60966,
+          46.97313
+        ],
+        [
+          -123.60948,
+          46.97315
+        ],
+        [
+          -123.60948,
+          46.97315
+        ]
+      ]
     },
     {
       "id": 693084,

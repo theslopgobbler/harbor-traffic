@@ -200,7 +200,8 @@
     "Cessna Citation Encore+": "2026-11-17T23:35:36.7154481+00:00",
     "Eurocopter UH-72A Lakota": "2026-11-18T01:55:36.6063512+00:00",
     "Bombardier Global 7500": "2026-11-18T15:05:37.6445022+00:00",
-    "Boeing 737NG 752/W": "2026-11-18T17:35:34.7458438+00:00"
+    "Boeing 737NG 752/W": "2026-11-18T17:35:34.7458438+00:00",
+    "Boeing 747 443": "2026-11-18T19:35:38.1787597+00:00"
   },
   "candidates": [
     {
@@ -12494,7 +12495,91 @@
       "date": "2021-09-27 03:03",
       "caption": "Bombardier Global 7500 VP-CSY @ Tokyo, Haneda on September 27, 2021.",
       "found": "2026-11-18T15:05:37.6445022+00:00"
+    },
+    {
+      "model": "Boeing 747 443",
+      "file": "File:Atlas Air Boeing 747-400 N481MC BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Atlas_Air_Boeing_747-400_N481MC_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Atlas_Air_Boeing_747-400_N481MC_BWI_MD1.jpg/960px-Atlas_Air_Boeing_747-400_N481MC_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 409,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-10",
+      "caption": "Atlas Air Boeing 747-443 N481MC taking off from Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-11-18T19:35:38.1787597+00:00"
+    },
+    {
+      "model": "Boeing 747 443",
+      "file": "File:Atlas Air Boeing 747-400 N481MC BWI MD21.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Atlas_Air_Boeing_747-400_N481MC_BWI_MD21.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Atlas_Air_Boeing_747-400_N481MC_BWI_MD21.jpg/960px-Atlas_Air_Boeing_747-400_N481MC_BWI_MD21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 487,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-04-10",
+      "caption": "Atlas Air Boeing 747-443 N481MC taking off from Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-11-18T19:35:38.1787597+00:00"
+    },
+    {
+      "model": "Boeing 747 443",
+      "file": "File:Atlas Air Boeing 747-443 - N481MC at LBSF - 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Atlas_Air_Boeing_747-443_-_N481MC_at_LBSF_-_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Atlas_Air_Boeing_747-443_-_N481MC_at_LBSF_-_01.jpg/960px-Atlas_Air_Boeing_747-443_-_N481MC_at_LBSF_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "DemieK07",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-14 12:52:46",
+      "caption": "An Atlas Air Boeing 747-443 N481MC taking off from Sofia Airport",
+      "found": "2026-11-18T19:35:38.1787597+00:00"
+    },
+    {
+      "model": "Boeing 747 443",
+      "file": "File:Atlas Air Boeing 747-443 - N482MC at LBSF - 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_01.jpg/960px-Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "DemieK07",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-16 15:39:28",
+      "caption": "An Atlas Air Boeing 747-443 N482MC taking off from Sofia Airport",
+      "found": "2026-11-18T19:35:38.1787597+00:00"
+    },
+    {
+      "model": "Boeing 747 443",
+      "file": "File:Atlas Air Boeing 747-443 - N482MC at LBSF - 05.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_05.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_05.jpg/960px-Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "DemieK07",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-16 15:39:30",
+      "caption": "An Atlas Air Boeing 747-443 N482MC taking off from Sofia Airport",
+      "found": "2026-11-18T19:35:38.1787597+00:00"
+    },
+    {
+      "model": "Boeing 747 443",
+      "file": "File:Atlas Air Boeing 747-443 - N482MC at LBSF - 06.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_06.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_06.jpg/960px-Atlas_Air_Boeing_747-443_-_N482MC_at_LBSF_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "DemieK07",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2026-06-16 15:39:31",
+      "caption": "An Atlas Air Boeing 747-443 N482MC taking off from Sofia Airport",
+      "found": "2026-11-18T19:35:38.1787597+00:00"
     }
   ],
-  "updated": "2026-11-18T19:25:34.3166637+00:00"
+  "updated": "2026-11-18T19:35:38.1787597+00:00"
 }
