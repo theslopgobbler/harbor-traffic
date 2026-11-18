@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T07:45:31.9429704+00:00",
+  "updated": "2026-11-18T07:55:32.9029082+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N3015N",
       "type": "C140",
       "cat": "A1",
-      "alt": 4550,
-      "gs": 98.0,
-      "track": 358.83,
-      "rate": 0,
-      "lat": 46.65386,
-      "lon": -122.98638,
+      "alt": 4600,
+      "gs": 93.9,
+      "track": 26.57,
+      "rate": -73,
+      "lat": 46.89435,
+      "lon": -122.89997,
       "squawk": "4712",
       "emergency": "none",
       "mil": false
