@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T19:45:34.5553744+00:00",
+  "updated": "2026-11-18T19:55:42.1586568+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -765,27 +765,6 @@
       "start": "2026-11-18T17:04:00.0000000+00:00",
       "end": "2026-11-18T22:00:00.0000000+00:00",
       "updated": "2026-11-18T17:05:08.5970000+00:00"
-    },
-    {
-      "id": 725056,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision reported on SR 109 southbound at milepost 6 near Grass Creek Loop Rd beginning at 10:34 am on November 18, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "S",
-      "milepost": 6.0,
-      "lat": 46.997354775,
-      "lon": -124.000736089,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-18T18:34:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-18T18:35:49.4400000+00:00"
     },
     {
       "id": 725013,
