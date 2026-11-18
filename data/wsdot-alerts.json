@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T19:35:38.1787597+00:00",
+  "updated": "2026-11-18T19:45:34.5553744+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -788,6 +788,27 @@
       "updated": "2026-11-18T18:35:49.4400000+00:00"
     },
     {
+      "id": 725013,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:11 am on November 18, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "B",
+      "milepost": 20.0,
+      "lat": 46.727561115,
+      "lon": -124.048740326,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-18T15:11:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-18T15:13:16.7830000+00:00"
+    },
+    {
       "id": 640019,
       "kind": "work",
       "category": "Construction",
@@ -809,25 +830,25 @@
       "updated": "2026-10-16T18:03:13.8400000+00:00"
     },
     {
-      "id": 725013,
+      "id": 725062,
       "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers, use caution beginning at 7:11 am on November 18, 2026 until further notice.",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 both directions at milepost 3.85 near Bobby Johnson Ln beginning at 11:37 am on November 18, 2026 until about 1:00 pm.",
       "description": "",
       "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
+      "road": "012",
+      "roadLabel": "US 12",
       "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
+      "milepost": 3.85,
+      "lat": 46.97108527,
+      "lon": -123.738181005,
       "lat2": 0,
       "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-18T15:11:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-18T15:13:16.7830000+00:00"
+      "county": "Grays Harbor",
+      "start": "2026-11-18T19:37:00.0000000+00:00",
+      "end": "2026-11-18T21:00:00.0000000+00:00",
+      "updated": "2026-11-18T19:38:59.6800000+00:00"
     },
     {
       "id": 698912,
