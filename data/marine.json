@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-18T04:45:39.9191809+00:00",
+  "updated": "2026-11-18T04:55:34.7230465+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-18T03:56:00.0000000+00:00",
+    "time": "2026-11-18T04:26:00.0000000+00:00",
     "waveFt": 5.9,
-    "periodS": 12.0,
-    "dirDeg": 281.0,
+    "periodS": 13.0,
+    "dirDeg": 272.0,
     "waterF": 54.9
   },
   "bar": {
@@ -18,6 +18,12 @@
   },
   "alerts": [
     {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-19T06:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 17 at 8:24PM PST until November 18 at 10:00PM PST by NWS Seattle WA"
+    },
+    {
       "event": "Gale Warning",
       "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-11-18T18:00:00+00:00",
@@ -26,12 +32,6 @@
     {
       "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-19T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 17 at 8:24PM PST until November 18 at 10:00PM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-11-19T06:00:00+00:00",
       "headline": "Small Craft Advisory issued November 17 at 8:24PM PST until November 18 at 10:00PM PST by NWS Seattle WA"
     },
