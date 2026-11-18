@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T22:15:16.6485476+00:00",
+  "updated": "2026-11-18T22:25:26.2698447+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -786,27 +786,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 725070,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 both directions at milepost 3.85 near Bobby Johnson Ln beginning at 1:50 pm on November 18, 2026 until about 4:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "B",
-      "milepost": 3.85,
-      "lat": 46.97108527,
-      "lon": -123.738181005,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-18T21:50:00.0000000+00:00",
-      "end": "2026-11-19T00:00:00.0000000+00:00",
-      "updated": "2026-11-18T21:52:00.0070000+00:00"
     },
     {
       "id": 698912,
