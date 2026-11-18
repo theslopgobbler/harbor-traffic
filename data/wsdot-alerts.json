@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T00:25:33.6262316+00:00",
+  "updated": "2026-11-18T00:35:31.1508513+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -673,27 +673,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
-    },
-    {
-      "id": 724951,
-      "kind": "collision",
-      "category": "Incident",
-      "priority": "Highest",
-      "headline": "Incident on I-5 southbound at milepost 107.48 near Pacific Ave SE beginning at 3:09 pm on November 17, 2026 until further notice. The two right lanes are blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 107.48,
-      "lat": 47.041439753,
-      "lon": -122.851875836,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-17T23:09:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-17T23:09:30.0700000+00:00"
     },
     {
       "id": 698912,
