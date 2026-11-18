@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T15:25:35.0610304+00:00",
+  "updated": "2026-11-18T15:35:34.9758707+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N3971K",
       "type": "P28A",
       "cat": "A1",
-      "alt": 8350,
-      "gs": 125.4,
-      "track": 285.26,
-      "rate": 0,
-      "lat": 47.74942,
-      "lon": -123.16978,
+      "alt": 7200,
+      "gs": 143.0,
+      "track": 281.7,
+      "rate": null,
+      "lat": 47.86571,
+      "lon": -123.63577,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
@@ -25,12 +25,28 @@
       "type": "GLST",
       "cat": "A1",
       "alt": 1450,
-      "gs": 60.7,
-      "track": 188.53,
+      "gs": 80.7,
+      "track": 311.99,
       "rate": null,
-      "lat": 46.6734,
-      "lon": -123.00038,
+      "lat": 46.69157,
+      "lon": -122.98473,
       "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a7e151",
+      "flight": "ASA61",
+      "reg": "N607AS",
+      "type": "B737",
+      "cat": "A3",
+      "alt": 14900,
+      "gs": 365.4,
+      "track": 275.02,
+      "rate": 2432,
+      "lat": 47.63528,
+      "lon": -122.74341,
+      "squawk": "6605",
       "emergency": "none",
       "mil": false
     }
