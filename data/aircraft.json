@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-18T06:25:31.4779572+00:00",
+  "updated": "2026-11-18T06:35:31.8897959+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "aa178f",
-      "flight": "N7499C",
-      "reg": "N7499C",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 4500,
-      "gs": 90.5,
-      "track": 196.03,
-      "rate": 0,
-      "lat": 46.57719,
-      "lon": -123.05573,
-      "squawk": "4604",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
