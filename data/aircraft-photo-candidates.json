@@ -197,7 +197,8 @@
     "Boeing 737NG 7AX": "2026-11-17T20:15:41.1249965+00:00",
     "Cessna Citation Ultra": "2026-11-17T20:55:35.1250522+00:00",
     "Bell 407": "2026-11-17T23:15:37.9435712+00:00",
-    "Cessna Citation Encore+": "2026-11-17T23:35:36.7154481+00:00"
+    "Cessna Citation Encore+": "2026-11-17T23:35:36.7154481+00:00",
+    "Eurocopter UH-72A Lakota": "2026-11-18T01:55:36.6063512+00:00"
   },
   "candidates": [
     {
@@ -12323,7 +12324,91 @@
       "date": "2015-05-15 14:52:16",
       "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
       "found": "2026-11-17T23:35:36.7154481+00:00"
+    },
+    {
+      "model": "Eurocopter UH-72A Lakota",
+      "file": "File:Eurocopter UH-72A Lakota (EC-145) US Army 12-72224.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_UH-72A_Lakota_(EC-145)_US_Army_12-72224.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Eurocopter_UH-72A_Lakota_%28EC-145%29_US_Army_12-72224.jpg/960px-Eurocopter_UH-72A_Lakota_%28EC-145%29_US_Army_12-72224.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "Curimedia",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2012-07-14 10:18:46",
+      "caption": "Farnborough International Airshow",
+      "found": "2026-11-18T01:55:36.6063512+00:00"
+    },
+    {
+      "model": "Eurocopter UH-72A Lakota",
+      "file": "File:Eurocopter UH-72A Lakota 12-72260 FDK MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_UH-72A_Lakota_12-72260_FDK_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Eurocopter_UH-72A_Lakota_12-72260_FDK_MD1.jpg/960px-Eurocopter_UH-72A_Lakota_12-72260_FDK_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 562,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-08-09",
+      "caption": "US Army Eurocopter UH-72A Lakota 12-72260 at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-18T01:55:36.6063512+00:00"
+    },
+    {
+      "model": "Eurocopter UH-72A Lakota",
+      "file": "File:Eurocopter UH-72A Lakota 13-72275 FDK MD2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_UH-72A_Lakota_13-72275_FDK_MD2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Eurocopter_UH-72A_Lakota_13-72275_FDK_MD2.jpg/960px-Eurocopter_UH-72A_Lakota_13-72275_FDK_MD2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 620,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-08-21",
+      "caption": "U.S. Army UH-72A Lakota 13-72275 taking off at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-18T01:55:36.6063512+00:00"
+    },
+    {
+      "model": "Eurocopter UH-72A Lakota",
+      "file": "File:Eurocopter UH-72A Lakota 13-72275 FDK MD4.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurocopter_UH-72A_Lakota_13-72275_FDK_MD4.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Eurocopter_UH-72A_Lakota_13-72275_FDK_MD4.jpg/960px-Eurocopter_UH-72A_Lakota_13-72275_FDK_MD4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 582,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2024-08-21",
+      "caption": "U.S. Army UH-72A Lakota 13-72275 taking off at Frederick Municipal Airport, Maryland, USA",
+      "found": "2026-11-18T01:55:36.6063512+00:00"
+    },
+    {
+      "model": "Eurocopter UH-72A Lakota",
+      "file": "File:U.S. Army 72149 Eurocopter-Kawasaki UH-72A Lakota (5644898778).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army_72149_Eurocopter-Kawasaki_UH-72A_Lakota_(5644898778).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/U.S._Army_72149_Eurocopter-Kawasaki_UH-72A_Lakota_%285644898778%29.jpg/960px-U.S._Army_72149_Eurocopter-Kawasaki_UH-72A_Lakota_%285644898778%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 770,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-04-22 12:39",
+      "caption": "North Las Vegas Airport (IATA: VGT, ICAO: KVGT, FAA LID: VGT) Photo: Tomás Del Coro April 22, 2011",
+      "found": "2026-11-18T01:55:36.6063512+00:00"
+    },
+    {
+      "model": "Eurocopter UH-72A Lakota",
+      "file": "File:U.S. Army 72149 Eurocopter-Kawasaki UH-72A Lakota (5645021430).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Army_72149_Eurocopter-Kawasaki_UH-72A_Lakota_(5645021430).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/U.S._Army_72149_Eurocopter-Kawasaki_UH-72A_Lakota_%285645021430%29.jpg/960px-U.S._Army_72149_Eurocopter-Kawasaki_UH-72A_Lakota_%285645021430%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 792,
+      "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-04-22 12:39",
+      "caption": "North Las Vegas Airport (IATA: VGT, ICAO: KVGT, FAA LID: VGT) Photo: Tomás Del Coro April 22, 2011",
+      "found": "2026-11-18T01:55:36.6063512+00:00"
     }
   ],
-  "updated": "2026-11-18T01:45:41.6434885+00:00"
+  "updated": "2026-11-18T01:55:36.6063512+00:00"
 }
