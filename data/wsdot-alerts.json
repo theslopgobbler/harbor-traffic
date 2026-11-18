@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T14:45:33.4797643+00:00",
+  "updated": "2026-11-18T14:55:36.7209995+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -715,6 +715,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 725009,
+      "kind": "other",
+      "category": "Trees down",
+      "priority": "Highest",
+      "headline": "Trees reported down on SR 105 northbound at milepost 28.71 near Chester Ave beginning at 6:53 am on November 18, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "105",
+      "roadLabel": "SR 105",
+      "direction": "N",
+      "milepost": 28.71,
+      "lat": 46.836904669,
+      "lon": -124.1014081,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-18T14:53:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-18T14:53:44.2300000+00:00"
     },
     {
       "id": 686738,

@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-18T14:45:33.4797643+00:00",
+  "updated": "2026-11-18T14:55:36.7209995+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a8f588",
+      "flight": "N6768X",
+      "reg": "N6768X",
+      "type": "B06",
+      "cat": "A7",
+      "alt": 2100,
+      "gs": 95.8,
+      "track": 161.75,
+      "rate": 0,
+      "lat": 47.03149,
+      "lon": -123.05997,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
