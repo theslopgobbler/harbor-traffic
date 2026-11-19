@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T09:35:22.2517649+00:00",
+  "updated": "2026-11-19T09:45:24.8463331+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,22 +10,22 @@
     "waterF": 54.3
   },
   "bar": {
-    "issued": "2026-11-19T04:02:00+00:00",
-    "text": "Combined seas 6 to 8 feet, subsiding to 4 to 6 ft on Thursday. Bar conditions moderate, becoming light. Maximum ebb currents will occur around 1115 PM Wednesday, 1215 PM Thursday, and 1215 AM Friday.",
+    "issued": "2026-11-19T09:34:00+00:00",
+    "text": "Combined seas 6 to 8 feet, subsiding to 4 to 6 ft on Thursday evening. Bar conditions moderate, becoming light. Maximum ebb currents will occur around 1215 PM Thursday, 1215 AM Friday, and 100 PM Friday.",
     "conditions": "moderate, becoming light",
-    "seas": "6 to 8 feet, subsiding to 4 to 6 ft on Thursday",
+    "seas": "6 to 8 feet, subsiding to 4 to 6 ft on Thursday evening",
     "ebb": null
   },
   "alerts": [
     {
       "event": "Small Craft Advisory",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
       "ends": "2026-11-19T18:00:00+00:00",
       "headline": "Small Craft Advisory issued November 19 at 12:25AM PST until November 19 at 10:00AM PST by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-19T18:00:00+00:00",
       "headline": "Small Craft Advisory issued November 19 at 12:25AM PST until November 19 at 10:00AM PST by NWS Portland OR"
     },
