@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T04:35:16.6287080+00:00",
+  "updated": "2026-11-19T04:45:25.2527277+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -30,6 +30,12 @@
       "headline": "Small Craft Advisory issued November 18 at 8:03PM PST until November 19 at 10:00AM PST by NWS Seattle WA"
     },
     {
+      "event": "Hazardous Seas Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-19T06:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 18 at 12:37PM PST until November 18 at 10:00PM PST by NWS Portland OR"
+    },
+    {
       "event": "Small Craft Advisory",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
       "ends": "2026-11-19T18:00:00+00:00",
@@ -40,12 +46,6 @@
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
       "ends": "2026-11-19T18:00:00+00:00",
       "headline": "Small Craft Advisory issued November 18 at 12:37PM PST until November 19 at 10:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Hazardous Seas Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-19T06:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 18 at 12:37PM PST until November 18 at 10:00PM PST by NWS Portland OR"
     }
   ]
 }
