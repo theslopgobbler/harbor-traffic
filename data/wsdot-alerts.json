@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T21:45:16.9719233+00:00",
+  "updated": "2026-11-19T21:55:18.8223393+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -611,27 +611,6 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
-      "id": 725136,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Maintenance on SR 105 both directions at milepost 20 near Panoramic Lane will be alternating traffic with flaggers. Use caution beginning at 7:17 am on November 19, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-19T15:17:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-19T15:18:17.0530000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -651,27 +630,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 725193,
-      "kind": "closure",
-      "category": "Chehalis River Bridge",
-      "priority": "Highest",
-      "headline": "Chehalis River Bridge is closed to vehicle traffic at 1:32 PM Thursday, November 19. A maintenance opening is in progress. Travelers can expect delays for up to 15 minutes on US 101 both directions at 83.22 Milepost.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 83.22,
-      "lat": 46.970542365,
-      "lon": -123.805207969,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-11-19T21:32:05.3300000+00:00",
-      "end": "2026-11-19T21:47:05.3300000+00:00",
-      "updated": "2026-11-19T21:32:06.5530000+00:00"
     },
     {
       "id": 640019,
