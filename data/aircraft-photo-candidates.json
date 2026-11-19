@@ -203,7 +203,8 @@
     "Boeing 737NG 752/W": "2026-11-18T17:35:34.7458438+00:00",
     "Boeing 747 443": "2026-11-18T19:35:38.1787597+00:00",
     "Cessna Citation Encore": "2026-11-19T00:02:33.9672025+00:00",
-    "Gulfstream Aerospace C-37A": "2026-11-19T20:45:18.3597843+00:00"
+    "Gulfstream Aerospace C-37A": "2026-11-19T20:45:18.3597843+00:00",
+    "Embraer ERJ-135 LR": "2026-11-19T23:45:26.8461917+00:00"
   },
   "candidates": [
     {
@@ -12749,7 +12750,91 @@
       "date": "2012-01-26 17:45",
       "caption": "United States Air Force Gulfstream Aerospace C-37A Gulfstream V; 97-0400@ZRH;26.01.2012/638ac",
       "found": "2026-11-19T20:45:18.3597843+00:00"
+    },
+    {
+      "model": "Embraer ERJ-135 LR",
+      "file": "File:SA Airlink EMB-135 LR ZS-SJW (6783019252).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SA_Airlink_EMB-135_LR_ZS-SJW_(6783019252).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/SA_Airlink_EMB-135_LR_ZS-SJW_%286783019252%29.jpg/960px-SA_Airlink_EMB-135_LR_ZS-SJW_%286783019252%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 583,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2006-07-01 10:04",
+      "caption": "Written off FAGG 07th December 2009.",
+      "found": "2026-11-19T23:45:26.8461917+00:00"
+    },
+    {
+      "model": "Embraer ERJ-135 LR",
+      "file": "File:SA Airlink EMB-135 LR ZS-SJW (8647604835).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SA_Airlink_EMB-135_LR_ZS-SJW_(8647604835).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/SA_Airlink_EMB-135_LR_ZS-SJW_%288647604835%29.jpg/960px-SA_Airlink_EMB-135_LR_ZS-SJW_%288647604835%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-01-02 15:27",
+      "caption": "SA Airlink Embraer EMB-135LR (ZS-SJW) after being written off in a runway excursion on Runway 11 at George Airport on 7 December 2009 ( more information from aviation-safety.net)",
+      "found": "2026-11-19T23:45:26.8461917+00:00"
+    },
+    {
+      "model": "Embraer ERJ-135 LR",
+      "file": "File:SA Airlink EMB-135 LR ZS-SJW (8647610251).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SA_Airlink_EMB-135_LR_ZS-SJW_(8647610251).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/SA_Airlink_EMB-135_LR_ZS-SJW_%288647610251%29.jpg/960px-SA_Airlink_EMB-135_LR_ZS-SJW_%288647610251%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-10-17 15:29",
+      "caption": "11 months after runway excursion runway 11 . aviation-safety.net/database/record.php?id=20091207-0",
+      "found": "2026-11-19T23:45:26.8461917+00:00"
+    },
+    {
+      "model": "Embraer ERJ-135 LR",
+      "file": "File:SA Airlink EMB-135 LR ZS-SJW (8647692759).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SA_Airlink_EMB-135_LR_ZS-SJW_(8647692759).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/SA_Airlink_EMB-135_LR_ZS-SJW_%288647692759%29.jpg/960px-SA_Airlink_EMB-135_LR_ZS-SJW_%288647692759%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 575,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-10-24 13:46",
+      "caption": "Almost three years after runway excursion runway 11 aviation-safety.net/database/record.php?id=20091207-0",
+      "found": "2026-11-19T23:45:26.8461917+00:00"
+    },
+    {
+      "model": "Embraer ERJ-135 LR",
+      "file": "File:SA Airlink EMB-135 LR ZS-SJW (8648707944).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SA_Airlink_EMB-135_LR_ZS-SJW_(8648707944).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/SA_Airlink_EMB-135_LR_ZS-SJW_%288648707944%29.jpg/960px-SA_Airlink_EMB-135_LR_ZS-SJW_%288648707944%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2010-01-02 15:28",
+      "caption": "25 days after runway excursion runway 11 aviation-safety.net/database/record.php?id=20091207-0",
+      "found": "2026-11-19T23:45:26.8461917+00:00"
+    },
+    {
+      "model": "Embraer ERJ-135 LR",
+      "file": "File:SA Airlink EMB-135 LR ZS-SJX (6929138857).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SA_Airlink_EMB-135_LR_ZS-SJX_(6929138857).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/SA_Airlink_EMB-135_LR_ZS-SJX_%286929138857%29.jpg/960px-SA_Airlink_EMB-135_LR_ZS-SJX_%286929138857%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 546,
+      "author": "Bob Adams from George, South Africa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-02-25 21:21",
+      "caption": "SA Airlink EMB-135 LR ZS-SJX",
+      "found": "2026-11-19T23:45:26.8461917+00:00"
     }
   ],
-  "updated": "2026-11-19T23:35:24.8609785+00:00"
+  "updated": "2026-11-19T23:45:26.8461917+00:00"
 }
