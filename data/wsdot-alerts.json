@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T21:35:21.2657131+00:00",
+  "updated": "2026-11-19T21:45:16.9719233+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -695,27 +695,6 @@
       "updated": "2026-10-16T18:03:13.8400000+00:00"
     },
     {
-      "id": 725167,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 12 westbound at milepost 2.62 near Edgewood Rd beginning at 9:11 am on November 19, 2026 until about 3:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 2.62,
-      "lat": 46.979202874,
-      "lon": -123.760566706,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-19T17:11:00.0000000+00:00",
-      "end": "2026-11-19T23:00:00.0000000+00:00",
-      "updated": "2026-11-19T18:00:04.6500000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -735,6 +714,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 725167,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 12 westbound at milepost 2.62 near Edgewood Rd beginning at 9:11 am on November 19, 2026 until about 3:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "W",
+      "milepost": 2.62,
+      "lat": 46.979202874,
+      "lon": -123.760566706,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-19T17:11:00.0000000+00:00",
+      "end": "2026-11-19T23:00:00.0000000+00:00",
+      "updated": "2026-11-19T18:00:04.6500000+00:00"
     },
     {
       "id": 631745,
