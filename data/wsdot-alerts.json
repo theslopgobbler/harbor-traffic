@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T16:15:18.9504131+00:00",
+  "updated": "2026-11-19T16:25:23.4136189+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -672,6 +672,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 725149,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 109 both directions at milepost 21.44 near Copalis River beginning at 8:15 am on November 19, 2026 until about 12:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 21.44,
+      "lat": 47.116912143,
+      "lon": -124.169682453,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-19T16:15:00.0000000+00:00",
+      "end": "2026-11-19T20:00:00.0000000+00:00",
+      "updated": "2026-11-19T16:18:43.7900000+00:00"
     },
     {
       "id": 698912,
