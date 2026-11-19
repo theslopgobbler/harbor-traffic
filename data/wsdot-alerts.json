@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T21:55:18.8223393+00:00",
+  "updated": "2026-11-19T22:05:18.8997947+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -427,6 +427,37 @@
         [
           -124.41027,
           47.6917
+        ]
+      ]
+    },
+    {
+      "id": 725197,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on SR 107 both directions from milepost 3 near Blue Slough Rd Wye to milepost 5 near South St beginning at 1:58 pm on November 19, 2026 until about 4:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "107",
+      "roadLabel": "SR 107",
+      "direction": "B",
+      "milepost": 3.0,
+      "lat": 46.937584755,
+      "lon": -123.670556532,
+      "lat2": 46.944109362,
+      "lon2": -123.631239391,
+      "county": "Grays Harbor",
+      "start": "2026-11-19T21:58:00.0000000+00:00",
+      "end": "2026-11-20T00:00:00.0000000+00:00",
+      "updated": "2026-11-19T22:01:16.3630000+00:00",
+      "path": [
+        [
+          -123.670556532,
+          46.937584755
+        ],
+        [
+          -123.631239391,
+          46.944109362
         ]
       ]
     },
