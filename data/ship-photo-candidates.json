@@ -555,7 +555,8 @@
     "636018831": "2026-11-19T16:55:18.3076818+00:00",
     "636025827": "2026-11-19T17:35:27.404622+00:00",
     "368391240": "2026-11-19T18:45:20.4684128+00:00",
-    "368301000": "2026-11-19T21:15:19.7625259+00:00"
+    "368301000": "2026-11-19T21:15:19.7625259+00:00",
+    "355322000": "2026-11-19T21:25:17.0645595+00:00"
   },
   "candidates": [
     {
@@ -5957,7 +5958,37 @@
       "date": "2022-04-28 09:42:25",
       "caption": "Le Ioannis K à Lorient",
       "found": "2026-11-19T16:55:18.3076818+00:00"
+    },
+    {
+      "mmsi": "355322000",
+      "ship": "AMIS ACE",
+      "file": "File:Navire AMIS ACE en manoeuvre.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_AMIS_ACE_en_manoeuvre.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Navire_AMIS_ACE_en_manoeuvre.jpg/1280px-Navire_AMIS_ACE_en_manoeuvre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-02-16",
+      "caption": "Navire AMIS ACE en manoeuvre au port de Casablanca - Morocco - IMO: 9552989 Pavillon: Panama Genre du navire: Cargo Année de Construction: 2013",
+      "found": "2026-11-19T21:25:17.0645595+00:00"
+    },
+    {
+      "mmsi": "355322000",
+      "ship": "AMIS ACE",
+      "file": "File:Navire AMIS ACE en quai à Casablanca.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_AMIS_ACE_en_quai_%C3%A0_Casablanca.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Navire_AMIS_ACE_en_quai_%C3%A0_Casablanca.jpg/1280px-Navire_AMIS_ACE_en_quai_%C3%A0_Casablanca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-02-25",
+      "caption": "Navire AMIS ACE à quai à Casablanca . - Morocco - IMO: 9552989 Pavillon: Panama Genre du navire: Cargo Année de Construction: 2013",
+      "found": "2026-11-19T21:25:17.0645595+00:00"
     }
   ],
-  "updated": "2026-11-19T21:15:19.7625259+00:00"
+  "updated": "2026-11-19T21:25:17.0645595+00:00"
 }
