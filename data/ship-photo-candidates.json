@@ -544,7 +544,8 @@
     "440086000": "2026-11-18T14:45:33.4797643+00:00",
     "368470580": "2026-11-18T18:25:31.4548501+00:00",
     "563236100": "2026-11-18T18:55:34.9138914+00:00",
-    "563338800": "2026-11-18T21:35:19.8233037+00:00"
+    "563338800": "2026-11-18T21:35:19.8233037+00:00",
+    "367062120": "2026-11-19T07:55:18.0518322+00:00"
   },
   "candidates": [
     {
@@ -5811,7 +5812,22 @@
       "date": "2014-04-19 16:26",
       "caption": "Squat, Square Ship",
       "found": "2026-11-17T12:15:33.7181874+00:00"
+    },
+    {
+      "mmsi": "367062120",
+      "ship": "OCEAN NAVIGATOR",
+      "file": "File:Milwaukee July 2022 002 (Ocean Navigator).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2022_002_(Ocean_Navigator).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Milwaukee_July_2022_002_%28Ocean_Navigator%29.jpg/1280px-Milwaukee_July_2022_002_%28Ocean_Navigator%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 3 July 2022",
+      "caption": "The Ocean Navigator docked at Pier Wisconsin in Milwaukee , Wisconsin ( United States ).",
+      "found": "2026-11-19T07:55:18.0518322+00:00"
     }
   ],
-  "updated": "2026-11-19T07:45:31.2599214+00:00"
+  "updated": "2026-11-19T07:55:18.0518322+00:00"
 }
