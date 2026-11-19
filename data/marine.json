@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-19T17:55:19.6413343+00:00",
+  "updated": "2026-11-19T18:05:29.1626535+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-19T16:56:00.0000000+00:00",
-    "waveFt": 6.9,
-    "periodS": 14.0,
-    "dirDeg": 279.0,
-    "waterF": 54.3
+    "time": "2026-11-19T17:26:00.0000000+00:00",
+    "waveFt": 7.9,
+    "periodS": 13.0,
+    "dirDeg": 275.0,
+    "waterF": 54.9
   },
   "bar": {
     "issued": "2026-11-19T09:34:00+00:00",
@@ -22,30 +22,6 @@
       "area": "San Pablo Bay, Suisun Bay, the West Delta and  the San Francisco Bay north of the Bay Bridge; San Francisco Bay South of the Bay Bridge; San Diego County Coastal Areas; Ventura County Beaches; Malibu Coast; Los Angeles County Beaches; Palos Verdes Hills; Orange County Coastal; Catalina and Santa Barbara Islands; San Miguel and Santa Rosa Islands; Santa Cruz and Anacapa Islands; Santa Barbara County Southwestern Coast; Santa Barbara County Southeastern Coast; San Luis Obispo County Beaches; San Luis Obispo County Inland Central Coast; Santa Lucia Mountains; Santa Barbara County Central Coast Beaches; Northern Monterey Bay; Southern Monterey Bay and Big Sur Coast; San Francisco; Southwestern Solano County Including Vallejo; Coastal North Bay Including Point Reyes National Seashore; North Bay Interior Valleys; San Francisco Bay Shoreline; San Francisco Peninsula Coast; East Bay Interior Valleys; Coastal Mendocino; Southwestern Humboldt; Northern Coastal Humboldt; Coastal Del Norte; South Central Oregon Coast; Curry County Coast; Central Coast of Oregon; Clatsop County Coast; Tillamook County Coast; San Juan County; South Washington Coast; Lowlands of Western Whatcom County; Lowlands of Western Skagit and Northwestern Snohomish Counties; Port Townsend Area; Eastern Strait of Juan de Fuca; Western Strait of Juan de Fuca; Northern Washington Coast; Grays Harbor County Coast; Lower Chehalis River Valley; Island County; Prince of Wales Island; City and Borough of Wrangell; Ketchikan Gateway Borough; City of Hyder; Annette Island; City and Borough of Sitka; Admiralty Island; Petersburg Borough; Western Kupreanof and Kuiu Island; Municipality of Skagway; Haines Borough and Klukwan; Glacier Bay; Eastern Chichagof Island; Cape Fairweather to Lisianski Strait; City and Borough of Juneau; City and Borough of Yakutat; Valdez; Cordova; Southern Kachemak Bay; SW Kenai Peninsula; NW Kenai Peninsula; Southern Kenai Mtns; West Prince William Sound & Whittier; Tyonek; Kodiak Island Northeast; Kodiak Island Southwest; Chignik and Perryville; Aleutians East Borough; Unalaska and Nikolski; Atka and Adak; Pribilof Islands; Shemya and Attu Islands",
       "ends": "2026-11-19T18:30:00+00:00",
       "headline": "TEST Tsunami Warning issued November 19 at 9:30AM PST until November 19 at 10:30AM PST by NWS National Tsunami Warning Center"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-11-19T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 19 at 1:45AM PST until November 19 at 10:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-19T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 19 at 1:45AM PST until November 19 at 10:00AM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-19T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 19 at 12:25AM PST until November 19 at 10:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm",
-      "ends": "2026-11-19T18:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 19 at 12:25AM PST until November 19 at 10:00AM PST by NWS Portland OR"
     }
   ]
 }
