@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T18:15:22.1774775+00:00",
+  "updated": "2026-11-19T18:25:20.0931332+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -674,25 +674,25 @@
       "updated": "2026-10-16T18:03:13.8400000+00:00"
     },
     {
-      "id": 725149,
+      "id": 698912,
       "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on SR 109 both directions at milepost 21.44 near Copalis River beginning at 8:15 am on November 19, 2026 until about 12:00 pm.",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
       "description": "",
-      "link": null,
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
       "road": "109",
       "roadLabel": "SR 109",
       "direction": "B",
-      "milepost": 21.44,
-      "lat": 47.116912143,
-      "lon": -124.169682453,
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
       "lat2": 0,
       "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-19T16:15:00.0000000+00:00",
-      "end": "2026-11-19T20:00:00.0000000+00:00",
-      "updated": "2026-11-19T16:18:43.7900000+00:00"
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
       "id": 725167,
@@ -714,27 +714,6 @@
       "start": "2026-11-19T17:11:00.0000000+00:00",
       "end": "2026-11-19T23:00:00.0000000+00:00",
       "updated": "2026-11-19T18:00:04.6500000+00:00"
-    },
-    {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-10-27T17:24:59.6700000+00:00"
     },
     {
       "id": 631745,
@@ -777,6 +756,27 @@
       "start": "2026-11-19T16:59:00.0000000+00:00",
       "end": "2026-11-20T00:00:00.0000000+00:00",
       "updated": "2026-11-19T17:01:11.5000000+00:00"
+    },
+    {
+      "id": 725176,
+      "kind": "other",
+      "category": "Bridge work",
+      "priority": "Highest",
+      "headline": "Bridge work on SR 109 both directions at milepost 29.21 near Joe Creek beginning at 10:16 am on November 19, 2026 until about 12:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 29.21,
+      "lat": 47.206751228,
+      "lon": -124.197796328,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-19T18:16:00.0000000+00:00",
+      "end": "2026-11-19T20:00:00.0000000+00:00",
+      "updated": "2026-11-19T18:20:27.8600000+00:00"
     },
     {
       "id": 686738,
