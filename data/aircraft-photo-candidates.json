@@ -202,7 +202,8 @@
     "Bombardier Global 7500": "2026-11-18T15:05:37.6445022+00:00",
     "Boeing 737NG 752/W": "2026-11-18T17:35:34.7458438+00:00",
     "Boeing 747 443": "2026-11-18T19:35:38.1787597+00:00",
-    "Cessna Citation Encore": "2026-11-19T00:02:33.9672025+00:00"
+    "Cessna Citation Encore": "2026-11-19T00:02:33.9672025+00:00",
+    "Gulfstream Aerospace C-37A": "2026-11-19T20:45:18.3597843+00:00"
   },
   "candidates": [
     {
@@ -12664,7 +12665,91 @@
       "date": "2015-05-15 14:52:16",
       "caption": "The Flying Bulls Cessna 560 Citation Encore 'OE-GDM' taxiing at Hangar 7, Salzburg Airport, Austria.",
       "found": "2026-11-19T00:02:33.9672025+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace C-37A",
+      "file": "File:Gulfstream Aerospace C-37A Gulfstream V (G-V), USA - Air Force AN0467268.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_C-37A_Gulfstream_V_(G-V),_USA_-_Air_Force_AN0467268.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Gulfstream_Aerospace_C-37A_Gulfstream_V_%28G-V%29%2C_USA_-_Air_Force_AN0467268.jpg/960px-Gulfstream_Aerospace_C-37A_Gulfstream_V_%28G-V%29%2C_USA_-_Air_Force_AN0467268.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 693,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 January 2003",
+      "caption": "",
+      "found": "2026-11-19T20:45:18.3597843+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace C-37A",
+      "file": "File:Gulfstream Aerospace C-37A Gulfstream V (G-V), USA - Air Force AN0984730.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_C-37A_Gulfstream_V_(G-V),_USA_-_Air_Force_AN0984730.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Gulfstream_Aerospace_C-37A_Gulfstream_V_%28G-V%29%2C_USA_-_Air_Force_AN0984730.jpg/960px-Gulfstream_Aerospace_C-37A_Gulfstream_V_%28G-V%29%2C_USA_-_Air_Force_AN0984730.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 668,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "30 August 2005",
+      "caption": "",
+      "found": "2026-11-19T20:45:18.3597843+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace C-37A",
+      "file": "File:Gulfstream Aerospace C-37A Gulfstream V (G-V), USA - Navy AN0558476.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulfstream_Aerospace_C-37A_Gulfstream_V_(G-V),_USA_-_Navy_AN0558476.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Gulfstream_Aerospace_C-37A_Gulfstream_V_%28G-V%29%2C_USA_-_Navy_AN0558476.jpg/960px-Gulfstream_Aerospace_C-37A_Gulfstream_V_%28G-V%29%2C_USA_-_Navy_AN0558476.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 679,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "9 April 2004",
+      "caption": "",
+      "found": "2026-11-19T20:45:18.3597843+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace C-37A",
+      "file": "File:U.S. Coast Guard (02) Gulfstream Aerospace C-37A - BCN.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Coast_Guard_(02)_Gulfstream_Aerospace_C-37A_-_BCN.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/U.S._Coast_Guard_%2802%29_Gulfstream_Aerospace_C-37A_-_BCN.jpg/960px-U.S._Coast_Guard_%2802%29_Gulfstream_Aerospace_C-37A_-_BCN.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 639,
+      "author": "ERIC SALARD from PARIS, FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-12-02 14:18",
+      "caption": "MSN 638 Gulfstream V UNITED STATES COAST GUARD BCN AIRPORT EX Jet Aviation Business Jets AG AS HB-IIY / UNITED STATES COAST GUARD AS N888HE",
+      "found": "2026-11-19T20:45:18.3597843+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace C-37A",
+      "file": "File:U.S. Coast Guard (02) Gulfstream Aerospace C-37A - BCN (26422554376).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Coast_Guard_(02)_Gulfstream_Aerospace_C-37A_-_BCN_(26422554376).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/U.S._Coast_Guard_%2802%29_Gulfstream_Aerospace_C-37A_-_BCN_%2826422554376%29.jpg/960px-U.S._Coast_Guard_%2802%29_Gulfstream_Aerospace_C-37A_-_BCN_%2826422554376%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "ERIC SALARD from PARIS, FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-12-02 14:18",
+      "caption": "MSN 638 Gulfstream V UNITED STATES COAST GUARD BCN AIRPORT EX Jet Aviation Business Jets AG AS HB-IIY / UNITED STATES COAST GUARD AS N888HE",
+      "found": "2026-11-19T20:45:18.3597843+00:00"
+    },
+    {
+      "model": "Gulfstream Aerospace C-37A",
+      "file": "File:United States Air Force Gulfstream Aerospace C-37A Gulfstream V; 97-0400@ZRH;26.01.2012 638ac (6777762123).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_States_Air_Force_Gulfstream_Aerospace_C-37A_Gulfstream_V;_97-0400@ZRH;26.01.2012_638ac_(6777762123).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/United_States_Air_Force_Gulfstream_Aerospace_C-37A_Gulfstream_V%3B_97-0400%40ZRH%3B26.01.2012_638ac_%286777762123%29.jpg/960px-United_States_Air_Force_Gulfstream_Aerospace_C-37A_Gulfstream_V%3B_97-0400%40ZRH%3B26.01.2012_638ac_%286777762123%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 643,
+      "author": "Aero Icarus from Zürich, Switzerland",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2012-01-26 17:45",
+      "caption": "United States Air Force Gulfstream Aerospace C-37A Gulfstream V; 97-0400@ZRH;26.01.2012/638ac",
+      "found": "2026-11-19T20:45:18.3597843+00:00"
     }
   ],
-  "updated": "2026-11-19T20:35:19.5504242+00:00"
+  "updated": "2026-11-19T20:45:18.3597843+00:00"
 }
