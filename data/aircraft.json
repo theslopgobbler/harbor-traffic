@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-19T11:45:18.4730411+00:00",
+  "updated": "2026-11-19T11:55:19.4130633+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a3778e",
-      "flight": "UPS984",
-      "reg": "N322UP",
-      "type": "B763",
-      "cat": "A5",
-      "alt": 12675,
-      "gs": 295.3,
-      "track": 40.05,
-      "rate": -1088,
-      "lat": 47.01357,
-      "lon": -122.85518,
-      "squawk": "7302",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
