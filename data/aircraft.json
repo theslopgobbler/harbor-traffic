@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-20T17:16:13.8340409+00:00",
+  "updated": "2026-11-20T17:25:58.7213743+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a034d4",
+      "flight": "GFY1124",
+      "reg": "N112NG",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 6850,
+      "gs": 158.4,
+      "track": 193.51,
+      "rate": 0,
+      "lat": 47.19566,
+      "lon": -122.82179,
+      "squawk": "4733",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
