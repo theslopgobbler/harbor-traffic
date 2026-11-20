@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-20T17:56:01.7244246+00:00",
+  "updated": "2026-11-20T18:06:26.6292537+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ac5462",
-      "flight": "N894C",
-      "reg": "N894C",
-      "type": "C25A",
-      "cat": "A1",
-      "alt": 9000,
-      "gs": 233.5,
-      "track": 337.06,
-      "rate": 2402,
-      "lat": 47.33706,
-      "lon": -122.75081,
-      "squawk": "3571",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
