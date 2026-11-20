@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-20T13:56:08.7591662+00:00",
+  "updated": "2026-11-20T14:06:09.0850740+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a4470e",
-      "flight": "ASA822",
-      "reg": "N375HA",
-      "type": "A332",
-      "cat": "A5",
-      "alt": 14100,
-      "gs": 320.7,
-      "track": 75.18,
-      "rate": -3776,
-      "lat": 46.77653,
-      "lon": -122.78368,
-      "squawk": "2416",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
