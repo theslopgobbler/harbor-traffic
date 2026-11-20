@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T20:26:02.8512438+00:00",
+  "updated": "2026-11-20T20:35:57.2446405+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "C177",
       "cat": "A1",
       "alt": 1100,
-      "gs": 113.7,
-      "track": 330.51,
+      "gs": 104.4,
+      "track": 355.05,
       "rate": null,
-      "lat": 46.77792,
-      "lon": -123.00938,
+      "lat": 46.68524,
+      "lon": -123.00293,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
@@ -24,12 +24,12 @@
       "reg": "N7163G",
       "type": "C172",
       "cat": "A1",
-      "alt": 4800,
-      "gs": 101.7,
-      "track": 30.09,
+      "alt": 2800,
+      "gs": 103.4,
+      "track": 18.61,
       "rate": 0,
-      "lat": 46.81014,
-      "lon": -122.9436,
+      "lat": 47.07724,
+      "lon": -122.77682,
       "squawk": "4665",
       "emergency": "none",
       "mil": false
