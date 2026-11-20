@@ -571,7 +571,8 @@
     "563080300": "2026-11-20T11:46:08.1544012+00:00",
     "367330420": "2026-11-20T14:26:10.0511404+00:00",
     "367646810": "2026-11-20T17:25:58.7213743+00:00",
-    "636023225": "2026-11-20T19:56:00.7581257+00:00"
+    "636023225": "2026-11-20T19:56:00.7581257+00:00",
+    "440245000": "2026-11-20T20:45:58.2167943+00:00"
   },
   "candidates": [
     {
@@ -6123,7 +6124,37 @@
       "date": "2018-02-25 14:58:31",
       "caption": "View of Victoria Quay , in the inner harbour of the Port of Fremantle , Western Australia. The vessels in the photo are (L-R) bunkering tanker Vacamonte , car carrier Euphony Ace , cruise ships Europa and Seven Seas N...",
       "found": "2026-11-20T06:05:20.6216415+00:00"
+    },
+    {
+      "mmsi": "440245000",
+      "ship": "GLOVIS SUMMIT",
+      "file": "File:Car carrier GLOVIS SUMMIT au port.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Car_carrier_GLOVIS_SUMMIT_au_port.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Car_carrier_GLOVIS_SUMMIT_au_port.jpg/1280px-Car_carrier_GLOVIS_SUMMIT_au_port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-10-26 17:29:17",
+      "caption": "Car carrier GLOVIS SUMMIT au port de Casablanca - Morocco - IMO: 9702417 Pavillon: Korea Genre du navire: Car carrier Année de Construction: 2014",
+      "found": "2026-11-20T20:45:58.2167943+00:00"
+    },
+    {
+      "mmsi": "440245000",
+      "ship": "GLOVIS SUMMIT",
+      "file": "File:Car carrier GLOVIS SUMMIT au port de Casablanca.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Car_carrier_GLOVIS_SUMMIT_au_port_de_Casablanca.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Car_carrier_GLOVIS_SUMMIT_au_port_de_Casablanca.jpg/1280px-Car_carrier_GLOVIS_SUMMIT_au_port_de_Casablanca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-10-26 16:31:34",
+      "caption": "Car carrier GLOVIS SUMMIT au port de Casablanca - Morocco - IMO: 9702417 Pavillon: Korea Genre du navire: Car carrier Année de Construction: 2014",
+      "found": "2026-11-20T20:45:58.2167943+00:00"
     }
   ],
-  "updated": "2026-11-20T20:35:57.2446405+00:00"
+  "updated": "2026-11-20T20:45:58.2167943+00:00"
 }
