@@ -204,7 +204,8 @@
     "Boeing 747 443": "2026-11-18T19:35:38.1787597+00:00",
     "Cessna Citation Encore": "2026-11-19T00:02:33.9672025+00:00",
     "Gulfstream Aerospace C-37A": "2026-11-19T20:45:18.3597843+00:00",
-    "Embraer ERJ-135 LR": "2026-11-19T23:45:26.8461917+00:00"
+    "Embraer ERJ-135 LR": "2026-11-19T23:45:26.8461917+00:00",
+    "Airbus Military A400M": "2026-11-20T17:36:04.8453662+00:00"
   },
   "candidates": [
     {
@@ -12834,7 +12835,91 @@
       "date": "2012-02-25 21:21",
       "caption": "SA Airlink EMB-135 LR ZS-SJX",
       "found": "2026-11-19T23:45:26.8461917+00:00"
+    },
+    {
+      "model": "Airbus Military A400M",
+      "file": "File:Airbus A400M (35274158572).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A400M_(35274158572).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Airbus_A400M_%2835274158572%29.jpg/960px-Airbus_A400M_%2835274158572%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 535,
+      "author": "Clemens Vasters from Viersen, Germany, Germany",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-06-19 10:42",
+      "caption": "Airbus A400M",
+      "found": "2026-11-20T17:36:04.8453662+00:00"
+    },
+    {
+      "model": "Airbus Military A400M",
+      "file": "File:Airbus A400M Atlas (ZM400) - ASCOT482 - 50038572761.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A400M_Atlas_(ZM400)_-_ASCOT482_-_50038572761.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Airbus_A400M_Atlas_%28ZM400%29_-_ASCOT482_-_50038572761.jpg/960px-Airbus_A400M_Atlas_%28ZM400%29_-_ASCOT482_-_50038572761.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Mark Edmonds",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2020-06-23 18:52:25",
+      "caption": "ZM400 earlier on tonight. It looks like it was a 400+ mile round-trip for one circuit of Newcastle. Anyhoo, with the sun being lower and off to the west I think these are the best pics I've taken of it, or of any airc...",
+      "found": "2026-11-20T17:36:04.8453662+00:00"
+    },
+    {
+      "model": "Airbus Military A400M",
+      "file": "File:Airbus A400M Atlas of the German Air Force at NATO Days 2026 in Ostrava, 20260919 0949 0588.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A400M_Atlas_of_the_German_Air_Force_at_NATO_Days_2026_in_Ostrava,_20260919_0949_0588.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Airbus_A400M_Atlas_of_the_German_Air_Force_at_NATO_Days_2026_in_Ostrava%2C_20260919_0949_0588.jpg/960px-Airbus_A400M_Atlas_of_the_German_Air_Force_at_NATO_Days_2026_in_Ostrava%2C_20260919_0949_0588.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-09-19 09:49:32",
+      "caption": "Airbus A400M Atlas of the German Air Force at NATO Days 2026 in Ostrava",
+      "found": "2026-11-20T17:36:04.8453662+00:00"
+    },
+    {
+      "model": "Airbus Military A400M",
+      "file": "File:Airbus A400M Atlas of the German Air Force at NATO Days 2026 in Ostrava, 20260919 0949 0590.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A400M_Atlas_of_the_German_Air_Force_at_NATO_Days_2026_in_Ostrava,_20260919_0949_0590.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Airbus_A400M_Atlas_of_the_German_Air_Force_at_NATO_Days_2026_in_Ostrava%2C_20260919_0949_0590.jpg/960px-Airbus_A400M_Atlas_of_the_German_Air_Force_at_NATO_Days_2026_in_Ostrava%2C_20260919_0949_0590.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 641,
+      "author": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2026-09-19 09:49:37",
+      "caption": "Airbus A400M Atlas of the German Air Force at NATO Days 2026 in Ostrava",
+      "found": "2026-11-20T17:36:04.8453662+00:00"
+    },
+    {
+      "model": "Airbus Military A400M",
+      "file": "File:Airbus A400M F-WWMQ PAS 2013 03 Probe and Cockpit.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Airbus_A400M_F-WWMQ_PAS_2013_03_Probe_and_Cockpit.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Airbus_A400M_F-WWMQ_PAS_2013_03_Probe_and_Cockpit.jpg/960px-Airbus_A400M_F-WWMQ_PAS_2013_03_Probe_and_Cockpit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "Julian Herzog ( Website )",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "Taken on 19 June 2013, 12:52:19",
+      "caption": "Aerial refueling probe and cockpit of an Armée de l'Air (French Air Force) Airbus A400M (reg. F-WWMQ, c/n 008) at Paris Air Show 2013.",
+      "found": "2026-11-20T17:36:04.8453662+00:00"
+    },
+    {
+      "model": "Airbus Military A400M",
+      "file": "File:German Air Force Airbus A400M (out cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:German_Air_Force_Airbus_A400M_(out_cropped).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/German_Air_Force_Airbus_A400M_%28out_cropped%29.jpg/960px-German_Air_Force_Airbus_A400M_%28out_cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 627,
+      "author": "Peng Chen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2017-07-12 16:35",
+      "caption": "German Air Force Airbus A400M",
+      "found": "2026-11-20T17:36:04.8453662+00:00"
     }
   ],
-  "updated": "2026-11-20T17:25:58.7213743+00:00"
+  "updated": "2026-11-20T17:36:04.8453662+00:00"
 }
