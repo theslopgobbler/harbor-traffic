@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T01:15:16.4180711+00:00",
+  "updated": "2026-11-20T01:25:31.3859322+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -54,6 +54,129 @@
         [
           -124.35287,
           47.88227
+        ]
+      ]
+    },
+    {
+      "id": 725221,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 3 p.m. Tuesday, Nov. 24, the ramp from Deschutes Way SW to northbound I-5 in Tumwater will close for maintenance work. Travelers will follow a signed detour during the closure.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 103.0,
+      "lat": 47.002813553,
+      "lon": -122.910414221,
+      "lat2": 47.016817774,
+      "lon2": -122.905827359,
+      "county": null,
+      "start": "2026-11-20T01:20:00.0000000+00:00",
+      "end": "2026-11-24T17:00:00.0000000+00:00",
+      "updated": "2026-11-20T01:21:25.8070000+00:00",
+      "path": [
+        [
+          -122.91042,
+          47.00281
+        ],
+        [
+          -122.91002,
+          47.00349
+        ],
+        [
+          -122.90963,
+          47.00416
+        ],
+        [
+          -122.90901,
+          47.00525
+        ],
+        [
+          -122.90812,
+          47.00679
+        ],
+        [
+          -122.90792,
+          47.00713
+        ],
+        [
+          -122.90714,
+          47.00846
+        ],
+        [
+          -122.90678,
+          47.00913
+        ],
+        [
+          -122.90665,
+          47.00935
+        ],
+        [
+          -122.90654,
+          47.00959
+        ],
+        [
+          -122.90645,
+          47.00982
+        ],
+        [
+          -122.90638,
+          47.01004
+        ],
+        [
+          -122.90632,
+          47.01027
+        ],
+        [
+          -122.90628,
+          47.01051
+        ],
+        [
+          -122.90624,
+          47.01073
+        ],
+        [
+          -122.90616,
+          47.01163
+        ],
+        [
+          -122.90607,
+          47.01262
+        ],
+        [
+          -122.906,
+          47.01344
+        ],
+        [
+          -122.90581,
+          47.01554
+        ],
+        [
+          -122.9058,
+          47.01579
+        ],
+        [
+          -122.90578,
+          47.01611
+        ],
+        [
+          -122.90579,
+          47.01644
+        ],
+        [
+          -122.90579,
+          47.01661
+        ],
+        [
+          -122.90581,
+          47.0168
+        ],
+        [
+          -122.90581,
+          47.0168
         ]
       ]
     },
@@ -260,27 +383,6 @@
       "start": "2026-11-02T13:00:00.0000000+00:00",
       "end": "2026-12-01T01:30:00.0000000+00:00",
       "updated": "2026-10-31T00:26:55.2670000+00:00"
-    },
-    {
-      "id": 692593,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "High",
-      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 164.95,
-      "lat": 47.710427666,
-      "lon": -124.410772805,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-04-03T13:36:00.0000000+00:00",
-      "end": "2026-12-31T16:00:00.0000000+00:00",
-      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 640018,
@@ -643,6 +745,27 @@
           47.8099
         ]
       ]
+    },
+    {
+      "id": 692593,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "High",
+      "headline": "Reduced speeds and one-way alternating traffic controlled by a signal is in place until further notice on US 101 near Cedar Creek at milepost 165.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 164.95,
+      "lat": 47.710427666,
+      "lon": -124.410772805,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-04-03T13:36:00.0000000+00:00",
+      "end": "2026-12-31T16:00:00.0000000+00:00",
+      "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
       "id": 698910,
