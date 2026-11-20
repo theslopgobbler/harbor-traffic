@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T11:56:00.9935418+00:00",
+  "updated": "2026-11-20T12:05:59.2824129+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -8,55 +8,55 @@
       "lat": 47.0338,
       "lon": -123.0971,
       "temp": 30.38,
-      "wind": 1,
-      "gust": 1,
-      "dir": "WSW",
+      "wind": 2,
+      "gust": 2,
+      "dir": "SW",
       "vis": 1,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     },
     {
       "id": 2280,
       "name": "Cosmopolis Hill on US 101",
       "lat": 46.9343,
       "lon": -123.7282,
-      "temp": 32.72,
-      "wind": 1,
-      "gust": 3,
-      "dir": "NE",
+      "temp": 30.2,
+      "wind": 2,
+      "gust": 2,
+      "dir": "ESE",
       "vis": 0,
       "precip": null,
       "humidity": null,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     },
     {
       "id": 2281,
       "name": "State Camp Hill on US 101",
       "lat": 47.1402,
       "lon": -123.8922,
-      "temp": 32.0,
-      "wind": 2,
-      "gust": 4,
-      "dir": "SSE",
+      "temp": 32.9,
+      "wind": 4,
+      "gust": 5,
+      "dir": "SE",
       "vis": 1,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     },
     {
       "id": 2956,
       "name": "Queets on US 101",
       "lat": 47.5358,
       "lon": -124.333,
-      "temp": 37.4,
-      "wind": 2,
-      "gust": 4,
+      "temp": 36.86,
+      "wind": 1,
+      "gust": 3,
       "dir": "E",
       "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     },
     {
       "id": 2957,
@@ -64,41 +64,41 @@
       "lat": 47.0849,
       "lon": -123.0331,
       "temp": 31.64,
-      "wind": 1,
-      "gust": 2,
-      "dir": "ENE",
+      "wind": 2,
+      "gust": 3,
+      "dir": "WSW",
       "vis": 0,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     },
     {
       "id": 2958,
       "name": "Pt. Grenville on SR 109",
       "lat": 47.3029,
       "lon": -124.2504,
-      "temp": 41.9,
+      "temp": 42.08,
       "wind": 4,
       "gust": 8,
       "dir": "NE",
       "vis": 1,
       "precip": null,
-      "humidity": 96,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "humidity": 92,
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     },
     {
       "id": 3776,
       "name": "Grand Mound on I-5",
       "lat": 46.80226113,
       "lon": -123.007164104,
-      "temp": 34.52,
-      "wind": 2,
-      "gust": 3,
-      "dir": "N",
+      "temp": 34.7,
+      "wind": 1,
+      "gust": 2,
+      "dir": "NW",
       "vis": 0,
       "precip": null,
       "humidity": 100,
-      "time": "2026-11-20T11:30:00.0000000+00:00"
+      "time": "2026-11-20T11:45:00.0000000+00:00"
     }
   ]
 }
