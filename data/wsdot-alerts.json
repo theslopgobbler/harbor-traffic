@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T20:48:11.5885438+00:00",
+  "updated": "2026-11-20T20:56:07.5318550+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -457,49 +457,6 @@
       "updated": "2026-10-31T00:26:55.2670000+00:00"
     },
     {
-      "id": 693084,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "The temporary traffic lights on SR 109 near Canyon Way have been removed for winter. Travelers will see a temporary speed limit of 40 mph between mileposts 36.19 and 36.63. The new speed limit is enforceable as soon as signs are uncovered. Work is scheduled to resume in spring 2027. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 36.3,
-      "lat": 47.298400431,
-      "lon": -124.245612655,
-      "lat2": 47.299438615,
-      "lon2": -124.247091536,
-      "county": null,
-      "start": "2026-04-08T14:05:00.0000000+00:00",
-      "end": "2026-12-31T15:05:00.0000000+00:00",
-      "updated": "2026-11-20T20:35:39.9670000+00:00",
-      "path": [
-        [
-          -124.2456,
-          47.2984
-        ],
-        [
-          -124.24624,
-          47.29884
-        ],
-        [
-          -124.24674,
-          47.29919
-        ],
-        [
-          -124.24706,
-          47.29942
-        ],
-        [
-          -124.24706,
-          47.29942
-        ]
-      ]
-    },
-    {
       "id": 640018,
       "kind": "work",
       "category": "Construction",
@@ -858,6 +815,49 @@
         [
           -124.25011,
           47.8099
+        ]
+      ]
+    },
+    {
+      "id": 693084,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "The temporary traffic lights on SR 109 near Canyon Way have been removed for winter. Travelers will see a temporary speed limit of 40 mph between mileposts 36.19 and 36.63. The new speed limit is enforceable as soon as signs are uncovered. Work is scheduled to resume in spring 2027. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 36.3,
+      "lat": 47.298400431,
+      "lon": -124.245612655,
+      "lat2": 47.299438615,
+      "lon2": -124.247091536,
+      "county": null,
+      "start": "2026-04-08T14:05:00.0000000+00:00",
+      "end": "2026-12-31T15:05:00.0000000+00:00",
+      "updated": "2026-11-20T20:35:39.9670000+00:00",
+      "path": [
+        [
+          -124.2456,
+          47.2984
+        ],
+        [
+          -124.24624,
+          47.29884
+        ],
+        [
+          -124.24674,
+          47.29919
+        ],
+        [
+          -124.24706,
+          47.29942
+        ],
+        [
+          -124.24706,
+          47.29942
         ]
       ]
     },
