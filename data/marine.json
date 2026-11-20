@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T09:36:01.1656021+00:00",
+  "updated": "2026-11-20T09:46:02.8033862+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,13 +10,31 @@
     "waterF": 54.3
   },
   "bar": {
-    "issued": "2026-11-19T20:13:00+00:00",
-    "text": "Combined seas 6 to 8 feet, subsiding to 4 to 6 ft on this evening. Bar conditions moderate becoming light. Maximum ebb currents will occur around 1215 PM Thursday, 1215 AM Friday, and 100 PM Friday.",
-    "conditions": "moderate becoming light",
-    "seas": "6 to 8 feet, subsiding to 4 to 6 ft on this evening",
+    "issued": "2026-11-20T09:42:00+00:00",
+    "text": "Combined seas 4 to 6 ft. Bar conditions light. Maximum ebb currents will occur around 100 PM Friday, 115 AM Saturday, and 145 PM Saturday.",
+    "conditions": "light",
+    "seas": "4 to 6 ft",
     "ebb": null
   },
   "alerts": [
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-22T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 20 at 1:44AM PST until November 21 at 4:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Watch",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-22T00:00:00+00:00",
+      "headline": "Gale Watch issued November 20 at 1:44AM PST until November 21 at 4:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-21T14:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 20 at 1:44AM PST until November 21 at 6:00AM PST by NWS Seattle WA"
+    },
     {
       "event": "Small Craft Advisory",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
