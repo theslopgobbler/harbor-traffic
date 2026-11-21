@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-21T17:26:06.8622010+00:00",
+  "updated": "2026-11-21T17:36:01.5708112+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "aa43ed",
-      "flight": "N7600N",
-      "reg": "N7600N",
-      "type": "T206",
-      "cat": "A1",
-      "alt": 4450,
-      "gs": 126.0,
-      "track": 359.09,
-      "rate": 0,
-      "lat": 47.70094,
-      "lon": -122.88689,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
