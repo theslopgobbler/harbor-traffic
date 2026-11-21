@@ -1,22 +1,38 @@
 {
-  "updated": "2026-11-21T03:06:00.5663230+00:00",
+  "updated": "2026-11-21T03:16:03.7888079+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a5241e",
-      "flight": "N430LF",
-      "reg": "N430LF",
-      "type": "B429",
-      "cat": "A7",
-      "alt": 3075,
-      "gs": 137.8,
-      "track": 248.28,
+      "hex": "ada541",
+      "flight": "N979BV",
+      "reg": null,
+      "type": null,
+      "cat": "A1",
+      "alt": 5875,
+      "gs": 99.2,
+      "track": 14.6,
       "rate": 0,
-      "lat": 47.15462,
-      "lon": -123.3852,
-      "squawk": "4705",
+      "lat": 46.60584,
+      "lon": -123.04399,
+      "squawk": "4642",
       "emergency": "none",
       "mil": false
+    },
+    {
+      "hex": "ae6c7b",
+      "flight": "COUGR96",
+      "reg": "21-21196",
+      "type": "H60",
+      "cat": "A7",
+      "alt": 1050,
+      "gs": 127.2,
+      "track": 336.86,
+      "rate": -256,
+      "lat": 46.74998,
+      "lon": -122.98096,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": true
     }
   ]
 }
