@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T08:51:36.2096559+00:00",
+  "updated": "2026-11-21T08:56:06.1574462+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -7,14 +7,14 @@
       "name": "Rock Candy Mountain on SR 8",
       "lat": 47.0338,
       "lon": -123.0971,
-      "temp": 32.72,
-      "wind": 2,
-      "gust": 4,
-      "dir": "NNE",
-      "vis": 0,
+      "temp": 32.18,
+      "wind": 1,
+      "gust": 3,
+      "dir": "NE",
+      "vis": 1,
       "precip": null,
       "humidity": 99,
-      "time": "2026-11-21T08:30:00.0000000+00:00"
+      "time": "2026-11-21T08:45:00.0000000+00:00"
     },
     {
       "id": 2280,
