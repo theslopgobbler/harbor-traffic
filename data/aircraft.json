@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-21T17:36:01.5708112+00:00",
+  "updated": "2026-11-21T17:46:03.9341858+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a831ad",
+      "flight": "EJA627",
+      "reg": "N627QS",
+      "type": "C68A",
+      "cat": "A2",
+      "alt": 7975,
+      "gs": 202.2,
+      "track": 145.68,
+      "rate": 0,
+      "lat": 47.63341,
+      "lon": -122.71116,
+      "squawk": "1336",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
