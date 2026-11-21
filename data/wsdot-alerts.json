@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T06:16:14.3963784+00:00",
+  "updated": "2026-11-21T06:26:00.4339954+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -849,27 +849,6 @@
       "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
-      "id": 725335,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 184 near Jefferson/Clallam County Line beginning at 4:03 pm on November 20, 2026 until about 3:00 pm on November 21, 2026.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-11-21T00:03:00.0000000+00:00",
-      "end": "2026-11-21T23:00:00.0000000+00:00",
-      "updated": "2026-11-21T00:04:02.5970000+00:00"
-    },
-    {
       "id": 640019,
       "kind": "work",
       "category": "Construction",
@@ -889,6 +868,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2027-01-01T02:00:00.0000000+00:00",
       "updated": "2026-10-16T18:03:13.8400000+00:00"
+    },
+    {
+      "id": 725335,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 184 near Jefferson/Clallam County Line beginning at 4:03 pm on November 20, 2026 until about 3:00 pm on November 21, 2026.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-11-21T00:03:00.0000000+00:00",
+      "end": "2026-11-21T23:00:00.0000000+00:00",
+      "updated": "2026-11-21T00:04:02.5970000+00:00"
     },
     {
       "id": 698912,
