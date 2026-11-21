@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T02:56:16.4760978+00:00",
+  "updated": "2026-11-21T03:06:00.5663230+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -826,27 +826,6 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
-    },
-    {
-      "id": 725348,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 northbound at milepost 103.3 near Linwood Ave beginning at 6:41 pm on November 20, 2026 until further notice. The right lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 103.3,
-      "lat": 47.006867394,
-      "lon": -122.908068213,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-21T02:41:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-21T02:41:55.4870000+00:00"
     },
     {
       "id": 698910,
