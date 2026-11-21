@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T17:16:05.3641657+00:00",
+  "updated": "2026-11-21T17:26:06.8622010+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,28 +9,12 @@
       "type": "T206",
       "cat": "A1",
       "alt": 4450,
-      "gs": 121.0,
-      "track": 359.05,
+      "gs": 126.0,
+      "track": 359.09,
       "rate": 0,
-      "lat": 47.36015,
-      "lon": -122.87905,
+      "lat": 47.70094,
+      "lon": -122.88689,
       "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a831ad",
-      "flight": "EJA627",
-      "reg": "N627QS",
-      "type": "C68A",
-      "cat": "A2",
-      "alt": 7975,
-      "gs": 203.8,
-      "track": 219.63,
-      "rate": 0,
-      "lat": 47.73468,
-      "lon": -122.74379,
-      "squawk": "1336",
       "emergency": "none",
       "mil": false
     }
