@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T16:36:05.5560862+00:00",
+  "updated": "2026-11-21T16:46:04.2171999+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,13 +8,29 @@
       "reg": "N478KN",
       "type": "C182",
       "cat": "A1",
-      "alt": 4475,
-      "gs": 113.4,
-      "track": 221.42,
+      "alt": 4550,
+      "gs": 119.8,
+      "track": 232.46,
       "rate": 0,
-      "lat": 47.51661,
-      "lon": -122.77186,
+      "lat": 47.32819,
+      "lon": -123.15619,
       "squawk": "4604",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "abf68a",
+      "flight": "CBC870",
+      "reg": "N870CB",
+      "type": "PC12",
+      "cat": "A1",
+      "alt": 4800,
+      "gs": 179.4,
+      "track": 143.39,
+      "rate": -282,
+      "lat": 47.26373,
+      "lon": -122.72415,
+      "squawk": "1637",
       "emergency": "none",
       "mil": false
     }
