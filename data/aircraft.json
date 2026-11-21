@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-21T16:26:03.1622821+00:00",
+  "updated": "2026-11-21T16:33:50.3180746+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a5dfc0",
+      "flight": "N478KN",
+      "reg": "N478KN",
+      "type": "C182",
+      "cat": "A1",
+      "alt": 4475,
+      "gs": 112.6,
+      "track": 221.76,
+      "rate": 0,
+      "lat": 47.55185,
+      "lon": -122.72517,
+      "squawk": "4604",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
