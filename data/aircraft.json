@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-21T04:56:03.0567458+00:00",
+  "updated": "2026-11-21T05:06:05.8152679+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a52e54",
-      "flight": "ASA619",
-      "reg": "N433AS",
-      "type": "B739",
+      "hex": "a37b1c",
+      "flight": "SKW3956",
+      "reg": "N323SY",
+      "type": "E75L",
       "cat": "A3",
-      "alt": 13125,
-      "gs": 343.9,
-      "track": 260.29,
-      "rate": 1920,
-      "lat": 47.27664,
-      "lon": -122.75468,
-      "squawk": "3504",
+      "alt": 14850,
+      "gs": 321.6,
+      "track": 260.33,
+      "rate": 1856,
+      "lat": 47.27147,
+      "lon": -122.80158,
+      "squawk": "6661",
       "emergency": "none",
       "mil": false
     }
