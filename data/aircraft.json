@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-21T06:26:00.4339954+00:00",
+  "updated": "2026-11-21T06:36:05.6534662+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a2dce1",
-      "flight": "ASA351",
-      "reg": "N284AK",
-      "type": "B739",
-      "cat": "A3",
-      "alt": 14750,
-      "gs": 353.8,
-      "track": 319.24,
-      "rate": 2688,
-      "lat": 47.55446,
-      "lon": -122.79905,
-      "squawk": "6673",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
