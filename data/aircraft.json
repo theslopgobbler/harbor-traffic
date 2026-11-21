@@ -1,7 +1,23 @@
 {
-  "updated": "2026-11-21T17:46:03.9341858+00:00",
+  "updated": "2026-11-21T17:56:00.7269159+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
+    {
+      "hex": "abccf3",
+      "flight": "GFY865",
+      "reg": null,
+      "type": null,
+      "cat": "A1",
+      "alt": 2475,
+      "gs": 50.2,
+      "track": 203.5,
+      "rate": -64,
+      "lat": 47.22423,
+      "lon": -122.8049,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
     {
       "hex": "a831ad",
       "flight": "EJA627",
@@ -9,11 +25,11 @@
       "type": "C68A",
       "cat": "A2",
       "alt": 7975,
-      "gs": 202.2,
-      "track": 145.68,
+      "gs": 197.3,
+      "track": 161.38,
       "rate": 0,
-      "lat": 47.63341,
-      "lon": -122.71116,
+      "lat": 47.68383,
+      "lon": -122.74038,
       "squawk": "1336",
       "emergency": "none",
       "mil": false
