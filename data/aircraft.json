@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-21T04:36:03.2416451+00:00",
+  "updated": "2026-11-21T04:45:57.1130134+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a4423a",
-      "flight": "UAL1334",
-      "reg": "N37367",
-      "type": "B38M",
-      "cat": "A3",
-      "alt": 14650,
-      "gs": 390.2,
-      "track": 248.5,
-      "rate": 1984,
-      "lat": 47.25998,
-      "lon": -122.97883,
-      "squawk": "6632",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
