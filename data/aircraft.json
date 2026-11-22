@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T02:36:05.1394290+00:00",
+  "updated": "2026-11-22T02:46:04.0831110+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,29 +8,13 @@
       "reg": "N88GY",
       "type": "S22T",
       "cat": "A1",
-      "alt": 10075,
-      "gs": 212.6,
-      "track": 4.32,
-      "rate": -512,
-      "lat": 46.56234,
-      "lon": -122.94532,
+      "alt": 7100,
+      "gs": 208.8,
+      "track": 16.7,
+      "rate": -448,
+      "lat": 47.11696,
+      "lon": -122.78524,
       "squawk": "4616",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a8b964",
-      "flight": "QXE2222",
-      "reg": "N661QX",
-      "type": "E75L",
-      "cat": "A3",
-      "alt": 7000,
-      "gs": 278.6,
-      "track": 93.7,
-      "rate": 0,
-      "lat": 47.78173,
-      "lon": -122.72031,
-      "squawk": "2640",
       "emergency": "none",
       "mil": false
     }
