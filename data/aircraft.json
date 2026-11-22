@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-22T07:46:07.7262124+00:00",
+  "updated": "2026-11-22T07:56:03.4107780+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "adb17b",
+      "flight": "N9812B",
+      "reg": "N9812B",
+      "type": "C72R",
+      "cat": "A1",
+      "alt": 2500,
+      "gs": 81.0,
+      "track": 178.59,
+      "rate": 0,
+      "lat": 47.19377,
+      "lon": -122.80525,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
