@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T09:46:12.1399685+00:00",
+  "updated": "2026-11-22T09:56:12.1461396+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "C72R",
       "cat": "A1",
       "alt": 2500,
-      "gs": 84.4,
-      "track": 211.43,
-      "rate": 0,
-      "lat": 47.16002,
-      "lon": -122.82426,
+      "gs": 124.1,
+      "track": 2.77,
+      "rate": null,
+      "lat": 47.32482,
+      "lon": -123.00103,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
