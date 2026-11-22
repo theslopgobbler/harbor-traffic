@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T20:26:05.3232312+00:00",
+  "updated": "2026-11-22T20:36:04.3398520+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,13 +8,29 @@
       "reg": "N927EL",
       "type": "R22",
       "cat": "A7",
-      "alt": 0,
-      "gs": 0.0,
-      "track": null,
+      "alt": 150,
+      "gs": 4.2,
+      "track": 104.04,
       "rate": null,
-      "lat": 46.96726,
-      "lon": -122.89705,
+      "lat": 46.96724,
+      "lon": -122.89403,
       "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "86e40e",
+      "flight": "JAL67",
+      "reg": "JA862J",
+      "type": "B789",
+      "cat": "A5",
+      "alt": 14825,
+      "gs": 385.4,
+      "track": 328.91,
+      "rate": 2048,
+      "lat": 47.60252,
+      "lon": -122.83044,
+      "squawk": "6634",
       "emergency": "none",
       "mil": false
     }
