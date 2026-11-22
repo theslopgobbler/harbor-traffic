@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T01:06:08.8685775+00:00",
+  "updated": "2026-11-22T01:16:05.5577341+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,8 +10,8 @@
     "waterF": 54.1
   },
   "bar": {
-    "issued": "2026-11-21T21:29:00+00:00",
-    "text": "Combined seas 4 to 6 ft, increasing to around 9 ft late tonight through Sunday. Bar conditions light becoming moderate. Maximum ebb currents will occur around 145 PM Saturday, 200 AM Sunday, and 230 PM Sunday. The Sunday afternoon ebb will be strong.",
+    "issued": "2026-11-22T01:06:00+00:00",
+    "text": "Combined seas 4 to 6 ft, increasing to around 9 ft late tonight through Sunday. Bar conditions light becoming moderate. Maximum ebb currents will occur around 200 AM Sunday, 230 PM Sunday, and 300 AM Monday. The Sunday afternoon ebb will be strong.",
     "conditions": "light becoming moderate",
     "seas": "4 to 6 ft, increasing to around 9 ft late tonight through Sunday",
     "ebb": "afternoon ebb will be strong"
