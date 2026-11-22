@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T23:26:05.6518541+00:00",
+  "updated": "2026-11-22T23:36:06.2587684+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -217,6 +217,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 725383,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 184 near Jefferson/Clallam County Line beginning at 5:27 pm on November 21, 2026 until about 5:30 pm on November 22, 2026.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.0,
+      "lat": 47.87454534,
+      "lon": -124.343360229,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-11-22T01:27:00.0000000+00:00",
+      "end": "2026-11-23T01:30:00.0000000+00:00",
+      "updated": "2026-11-22T01:28:16.6970000+00:00"
     },
     {
       "id": 718841,
@@ -910,27 +931,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 725383,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions at milepost 184 near Jefferson/Clallam County Line beginning at 5:27 pm on November 21, 2026 until about 5:30 pm on November 22, 2026.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.0,
-      "lat": 47.87454534,
-      "lon": -124.343360229,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-11-22T01:27:00.0000000+00:00",
-      "end": "2026-11-23T01:30:00.0000000+00:00",
-      "updated": "2026-11-22T01:28:16.6970000+00:00"
     }
   ]
 }
