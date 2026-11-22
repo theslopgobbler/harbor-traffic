@@ -588,7 +588,8 @@
     "538090648": "2026-11-21T22:16:05.7164178+00:00",
     "538090732": "2026-11-22T00:56:04.4166127+00:00",
     "367648110": "2026-11-22T02:26:12.7838215+00:00",
-    "256001000": "2026-11-22T05:56:06.2953442+00:00"
+    "256001000": "2026-11-22T05:56:06.2953442+00:00",
+    "311000304": "2026-11-22T09:36:05.1820130+00:00"
   },
   "candidates": [
     {
@@ -6620,7 +6621,22 @@
       "date": "2025-04-27 07:33:43",
       "caption": "CL Jiangmen IMO 9977385, Port of Rotterdam",
       "found": "2026-11-21T19:46:08.299905+00:00"
+    },
+    {
+      "mmsi": "311000304",
+      "ship": "EVER GRACE",
+      "file": "File:Ever Grace (ship, 2015) IMO 9750309, Vlothaven, Port of Amsterdam.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ever_Grace_(ship,_2015)_IMO_9750309,_Vlothaven,_Port_of_Amsterdam.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Ever_Grace_%28ship%2C_2015%29_IMO_9750309%2C_Vlothaven%2C_Port_of_Amsterdam.jpg/1280px-Ever_Grace_%28ship%2C_2015%29_IMO_9750309%2C_Vlothaven%2C_Port_of_Amsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 955,
+      "author": "Alf van Beem",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2021-08-22 12:27:52",
+      "caption": "Photographed in the Port of Amsterdam.",
+      "found": "2026-11-22T09:36:05.1820130+00:00"
     }
   ],
-  "updated": "2026-11-22T09:26:03.1676844+00:00"
+  "updated": "2026-11-22T09:36:05.1820130+00:00"
 }
