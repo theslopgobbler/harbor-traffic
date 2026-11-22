@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-22T07:56:03.4107780+00:00",
+  "updated": "2026-11-22T08:06:08.7621297+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-22T06:56:00.0000000+00:00",
+    "time": "2026-11-22T07:26:00.0000000+00:00",
     "waveFt": 6.9,
     "periodS": 10.0,
-    "dirDeg": 274.0,
+    "dirDeg": 281.0,
     "waterF": 54.1
   },
   "bar": {
@@ -36,16 +36,16 @@
       "headline": "Gale Watch issued November 21 at 2:32PM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Storm Watch",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-25T00:00:00+00:00",
-      "headline": "Storm Watch issued November 21 at 2:32PM PST until November 24 at 4:00PM PST by NWS Portland OR"
-    },
-    {
       "event": "Small Craft Advisory",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-23T18:00:00+00:00",
       "headline": "Small Craft Advisory issued November 21 at 2:32PM PST until November 23 at 10:00AM PST by NWS Portland OR"
+    },
+    {
+      "event": "Storm Watch",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-25T00:00:00+00:00",
+      "headline": "Storm Watch issued November 21 at 2:32PM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
