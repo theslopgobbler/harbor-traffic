@@ -1,7 +1,39 @@
 {
-  "updated": "2026-11-23T15:35:44.1477176+00:00",
+  "updated": "2026-11-23T15:45:50.8333222+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
+    {
+      "hex": "a662b5",
+      "flight": "N510PA",
+      "reg": "N510PA",
+      "type": "H500",
+      "cat": "A7",
+      "alt": 1200,
+      "gs": 89.3,
+      "track": 221.37,
+      "rate": null,
+      "lat": 47.12192,
+      "lon": -123.16553,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a65302",
+      "flight": "N5063G",
+      "reg": "N5063G",
+      "type": "H500",
+      "cat": "A7",
+      "alt": 2175,
+      "gs": 112.9,
+      "track": 18.6,
+      "rate": 413,
+      "lat": 47.47664,
+      "lon": -122.98212,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
     {
       "hex": "a5d32d",
       "flight": "N4746N",
@@ -9,14 +41,30 @@
       "type": "C182",
       "cat": "A1",
       "alt": 3400,
-      "gs": 152.8,
-      "track": 10.94,
-      "rate": 0,
-      "lat": 46.90385,
-      "lon": -122.88004,
+      "gs": 98.0,
+      "track": 181.17,
+      "rate": 320,
+      "lat": 47.17287,
+      "lon": -122.98116,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
+    },
+    {
+      "hex": "ae6035",
+      "flight": "COUGR66",
+      "reg": "17-20966",
+      "type": "H60",
+      "cat": "A7",
+      "alt": 1475,
+      "gs": 120.4,
+      "track": 204.01,
+      "rate": -256,
+      "lat": 47.00128,
+      "lon": -122.91976,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": true
     }
   ]
 }
