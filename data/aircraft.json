@@ -1,23 +1,7 @@
 {
-  "updated": "2026-11-23T04:35:46.4742308+00:00",
+  "updated": "2026-11-23T04:45:48.9017950+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
-    {
-      "hex": "ad5621",
-      "flight": "ALFT",
-      "reg": "N959AL",
-      "type": "EC35",
-      "cat": "A7",
-      "alt": 1675,
-      "gs": 129.0,
-      "track": 237.67,
-      "rate": 64,
-      "lat": 47.08805,
-      "lon": -123.20963,
-      "squawk": "5542",
-      "emergency": "none",
-      "mil": false
-    },
     {
       "hex": "abf480",
       "flight": "RFS731",
@@ -25,12 +9,28 @@
       "type": "C172",
       "cat": "A1",
       "alt": 2450,
-      "gs": 128.1,
-      "track": 10.34,
-      "rate": 0,
-      "lat": 46.71787,
-      "lon": -122.97114,
+      "gs": 112.4,
+      "track": 35.95,
+      "rate": -192,
+      "lat": 47.0436,
+      "lon": -122.8225,
       "squawk": "4662",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "ada51e",
+      "flight": "ASA1386",
+      "reg": "N979AK",
+      "type": "B39M",
+      "cat": "A3",
+      "alt": 11125,
+      "gs": 298.2,
+      "track": 272.31,
+      "rate": 2496,
+      "lat": 47.31439,
+      "lon": -122.71799,
+      "squawk": "6643",
       "emergency": "none",
       "mil": false
     }
