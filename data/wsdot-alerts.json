@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T19:05:56.4655800+00:00",
+  "updated": "2026-11-23T19:15:45.5973761+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1352,187 +1352,6 @@
       ]
     },
     {
-      "id": 698912,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "B",
-      "milepost": 37.43,
-      "lat": 47.3103662,
-      "lon": -124.261741123,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2026-05-20T20:52:00.0000000+00:00",
-      "end": "2026-12-31T21:52:00.0000000+00:00",
-      "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 727492,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "Medium",
-      "headline": "Road work on US 101 both directions at milepost 99.2 near Hoquiam River beginning at 8:01 am on November 23, 2026 until 1600.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 99.2,
-      "lat": 47.123856686,
-      "lon": -123.894031872,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-23T16:01:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-23T16:11:14.7930000+00:00"
-    },
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2026-11-25T23:00:00.0000000+00:00",
-      "updated": "2026-11-23T17:30:25.2500000+00:00"
-    },
-    {
-      "id": 727514,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Construction on SR 6 both directions at milepost 36 near Hope Creek will have the right shoulder closed. Use caution beginning at 10:05 am on November 23, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 36.0,
-      "lat": 46.62999265,
-      "lon": -123.214682462,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Lewis",
-      "start": "2026-11-23T18:05:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-23T18:06:17.7900000+00:00"
-    },
-    {
-      "id": 727510,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 9:35 am on November 23, 2026 until about 6:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.5,
-      "lat": 47.879744939,
-      "lon": -124.350752575,
-      "lat2": 47.882258587,
-      "lon2": -124.352849276,
-      "county": "Jefferson",
-      "start": "2026-11-23T17:35:00.0000000+00:00",
-      "end": "2026-11-24T02:00:00.0000000+00:00",
-      "updated": "2026-11-23T17:40:35.3130000+00:00",
-      "path": [
-        [
-          -124.35073,
-          47.87973
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35287,
-          47.88227
-        ],
-        [
-          -124.35287,
-          47.88227
-        ]
-      ]
-    },
-    {
-      "id": 725066,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 28.8,
-      "lat": 46.79059195,
-      "lon": -123.740960403,
-      "lat2": 46.79059195,
-      "lon2": -123.740960403,
-      "county": null,
-      "start": "2026-11-23T13:00:00.0000000+00:00",
-      "end": "2026-11-26T00:00:00.0000000+00:00",
-      "updated": "2026-11-18T20:01:18.3300000+00:00"
-    },
-    {
       "id": 718841,
       "kind": "work",
       "category": "Construction",
@@ -2000,6 +1819,187 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 698912,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating on SR 109 at milepost 37 near Taholah. Crews are working on landscaping and other final touches for a fish passage project. Read more on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/sr-109-ocean-city-taholah-remove-fish-barriers",
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "B",
+      "milepost": 37.43,
+      "lat": 47.3103662,
+      "lon": -124.261741123,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2026-05-20T20:52:00.0000000+00:00",
+      "end": "2026-12-31T21:52:00.0000000+00:00",
+      "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 727492,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Medium",
+      "headline": "Road work on US 101 both directions at milepost 99.2 near Hoquiam River beginning at 8:01 am on November 23, 2026 until 1600.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 99.2,
+      "lat": 47.123856686,
+      "lon": -123.894031872,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-23T16:01:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-23T16:11:14.7930000+00:00"
+    },
+    {
+      "id": 640019,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2026-11-25T23:00:00.0000000+00:00",
+      "updated": "2026-11-23T17:30:25.2500000+00:00"
+    },
+    {
+      "id": 727514,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions at milepost 36 near Hope Creek will have the right shoulder closed. Use caution beginning at 10:05 am on November 23, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 36.0,
+      "lat": 46.62999265,
+      "lon": -123.214682462,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Lewis",
+      "start": "2026-11-23T18:05:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-23T18:06:17.7900000+00:00"
+    },
+    {
+      "id": 725066,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 28.8,
+      "lat": 46.79059195,
+      "lon": -123.740960403,
+      "lat2": 46.79059195,
+      "lon2": -123.740960403,
+      "county": null,
+      "start": "2026-11-23T13:00:00.0000000+00:00",
+      "end": "2026-11-26T00:00:00.0000000+00:00",
+      "updated": "2026-11-18T20:01:18.3300000+00:00"
+    },
+    {
+      "id": 727510,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 9:35 am on November 23, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.5,
+      "lat": 47.879744939,
+      "lon": -124.350752575,
+      "lat2": 47.882258587,
+      "lon2": -124.352849276,
+      "county": "Jefferson",
+      "start": "2026-11-23T17:35:00.0000000+00:00",
+      "end": "2026-11-24T02:00:00.0000000+00:00",
+      "updated": "2026-11-23T17:40:35.3130000+00:00",
+      "path": [
+        [
+          -124.35073,
+          47.87973
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35287,
+          47.88227
+        ],
+        [
+          -124.35287,
+          47.88227
+        ]
+      ]
     }
   ]
 }
