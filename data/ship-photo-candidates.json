@@ -368,8 +368,8 @@
     "636026609": "2026-11-23T02:05:44.4219882+00:00",
     "338580692": "2026-11-23T05:35:46.1914963+00:00",
     "368299340": "2026-11-23T19:25:47.8571088+00:00",
-    "352004011": "2026-10-24T19:44:59.5915106+00:00",
-    "303679000": "2026-10-24T19:44:59.5915106+00:00",
+    "352004011": "2026-11-23T19:45:46.9518819+00:00",
+    "303679000": "2026-11-23T19:45:46.9518819+00:00",
     "477050900": "2026-10-24T23:28:50.3086098+00:00",
     "338148594": "2026-10-24T23:50:04.4575366+00:00",
     "538012812": "2026-10-25T01:51:07.8386262+00:00",
@@ -594,7 +594,8 @@
     "636015972": "2026-11-22T15:16:02.8813007+00:00",
     "368127260": "2026-11-22T15:56:05.2881578+00:00",
     "563276600": "2026-11-23T01:15:44.9688934+00:00",
-    "355534000": "2026-11-23T07:15:44.2028679+00:00"
+    "355534000": "2026-11-23T07:15:44.2028679+00:00",
+    "314085000": "2026-11-23T19:45:46.9518819+00:00"
   },
   "candidates": [
     {
@@ -6671,7 +6672,22 @@
       "date": "2021-07-02",
       "caption": "Navire AMIS BRAVE à quai au port de Casablanca - Morocco - IMO: 9667459 Pavillon: Panama Genre du navire: Cargo Année de Construction: 2013",
       "found": "2026-11-23T07:15:44.2028679+00:00"
+    },
+    {
+      "mmsi": "314085000",
+      "ship": "SOLENT",
+      "file": "File:Seastar Trader (ship, 2008) IMO 9375953, Amerikahaven, Port of Amsterdam.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Seastar_Trader_(ship,_2008)_IMO_9375953,_Amerikahaven,_Port_of_Amsterdam.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Seastar_Trader_%28ship%2C_2008%29_IMO_9375953%2C_Amerikahaven%2C_Port_of_Amsterdam.jpg/1280px-Seastar_Trader_%28ship%2C_2008%29_IMO_9375953%2C_Amerikahaven%2C_Port_of_Amsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Alf van Beem",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2021-05-16 12:04:33",
+      "caption": "Photographed in the Port of Amsterdam.",
+      "found": "2026-11-23T19:45:46.9518819+00:00"
     }
   ],
-  "updated": "2026-11-23T19:36:14.4905131+00:00"
+  "updated": "2026-11-23T19:45:46.9518819+00:00"
 }
