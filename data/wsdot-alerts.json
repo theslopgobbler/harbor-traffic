@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T18:05:45.7083975+00:00",
+  "updated": "2026-11-23T18:15:48.0901041+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1903,6 +1903,27 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2026-11-25T23:00:00.0000000+00:00",
       "updated": "2026-11-23T17:30:25.2500000+00:00"
+    },
+    {
+      "id": 727514,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Construction on SR 6 both directions at milepost 36 near Hope Creek will have the right shoulder closed. Use caution beginning at 10:05 am on November 23, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 36.0,
+      "lat": 46.62999265,
+      "lon": -123.214682462,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Lewis",
+      "start": "2026-11-23T18:05:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-23T18:06:17.7900000+00:00"
     },
     {
       "id": 727510,
