@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T17:15:42.6946630+00:00",
+  "updated": "2026-11-23T17:25:45.4529091+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -42,10 +42,10 @@
       "headline": "Gale Warning issued November 23 at 3:55AM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Warning",
+      "event": "Storm Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-24T06:00:00+00:00",
-      "headline": "Gale Warning issued November 23 at 3:55AM PST until November 23 at 10:00PM PST by NWS Portland OR"
+      "ends": "2026-11-25T00:00:00+00:00",
+      "headline": "Storm Warning issued November 23 at 3:55AM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
@@ -54,10 +54,10 @@
       "headline": "Small Craft Advisory issued November 23 at 3:55AM PST until November 23 at 10:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Storm Warning",
+      "event": "Gale Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-25T00:00:00+00:00",
-      "headline": "Storm Warning issued November 23 at 3:55AM PST until November 24 at 4:00PM PST by NWS Portland OR"
+      "ends": "2026-11-24T06:00:00+00:00",
+      "headline": "Gale Warning issued November 23 at 3:55AM PST until November 23 at 10:00PM PST by NWS Portland OR"
     }
   ]
 }
