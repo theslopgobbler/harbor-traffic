@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T17:35:53.9674316+00:00",
+  "updated": "2026-11-23T17:45:48.4342902+00:00",
   "source": "WSDOT Weather Stations",
   "stations": [
     {
@@ -91,14 +91,14 @@
       "name": "Grand Mound on I-5",
       "lat": 46.80226113,
       "lon": -123.007164104,
-      "temp": 43.16,
-      "wind": 4,
-      "gust": 6,
+      "temp": 44.06,
+      "wind": 2,
+      "gust": 4,
       "dir": "NNE",
       "vis": 1,
       "precip": null,
-      "humidity": 87,
-      "time": "2026-11-23T17:15:00.0000000+00:00"
+      "humidity": 85,
+      "time": "2026-11-23T17:30:00.0000000+00:00"
     }
   ]
 }
