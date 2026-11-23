@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T20:15:53.4406699+00:00",
+  "updated": "2026-11-23T20:25:45.5715739+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -18,10 +18,10 @@
   },
   "alerts": [
     {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
       "ends": "2026-11-25T07:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 23 at 12:01PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
+      "headline": "Gale Warning issued November 23 at 12:01PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Storm Warning",
@@ -30,16 +30,10 @@
       "headline": "Storm Warning issued November 23 at 12:01PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
     },
     {
-      "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
       "ends": "2026-11-25T07:00:00+00:00",
-      "headline": "Gale Warning issued November 23 at 12:01PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-25T00:00:00+00:00",
-      "headline": "Storm Warning issued November 23 at 3:55AM PST until November 24 at 4:00PM PST by NWS Portland OR"
+      "headline": "Small Craft Advisory issued November 23 at 12:01PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Gale Warning",
@@ -48,16 +42,22 @@
       "headline": "Gale Warning issued November 23 at 3:55AM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Warning",
+      "event": "Storm Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
-      "ends": "2026-11-24T06:00:00+00:00",
-      "headline": "Gale Warning issued November 23 at 3:55AM PST until November 23 at 10:00PM PST by NWS Portland OR"
+      "ends": "2026-11-25T00:00:00+00:00",
+      "headline": "Storm Warning issued November 23 at 3:55AM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-24T06:00:00+00:00",
       "headline": "Small Craft Advisory issued November 23 at 3:55AM PST until November 23 at 10:00PM PST by NWS Portland OR"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+      "ends": "2026-11-24T06:00:00+00:00",
+      "headline": "Gale Warning issued November 23 at 3:55AM PST until November 23 at 10:00PM PST by NWS Portland OR"
     }
   ]
 }
