@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T21:05:47.9483085+00:00",
+  "updated": "2026-11-23T21:15:47.1361397+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1762,6 +1762,27 @@
       "updated": "2026-04-03T13:43:00.9300000+00:00"
     },
     {
+      "id": 727492,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions at milepost 99.2 near Hoquiam River beginning at 8:01 am on November 23, 2026 until 1600.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 99.2,
+      "lat": 47.123856686,
+      "lon": -123.894031872,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-23T16:01:00.0000000+00:00",
+      "end": "2026-11-24T00:00:00.0000000+00:00",
+      "updated": "2026-11-23T21:08:04.0900000+00:00"
+    },
+    {
       "id": 727494,
       "kind": "work",
       "category": "Road work",
@@ -1844,27 +1865,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 727492,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "Medium",
-      "headline": "Road work on US 101 both directions at milepost 99.2 near Hoquiam River beginning at 8:01 am on November 23, 2026 until 1600.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 99.2,
-      "lat": 47.123856686,
-      "lon": -123.894031872,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-23T16:01:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-23T16:11:14.7930000+00:00"
     },
     {
       "id": 640019,
