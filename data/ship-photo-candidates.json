@@ -593,7 +593,8 @@
     "477113700": "2026-11-22T12:46:00.145705+00:00",
     "636015972": "2026-11-22T15:16:02.8813007+00:00",
     "368127260": "2026-11-22T15:56:05.2881578+00:00",
-    "563276600": "2026-11-23T01:15:44.9688934+00:00"
+    "563276600": "2026-11-23T01:15:44.9688934+00:00",
+    "355534000": "2026-11-23T07:15:44.2028679+00:00"
   },
   "candidates": [
     {
@@ -6640,7 +6641,37 @@
       "date": "2021-08-22 12:27:52",
       "caption": "Photographed in the Port of Amsterdam.",
       "found": "2026-11-22T09:36:05.182013+00:00"
+    },
+    {
+      "mmsi": "355534000",
+      "ship": "AMIS BRAVE",
+      "file": "File:Navire AMIS BRAVE en manoeuvre.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_AMIS_BRAVE_en_manoeuvre.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Navire_AMIS_BRAVE_en_manoeuvre.jpg/1280px-Navire_AMIS_BRAVE_en_manoeuvre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-07-05",
+      "caption": "Navire AMIS BRAVE en manoeuvre au port de Casablanca - Morocco - IMO: 9667459 Pavillon: Panama Genre du navire: Cargo Année de Construction: 2013",
+      "found": "2026-11-23T07:15:44.2028679+00:00"
+    },
+    {
+      "mmsi": "355534000",
+      "ship": "AMIS BRAVE",
+      "file": "File:Navire AMIS BRAVE à quai.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_AMIS_BRAVE_%C3%A0_quai.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Navire_AMIS_BRAVE_%C3%A0_quai.jpg/1280px-Navire_AMIS_BRAVE_%C3%A0_quai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-07-02",
+      "caption": "Navire AMIS BRAVE à quai au port de Casablanca - Morocco - IMO: 9667459 Pavillon: Panama Genre du navire: Cargo Année de Construction: 2013",
+      "found": "2026-11-23T07:15:44.2028679+00:00"
     }
   ],
-  "updated": "2026-11-23T07:05:44.0051624+00:00"
+  "updated": "2026-11-23T07:15:44.2028679+00:00"
 }

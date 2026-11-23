@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-23T07:05:44.0051624+00:00",
+  "updated": "2026-11-23T07:15:44.2028679+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "aa33ec",
-      "flight": "N7569F",
-      "reg": "N7569F",
-      "type": "CH7A",
-      "cat": "A1",
-      "alt": 2200,
-      "gs": 110.6,
-      "track": 5.71,
-      "rate": -64,
-      "lat": 46.69963,
-      "lon": -122.93628,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
