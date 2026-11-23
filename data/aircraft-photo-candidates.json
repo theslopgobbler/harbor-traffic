@@ -209,7 +209,8 @@
     "Boeing 767 323ERBDSF/W": "2026-11-20T23:26:01.3929288+00:00",
     "Boeing 737NG 8FH/W": "2026-11-21T19:26:03.0964705+00:00",
     "DAHER-SOCATA TBM 850": "2026-11-21T21:56:00.0138116+00:00",
-    "Aerospatiale MH-65E Dolphin": "2026-11-22T17:56:02.9277909+00:00"
+    "Aerospatiale MH-65E Dolphin": "2026-11-22T17:56:02.9277909+00:00",
+    "Airbus A319 132": "2026-11-23T03:00:36.6513333+00:00"
   },
   "candidates": [
     {
@@ -13007,7 +13008,91 @@
       "date": "29 September 2014, 11:49:44",
       "caption": "",
       "found": "2026-11-21T21:56:00.0138116+00:00"
+    },
+    {
+      "model": "Airbus A319 132",
+      "file": "File:Adria Airways Airbus A319 (S5-AAR) @CDG, 2015-06-25.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Adria_Airways_Airbus_A319_(S5-AAR)_@CDG,_2015-06-25.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Adria_Airways_Airbus_A319_%28S5-AAR%29_%40CDG%2C_2015-06-25.jpg/960px-Adria_Airways_Airbus_A319_%28S5-AAR%29_%40CDG%2C_2015-06-25.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 638,
+      "author": "ERIC SALARD from PARIS, FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-06-25 17:04",
+      "caption": "MSN 4301 A319-132 ADRIA AIRWAYS CDG AIRPORT",
+      "found": "2026-11-23T03:00:36.6513333+00:00"
+    },
+    {
+      "model": "Airbus A319 132",
+      "file": "File:AirSERBIA, YU-APL, Airbus A319-132.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AirSERBIA,_YU-APL,_Airbus_A319-132.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/AirSERBIA%2C_YU-APL%2C_Airbus_A319-132.jpg/960px-AirSERBIA%2C_YU-APL%2C_Airbus_A319-132.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2024-06-09 18:02:07",
+      "caption": "AirSERBIA, YU-APL, Airbus A319-132",
+      "found": "2026-11-23T03:00:36.6513333+00:00"
+    },
+    {
+      "model": "Airbus A319 132",
+      "file": "File:D-AGWC Airbus A319-132 Eurowings, Manchester.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:D-AGWC_Airbus_A319-132_Eurowings,_Manchester.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/D-AGWC_Airbus_A319-132_Eurowings%2C_Manchester.jpg/960px-D-AGWC_Airbus_A319-132_Eurowings%2C_Manchester.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Ian Gratton",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2024-07-29 09:41:49",
+      "caption": "D-AGWC Airbus A319-132 Eurowings, Manchester",
+      "found": "2026-11-23T03:00:36.6513333+00:00"
+    },
+    {
+      "model": "Airbus A319 132",
+      "file": "File:Eurowings, D-AGWV, Airbus A319-132 (49597303157).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurowings,_D-AGWV,_Airbus_A319-132_(49597303157).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Eurowings%2C_D-AGWV%2C_Airbus_A319-132_%2849597303157%29.jpg/960px-Eurowings%2C_D-AGWV%2C_Airbus_A319-132_%2849597303157%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Anna Zvereva from Tallinn, Estonia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2020-01-10 14:30",
+      "caption": "Eurowings, D-AGWV, Airbus A319-132",
+      "found": "2026-11-23T03:00:36.6513333+00:00"
+    },
+    {
+      "model": "Airbus A319 132",
+      "file": "File:N526NK Spirit Airlines 2006 Airbus A319-132 CN 2963.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N526NK_Spirit_Airlines_2006_Airbus_A319-132_CN_2963.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/N526NK_Spirit_Airlines_2006_Airbus_A319-132_CN_2963.jpg/960px-N526NK_Spirit_Airlines_2006_Airbus_A319-132_CN_2963.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 429,
+      "author": "Tomás Del Coro",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-10-28 12:46:29",
+      "caption": "Las Vegas - McCarran International Airport (LAS / KLAS) USA - Nevada October 28, 2013 Photo: Tomás Del Coro",
+      "found": "2026-11-23T03:00:36.6513333+00:00"
+    },
+    {
+      "model": "Airbus A319 132",
+      "file": "File:Winglet Airbus A319-132.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Winglet_Airbus_A319-132.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Winglet_Airbus_A319-132.jpg/960px-Winglet_Airbus_A319-132.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Till Niermann",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2010-03-22",
+      "caption": "Winglet and static dischargers of an Airbus A319-132 of Germanwings",
+      "found": "2026-11-23T03:00:36.6513333+00:00"
     }
   ],
-  "updated": "2026-11-23T02:55:45.3909731+00:00"
+  "updated": "2026-11-23T03:00:36.6513333+00:00"
 }
