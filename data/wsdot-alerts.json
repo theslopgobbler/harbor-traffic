@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T10:25:42.5117724+00:00",
+  "updated": "2026-11-24T10:35:43.2505963+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -824,6 +824,61 @@
         [
           -124.24706,
           47.29942
+        ]
+      ]
+    },
+    {
+      "id": 727510,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 9:35 am on November 23, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.5,
+      "lat": 47.879744939,
+      "lon": -124.350752575,
+      "lat2": 47.882258587,
+      "lon2": -124.352849276,
+      "county": "Jefferson",
+      "start": "2026-11-23T17:35:00.0000000+00:00",
+      "end": "2026-11-25T02:00:00.0000000+00:00",
+      "updated": "2026-11-24T00:47:40.1570000+00:00",
+      "path": [
+        [
+          -124.35073,
+          47.87973
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35287,
+          47.88227
+        ],
+        [
+          -124.35287,
+          47.88227
         ]
       ]
     },
@@ -1906,61 +1961,6 @@
       "start": "2026-11-23T13:00:00.0000000+00:00",
       "end": "2026-11-26T00:00:00.0000000+00:00",
       "updated": "2026-11-18T20:01:18.3300000+00:00"
-    },
-    {
-      "id": 727510,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 9:35 am on November 23, 2026 until about 6:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.5,
-      "lat": 47.879744939,
-      "lon": -124.350752575,
-      "lat2": 47.882258587,
-      "lon2": -124.352849276,
-      "county": "Jefferson",
-      "start": "2026-11-23T17:35:00.0000000+00:00",
-      "end": "2026-11-25T02:00:00.0000000+00:00",
-      "updated": "2026-11-24T00:47:40.1570000+00:00",
-      "path": [
-        [
-          -124.35073,
-          47.87973
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35287,
-          47.88227
-        ],
-        [
-          -124.35287,
-          47.88227
-        ]
-      ]
     }
   ]
 }
