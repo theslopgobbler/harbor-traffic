@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T22:15:32.1304101+00:00",
+  "updated": "2026-11-24T22:25:22.9030127+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -675,27 +675,6 @@
       "updated": "2026-11-24T20:09:23.6730000+00:00"
     },
     {
-      "id": 727655,
-      "kind": "work",
-      "category": "Rocks",
-      "priority": "Medium",
-      "headline": "Rocks on SR 105 both directions at milepost 20 near Panoramic Lane use caution beginning at 10:39 am on November 24, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "105",
-      "roadLabel": "SR 105",
-      "direction": "B",
-      "milepost": 20.0,
-      "lat": 46.727561115,
-      "lon": -124.048740326,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-24T18:39:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-24T18:44:30.7270000+00:00"
-    },
-    {
       "id": 698910,
       "kind": "work",
       "category": "Construction",
@@ -715,27 +694,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 727669,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Reported collision on SR 109 southbound at milepost 4.4 near Valley Rd beginning at 1:04 pm on November 24, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "109",
-      "roadLabel": "SR 109",
-      "direction": "S",
-      "milepost": 4.4,
-      "lat": 46.987806541,
-      "lon": -123.973815449,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Grays Harbor",
-      "start": "2026-11-24T21:04:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-24T21:05:17.8670000+00:00"
     },
     {
       "id": 698912,

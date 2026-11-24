@@ -215,7 +215,8 @@
     "Boeing 767 319ERBDSF/W": "2026-11-23T22:45:45.780819+00:00",
     "Bell AH-1F Cobra": "2026-11-24T01:45:46.1360953+00:00",
     "Boeing 767 36NER": "2026-11-24T16:05:23.7125188+00:00",
-    "Rockwell Turbo Commander 690A": "2026-11-24T21:25:23.4453852+00:00"
+    "Rockwell Turbo Commander 690A": "2026-11-24T21:25:23.4453852+00:00",
+    "Boeing 757 24APF": "2026-11-24T22:25:22.9030127+00:00"
   },
   "candidates": [
     {
@@ -13363,7 +13364,91 @@
       "date": "2012-06-27 16:10:59",
       "caption": "At Charallave Aeropuerto",
       "found": "2026-11-24T21:25:23.4453852+00:00"
+    },
+    {
+      "model": "Boeing 757 24APF",
+      "file": "File:Boeing 757-24APF, United Parcel Service - UPS AN0133894.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_757-24APF,_United_Parcel_Service_-_UPS_AN0133894.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0133894.jpg/960px-Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0133894.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 643,
+      "author": "Sunil Gupta",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "May 1995",
+      "caption": "",
+      "found": "2026-11-24T22:25:22.9030127+00:00"
+    },
+    {
+      "model": "Boeing 757 24APF",
+      "file": "File:Boeing 757-24APF, United Parcel Service - UPS AN0151654.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_757-24APF,_United_Parcel_Service_-_UPS_AN0151654.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0151654.jpg/960px-Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0151654.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 651,
+      "author": "Konstantin von Wedelstaedt",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 March 2001",
+      "caption": "UPS first 757.",
+      "found": "2026-11-24T22:25:22.9030127+00:00"
+    },
+    {
+      "model": "Boeing 757 24APF",
+      "file": "File:Boeing 757-24APF, United Parcel Service - UPS AN0171391.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_757-24APF,_United_Parcel_Service_-_UPS_AN0171391.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0171391.jpg/960px-Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0171391.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 667,
+      "author": "Konstantin von Wedelstaedt",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "16 June 2001",
+      "caption": "",
+      "found": "2026-11-24T22:25:22.9030127+00:00"
+    },
+    {
+      "model": "Boeing 757 24APF",
+      "file": "File:Boeing 757-24APF, United Parcel Service - UPS AN0215802.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_757-24APF,_United_Parcel_Service_-_UPS_AN0215802.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0215802.jpg/960px-Boeing_757-24APF%2C_United_Parcel_Service_-_UPS_AN0215802.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 627,
+      "author": "JetPix",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "9 June 1994 ",
+      "caption": "",
+      "found": "2026-11-24T22:25:22.9030127+00:00"
+    },
+    {
+      "model": "Boeing 757 24APF",
+      "file": "File:Boeing 757-24APF ‘N433UP’ UPS (30170298808).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_757-24APF_%E2%80%98N433UP%E2%80%99_UPS_(30170298808).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Boeing_757-24APF_%E2%80%98N433UP%E2%80%99_UPS_%2830170298808%29.jpg/960px-Boeing_757-24APF_%E2%80%98N433UP%E2%80%99_UPS_%2830170298808%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2018-07-10 16:52",
+      "caption": "c/n 25464, l/n 577. Built 1993. Seen departing on flight 5X244 / UPS244 to Warsaw. London Stansted, Essex, UK. 10th July 2018",
+      "found": "2026-11-24T22:25:22.9030127+00:00"
+    },
+    {
+      "model": "Boeing 757 24APF",
+      "file": "File:United Parcel Service - UPS Boeing 757-24APF N434UP.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Parcel_Service_-_UPS_Boeing_757-24APF_N434UP.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/United_Parcel_Service_-_UPS_Boeing_757-24APF_N434UP.jpg/960px-United_Parcel_Service_-_UPS_Boeing_757-24APF_N434UP.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 649,
+      "author": "Michael Bernhard",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "1997-09-23",
+      "caption": "Aircraft United Parcel Service - UPS Boeing 757-24APF Reg.: N434UP MSN: 25465 Line No.: 579 Location &amp; Date Salt Lake City - International (SLC / KSLC) Utah, USA - September 23, 1997 Caption In the original colors",
+      "found": "2026-11-24T22:25:22.9030127+00:00"
     }
   ],
-  "updated": "2026-11-24T22:15:32.1304101+00:00"
+  "updated": "2026-11-24T22:25:22.9030127+00:00"
 }
