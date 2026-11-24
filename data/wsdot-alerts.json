@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T21:05:23.8692048+00:00",
+  "updated": "2026-11-24T21:15:23.2800871+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -715,6 +715,27 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
+    },
+    {
+      "id": 727669,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Reported collision on SR 109 southbound at milepost 4.4 near Valley Rd beginning at 1:04 pm on November 24, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "109",
+      "roadLabel": "SR 109",
+      "direction": "S",
+      "milepost": 4.4,
+      "lat": 46.987806541,
+      "lon": -123.973815449,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-24T21:04:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-24T21:05:17.8670000+00:00"
     },
     {
       "id": 698912,
