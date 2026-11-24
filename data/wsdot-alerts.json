@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T11:25:35.4174819+00:00",
+  "updated": "2026-11-24T11:35:26.7693425+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -824,6 +824,82 @@
         [
           -124.24706,
           47.29942
+        ]
+      ]
+    },
+    {
+      "id": 725066,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 28.8,
+      "lat": 46.79059195,
+      "lon": -123.740960403,
+      "lat2": 46.79059195,
+      "lon2": -123.740960403,
+      "county": null,
+      "start": "2026-11-23T13:00:00.0000000+00:00",
+      "end": "2026-11-26T00:00:00.0000000+00:00",
+      "updated": "2026-11-18T20:01:18.3300000+00:00"
+    },
+    {
+      "id": 727510,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "High",
+      "headline": "Road work on US 101 both directions from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 9:35 am on November 23, 2026 until about 6:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.5,
+      "lat": 47.879744939,
+      "lon": -124.350752575,
+      "lat2": 47.882258587,
+      "lon2": -124.352849276,
+      "county": "Jefferson",
+      "start": "2026-11-23T17:35:00.0000000+00:00",
+      "end": "2026-11-25T02:00:00.0000000+00:00",
+      "updated": "2026-11-24T00:47:40.1570000+00:00",
+      "path": [
+        [
+          -124.35073,
+          47.87973
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35287,
+          47.88227
+        ],
+        [
+          -124.35287,
+          47.88227
         ]
       ]
     },
@@ -1906,82 +1982,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2026-11-25T23:00:00.0000000+00:00",
       "updated": "2026-11-23T17:30:25.2500000+00:00"
-    },
-    {
-      "id": 725066,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 28.8,
-      "lat": 46.79059195,
-      "lon": -123.740960403,
-      "lat2": 46.79059195,
-      "lon2": -123.740960403,
-      "county": null,
-      "start": "2026-11-23T13:00:00.0000000+00:00",
-      "end": "2026-11-26T00:00:00.0000000+00:00",
-      "updated": "2026-11-18T20:01:18.3300000+00:00"
-    },
-    {
-      "id": 727510,
-      "kind": "work",
-      "category": "Road work",
-      "priority": "High",
-      "headline": "Road work on US 101 both directions from milepost 184.5 near Jefferson/Clallam County Line to milepost 184.7 near Kallman Rd beginning at 9:35 am on November 23, 2026 until about 6:00 pm.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.5,
-      "lat": 47.879744939,
-      "lon": -124.350752575,
-      "lat2": 47.882258587,
-      "lon2": -124.352849276,
-      "county": "Jefferson",
-      "start": "2026-11-23T17:35:00.0000000+00:00",
-      "end": "2026-11-25T02:00:00.0000000+00:00",
-      "updated": "2026-11-24T00:47:40.1570000+00:00",
-      "path": [
-        [
-          -124.35073,
-          47.87973
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35287,
-          47.88227
-        ],
-        [
-          -124.35287,
-          47.88227
-        ]
-      ]
     }
   ]
 }
