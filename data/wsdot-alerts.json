@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T19:05:35.6701110+00:00",
+  "updated": "2026-11-24T19:15:23.9553326+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -410,27 +410,6 @@
       ]
     },
     {
-      "id": 722911,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Nov. 2 to Tuesday, Nov. 30: Travelers in both directions of SR 6 between Mauerman Road (milepost 29.7) and Stevens Road (milepost 33.1) will take turns moving through a single lane each day from 7 a.m. to 5:30 p.m., for tree trimming around power lines. Flaggers will direct travelers through the work zone. Slow down, have patience and expect delays.",
-      "description": "",
-      "link": null,
-      "road": "006",
-      "roadLabel": "SR 6",
-      "direction": "B",
-      "milepost": 29.7,
-      "lat": 46.63089991,
-      "lon": -123.274432045,
-      "lat2": 46.63089991,
-      "lon2": -123.274432045,
-      "county": null,
-      "start": "2026-11-02T13:00:00.0000000+00:00",
-      "end": "2026-12-01T01:30:00.0000000+00:00",
-      "updated": "2026-10-31T00:26:55.2670000+00:00"
-    },
-    {
       "id": 631745,
       "kind": "work",
       "category": "Maintenance",
@@ -450,6 +429,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 722911,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Nov. 2 to Tuesday, Nov. 30: Travelers in both directions of SR 6 between Mauerman Road (milepost 29.7) and Stevens Road (milepost 33.1) will take turns moving through a single lane each day from 7 a.m. to 5:30 p.m., for tree trimming around power lines. Flaggers will direct travelers through the work zone. Slow down, have patience and expect delays.",
+      "description": "",
+      "link": null,
+      "road": "006",
+      "roadLabel": "SR 6",
+      "direction": "B",
+      "milepost": 29.7,
+      "lat": 46.63089991,
+      "lon": -123.274432045,
+      "lat2": 46.63089991,
+      "lon2": -123.274432045,
+      "county": null,
+      "start": "2026-11-02T13:00:00.0000000+00:00",
+      "end": "2026-12-01T01:30:00.0000000+00:00",
+      "updated": "2026-10-31T00:26:55.2670000+00:00"
     },
     {
       "id": 705229,
