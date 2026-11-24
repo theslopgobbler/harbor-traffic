@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T15:45:50.8775704+00:00",
+  "updated": "2026-11-24T15:55:25.1789157+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -764,6 +764,27 @@
       ]
     },
     {
+      "id": 727628,
+      "kind": "work",
+      "category": "Road work",
+      "priority": "Highest",
+      "headline": "Road work on US 101 southbound at milepost 182.5 beginning at 7:52 am on November 24, 2026 until about 4:00 pm.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 182.5,
+      "lat": 47.858352202,
+      "lon": -124.3252899,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Jefferson",
+      "start": "2026-11-24T15:52:00.0000000+00:00",
+      "end": "2026-11-25T00:00:00.0000000+00:00",
+      "updated": "2026-11-24T15:54:18.2830000+00:00"
+    },
+    {
       "id": 693084,
       "kind": "work",
       "category": "Construction",
@@ -847,27 +868,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 727625,
-      "kind": "collision",
-      "category": "Disabled vehicle",
-      "priority": "Highest",
-      "headline": "Disabled vehicle on US 12 westbound at milepost 46.4 near Old Hwy 99 SW beginning at 7:38 am on November 24, 2026 until further notice. The left lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "W",
-      "milepost": 46.4,
-      "lat": 46.80246436,
-      "lon": -123.011586145,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-24T15:38:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-24T15:40:07.3900000+00:00"
     },
     {
       "id": 698912,
