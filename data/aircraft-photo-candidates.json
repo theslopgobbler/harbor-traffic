@@ -213,7 +213,8 @@
     "Airbus A319 132": "2026-11-23T03:00:36.6513333+00:00",
     "Honda Aircraft Company Honda Jet HA-420 Elite": "2026-11-23T15:05:45.4986686+00:00",
     "Boeing 767 319ERBDSF/W": "2026-11-23T22:45:45.780819+00:00",
-    "Bell AH-1F Cobra": "2026-11-24T01:45:46.1360953+00:00"
+    "Bell AH-1F Cobra": "2026-11-24T01:45:46.1360953+00:00",
+    "Boeing 767 36NER": "2026-11-24T16:05:23.7125188+00:00"
   },
   "candidates": [
     {
@@ -13193,7 +13194,91 @@
       "date": "2019-04-13 12:32:12",
       "caption": "Bell AH-1F Cobra at the Steven F. Udvar-Hazy Center",
       "found": "2026-11-24T01:45:46.1360953+00:00"
+    },
+    {
+      "model": "Boeing 767 36NER",
+      "file": "File:189bv - Air Canada Boeing 767-36NER, C-GHLV@LHR,02.10.2002 - Flickr - Aero Icarus.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:189bv_-_Air_Canada_Boeing_767-36NER,_C-GHLV@LHR,02.10.2002_-_Flickr_-_Aero_Icarus.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/189bv_-_Air_Canada_Boeing_767-36NER%2C_C-GHLV%40LHR%2C02.10.2002_-_Flickr_-_Aero_Icarus.jpg/960px-189bv_-_Air_Canada_Boeing_767-36NER%2C_C-GHLV%40LHR%2C02.10.2002_-_Flickr_-_Aero_Icarus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 651,
+      "author": "Aero Icarus from Zürich, Switzerland",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-02-12 20:13",
+      "caption": "189bv - Air Canada Boeing 767-36NER; C-GHLV@LHR;02.10.2002",
+      "found": "2026-11-24T16:05:23.7125188+00:00"
+    },
+    {
+      "model": "Boeing 767 36NER",
+      "file": "File:20110724 Boeing 767-36NER of Kenya Airways (5Y-KQZ) at HKG.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20110724_Boeing_767-36NER_of_Kenya_Airways_(5Y-KQZ)_at_HKG.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/20110724_Boeing_767-36NER_of_Kenya_Airways_%285Y-KQZ%29_at_HKG.jpg/960px-20110724_Boeing_767-36NER_of_Kenya_Airways_%285Y-KQZ%29_at_HKG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Windmemories",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2011-07-24 18:07:10",
+      "caption": "Boeing 767-36NER of Kenya Airways (5Y-KQZ) at HKG",
+      "found": "2026-11-24T16:05:23.7125188+00:00"
+    },
+    {
+      "model": "Boeing 767 36NER",
+      "file": "File:Aeroflot Boeing 767-36NER VP-BAV Tolstoj.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aeroflot_Boeing_767-36NER_VP-BAV_Tolstoj.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Aeroflot_Boeing_767-36NER_VP-BAV_Tolstoj.jpg/960px-Aeroflot_Boeing_767-36NER_VP-BAV_Tolstoj.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 719,
+      "author": "Sergey Kustov",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2008-03-29",
+      "caption": "Aeroflot Boeing 767-36NER VP-BAV \"L. Tolstoj\" at Sheremetyevo International Airport",
+      "found": "2026-11-24T16:05:23.7125188+00:00"
+    },
+    {
+      "model": "Boeing 767 36NER",
+      "file": "File:Boeing 767-36NER VP-BAY Aeroflot (9088552860).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boeing_767-36NER_VP-BAY_Aeroflot_(9088552860).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Boeing_767-36NER_VP-BAY_Aeroflot_%289088552860%29.jpg/960px-Boeing_767-36NER_VP-BAY_Aeroflot_%289088552860%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Alan Wilson",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2013-06-15 11:07",
+      "caption": "Seen arriving on flight AFL2576 from Moscow. c/n 30110, l/n 775. London Heathrow. 15-6-2013",
+      "found": "2026-11-24T16:05:23.7125188+00:00"
+    },
+    {
+      "model": "Boeing 767 36NER",
+      "file": "File:Kenya Airways Boeing 767-36NER; 5Y-KQX@CDG;10.07.2011 605eq (5939812952).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kenya_Airways_Boeing_767-36NER;_5Y-KQX@CDG;10.07.2011_605eq_(5939812952).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Kenya_Airways_Boeing_767-36NER%3B_5Y-KQX%40CDG%3B10.07.2011_605eq_%285939812952%29.jpg/960px-Kenya_Airways_Boeing_767-36NER%3B_5Y-KQX%40CDG%3B10.07.2011_605eq_%285939812952%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 634,
+      "author": "Aero Icarus from Zürich, Switzerland",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2011-07-10 11:13",
+      "caption": "Kenya Airways Boeing 767-36NER; 5Y-KQX@CDG;10.07.2011/605eq",
+      "found": "2026-11-24T16:05:23.7125188+00:00"
+    },
+    {
+      "model": "Boeing 767 36NER",
+      "file": "File:Omni Air International Boeing 767-300ER N486AX BWI MD1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Omni_Air_International_Boeing_767-300ER_N486AX_BWI_MD1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Omni_Air_International_Boeing_767-300ER_N486AX_BWI_MD1.jpg/960px-Omni_Air_International_Boeing_767-300ER_N486AX_BWI_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 525,
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-09-25",
+      "caption": "2002 Omni Air International Boeing 767-36NER N486AX on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
+      "found": "2026-11-24T16:05:23.7125188+00:00"
     }
   ],
-  "updated": "2026-11-24T15:55:25.1789157+00:00"
+  "updated": "2026-11-24T16:05:23.7125188+00:00"
 }
