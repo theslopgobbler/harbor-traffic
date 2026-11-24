@@ -214,7 +214,8 @@
     "Honda Aircraft Company Honda Jet HA-420 Elite": "2026-11-23T15:05:45.4986686+00:00",
     "Boeing 767 319ERBDSF/W": "2026-11-23T22:45:45.780819+00:00",
     "Bell AH-1F Cobra": "2026-11-24T01:45:46.1360953+00:00",
-    "Boeing 767 36NER": "2026-11-24T16:05:23.7125188+00:00"
+    "Boeing 767 36NER": "2026-11-24T16:05:23.7125188+00:00",
+    "Rockwell Turbo Commander 690A": "2026-11-24T21:25:23.4453852+00:00"
   },
   "candidates": [
     {
@@ -13278,7 +13279,91 @@
       "date": "2025-09-25",
       "caption": "2002 Omni Air International Boeing 767-36NER N486AX on final approach at Baltimore-Washington International Thurgood Marshall Airport, Maryland, USA",
       "found": "2026-11-24T16:05:23.7125188+00:00"
+    },
+    {
+      "model": "Rockwell Turbo Commander 690A",
+      "file": "File:Antwerp Rockwell 690A Turbo Commander.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Antwerp_Rockwell_690A_Turbo_Commander.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Antwerp_Rockwell_690A_Turbo_Commander.JPG/960px-Antwerp_Rockwell_690A_Turbo_Commander.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 501,
+      "author": "Ad Meskens",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2014-03-08 13:06:05",
+      "caption": "Rockwell 690A Turbo Commander OO-GOA (cn 11173) at Antwerp International Airport",
+      "found": "2026-11-24T21:25:23.4453852+00:00"
+    },
+    {
+      "model": "Rockwell Turbo Commander 690A",
+      "file": "File:N690CL Rockwell Turbo Commander 690A Centerline Aerospace (20236929208).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:N690CL_Rockwell_Turbo_Commander_690A_Centerline_Aerospace_(20236929208).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/N690CL_Rockwell_Turbo_Commander_690A_Centerline_Aerospace_%2820236929208%29.jpg/960px-N690CL_Rockwell_Turbo_Commander_690A_Centerline_Aerospace_%2820236929208%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 720,
+      "author": "James from Cheltenham, Gloucestershire",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-08-08 11:35",
+      "caption": "At Oxford Airport.",
+      "found": "2026-11-24T21:25:23.4453852+00:00"
+    },
+    {
+      "model": "Rockwell Turbo Commander 690A",
+      "file": "File:Rockwell 690A Turbo Commander, General Aviation Maintenance (GAM) JP415040.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rockwell_690A_Turbo_Commander,_General_Aviation_Maintenance_(GAM)_JP415040.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Rockwell_690A_Turbo_Commander%2C_General_Aviation_Maintenance_%28GAM%29_JP415040.jpg/960px-Rockwell_690A_Turbo_Commander%2C_General_Aviation_Maintenance_%28GAM%29_JP415040.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 672,
+      "author": "Jeff Gilbert - JGPhotographics.com",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "25 January 2005",
+      "caption": "",
+      "found": "2026-11-24T21:25:23.4453852+00:00"
+    },
+    {
+      "model": "Rockwell Turbo Commander 690A",
+      "file": "File:Rockwell 690A Turbo Commander AN0738791.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rockwell_690A_Turbo_Commander_AN0738791.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Rockwell_690A_Turbo_Commander_AN0738791.jpg/960px-Rockwell_690A_Turbo_Commander_AN0738791.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 622,
+      "author": "AlainDurand",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "March 1992",
+      "caption": "When pictured, was operated by LAPA along with a Citation for private charters",
+      "found": "2026-11-24T21:25:23.4453852+00:00"
+    },
+    {
+      "model": "Rockwell Turbo Commander 690A",
+      "file": "File:Untitled (Turbomeca) Rockwell 690A TU Commander F-BXAS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Untitled_(Turbomeca)_Rockwell_690A_TU_Commander_F-BXAS.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Untitled_%28Turbomeca%29_Rockwell_690A_TU_Commander_F-BXAS.jpg/960px-Untitled_%28Turbomeca%29_Rockwell_690A_TU_Commander_F-BXAS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 626,
+      "author": "Doug Green",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "1986-02-28",
+      "caption": "Aircraft Untitled (Turbomeca) Rockwell 690A/TU Commander Reg.: F-BXAS MSN: 11240 Location &amp; Date London - Gatwick (LGW / EGKK) England, United Kingdom - February 28, 1986 Caption Astafan Conversion",
+      "found": "2026-11-24T21:25:23.4453852+00:00"
+    },
+    {
+      "model": "Rockwell Turbo Commander 690A",
+      "file": "File:YV2428 TURBO COMMANDER 690A (7454898012).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:YV2428_TURBO_COMMANDER_690A_(7454898012).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/YV2428_TURBO_COMMANDER_690A_%287454898012%29.jpg/960px-YV2428_TURBO_COMMANDER_690A_%287454898012%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2012-06-27 16:10:59",
+      "caption": "At Charallave Aeropuerto",
+      "found": "2026-11-24T21:25:23.4453852+00:00"
     }
   ],
-  "updated": "2026-11-24T21:15:23.2800871+00:00"
+  "updated": "2026-11-24T21:25:23.4453852+00:00"
 }
