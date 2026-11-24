@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T08:55:44.1235093+00:00",
+  "updated": "2026-11-24T09:05:43.4007132+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -399,6 +399,27 @@
           47.02401
         ]
       ]
+    },
+    {
+      "id": 640019,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 189.4,
+      "lat": 47.928301508,
+      "lon": -124.409665797,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-03-18T21:47:00.0000000+00:00",
+      "end": "2026-11-25T23:00:00.0000000+00:00",
+      "updated": "2026-11-23T17:30:25.2500000+00:00"
     },
     {
       "id": 718841,
@@ -849,27 +870,6 @@
       ]
     },
     {
-      "id": 725066,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 28.8,
-      "lat": 46.79059195,
-      "lon": -123.740960403,
-      "lat2": 46.79059195,
-      "lon2": -123.740960403,
-      "county": null,
-      "start": "2026-11-23T13:00:00.0000000+00:00",
-      "end": "2026-11-26T00:00:00.0000000+00:00",
-      "updated": "2026-11-18T20:01:18.3300000+00:00"
-    },
-    {
       "id": 698912,
       "kind": "work",
       "category": "Construction",
@@ -910,27 +910,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 640019,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect temporary traffic lights and single-lane alternating traffic through fall on US 101 near Mansfield Road. The speed limit is reduced from 55 mph to 25 mph from milepost 189.14 to milepost 189.55. Work is for a fish passage project. Get more details on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-grader-unnamed-trib-pac-ocean-remove-fish-barriers-pdb1-2b",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 189.4,
-      "lat": 47.928301508,
-      "lon": -124.409665797,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-03-18T21:47:00.0000000+00:00",
-      "end": "2026-11-25T23:00:00.0000000+00:00",
-      "updated": "2026-11-23T17:30:25.2500000+00:00"
     },
     {
       "id": 727510,
@@ -1961,6 +1940,27 @@
           47.1397
         ]
       ]
+    },
+    {
+      "id": 725066,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 28.8,
+      "lat": 46.79059195,
+      "lon": -123.740960403,
+      "lat2": 46.79059195,
+      "lon2": -123.740960403,
+      "county": null,
+      "start": "2026-11-23T13:00:00.0000000+00:00",
+      "end": "2026-11-26T00:00:00.0000000+00:00",
+      "updated": "2026-11-18T20:01:18.3300000+00:00"
     }
   ]
 }

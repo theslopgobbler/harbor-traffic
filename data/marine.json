@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T08:55:44.1235093+00:00",
+  "updated": "2026-11-24T09:05:43.4007132+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,13 +10,49 @@
     "waterF": 54.1
   },
   "bar": {
-    "issued": "2026-11-24T03:38:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY EVENING... Combined seas 10 to 13 ft. Bar conditions rough. Maximum ebb currents will occur around 345 AM Tuesday and 400 PM Tuesday. The Tuesday afternoon ebb will be very strong.",
-    "conditions": "rough",
-    "seas": "10 to 13 ft",
+    "issued": "2026-11-24T08:55:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH WEDNESDAY AFTERNOON... Combined seas 10 to 13 ft, increasing to 14 to 16 ft Wednesday. Bar conditions rough, becoming severe Wednesday. Maximum ebb currents will occur around 345 AM and 400 PM Tuesday, and 430 AM Wednesday. The Tuesday afternoon ebb will be very strong.",
+    "conditions": "rough, becoming severe Wednesday",
+    "seas": "10 to 13 ft, increasing to 14 to 16 ft Wednesday",
     "ebb": "afternoon ebb will be very strong"
   },
   "alerts": [
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-26T00:00:00+00:00",
+      "headline": "Gale Warning issued November 24 at 12:54AM PST until November 25 at 4:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Storm Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
+      "ends": "2026-11-25T07:00:00+00:00",
+      "headline": "Storm Warning issued November 24 at 12:54AM PST until November 24 at 11:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Small Craft Advisory",
+      "area": "Grays Harbor Bar",
+      "ends": "2026-11-26T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 24 at 12:54AM PST until November 25 at 4:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
+      "ends": "2026-11-26T00:00:00+00:00",
+      "headline": "Gale Warning issued November 24 at 12:54AM PST until November 25 at 4:00PM PST by NWS Seattle WA"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
+      "ends": "2026-11-25T15:00:00+00:00",
+      "headline": "Gale Warning issued November 24 at 12:34AM PST until November 25 at 7:00AM PST by NWS Portland OR"
+    },
+    {
+      "event": "Gale Warning",
+      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+      "ends": "2026-11-25T15:00:00+00:00",
+      "headline": "Gale Warning issued November 24 at 12:34AM PST until November 25 at 7:00AM PST by NWS Portland OR"
+    },
     {
       "event": "Storm Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
@@ -24,46 +60,16 @@
       "headline": "Storm Warning issued November 24 at 12:34AM PST until November 24 at 4:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Warning",
-      "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
-      "ends": "2026-11-25T15:00:00+00:00",
-      "headline": "Gale Warning issued November 24 at 12:34AM PST until November 25 at 7:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Hazardous Seas Warning",
-      "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
-      "ends": "2026-11-25T21:00:00+00:00",
-      "headline": "Hazardous Seas Warning issued November 24 at 12:34AM PST until November 25 at 1:00PM PST by NWS Portland OR"
-    },
-    {
       "event": "Hazardous Seas Warning",
       "area": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Coastal waters from Cape Foulweather to Florence OR out 10 nm",
       "ends": "2026-11-25T21:00:00+00:00",
       "headline": "Hazardous Seas Warning issued November 24 at 12:34AM PST until November 25 at 1:00PM PST by NWS Portland OR"
     },
     {
-      "event": "Gale Warning",
+      "event": "Hazardous Seas Warning",
       "area": "Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
-      "ends": "2026-11-25T15:00:00+00:00",
-      "headline": "Gale Warning issued November 24 at 12:34AM PST until November 25 at 7:00AM PST by NWS Portland OR"
-    },
-    {
-      "event": "Gale Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm",
-      "ends": "2026-11-25T07:00:00+00:00",
-      "headline": "Gale Warning issued November 23 at 7:34PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Storm Warning",
-      "area": "Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
-      "ends": "2026-11-25T07:00:00+00:00",
-      "headline": "Storm Warning issued November 23 at 7:34PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
-    },
-    {
-      "event": "Small Craft Advisory",
-      "area": "Grays Harbor Bar",
-      "ends": "2026-11-25T07:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 23 at 7:34PM PST until November 24 at 11:00PM PST by NWS Seattle WA"
+      "ends": "2026-11-25T21:00:00+00:00",
+      "headline": "Hazardous Seas Warning issued November 24 at 12:34AM PST until November 25 at 1:00PM PST by NWS Portland OR"
     }
   ]
 }
