@@ -375,7 +375,7 @@
     "538012812": "2026-11-24T01:55:45.4683255+00:00",
     "538010116": "2026-11-24T03:05:46.6116221+00:00",
     "352004745": "2026-11-24T06:45:44.3884668+00:00",
-    "636025939": "2026-10-25T12:08:21.2013168+00:00",
+    "636025939": "2026-11-24T12:15:28.3765140+00:00",
     "256709000": "2026-10-25T15:09:45.9980944+00:00",
     "367466760": "2026-10-25T15:38:29.4049391+00:00",
     "366999438": "2026-10-25T17:31:20.5003533+00:00",
@@ -6690,7 +6690,37 @@
       "date": "2021-05-16 12:04:33",
       "caption": "Photographed in the Port of Amsterdam.",
       "found": "2026-11-23T19:45:46.9518819+00:00"
+    },
+    {
+      "mmsi": "636025939",
+      "ship": "NANAMI BRIGHT",
+      "file": "File:Navire BUCKAROO BOWL à quai.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_BUCKAROO_BOWL_%C3%A0_quai.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Navire_BUCKAROO_BOWL_%C3%A0_quai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "04 / 12 / 2019",
+      "caption": "Navire BUCKAROO BOWL à quai au port de Casablanca - Morocco - IMO: 9633197 Genre du navire: Cargo Pavillon: Marshall Is Année de Construction: 2012",
+      "found": "2026-11-24T12:15:28.3765140+00:00"
+    },
+    {
+      "mmsi": "636025939",
+      "ship": "NANAMI BRIGHT",
+      "file": "File:Navire RADIANT REB au port.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Navire_RADIANT_REB_au_port.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Navire_RADIANT_REB_au_port.jpg/1280px-Navire_RADIANT_REB_au_port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Farid mernissi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "2023-10-08 12:15:26",
+      "caption": "Navire RADIANT REB au port de Casablanca - Morocco - IMO: 9633197 Pavillon: Marshall Islands Genre du navire: Bulk Carrier Année de Construction: 2012",
+      "found": "2026-11-24T12:15:28.3765140+00:00"
     }
   ],
-  "updated": "2026-11-24T12:05:24.5513202+00:00"
+  "updated": "2026-11-24T12:15:28.3765140+00:00"
 }
