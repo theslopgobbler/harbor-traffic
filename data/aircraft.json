@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-24T04:45:40.6347556+00:00",
+  "updated": "2026-11-24T04:55:41.2116122+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a4f5a0",
+      "flight": "ASA1386",
+      "reg": "N419AS",
+      "type": "B739",
+      "cat": "A3",
+      "alt": 12625,
+      "gs": 346.0,
+      "track": 249.0,
+      "rate": 2048,
+      "lat": 47.29198,
+      "lon": -122.861,
+      "squawk": "6626",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
