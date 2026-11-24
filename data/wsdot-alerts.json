@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T10:55:43.0367647+00:00",
+  "updated": "2026-11-24T11:05:48.6801365+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -1843,6 +1843,27 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
+    },
+    {
+      "id": 727607,
+      "kind": "other",
+      "category": "Trees down",
+      "priority": "Highest",
+      "headline": "Trees down on SR 8 eastbound at milepost 1.73 near Elma Rest Area beginning at 2:54 am on November 24, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "008",
+      "roadLabel": "SR 8",
+      "direction": "E",
+      "milepost": 1.73,
+      "lat": 47.016283129,
+      "lon": -123.354832508,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Grays Harbor",
+      "start": "2026-11-24T10:54:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-24T10:55:47.6100000+00:00"
     },
     {
       "id": 631745,
