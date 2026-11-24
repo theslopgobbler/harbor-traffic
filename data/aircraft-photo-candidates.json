@@ -212,7 +212,8 @@
     "Aerospatiale MH-65E Dolphin": "2026-11-22T17:56:02.9277909+00:00",
     "Airbus A319 132": "2026-11-23T03:00:36.6513333+00:00",
     "Honda Aircraft Company Honda Jet HA-420 Elite": "2026-11-23T15:05:45.4986686+00:00",
-    "Boeing 767 319ERBDSF/W": "2026-11-23T22:45:45.780819+00:00"
+    "Boeing 767 319ERBDSF/W": "2026-11-23T22:45:45.780819+00:00",
+    "Bell AH-1F Cobra": "2026-11-24T01:45:46.1360953+00:00"
   },
   "candidates": [
     {
@@ -13108,7 +13109,91 @@
       "date": "2023-12-14",
       "caption": "Honda Aircraft Company HA-420 HondaJet Elite II (c/n 42000244, T7-VRF) landing at Schönefeld, Flughafen / EDDB (DE), 2023-12-14 - The André Gerwing Collection ID: 019640",
       "found": "2026-11-23T15:05:45.4986686+00:00"
+    },
+    {
+      "model": "Bell AH-1F Cobra",
+      "file": "File:AH-1F Cobra 9505.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AH-1F_Cobra_9505.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/AH-1F_Cobra_9505.jpg/960px-AH-1F_Cobra_9505.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:18:17",
+      "caption": "Bell AH-1F Cobra at the Evergreen Aviation &amp; Space Museum",
+      "found": "2026-11-24T01:45:46.1360953+00:00"
+    },
+    {
+      "model": "Bell AH-1F Cobra",
+      "file": "File:AH-1F Cobra 9506.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AH-1F_Cobra_9506.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/AH-1F_Cobra_9506.jpg/960px-AH-1F_Cobra_9506.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:18:34",
+      "caption": "Bell AH-1F Cobra at the Evergreen Aviation &amp; Space Museum",
+      "found": "2026-11-24T01:45:46.1360953+00:00"
+    },
+    {
+      "model": "Bell AH-1F Cobra",
+      "file": "File:AH-1F Cobra 9507.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AH-1F_Cobra_9507.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/AH-1F_Cobra_9507.jpg/960px-AH-1F_Cobra_9507.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:18:57",
+      "caption": "Bell AH-1F Cobra at the Evergreen Aviation &amp; Space Museum",
+      "found": "2026-11-24T01:45:46.1360953+00:00"
+    },
+    {
+      "model": "Bell AH-1F Cobra",
+      "file": "File:AH-1F Cobra 9508.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AH-1F_Cobra_9508.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/AH-1F_Cobra_9508.jpg/960px-AH-1F_Cobra_9508.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:19:08",
+      "caption": "Bell AH-1F Cobra at the Evergreen Aviation &amp; Space Museum",
+      "found": "2026-11-24T01:45:46.1360953+00:00"
+    },
+    {
+      "model": "Bell AH-1F Cobra",
+      "file": "File:AH-1F Cobra 9509.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AH-1F_Cobra_9509.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/AH-1F_Cobra_9509.jpg/960px-AH-1F_Cobra_9509.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 1440,
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2025-08-30 09:19:15",
+      "caption": "Bell AH-1F Cobra at the Evergreen Aviation &amp; Space Museum",
+      "found": "2026-11-24T01:45:46.1360953+00:00"
+    },
+    {
+      "model": "Bell AH-1F Cobra",
+      "file": "File:Bell AH-1F Cobra Udvar-Hazy.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bell_AH-1F_Cobra_Udvar-Hazy.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bell_AH-1F_Cobra_Udvar-Hazy.jpg/960px-Bell_AH-1F_Cobra_Udvar-Hazy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 540,
+      "author": "Alpacaaviator",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2019-04-13 12:32:12",
+      "caption": "Bell AH-1F Cobra at the Steven F. Udvar-Hazy Center",
+      "found": "2026-11-24T01:45:46.1360953+00:00"
     }
   ],
-  "updated": "2026-11-24T01:35:43.5455208+00:00"
+  "updated": "2026-11-24T01:45:46.1360953+00:00"
 }
