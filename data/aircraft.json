@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-24T03:15:44.5527598+00:00",
+  "updated": "2026-11-24T03:25:45.7731169+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "ae17f2",
-      "flight": "BERT61",
-      "reg": null,
-      "type": null,
-      "cat": "A7",
-      "alt": 575,
-      "gs": 50.6,
-      "track": 232.22,
-      "rate": 448,
-      "lat": 46.91604,
-      "lon": -122.70299,
-      "squawk": null,
-      "emergency": null,
-      "mil": true
+      "hex": "a9da71",
+      "flight": "N734FN",
+      "reg": "N734FN",
+      "type": "C172",
+      "cat": "A1",
+      "alt": 3950,
+      "gs": 75.5,
+      "track": 191.46,
+      "rate": -192,
+      "lat": 47.39818,
+      "lon": -122.76053,
+      "squawk": "4773",
+      "emergency": "none",
+      "mil": false
     }
   ]
 }
