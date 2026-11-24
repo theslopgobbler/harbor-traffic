@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T04:05:43.2742105+00:00",
+  "updated": "2026-11-24T04:15:51.3016768+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,14 +8,14 @@
       "reg": "25-21319",
       "type": "H60",
       "cat": "A7",
-      "alt": 2475,
-      "gs": 103.0,
-      "track": 216.31,
+      "alt": 1375,
+      "gs": 86.4,
+      "track": 137.82,
       "rate": 0,
-      "lat": 46.87522,
-      "lon": -123.10103,
-      "squawk": "1200",
-      "emergency": "none",
+      "lat": 46.78952,
+      "lon": -123.07221,
+      "squawk": null,
+      "emergency": null,
       "mil": true
     }
   ]
