@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T03:55:50.1815547+00:00",
+  "updated": "2026-11-24T04:05:43.2742105+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,31 +8,15 @@
       "reg": "25-21319",
       "type": "H60",
       "cat": "A7",
-      "alt": 875,
-      "gs": 112.8,
-      "track": 257.2,
-      "rate": -384,
-      "lat": 47.06306,
-      "lon": -122.77095,
+      "alt": 2475,
+      "gs": 103.0,
+      "track": 216.31,
+      "rate": 0,
+      "lat": 46.87522,
+      "lon": -123.10103,
       "squawk": "1200",
       "emergency": "none",
       "mil": true
-    },
-    {
-      "hex": "a84e0c",
-      "flight": "QXE2222",
-      "reg": "N634QX",
-      "type": "E75L",
-      "cat": "A3",
-      "alt": 10325,
-      "gs": 255.7,
-      "track": 157.95,
-      "rate": -1472,
-      "lat": 47.86087,
-      "lon": -122.74095,
-      "squawk": "7061",
-      "emergency": "none",
-      "mil": false
     }
   ]
 }
