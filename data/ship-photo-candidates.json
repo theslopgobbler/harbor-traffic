@@ -603,7 +603,8 @@
     "538012072": "2026-11-24T13:45:30.948231+00:00",
     "636020172": "2026-11-24T17:35:44.1437318+00:00",
     "369970500": "2026-11-24T18:05:27.2134195+00:00",
-    "205706000": "2026-11-24T18:45:34.6801074+00:00"
+    "205706000": "2026-11-24T18:45:34.6801074+00:00",
+    "432666000": "2026-11-25T21:35:25.0005439+00:00"
   },
   "candidates": [
     {
@@ -6755,7 +6756,127 @@
       "date": "2013-09-23",
       "caption": "Ken Kon (bulk carrier) in Astoria",
       "found": "2026-11-25T00:05:22.0440014+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:AEGEAN HIGHWAY01.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:AEGEAN_HIGHWAY01.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/AEGEAN_HIGHWAY01.JPG/1280px-AEGEAN_HIGHWAY01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Trans5885",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2011-09-10",
+      "caption": "川崎汽船ＡＥＧＥＡＮ ＨＩＧＨＷＡＹ",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:AEGEAN HIGHWAY02.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:AEGEAN_HIGHWAY02.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/AEGEAN_HIGHWAY02.JPG/1280px-AEGEAN_HIGHWAY02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 853,
+      "author": "Trans5885",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2011-09-10",
+      "caption": "川崎汽船ＡＥＧＥＡＮ ＨＩＧＨＷＡＹのランプウェイ",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:Car-carrier-aegean-highway-north-sea-20090922.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Car-carrier-aegean-highway-north-sea-20090922.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Car-carrier-aegean-highway-north-sea-20090922.JPG/1280px-Car-carrier-aegean-highway-north-sea-20090922.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 960,
+      "author": "Ctsu",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "date": "2009-09-22",
+      "caption": "Japanese Car Carrier Aegean Highway in the north sea september 2009",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:Cargo \"Aegean Highway\" dans le détroit du Pas-de-Calais (Ifremer 00754-86612 - 44643).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_(Ifremer_00754-86612_-_44643).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44643%29.jpg/1280px-Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44643%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 852,
+      "author": "Olivier Dugornay (Ifremer)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "11 April 2011 (upload date)",
+      "caption": "In these images, the \"Aegean Highway\", a vehicle-carrying ship, is sailing through the Strait of Dover, which is the busiest shipping lane in the world. It is used daily by hundreds of commercial vessels.",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:Cargo \"Aegean Highway\" dans le détroit du Pas-de-Calais (Ifremer 00754-86612 - 44644).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_(Ifremer_00754-86612_-_44644).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44644%29.jpg/1280px-Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44644%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 852,
+      "author": "Olivier Dugornay (Ifremer)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "11 April 2011 (upload date)",
+      "caption": "In these images, the \"Aegean Highway\", a vehicle-carrying ship, is sailing through the Strait of Dover, which is the busiest shipping lane in the world. It is used daily by hundreds of commercial vessels.",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:Cargo \"Aegean Highway\" dans le détroit du Pas-de-Calais (Ifremer 00754-86612 - 44645).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_(Ifremer_00754-86612_-_44645).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44645%29.jpg/1280px-Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44645%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 851,
+      "author": "Olivier Dugornay (Ifremer)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "11 April 2011 (upload date)",
+      "caption": "In these images, the \"Aegean Highway\", a vehicle-carrying ship, is sailing through the Strait of Dover, which is the busiest shipping lane in the world. It is used daily by hundreds of commercial vessels.",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:Cargo \"Aegean Highway\" dans le détroit du Pas-de-Calais (Ifremer 00754-86612 - 44646).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_(Ifremer_00754-86612_-_44646).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44646%29.jpg/1280px-Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44646%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 852,
+      "author": "Olivier Dugornay (Ifremer)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "11 April 2011 (upload date)",
+      "caption": "In these images, the \"Aegean Highway\", a vehicle-carrying ship, is sailing through the Strait of Dover, which is the busiest shipping lane in the world. It is used daily by hundreds of commercial vessels.",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
+    },
+    {
+      "mmsi": "432666000",
+      "ship": "AEGEAN HIGHWAY",
+      "file": "File:Cargo \"Aegean Highway\" dans le détroit du Pas-de-Calais (Ifremer 00754-86612 - 44647).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_(Ifremer_00754-86612_-_44647).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44647%29.jpg/1280px-Cargo_%22Aegean_Highway%22_dans_le_d%C3%A9troit_du_Pas-de-Calais_%28Ifremer_00754-86612_-_44647%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 851,
+      "author": "Olivier Dugornay (Ifremer)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "date": "11 April 2011 (upload date)",
+      "caption": "In these images, the \"Aegean Highway\", a vehicle-carrying ship, is sailing through the Strait of Dover, which is the busiest shipping lane in the world. It is used daily by hundreds of commercial vessels.",
+      "found": "2026-11-25T21:35:25.0005439+00:00"
     }
   ],
-  "updated": "2026-11-25T21:25:30.9063499+00:00"
+  "updated": "2026-11-25T21:35:25.0005439+00:00"
 }
