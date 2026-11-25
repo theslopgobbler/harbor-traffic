@@ -1,7 +1,83 @@
 {
-  "updated": "2026-11-25T13:55:32.0542526+00:00",
+  "updated": "2026-11-25T14:05:33.9327232+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 584226,
+      "kind": "work",
+      "category": "Construction",
+      "priority": "Medium",
+      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
+      "description": "",
+      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 184.51,
+      "lat": 47.879865785,
+      "lon": -124.350871258,
+      "lat2": 47.882385359,
+      "lon2": -124.352948325,
+      "county": null,
+      "start": "2024-02-29T19:18:00.0000000+00:00",
+      "end": "2026-12-31T19:18:00.0000000+00:00",
+      "updated": "2026-10-16T19:28:43.2900000+00:00",
+      "path": [
+        [
+          -124.35089,
+          47.8799
+        ],
+        [
+          -124.35156,
+          47.88062
+        ],
+        [
+          -124.3517,
+          47.88084
+        ],
+        [
+          -124.35189,
+          47.88102
+        ],
+        [
+          -124.35229,
+          47.8815
+        ],
+        [
+          -124.35237,
+          47.88162
+        ],
+        [
+          -124.35296,
+          47.88238
+        ],
+        [
+          -124.35296,
+          47.88238
+        ]
+      ]
+    },
+    {
+      "id": 725066,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 28.8,
+      "lat": 46.79059195,
+      "lon": -123.740960403,
+      "lat2": 46.79059195,
+      "lon2": -123.740960403,
+      "county": null,
+      "start": "2026-11-23T13:00:00.0000000+00:00",
+      "end": "2026-11-26T00:00:00.0000000+00:00",
+      "updated": "2026-11-18T20:01:18.3300000+00:00"
+    },
     {
       "id": 640018,
       "kind": "work",
@@ -746,82 +822,6 @@
       "start": "2025-03-18T21:47:00.0000000+00:00",
       "end": "2026-11-25T23:00:00.0000000+00:00",
       "updated": "2026-11-23T17:30:25.2500000+00:00"
-    },
-    {
-      "id": 584226,
-      "kind": "work",
-      "category": "Construction",
-      "priority": "Medium",
-      "headline": "Expect daytime single-lane alternating traffic on US 101 at the Jefferson-Clallam county line. The speed limit is reduced to 25 mph between mileposts 184 and 185. Read more about this fish passage work on the project webpage.",
-      "description": "",
-      "link": "https://wsdot.wa.gov/construction-planning/search-projects/us-101-may-creek-vic-dowans-creek-rd-remove-fish-barrier",
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 184.51,
-      "lat": 47.879865785,
-      "lon": -124.350871258,
-      "lat2": 47.882385359,
-      "lon2": -124.352948325,
-      "county": null,
-      "start": "2024-02-29T19:18:00.0000000+00:00",
-      "end": "2026-12-31T19:18:00.0000000+00:00",
-      "updated": "2026-10-16T19:28:43.2900000+00:00",
-      "path": [
-        [
-          -124.35089,
-          47.8799
-        ],
-        [
-          -124.35156,
-          47.88062
-        ],
-        [
-          -124.3517,
-          47.88084
-        ],
-        [
-          -124.35189,
-          47.88102
-        ],
-        [
-          -124.35229,
-          47.8815
-        ],
-        [
-          -124.35237,
-          47.88162
-        ],
-        [
-          -124.35296,
-          47.88238
-        ],
-        [
-          -124.35296,
-          47.88238
-        ]
-      ]
-    },
-    {
-      "id": 725066,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 28.8,
-      "lat": 46.79059195,
-      "lon": -123.740960403,
-      "lat2": 46.79059195,
-      "lon2": -123.740960403,
-      "county": null,
-      "start": "2026-11-23T13:00:00.0000000+00:00",
-      "end": "2026-11-26T00:00:00.0000000+00:00",
-      "updated": "2026-11-18T20:01:18.3300000+00:00"
     }
   ]
 }
