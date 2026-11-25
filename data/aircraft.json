@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T01:55:26.3099342+00:00",
+  "updated": "2026-11-25T02:05:27.2384018+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,47 +8,15 @@
       "reg": "N346WN",
       "type": "UH1",
       "cat": "A7",
-      "alt": 1075,
-      "gs": 97.3,
-      "track": 4.71,
-      "rate": 1664,
-      "lat": 46.96702,
-      "lon": -122.92145,
+      "alt": 625,
+      "gs": 35.5,
+      "track": 189.73,
+      "rate": 128,
+      "lat": 46.97878,
+      "lon": -122.90172,
       "squawk": "1255",
       "emergency": "none",
       "mil": false
-    },
-    {
-      "hex": "a3ca74",
-      "flight": "N343WN",
-      "reg": "N343WN",
-      "type": "UH1",
-      "cat": "A7",
-      "alt": 500,
-      "gs": 27.0,
-      "track": 180.0,
-      "rate": -1344,
-      "lat": 46.97973,
-      "lon": -122.90708,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "ae6d00",
-      "flight": "LEFTY51",
-      "reg": "20-02924",
-      "type": "H47",
-      "cat": "A7",
-      "alt": 2425,
-      "gs": 112.9,
-      "track": 32.7,
-      "rate": 0,
-      "lat": 46.6939,
-      "lon": -122.79872,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": true
     }
   ]
 }
