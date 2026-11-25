@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T03:35:26.9708245+00:00",
+  "updated": "2026-11-25T03:38:28.9955558+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,31 +8,15 @@
       "reg": "17-20924",
       "type": "H60",
       "cat": "A7",
-      "alt": 925,
-      "gs": 125.7,
-      "track": 348.06,
-      "rate": 0,
-      "lat": 46.74211,
-      "lon": -122.99549,
-      "squawk": null,
-      "emergency": null,
-      "mil": true
-    },
-    {
-      "hex": "aceb61",
-      "flight": "SWA3832",
-      "reg": "N931WN",
-      "type": "B737",
-      "cat": "A3",
-      "alt": 14050,
-      "gs": 306.3,
-      "track": 272.43,
-      "rate": 3520,
-      "lat": 47.31441,
-      "lon": -122.71454,
-      "squawk": "3570",
+      "alt": 700,
+      "gs": 78.0,
+      "track": 310.84,
+      "rate": -128,
+      "lat": 46.81902,
+      "lon": -123.0393,
+      "squawk": "1200",
       "emergency": "none",
-      "mil": false
+      "mil": true
     }
   ]
 }
