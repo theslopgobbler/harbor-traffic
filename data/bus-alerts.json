@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-25T20:25:26.5049235+00:00",
+  "updated": "2026-11-25T20:35:23.4829944+00:00",
   "status": "All routes are currently operating normally.",
   "alerts": [
     {
       "route": null,
       "name": null,
-      "text": "Route 25: Woodlawn construction Route 25 spur to Woodlawn is restricted until further notice due to construction. Please call GHT customer service to request a ride to or from Woodlawn: 360-532-2770."
+      "text": "Construction in 2027 Major construction and maintenance projects are coming in 2027 that are expected to disrupt regular transit service. GHT is working with local authorities to plan detours that preserve the best possible level of service for our riders. Stay tuned for more details. Learn more about the projects and timelines here: US 12 – Heron Street Bridge – Grid Deck Replacement US 12 - Wishkah River Bridge - Mechanical Rehabilitation"
     }
   ],
   "source": "https://ghtransit.com/alerts/"
