@@ -379,7 +379,7 @@
     "256709000": "2026-11-24T15:15:29.5268333+00:00",
     "367466760": "2026-11-24T15:45:50.8775704+00:00",
     "366999438": "2026-11-24T17:35:44.1437318+00:00",
-    "372260000": "2026-10-25T23:56:03.9128865+00:00",
+    "372260000": "2026-11-25T00:05:22.0440014+00:00",
     "352003818": "2026-10-26T05:39:06.484771+00:00",
     "367187080": "2026-10-26T06:13:51.7497759+00:00",
     "367388280": "2026-10-26T07:56:07.2759917+00:00",
@@ -6725,7 +6725,37 @@
       "date": "2023-10-08 12:15:26",
       "caption": "Navire RADIANT REB au port de Casablanca - Morocco - IMO: 9633197 Pavillon: Marshall Islands Genre du navire: Bulk Carrier Année de Construction: 2012",
       "found": "2026-11-24T12:15:28.376514+00:00"
+    },
+    {
+      "mmsi": "372260000",
+      "ship": "KEN KON",
+      "file": "File:Bulk carrier Ken Kon at the Kwinana Bulk Terminal, April 2023 07.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bulk_carrier_Ken_Kon_at_the_Kwinana_Bulk_Terminal,_April_2023_07.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bulk_carrier_Ken_Kon_at_the_Kwinana_Bulk_Terminal%2C_April_2023_07.jpg/1280px-Bulk_carrier_Ken_Kon_at_the_Kwinana_Bulk_Terminal%2C_April_2023_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 720,
+      "author": "Calistemon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2023-04-26 10:59:05",
+      "caption": "The Bulk carrier Ken Kon at the Kwinana Bulk Terminal, Western Australia.",
+      "found": "2026-11-25T00:05:22.0440014+00:00"
+    },
+    {
+      "mmsi": "372260000",
+      "ship": "KEN KON",
+      "file": "File:MK03128 Ken Kon.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:MK03128_Ken_Kon.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/MK03128_Ken_Kon.jpg/1280px-MK03128_Ken_Kon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 1280,
+      "h": 854,
+      "author": "Martin Kraft",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "date": "2013-09-23",
+      "caption": "Ken Kon (bulk carrier) in Astoria",
+      "found": "2026-11-25T00:05:22.0440014+00:00"
     }
   ],
-  "updated": "2026-11-24T23:55:25.6044703+00:00"
+  "updated": "2026-11-25T00:05:22.0440014+00:00"
 }
