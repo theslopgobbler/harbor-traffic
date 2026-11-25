@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T02:15:26.7142800+00:00",
+  "updated": "2026-11-25T02:25:26.6883021+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -748,6 +748,27 @@
       "updated": "2026-11-23T17:30:25.2500000+00:00"
     },
     {
+      "id": 725066,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 28.8,
+      "lat": 46.79059195,
+      "lon": -123.740960403,
+      "lat2": 46.79059195,
+      "lon2": -123.740960403,
+      "county": null,
+      "start": "2026-11-23T13:00:00.0000000+00:00",
+      "end": "2026-11-26T00:00:00.0000000+00:00",
+      "updated": "2026-11-18T20:01:18.3300000+00:00"
+    },
+    {
       "id": 584226,
       "kind": "work",
       "category": "Construction",
@@ -801,27 +822,6 @@
           47.88238
         ]
       ]
-    },
-    {
-      "id": 725066,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "Monday, Nov. 23 to Wednesday, Nov. 25: Travelers in both directions of US 101 should expect daytime delays between the SR 4 interchange (milepost 28.8) and the Grays Harbor County line (milepost 67) from 6:30 a.m. to 4 p.m., while crews sweep debris from along the shoulders of the highway. Travelers are reminded to slow down, stay focused and have patience in the work zone.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 28.8,
-      "lat": 46.79059195,
-      "lon": -123.740960403,
-      "lat2": 46.79059195,
-      "lon2": -123.740960403,
-      "county": null,
-      "start": "2026-11-23T13:00:00.0000000+00:00",
-      "end": "2026-11-26T00:00:00.0000000+00:00",
-      "updated": "2026-11-18T20:01:18.3300000+00:00"
     }
   ]
 }
