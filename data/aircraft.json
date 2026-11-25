@@ -1,38 +1,22 @@
 {
-  "updated": "2026-11-25T00:45:26.9892368+00:00",
+  "updated": "2026-11-25T00:55:22.7379054+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "ae571a",
-      "flight": "ILNDR03",
-      "reg": "169036",
-      "type": "B737",
+      "hex": "a79d78",
+      "flight": "ASA717",
+      "reg": "N590AS",
+      "type": "B738",
       "cat": "A3",
-      "alt": 12825,
-      "gs": 372.8,
-      "track": 33.73,
-      "rate": -2191,
-      "lat": 47.7101,
-      "lon": -123.41396,
-      "squawk": "2404",
+      "alt": 14875,
+      "gs": 378.1,
+      "track": 21.41,
+      "rate": -1344,
+      "lat": 46.78812,
+      "lon": -122.72587,
+      "squawk": "1033",
       "emergency": "none",
-      "mil": true
-    },
-    {
-      "hex": "ae6d00",
-      "flight": "LEFTY51",
-      "reg": "20-02924",
-      "type": "H47",
-      "cat": "A7",
-      "alt": 2125,
-      "gs": 80.5,
-      "track": 122.31,
-      "rate": -64,
-      "lat": 46.80944,
-      "lon": -123.15777,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": true
+      "mil": false
     }
   ]
 }
