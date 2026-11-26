@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T03:05:15.0442484+00:00",
+  "updated": "2026-11-26T03:15:16.0886821+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,12 +9,28 @@
       "type": "C206",
       "cat": "A1",
       "alt": 2300,
-      "gs": 83.6,
-      "track": 63.74,
-      "rate": 0,
-      "lat": 47.04639,
-      "lon": -122.76024,
+      "gs": 52.8,
+      "track": 242.95,
+      "rate": 2137,
+      "lat": 47.07243,
+      "lon": -122.77098,
       "squawk": "5523",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a7d513",
+      "flight": "N6032S",
+      "reg": "N6032S",
+      "type": "BE60",
+      "cat": "A1",
+      "alt": 1800,
+      "gs": 76.7,
+      "track": 210.58,
+      "rate": 603,
+      "lat": 47.55232,
+      "lon": -122.70595,
+      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
