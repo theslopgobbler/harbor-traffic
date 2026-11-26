@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T00:35:27.3299344+00:00",
+  "updated": "2026-11-26T00:45:17.4783252+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N1861J",
       "type": "P28A",
       "cat": "A1",
-      "alt": 1000,
-      "gs": 94.6,
-      "track": 35.54,
+      "alt": 1100,
+      "gs": 96.3,
+      "track": 304.85,
       "rate": null,
-      "lat": 46.68999,
-      "lon": -122.99867,
+      "lat": 46.66601,
+      "lon": -122.9962,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
@@ -24,12 +24,12 @@
       "reg": "N2372Z",
       "type": "BE23",
       "cat": "A1",
-      "alt": 1300,
-      "gs": 100.8,
-      "track": 349.14,
-      "rate": -576,
-      "lat": 47.50191,
-      "lon": -122.73582,
+      "alt": 1325,
+      "gs": 103.2,
+      "track": 38.31,
+      "rate": -704,
+      "lat": 47.49532,
+      "lon": -122.73857,
       "squawk": "1200",
       "emergency": "none",
       "mil": false
