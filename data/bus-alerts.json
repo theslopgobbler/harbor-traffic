@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-26T04:35:17.7549611+00:00",
-  "status": "",
-  "alerts": [],
+  "updated": "2026-11-26T04:45:17.5061501+00:00",
+  "status": "All routes are currently operating normally.",
+  "alerts": [
+    {
+      "route": null,
+      "name": null,
+      "text": "Construction in 2027 Major construction and maintenance projects are coming in 2027 that are expected to disrupt regular transit service. GHT is working with local authorities to plan detours that preserve the best possible level of service for our riders. Stay tuned for more details. Learn more about the projects and timelines here: US 12 – Heron Street Bridge – Grid Deck Replacement US 12 - Wishkah River Bridge - Mechanical Rehabilitation"
+    }
+  ],
   "source": "https://ghtransit.com/alerts/"
 }
