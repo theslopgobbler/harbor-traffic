@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T05:35:18.6449115+00:00",
+  "updated": "2026-11-26T05:45:14.8808080+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -480,27 +480,6 @@
       "start": "2026-05-20T20:40:00.0000000+00:00",
       "end": "2026-12-31T21:40:00.0000000+00:00",
       "updated": "2026-10-27T17:29:08.9430000+00:00"
-    },
-    {
-      "id": 727790,
-      "kind": "other",
-      "category": "Trees down",
-      "priority": "Highest",
-      "headline": "Reported trees down on US 101 both directions at milepost 167.59 near Lower Hoh Rd beginning at 8:21 pm on November 25, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 167.59,
-      "lat": 47.732919853,
-      "lon": -124.374755043,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Jefferson",
-      "start": "2026-11-26T04:21:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-26T04:22:58.3500000+00:00"
     },
     {
       "id": 727751,
