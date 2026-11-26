@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T04:45:17.5061501+00:00",
+  "updated": "2026-11-26T04:55:17.7853887+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -482,27 +482,6 @@
       "updated": "2026-10-27T17:29:08.9430000+00:00"
     },
     {
-      "id": 727751,
-      "kind": "other",
-      "category": "Water over Roadway",
-      "priority": "Medium",
-      "headline": "Water over Roadway on US 101 both directions at milepost 58.2 near Ocean Avenue, use alternate routes if possible. Use caution and expect delays beginning at 1:24 pm on November 25, 2026 until further notice.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "B",
-      "milepost": 58.2,
-      "lat": 46.680804078,
-      "lon": -123.735771057,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Pacific",
-      "start": "2026-11-25T21:24:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-25T21:34:56.4870000+00:00"
-    },
-    {
       "id": 727790,
       "kind": "other",
       "category": "Trees down",
@@ -522,6 +501,27 @@
       "start": "2026-11-26T04:21:00.0000000+00:00",
       "end": null,
       "updated": "2026-11-26T04:22:58.3500000+00:00"
+    },
+    {
+      "id": 727751,
+      "kind": "other",
+      "category": "Water over Roadway",
+      "priority": "Medium",
+      "headline": "Water over Roadway on US 101 both directions at milepost 58.2 near Ocean Avenue, use alternate routes if possible. Use caution and expect delays beginning at 1:24 pm on November 25, 2026 until further notice.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "B",
+      "milepost": 58.2,
+      "lat": 46.680804078,
+      "lon": -123.735771057,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Pacific",
+      "start": "2026-11-25T21:24:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-25T21:34:56.4870000+00:00"
     },
     {
       "id": 698912,

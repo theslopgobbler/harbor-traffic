@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-26T04:45:17.5061501+00:00",
+  "updated": "2026-11-26T04:55:17.7853887+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a17ef7",
-      "flight": "FDX1838",
-      "reg": "N196FE",
-      "type": "B763",
-      "cat": "A5",
-      "alt": 12625,
-      "gs": 329.3,
-      "track": 235.39,
-      "rate": 3200,
-      "lat": 47.28992,
-      "lon": -122.76707,
-      "squawk": "6623",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
