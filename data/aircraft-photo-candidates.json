@@ -218,7 +218,8 @@
     "Rockwell Turbo Commander 690A": "2026-11-24T21:25:23.4453852+00:00",
     "Boeing 757 24APF": "2026-11-24T22:25:22.9030127+00:00",
     "Boeing 747 48EBDSF": "2026-11-25T02:55:26.735216+00:00",
-    "Boeing 747 48EFSCD": "2026-11-26T10:05:15.9409708+00:00"
+    "Boeing 747 48EFSCD": "2026-11-26T10:05:15.9409708+00:00",
+    "Airbus A320 251NSL": "2026-11-26T20:05:21.1693261+00:00"
   },
   "candidates": [
     {
@@ -13478,7 +13479,63 @@
       "date": "2015-04-16 17:51",
       "caption": "MSN 25783 LN 1064 B747-48EFSCD / 747-400 / 747-400F ASIANA AIRLINES LAX AIRPORT",
       "found": "2026-11-26T10:05:15.9409708+00:00"
+    },
+    {
+      "model": "Airbus A320 251NSL",
+      "file": "File:CGZ A320neo F-WWID!13154 10mar26 LFBO-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:CGZ_A320neo_F-WWID!13154_10mar26_LFBO-1.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/CGZ_A320neo_F-WWID%2113154_10mar26_LFBO-1.jpg/960px-CGZ_A320neo_F-WWID%2113154_10mar26_LFBO-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 597,
+      "author": "Clément Gruin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "10 March 2026, 16:22:05",
+      "caption": "",
+      "found": "2026-11-26T20:05:21.1693261+00:00"
+    },
+    {
+      "model": "Airbus A320 251NSL",
+      "file": "File:CGZ A320neo F-WWID!13154 10mar26 LFBO-2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:CGZ_A320neo_F-WWID!13154_10mar26_LFBO-2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/CGZ_A320neo_F-WWID%2113154_10mar26_LFBO-2.jpg/960px-CGZ_A320neo_F-WWID%2113154_10mar26_LFBO-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 613,
+      "author": "Clément Gruin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "10 March 2026, 16:34:03",
+      "caption": "",
+      "found": "2026-11-26T20:05:21.1693261+00:00"
+    },
+    {
+      "model": "Airbus A320 251NSL",
+      "file": "File:F-WWDE (24750350588).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-WWDE_(24750350588).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/F-WWDE_%2824750350588%29.jpg/960px-F-WWDE_%2824750350588%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-11-24 20:10",
+      "caption": "F-WWDE Airbus A320-251NSL @ Toulouse 18/11/2017",
+      "found": "2026-11-26T20:05:21.1693261+00:00"
+    },
+    {
+      "model": "Airbus A320 251NSL",
+      "file": "File:F-WWIH (38590261582).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:F-WWIH_(38590261582).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/F-WWIH_%2838590261582%29.jpg/960px-F-WWIH_%2838590261582%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Mike Burdett from CROMER, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2017-11-24 20:10",
+      "caption": "F-WWIH Airbus A320-251NSL @ Toulouse 18/11/2017",
+      "found": "2026-11-26T20:05:21.1693261+00:00"
     }
   ],
-  "updated": "2026-11-26T19:55:16.2780102+00:00"
+  "updated": "2026-11-26T20:05:21.1693261+00:00"
 }

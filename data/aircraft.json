@@ -1,5 +1,70 @@
 {
-  "updated": "2026-11-26T19:55:16.2780102+00:00",
+  "updated": "2026-11-26T20:05:21.1693261+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a486cc",
+      "flight": "DAL1714",
+      "reg": "N391DA",
+      "type": "B738",
+      "cat": "A3",
+      "alt": 9900,
+      "gs": 286.4,
+      "track": 337.2,
+      "rate": 0,
+      "lat": 47.28702,
+      "lon": -122.91201,
+      "squawk": "7671",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a32867",
+      "flight": "SKW3818",
+      "reg": "N302SY",
+      "type": "E75L",
+      "cat": "A3",
+      "alt": 9900,
+      "gs": 333.9,
+      "track": 24.03,
+      "rate": 128,
+      "lat": 47.40166,
+      "lon": -122.85599,
+      "squawk": "4736",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a46e6a",
+      "flight": "FFT4203",
+      "reg": "N385FR",
+      "type": "A20N",
+      "cat": "A3",
+      "alt": 10700,
+      "gs": 273.7,
+      "track": 326.02,
+      "rate": -1472,
+      "lat": 47.10239,
+      "lon": -122.8082,
+      "squawk": "6735",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a51968",
+      "flight": "ASA792",
+      "reg": "N428AS",
+      "type": "B739",
+      "cat": "A3",
+      "alt": 7175,
+      "gs": 310.5,
+      "track": 21.94,
+      "rate": -1344,
+      "lat": 47.54282,
+      "lon": -122.80637,
+      "squawk": "1354",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
