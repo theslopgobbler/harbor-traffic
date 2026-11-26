@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-26T04:25:19.1224463+00:00",
+  "updated": "2026-11-26T04:28:13.9468316+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a2421b",
+      "flight": "N2446X",
+      "reg": "N2446X",
+      "type": "C206",
+      "cat": "A1",
+      "alt": 2400,
+      "gs": 79.1,
+      "track": 214.7,
+      "rate": 300,
+      "lat": 47.13265,
+      "lon": -122.75947,
+      "squawk": "5523",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
