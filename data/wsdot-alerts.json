@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T08:35:18.9470378+00:00",
+  "updated": "2026-11-26T08:45:20.2549578+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -543,6 +543,27 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
+      "id": 727803,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 northbound at milepost 103.98 near Custer Way beginning at 12:38 am on November 26, 2026 until further notice. The two left lanes are blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "N",
+      "milepost": 103.98,
+      "lat": 47.016524199,
+      "lon": -122.905801049,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-26T08:38:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-26T08:40:05.7100000+00:00"
     },
     {
       "id": 727802,
