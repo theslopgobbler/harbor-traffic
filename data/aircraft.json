@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-26T03:25:15.5784817+00:00",
+  "updated": "2026-11-26T03:35:18.8205216+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a9b70e",
-      "flight": "TDY925",
-      "reg": "N725KP",
-      "type": "PC12",
-      "cat": "A1",
-      "alt": 7350,
-      "gs": 269.5,
-      "track": 9.18,
-      "rate": -960,
-      "lat": 46.99022,
-      "lon": -122.88654,
-      "squawk": "4645",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
