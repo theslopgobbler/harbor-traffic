@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-26T22:35:23.5840775+00:00",
+  "updated": "2026-11-26T22:45:18.6774686+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a11d1a",
+      "flight": "N171CD",
+      "reg": "N171CD",
+      "type": "SR20",
+      "cat": "A1",
+      "alt": 4725,
+      "gs": 150.9,
+      "track": 66.15,
+      "rate": 525,
+      "lat": 47.45888,
+      "lon": -122.83292,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
