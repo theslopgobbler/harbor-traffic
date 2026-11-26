@@ -217,7 +217,8 @@
     "Boeing 767 36NER": "2026-11-24T16:05:23.7125188+00:00",
     "Rockwell Turbo Commander 690A": "2026-11-24T21:25:23.4453852+00:00",
     "Boeing 757 24APF": "2026-11-24T22:25:22.9030127+00:00",
-    "Boeing 747 48EBDSF": "2026-11-25T02:55:26.735216+00:00"
+    "Boeing 747 48EBDSF": "2026-11-25T02:55:26.735216+00:00",
+    "Boeing 747 48EFSCD": "2026-11-26T10:05:15.9409708+00:00"
   },
   "candidates": [
     {
@@ -13449,7 +13450,35 @@
       "date": "1997-09-23",
       "caption": "Aircraft United Parcel Service - UPS Boeing 757-24APF Reg.: N434UP MSN: 25465 Line No.: 579 Location &amp; Date Salt Lake City - International (SLC / KSLC) Utah, USA - September 23, 1997 Caption In the original colors",
       "found": "2026-11-24T22:25:22.9030127+00:00"
+    },
+    {
+      "model": "Boeing 747 48EFSCD",
+      "file": "File:Asiana Airlines, Boeing 747-48EF, HL7420 - LAX (19544107862).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Asiana_Airlines,_Boeing_747-48EF,_HL7420_-_LAX_(19544107862).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Asiana_Airlines%2C_Boeing_747-48EF%2C_HL7420_-_LAX_%2819544107862%29.jpg/960px-Asiana_Airlines%2C_Boeing_747-48EF%2C_HL7420_-_LAX_%2819544107862%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Eric Salard",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-04-16 17:50",
+      "caption": "MSN 25783 LN 1064 B747-48EFSCD ASIANA AIRLINES LAX AIRPORT",
+      "found": "2026-11-26T10:05:15.9409708+00:00"
+    },
+    {
+      "model": "Boeing 747 48EFSCD",
+      "file": "File:Asiana Airlines, Boeing 747-48EF, HL7420 - LAX (22709700950).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Asiana_Airlines,_Boeing_747-48EF,_HL7420_-_LAX_(22709700950).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Asiana_Airlines%2C_Boeing_747-48EF%2C_HL7420_-_LAX_%2822709700950%29.jpg/960px-Asiana_Airlines%2C_Boeing_747-48EF%2C_HL7420_-_LAX_%2822709700950%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Eric Salard",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2015-04-16 17:51",
+      "caption": "MSN 25783 LN 1064 B747-48EFSCD / 747-400 / 747-400F ASIANA AIRLINES LAX AIRPORT",
+      "found": "2026-11-26T10:05:15.9409708+00:00"
     }
   ],
-  "updated": "2026-11-26T09:55:22.0651615+00:00"
+  "updated": "2026-11-26T10:05:15.9409708+00:00"
 }
