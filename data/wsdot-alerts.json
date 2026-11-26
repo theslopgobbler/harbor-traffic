@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T21:05:24.1582565+00:00",
+  "updated": "2026-11-26T21:15:17.2411832+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -637,27 +637,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 727864,
-      "kind": "closure",
-      "category": "Police Activity is causing traffic backups and delays",
-      "priority": "Highest",
-      "headline": "Police Activity is causing traffic backups and delays on I-5 northbound at milepost 110.4 near Carpenter Rd NE beginning at 12:51 pm on November 26, 2026 until further notice. The right lane is blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 110.4,
-      "lat": 47.058226108,
-      "lon": -122.796958736,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-26T20:51:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-26T20:56:22.3730000+00:00"
     },
     {
       "id": 727839,
