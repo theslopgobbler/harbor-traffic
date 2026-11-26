@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T00:55:17.3620992+00:00",
+  "updated": "2026-11-26T01:05:19.4226078+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N757JX",
       "type": "C152",
       "cat": "A1",
-      "alt": 2475,
-      "gs": 44.0,
-      "track": 178.7,
-      "rate": 150,
-      "lat": 47.24591,
-      "lon": -122.70299,
+      "alt": 2950,
+      "gs": 51.0,
+      "track": 191.31,
+      "rate": -73,
+      "lat": 47.11409,
+      "lon": -122.7293,
       "squawk": "4752",
       "emergency": "none",
       "mil": false
