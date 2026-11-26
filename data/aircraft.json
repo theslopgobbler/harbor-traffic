@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T23:05:19.6359688+00:00",
+  "updated": "2026-11-26T23:15:14.4219354+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,29 +8,13 @@
       "reg": "N430LF",
       "type": "B429",
       "cat": "A7",
-      "alt": 8125,
-      "gs": 134.2,
-      "track": 349.7,
-      "rate": 672,
-      "lat": 47.47579,
-      "lon": -123.22576,
+      "alt": 9850,
+      "gs": 138.0,
+      "track": 346.17,
+      "rate": -73,
+      "lat": 47.84127,
+      "lon": -123.29386,
       "squawk": "0350",
-      "emergency": "none",
-      "mil": false
-    },
-    {
-      "hex": "a11d1a",
-      "flight": "N171CD",
-      "reg": "N171CD",
-      "type": "SR20",
-      "cat": "A1",
-      "alt": 3250,
-      "gs": 144.4,
-      "track": 42.75,
-      "rate": -150,
-      "lat": 47.56526,
-      "lon": -122.73287,
-      "squawk": "1200",
       "emergency": "none",
       "mil": false
     }
