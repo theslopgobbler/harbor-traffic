@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T10:45:19.2779903+00:00",
+  "updated": "2026-11-26T10:55:24.2390531+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,8 +10,8 @@
     "waterF": 55.0
   },
   "bar": {
-    "issued": "2026-11-26T05:26:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH THURSDAY EVENING... Combined seas 15 to 18 ft with breakers covering the bar. Bar conditions severe. Maximum ebb currents will occur around 515 AM Thursday, 530 PM Thursday, and 600 AM Friday. The Thursday afternoon ebb will be very strong.",
+    "issued": "2026-11-26T10:41:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH THIS EVENING... Combined seas 15 to 18 ft with breakers covering the bar. Bar conditions severe. Maximum ebb currents will occur around 515 AM Thursday, 530 PM Thursday, and 600 AM Friday. The Thursday afternoon ebb will be very strong.",
     "conditions": "severe",
     "seas": "15 to 18 ft with breakers covering the bar",
     "ebb": "afternoon ebb will be very strong"
