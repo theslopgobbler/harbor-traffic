@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-26T02:35:16.3725867+00:00",
+  "updated": "2026-11-26T02:45:19.6583237+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a7d513",
-      "flight": "N6032S",
-      "reg": "N6032S",
-      "type": "BE60",
-      "cat": "A1",
-      "alt": 8500,
-      "gs": 244.1,
-      "track": 1.88,
-      "rate": 604,
-      "lat": 47.42435,
-      "lon": -122.87363,
-      "squawk": "3502",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
