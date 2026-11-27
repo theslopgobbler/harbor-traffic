@@ -220,7 +220,8 @@
     "Boeing 747 48EBDSF": "2026-11-25T02:55:26.735216+00:00",
     "Boeing 747 48EFSCD": "2026-11-26T10:05:15.9409708+00:00",
     "Airbus A320 251NSL": "2026-11-26T20:05:21.1693261+00:00",
-    "Boeing 767 319ERBDSF": "2026-11-27T19:45:27.5353330+00:00"
+    "Boeing 767 319ERBDSF": "2026-11-27T19:45:27.535333+00:00",
+    "Beech T-34A Mentor": "2026-11-27T19:55:23.8663402+00:00"
   },
   "candidates": [
     {
@@ -13536,7 +13537,91 @@
       "date": "2017-11-24 20:10",
       "caption": "F-WWIH Airbus A320-251NSL @ Toulouse 18/11/2017",
       "found": "2026-11-26T20:05:21.1693261+00:00"
+    },
+    {
+      "model": "Beech T-34A Mentor",
+      "file": "File:Beech T-34A Mentor (45) AN1811118.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_T-34A_Mentor_(45)_AN1811118.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Beech_T-34A_Mentor_%2845%29_AN1811118.jpg/960px-Beech_T-34A_Mentor_%2845%29_AN1811118.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 676,
+      "author": "André Du-pont (Mexico Air Spotters)",
+      "license": "GFDL 1.2",
+      "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "date": "7 August 2010",
+      "caption": "Del/01/26/1953 Former U.S. Air Force as 52-7638",
+      "found": "2026-11-27T19:55:23.8663402+00:00"
+    },
+    {
+      "model": "Beech T-34A Mentor",
+      "file": "File:Beech T-34A Mentor - Oregon Air and Space Museum - Eugene, Oregon - DSC09767.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_T-34A_Mentor_-_Oregon_Air_and_Space_Museum_-_Eugene,_Oregon_-_DSC09767.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Beech_T-34A_Mentor_-_Oregon_Air_and_Space_Museum_-_Eugene%2C_Oregon_-_DSC09767.jpg/960px-Beech_T-34A_Mentor_-_Oregon_Air_and_Space_Museum_-_Eugene%2C_Oregon_-_DSC09767.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 640,
+      "author": "Daderot",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "date": "2017-11-04 17:46:00",
+      "caption": "Exhibit in the Oregon Air and Space Museum - Eugene, Oregon, USA.",
+      "found": "2026-11-27T19:55:23.8663402+00:00"
+    },
+    {
+      "model": "Beech T-34A Mentor",
+      "file": "File:Beech T-34A Mentor Silver LSide TICO 13March2010 (14412758430).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_T-34A_Mentor_Silver_LSide_TICO_13March2010_(14412758430).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Beech_T-34A_Mentor_Silver_LSide_TICO_13March2010_%2814412758430%29.jpg/960px-Beech_T-34A_Mentor_Silver_LSide_TICO_13March2010_%2814412758430%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Valder137",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2010-03-13 10:30",
+      "caption": "SONY DSC",
+      "found": "2026-11-27T19:55:23.8663402+00:00"
+    },
+    {
+      "model": "Beech T-34A Mentor",
+      "file": "File:Beech T-34A Mentor Silver RFront TICO 13March2010 (14412789818).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_T-34A_Mentor_Silver_RFront_TICO_13March2010_(14412789818).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Beech_T-34A_Mentor_Silver_RFront_TICO_13March2010_%2814412789818%29.jpg/960px-Beech_T-34A_Mentor_Silver_RFront_TICO_13March2010_%2814412789818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Valder137",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2010-03-13 10:29",
+      "caption": "SONY DSC",
+      "found": "2026-11-27T19:55:23.8663402+00:00"
+    },
+    {
+      "model": "Beech T-34A Mentor",
+      "file": "File:Beech T-34A Mentor Silver RNoseArt TICO 13March2010 (14412758640).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_T-34A_Mentor_Silver_RNoseArt_TICO_13March2010_(14412758640).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Beech_T-34A_Mentor_Silver_RNoseArt_TICO_13March2010_%2814412758640%29.jpg/960px-Beech_T-34A_Mentor_Silver_RNoseArt_TICO_13March2010_%2814412758640%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Valder137",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2010-03-13 10:30",
+      "caption": "SONY DSC",
+      "found": "2026-11-27T19:55:23.8663402+00:00"
+    },
+    {
+      "model": "Beech T-34A Mentor",
+      "file": "File:Beech T-34A Mentor Silver RSideFront TICO 13March2010 (14619471273).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beech_T-34A_Mentor_Silver_RSideFront_TICO_13March2010_(14619471273).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Beech_T-34A_Mentor_Silver_RSideFront_TICO_13March2010_%2814619471273%29.jpg/960px-Beech_T-34A_Mentor_Silver_RSideFront_TICO_13March2010_%2814619471273%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "w": 960,
+      "h": 642,
+      "author": "Valder137",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2010-03-13 10:29",
+      "caption": "SONY DSC",
+      "found": "2026-11-27T19:55:23.8663402+00:00"
     }
   ],
-  "updated": "2026-11-27T19:45:27.5353330+00:00"
+  "updated": "2026-11-27T19:55:23.8663402+00:00"
 }
