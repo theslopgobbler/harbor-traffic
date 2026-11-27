@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T08:15:14.4024081+00:00",
+  "updated": "2026-11-27T08:25:18.9853434+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -574,6 +574,27 @@
       "start": "2026-04-03T13:36:00.0000000+00:00",
       "end": "2026-12-31T16:00:00.0000000+00:00",
       "updated": "2026-04-03T13:43:00.9300000+00:00"
+    },
+    {
+      "id": 727912,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on US 101 northbound at milepost 367.4 near I-5 beginning at 12:14 am on November 27, 2026 until further notice. The ramp is partially blocked.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 367.4,
+      "lat": 47.02159507,
+      "lon": -122.905759728,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-27T08:14:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-27T08:18:45.5200000+00:00"
     },
     {
       "id": 698910,
