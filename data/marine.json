@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T13:05:28.7155599+00:00",
+  "updated": "2026-11-27T13:15:31.7332895+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
@@ -10,8 +10,8 @@
     "waterF": 55.2
   },
   "bar": {
-    "issued": "2026-11-27T01:51:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH FRIDAY AFTERNOON... Combined seas 10 to 13 ft. Bar conditions rough. Maximum ebb currents will occur around 600 AM Friday, 615 PM Friday, and 700 AM Saturday. The Friday afternoon ebb will be very strong.",
+    "issued": "2026-11-27T13:07:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH THIS AFTERNOON... Combined seas 10 to 13 ft. Bar conditions rough. Maximum ebb currents will occur around 600 AM Friday, 615 PM Friday, and 700 AM Saturday. The Friday afternoon ebb will be very strong.",
     "conditions": "rough",
     "seas": "10 to 13 ft",
     "ebb": "afternoon ebb will be very strong"
