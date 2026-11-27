@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T17:05:26.5879174+00:00",
+  "updated": "2026-11-27T17:15:25.9580479+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N65903",
       "type": "C82T",
       "cat": "A1",
-      "alt": 3250,
-      "gs": 128.6,
-      "track": 8.95,
-      "rate": -768,
-      "lat": 46.75195,
-      "lon": -122.9839,
+      "alt": 2750,
+      "gs": 131.8,
+      "track": 11.82,
+      "rate": 0,
+      "lat": 47.06163,
+      "lon": -122.86697,
       "squawk": "4663",
       "emergency": "none",
       "mil": false
@@ -25,11 +25,11 @@
       "type": "RV8",
       "cat": "A1",
       "alt": 6775,
-      "gs": 147.1,
-      "track": 187.03,
-      "rate": 128,
-      "lat": 47.66986,
-      "lon": -122.7951,
+      "gs": 134.7,
+      "track": 185.96,
+      "rate": 512,
+      "lat": 47.26804,
+      "lon": -122.86031,
       "squawk": "4727",
       "emergency": "none",
       "mil": false
