@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-27T16:45:32.4078477+00:00",
+  "updated": "2026-11-27T16:55:35.2868424+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a84b63",
-      "flight": "",
-      "reg": "N6331G",
-      "type": "C150",
+      "hex": "a8b09d",
+      "flight": "RFS802",
+      "reg": "N65903",
+      "type": "C82T",
       "cat": "A1",
-      "alt": 900,
-      "gs": 91.8,
-      "track": 11.31,
-      "rate": 64,
-      "lat": 47.32553,
-      "lon": -122.8551,
-      "squawk": null,
-      "emergency": null,
+      "alt": 3750,
+      "gs": 123.7,
+      "track": 214.46,
+      "rate": -256,
+      "lat": 46.96422,
+      "lon": -122.91868,
+      "squawk": "4663",
+      "emergency": "none",
       "mil": false
     }
   ]
