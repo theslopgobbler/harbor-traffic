@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-27T09:15:24.4319618+00:00",
+  "updated": "2026-11-27T09:25:22.2575264+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
       "hex": "ab3c6b",
-      "flight": "N823EG",
+      "flight": "",
       "reg": "N823EG",
       "type": "T206",
       "cat": "A1",
-      "alt": 2000,
-      "gs": 118.7,
-      "track": 6.29,
-      "rate": -448,
-      "lat": 46.94709,
-      "lon": -122.92814,
-      "squawk": "5526",
-      "emergency": "none",
+      "alt": 0,
+      "gs": 3.8,
+      "track": 67.5,
+      "rate": null,
+      "lat": 46.97753,
+      "lon": -122.89926,
+      "squawk": null,
+      "emergency": null,
       "mil": false
     }
   ]
