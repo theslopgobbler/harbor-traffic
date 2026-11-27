@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-27T04:35:16.2364333+00:00",
+  "updated": "2026-11-27T04:45:17.5831751+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "ab3c6b",
-      "flight": "N823EG",
-      "reg": "N823EG",
-      "type": "T206",
-      "cat": "A1",
-      "alt": 2200,
-      "gs": 107.8,
-      "track": 61.77,
-      "rate": 64,
-      "lat": 47.05589,
-      "lon": -122.75658,
-      "squawk": "5526",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
