@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-27T16:05:29.7732358+00:00",
+  "updated": "2026-11-27T16:15:23.6137713+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a50df4",
-      "flight": "N4248J",
-      "reg": "N4248J",
-      "type": "P28A",
-      "cat": "A1",
-      "alt": 8600,
-      "gs": 122.3,
-      "track": 150.08,
-      "rate": 0,
-      "lat": 47.92955,
-      "lon": -123.04214,
-      "squawk": "1200",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
