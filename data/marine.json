@@ -1,19 +1,19 @@
 {
-  "updated": "2026-11-27T01:45:22.6127955+00:00",
+  "updated": "2026-11-27T01:55:18.2664906+00:00",
   "buoy": {
     "station": "46211",
     "name": "Grays Harbor buoy",
-    "time": "2026-11-27T00:56:00.0000000+00:00",
-    "waveFt": 12.1,
-    "periodS": 11.0,
-    "dirDeg": 241.0,
+    "time": "2026-11-27T01:26:00.0000000+00:00",
+    "waveFt": 13.5,
+    "periodS": 12.0,
+    "dirDeg": 253.0,
     "waterF": 55.2
   },
   "bar": {
-    "issued": "2026-11-26T10:41:00+00:00",
-    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH THIS EVENING... Combined seas 15 to 18 ft with breakers covering the bar. Bar conditions severe. Maximum ebb currents will occur around 515 AM Thursday, 530 PM Thursday, and 600 AM Friday. The Thursday afternoon ebb will be very strong.",
-    "conditions": "severe",
-    "seas": "15 to 18 ft with breakers covering the bar",
+    "issued": "2026-11-27T01:51:00+00:00",
+    "text": "...SMALL CRAFT ADVISORY IN EFFECT THROUGH FRIDAY AFTERNOON... Combined seas 10 to 13 ft. Bar conditions rough. Maximum ebb currents will occur around 600 AM Friday, 615 PM Friday, and 700 AM Saturday. The Friday afternoon ebb will be very strong.",
+    "conditions": "rough",
+    "seas": "10 to 13 ft",
     "ebb": "afternoon ebb will be very strong"
   },
   "alerts": [
@@ -21,13 +21,13 @@
       "event": "Small Craft Advisory",
       "area": "Coastal Waters From Cape Flattery To James Island Out 10 Nm; Coastal Waters From James Island To Point Grenville Out 10 Nm; Coastal Waters From Point Grenville To Cape Shoalwater Out 10 Nm; Coastal Waters From Cape Flattery To James Island 10 To 60 Nm; Waters From James Island To Point Grenville 10 To 60 Nm; Coastal Waters From Point Grenville To Cape Shoalwater 10 To 60 Nm",
       "ends": "2026-11-28T00:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 26 at 2:02PM PST until November 27 at 4:00PM PST by NWS Seattle WA"
+      "headline": "Small Craft Advisory issued November 26 at 5:52PM PST until November 27 at 4:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
       "area": "Grays Harbor Bar",
-      "ends": "2026-11-27T06:00:00+00:00",
-      "headline": "Small Craft Advisory issued November 26 at 2:02PM PST until November 26 at 10:00PM PST by NWS Seattle WA"
+      "ends": "2026-11-28T00:00:00+00:00",
+      "headline": "Small Craft Advisory issued November 26 at 5:52PM PST until November 27 at 4:00PM PST by NWS Seattle WA"
     },
     {
       "event": "Small Craft Advisory",
