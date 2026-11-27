@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-27T00:45:18.0376704+00:00",
+  "updated": "2026-11-27T00:55:16.3630342+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a6e361",
-      "flight": "DAL344",
-      "reg": "N543DE",
-      "type": "A21N",
-      "cat": "A3",
-      "alt": 14375,
-      "gs": 334.8,
-      "track": 248.26,
-      "rate": 1856,
-      "lat": 47.27766,
-      "lon": -122.91384,
-      "squawk": "6606",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
