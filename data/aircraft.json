@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-27T17:45:32.8175479+00:00",
+  "updated": "2026-11-27T17:55:26.0730177+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a25b3f",
-      "flight": "ASA254",
-      "reg": "N251AK",
-      "type": "B739",
-      "cat": "A3",
-      "alt": 9925,
-      "gs": 277.0,
-      "track": 184.76,
-      "rate": -1088,
-      "lat": 47.87376,
-      "lon": -122.767,
-      "squawk": "7202",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }

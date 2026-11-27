@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T17:45:32.8175479+00:00",
+  "updated": "2026-11-27T17:55:26.0730177+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -553,27 +553,6 @@
           47.29942
         ]
       ]
-    },
-    {
-      "id": 727924,
-      "kind": "collision",
-      "category": "Collision",
-      "priority": "Highest",
-      "headline": "Collision on I-5 southbound at milepost 104.32 near US 101 beginning at 8:46 am on November 27, 2026 until further notice. The left lane is blocked. The onramp is partially blocked.",
-      "description": "",
-      "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "S",
-      "milepost": 104.32,
-      "lat": 47.021300118,
-      "lon": -122.906220635,
-      "lat2": 0,
-      "lon2": 0,
-      "county": "Thurston",
-      "start": "2026-11-27T16:46:00.0000000+00:00",
-      "end": null,
-      "updated": "2026-11-27T17:00:29.0070000+00:00"
     },
     {
       "id": 692593,
