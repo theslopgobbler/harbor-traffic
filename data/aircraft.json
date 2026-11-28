@@ -1,23 +1,7 @@
 {
-  "updated": "2026-11-28T01:45:28.0083441+00:00",
+  "updated": "2026-11-28T01:55:23.2882816+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
-    {
-      "hex": "a22084",
-      "flight": "N236TS",
-      "reg": "N236TS",
-      "type": "DA42",
-      "cat": "A1",
-      "alt": 2825,
-      "gs": 108.2,
-      "track": 16.09,
-      "rate": 0,
-      "lat": 46.99439,
-      "lon": -122.83356,
-      "squawk": "4652",
-      "emergency": "none",
-      "mil": false
-    },
     {
       "hex": "a6ce65",
       "flight": "CAP4638",
@@ -25,12 +9,28 @@
       "type": "C82S",
       "cat": "A1",
       "alt": 2825,
-      "gs": 118.5,
-      "track": 297.65,
+      "gs": 90.8,
+      "track": 26.85,
       "rate": 0,
-      "lat": 47.18893,
-      "lon": -122.70299,
-      "squawk": "4665",
+      "lat": 47.36847,
+      "lon": -122.87027,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a22084",
+      "flight": "N236TS",
+      "reg": "N236TS",
+      "type": "DA42",
+      "cat": "A1",
+      "alt": 1825,
+      "gs": 112.1,
+      "track": 13.42,
+      "rate": 0,
+      "lat": 47.29898,
+      "lon": -122.70342,
+      "squawk": "4652",
       "emergency": "none",
       "mil": false
     }
