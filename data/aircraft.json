@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-28T01:15:22.9707251+00:00",
+  "updated": "2026-11-28T01:25:28.3402165+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
-      "hex": "a6db55",
-      "flight": "N54073",
-      "reg": "N54073",
-      "type": "C172",
+      "hex": "a22084",
+      "flight": "N236TS",
+      "reg": "N236TS",
+      "type": "DA42",
       "cat": "A1",
-      "alt": 2550,
-      "gs": 112.2,
-      "track": 191.31,
-      "rate": -323,
-      "lat": 47.15281,
-      "lon": -122.85074,
-      "squawk": "4743",
+      "alt": 2825,
+      "gs": 139.0,
+      "track": 180.41,
+      "rate": -320,
+      "lat": 47.39241,
+      "lon": -122.83236,
+      "squawk": "4652",
       "emergency": "none",
       "mil": false
     }
