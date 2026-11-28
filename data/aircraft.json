@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-28T17:25:27.1461431+00:00",
+  "updated": "2026-11-28T17:35:30.0809416+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "a03e69",
+      "flight": "N1147N",
+      "reg": "N1147N",
+      "type": "RV7",
+      "cat": "A1",
+      "alt": 4125,
+      "gs": 140.0,
+      "track": 101.95,
+      "rate": -384,
+      "lat": 47.12833,
+      "lon": -123.55685,
+      "squawk": "1200",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
