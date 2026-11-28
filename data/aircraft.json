@@ -1,22 +1,5 @@
 {
-  "updated": "2026-11-28T02:05:24.8085591+00:00",
+  "updated": "2026-11-28T02:15:34.7267685+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": [
-    {
-      "hex": "a1bd09",
-      "flight": "N2108Y",
-      "reg": "N2108Y",
-      "type": "C172",
-      "cat": "A1",
-      "alt": 4825,
-      "gs": 114.3,
-      "track": 195.74,
-      "rate": 0,
-      "lat": 47.16522,
-      "lon": -122.81513,
-      "squawk": "4753",
-      "emergency": "none",
-      "mil": false
-    }
-  ]
+  "aircraft": []
 }
