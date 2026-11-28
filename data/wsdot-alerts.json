@@ -1,7 +1,38 @@
 {
-  "updated": "2026-11-28T16:05:33.6581397+00:00",
+  "updated": "2026-11-28T16:15:26.2661974+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
+    {
+      "id": 727680,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "From 9 a.m. to 4 p.m. Monday, Nov. 30, and Tuesday, Dec. 1, eastbound US 12 will close approaching the Wynoochee River Bridge. During the closure, westbound US 12 will be reconfigured for two-way travel for bridge deck repairs. Travelers can expect shifted lanes and reduced speed approaching the bridge while work is underway. Read the travel advisory.",
+      "description": "",
+      "link": "https://lnks.gd/3/3dDV-BP",
+      "road": "012",
+      "roadLabel": "US 12",
+      "direction": "B",
+      "milepost": 8.2,
+      "lat": 46.976559833,
+      "lon": -123.646744587,
+      "lat2": 46.976568664,
+      "lon2": -123.638305683,
+      "county": null,
+      "start": "2026-11-25T00:21:00.0000000+00:00",
+      "end": "2026-12-01T17:00:00.0000000+00:00",
+      "updated": "2026-11-25T00:23:51.7770000+00:00",
+      "path": [
+        [
+          -123.646744587,
+          46.976559833
+        ],
+        [
+          -123.638305683,
+          46.976568664
+        ]
+      ]
+    },
     {
       "id": 718841,
       "kind": "work",
@@ -491,37 +522,6 @@
       "start": "2025-01-13T18:36:00.0000000+00:00",
       "end": "2026-12-31T18:36:00.0000000+00:00",
       "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
-      "id": 727680,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "From 9 a.m. to 4 p.m. Monday, Nov. 30, and Tuesday, Dec. 1, eastbound US 12 will close approaching the Wynoochee River Bridge. During the closure, westbound US 12 will be reconfigured for two-way travel for bridge deck repairs. Travelers can expect shifted lanes and reduced speed approaching the bridge while work is underway. Read the travel advisory.",
-      "description": "",
-      "link": "https://lnks.gd/3/3dDV-BP",
-      "road": "012",
-      "roadLabel": "US 12",
-      "direction": "B",
-      "milepost": 8.2,
-      "lat": 46.976559833,
-      "lon": -123.646744587,
-      "lat2": 46.976568664,
-      "lon2": -123.638305683,
-      "county": null,
-      "start": "2026-11-25T00:21:00.0000000+00:00",
-      "end": "2026-12-01T17:00:00.0000000+00:00",
-      "updated": "2026-11-25T00:23:51.7770000+00:00",
-      "path": [
-        [
-          -123.646744587,
-          46.976559833
-        ],
-        [
-          -123.638305683,
-          46.976568664
-        ]
-      ]
     },
     {
       "id": 727829,
