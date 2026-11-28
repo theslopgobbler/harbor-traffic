@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T03:55:31.3226648+00:00",
+  "updated": "2026-11-28T04:05:29.3180012+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -238,6 +238,27 @@
       "updated": "2026-10-31T00:26:55.2670000+00:00"
     },
     {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
       "id": 705229,
       "kind": "work",
       "category": "Construction",
@@ -440,27 +461,6 @@
       ]
     },
     {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
-    },
-    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -528,21 +528,21 @@
       "kind": "collision",
       "category": "Collision",
       "priority": "Highest",
-      "headline": "Collision on I-5 northbound at milepost 104.32 near US 101 beginning at 7:36 pm on November 27, 2026 until further notice. The left lane is blocked.",
+      "headline": "Collision on US 101 southbound at milepost 367.40 ramp to southbound I-5 beginning at 7:36 pm on November 27, 2026 until further notice. The left lane is closed.",
       "description": "",
       "link": null,
-      "road": "005",
-      "roadLabel": "I-5",
-      "direction": "N",
-      "milepost": 104.32,
-      "lat": 47.021386205,
-      "lon": -122.906057864,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "S",
+      "milepost": 367.33,
+      "lat": 47.021745307,
+      "lon": -122.907125853,
       "lat2": 0,
       "lon2": 0,
       "county": "Thurston",
       "start": "2026-11-28T03:36:00.0000000+00:00",
       "end": null,
-      "updated": "2026-11-28T03:37:20.0770000+00:00"
+      "updated": "2026-11-28T03:55:33.7300000+00:00"
     },
     {
       "id": 727829,
