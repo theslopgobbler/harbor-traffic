@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T07:25:27.6294524+00:00",
+  "updated": "2026-11-28T07:35:32.0990990+00:00",
   "source": "WSDOT Highway Alerts",
   "alerts": [
     {
@@ -238,6 +238,27 @@
       "updated": "2026-10-31T00:26:55.2670000+00:00"
     },
     {
+      "id": 631745,
+      "kind": "work",
+      "category": "Maintenance",
+      "priority": "Medium",
+      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
+      "description": "",
+      "link": null,
+      "road": "101",
+      "roadLabel": "US 101",
+      "direction": "N",
+      "milepost": 77.3,
+      "lat": 46.922830762,
+      "lon": -123.718605673,
+      "lat2": 0,
+      "lon2": 0,
+      "county": null,
+      "start": "2025-01-13T18:36:00.0000000+00:00",
+      "end": "2026-12-31T18:36:00.0000000+00:00",
+      "updated": "2025-01-13T18:39:15.4830000+00:00"
+    },
+    {
       "id": 705229,
       "kind": "work",
       "category": "Construction",
@@ -440,6 +461,27 @@
       ]
     },
     {
+      "id": 727966,
+      "kind": "collision",
+      "category": "Collision",
+      "priority": "Highest",
+      "headline": "Collision on I-5 southbound at milepost 105.68 near Eastside St beginning at 11:33 pm on November 27, 2026 until further notice. Ramp is blocked.",
+      "description": "",
+      "link": null,
+      "road": "005",
+      "roadLabel": "I-5",
+      "direction": "S",
+      "milepost": 105.68,
+      "lat": 47.03540437,
+      "lon": -122.886878364,
+      "lat2": 0,
+      "lon2": 0,
+      "county": "Thurston",
+      "start": "2026-11-28T07:33:00.0000000+00:00",
+      "end": null,
+      "updated": "2026-11-28T07:34:23.2030000+00:00"
+    },
+    {
       "id": 692593,
       "kind": "work",
       "category": "Maintenance",
@@ -501,27 +543,6 @@
       "start": "2026-05-20T20:52:00.0000000+00:00",
       "end": "2026-12-31T21:52:00.0000000+00:00",
       "updated": "2026-10-27T17:24:59.6700000+00:00"
-    },
-    {
-      "id": 631745,
-      "kind": "work",
-      "category": "Maintenance",
-      "priority": "Medium",
-      "headline": "The climbing lane on northbound US 101 approaching Cosi Hill is closed.",
-      "description": "",
-      "link": null,
-      "road": "101",
-      "roadLabel": "US 101",
-      "direction": "N",
-      "milepost": 77.3,
-      "lat": 46.922830762,
-      "lon": -123.718605673,
-      "lat2": 0,
-      "lon2": 0,
-      "county": null,
-      "start": "2025-01-13T18:36:00.0000000+00:00",
-      "end": "2026-12-31T18:36:00.0000000+00:00",
-      "updated": "2025-01-13T18:39:15.4830000+00:00"
     },
     {
       "id": 727829,
