@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T01:25:28.3402165+00:00",
+  "updated": "2026-11-28T01:35:34.1060256+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,12 +8,12 @@
       "reg": "N236TS",
       "type": "DA42",
       "cat": "A1",
-      "alt": 2825,
-      "gs": 139.0,
-      "track": 180.41,
-      "rate": -320,
-      "lat": 47.39241,
-      "lon": -122.83236,
+      "alt": 1475,
+      "gs": 116.6,
+      "track": 185.91,
+      "rate": -576,
+      "lat": 47.04804,
+      "lon": -122.88132,
       "squawk": "4652",
       "emergency": "none",
       "mil": false
