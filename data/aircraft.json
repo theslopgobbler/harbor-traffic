@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T15:35:26.3256581+00:00",
+  "updated": "2026-11-28T15:45:30.1201186+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,11 +9,11 @@
       "type": "B429",
       "cat": "A7",
       "alt": 7275,
-      "gs": 138.5,
-      "track": 98.31,
+      "gs": 144.7,
+      "track": 98.75,
       "rate": 0,
-      "lat": 46.91785,
-      "lon": -123.40407,
+      "lat": 46.85539,
+      "lon": -122.79673,
       "squawk": "0350",
       "emergency": "none",
       "mil": false
