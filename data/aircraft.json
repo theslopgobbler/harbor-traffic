@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T03:25:30.1390041+00:00",
+  "updated": "2026-11-28T03:35:26.5102202+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -8,15 +8,31 @@
       "reg": "N236TS",
       "type": "DA42",
       "cat": "A1",
-      "alt": 2275,
-      "gs": 129.9,
-      "track": 260.25,
-      "rate": -512,
-      "lat": 46.99802,
-      "lon": -123.71683,
+      "alt": 4825,
+      "gs": 116.6,
+      "track": 170.62,
+      "rate": 320,
+      "lat": 46.92339,
+      "lon": -124.07966,
       "squawk": "4746",
       "emergency": "none",
       "mil": false
+    },
+    {
+      "hex": "ae2fa5",
+      "flight": "RCH309",
+      "reg": "08-8193",
+      "type": "C17",
+      "cat": null,
+      "alt": 9825,
+      "gs": 286.0,
+      "track": 360.0,
+      "rate": 0,
+      "lat": 46.73565,
+      "lon": -122.88848,
+      "squawk": "2312",
+      "emergency": null,
+      "mil": true
     }
   ]
 }
