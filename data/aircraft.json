@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T04:35:26.9050503+00:00",
+  "updated": "2026-11-28T04:39:05.1926461+00:00",
   "source": "ADS-B via adsb.lol",
   "aircraft": [
     {
@@ -9,12 +9,28 @@
       "type": "DA42",
       "cat": "A1",
       "alt": 5800,
-      "gs": 142.3,
-      "track": 41.87,
+      "gs": 150.8,
+      "track": 42.04,
       "rate": 0,
-      "lat": 46.50481,
-      "lon": -123.51868,
+      "lat": 46.59763,
+      "lon": -123.39713,
       "squawk": "6662",
+      "emergency": "none",
+      "mil": false
+    },
+    {
+      "hex": "a4ca6a",
+      "flight": "ASA284",
+      "reg": "N408AS",
+      "type": "B739",
+      "cat": "A3",
+      "alt": 13200,
+      "gs": 322.3,
+      "track": 318.4,
+      "rate": 832,
+      "lat": 47.54984,
+      "lon": -122.79288,
+      "squawk": "6624",
       "emergency": "none",
       "mil": false
     }
