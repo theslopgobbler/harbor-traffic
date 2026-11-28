@@ -1,5 +1,22 @@
 {
-  "updated": "2026-11-28T02:35:34.6674789+00:00",
+  "updated": "2026-11-28T02:45:26.4542936+00:00",
   "source": "ADS-B via adsb.lol",
-  "aircraft": []
+  "aircraft": [
+    {
+      "hex": "aa94ed",
+      "flight": "ASA141",
+      "reg": "N781HA",
+      "type": "B789",
+      "cat": "A5",
+      "alt": 13000,
+      "gs": 335.6,
+      "track": 236.55,
+      "rate": 1800,
+      "lat": 47.2798,
+      "lon": -122.81334,
+      "squawk": "6657",
+      "emergency": "none",
+      "mil": false
+    }
+  ]
 }
